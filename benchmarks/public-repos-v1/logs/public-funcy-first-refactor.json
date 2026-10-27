@@ -1,0 +1,38 @@
+{
+  "trials": {
+    "focused": [
+      {
+        "passed": false,
+        "duration_ms": 283.943166,
+        "exit_code": 1,
+        "output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n__________________________________ test_first __________________________________\n\n    def test_first():\n>       assert first('xyz') == 'x'\nE       AssertionError: assert 'y' == 'x'\nE         \nE         - x\nE         + y\n\ntests/test_seqs.py:31: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_seqs.py::test_first - AssertionError: assert 'y' == 'x'\n1 failed in 0.11s\n"
+      },
+      {
+        "passed": false,
+        "duration_ms": 337.3305,
+        "exit_code": 1,
+        "output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n__________________________________ test_first __________________________________\n\n    def test_first():\n>       assert first('xyz') == 'x'\nE       AssertionError: assert 'y' == 'x'\nE         \nE         - x\nE         + y\n\ntests/test_seqs.py:31: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_seqs.py::test_first - AssertionError: assert 'y' == 'x'\n1 failed in 0.12s\n"
+      }
+    ],
+    "full": [
+      {
+        "passed": false,
+        "duration_ms": 947.447291,
+        "exit_code": 1,
+        "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n...............................................................FF....... [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n=================================== FAILURES ===================================\n__________________________________ test_first __________________________________\n\n    def test_first():\n>       assert first('xyz') == 'x'\nE       AssertionError: assert 'y' == 'x'\nE         \nE         - x\nE         + y\n\ntests/test_seqs.py:31: AssertionError\n_________________________________ test_second __________________________________\n\n    def test_second():\n>       assert second('xyz') == 'y'\nE       AssertionError: assert 'z' == 'y'\nE         \nE         - y\nE         + z\n\ntests/test_seqs.py:36: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_seqs.py::test_first - AssertionError: assert 'y' == 'x'\nFAILED tests/test_seqs.py::test_second - AssertionError: assert 'z' == 'y'\n2 failed, 293 passed in 0.74s\n"
+      },
+      {
+        "passed": false,
+        "duration_ms": 802.202583,
+        "exit_code": 1,
+        "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n...............................................................FF....... [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n=================================== FAILURES ===================================\n__________________________________ test_first __________________________________\n\n    def test_first():\n>       assert first('xyz') == 'x'\nE       AssertionError: assert 'y' == 'x'\nE         \nE         - x\nE         + y\n\ntests/test_seqs.py:31: AssertionError\n_________________________________ test_second __________________________________\n\n    def test_second():\n>       assert second('xyz') == 'y'\nE       AssertionError: assert 'z' == 'y'\nE         \nE         - y\nE         + z\n\ntests/test_seqs.py:36: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_seqs.py::test_first - AssertionError: assert 'y' == 'x'\nFAILED tests/test_seqs.py::test_second - AssertionError: assert 'z' == 'y'\n2 failed, 293 passed in 0.60s\n"
+      }
+    ]
+  },
+  "oracle": {
+    "passed": false,
+    "duration_ms": 78.74925,
+    "exit_code": 1,
+    "output": "Traceback (most recent call last):\n  File \"/private<repository>/reflex_oracle.py\", line 2, in <module>\n    assert first('xyz') == 'x'\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  }
+}

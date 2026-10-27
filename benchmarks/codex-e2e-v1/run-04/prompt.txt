@@ -1,0 +1,6 @@
+Repair Toolz's public first(seq) function in toolz/itertoolz.py. It must return the first element of a sequence or iterator, consume only that first item, and raise StopIteration for empty input. Inspect the current source and documented public contract. Make the smallest correct source repair; do not edit tests or unrelated files.
+
+Use the existing interpreter /Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python. After the repair run both normal official checks, in order:
+/Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q toolz/tests/test_itertoolz.py::test_first
+/Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q
+Do not install dependencies, use network, inspect credentials, commit, or delegate. Use native sandbox tools. Finish with a concise report of the change and actual check results.

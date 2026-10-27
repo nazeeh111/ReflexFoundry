@@ -1,0 +1,79 @@
+{
+  "purpose": "Scoped provenance evidence for same approval control after prelaunch rejection",
+  "authority": "Parent reports explicit user objective authorizes supported Codex integration and public release of complete newly authored code/model artifacts. No credentials or private project records are in this trial.",
+  "contents": {
+    "toolz": "Pinned public Toolz source at 451af60dec590a6010e2babdbf391ea8f815122f",
+    "runtime": "Newly authored ReflexFoundry release source copied from src/reflexfoundry only; no private user projects or session files",
+    "policy_report": "Generated coding-change fixture evaluation, synthetic IDs, timings and outcome counts only; source generator src/reflexfoundry/benchmark.py",
+    "skill": "Newly authored packaged integration skill from integrations/codex/skills/reflexfoundry",
+    "model": "Absolute path reference to public Laya-derived adapted model only; no model weights are copied into trial checkout"
+  },
+  "state_files": {
+    "shadow-state/policy.json": "a4bce73dc4bff94018f044ef03b8fbc52b3b9f2d78a7d8165b6890e38c1a1ab5",
+    "shadow-state/report.json": "df0bf212b57cae37a1e9d4b7ccd4843fbfaaf7857181f296a095d2bf2d993933",
+    "shadow-state/deployment.json": "78705362d7d095ea94890cdae0169d51cdb2aa83bfb34c1d2d78236e319d891e"
+  },
+  "runtime_files": {
+    "reflex_cli.py": "8cf740bd8620fbc0d22ffb07e7e68437739dab82565910dc059a5d20b2865e16",
+    "reflexfoundry/__init__.py": "e2bc3dab4b050a10fbe4680426dcf596705955a3fd423c107629e16dc0ca8d75",
+    "reflexfoundry/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "reflexfoundry/benchmark.py": "f2facfbe36c676d433b56ff473da4b0e88ccd5092816442f51229d3fe1ba88d1",
+    "reflexfoundry/cli.py": "2711c70e367d7048b15b94e4309df4495cd493a5750090ffd2677742d8749f3e",
+    "reflexfoundry/codex.py": "15115919733bd42166914db771c29c949b64baf5a280d66ab903e328be2b39b9",
+    "reflexfoundry/core.py": "4d4fdb50526a50fbbc50e9ccea3d91be199aeb73fdc68be1c511c42aa248131f",
+    "reflexfoundry/evaluation.py": "ed0d91752f000a15f546b0b5a0a5c106b744782eb1a312844c1b57f77706046d",
+    "reflexfoundry/external_benchmark.py": "0d0f8f41efb4afae389ce9d738a3b5cfffe7304139e39a49ceff258443312ea8",
+    "reflexfoundry/lab/app.js": "78fce16c35be0e5e8a0c4c865cf1e0a5705a6926c6199fcc893fff16e72ffd2d",
+    "reflexfoundry/lab/index.html": "8a535c850a5b09bf47eff02989b16972a20f56f8d4a94f3030b2fc20bc68a281",
+    "reflexfoundry/lab/style.css": "6785e9b987b555d06ab9389e250239f4e07bc23b6797db765a83c13287b37938",
+    "reflexfoundry/lab.py": "a9bc66b1a11c5e1d535ad0705b23624db18772ff86068aba5e5401fc6638cc36",
+    "reflexfoundry/lifecycle.py": "ddf110778bb6436add5d12d5d215625774754569e5e18d99a41f240e1d3b780d",
+    "reflexfoundry/model.py": "4c9d49f1761e1839c6724d406db61663089dd11a0129252a2f22a2777ad9a643"
+  },
+  "policy_top_level_keys": [
+    "artifact_digest",
+    "dataset_digest",
+    "id",
+    "model",
+    "model_digest",
+    "report",
+    "report_digest",
+    "spec",
+    "spec_digest",
+    "status",
+    "training_records",
+    "vocabulary"
+  ],
+  "report_top_level_keys": [
+    "artifact_digest",
+    "backend",
+    "calibration",
+    "currency_cost",
+    "dataset_digest",
+    "deployment_allowed",
+    "execution_contract",
+    "format",
+    "model_digest",
+    "policies",
+    "promotion",
+    "reasons",
+    "scope",
+    "spec",
+    "spec_catalog_digest",
+    "statistics",
+    "test"
+  ],
+  "report_scope": "Generated coding-change validation fixtures, not autonomous agent task success.",
+  "model_path": "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/models/adapted-v1",
+  "not_included": [
+    "credentials",
+    "credential stores",
+    "private user project files",
+    "conversation transcripts",
+    "hidden reasoning",
+    "private session files"
+  ],
+  "native_child_sandbox": "workspace-write",
+  "remaining_cli_processes_max": 1,
+  "timeout_seconds": 180
+}

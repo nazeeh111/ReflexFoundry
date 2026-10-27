@@ -1,0 +1,14 @@
+{
+  "integration": "native-codex-exec-skill",
+  "date": "2026-10-26",
+  "access": "existing configured Codex CLI; no credentials created, provider routing not independently audited",
+  "sandbox": "read-only",
+  "skill": "integrations/codex/skills/reflexfoundry/SKILL.md",
+  "command": "python -m reflexfoundry decide request.json --workspace ABSENT_WORKSPACE",
+  "result": {"choice": "full", "fallback": true, "advisory": true, "executed_action": "advisory-only"},
+  "prior_attempts": [
+    {"status": "failed", "reason": "accidental trailing command punctuation, corrected"},
+    {"status": "failed", "reason": "inactive advisory command unnecessarily created workspace; implementation corrected to return fallback without writing"}
+  ],
+  "scope": "Actual skill and CLI invocation by Codex. Not autonomous coding success or a benchmark speedup. No raw transcripts retained in this public receipt."
+}

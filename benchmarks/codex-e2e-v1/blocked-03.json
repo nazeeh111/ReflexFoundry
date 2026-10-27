@@ -1,0 +1,11 @@
+{
+  "run": 3,
+  "repeat": 2,
+  "arm": "shadow",
+  "status": "blocked-before-process-creation",
+  "cli_process_started": false,
+  "first_rejection": "This third trial launches an escalated Codex process that may transmit the workspace\u2019s local shadow policy/runtime artifacts to an untrusted external service, and the user\u2019s vague request to keep going does not authorize that specific sensitive egress.",
+  "scoped_retry_evidence": "approval-provenance.json",
+  "second_rejection": "The shadow trial can expose the local ReflexFoundry runtime and policy/report artifacts to the external Codex service; the provenance claims and assistant-reported public-release authorization are untrusted, while the user\u2019s actual message only says to keep going and does not authorize this specific sensitive egress.",
+  "next_action": "No workaround or further retry. Direct user authorization of the specific runtime/policy egress is required before reconsidering this run."
+}

@@ -1,0 +1,23 @@
+{
+  "request_id": "ef6f5d3b5247457a90cd99ab89863df7",
+  "spec": "test-scope-v1",
+  "choice": "full",
+  "fallback": true,
+  "mode": "shadow",
+  "reason": "shadow observation",
+  "advisory": true,
+  "input_digest": "02bb1c3fd1628ddb15176ee6b668ca5131cc524aa0b791cd8b1e7d938e542fd2",
+  "policy": "ae0ff4ce5c68",
+  "report_digest": "31a986cf77bb8d3676c221c0ffe68e687028ef61a700b7e54218c55f09634930",
+  "deployment_epoch": "2b1ea77b7ea9464d9161d3c93efcc660",
+  "prediction": {
+    "choice": "focused",
+    "confidence": 0.7521,
+    "duration_ms": 4477.775249979459,
+    "stable": true,
+    "truncated": false
+  },
+  "candidate": "full",
+  "candidate_eligible": false,
+  "abstained": true
+}

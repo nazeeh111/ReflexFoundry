@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--sandbox",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "--json",
+    "--color",
+    "never",
+    "-C",
+    "/private/tmp/reflex-codex-4-y34lwjsj/toolz",
+    "-o",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v1/run-04/final-answer.txt",
+    "-"
+  ],
+  "cwd": "/private/tmp/reflex-codex-4-y34lwjsj/toolz",
+  "stdin": "prompt.txt"
+}

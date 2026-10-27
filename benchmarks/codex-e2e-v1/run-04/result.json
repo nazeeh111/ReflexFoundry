@@ -1,0 +1,44 @@
+{
+  "run": 4,
+  "repeat": 2,
+  "arm": "original",
+  "cli_exit_code": 0,
+  "timed_out": false,
+  "wall_ms": 45253.33454099018,
+  "errors": [],
+  "observable_commands": 9,
+  "allowlisted_command_counts": {
+    "git": 1,
+    "rg": 3,
+    "python": 3
+  },
+  "candidate_sha256": "93e4d79bc7c6d68250657846454303ba95c0694c9ef165cb7a8e0bdf150711c6",
+  "source_changed": [],
+  "extra_public_files": [],
+  "candidate_differs_from_mutant": true,
+  "independent": {
+    "focused": {
+      "exit_code": 0,
+      "passed": true,
+      "wall_ms": 1005.0158329540864,
+      "output": ".                                                                        [100%]\n1 passed in 0.31s\n"
+    },
+    "full": {
+      "exit_code": 0,
+      "passed": true,
+      "wall_ms": 2788.832208025269,
+      "output": "........................................................................ [ 37%]\n............................s........................................... [ 74%]\n.................................................                        [100%]\n=========================== short test summary info ============================\nSKIPPED [1] toolz/tests/test_functoolz.py:737: annotationlib is new in Python 3.14\n192 passed, 1 skipped in 2.32s\n"
+    },
+    "public_contract": {
+      "exit_code": 0,
+      "passed": true,
+      "wall_ms": 115.5394579982385,
+      "output": "public-contract grader passed\n"
+    }
+  },
+  "advisory": null,
+  "final_answer_present": true,
+  "success": true,
+  "independent_wall_ms": 3909.387498977594,
+  "agent_plus_independent_ms": 49162.722039967775
+}

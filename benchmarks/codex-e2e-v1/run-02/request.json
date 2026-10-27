@@ -1,0 +1,7 @@
+{
+  "spec": "test-scope-v1",
+  "inputs": {
+    "summary": "Repair public first(seq) to return the first element of a sequence or iterator, consume only that item, and raise StopIteration for empty input.",
+    "changed_files": ["toolz/itertoolz.py"]
+  }
+}

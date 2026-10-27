@@ -1,0 +1,74 @@
+{
+  "public-toolz-take-refactor": {
+    "choice": "focused",
+    "confidence": 0.5067,
+    "stable": false,
+    "truncated": false,
+    "duration_ms": 5797.946667065844,
+    "probabilities": {
+      "focused": 0.5254,
+      "full": 0.4746
+    },
+    "backend": "mlx"
+  },
+  "public-toolz-first-refactor": {
+    "choice": "focused",
+    "confidence": 0.5089,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 124.04037499800324,
+    "probabilities": {
+      "focused": 0.5181,
+      "full": 0.4819
+    },
+    "backend": "mlx"
+  },
+  "public-toolz-take-shared-iterator": {
+    "choice": "focused",
+    "confidence": 0.5213,
+    "stable": false,
+    "truncated": false,
+    "duration_ms": 136.26850000582635,
+    "probabilities": {
+      "focused": 0.5305,
+      "full": 0.4695
+    },
+    "backend": "mlx"
+  },
+  "public-funcy-take-refactor": {
+    "choice": "focused",
+    "confidence": 0.5403,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 113.56987501494586,
+    "probabilities": {
+      "focused": 0.5671,
+      "full": 0.4329
+    },
+    "backend": "mlx"
+  },
+  "public-funcy-first-refactor": {
+    "choice": "focused",
+    "confidence": 0.5227,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 467.1584580792114,
+    "probabilities": {
+      "focused": 0.5227,
+      "full": 0.4773
+    },
+    "backend": "mlx"
+  },
+  "public-funcy-drop-shared-iterator": {
+    "choice": "full",
+    "confidence": 0.5273,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 199.58899996709079,
+    "probabilities": {
+      "focused": 0.4727,
+      "full": 0.5273
+    },
+    "backend": "mlx"
+  }
+}

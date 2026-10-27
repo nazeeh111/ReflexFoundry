@@ -1,0 +1,24 @@
+{
+  "python": "3.12.13 (main, Jun  2 2026, 22:42:28) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "dependencies": {
+    "laya": "0.4.16",
+    "laya-mlx": "0.5.0",
+    "torch": "2.14.1",
+    "transformers": "5.21.0",
+    "mlx": "0.32.4",
+    "safetensors": "0.8.0",
+    "numpy": "2.5.4",
+    "tokenizers": "0.23.3",
+    "pytest": "9.1.1"
+  },
+  "laya_source_commit": "b9fe351ce81e2d974bca2bf219c1e4030c0a05ea",
+  "laya_mlx_source_commit": "ddaf014cf3bd6733ce11219750b150df42ffc86e",
+  "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+  "gpu_inference_verified": true,
+  "cpu_inference_verified": true,
+  "exact_adapter_weight_reconstruction_verified": true,
+  "evaluated_artifact_digest": "e3d2d654974bbfe81b664cf848fe53edd5fe32efa317bf3ccf8084e5bed0a0d0",
+  "report_sha256": "d6215d2e2a4999d8204923f507e1d85e8c22065774286ac771f0a6f6149022fa"
+}

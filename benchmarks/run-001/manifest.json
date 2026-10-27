@@ -1,0 +1,25 @@
+{
+  "benchmark": "candidate-patch-validation-v1",
+  "counts": {
+    "train": 160,
+    "calibration": 60,
+    "promotion": 60,
+    "test": 80
+  },
+  "repeats": 3,
+  "time_aggregation": "median per candidate across paired, alternating-order trials",
+  "records_sha256": "6964c3522f8f305e0e79399a9f7556740977ed6e19eabc03700283ca592dcd39",
+  "elapsed_ms": 563533.121125,
+  "split_seeds": {
+    "train": 101,
+    "calibration": 307,
+    "promotion": 509,
+    "test": 701
+  },
+  "limits": [
+    "Generated Python repositories share a small fixture grammar; this is not real-world repository generalization.",
+    "Measures validation decision outcomes for supplied patches, not autonomous coding-task completion.",
+    "Subprocess wall time varies across hosts and loads. No LLM latency or monetary savings are inferred.",
+    "No sleeps, simulated timing, private transcripts, hosted APIs, or teacher labels are used."
+  ]
+}

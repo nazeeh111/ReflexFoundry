@@ -1,0 +1,56 @@
+{
+  "run": 2,
+  "repeat": 1,
+  "arm": "shadow",
+  "cli_exit_code": 0,
+  "timed_out": false,
+  "wall_ms": 60786.82179097086,
+  "errors": [],
+  "observable_commands": 9,
+  "allowlisted_command_counts": {
+    "rg": 3,
+    "git": 1,
+    "python": 4
+  },
+  "candidate_sha256": "93e4d79bc7c6d68250657846454303ba95c0694c9ef165cb7a8e0bdf150711c6",
+  "source_changed": [],
+  "extra_public_files": [],
+  "candidate_differs_from_mutant": true,
+  "independent": {
+    "focused": {
+      "exit_code": 0,
+      "passed": true,
+      "wall_ms": 1427.1055420394987,
+      "output": ".                                                                        [100%]\n1 passed in 0.78s\n"
+    },
+    "full": {
+      "exit_code": 0,
+      "passed": true,
+      "wall_ms": 5051.340708043426,
+      "output": "........................................................................ [ 37%]\n............................s........................................... [ 74%]\n.................................................                        [100%]\n=========================== short test summary info ============================\nSKIPPED [1] toolz/tests/test_functoolz.py:737: annotationlib is new in Python 3.14\n192 passed, 1 skipped in 4.20s\n"
+    },
+    "public_contract": {
+      "exit_code": 0,
+      "passed": true,
+      "wall_ms": 125.06249989382923,
+      "output": "public-contract grader passed\n"
+    }
+  },
+  "advisory": {
+    "request_id": "844e7b5435124657a312fcb34c7a3651",
+    "spec": "test-scope-v1",
+    "choice": "full",
+    "fallback": true,
+    "mode": "shadow",
+    "reason": "local policy unavailable or changed: ValueError",
+    "advisory": true,
+    "input_digest": "bf5531ae4179430760bacfd588746de3da4945ba102217998236c986be8562b0",
+    "policy": "ae0ff4ce5c68",
+    "report_digest": "470d80efb0b834ed9cf84a3d294ab6ea33db7e883c84871cf8b6862baa23282a",
+    "deployment_epoch": "07e39966e82e473985076396f515681c"
+  },
+  "final_answer_present": true,
+  "success": true,
+  "independent_wall_ms": 6603.508749976754,
+  "agent_plus_independent_ms": 67390.33054094762
+}

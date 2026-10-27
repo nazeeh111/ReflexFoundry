@@ -1,0 +1,8 @@
+Repair Toolz's public first(seq) function in toolz/itertoolz.py. It must return the first element of a sequence or iterator, consume only that first item, and raise StopIteration for empty input. Inspect the current source and documented public contract. Make the smallest correct source repair; do not edit tests or unrelated files.
+
+Use the existing interpreter /Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python. After the repair run both normal official checks, in order:
+/Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q toolz/tests/test_itertoolz.py::test_first
+/Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q
+Do not install dependencies, use network, inspect credentials, commit, or delegate. Use native sandbox tools. Finish with a concise report of the change and actual check results.
+
+Use the packaged $reflexfoundry skill in .agents/skills/reflexfoundry/SKILL.md for shadow advice. Public task input collection is authorized. After writing the repair and before validation, read the skill, run `/Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python .reflex_runtime/reflex_cli.py specs`, create request.json from the actual task summary and changed relative source path, and run `/Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python .reflex_runtime/reflex_cli.py decide request.json --workspace .reflex --backend torch > advisory.json`. Inspect advisory.json. Do not alter policy, report, runtime, guards or deployment. Keep the original two validation commands above regardless of fallback or candidate. Abstained or untested proposals have no verified shadow outcome; do not record one.

@@ -1,0 +1,14 @@
+{
+  "duration_s": 20,
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "audio": "none",
+  "report_sha256": "d6215d2e2a4999d8204923f507e1d85e8c22065774286ac771f0a6f6149022fa",
+  "chart_sha256": "4299535b4ae25efe7bb813dbb3445115b2b8f033c8d213b9ef10096517be404d",
+  "lab_sha256": "813787ef0181dfc387edccfd38de23bad6ce6d2977b6bfc007f6fac5feb0fb41",
+  "render_source_sha256": "06480b26fc3fba3e3e8b56db46a75e8364fb3f103dd133669b5c0423785a5f42",
+  "video_sha256": "8c3c31d735cb17ed9d874e9525fb3e6c645d0bfc5f9bf6d76a1f762bfceecf15",
+  "scope": "Generated coding-change validation fixtures, not autonomous agent task success.",
+  "provenance": "Original typography and motion; actual Lab screenshot and report-derived plot. No generated UI or remote media."
+}

@@ -1,0 +1,13 @@
+{
+  "request_id": "844e7b5435124657a312fcb34c7a3651",
+  "spec": "test-scope-v1",
+  "choice": "full",
+  "fallback": true,
+  "mode": "shadow",
+  "reason": "local policy unavailable or changed: ValueError",
+  "advisory": true,
+  "input_digest": "bf5531ae4179430760bacfd588746de3da4945ba102217998236c986be8562b0",
+  "policy": "ae0ff4ce5c68",
+  "report_digest": "470d80efb0b834ed9cf84a3d294ab6ea33db7e883c84871cf8b6862baa23282a",
+  "deployment_epoch": "07e39966e82e473985076396f515681c"
+}

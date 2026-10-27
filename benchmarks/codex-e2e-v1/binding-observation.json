@@ -1,0 +1,6 @@
+{
+  "frozen_policy_artifact_digest": "bffdf6c3339538f503f90ffe5c135a2e348716602f754402ca9647afb706ab5d",
+  "frozen_policy_report_digest": "470d80efb0b834ed9cf84a3d294ab6ea33db7e883c84871cf8b6862baa23282a",
+  "observed_actual_model_artifact_digest_after_run_02": "e3d2d654974bbfe81b664cf848fe53edd5fe32efa317bf3ccf8084e5bed0a0d0",
+  "observation": "Library _binding_valid returned false after run02. Parent reports model artifact changed during separate final evaluation; trial did not write model files. Shadow refusal is integration evidence, not model-performance evidence."
+}

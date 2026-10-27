@@ -1,0 +1,7 @@
+{
+  "completed_cli_runs": 3,
+  "successful_repairs": 2,
+  "paired_wall_time": [],
+  "scope": "A small one-task native Codex CLI feasibility study; two repeats are not independent task diversity. Host/model variability, order and shared caches confound timing; no causal superiority claim.",
+  "deployment": "withheld; original full workflow required in both arms"
+}

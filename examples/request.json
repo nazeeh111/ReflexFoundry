@@ -1,0 +1,1 @@
+{"spec":"test-scope-v1","inputs":{"summary":"Fix the display string prefix in the labels module only.","changed_files":["labels.py"]}}

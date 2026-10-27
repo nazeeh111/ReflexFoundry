@@ -1,0 +1,38 @@
+{
+  "trials": {
+    "focused": [
+      {
+        "passed": true,
+        "duration_ms": 330.600583,
+        "exit_code": 0,
+        "output": ".                                                                        [100%]\n1 passed in 0.14s\n"
+      },
+      {
+        "passed": true,
+        "duration_ms": 344.231208,
+        "exit_code": 0,
+        "output": ".                                                                        [100%]\n1 passed in 0.13s\n"
+      }
+    ],
+    "full": [
+      {
+        "passed": true,
+        "duration_ms": 1406.34025,
+        "exit_code": 0,
+        "output": "........................................................................ [ 37%]\n............................s........................................... [ 74%]\n.................................................                        [100%]\n=========================== short test summary info ============================\nSKIPPED [1] toolz/tests/test_functoolz.py:737: annotationlib is new in Python 3.14\n192 passed, 1 skipped in 1.15s\n"
+      },
+      {
+        "passed": true,
+        "duration_ms": 1798.089917,
+        "exit_code": 0,
+        "output": "........................................................................ [ 37%]\n............................s........................................... [ 74%]\n.................................................                        [100%]\n=========================== short test summary info ============================\nSKIPPED [1] toolz/tests/test_functoolz.py:737: annotationlib is new in Python 3.14\n192 passed, 1 skipped in 1.55s\n"
+      }
+    ]
+  },
+  "oracle": {
+    "passed": true,
+    "duration_ms": 77.553458,
+    "exit_code": 0,
+    "output": ""
+  }
+}

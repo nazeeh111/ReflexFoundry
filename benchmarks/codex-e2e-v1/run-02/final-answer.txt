@@ -1,0 +1,10 @@
+Repaired `first(seq)` with the one-line change `return next(iter(seq))`. No tests or unrelated source files changed.
+
+Checks passed in the required order:
+
+- Focused test: **1 passed**
+- Full suite: **192 passed, 1 skipped**
+
+Additional checks confirmed single-item consumption and `StopIteration` for empty input.
+
+ReflexFoundry returned fallback because the local policy was unavailable or changed (`ValueError`). No verified shadow outcome was recorded.

@@ -1,0 +1,11 @@
+{
+  "python": "3.12.13",
+  "pytest": "9.1.1",
+  "whatever": "0.7",
+  "toolz_package_version": "1.2.0",
+  "toolz_source_commit": "451af60dec590a6010e2babdbf391ea8f815122f",
+  "funcy_source_commit": "a876c7e1cf11e7c746e91fce4632ebfa93865428",
+  "pytest_plugin_autoload": false,
+  "source_import": "candidate repository working directory",
+  "dependencies_checked_with": "importlib.metadata.version"
+}

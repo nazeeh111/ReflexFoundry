@@ -1,0 +1,65 @@
+{
+  "benchmark": "public-repository-mutation-smoke-v1",
+  "n": 6,
+  "repositories": [
+    {
+      "name": "toolz",
+      "url": "https://github.com/pytoolz/toolz",
+      "commit": "451af60dec590a6010e2babdbf391ea8f815122f",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "funcy",
+      "url": "https://github.com/Suor/funcy",
+      "commit": "a876c7e1cf11e7c746e91fce4632ebfa93865428",
+      "license": "BSD-3-Clause"
+    }
+  ],
+  "records_sha256": "d90185a2fdd83651c0426eda43c07798772a9d232dca6f76efea59cdcb2c51bd",
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "repeats": 2,
+  "timing": "median subprocess wall time, alternating order",
+  "pytest_plugin_autoload": false,
+  "original_baselines": [
+    {
+      "repository": "toolz",
+      "suite": {
+        "passed": true,
+        "duration_ms": 1693.554667,
+        "exit_code": 0,
+        "output": "........................................................................ [ 37%]\n............................s........................................... [ 74%]\n.................................................                        [100%]\n=========================== short test summary info ============================\nSKIPPED [1] toolz/tests/test_functoolz.py:737: annotationlib is new in Python 3.14\n192 passed, 1 skipped in 1.30s\n"
+      },
+      "oracle": {
+        "passed": true,
+        "duration_ms": 63.107917,
+        "exit_code": 0,
+        "output": ""
+      }
+    },
+    {
+      "repository": "funcy",
+      "suite": {
+        "passed": true,
+        "duration_ms": 1244.273958,
+        "exit_code": 0,
+        "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 0.99s\n"
+      },
+      "oracle": {
+        "passed": true,
+        "duration_ms": 99.838083,
+        "exit_code": 0,
+        "output": ""
+      }
+    }
+  ],
+  "limits": [
+    "Six hand-authored mutations on two public repositories are a holdout smoke test, not a statistically powered study.",
+    "The decision validates supplied candidate patches; it does not measure autonomous agent coding-task success.",
+    "The independently authored public-contract grader covers the selected APIs, not every possible repository contract.",
+    "Focused commands deliberately run the official changed-function test; shared-consumer coverage can be missed.",
+    "Official full suite commands are used unchanged; documented upstream platform skips remain visible in logs.",
+    "No LLM decisions, latency, token costs, monetary savings, or model improvements are inferred by this runner.",
+    "Host load, filesystem caches, and subprocess startup contribute to measured timing. No artificial sleeps are added."
+  ]
+}

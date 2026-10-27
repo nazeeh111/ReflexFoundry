@@ -1,0 +1,38 @@
+{
+  "trials": {
+    "focused": [
+      {
+        "passed": true,
+        "duration_ms": 335.99875,
+        "exit_code": 0,
+        "output": ".                                                                        [100%]\n1 passed in 0.14s\n"
+      },
+      {
+        "passed": true,
+        "duration_ms": 291.995375,
+        "exit_code": 0,
+        "output": ".                                                                        [100%]\n1 passed in 0.12s\n"
+      }
+    ],
+    "full": [
+      {
+        "passed": false,
+        "duration_ms": 1395.011125,
+        "exit_code": 1,
+        "output": "........................................................................ [ 37%]\n............................s........................................... [ 74%]\n.FF......F....................F..................                        [100%]\n=================================== FAILURES ===================================\n_________________________________ test_concat __________________________________\n\n    def test_concat():\n        assert list(concat([[], [], []])) == []\n>       assert (list(take(5, concat([['a', 'b'], range(1000000000)]))) ==\n                ['a', 'b', 0, 1, 2])\nE       AssertionError: assert ['a', 'b', 0, 1] == ['a', 'b', 0, 1, 2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\ntoolz/tests/test_itertoolz.py:241: AssertionError\n_________________________________ test_concatv _________________________________\n\n    def test_concatv():\n        assert list(concatv([], [], [])) == []\n>       assert (list(take(5, concatv(['a', 'b'], range(1000000000)))) ==\n                ['a', 'b', 0, 1, 2])\nE       AssertionError: assert ['a', 'b', 0, 1] == ['a', 'b', 0, 1, 2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\ntoolz/tests/test_itertoolz.py:247: AssertionError\n_________________________________ test_iterate _________________________________\n\n    def test_iterate():\n        assert list(itertools.islice(iterate(inc, 0), 0, 5)) == [0, 1, 2, 3, 4]\n>       assert list(take(4, iterate(double, 1))) == [1, 2, 4, 8]\nE       assert [1, 2, 4] == [1, 2, 4, 8]\nE         \nE         Right contains one more item: 8\nE         Use -v to get more diff\n\ntoolz/tests/test_itertoolz.py:307: AssertionError\n__________________________________ test_peekn __________________________________\n\n    def test_peekn():\n        alist = (\"Alice\", \"Bob\", \"Carol\")\n        elements, blist = peekn(2, alist)\n>       assert elements == alist[:2]\nE       AssertionError: assert ('Alice',) == ('Alice', 'Bob')\nE         \nE         Right contains one more item: 'Bob'\nE         Use -v to get more diff\n\ntoolz/tests/test_itertoolz.py:563: AssertionError\n=========================== short test summary info ============================\nSKIPPED [1] toolz/tests/test_functoolz.py:737: annotationlib is new in Python 3.14\nFAILED toolz/tests/test_itertoolz.py::test_concat - AssertionError: assert ['...\nFAILED toolz/tests/test_itertoolz.py::test_concatv - AssertionError: assert [...\nFAILED toolz/tests/test_itertoolz.py::test_iterate - assert [1, 2, 4] == [1, ...\nFAILED toolz/tests/test_itertoolz.py::test_peekn - AssertionError: assert ('A...\n4 failed, 188 passed, 1 skipped in 1.20s\n"
+      },
+      {
+        "passed": false,
+        "duration_ms": 1268.154792,
+        "exit_code": 1,
+        "output": "........................................................................ [ 37%]\n............................s........................................... [ 74%]\n.FF......F....................F..................                        [100%]\n=================================== FAILURES ===================================\n_________________________________ test_concat __________________________________\n\n    def test_concat():\n        assert list(concat([[], [], []])) == []\n>       assert (list(take(5, concat([['a', 'b'], range(1000000000)]))) ==\n                ['a', 'b', 0, 1, 2])\nE       AssertionError: assert ['a', 'b', 0, 1] == ['a', 'b', 0, 1, 2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\ntoolz/tests/test_itertoolz.py:241: AssertionError\n_________________________________ test_concatv _________________________________\n\n    def test_concatv():\n        assert list(concatv([], [], [])) == []\n>       assert (list(take(5, concatv(['a', 'b'], range(1000000000)))) ==\n                ['a', 'b', 0, 1, 2])\nE       AssertionError: assert ['a', 'b', 0, 1] == ['a', 'b', 0, 1, 2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\ntoolz/tests/test_itertoolz.py:247: AssertionError\n_________________________________ test_iterate _________________________________\n\n    def test_iterate():\n        assert list(itertools.islice(iterate(inc, 0), 0, 5)) == [0, 1, 2, 3, 4]\n>       assert list(take(4, iterate(double, 1))) == [1, 2, 4, 8]\nE       assert [1, 2, 4] == [1, 2, 4, 8]\nE         \nE         Right contains one more item: 8\nE         Use -v to get more diff\n\ntoolz/tests/test_itertoolz.py:307: AssertionError\n__________________________________ test_peekn __________________________________\n\n    def test_peekn():\n        alist = (\"Alice\", \"Bob\", \"Carol\")\n        elements, blist = peekn(2, alist)\n>       assert elements == alist[:2]\nE       AssertionError: assert ('Alice',) == ('Alice', 'Bob')\nE         \nE         Right contains one more item: 'Bob'\nE         Use -v to get more diff\n\ntoolz/tests/test_itertoolz.py:563: AssertionError\n=========================== short test summary info ============================\nSKIPPED [1] toolz/tests/test_functoolz.py:737: annotationlib is new in Python 3.14\nFAILED toolz/tests/test_itertoolz.py::test_concat - AssertionError: assert ['...\nFAILED toolz/tests/test_itertoolz.py::test_concatv - AssertionError: assert [...\nFAILED toolz/tests/test_itertoolz.py::test_iterate - assert [1, 2, 4] == [1, ...\nFAILED toolz/tests/test_itertoolz.py::test_peekn - AssertionError: assert ('A...\n4 failed, 188 passed, 1 skipped in 1.05s\n"
+      }
+    ]
+  },
+  "oracle": {
+    "passed": false,
+    "duration_ms": 62.907291,
+    "exit_code": 1,
+    "output": "Traceback (most recent call last):\n  File \"/private<repository>/reflex_oracle.py\", line 3, in <module>\n    assert list(take(3, iter(range(8)))) == [0, 1, 2]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  }
+}

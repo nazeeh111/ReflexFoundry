@@ -1,0 +1,341 @@
+{
+  "policies": [
+    {
+      "name": "original-full",
+      "n": 6,
+      "success_rate": 1.0,
+      "errors": 0,
+      "error_upper_95": 0.3903430336530645,
+      "total_ms": 8298.6181035,
+      "mean_ms": 1383.1030172500002,
+      "startup_ms": 0,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "focused": 0,
+        "full": 6
+      }
+    },
+    {
+      "name": "deterministic-heuristic",
+      "n": 6,
+      "success_rate": 0.6666666666666667,
+      "errors": 2,
+      "error_upper_95": 0.7000116786584712,
+      "total_ms": 2284.037978,
+      "mean_ms": 380.6729963333333,
+      "startup_ms": 0,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "focused": 6,
+        "full": 0
+      }
+    },
+    {
+      "name": "always-focused",
+      "n": 6,
+      "success_rate": 0.6666666666666667,
+      "errors": 2,
+      "error_upper_95": 0.7000116786584712,
+      "total_ms": 2284.037978,
+      "mean_ms": 380.6729963333333,
+      "startup_ms": 0,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "focused": 6,
+        "full": 0
+      }
+    },
+    {
+      "name": "trained-always",
+      "n": 6,
+      "success_rate": 0.8333333333333334,
+      "errors": 1,
+      "error_upper_95": 0.563509436563646,
+      "total_ms": 27209.187165144376,
+      "mean_ms": 4534.864527524062,
+      "startup_ms": 2735.4455000022426,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "focused": 5,
+        "full": 1
+      }
+    },
+    {
+      "name": "selective",
+      "n": 6,
+      "success_rate": 1.0,
+      "errors": 0,
+      "error_upper_95": 0.3903430336530645,
+      "total_ms": 31549.86397864438,
+      "mean_ms": 5258.310663107396,
+      "startup_ms": 2735.4455000022426,
+      "fallback_rate": 1.0,
+      "decision_counts": {
+        "focused": 0,
+        "full": 6
+      }
+    }
+  ],
+  "details": [
+    {
+      "id": "public-toolz-take-refactor",
+      "prediction": {
+        "choice": "focused",
+        "confidence": 0.5067,
+        "stable": false,
+        "truncated": false,
+        "duration_ms": 5797.946667065844,
+        "probabilities": {
+          "focused": 0.5254,
+          "full": 0.4746
+        },
+        "backend": "mlx"
+      },
+      "selected": "full",
+      "fallback": true,
+      "outcomes": {
+        "focused": {
+          "checks_passed": true,
+          "duration_ms": 337.4158955,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            330.600583,
+            344.231208
+          ]
+        },
+        "full": {
+          "checks_passed": true,
+          "duration_ms": 1602.2150835,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            1406.34025,
+            1798.089917
+          ]
+        }
+      }
+    },
+    {
+      "id": "public-toolz-first-refactor",
+      "prediction": {
+        "choice": "focused",
+        "confidence": 0.5089,
+        "stable": true,
+        "truncated": false,
+        "duration_ms": 124.04037499800324,
+        "probabilities": {
+          "focused": 0.5181,
+          "full": 0.4819
+        },
+        "backend": "mlx"
+      },
+      "selected": "full",
+      "fallback": true,
+      "outcomes": {
+        "focused": {
+          "checks_passed": false,
+          "duration_ms": 413.6941245,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            512.923916,
+            314.464333
+          ]
+        },
+        "full": {
+          "checks_passed": false,
+          "duration_ms": 1359.137021,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            1407.13,
+            1311.144042
+          ]
+        }
+      }
+    },
+    {
+      "id": "public-toolz-take-shared-iterator",
+      "prediction": {
+        "choice": "focused",
+        "confidence": 0.5213,
+        "stable": false,
+        "truncated": false,
+        "duration_ms": 136.26850000582635,
+        "probabilities": {
+          "focused": 0.5305,
+          "full": 0.4695
+        },
+        "backend": "mlx"
+      },
+      "selected": "full",
+      "fallback": true,
+      "outcomes": {
+        "focused": {
+          "checks_passed": true,
+          "duration_ms": 313.99706249999997,
+          "false_acceptance": true,
+          "success": false,
+          "trials_ms": [
+            335.99875,
+            291.995375
+          ]
+        },
+        "full": {
+          "checks_passed": false,
+          "duration_ms": 1331.5829585000001,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            1395.011125,
+            1268.154792
+          ]
+        }
+      }
+    },
+    {
+      "id": "public-funcy-take-refactor",
+      "prediction": {
+        "choice": "focused",
+        "confidence": 0.5403,
+        "stable": true,
+        "truncated": false,
+        "duration_ms": 113.56987501494586,
+        "probabilities": {
+          "focused": 0.5671,
+          "full": 0.4329
+        },
+        "backend": "mlx"
+      },
+      "selected": "full",
+      "fallback": true,
+      "outcomes": {
+        "focused": {
+          "checks_passed": true,
+          "duration_ms": 465.57662500000004,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            458.46675,
+            472.6865
+          ]
+        },
+        "full": {
+          "checks_passed": true,
+          "duration_ms": 1014.237354,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            1119.738666,
+            908.736042
+          ]
+        }
+      }
+    },
+    {
+      "id": "public-funcy-first-refactor",
+      "prediction": {
+        "choice": "focused",
+        "confidence": 0.5227,
+        "stable": true,
+        "truncated": false,
+        "duration_ms": 467.1584580792114,
+        "probabilities": {
+          "focused": 0.5227,
+          "full": 0.4773
+        },
+        "backend": "mlx"
+      },
+      "selected": "full",
+      "fallback": true,
+      "outcomes": {
+        "focused": {
+          "checks_passed": false,
+          "duration_ms": 310.636833,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            283.943166,
+            337.3305
+          ]
+        },
+        "full": {
+          "checks_passed": false,
+          "duration_ms": 874.824937,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            947.447291,
+            802.202583
+          ]
+        }
+      }
+    },
+    {
+      "id": "public-funcy-drop-shared-iterator",
+      "prediction": {
+        "choice": "full",
+        "confidence": 0.5273,
+        "stable": true,
+        "truncated": false,
+        "duration_ms": 199.58899996709079,
+        "probabilities": {
+          "focused": 0.4727,
+          "full": 0.5273
+        },
+        "backend": "mlx"
+      },
+      "selected": "full",
+      "fallback": true,
+      "outcomes": {
+        "focused": {
+          "checks_passed": true,
+          "duration_ms": 442.7174375,
+          "false_acceptance": true,
+          "success": false,
+          "trials_ms": [
+            473.502,
+            411.932875
+          ]
+        },
+        "full": {
+          "checks_passed": false,
+          "duration_ms": 2116.6207495,
+          "false_acceptance": false,
+          "success": true,
+          "trials_ms": [
+            3000.958541,
+            1232.282958
+          ]
+        }
+      }
+    }
+  ],
+  "decision_label_agreement": 0.8333333333333334,
+  "decision_ece_10_bins": 0.3121333333333334,
+  "confidence_brier": 0.23647707666666665,
+  "decision_metric_note": "Agreement with fastest safe observed choice is diagnostic only; it is not task success or a population calibration guarantee.",
+  "paired_saved_ms_95": [
+    -4754.864014025467,
+    -2995.551277689325
+  ],
+  "paired_success_delta_95": [
+    0.0,
+    0.0
+  ],
+  "repository_groups": 2,
+  "accepted": 0,
+  "accepted_errors": 0,
+  "accepted_error_upper_95": 1.0,
+  "accepted_repositories": 0,
+  "accepted_repository_error_upper_95": 1.0,
+  "order_flip_rate": 0.3333333333333333,
+  "unnecessary_fallback": 5,
+  "wrong_decisions": [],
+  "scope": "External holdout mutation smoke study: Toolz and Funcy; supplied patches, not autonomous coding.",
+  "deployment_allowed": false,
+  "reason": "Six tasks from two repositories cannot establish production benefit or calibrated safety. Uses locked synthetic calibration without retuning.",
+  "dataset_digest": "99ebd9eebbc3583ff6a8d2ccef36eb3686821b74da6b51999cdc9ef76e9ed418",
+  "model_digest": "ae0ff4ce5c6844d33a0b7f54b6ee5bf908bb6b11207e8de6b6fe155c6b8d0c74"
+}

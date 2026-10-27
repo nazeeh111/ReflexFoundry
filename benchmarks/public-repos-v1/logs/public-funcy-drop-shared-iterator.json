@@ -1,0 +1,38 @@
+{
+  "trials": {
+    "focused": [
+      {
+        "passed": true,
+        "duration_ms": 473.502,
+        "exit_code": 0,
+        "output": ".                                                                        [100%]\n1 passed in 0.13s\n"
+      },
+      {
+        "passed": true,
+        "duration_ms": 411.932875,
+        "exit_code": 0,
+        "output": ".                                                                        [100%]\n1 passed in 0.12s\n"
+      }
+    ],
+    "full": [
+      {
+        "passed": false,
+        "duration_ms": 3000.958541,
+        "exit_code": 1,
+        "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n................................................................F....... [ 73%]\n.......F................................................................ [ 97%]\n...F...                                                                  [100%]\n=================================== FAILURES ===================================\n_________________________________ test_second __________________________________\n\n    def test_second():\n>       assert second('xyz') == 'y'\nE       AssertionError: assert 'z' == 'y'\nE         \nE         - y\nE         + z\n\ntests/test_seqs.py:36: AssertionError\n________________________________ test_iterpose _________________________________\n\n    def test_iterpose():\n>       assert list(interpose('.', 'abc')) == list('a.b.c')\nE       AssertionError: assert ['.', 'b', '.', 'c'] == ['a', '.', 'b', '.', 'c']\nE         \nE         At index 0 diff: '.' != 'a'\nE         Right contains one more item: 'c'\nE         Use -v to get more diff\n\ntests/test_seqs.py:113: AssertionError\n_______________________________ test_tree_leaves _______________________________\n\n    def test_tree_leaves():\n        assert ltree_leaves([1, 2, [3, [4]], 5]) == [1, 2, 3, 4, 5]\n        assert ltree_leaves(1) == [1]\n    \n        assert ltree_leaves(3, follow=_ > 1, children=range) == [0, 1, 0, 1]\n>       assert ltree_leaves([1, [2, [3, 4], 5], 6], children=rest) == [4, 5, 6]\nE       assert [6] == [4, 5, 6]\nE         \nE         At index 0 diff: 6 != 4\nE         Right contains 2 more items, first extra item: 5\nE         Use -v to get more diff\n\ntests/test_tree.py:12: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_seqs.py::test_second - AssertionError: assert 'z' == 'y'\nFAILED tests/test_seqs.py::test_iterpose - AssertionError: assert ['.', 'b', ...\nFAILED tests/test_tree.py::test_tree_leaves - assert [6] == [4, 5, 6]\n3 failed, 292 passed in 1.90s\n"
+      },
+      {
+        "passed": false,
+        "duration_ms": 1232.282958,
+        "exit_code": 1,
+        "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n................................................................F....... [ 73%]\n.......F................................................................ [ 97%]\n...F...                                                                  [100%]\n=================================== FAILURES ===================================\n_________________________________ test_second __________________________________\n\n    def test_second():\n>       assert second('xyz') == 'y'\nE       AssertionError: assert 'z' == 'y'\nE         \nE         - y\nE         + z\n\ntests/test_seqs.py:36: AssertionError\n________________________________ test_iterpose _________________________________\n\n    def test_iterpose():\n>       assert list(interpose('.', 'abc')) == list('a.b.c')\nE       AssertionError: assert ['.', 'b', '.', 'c'] == ['a', '.', 'b', '.', 'c']\nE         \nE         At index 0 diff: '.' != 'a'\nE         Right contains one more item: 'c'\nE         Use -v to get more diff\n\ntests/test_seqs.py:113: AssertionError\n_______________________________ test_tree_leaves _______________________________\n\n    def test_tree_leaves():\n        assert ltree_leaves([1, 2, [3, [4]], 5]) == [1, 2, 3, 4, 5]\n        assert ltree_leaves(1) == [1]\n    \n        assert ltree_leaves(3, follow=_ > 1, children=range) == [0, 1, 0, 1]\n>       assert ltree_leaves([1, [2, [3, 4], 5], 6], children=rest) == [4, 5, 6]\nE       assert [6] == [4, 5, 6]\nE         \nE         At index 0 diff: 6 != 4\nE         Right contains 2 more items, first extra item: 5\nE         Use -v to get more diff\n\ntests/test_tree.py:12: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_seqs.py::test_second - AssertionError: assert 'z' == 'y'\nFAILED tests/test_seqs.py::test_iterpose - AssertionError: assert ['.', 'b', ...\nFAILED tests/test_tree.py::test_tree_leaves - assert [6] == [4, 5, 6]\n3 failed, 292 passed in 0.89s\n"
+      }
+    ]
+  },
+  "oracle": {
+    "passed": false,
+    "duration_ms": 87.442041,
+    "exit_code": 1,
+    "output": "Traceback (most recent call last):\n  File \"/private<repository>/reflex_oracle.py\", line 4, in <module>\n    assert second('xyz') == 'y'\n           ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  }
+}

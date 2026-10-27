@@ -1,0 +1,4813 @@
+{
+  "model_digest": "ae0ff4ce5c6844d33a0b7f54b6ee5bf908bb6b11207e8de6b6fe155c6b8d0c74",
+  "dataset_digest": "2328703487e2cd108e690a15f269c58ba5b302b539dede2c199750cfe42b47df",
+  "backend": "mlx",
+  "startup_ms": 3790.504375123419,
+  "model_startup_ms": 2241.7850421043113,
+  "screening_ms": 1548.7193330191076,
+  "predictions": {
+    "calibration-0000": {
+      "choice": "focused",
+      "confidence": 0.5492,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 384.93204198312014,
+      "probabilities": {
+        "focused": 0.5672,
+        "full": 0.4328
+      },
+      "backend": "mlx"
+    },
+    "calibration-0001": {
+      "choice": "full",
+      "confidence": 0.5035,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 112.78266599401832,
+      "probabilities": {
+        "focused": 0.4711,
+        "full": 0.5289
+      },
+      "backend": "mlx"
+    },
+    "calibration-0002": {
+      "choice": "focused",
+      "confidence": 0.718,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 142.44804193731397,
+      "probabilities": {
+        "focused": 0.7787,
+        "full": 0.2213
+      },
+      "backend": "mlx"
+    },
+    "calibration-0003": {
+      "choice": "full",
+      "confidence": 0.5025,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 188.46241699066013,
+      "probabilities": {
+        "focused": 0.4975,
+        "full": 0.5025
+      },
+      "backend": "mlx"
+    },
+    "calibration-0004": {
+      "choice": "focused",
+      "confidence": 0.5364,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 153.78262498416007,
+      "probabilities": {
+        "focused": 0.588,
+        "full": 0.412
+      },
+      "backend": "mlx"
+    },
+    "calibration-0005": {
+      "choice": "full",
+      "confidence": 0.5609,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 217.34537498559803,
+      "probabilities": {
+        "focused": 0.4391,
+        "full": 0.5609
+      },
+      "backend": "mlx"
+    },
+    "calibration-0006": {
+      "choice": "focused",
+      "confidence": 0.6036,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 176.10337503720075,
+      "probabilities": {
+        "focused": 0.6085,
+        "full": 0.3915
+      },
+      "backend": "mlx"
+    },
+    "calibration-0007": {
+      "choice": "focused",
+      "confidence": 0.5029,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 146.4113330002874,
+      "probabilities": {
+        "focused": 0.5093,
+        "full": 0.4907
+      },
+      "backend": "mlx"
+    },
+    "calibration-0008": {
+      "choice": "focused",
+      "confidence": 0.5458,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 133.34675005171448,
+      "probabilities": {
+        "focused": 0.5677,
+        "full": 0.4323
+      },
+      "backend": "mlx"
+    },
+    "calibration-0009": {
+      "choice": "full",
+      "confidence": 0.5047,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 109.39954197965562,
+      "probabilities": {
+        "focused": 0.4716,
+        "full": 0.5284
+      },
+      "backend": "mlx"
+    },
+    "calibration-0010": {
+      "choice": "focused",
+      "confidence": 0.7155,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 388.724833028391,
+      "probabilities": {
+        "focused": 0.7783,
+        "full": 0.2217
+      },
+      "backend": "mlx"
+    },
+    "calibration-0011": {
+      "choice": "full",
+      "confidence": 0.5081,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 141.30470890086144,
+      "probabilities": {
+        "focused": 0.4919,
+        "full": 0.5081
+      },
+      "backend": "mlx"
+    },
+    "calibration-0012": {
+      "choice": "focused",
+      "confidence": 0.5358,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 188.9496659860015,
+      "probabilities": {
+        "focused": 0.5864,
+        "full": 0.4136
+      },
+      "backend": "mlx"
+    },
+    "calibration-0013": {
+      "choice": "full",
+      "confidence": 0.5671,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 253.77312500495464,
+      "probabilities": {
+        "focused": 0.4329,
+        "full": 0.5671
+      },
+      "backend": "mlx"
+    },
+    "calibration-0014": {
+      "choice": "focused",
+      "confidence": 0.6046,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 279.6788339037448,
+      "probabilities": {
+        "focused": 0.6055,
+        "full": 0.3945
+      },
+      "backend": "mlx"
+    },
+    "calibration-0015": {
+      "choice": "focused",
+      "confidence": 0.5003,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 214.8517919704318,
+      "probabilities": {
+        "focused": 0.5089,
+        "full": 0.4911
+      },
+      "backend": "mlx"
+    },
+    "calibration-0016": {
+      "choice": "focused",
+      "confidence": 0.5426,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 113.7203749967739,
+      "probabilities": {
+        "focused": 0.5658,
+        "full": 0.4342
+      },
+      "backend": "mlx"
+    },
+    "calibration-0017": {
+      "choice": "full",
+      "confidence": 0.5006,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 279.1288330918178,
+      "probabilities": {
+        "focused": 0.467,
+        "full": 0.533
+      },
+      "backend": "mlx"
+    },
+    "calibration-0018": {
+      "choice": "focused",
+      "confidence": 0.7155,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 221.81641694623977,
+      "probabilities": {
+        "focused": 0.7794,
+        "full": 0.2206
+      },
+      "backend": "mlx"
+    },
+    "calibration-0019": {
+      "choice": "full",
+      "confidence": 0.5013,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 177.88112501148134,
+      "probabilities": {
+        "focused": 0.4987,
+        "full": 0.5013
+      },
+      "backend": "mlx"
+    },
+    "calibration-0020": {
+      "choice": "focused",
+      "confidence": 0.5371,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 215.63195809721947,
+      "probabilities": {
+        "focused": 0.587,
+        "full": 0.413
+      },
+      "backend": "mlx"
+    },
+    "calibration-0021": {
+      "choice": "full",
+      "confidence": 0.5725,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 152.080790954642,
+      "probabilities": {
+        "focused": 0.4275,
+        "full": 0.5725
+      },
+      "backend": "mlx"
+    },
+    "calibration-0022": {
+      "choice": "focused",
+      "confidence": 0.5984,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 120.62699999660254,
+      "probabilities": {
+        "focused": 0.6012,
+        "full": 0.3988
+      },
+      "backend": "mlx"
+    },
+    "calibration-0023": {
+      "choice": "focused",
+      "confidence": 0.5023,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 227.0143749192357,
+      "probabilities": {
+        "focused": 0.5105,
+        "full": 0.4895
+      },
+      "backend": "mlx"
+    },
+    "calibration-0024": {
+      "choice": "focused",
+      "confidence": 0.5499,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 232.4842499801889,
+      "probabilities": {
+        "focused": 0.5709,
+        "full": 0.4291
+      },
+      "backend": "mlx"
+    },
+    "calibration-0025": {
+      "choice": "full",
+      "confidence": 0.5036,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 218.57437503058463,
+      "probabilities": {
+        "focused": 0.4764,
+        "full": 0.5236
+      },
+      "backend": "mlx"
+    },
+    "calibration-0026": {
+      "choice": "focused",
+      "confidence": 0.7135,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 214.13350000511855,
+      "probabilities": {
+        "focused": 0.785,
+        "full": 0.215
+      },
+      "backend": "mlx"
+    },
+    "calibration-0027": {
+      "choice": "full",
+      "confidence": 0.5064,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 179.47574995923787,
+      "probabilities": {
+        "focused": 0.4936,
+        "full": 0.5064
+      },
+      "backend": "mlx"
+    },
+    "calibration-0028": {
+      "choice": "focused",
+      "confidence": 0.5348,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 135.1988340029493,
+      "probabilities": {
+        "focused": 0.5824,
+        "full": 0.4176
+      },
+      "backend": "mlx"
+    },
+    "calibration-0029": {
+      "choice": "full",
+      "confidence": 0.5692,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 371.80512491613626,
+      "probabilities": {
+        "focused": 0.4299,
+        "full": 0.5701
+      },
+      "backend": "mlx"
+    },
+    "calibration-0030": {
+      "choice": "focused",
+      "confidence": 0.6005,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 169.48370798490942,
+      "probabilities": {
+        "focused": 0.6018,
+        "full": 0.3982
+      },
+      "backend": "mlx"
+    },
+    "calibration-0031": {
+      "choice": "focused",
+      "confidence": 0.5047,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 230.83966597914696,
+      "probabilities": {
+        "focused": 0.5092,
+        "full": 0.4908
+      },
+      "backend": "mlx"
+    },
+    "calibration-0032": {
+      "choice": "focused",
+      "confidence": 0.5457,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 317.39770888816565,
+      "probabilities": {
+        "focused": 0.5667,
+        "full": 0.4333
+      },
+      "backend": "mlx"
+    },
+    "calibration-0033": {
+      "choice": "full",
+      "confidence": 0.5027,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 148.86970806401223,
+      "probabilities": {
+        "focused": 0.4746,
+        "full": 0.5254
+      },
+      "backend": "mlx"
+    },
+    "calibration-0034": {
+      "choice": "focused",
+      "confidence": 0.7157,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 872.1150830388069,
+      "probabilities": {
+        "focused": 0.7846,
+        "full": 0.2154
+      },
+      "backend": "mlx"
+    },
+    "calibration-0035": {
+      "choice": "full",
+      "confidence": 0.5097,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 224.5665000518784,
+      "probabilities": {
+        "focused": 0.4903,
+        "full": 0.5097
+      },
+      "backend": "mlx"
+    },
+    "calibration-0036": {
+      "choice": "focused",
+      "confidence": 0.5315,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 87.56537502631545,
+      "probabilities": {
+        "focused": 0.576,
+        "full": 0.424
+      },
+      "backend": "mlx"
+    },
+    "calibration-0037": {
+      "choice": "full",
+      "confidence": 0.5686,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 94.1440419992432,
+      "probabilities": {
+        "focused": 0.4284,
+        "full": 0.5716
+      },
+      "backend": "mlx"
+    },
+    "calibration-0038": {
+      "choice": "focused",
+      "confidence": 0.6024,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 105.76816601678729,
+      "probabilities": {
+        "focused": 0.6073,
+        "full": 0.3927
+      },
+      "backend": "mlx"
+    },
+    "calibration-0039": {
+      "choice": "focused",
+      "confidence": 0.509,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 116.01283401250839,
+      "probabilities": {
+        "focused": 0.5115,
+        "full": 0.4885
+      },
+      "backend": "mlx"
+    },
+    "calibration-0040": {
+      "choice": "focused",
+      "confidence": 0.5467,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 389.67366598080844,
+      "probabilities": {
+        "focused": 0.5675,
+        "full": 0.4325
+      },
+      "backend": "mlx"
+    },
+    "calibration-0041": {
+      "choice": "full",
+      "confidence": 0.5027,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 339.2232080223039,
+      "probabilities": {
+        "focused": 0.4744,
+        "full": 0.5256
+      },
+      "backend": "mlx"
+    },
+    "calibration-0042": {
+      "choice": "focused",
+      "confidence": 0.7163,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 252.08120793104172,
+      "probabilities": {
+        "focused": 0.785,
+        "full": 0.215
+      },
+      "backend": "mlx"
+    },
+    "calibration-0043": {
+      "choice": "full",
+      "confidence": 0.5069,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 146.39545907266438,
+      "probabilities": {
+        "focused": 0.4931,
+        "full": 0.5069
+      },
+      "backend": "mlx"
+    },
+    "calibration-0044": {
+      "choice": "focused",
+      "confidence": 0.5388,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 268.38191703427583,
+      "probabilities": {
+        "focused": 0.582,
+        "full": 0.418
+      },
+      "backend": "mlx"
+    },
+    "calibration-0045": {
+      "choice": "full",
+      "confidence": 0.5678,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 232.7255840646103,
+      "probabilities": {
+        "focused": 0.43,
+        "full": 0.57
+      },
+      "backend": "mlx"
+    },
+    "calibration-0046": {
+      "choice": "focused",
+      "confidence": 0.6006,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 160.15416698064655,
+      "probabilities": {
+        "focused": 0.6083,
+        "full": 0.3917
+      },
+      "backend": "mlx"
+    },
+    "calibration-0047": {
+      "choice": "focused",
+      "confidence": 0.5041,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 435.7318750116974,
+      "probabilities": {
+        "focused": 0.5102,
+        "full": 0.4898
+      },
+      "backend": "mlx"
+    },
+    "calibration-0048": {
+      "choice": "focused",
+      "confidence": 0.5461,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 286.7464170558378,
+      "probabilities": {
+        "focused": 0.5664,
+        "full": 0.4336
+      },
+      "backend": "mlx"
+    },
+    "calibration-0049": {
+      "choice": "full",
+      "confidence": 0.5025,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 127.90270801633596,
+      "probabilities": {
+        "focused": 0.4708,
+        "full": 0.5292
+      },
+      "backend": "mlx"
+    },
+    "calibration-0050": {
+      "choice": "focused",
+      "confidence": 0.7187,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 282.69654093310237,
+      "probabilities": {
+        "focused": 0.7849,
+        "full": 0.2151
+      },
+      "backend": "mlx"
+    },
+    "calibration-0051": {
+      "choice": "full",
+      "confidence": 0.5138,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 296.8222920317203,
+      "probabilities": {
+        "focused": 0.4862,
+        "full": 0.5138
+      },
+      "backend": "mlx"
+    },
+    "calibration-0052": {
+      "choice": "focused",
+      "confidence": 0.5315,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 143.61479203216732,
+      "probabilities": {
+        "focused": 0.577,
+        "full": 0.423
+      },
+      "backend": "mlx"
+    },
+    "calibration-0053": {
+      "choice": "full",
+      "confidence": 0.5535,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 225.20266694482416,
+      "probabilities": {
+        "focused": 0.4465,
+        "full": 0.5535
+      },
+      "backend": "mlx"
+    },
+    "calibration-0054": {
+      "choice": "focused",
+      "confidence": 0.6041,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 216.49245906155556,
+      "probabilities": {
+        "focused": 0.6105,
+        "full": 0.3895
+      },
+      "backend": "mlx"
+    },
+    "calibration-0055": {
+      "choice": "focused",
+      "confidence": 0.5,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 148.7939590588212,
+      "probabilities": {
+        "focused": 0.5106,
+        "full": 0.4894
+      },
+      "backend": "mlx"
+    },
+    "calibration-0056": {
+      "choice": "focused",
+      "confidence": 0.5423,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 202.07975001540035,
+      "probabilities": {
+        "focused": 0.5665,
+        "full": 0.4335
+      },
+      "backend": "mlx"
+    },
+    "calibration-0057": {
+      "choice": "full",
+      "confidence": 0.5008,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 331.9164999993518,
+      "probabilities": {
+        "focused": 0.4689,
+        "full": 0.5311
+      },
+      "backend": "mlx"
+    },
+    "calibration-0058": {
+      "choice": "focused",
+      "confidence": 0.7138,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 192.80325004365295,
+      "probabilities": {
+        "focused": 0.779,
+        "full": 0.221
+      },
+      "backend": "mlx"
+    },
+    "calibration-0059": {
+      "choice": "full",
+      "confidence": 0.5119,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 191.4473749930039,
+      "probabilities": {
+        "focused": 0.484,
+        "full": 0.516
+      },
+      "backend": "mlx"
+    },
+    "promotion-0000": {
+      "choice": "focused",
+      "confidence": 0.5482,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 146.47083391901106,
+      "probabilities": {
+        "focused": 0.5619,
+        "full": 0.4381
+      },
+      "backend": "mlx"
+    },
+    "promotion-0001": {
+      "choice": "full",
+      "confidence": 0.5008,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 161.06512502301484,
+      "probabilities": {
+        "focused": 0.4684,
+        "full": 0.5316
+      },
+      "backend": "mlx"
+    },
+    "promotion-0002": {
+      "choice": "focused",
+      "confidence": 0.7118,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 216.78833395708352,
+      "probabilities": {
+        "focused": 0.7778,
+        "full": 0.2222
+      },
+      "backend": "mlx"
+    },
+    "promotion-0003": {
+      "choice": "full",
+      "confidence": 0.5075,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 261.22849993407726,
+      "probabilities": {
+        "focused": 0.4925,
+        "full": 0.5075
+      },
+      "backend": "mlx"
+    },
+    "promotion-0004": {
+      "choice": "focused",
+      "confidence": 0.535,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 158.1050839740783,
+      "probabilities": {
+        "focused": 0.5915,
+        "full": 0.4085
+      },
+      "backend": "mlx"
+    },
+    "promotion-0005": {
+      "choice": "full",
+      "confidence": 0.5721,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 268.165040994063,
+      "probabilities": {
+        "focused": 0.4279,
+        "full": 0.5721
+      },
+      "backend": "mlx"
+    },
+    "promotion-0006": {
+      "choice": "focused",
+      "confidence": 0.6023,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 126.23566598631442,
+      "probabilities": {
+        "focused": 0.6114,
+        "full": 0.3886
+      },
+      "backend": "mlx"
+    },
+    "promotion-0007": {
+      "choice": "focused",
+      "confidence": 0.5016,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 176.76149995531887,
+      "probabilities": {
+        "focused": 0.5034,
+        "full": 0.4966
+      },
+      "backend": "mlx"
+    },
+    "promotion-0008": {
+      "choice": "focused",
+      "confidence": 0.5465,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 139.0970000065863,
+      "probabilities": {
+        "focused": 0.5673,
+        "full": 0.4327
+      },
+      "backend": "mlx"
+    },
+    "promotion-0009": {
+      "choice": "full",
+      "confidence": 0.5011,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 334.53916595317423,
+      "probabilities": {
+        "focused": 0.4698,
+        "full": 0.5302
+      },
+      "backend": "mlx"
+    },
+    "promotion-0010": {
+      "choice": "focused",
+      "confidence": 0.7099,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 163.97716698702425,
+      "probabilities": {
+        "focused": 0.7773,
+        "full": 0.2227
+      },
+      "backend": "mlx"
+    },
+    "promotion-0011": {
+      "choice": "full",
+      "confidence": 0.5129,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 169.6933329803869,
+      "probabilities": {
+        "focused": 0.4871,
+        "full": 0.5129
+      },
+      "backend": "mlx"
+    },
+    "promotion-0012": {
+      "choice": "focused",
+      "confidence": 0.5302,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 197.6821250282228,
+      "probabilities": {
+        "focused": 0.581,
+        "full": 0.419
+      },
+      "backend": "mlx"
+    },
+    "promotion-0013": {
+      "choice": "full",
+      "confidence": 0.5725,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 243.74387494754046,
+      "probabilities": {
+        "focused": 0.4256,
+        "full": 0.5744
+      },
+      "backend": "mlx"
+    },
+    "promotion-0014": {
+      "choice": "focused",
+      "confidence": 0.6008,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 172.56345797795802,
+      "probabilities": {
+        "focused": 0.6069,
+        "full": 0.3931
+      },
+      "backend": "mlx"
+    },
+    "promotion-0015": {
+      "choice": "focused",
+      "confidence": 0.5006,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 169.77312497328967,
+      "probabilities": {
+        "focused": 0.5036,
+        "full": 0.4964
+      },
+      "backend": "mlx"
+    },
+    "promotion-0016": {
+      "choice": "focused",
+      "confidence": 0.5444,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 154.34195892885327,
+      "probabilities": {
+        "focused": 0.5668,
+        "full": 0.4332
+      },
+      "backend": "mlx"
+    },
+    "promotion-0017": {
+      "choice": "full",
+      "confidence": 0.5037,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 243.7324159545824,
+      "probabilities": {
+        "focused": 0.466,
+        "full": 0.534
+      },
+      "backend": "mlx"
+    },
+    "promotion-0018": {
+      "choice": "focused",
+      "confidence": 0.7131,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 233.32729109097272,
+      "probabilities": {
+        "focused": 0.7796,
+        "full": 0.2204
+      },
+      "backend": "mlx"
+    },
+    "promotion-0019": {
+      "choice": "full",
+      "confidence": 0.5072,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 158.31562504172325,
+      "probabilities": {
+        "focused": 0.4928,
+        "full": 0.5072
+      },
+      "backend": "mlx"
+    },
+    "promotion-0020": {
+      "choice": "focused",
+      "confidence": 0.5353,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 111.20041704270989,
+      "probabilities": {
+        "focused": 0.5888,
+        "full": 0.4112
+      },
+      "backend": "mlx"
+    },
+    "promotion-0021": {
+      "choice": "full",
+      "confidence": 0.578,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 163.2071250351146,
+      "probabilities": {
+        "focused": 0.422,
+        "full": 0.578
+      },
+      "backend": "mlx"
+    },
+    "promotion-0022": {
+      "choice": "focused",
+      "confidence": 0.5996,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 130.42012508958578,
+      "probabilities": {
+        "focused": 0.6003,
+        "full": 0.3997
+      },
+      "backend": "mlx"
+    },
+    "promotion-0023": {
+      "choice": "focused",
+      "confidence": 0.5002,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 138.07220803573728,
+      "probabilities": {
+        "focused": 0.5092,
+        "full": 0.4908
+      },
+      "backend": "mlx"
+    },
+    "promotion-0024": {
+      "choice": "focused",
+      "confidence": 0.5491,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 207.66470790840685,
+      "probabilities": {
+        "focused": 0.571,
+        "full": 0.429
+      },
+      "backend": "mlx"
+    },
+    "promotion-0025": {
+      "choice": "full",
+      "confidence": 0.5023,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 129.74095798563212,
+      "probabilities": {
+        "focused": 0.4684,
+        "full": 0.5316
+      },
+      "backend": "mlx"
+    },
+    "promotion-0026": {
+      "choice": "focused",
+      "confidence": 0.7109,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 168.09874994214624,
+      "probabilities": {
+        "focused": 0.7832,
+        "full": 0.2168
+      },
+      "backend": "mlx"
+    },
+    "promotion-0027": {
+      "choice": "full",
+      "confidence": 0.5106,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 224.3084590882063,
+      "probabilities": {
+        "focused": 0.4894,
+        "full": 0.5106
+      },
+      "backend": "mlx"
+    },
+    "promotion-0028": {
+      "choice": "focused",
+      "confidence": 0.5331,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 134.66962496750057,
+      "probabilities": {
+        "focused": 0.585,
+        "full": 0.415
+      },
+      "backend": "mlx"
+    },
+    "promotion-0029": {
+      "choice": "full",
+      "confidence": 0.5739,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 181.90129194408655,
+      "probabilities": {
+        "focused": 0.4261,
+        "full": 0.5739
+      },
+      "backend": "mlx"
+    },
+    "promotion-0030": {
+      "choice": "focused",
+      "confidence": 0.6019,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 133.67066602222621,
+      "probabilities": {
+        "focused": 0.6054,
+        "full": 0.3946
+      },
+      "backend": "mlx"
+    },
+    "promotion-0031": {
+      "choice": "focused",
+      "confidence": 0.5027,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 361.9972920278087,
+      "probabilities": {
+        "focused": 0.5091,
+        "full": 0.4909
+      },
+      "backend": "mlx"
+    },
+    "promotion-0032": {
+      "choice": "focused",
+      "confidence": 0.5437,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 152.09304203744978,
+      "probabilities": {
+        "focused": 0.566,
+        "full": 0.434
+      },
+      "backend": "mlx"
+    },
+    "promotion-0033": {
+      "choice": "full",
+      "confidence": 0.5025,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 188.54800006374717,
+      "probabilities": {
+        "focused": 0.4674,
+        "full": 0.5326
+      },
+      "backend": "mlx"
+    },
+    "promotion-0034": {
+      "choice": "focused",
+      "confidence": 0.713,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 155.82387510221452,
+      "probabilities": {
+        "focused": 0.7834,
+        "full": 0.2166
+      },
+      "backend": "mlx"
+    },
+    "promotion-0035": {
+      "choice": "full",
+      "confidence": 0.5139,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 171.1417919723317,
+      "probabilities": {
+        "focused": 0.4861,
+        "full": 0.5139
+      },
+      "backend": "mlx"
+    },
+    "promotion-0036": {
+      "choice": "focused",
+      "confidence": 0.5307,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 167.73287509568036,
+      "probabilities": {
+        "focused": 0.5819,
+        "full": 0.4181
+      },
+      "backend": "mlx"
+    },
+    "promotion-0037": {
+      "choice": "full",
+      "confidence": 0.5739,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 127.03720794524997,
+      "probabilities": {
+        "focused": 0.4257,
+        "full": 0.5743
+      },
+      "backend": "mlx"
+    },
+    "promotion-0038": {
+      "choice": "focused",
+      "confidence": 0.6046,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 136.40625006519258,
+      "probabilities": {
+        "focused": 0.6061,
+        "full": 0.3939
+      },
+      "backend": "mlx"
+    },
+    "promotion-0039": {
+      "choice": "focused",
+      "confidence": 0.5069,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 150.7782080443576,
+      "probabilities": {
+        "focused": 0.5117,
+        "full": 0.4883
+      },
+      "backend": "mlx"
+    },
+    "promotion-0040": {
+      "choice": "focused",
+      "confidence": 0.5455,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 175.64158304594457,
+      "probabilities": {
+        "focused": 0.5665,
+        "full": 0.4335
+      },
+      "backend": "mlx"
+    },
+    "promotion-0041": {
+      "choice": "full",
+      "confidence": 0.5001,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 169.75920798722655,
+      "probabilities": {
+        "focused": 0.4707,
+        "full": 0.5293
+      },
+      "backend": "mlx"
+    },
+    "promotion-0042": {
+      "choice": "focused",
+      "confidence": 0.7154,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 169.53554097563028,
+      "probabilities": {
+        "focused": 0.7809,
+        "full": 0.2191
+      },
+      "backend": "mlx"
+    },
+    "promotion-0043": {
+      "choice": "full",
+      "confidence": 0.5083,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 155.9157919837162,
+      "probabilities": {
+        "focused": 0.4917,
+        "full": 0.5083
+      },
+      "backend": "mlx"
+    },
+    "promotion-0044": {
+      "choice": "focused",
+      "confidence": 0.5361,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 130.317333037965,
+      "probabilities": {
+        "focused": 0.5852,
+        "full": 0.4148
+      },
+      "backend": "mlx"
+    },
+    "promotion-0045": {
+      "choice": "full",
+      "confidence": 0.5751,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 153.8986669620499,
+      "probabilities": {
+        "focused": 0.4249,
+        "full": 0.5751
+      },
+      "backend": "mlx"
+    },
+    "promotion-0046": {
+      "choice": "focused",
+      "confidence": 0.6085,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 292.14666702318937,
+      "probabilities": {
+        "focused": 0.6104,
+        "full": 0.3896
+      },
+      "backend": "mlx"
+    },
+    "promotion-0047": {
+      "choice": "focused",
+      "confidence": 0.5015,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 277.4134170031175,
+      "probabilities": {
+        "focused": 0.5065,
+        "full": 0.4935
+      },
+      "backend": "mlx"
+    },
+    "promotion-0048": {
+      "choice": "focused",
+      "confidence": 0.5479,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 298.8158749649301,
+      "probabilities": {
+        "focused": 0.5654,
+        "full": 0.4346
+      },
+      "backend": "mlx"
+    },
+    "promotion-0049": {
+      "choice": "full",
+      "confidence": 0.5015,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 129.6557909809053,
+      "probabilities": {
+        "focused": 0.471,
+        "full": 0.529
+      },
+      "backend": "mlx"
+    },
+    "promotion-0050": {
+      "choice": "focused",
+      "confidence": 0.7119,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 209.36062501277775,
+      "probabilities": {
+        "focused": 0.7812,
+        "full": 0.2188
+      },
+      "backend": "mlx"
+    },
+    "promotion-0051": {
+      "choice": "full",
+      "confidence": 0.5185,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 224.84662500210106,
+      "probabilities": {
+        "focused": 0.4815,
+        "full": 0.5185
+      },
+      "backend": "mlx"
+    },
+    "promotion-0052": {
+      "choice": "focused",
+      "confidence": 0.5288,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 172.01512504834682,
+      "probabilities": {
+        "focused": 0.5779,
+        "full": 0.4221
+      },
+      "backend": "mlx"
+    },
+    "promotion-0053": {
+      "choice": "full",
+      "confidence": 0.5655,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 180.89179194066674,
+      "probabilities": {
+        "focused": 0.4345,
+        "full": 0.5655
+      },
+      "backend": "mlx"
+    },
+    "promotion-0054": {
+      "choice": "focused",
+      "confidence": 0.6015,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 176.69808398932219,
+      "probabilities": {
+        "focused": 0.6108,
+        "full": 0.3892
+      },
+      "backend": "mlx"
+    },
+    "promotion-0055": {
+      "choice": "focused",
+      "confidence": 0.5014,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 136.43712492194027,
+      "probabilities": {
+        "focused": 0.506,
+        "full": 0.494
+      },
+      "backend": "mlx"
+    },
+    "promotion-0056": {
+      "choice": "focused",
+      "confidence": 0.5445,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 154.83708295505494,
+      "probabilities": {
+        "focused": 0.5634,
+        "full": 0.4366
+      },
+      "backend": "mlx"
+    },
+    "promotion-0057": {
+      "choice": "full",
+      "confidence": 0.502,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 117.30191705282778,
+      "probabilities": {
+        "focused": 0.4683,
+        "full": 0.5317
+      },
+      "backend": "mlx"
+    },
+    "promotion-0058": {
+      "choice": "focused",
+      "confidence": 0.7118,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 138.67666700389236,
+      "probabilities": {
+        "focused": 0.7797,
+        "full": 0.2203
+      },
+      "backend": "mlx"
+    },
+    "promotion-0059": {
+      "choice": "full",
+      "confidence": 0.5164,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 351.22212499845773,
+      "probabilities": {
+        "focused": 0.4813,
+        "full": 0.5187
+      },
+      "backend": "mlx"
+    },
+    "test-0000": {
+      "choice": "focused",
+      "confidence": 0.5492,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 235.22995796520263,
+      "probabilities": {
+        "focused": 0.568,
+        "full": 0.432
+      },
+      "backend": "mlx"
+    },
+    "test-0001": {
+      "choice": "full",
+      "confidence": 0.5033,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 208.93087494187057,
+      "probabilities": {
+        "focused": 0.4746,
+        "full": 0.5254
+      },
+      "backend": "mlx"
+    },
+    "test-0002": {
+      "choice": "focused",
+      "confidence": 0.7172,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 154.80966703034937,
+      "probabilities": {
+        "focused": 0.7812,
+        "full": 0.2188
+      },
+      "backend": "mlx"
+    },
+    "test-0003": {
+      "choice": "full",
+      "confidence": 0.5052,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 457.40037492942065,
+      "probabilities": {
+        "focused": 0.4948,
+        "full": 0.5052
+      },
+      "backend": "mlx"
+    },
+    "test-0004": {
+      "choice": "focused",
+      "confidence": 0.5374,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 129.9782081041485,
+      "probabilities": {
+        "focused": 0.5918,
+        "full": 0.4082
+      },
+      "backend": "mlx"
+    },
+    "test-0005": {
+      "choice": "full",
+      "confidence": 0.5673,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 140.94116701744497,
+      "probabilities": {
+        "focused": 0.4327,
+        "full": 0.5673
+      },
+      "backend": "mlx"
+    },
+    "test-0006": {
+      "choice": "focused",
+      "confidence": 0.5998,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 156.19437501300126,
+      "probabilities": {
+        "focused": 0.6034,
+        "full": 0.3966
+      },
+      "backend": "mlx"
+    },
+    "test-0007": {
+      "choice": "focused",
+      "confidence": 0.5029,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 147.43512496352196,
+      "probabilities": {
+        "focused": 0.5126,
+        "full": 0.4874
+      },
+      "backend": "mlx"
+    },
+    "test-0008": {
+      "choice": "focused",
+      "confidence": 0.5472,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 129.5200000749901,
+      "probabilities": {
+        "focused": 0.5677,
+        "full": 0.4323
+      },
+      "backend": "mlx"
+    },
+    "test-0009": {
+      "choice": "full",
+      "confidence": 0.5045,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 167.4195829546079,
+      "probabilities": {
+        "focused": 0.4712,
+        "full": 0.5288
+      },
+      "backend": "mlx"
+    },
+    "test-0010": {
+      "choice": "focused",
+      "confidence": 0.714,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 138.87587503995746,
+      "probabilities": {
+        "focused": 0.7798,
+        "full": 0.2202
+      },
+      "backend": "mlx"
+    },
+    "test-0011": {
+      "choice": "full",
+      "confidence": 0.5045,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 156.6854170523584,
+      "probabilities": {
+        "focused": 0.4955,
+        "full": 0.5045
+      },
+      "backend": "mlx"
+    },
+    "test-0012": {
+      "choice": "focused",
+      "confidence": 0.5365,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 161.6541660623625,
+      "probabilities": {
+        "focused": 0.5874,
+        "full": 0.4126
+      },
+      "backend": "mlx"
+    },
+    "test-0013": {
+      "choice": "full",
+      "confidence": 0.5671,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 172.61124996002764,
+      "probabilities": {
+        "focused": 0.4285,
+        "full": 0.5715
+      },
+      "backend": "mlx"
+    },
+    "test-0014": {
+      "choice": "focused",
+      "confidence": 0.6013,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 358.4920410066843,
+      "probabilities": {
+        "focused": 0.6025,
+        "full": 0.3975
+      },
+      "backend": "mlx"
+    },
+    "test-0015": {
+      "choice": "focused",
+      "confidence": 0.5003,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 150.58558294549584,
+      "probabilities": {
+        "focused": 0.5113,
+        "full": 0.4887
+      },
+      "backend": "mlx"
+    },
+    "test-0016": {
+      "choice": "focused",
+      "confidence": 0.544,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 185.02808292396367,
+      "probabilities": {
+        "focused": 0.5655,
+        "full": 0.4345
+      },
+      "backend": "mlx"
+    },
+    "test-0017": {
+      "choice": "full",
+      "confidence": 0.502,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 133.98116594180465,
+      "probabilities": {
+        "focused": 0.4676,
+        "full": 0.5324
+      },
+      "backend": "mlx"
+    },
+    "test-0018": {
+      "choice": "focused",
+      "confidence": 0.7165,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 145.00183297786862,
+      "probabilities": {
+        "focused": 0.781,
+        "full": 0.219
+      },
+      "backend": "mlx"
+    },
+    "test-0019": {
+      "choice": "full",
+      "confidence": 0.5002,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 315.70016709156334,
+      "probabilities": {
+        "focused": 0.4998,
+        "full": 0.5002
+      },
+      "backend": "mlx"
+    },
+    "test-0020": {
+      "choice": "focused",
+      "confidence": 0.5444,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 277.41783403325826,
+      "probabilities": {
+        "focused": 0.5866,
+        "full": 0.4134
+      },
+      "backend": "mlx"
+    },
+    "test-0021": {
+      "choice": "full",
+      "confidence": 0.5725,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 295.1269999612123,
+      "probabilities": {
+        "focused": 0.4275,
+        "full": 0.5725
+      },
+      "backend": "mlx"
+    },
+    "test-0022": {
+      "choice": "focused",
+      "confidence": 0.5982,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 213.58312503434718,
+      "probabilities": {
+        "focused": 0.5982,
+        "full": 0.4018
+      },
+      "backend": "mlx"
+    },
+    "test-0023": {
+      "choice": "focused",
+      "confidence": 0.5052,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 308.0584170529619,
+      "probabilities": {
+        "focused": 0.5069,
+        "full": 0.4931
+      },
+      "backend": "mlx"
+    },
+    "test-0024": {
+      "choice": "focused",
+      "confidence": 0.5504,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 205.577457905747,
+      "probabilities": {
+        "focused": 0.5657,
+        "full": 0.4343
+      },
+      "backend": "mlx"
+    },
+    "test-0025": {
+      "choice": "full",
+      "confidence": 0.5006,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 246.79579201620072,
+      "probabilities": {
+        "focused": 0.4614,
+        "full": 0.5386
+      },
+      "backend": "mlx"
+    },
+    "test-0026": {
+      "choice": "focused",
+      "confidence": 0.7144,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 102.20870794728398,
+      "probabilities": {
+        "focused": 0.7855,
+        "full": 0.2145
+      },
+      "backend": "mlx"
+    },
+    "test-0027": {
+      "choice": "full",
+      "confidence": 0.5198,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 232.35758405644447,
+      "probabilities": {
+        "focused": 0.4802,
+        "full": 0.5198
+      },
+      "backend": "mlx"
+    },
+    "test-0028": {
+      "choice": "focused",
+      "confidence": 0.5388,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 223.98904198780656,
+      "probabilities": {
+        "focused": 0.5784,
+        "full": 0.4216
+      },
+      "backend": "mlx"
+    },
+    "test-0029": {
+      "choice": "full",
+      "confidence": 0.5723,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 169.2666249582544,
+      "probabilities": {
+        "focused": 0.4253,
+        "full": 0.5747
+      },
+      "backend": "mlx"
+    },
+    "test-0030": {
+      "choice": "focused",
+      "confidence": 0.6014,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 296.61312501411885,
+      "probabilities": {
+        "focused": 0.6014,
+        "full": 0.3986
+      },
+      "backend": "mlx"
+    },
+    "test-0031": {
+      "choice": "focused",
+      "confidence": 0.503,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 163.03029202390462,
+      "probabilities": {
+        "focused": 0.503,
+        "full": 0.497
+      },
+      "backend": "mlx"
+    },
+    "test-0032": {
+      "choice": "focused",
+      "confidence": 0.5463,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 169.5484579540789,
+      "probabilities": {
+        "focused": 0.5568,
+        "full": 0.4432
+      },
+      "backend": "mlx"
+    },
+    "test-0033": {
+      "choice": "full",
+      "confidence": 0.5001,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 146.134415990673,
+      "probabilities": {
+        "focused": 0.462,
+        "full": 0.538
+      },
+      "backend": "mlx"
+    },
+    "test-0034": {
+      "choice": "focused",
+      "confidence": 0.7161,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 223.56037504505366,
+      "probabilities": {
+        "focused": 0.7833,
+        "full": 0.2167
+      },
+      "backend": "mlx"
+    },
+    "test-0035": {
+      "choice": "full",
+      "confidence": 0.522,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 398.02479196805507,
+      "probabilities": {
+        "focused": 0.478,
+        "full": 0.522
+      },
+      "backend": "mlx"
+    },
+    "test-0036": {
+      "choice": "focused",
+      "confidence": 0.5403,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 179.42504200618714,
+      "probabilities": {
+        "focused": 0.5768,
+        "full": 0.4232
+      },
+      "backend": "mlx"
+    },
+    "test-0037": {
+      "choice": "full",
+      "confidence": 0.5675,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 267.90225005242974,
+      "probabilities": {
+        "focused": 0.4303,
+        "full": 0.5697
+      },
+      "backend": "mlx"
+    },
+    "test-0038": {
+      "choice": "focused",
+      "confidence": 0.6025,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 281.2198750907555,
+      "probabilities": {
+        "focused": 0.6025,
+        "full": 0.3975
+      },
+      "backend": "mlx"
+    },
+    "test-0039": {
+      "choice": "focused",
+      "confidence": 0.5026,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 255.35187497735023,
+      "probabilities": {
+        "focused": 0.5026,
+        "full": 0.4974
+      },
+      "backend": "mlx"
+    },
+    "test-0040": {
+      "choice": "focused",
+      "confidence": 0.5481,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 171.43966699950397,
+      "probabilities": {
+        "focused": 0.5614,
+        "full": 0.4386
+      },
+      "backend": "mlx"
+    },
+    "test-0041": {
+      "choice": "full",
+      "confidence": 0.504,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 160.85195809137076,
+      "probabilities": {
+        "focused": 0.4695,
+        "full": 0.5305
+      },
+      "backend": "mlx"
+    },
+    "test-0042": {
+      "choice": "focused",
+      "confidence": 0.7168,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 400.632334058173,
+      "probabilities": {
+        "focused": 0.782,
+        "full": 0.218
+      },
+      "backend": "mlx"
+    },
+    "test-0043": {
+      "choice": "full",
+      "confidence": 0.5098,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 154.5759589644149,
+      "probabilities": {
+        "focused": 0.4902,
+        "full": 0.5098
+      },
+      "backend": "mlx"
+    },
+    "test-0044": {
+      "choice": "focused",
+      "confidence": 0.5442,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 106.58825002610683,
+      "probabilities": {
+        "focused": 0.5842,
+        "full": 0.4158
+      },
+      "backend": "mlx"
+    },
+    "test-0045": {
+      "choice": "full",
+      "confidence": 0.5685,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 194.27429197821766,
+      "probabilities": {
+        "focused": 0.4312,
+        "full": 0.5688
+      },
+      "backend": "mlx"
+    },
+    "test-0046": {
+      "choice": "focused",
+      "confidence": 0.6026,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 270.756124984473,
+      "probabilities": {
+        "focused": 0.6031,
+        "full": 0.3969
+      },
+      "backend": "mlx"
+    },
+    "test-0047": {
+      "choice": "focused",
+      "confidence": 0.5027,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 165.6695839483291,
+      "probabilities": {
+        "focused": 0.5157,
+        "full": 0.4843
+      },
+      "backend": "mlx"
+    },
+    "test-0048": {
+      "choice": "focused",
+      "confidence": 0.5484,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 276.98095806408674,
+      "probabilities": {
+        "focused": 0.5661,
+        "full": 0.4339
+      },
+      "backend": "mlx"
+    },
+    "test-0049": {
+      "choice": "full",
+      "confidence": 0.5055,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 147.0012910431251,
+      "probabilities": {
+        "focused": 0.4724,
+        "full": 0.5276
+      },
+      "backend": "mlx"
+    },
+    "test-0050": {
+      "choice": "focused",
+      "confidence": 0.7186,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 179.95191691443324,
+      "probabilities": {
+        "focused": 0.7857,
+        "full": 0.2143
+      },
+      "backend": "mlx"
+    },
+    "test-0051": {
+      "choice": "full",
+      "confidence": 0.5171,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 407.4569579679519,
+      "probabilities": {
+        "focused": 0.4829,
+        "full": 0.5171
+      },
+      "backend": "mlx"
+    },
+    "test-0052": {
+      "choice": "focused",
+      "confidence": 0.5326,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 272.4311250494793,
+      "probabilities": {
+        "focused": 0.5778,
+        "full": 0.4222
+      },
+      "backend": "mlx"
+    },
+    "test-0053": {
+      "choice": "full",
+      "confidence": 0.5598,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 280.02683399245143,
+      "probabilities": {
+        "focused": 0.4402,
+        "full": 0.5598
+      },
+      "backend": "mlx"
+    },
+    "test-0054": {
+      "choice": "focused",
+      "confidence": 0.6003,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 366.28370906692,
+      "probabilities": {
+        "focused": 0.6032,
+        "full": 0.3968
+      },
+      "backend": "mlx"
+    },
+    "test-0055": {
+      "choice": "focused",
+      "confidence": 0.5017,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 128.6875830264762,
+      "probabilities": {
+        "focused": 0.5109,
+        "full": 0.4891
+      },
+      "backend": "mlx"
+    },
+    "test-0056": {
+      "choice": "focused",
+      "confidence": 0.545,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 331.0264579486102,
+      "probabilities": {
+        "focused": 0.5667,
+        "full": 0.4333
+      },
+      "backend": "mlx"
+    },
+    "test-0057": {
+      "choice": "full",
+      "confidence": 0.5023,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 257.13079201523215,
+      "probabilities": {
+        "focused": 0.4688,
+        "full": 0.5312
+      },
+      "backend": "mlx"
+    },
+    "test-0058": {
+      "choice": "focused",
+      "confidence": 0.714,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 107.23462502937764,
+      "probabilities": {
+        "focused": 0.782,
+        "full": 0.218
+      },
+      "backend": "mlx"
+    },
+    "test-0059": {
+      "choice": "full",
+      "confidence": 0.5124,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 365.3193750651553,
+      "probabilities": {
+        "focused": 0.4857,
+        "full": 0.5143
+      },
+      "backend": "mlx"
+    },
+    "test-0060": {
+      "choice": "focused",
+      "confidence": 0.5414,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 103.1123340362683,
+      "probabilities": {
+        "focused": 0.58,
+        "full": 0.42
+      },
+      "backend": "mlx"
+    },
+    "test-0061": {
+      "choice": "full",
+      "confidence": 0.568,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 175.9574580937624,
+      "probabilities": {
+        "focused": 0.4301,
+        "full": 0.5699
+      },
+      "backend": "mlx"
+    },
+    "test-0062": {
+      "choice": "focused",
+      "confidence": 0.5936,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 544.7744170669466,
+      "probabilities": {
+        "focused": 0.5944,
+        "full": 0.4056
+      },
+      "backend": "mlx"
+    },
+    "test-0063": {
+      "choice": "focused",
+      "confidence": 0.5037,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 150.7535839919001,
+      "probabilities": {
+        "focused": 0.5205,
+        "full": 0.4795
+      },
+      "backend": "mlx"
+    },
+    "test-0064": {
+      "choice": "focused",
+      "confidence": 0.5526,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 339.9789580143988,
+      "probabilities": {
+        "focused": 0.5604,
+        "full": 0.4396
+      },
+      "backend": "mlx"
+    },
+    "test-0065": {
+      "choice": "full",
+      "confidence": 0.5008,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 353.17979205865413,
+      "probabilities": {
+        "focused": 0.4615,
+        "full": 0.5385
+      },
+      "backend": "mlx"
+    },
+    "test-0066": {
+      "choice": "focused",
+      "confidence": 0.7177,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 251.98370905127376,
+      "probabilities": {
+        "focused": 0.7825,
+        "full": 0.2175
+      },
+      "backend": "mlx"
+    },
+    "test-0067": {
+      "choice": "full",
+      "confidence": 0.5219,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 202.62904197443277,
+      "probabilities": {
+        "focused": 0.4781,
+        "full": 0.5219
+      },
+      "backend": "mlx"
+    },
+    "test-0068": {
+      "choice": "focused",
+      "confidence": 0.5408,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 183.2439579302445,
+      "probabilities": {
+        "focused": 0.567,
+        "full": 0.433
+      },
+      "backend": "mlx"
+    },
+    "test-0069": {
+      "choice": "full",
+      "confidence": 0.5711,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 433.28529107384384,
+      "probabilities": {
+        "focused": 0.422,
+        "full": 0.578
+      },
+      "backend": "mlx"
+    },
+    "test-0070": {
+      "choice": "focused",
+      "confidence": 0.5978,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 203.74941697809845,
+      "probabilities": {
+        "focused": 0.5978,
+        "full": 0.4022
+      },
+      "backend": "mlx"
+    },
+    "test-0071": {
+      "choice": "focused",
+      "confidence": 0.503,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 176.59441591240466,
+      "probabilities": {
+        "focused": 0.5146,
+        "full": 0.4854
+      },
+      "backend": "mlx"
+    },
+    "test-0072": {
+      "choice": "focused",
+      "confidence": 0.5442,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 202.72370800375938,
+      "probabilities": {
+        "focused": 0.5656,
+        "full": 0.4344
+      },
+      "backend": "mlx"
+    },
+    "test-0073": {
+      "choice": "full",
+      "confidence": 0.5067,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 315.2939589926973,
+      "probabilities": {
+        "focused": 0.4718,
+        "full": 0.5282
+      },
+      "backend": "mlx"
+    },
+    "test-0074": {
+      "choice": "focused",
+      "confidence": 0.7195,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 214.54879094380885,
+      "probabilities": {
+        "focused": 0.7787,
+        "full": 0.2213
+      },
+      "backend": "mlx"
+    },
+    "test-0075": {
+      "choice": "full",
+      "confidence": 0.5214,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 213.03545800037682,
+      "probabilities": {
+        "focused": 0.4786,
+        "full": 0.5214
+      },
+      "backend": "mlx"
+    },
+    "test-0076": {
+      "choice": "focused",
+      "confidence": 0.5399,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 137.99824996385723,
+      "probabilities": {
+        "focused": 0.5915,
+        "full": 0.4085
+      },
+      "backend": "mlx"
+    },
+    "test-0077": {
+      "choice": "full",
+      "confidence": 0.5679,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 608.5328749613836,
+      "probabilities": {
+        "focused": 0.4292,
+        "full": 0.5708
+      },
+      "backend": "mlx"
+    },
+    "test-0078": {
+      "choice": "focused",
+      "confidence": 0.599,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 281.623916933313,
+      "probabilities": {
+        "focused": 0.599,
+        "full": 0.401
+      },
+      "backend": "mlx"
+    },
+    "test-0079": {
+      "choice": "focused",
+      "confidence": 0.5006,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 170.69183301646262,
+      "probabilities": {
+        "focused": 0.5006,
+        "full": 0.4994
+      },
+      "backend": "mlx"
+    }
+  },
+  "base_predictions": {
+    "calibration-0000": {
+      "choice": "focused",
+      "confidence": 0.5962,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 278.05304201319814,
+      "probabilities": {
+        "focused": 0.6365,
+        "full": 0.3635
+      },
+      "backend": "mlx"
+    },
+    "calibration-0001": {
+      "choice": "full",
+      "confidence": 0.5122,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 155.1475409651175,
+      "probabilities": {
+        "focused": 0.4613,
+        "full": 0.5387
+      },
+      "backend": "mlx"
+    },
+    "calibration-0002": {
+      "choice": "focused",
+      "confidence": 0.8714,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 179.65295899193734,
+      "probabilities": {
+        "focused": 0.9349,
+        "full": 0.0651
+      },
+      "backend": "mlx"
+    },
+    "calibration-0003": {
+      "choice": "focused",
+      "confidence": 0.5035,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 275.7720419904217,
+      "probabilities": {
+        "focused": 0.5035,
+        "full": 0.4965
+      },
+      "backend": "mlx"
+    },
+    "calibration-0004": {
+      "choice": "focused",
+      "confidence": 0.5909,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 272.2752079134807,
+      "probabilities": {
+        "focused": 0.6883,
+        "full": 0.3117
+      },
+      "backend": "mlx"
+    },
+    "calibration-0005": {
+      "choice": "full",
+      "confidence": 0.6086,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 120.96566695254296,
+      "probabilities": {
+        "focused": 0.3914,
+        "full": 0.6086
+      },
+      "backend": "mlx"
+    },
+    "calibration-0006": {
+      "choice": "focused",
+      "confidence": 0.7066,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 204.45254200603813,
+      "probabilities": {
+        "focused": 0.7207,
+        "full": 0.2793
+      },
+      "backend": "mlx"
+    },
+    "calibration-0007": {
+      "choice": "focused",
+      "confidence": 0.5128,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 361.55262496322393,
+      "probabilities": {
+        "focused": 0.5338,
+        "full": 0.4662
+      },
+      "backend": "mlx"
+    },
+    "calibration-0008": {
+      "choice": "focused",
+      "confidence": 0.5838,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 469.77358299773186,
+      "probabilities": {
+        "focused": 0.6364,
+        "full": 0.3636
+      },
+      "backend": "mlx"
+    },
+    "calibration-0009": {
+      "choice": "full",
+      "confidence": 0.5149,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 229.72875006962568,
+      "probabilities": {
+        "focused": 0.464,
+        "full": 0.536
+      },
+      "backend": "mlx"
+    },
+    "calibration-0010": {
+      "choice": "focused",
+      "confidence": 0.8685,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 390.98350005224347,
+      "probabilities": {
+        "focused": 0.9346,
+        "full": 0.0654
+      },
+      "backend": "mlx"
+    },
+    "calibration-0011": {
+      "choice": "full",
+      "confidence": 0.5015,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 239.8420829558745,
+      "probabilities": {
+        "focused": 0.4985,
+        "full": 0.5015
+      },
+      "backend": "mlx"
+    },
+    "calibration-0012": {
+      "choice": "focused",
+      "confidence": 0.5866,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 246.58104195259511,
+      "probabilities": {
+        "focused": 0.6808,
+        "full": 0.3192
+      },
+      "backend": "mlx"
+    },
+    "calibration-0013": {
+      "choice": "full",
+      "confidence": 0.6198,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 220.0851250672713,
+      "probabilities": {
+        "focused": 0.3802,
+        "full": 0.6198
+      },
+      "backend": "mlx"
+    },
+    "calibration-0014": {
+      "choice": "focused",
+      "confidence": 0.708,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 197.1069589490071,
+      "probabilities": {
+        "focused": 0.7164,
+        "full": 0.2836
+      },
+      "backend": "mlx"
+    },
+    "calibration-0015": {
+      "choice": "focused",
+      "confidence": 0.5056,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 210.2325001033023,
+      "probabilities": {
+        "focused": 0.5332,
+        "full": 0.4668
+      },
+      "backend": "mlx"
+    },
+    "calibration-0016": {
+      "choice": "focused",
+      "confidence": 0.581,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 450.95641689840704,
+      "probabilities": {
+        "focused": 0.6337,
+        "full": 0.3663
+      },
+      "backend": "mlx"
+    },
+    "calibration-0017": {
+      "choice": "full",
+      "confidence": 0.5056,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 256.3975000521168,
+      "probabilities": {
+        "focused": 0.4532,
+        "full": 0.5468
+      },
+      "backend": "mlx"
+    },
+    "calibration-0018": {
+      "choice": "focused",
+      "confidence": 0.8688,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 377.4731660960242,
+      "probabilities": {
+        "focused": 0.9354,
+        "full": 0.0646
+      },
+      "backend": "mlx"
+    },
+    "calibration-0019": {
+      "choice": "focused",
+      "confidence": 0.508,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 329.89954098593444,
+      "probabilities": {
+        "focused": 0.508,
+        "full": 0.492
+      },
+      "backend": "mlx"
+    },
+    "calibration-0020": {
+      "choice": "focused",
+      "confidence": 0.5947,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 257.4751249048859,
+      "probabilities": {
+        "focused": 0.6864,
+        "full": 0.3136
+      },
+      "backend": "mlx"
+    },
+    "calibration-0021": {
+      "choice": "full",
+      "confidence": 0.6391,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 192.91716697625816,
+      "probabilities": {
+        "focused": 0.3609,
+        "full": 0.6391
+      },
+      "backend": "mlx"
+    },
+    "calibration-0022": {
+      "choice": "focused",
+      "confidence": 0.6963,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 385.61145798303187,
+      "probabilities": {
+        "focused": 0.7092,
+        "full": 0.2908
+      },
+      "backend": "mlx"
+    },
+    "calibration-0023": {
+      "choice": "focused",
+      "confidence": 0.5111,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 174.15529198478907,
+      "probabilities": {
+        "focused": 0.5365,
+        "full": 0.4635
+      },
+      "backend": "mlx"
+    },
+    "calibration-0024": {
+      "choice": "focused",
+      "confidence": 0.599,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 162.14649996254593,
+      "probabilities": {
+        "focused": 0.6483,
+        "full": 0.3517
+      },
+      "backend": "mlx"
+    },
+    "calibration-0025": {
+      "choice": "full",
+      "confidence": 0.5125,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 118.97029192186892,
+      "probabilities": {
+        "focused": 0.4726,
+        "full": 0.5274
+      },
+      "backend": "mlx"
+    },
+    "calibration-0026": {
+      "choice": "focused",
+      "confidence": 0.8662,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 278.13729201443493,
+      "probabilities": {
+        "focused": 0.9398,
+        "full": 0.0602
+      },
+      "backend": "mlx"
+    },
+    "calibration-0027": {
+      "choice": "focused",
+      "confidence": 0.5053,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 267.25620892830193,
+      "probabilities": {
+        "focused": 0.5053,
+        "full": 0.4947
+      },
+      "backend": "mlx"
+    },
+    "calibration-0028": {
+      "choice": "focused",
+      "confidence": 0.5899,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 169.79504202026874,
+      "probabilities": {
+        "focused": 0.6794,
+        "full": 0.3206
+      },
+      "backend": "mlx"
+    },
+    "calibration-0029": {
+      "choice": "full",
+      "confidence": 0.6367,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 123.7794590415433,
+      "probabilities": {
+        "focused": 0.3633,
+        "full": 0.6367
+      },
+      "backend": "mlx"
+    },
+    "calibration-0030": {
+      "choice": "focused",
+      "confidence": 0.7002,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 168.40004199184477,
+      "probabilities": {
+        "focused": 0.71,
+        "full": 0.29
+      },
+      "backend": "mlx"
+    },
+    "calibration-0031": {
+      "choice": "focused",
+      "confidence": 0.517,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 400.51454096101224,
+      "probabilities": {
+        "focused": 0.5335,
+        "full": 0.4665
+      },
+      "backend": "mlx"
+    },
+    "calibration-0032": {
+      "choice": "focused",
+      "confidence": 0.5883,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 268.9475839724764,
+      "probabilities": {
+        "focused": 0.6373,
+        "full": 0.3627
+      },
+      "backend": "mlx"
+    },
+    "calibration-0033": {
+      "choice": "full",
+      "confidence": 0.5106,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 236.73475009854883,
+      "probabilities": {
+        "focused": 0.4679,
+        "full": 0.5321
+      },
+      "backend": "mlx"
+    },
+    "calibration-0034": {
+      "choice": "focused",
+      "confidence": 0.869,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 211.48250007536262,
+      "probabilities": {
+        "focused": 0.9396,
+        "full": 0.0604
+      },
+      "backend": "mlx"
+    },
+    "calibration-0035": {
+      "choice": "focused",
+      "confidence": 0.5004,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 167.40395803935826,
+      "probabilities": {
+        "focused": 0.5004,
+        "full": 0.4996
+      },
+      "backend": "mlx"
+    },
+    "calibration-0036": {
+      "choice": "focused",
+      "confidence": 0.5839,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 245.02191692590714,
+      "probabilities": {
+        "focused": 0.6714,
+        "full": 0.3286
+      },
+      "backend": "mlx"
+    },
+    "calibration-0037": {
+      "choice": "full",
+      "confidence": 0.6309,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 122.87404201924801,
+      "probabilities": {
+        "focused": 0.3691,
+        "full": 0.6309
+      },
+      "backend": "mlx"
+    },
+    "calibration-0038": {
+      "choice": "focused",
+      "confidence": 0.7055,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 160.5995000572875,
+      "probabilities": {
+        "focused": 0.7188,
+        "full": 0.2812
+      },
+      "backend": "mlx"
+    },
+    "calibration-0039": {
+      "choice": "focused",
+      "confidence": 0.5276,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 159.54562497790903,
+      "probabilities": {
+        "focused": 0.5388,
+        "full": 0.4612
+      },
+      "backend": "mlx"
+    },
+    "calibration-0040": {
+      "choice": "focused",
+      "confidence": 0.5876,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 114.90454198792577,
+      "probabilities": {
+        "focused": 0.6404,
+        "full": 0.3596
+      },
+      "backend": "mlx"
+    },
+    "calibration-0041": {
+      "choice": "full",
+      "confidence": 0.5107,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 187.49858299270272,
+      "probabilities": {
+        "focused": 0.4678,
+        "full": 0.5322
+      },
+      "backend": "mlx"
+    },
+    "calibration-0042": {
+      "choice": "focused",
+      "confidence": 0.8696,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 218.76562503166497,
+      "probabilities": {
+        "focused": 0.9398,
+        "full": 0.0602
+      },
+      "backend": "mlx"
+    },
+    "calibration-0043": {
+      "choice": "focused",
+      "confidence": 0.5045,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 155.93837504275143,
+      "probabilities": {
+        "focused": 0.5045,
+        "full": 0.4955
+      },
+      "backend": "mlx"
+    },
+    "calibration-0044": {
+      "choice": "focused",
+      "confidence": 0.5982,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 141.52629196178168,
+      "probabilities": {
+        "focused": 0.6811,
+        "full": 0.3189
+      },
+      "backend": "mlx"
+    },
+    "calibration-0045": {
+      "choice": "full",
+      "confidence": 0.6292,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 301.5140420757234,
+      "probabilities": {
+        "focused": 0.3708,
+        "full": 0.6292
+      },
+      "backend": "mlx"
+    },
+    "calibration-0046": {
+      "choice": "focused",
+      "confidence": 0.7012,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 125.6760829128325,
+      "probabilities": {
+        "focused": 0.7209,
+        "full": 0.2791
+      },
+      "backend": "mlx"
+    },
+    "calibration-0047": {
+      "choice": "focused",
+      "confidence": 0.5156,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 130.37204195279628,
+      "probabilities": {
+        "focused": 0.5357,
+        "full": 0.4643
+      },
+      "backend": "mlx"
+    },
+    "calibration-0048": {
+      "choice": "focused",
+      "confidence": 0.5908,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 150.59783298056573,
+      "probabilities": {
+        "focused": 0.6364,
+        "full": 0.3636
+      },
+      "backend": "mlx"
+    },
+    "calibration-0049": {
+      "choice": "full",
+      "confidence": 0.5103,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 191.09729200135916,
+      "probabilities": {
+        "focused": 0.4614,
+        "full": 0.5386
+      },
+      "backend": "mlx"
+    },
+    "calibration-0050": {
+      "choice": "focused",
+      "confidence": 0.8728,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 146.90650010015815,
+      "probabilities": {
+        "focused": 0.9398,
+        "full": 0.0602
+      },
+      "backend": "mlx"
+    },
+    "calibration-0051": {
+      "choice": "full",
+      "confidence": 0.508,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 172.08016593940556,
+      "probabilities": {
+        "focused": 0.492,
+        "full": 0.508
+      },
+      "backend": "mlx"
+    },
+    "calibration-0052": {
+      "choice": "focused",
+      "confidence": 0.5807,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 139.90383397322148,
+      "probabilities": {
+        "focused": 0.6751,
+        "full": 0.3249
+      },
+      "backend": "mlx"
+    },
+    "calibration-0053": {
+      "choice": "full",
+      "confidence": 0.6082,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 205.62341599725187,
+      "probabilities": {
+        "focused": 0.3918,
+        "full": 0.6082
+      },
+      "backend": "mlx"
+    },
+    "calibration-0054": {
+      "choice": "focused",
+      "confidence": 0.7055,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 179.1840420337394,
+      "probabilities": {
+        "focused": 0.7237,
+        "full": 0.2763
+      },
+      "backend": "mlx"
+    },
+    "calibration-0055": {
+      "choice": "focused",
+      "confidence": 0.5047,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 155.36137495655566,
+      "probabilities": {
+        "focused": 0.5367,
+        "full": 0.4633
+      },
+      "backend": "mlx"
+    },
+    "calibration-0056": {
+      "choice": "focused",
+      "confidence": 0.5803,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 152.62791700661182,
+      "probabilities": {
+        "focused": 0.632,
+        "full": 0.368
+      },
+      "backend": "mlx"
+    },
+    "calibration-0057": {
+      "choice": "full",
+      "confidence": 0.5062,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 175.44941697269678,
+      "probabilities": {
+        "focused": 0.457,
+        "full": 0.543
+      },
+      "backend": "mlx"
+    },
+    "calibration-0058": {
+      "choice": "focused",
+      "confidence": 0.8666,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 238.75687504187226,
+      "probabilities": {
+        "focused": 0.935,
+        "full": 0.065
+      },
+      "backend": "mlx"
+    },
+    "calibration-0059": {
+      "choice": "full",
+      "confidence": 0.5099,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 211.0274579608813,
+      "probabilities": {
+        "focused": 0.4901,
+        "full": 0.5099
+      },
+      "backend": "mlx"
+    },
+    "promotion-0000": {
+      "choice": "focused",
+      "confidence": 0.5952,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 165.74195900466293,
+      "probabilities": {
+        "focused": 0.6238,
+        "full": 0.3762
+      },
+      "backend": "mlx"
+    },
+    "promotion-0001": {
+      "choice": "full",
+      "confidence": 0.506,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 165.98204197362065,
+      "probabilities": {
+        "focused": 0.455,
+        "full": 0.545
+      },
+      "backend": "mlx"
+    },
+    "promotion-0002": {
+      "choice": "focused",
+      "confidence": 0.8643,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 181.5357500454411,
+      "probabilities": {
+        "focused": 0.9343,
+        "full": 0.0657
+      },
+      "backend": "mlx"
+    },
+    "promotion-0003": {
+      "choice": "full",
+      "confidence": 0.5019,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 235.47329101711512,
+      "probabilities": {
+        "focused": 0.4981,
+        "full": 0.5019
+      },
+      "backend": "mlx"
+    },
+    "promotion-0004": {
+      "choice": "focused",
+      "confidence": 0.5871,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 428.9422499714419,
+      "probabilities": {
+        "focused": 0.689,
+        "full": 0.311
+      },
+      "backend": "mlx"
+    },
+    "promotion-0005": {
+      "choice": "full",
+      "confidence": 0.6286,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 174.13516691885889,
+      "probabilities": {
+        "focused": 0.3714,
+        "full": 0.6286
+      },
+      "backend": "mlx"
+    },
+    "promotion-0006": {
+      "choice": "focused",
+      "confidence": 0.7025,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 134.78504202794284,
+      "probabilities": {
+        "focused": 0.725,
+        "full": 0.275
+      },
+      "backend": "mlx"
+    },
+    "promotion-0007": {
+      "choice": "focused",
+      "confidence": 0.509,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 160.72029201313853,
+      "probabilities": {
+        "focused": 0.5151,
+        "full": 0.4849
+      },
+      "backend": "mlx"
+    },
+    "promotion-0008": {
+      "choice": "focused",
+      "confidence": 0.5891,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 350.03166599199176,
+      "probabilities": {
+        "focused": 0.6378,
+        "full": 0.3622
+      },
+      "backend": "mlx"
+    },
+    "promotion-0009": {
+      "choice": "full",
+      "confidence": 0.5072,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 122.42100003641099,
+      "probabilities": {
+        "focused": 0.4603,
+        "full": 0.5397
+      },
+      "backend": "mlx"
+    },
+    "promotion-0010": {
+      "choice": "focused",
+      "confidence": 0.8618,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 291.3720409851521,
+      "probabilities": {
+        "focused": 0.9338,
+        "full": 0.0662
+      },
+      "backend": "mlx"
+    },
+    "promotion-0011": {
+      "choice": "full",
+      "confidence": 0.5068,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 232.41216607857496,
+      "probabilities": {
+        "focused": 0.4932,
+        "full": 0.5068
+      },
+      "backend": "mlx"
+    },
+    "promotion-0012": {
+      "choice": "focused",
+      "confidence": 0.5757,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 100.46683298423886,
+      "probabilities": {
+        "focused": 0.6736,
+        "full": 0.3264
+      },
+      "backend": "mlx"
+    },
+    "promotion-0013": {
+      "choice": "full",
+      "confidence": 0.6349,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 131.88337499741465,
+      "probabilities": {
+        "focused": 0.3651,
+        "full": 0.6349
+      },
+      "backend": "mlx"
+    },
+    "promotion-0014": {
+      "choice": "focused",
+      "confidence": 0.7015,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 204.2664170730859,
+      "probabilities": {
+        "focused": 0.7183,
+        "full": 0.2817
+      },
+      "backend": "mlx"
+    },
+    "promotion-0015": {
+      "choice": "focused",
+      "confidence": 0.5032,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 156.8977088900283,
+      "probabilities": {
+        "focused": 0.5161,
+        "full": 0.4839
+      },
+      "backend": "mlx"
+    },
+    "promotion-0016": {
+      "choice": "focused",
+      "confidence": 0.5866,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 359.31687499396503,
+      "probabilities": {
+        "focused": 0.6366,
+        "full": 0.3634
+      },
+      "backend": "mlx"
+    },
+    "promotion-0017": {
+      "choice": "full",
+      "confidence": 0.5044,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 141.10362506471574,
+      "probabilities": {
+        "focused": 0.4504,
+        "full": 0.5496
+      },
+      "backend": "mlx"
+    },
+    "promotion-0018": {
+      "choice": "focused",
+      "confidence": 0.8657,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 278.4674169961363,
+      "probabilities": {
+        "focused": 0.9358,
+        "full": 0.0642
+      },
+      "backend": "mlx"
+    },
+    "promotion-0019": {
+      "choice": "focused",
+      "confidence": 0.5003,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 278.7119169952348,
+      "probabilities": {
+        "focused": 0.5003,
+        "full": 0.4997
+      },
+      "backend": "mlx"
+    },
+    "promotion-0020": {
+      "choice": "focused",
+      "confidence": 0.5895,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 176.25062505248934,
+      "probabilities": {
+        "focused": 0.6867,
+        "full": 0.3133
+      },
+      "backend": "mlx"
+    },
+    "promotion-0021": {
+      "choice": "full",
+      "confidence": 0.6412,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 227.9125830391422,
+      "probabilities": {
+        "focused": 0.3588,
+        "full": 0.6412
+      },
+      "backend": "mlx"
+    },
+    "promotion-0022": {
+      "choice": "focused",
+      "confidence": 0.7007,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 181.26441608183086,
+      "probabilities": {
+        "focused": 0.7078,
+        "full": 0.2922
+      },
+      "backend": "mlx"
+    },
+    "promotion-0023": {
+      "choice": "focused",
+      "confidence": 0.5059,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 245.77833293005824,
+      "probabilities": {
+        "focused": 0.5331,
+        "full": 0.4669
+      },
+      "backend": "mlx"
+    },
+    "promotion-0024": {
+      "choice": "focused",
+      "confidence": 0.5986,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 402.8931249631569,
+      "probabilities": {
+        "focused": 0.6494,
+        "full": 0.3506
+      },
+      "backend": "mlx"
+    },
+    "promotion-0025": {
+      "choice": "full",
+      "confidence": 0.501,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 228.98500005248934,
+      "probabilities": {
+        "focused": 0.4563,
+        "full": 0.5437
+      },
+      "backend": "mlx"
+    },
+    "promotion-0026": {
+      "choice": "focused",
+      "confidence": 0.8631,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 702.0638330141082,
+      "probabilities": {
+        "focused": 0.9386,
+        "full": 0.0614
+      },
+      "backend": "mlx"
+    },
+    "promotion-0027": {
+      "choice": "full",
+      "confidence": 0.5026,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 176.64800002239645,
+      "probabilities": {
+        "focused": 0.4974,
+        "full": 0.5026
+      },
+      "backend": "mlx"
+    },
+    "promotion-0028": {
+      "choice": "focused",
+      "confidence": 0.586,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 322.2628750372678,
+      "probabilities": {
+        "focused": 0.6831,
+        "full": 0.3169
+      },
+      "backend": "mlx"
+    },
+    "promotion-0029": {
+      "choice": "full",
+      "confidence": 0.6424,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 183.85933397803456,
+      "probabilities": {
+        "focused": 0.3576,
+        "full": 0.6424
+      },
+      "backend": "mlx"
+    },
+    "promotion-0030": {
+      "choice": "focused",
+      "confidence": 0.7057,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 140.21608291659504,
+      "probabilities": {
+        "focused": 0.7161,
+        "full": 0.2839
+      },
+      "backend": "mlx"
+    },
+    "promotion-0031": {
+      "choice": "focused",
+      "confidence": 0.5118,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 323.72504100203514,
+      "probabilities": {
+        "focused": 0.533,
+        "full": 0.467
+      },
+      "backend": "mlx"
+    },
+    "promotion-0032": {
+      "choice": "focused",
+      "confidence": 0.5828,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 364.3893750850111,
+      "probabilities": {
+        "focused": 0.6365,
+        "full": 0.3635
+      },
+      "backend": "mlx"
+    },
+    "promotion-0033": {
+      "choice": "full",
+      "confidence": 0.5018,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 234.24554208759218,
+      "probabilities": {
+        "focused": 0.4546,
+        "full": 0.5454
+      },
+      "backend": "mlx"
+    },
+    "promotion-0034": {
+      "choice": "focused",
+      "confidence": 0.8657,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 515.4865839285776,
+      "probabilities": {
+        "focused": 0.9387,
+        "full": 0.0613
+      },
+      "backend": "mlx"
+    },
+    "promotion-0035": {
+      "choice": "full",
+      "confidence": 0.5081,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 172.51150007359684,
+      "probabilities": {
+        "focused": 0.4919,
+        "full": 0.5081
+      },
+      "backend": "mlx"
+    },
+    "promotion-0036": {
+      "choice": "focused",
+      "confidence": 0.581,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 218.8809160143137,
+      "probabilities": {
+        "focused": 0.6795,
+        "full": 0.3205
+      },
+      "backend": "mlx"
+    },
+    "promotion-0037": {
+      "choice": "full",
+      "confidence": 0.6358,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 283.27566594816744,
+      "probabilities": {
+        "focused": 0.3642,
+        "full": 0.6358
+      },
+      "backend": "mlx"
+    },
+    "promotion-0038": {
+      "choice": "focused",
+      "confidence": 0.7096,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 202.66083301976323,
+      "probabilities": {
+        "focused": 0.7165,
+        "full": 0.2835
+      },
+      "backend": "mlx"
+    },
+    "promotion-0039": {
+      "choice": "focused",
+      "confidence": 0.5226,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 341.89420903567225,
+      "probabilities": {
+        "focused": 0.539,
+        "full": 0.461
+      },
+      "backend": "mlx"
+    },
+    "promotion-0040": {
+      "choice": "focused",
+      "confidence": 0.5887,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 234.81795797124505,
+      "probabilities": {
+        "focused": 0.6373,
+        "full": 0.3627
+      },
+      "backend": "mlx"
+    },
+    "promotion-0041": {
+      "choice": "full",
+      "confidence": 0.5048,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 195.1669999398291,
+      "probabilities": {
+        "focused": 0.4595,
+        "full": 0.5405
+      },
+      "backend": "mlx"
+    },
+    "promotion-0042": {
+      "choice": "focused",
+      "confidence": 0.8688,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 302.1611670264974,
+      "probabilities": {
+        "focused": 0.9368,
+        "full": 0.0632
+      },
+      "backend": "mlx"
+    },
+    "promotion-0043": {
+      "choice": "full",
+      "confidence": 0.5026,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 290.4032920487225,
+      "probabilities": {
+        "focused": 0.4974,
+        "full": 0.5026
+      },
+      "backend": "mlx"
+    },
+    "promotion-0044": {
+      "choice": "focused",
+      "confidence": 0.5943,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 195.4947499325499,
+      "probabilities": {
+        "focused": 0.6844,
+        "full": 0.3156
+      },
+      "backend": "mlx"
+    },
+    "promotion-0045": {
+      "choice": "full",
+      "confidence": 0.6379,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 242.42170806974173,
+      "probabilities": {
+        "focused": 0.3621,
+        "full": 0.6379
+      },
+      "backend": "mlx"
+    },
+    "promotion-0046": {
+      "choice": "focused",
+      "confidence": 0.7153,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 224.83054199256003,
+      "probabilities": {
+        "focused": 0.7232,
+        "full": 0.2768
+      },
+      "backend": "mlx"
+    },
+    "promotion-0047": {
+      "choice": "focused",
+      "confidence": 0.5014,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 146.0425410186872,
+      "probabilities": {
+        "focused": 0.5274,
+        "full": 0.4726
+      },
+      "backend": "mlx"
+    },
+    "promotion-0048": {
+      "choice": "focused",
+      "confidence": 0.5941,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 297.7691249689087,
+      "probabilities": {
+        "focused": 0.6332,
+        "full": 0.3668
+      },
+      "backend": "mlx"
+    },
+    "promotion-0049": {
+      "choice": "full",
+      "confidence": 0.508,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 213.39016605634242,
+      "probabilities": {
+        "focused": 0.4602,
+        "full": 0.5398
+      },
+      "backend": "mlx"
+    },
+    "promotion-0050": {
+      "choice": "focused",
+      "confidence": 0.8644,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 280.7875410653651,
+      "probabilities": {
+        "focused": 0.937,
+        "full": 0.063
+      },
+      "backend": "mlx"
+    },
+    "promotion-0051": {
+      "choice": "full",
+      "confidence": 0.5163,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 216.26320900395513,
+      "probabilities": {
+        "focused": 0.4837,
+        "full": 0.5163
+      },
+      "backend": "mlx"
+    },
+    "promotion-0052": {
+      "choice": "focused",
+      "confidence": 0.5749,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 153.58225000090897,
+      "probabilities": {
+        "focused": 0.6725,
+        "full": 0.3275
+      },
+      "backend": "mlx"
+    },
+    "promotion-0053": {
+      "choice": "full",
+      "confidence": 0.6233,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 560.705209034495,
+      "probabilities": {
+        "focused": 0.3767,
+        "full": 0.6233
+      },
+      "backend": "mlx"
+    },
+    "promotion-0054": {
+      "choice": "focused",
+      "confidence": 0.7033,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 184.2357920249924,
+      "probabilities": {
+        "focused": 0.7241,
+        "full": 0.2759
+      },
+      "backend": "mlx"
+    },
+    "promotion-0055": {
+      "choice": "focused",
+      "confidence": 0.5009,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 366.73550005070865,
+      "probabilities": {
+        "focused": 0.5237,
+        "full": 0.4763
+      },
+      "backend": "mlx"
+    },
+    "promotion-0056": {
+      "choice": "focused",
+      "confidence": 0.588,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 97.5536669138819,
+      "probabilities": {
+        "focused": 0.6272,
+        "full": 0.3728
+      },
+      "backend": "mlx"
+    },
+    "promotion-0057": {
+      "choice": "full",
+      "confidence": 0.5004,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 151.91354101989418,
+      "probabilities": {
+        "focused": 0.4548,
+        "full": 0.5452
+      },
+      "backend": "mlx"
+    },
+    "promotion-0058": {
+      "choice": "focused",
+      "confidence": 0.8641,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 138.36233306210488,
+      "probabilities": {
+        "focused": 0.9359,
+        "full": 0.0641
+      },
+      "backend": "mlx"
+    },
+    "promotion-0059": {
+      "choice": "full",
+      "confidence": 0.5156,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 231.25758301466703,
+      "probabilities": {
+        "focused": 0.4844,
+        "full": 0.5156
+      },
+      "backend": "mlx"
+    },
+    "test-0000": {
+      "choice": "focused",
+      "confidence": 0.5975,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 256.94245903287083,
+      "probabilities": {
+        "focused": 0.6395,
+        "full": 0.3605
+      },
+      "backend": "mlx"
+    },
+    "test-0001": {
+      "choice": "full",
+      "confidence": 0.5117,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 213.44612492248416,
+      "probabilities": {
+        "focused": 0.4689,
+        "full": 0.5311
+      },
+      "backend": "mlx"
+    },
+    "test-0002": {
+      "choice": "focused",
+      "confidence": 0.8709,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 251.67500006500632,
+      "probabilities": {
+        "focused": 0.9369,
+        "full": 0.0631
+      },
+      "backend": "mlx"
+    },
+    "test-0003": {
+      "choice": "focused",
+      "confidence": 0.5026,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 165.81854200921953,
+      "probabilities": {
+        "focused": 0.5026,
+        "full": 0.4974
+      },
+      "backend": "mlx"
+    },
+    "test-0004": {
+      "choice": "focused",
+      "confidence": 0.5927,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 195.43800002429634,
+      "probabilities": {
+        "focused": 0.6895,
+        "full": 0.3105
+      },
+      "backend": "mlx"
+    },
+    "test-0005": {
+      "choice": "full",
+      "confidence": 0.6188,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 308.2997500896454,
+      "probabilities": {
+        "focused": 0.3812,
+        "full": 0.6188
+      },
+      "backend": "mlx"
+    },
+    "test-0006": {
+      "choice": "focused",
+      "confidence": 0.6982,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 365.3930419823155,
+      "probabilities": {
+        "focused": 0.7126,
+        "full": 0.2874
+      },
+      "backend": "mlx"
+    },
+    "test-0007": {
+      "choice": "focused",
+      "confidence": 0.5126,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 233.49133296869695,
+      "probabilities": {
+        "focused": 0.5419,
+        "full": 0.4581
+      },
+      "backend": "mlx"
+    },
+    "test-0008": {
+      "choice": "focused",
+      "confidence": 0.5914,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 338.6043340433389,
+      "probabilities": {
+        "focused": 0.6387,
+        "full": 0.3613
+      },
+      "backend": "mlx"
+    },
+    "test-0009": {
+      "choice": "full",
+      "confidence": 0.5142,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 274.6137079084292,
+      "probabilities": {
+        "focused": 0.4628,
+        "full": 0.5372
+      },
+      "backend": "mlx"
+    },
+    "test-0010": {
+      "choice": "focused",
+      "confidence": 0.8669,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 209.05670791398734,
+      "probabilities": {
+        "focused": 0.9359,
+        "full": 0.0641
+      },
+      "backend": "mlx"
+    },
+    "test-0011": {
+      "choice": "focused",
+      "confidence": 0.5037,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 156.18024999275804,
+      "probabilities": {
+        "focused": 0.5037,
+        "full": 0.4963
+      },
+      "backend": "mlx"
+    },
+    "test-0012": {
+      "choice": "focused",
+      "confidence": 0.59,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 129.0624999674037,
+      "probabilities": {
+        "focused": 0.6794,
+        "full": 0.3206
+      },
+      "backend": "mlx"
+    },
+    "test-0013": {
+      "choice": "full",
+      "confidence": 0.629,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 260.037292027846,
+      "probabilities": {
+        "focused": 0.371,
+        "full": 0.629
+      },
+      "backend": "mlx"
+    },
+    "test-0014": {
+      "choice": "focused",
+      "confidence": 0.7,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 216.85637498740107,
+      "probabilities": {
+        "focused": 0.711,
+        "full": 0.289
+      },
+      "backend": "mlx"
+    },
+    "test-0015": {
+      "choice": "focused",
+      "confidence": 0.5038,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 108.20433404296637,
+      "probabilities": {
+        "focused": 0.5388,
+        "full": 0.4612
+      },
+      "backend": "mlx"
+    },
+    "test-0016": {
+      "choice": "focused",
+      "confidence": 0.5881,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 125.67224993836135,
+      "probabilities": {
+        "focused": 0.6344,
+        "full": 0.3656
+      },
+      "backend": "mlx"
+    },
+    "test-0017": {
+      "choice": "full",
+      "confidence": 0.5088,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 283.67908392101526,
+      "probabilities": {
+        "focused": 0.4541,
+        "full": 0.5459
+      },
+      "backend": "mlx"
+    },
+    "test-0018": {
+      "choice": "focused",
+      "confidence": 0.8702,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 154.09758395981044,
+      "probabilities": {
+        "focused": 0.9366,
+        "full": 0.0634
+      },
+      "backend": "mlx"
+    },
+    "test-0019": {
+      "choice": "focused",
+      "confidence": 0.5085,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 199.1892079822719,
+      "probabilities": {
+        "focused": 0.5085,
+        "full": 0.4915
+      },
+      "backend": "mlx"
+    },
+    "test-0020": {
+      "choice": "focused",
+      "confidence": 0.6083,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 168.21462498046458,
+      "probabilities": {
+        "focused": 0.6837,
+        "full": 0.3163
+      },
+      "backend": "mlx"
+    },
+    "test-0021": {
+      "choice": "full",
+      "confidence": 0.6315,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 364.7826249944046,
+      "probabilities": {
+        "focused": 0.3685,
+        "full": 0.6315
+      },
+      "backend": "mlx"
+    },
+    "test-0022": {
+      "choice": "focused",
+      "confidence": 0.7018,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 332.4000840075314,
+      "probabilities": {
+        "focused": 0.7033,
+        "full": 0.2967
+      },
+      "backend": "mlx"
+    },
+    "test-0023": {
+      "choice": "focused",
+      "confidence": 0.5175,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 133.2055419916287,
+      "probabilities": {
+        "focused": 0.5273,
+        "full": 0.4727
+      },
+      "backend": "mlx"
+    },
+    "test-0024": {
+      "choice": "focused",
+      "confidence": 0.6028,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 255.17687492538244,
+      "probabilities": {
+        "focused": 0.6352,
+        "full": 0.3648
+      },
+      "backend": "mlx"
+    },
+    "test-0025": {
+      "choice": "full",
+      "confidence": 0.5053,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 241.01941601838917,
+      "probabilities": {
+        "focused": 0.4419,
+        "full": 0.5581
+      },
+      "backend": "mlx"
+    },
+    "test-0026": {
+      "choice": "focused",
+      "confidence": 0.867,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 167.24899993278086,
+      "probabilities": {
+        "focused": 0.9402,
+        "full": 0.0598
+      },
+      "backend": "mlx"
+    },
+    "test-0027": {
+      "choice": "full",
+      "confidence": 0.5193,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 206.91862504463643,
+      "probabilities": {
+        "focused": 0.4807,
+        "full": 0.5193
+      },
+      "backend": "mlx"
+    },
+    "test-0028": {
+      "choice": "focused",
+      "confidence": 0.6005,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 131.69420801568776,
+      "probabilities": {
+        "focused": 0.6721,
+        "full": 0.3279
+      },
+      "backend": "mlx"
+    },
+    "test-0029": {
+      "choice": "full",
+      "confidence": 0.6354,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 287.584959063679,
+      "probabilities": {
+        "focused": 0.3646,
+        "full": 0.6354
+      },
+      "backend": "mlx"
+    },
+    "test-0030": {
+      "choice": "focused",
+      "confidence": 0.7028,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 242.86624998785555,
+      "probabilities": {
+        "focused": 0.7092,
+        "full": 0.2908
+      },
+      "backend": "mlx"
+    },
+    "test-0031": {
+      "choice": "focused",
+      "confidence": 0.5155,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 394.78387509007007,
+      "probabilities": {
+        "focused": 0.5155,
+        "full": 0.4845
+      },
+      "backend": "mlx"
+    },
+    "test-0032": {
+      "choice": "focused",
+      "confidence": 0.5926,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 159.98520806897432,
+      "probabilities": {
+        "focused": 0.6144,
+        "full": 0.3856
+      },
+      "backend": "mlx"
+    },
+    "test-0033": {
+      "choice": "full",
+      "confidence": 0.5044,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 198.80541693419218,
+      "probabilities": {
+        "focused": 0.4427,
+        "full": 0.5573
+      },
+      "backend": "mlx"
+    },
+    "test-0034": {
+      "choice": "focused",
+      "confidence": 0.8688,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 148.5132499365136,
+      "probabilities": {
+        "focused": 0.9386,
+        "full": 0.0614
+      },
+      "backend": "mlx"
+    },
+    "test-0035": {
+      "choice": "full",
+      "confidence": 0.5237,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 170.00820802059025,
+      "probabilities": {
+        "focused": 0.4763,
+        "full": 0.5237
+      },
+      "backend": "mlx"
+    },
+    "test-0036": {
+      "choice": "focused",
+      "confidence": 0.602,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 133.9062909828499,
+      "probabilities": {
+        "focused": 0.6699,
+        "full": 0.3301
+      },
+      "backend": "mlx"
+    },
+    "test-0037": {
+      "choice": "full",
+      "confidence": 0.6264,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 349.90649996325374,
+      "probabilities": {
+        "focused": 0.3736,
+        "full": 0.6264
+      },
+      "backend": "mlx"
+    },
+    "test-0038": {
+      "choice": "focused",
+      "confidence": 0.7084,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 139.53887508250773,
+      "probabilities": {
+        "focused": 0.7107,
+        "full": 0.2893
+      },
+      "backend": "mlx"
+    },
+    "test-0039": {
+      "choice": "focused",
+      "confidence": 0.5161,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 226.07799991965294,
+      "probabilities": {
+        "focused": 0.5161,
+        "full": 0.4839
+      },
+      "backend": "mlx"
+    },
+    "test-0040": {
+      "choice": "focused",
+      "confidence": 0.5972,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 214.13137495983392,
+      "probabilities": {
+        "focused": 0.6252,
+        "full": 0.3748
+      },
+      "backend": "mlx"
+    },
+    "test-0041": {
+      "choice": "full",
+      "confidence": 0.5136,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 229.78091705590487,
+      "probabilities": {
+        "focused": 0.4574,
+        "full": 0.5426
+      },
+      "backend": "mlx"
+    },
+    "test-0042": {
+      "choice": "focused",
+      "confidence": 0.8706,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 196.33608299773186,
+      "probabilities": {
+        "focused": 0.9374,
+        "full": 0.0626
+      },
+      "backend": "mlx"
+    },
+    "test-0043": {
+      "choice": "full",
+      "confidence": 0.503,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 199.18320898432285,
+      "probabilities": {
+        "focused": 0.497,
+        "full": 0.503
+      },
+      "backend": "mlx"
+    },
+    "test-0044": {
+      "choice": "focused",
+      "confidence": 0.6118,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 182.78020794969052,
+      "probabilities": {
+        "focused": 0.6819,
+        "full": 0.3181
+      },
+      "backend": "mlx"
+    },
+    "test-0045": {
+      "choice": "full",
+      "confidence": 0.6267,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 261.2985409796238,
+      "probabilities": {
+        "focused": 0.3733,
+        "full": 0.6267
+      },
+      "backend": "mlx"
+    },
+    "test-0046": {
+      "choice": "focused",
+      "confidence": 0.7041,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 200.5673749372363,
+      "probabilities": {
+        "focused": 0.712,
+        "full": 0.288
+      },
+      "backend": "mlx"
+    },
+    "test-0047": {
+      "choice": "focused",
+      "confidence": 0.5011,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 108.57229202520102,
+      "probabilities": {
+        "focused": 0.5492,
+        "full": 0.4508
+      },
+      "backend": "mlx"
+    },
+    "test-0048": {
+      "choice": "focused",
+      "confidence": 0.5947,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 191.15104200318456,
+      "probabilities": {
+        "focused": 0.6358,
+        "full": 0.3642
+      },
+      "backend": "mlx"
+    },
+    "test-0049": {
+      "choice": "full",
+      "confidence": 0.5172,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 164.12062500603497,
+      "probabilities": {
+        "focused": 0.4645,
+        "full": 0.5355
+      },
+      "backend": "mlx"
+    },
+    "test-0050": {
+      "choice": "focused",
+      "confidence": 0.8722,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 167.8800410591066,
+      "probabilities": {
+        "focused": 0.9403,
+        "full": 0.0597
+      },
+      "backend": "mlx"
+    },
+    "test-0051": {
+      "choice": "full",
+      "confidence": 0.5143,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 192.62770796194673,
+      "probabilities": {
+        "focused": 0.4857,
+        "full": 0.5143
+      },
+      "backend": "mlx"
+    },
+    "test-0052": {
+      "choice": "focused",
+      "confidence": 0.5836,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 213.29279197379947,
+      "probabilities": {
+        "focused": 0.6747,
+        "full": 0.3253
+      },
+      "backend": "mlx"
+    },
+    "test-0053": {
+      "choice": "full",
+      "confidence": 0.614,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 173.63141593523324,
+      "probabilities": {
+        "focused": 0.386,
+        "full": 0.614
+      },
+      "backend": "mlx"
+    },
+    "test-0054": {
+      "choice": "focused",
+      "confidence": 0.7013,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 130.8721249224618,
+      "probabilities": {
+        "focused": 0.7119,
+        "full": 0.2881
+      },
+      "backend": "mlx"
+    },
+    "test-0055": {
+      "choice": "focused",
+      "confidence": 0.5003,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 166.65404196828604,
+      "probabilities": {
+        "focused": 0.5375,
+        "full": 0.4625
+      },
+      "backend": "mlx"
+    },
+    "test-0056": {
+      "choice": "focused",
+      "confidence": 0.5893,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 132.97124998643994,
+      "probabilities": {
+        "focused": 0.636,
+        "full": 0.364
+      },
+      "backend": "mlx"
+    },
+    "test-0057": {
+      "choice": "full",
+      "confidence": 0.5095,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 486.13312491215765,
+      "probabilities": {
+        "focused": 0.4561,
+        "full": 0.5439
+      },
+      "backend": "mlx"
+    },
+    "test-0058": {
+      "choice": "focused",
+      "confidence": 0.867,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 316.3324580527842,
+      "probabilities": {
+        "focused": 0.9374,
+        "full": 0.0626
+      },
+      "backend": "mlx"
+    },
+    "test-0059": {
+      "choice": "full",
+      "confidence": 0.5068,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 226.98537504766136,
+      "probabilities": {
+        "focused": 0.4932,
+        "full": 0.5068
+      },
+      "backend": "mlx"
+    },
+    "test-0060": {
+      "choice": "focused",
+      "confidence": 0.6028,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 206.94795798044652,
+      "probabilities": {
+        "focused": 0.6755,
+        "full": 0.3245
+      },
+      "backend": "mlx"
+    },
+    "test-0061": {
+      "choice": "full",
+      "confidence": 0.6337,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 315.15195791143924,
+      "probabilities": {
+        "focused": 0.3663,
+        "full": 0.6337
+      },
+      "backend": "mlx"
+    },
+    "test-0062": {
+      "choice": "focused",
+      "confidence": 0.6874,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 156.42795793246478,
+      "probabilities": {
+        "focused": 0.6949,
+        "full": 0.3051
+      },
+      "backend": "mlx"
+    },
+    "test-0063": {
+      "choice": "focused",
+      "confidence": 0.5141,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 328.78820796031505,
+      "probabilities": {
+        "focused": 0.5605,
+        "full": 0.4395
+      },
+      "backend": "mlx"
+    },
+    "test-0064": {
+      "choice": "focused",
+      "confidence": 0.6081,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 332.816458074376,
+      "probabilities": {
+        "focused": 0.621,
+        "full": 0.379
+      },
+      "backend": "mlx"
+    },
+    "test-0065": {
+      "choice": "full",
+      "confidence": 0.5061,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 142.47737498953938,
+      "probabilities": {
+        "focused": 0.4415,
+        "full": 0.5585
+      },
+      "backend": "mlx"
+    },
+    "test-0066": {
+      "choice": "focused",
+      "confidence": 0.8708,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 151.1570829898119,
+      "probabilities": {
+        "focused": 0.938,
+        "full": 0.062
+      },
+      "backend": "mlx"
+    },
+    "test-0067": {
+      "choice": "full",
+      "confidence": 0.5223,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 123.36016702465713,
+      "probabilities": {
+        "focused": 0.4777,
+        "full": 0.5223
+      },
+      "backend": "mlx"
+    },
+    "test-0068": {
+      "choice": "focused",
+      "confidence": 0.6047,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 206.11083297990263,
+      "probabilities": {
+        "focused": 0.6569,
+        "full": 0.3431
+      },
+      "backend": "mlx"
+    },
+    "test-0069": {
+      "choice": "full",
+      "confidence": 0.6404,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 357.57258301600814,
+      "probabilities": {
+        "focused": 0.3596,
+        "full": 0.6404
+      },
+      "backend": "mlx"
+    },
+    "test-0070": {
+      "choice": "focused",
+      "confidence": 0.7024,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 266.4119169348851,
+      "probabilities": {
+        "focused": 0.7024,
+        "full": 0.2976
+      },
+      "backend": "mlx"
+    },
+    "test-0071": {
+      "choice": "focused",
+      "confidence": 0.5121,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 101.2308340286836,
+      "probabilities": {
+        "focused": 0.5465,
+        "full": 0.4535
+      },
+      "backend": "mlx"
+    },
+    "test-0072": {
+      "choice": "focused",
+      "confidence": 0.5842,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 297.73070896044374,
+      "probabilities": {
+        "focused": 0.6325,
+        "full": 0.3675
+      },
+      "backend": "mlx"
+    },
+    "test-0073": {
+      "choice": "full",
+      "confidence": 0.5199,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 181.83479201979935,
+      "probabilities": {
+        "focused": 0.4634,
+        "full": 0.5366
+      },
+      "backend": "mlx"
+    },
+    "test-0074": {
+      "choice": "focused",
+      "confidence": 0.8738,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 416.0527919884771,
+      "probabilities": {
+        "focused": 0.9347,
+        "full": 0.0653
+      },
+      "backend": "mlx"
+    },
+    "test-0075": {
+      "choice": "full",
+      "confidence": 0.5215,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 215.86299990303814,
+      "probabilities": {
+        "focused": 0.4785,
+        "full": 0.5215
+      },
+      "backend": "mlx"
+    },
+    "test-0076": {
+      "choice": "focused",
+      "confidence": 0.595,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 109.07912498805672,
+      "probabilities": {
+        "focused": 0.687,
+        "full": 0.313
+      },
+      "backend": "mlx"
+    },
+    "test-0077": {
+      "choice": "full",
+      "confidence": 0.6302,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 135.18320792354643,
+      "probabilities": {
+        "focused": 0.3698,
+        "full": 0.6302
+      },
+      "backend": "mlx"
+    },
+    "test-0078": {
+      "choice": "focused",
+      "confidence": 0.7047,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 119.46724995505065,
+      "probabilities": {
+        "focused": 0.7047,
+        "full": 0.2953
+      },
+      "backend": "mlx"
+    },
+    "test-0079": {
+      "choice": "focused",
+      "confidence": 0.5109,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 235.59762502554804,
+      "probabilities": {
+        "focused": 0.5109,
+        "full": 0.4891
+      },
+      "backend": "mlx"
+    }
+  },
+  "base_startup_ms": 2347.8930830024183
+}

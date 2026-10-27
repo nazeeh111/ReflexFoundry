@@ -1,0 +1,26 @@
+[
+  {
+    "id": "test-scope-v1",
+    "purpose": "Choose validation scope that preserves correct accept or reject of this coding change.",
+    "choices": [
+      "focused",
+      "full"
+    ],
+    "fallback": "full",
+    "max_input_bytes": 4096,
+    "budget_ms": 250.0,
+    "risk": "advisory"
+  },
+  {
+    "id": "context-route-v1",
+    "purpose": "Choose the first source retrieval action for the coding task.",
+    "choices": [
+      "symbol",
+      "search"
+    ],
+    "fallback": "search",
+    "max_input_bytes": 4096,
+    "budget_ms": 250.0,
+    "risk": "advisory"
+  }
+]
