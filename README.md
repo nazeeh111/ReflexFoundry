@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://github.com/nazeeh111/ReflexFoundry/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/nazeeh111/ReflexFoundry/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/license-Apache%202.0-202720"></a>
-  <a href="https://github.com/nazeeh111/ReflexFoundry/releases"><img alt="GitHub releases" src="https://img.shields.io/github/v/release/nazeeh111/ReflexFoundry?color=ce4c22"></a>
+  <a href="https://github.com/nazeeh111/ReflexFoundry/releases"><img alt="GitHub releases" src="https://img.shields.io/github/v/release/nazeeh111/ReflexFoundry?include_prereleases&color=ce4c22"></a>
 </p>
 
 **Teach agents which decisions no longer need expensive deliberation.**
