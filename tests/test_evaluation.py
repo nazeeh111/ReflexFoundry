@@ -55,3 +55,34 @@ def test_test_regression_vetoes_without_retuning():
     assert not report["deployment_allowed"]
     assert report["calibration"]["threshold"] == .5
     assert report["test"]["wrong_decisions"]
+
+
+@pytest.mark.parametrize("cost", [-1, float("nan"), float("inf"), True, "1", 10**400])
+def test_invalid_startup_cost_cannot_influence_evidence(cost):
+    rows, predictions = dataset()
+    with pytest.raises(ValueError, match="startup"):
+        evaluate(rows, predictions, cost, "hash")
+
+
+@pytest.mark.parametrize("update", [{"confidence": True}, {"confidence": float("nan")},
+    {"duration_ms": -1}, {"duration_ms": float("inf")}, {"stable": "true"}, {"choice": "approve"}])
+def test_invalid_predictions_fail_before_metrics_or_promotion(update):
+    rows, predictions = dataset()
+    predictions["test-0"].update(update)
+    with pytest.raises(ValueError, match="prediction"):
+        evaluate(rows, predictions, 0, "hash")
+
+
+def test_outcomes_are_required_before_evaluation():
+    rows, predictions = dataset()
+    del rows[-1]["outcomes"]
+    with pytest.raises(ValueError, match="outcomes"):
+        evaluate(rows, predictions, 0, "hash")
+
+
+def test_selected_only_training_rows_remain_compatible_with_held_out_evaluation():
+    rows, predictions = dataset()
+    for row in rows:
+        if row["split"] == "train":
+            del row["outcomes"]
+    assert evaluate(rows, predictions, 0, "hash")["calibration"]["eligible"]

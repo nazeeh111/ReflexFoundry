@@ -12,7 +12,6 @@ import json
 import os
 import platform
 import selectors
-import shlex
 import shutil
 import signal
 import subprocess
@@ -23,13 +22,13 @@ from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT / "src"))
+from reflexfoundry.codex import command_names  # noqa: E402
 from reflexfoundry.external_benchmark import REPOSITORIES, apply_mutation, mutations  # noqa: E402
 from reflexfoundry.lifecycle import transition  # noqa: E402
 
 SOURCE = Path("/private/tmp/reflexfoundry-research/toolz")
 OUTPUT = PROJECT / "benchmarks/codex-e2e-v1"
 ORDER = [(1, "original"), (1, "shadow"), (2, "shadow"), (2, "original")]
-ALLOWED = {"pytest", "python", "python3", "rg", "git", "npm", "cargo", "go"}
 REPO = REPOSITORIES[0]
 MUTATION = mutations("toolz")[1]
 GRADER = """from toolz import first
@@ -176,24 +175,6 @@ Use the packaged $reflexfoundry skill in .agents/skills/reflexfoundry/SKILL.md f
 """
     return base
 
-
-def command_names(command: str) -> list[str]:
-    """Count leading allowlisted binaries, including a documented shell wrapper."""
-    try:
-        parts = shlex.split(command)
-        if len(parts) >= 3 and Path(parts[0]).name in {"zsh", "bash", "sh"} and "c" in parts[1]:
-            parts = shlex.split(parts[2])
-        names = []
-        for index, token in enumerate(parts):
-            if index == 0 or parts[index - 1] in {"&&", ";", "||", "|"}:
-                name = Path(token).name
-                if name.startswith("python"):
-                    name = "python"
-                if name in ALLOWED:
-                    names.append(name)
-        return names
-    except ValueError:
-        return []
 
 
 def run(index: int, manifest: dict) -> dict:

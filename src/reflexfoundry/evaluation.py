@@ -6,7 +6,20 @@ import random
 import statistics
 from typing import Any
 
-from .core import SPECS, digest, validate_splits
+from .core import SPECS, digest, validate_record, validate_splits
+from .core import finite_number as _number
+
+
+def _validate_predictions(rows: list[dict[str, Any]], predictions: Any) -> None:
+    if not isinstance(predictions, dict):
+        raise ValueError("predictions must be keyed by decision id")
+    for row in rows:
+        value = predictions.get(row["id"])
+        if (not isinstance(value, dict) or value.get("choice") not in SPECS[row["spec"]].choices
+                or not _number(value.get("confidence")) or not 0 <= value["confidence"] <= 1
+                or not _number(value.get("duration_ms")) or value["duration_ms"] < 0
+                or not isinstance(value.get("stable"), bool) or not isinstance(value.get("truncated"), bool)):
+            raise ValueError("each evaluated decision needs a valid finite prediction")
 
 
 def wilson_upper(errors: int, n: int) -> float:
@@ -29,24 +42,30 @@ def interval(values: list[float], seed: int = 17) -> list[float]:
 def choose(prediction: dict[str, Any], spec_id: str, threshold: float,
            budget_ms: float | None = None) -> tuple[str, bool]:
     spec = SPECS[spec_id]
+    budget = spec.budget_ms if budget_ms is None else budget_ms
+    if (not isinstance(prediction, dict) or not _number(threshold) or not 0 <= threshold <= 1.01
+            or not _number(budget) or budget < 0):
+        return spec.fallback, True
     confidence: Any = prediction.get("confidence")
     elapsed: Any = prediction.get("duration_ms")
-    def numeric(x: Any) -> bool:
-        return not isinstance(x, bool) and isinstance(x, (int, float)) and math.isfinite(x)
     valid = (prediction.get("choice") in spec.choices and prediction.get("stable") is True
-             and prediction.get("truncated") is False and numeric(confidence)
-             and 0 <= confidence <= 1 and confidence >= threshold and numeric(elapsed)
-             and 0 <= elapsed <= (budget_ms if budget_ms is not None else spec.budget_ms))
+             and prediction.get("truncated") is False and _number(confidence)
+             and 0 <= confidence <= 1 and confidence >= threshold and _number(elapsed)
+             and 0 <= elapsed <= budget)
     return (prediction["choice"], False) if valid else (spec.fallback, True)
 
 
 def calibrate(rows: list[dict[str, Any]], predictions: dict[str, dict[str, Any]],
               max_error: float = 0.10, min_n: int = 30) -> dict[str, Any]:
     """Threshold search is exploratory calibration; independent promotion validates it."""
-    if not 0 < max_error < 1 or min_n < 1:
+    if (not _number(max_error) or not 0 < max_error < 1 or isinstance(min_n, bool)
+            or not isinstance(min_n, int) or min_n < 1):
         raise ValueError("invalid calibration risk or minimum sample count")
     if any(r["split"] != "calibration" for r in rows):
         raise ValueError("calibration accepts calibration split only")
+    for row in rows:
+        validate_record(row, require_outcomes=True)
+    _validate_predictions(rows, predictions)
     candidates = []
     for threshold in [0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99]:
         accepted = []
@@ -76,6 +95,15 @@ def summarize(rows: list[dict[str, Any]], predictions: dict[str, dict[str, Any]]
               threshold: float, startup_ms: float,
               base_predictions: dict[str, dict[str, Any]] | None = None,
               base_startup_ms: float = 0.0) -> dict[str, Any]:
+    if any(not _number(value) or value < 0 for value in (startup_ms, base_startup_ms)):
+        raise ValueError("startup costs must be finite nonnegative numbers")
+    for row in rows:
+        validate_record(row, require_outcomes=True)
+        if row["spec"] != "test-scope-v1":
+            raise ValueError("outcome comparison currently supports test-scope-v1 only")
+    _validate_predictions(rows, predictions)
+    if base_predictions is not None:
+        _validate_predictions(rows, base_predictions)
     policies: dict[str, list[dict[str, Any]]] = {name: [] for name in
         ("original-full", "deterministic-heuristic", "always-focused", "trained-always", "selective")}
     if base_predictions:
@@ -157,12 +185,18 @@ def evaluate(records: list[dict[str, Any]], predictions: dict[str, dict[str, Any
              startup_ms: float, model_digest: str,
              base_predictions: dict[str, dict[str, Any]] | None = None,
              base_startup_ms: float = 0.0) -> dict[str, Any]:
-    validate_splits(records)
+    validate_splits(records, require_evaluation_outcomes=True)
     if any(r["spec"] != "test-scope-v1" for r in records):
         raise ValueError("executed evaluator currently supports test-scope-v1 only")
     parts = {s: [r for r in records if r["split"] == s] for s in ("calibration", "promotion", "test")}
     if any(len(rows) < 30 for rows in parts.values()):
         raise ValueError("at least 30 independent tasks in each evaluation split are required")
+    if any(not _number(value) or value < 0 for value in (startup_ms, base_startup_ms)):
+        raise ValueError("startup costs must be finite nonnegative numbers")
+    evaluated = [row for rows in parts.values() for row in rows]
+    _validate_predictions(evaluated, predictions)
+    if base_predictions is not None:
+        _validate_predictions(evaluated, base_predictions)
     cold_predictions = {key: dict(value, duration_ms=value["duration_ms"] + startup_ms) for key, value in predictions.items()}
     calibration = calibrate(parts["calibration"], cold_predictions)
     promotion = summarize(parts["promotion"], predictions, calibration["threshold"], startup_ms,

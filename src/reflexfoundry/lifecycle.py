@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import contextlib
 import json
-import math
 import os
 import re
 import time
@@ -25,8 +24,11 @@ from .core import (
     validate_inputs,
     write_json,
 )
+from .core import (
+    finite_number as _number,
+)
 from .evaluation import choose
-from .model import LocalPolicy, file_hash
+from .model import LocalPolicy, artifact_digest, file_hash
 
 
 @contextlib.contextmanager
@@ -58,19 +60,6 @@ def outside_domain(inputs: dict[str, Any], words: list[str]) -> bool:
     """Conservative vocabulary shift proxy, not a statistical drift guarantee."""
     tokens = set(re.findall(r"[a-zA-Z_]{3,}", json.dumps(inputs).lower()))
     return not words or len(tokens - set(words)) / max(1, len(tokens)) > 0.45
-
-
-def artifact_digest(model: Path) -> str:
-    """Bind all inference inputs, including tokenizer/config, to evaluated bytes."""
-    files = [model / "model.safetensors", model / "rl_agent_config.json"]
-    for name in ("encoder", "tokenizer"):
-        directory = model / name
-        if not directory.is_dir() or directory.is_symlink():
-            raise ValueError("model needs real encoder and tokenizer directories")
-        files.extend(p for p in directory.rglob("*") if p.is_file() or p.is_symlink())
-    if any(not p.is_file() or p.is_symlink() for p in files):
-        raise ValueError("inference artifacts must be regular files")
-    return digest([(str(p.relative_to(model)), file_hash(p)) for p in sorted(files)])
 
 
 def register(root: Path, model: Path, report: dict[str, Any], records: list[dict[str, Any]]) -> dict[str, Any]:
@@ -151,8 +140,10 @@ def transition(root: Path, mode: str, opt_in: bool = False, max_decisions: int =
                         and r.get("mode") == "shadow" and r.get("deployment_epoch") == old.get("epoch")
                         and r.get("abstained") is False and r.get("candidate_eligible") is True
                         and r.get("candidate_verified") is True and "success" in r]
-            if len(verified) < 30 or any(not r["success"] for r in verified):
-                raise ValueError("need 30 verified shadow outcomes with no regression before opt-in")
+            distinct = {r["input_digest"] for r in verified
+                        if isinstance(r.get("input_digest"), str) and r["input_digest"]}
+            if len(distinct) < 30 or any(not r["success"] for r in verified):
+                raise ValueError("need 30 verified shadow outcomes from distinct inputs with no regression before opt-in")
         next_mode = "deployed" if mode == "deploy" else "off" if mode == "rollback" else "shadow"
         event = {"time": time.time(), "from": old["mode"], "to": next_mode, "policy": policy["id"],
                  "reason": "explicit " + mode}
@@ -160,10 +151,6 @@ def transition(root: Path, mode: str, opt_in: bool = False, max_decisions: int =
                  "max_decisions": max_decisions, "decisions": 0, "epoch": uuid.uuid4().hex}
         write_json(root / "deployment.json", state)
         return state
-
-
-def _number(value: Any) -> bool:
-    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
 
 
 def _prediction(value: Any, spec_id: str) -> dict[str, Any]:
@@ -224,7 +211,9 @@ def decide(root: Path, spec_id: str, inputs: dict[str, Any], backend: str = "aut
                 if deployment["mode"] == "deployed":
                     deployment["decisions"] = deployment.get("decisions", 0) + 1
                     write_json(root / "deployment.json", deployment)
-                recent = [r for r in requests if r.get("policy") == policy["id"]][-19:] + [result]
+                recent = [r for r in requests if r.get("policy") == policy["id"]
+                          and r.get("report_digest") == policy["report_digest"]
+                          and r.get("deployment_epoch") == deployment.get("epoch")][-19:] + [result]
                 if len(recent) == 20 and sum(r.get("abstained", True) for r in recent) >= 10:
                     result.update({"choice": spec.fallback, "fallback": True,
                                    "reason": "sustained abstention indicates uncertainty or drift"})
@@ -238,7 +227,8 @@ def decide(root: Path, spec_id: str, inputs: dict[str, Any], backend: str = "aut
 
 
 def outcome(root: Path, request_id: str, success: bool, duration_ms: float, candidate_verified: bool = False) -> dict[str, Any]:
-    if not isinstance(success, bool) or not _number(duration_ms) or duration_ms < 0:
+    if (not isinstance(success, bool) or not isinstance(candidate_verified, bool)
+            or not _number(duration_ms) or duration_ms < 0):
         raise ValueError("outcome requires boolean success and finite nonnegative duration_ms")
     with locked(root):
         requests = read_json(root / "requests.json", [])

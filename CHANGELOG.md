@@ -1,0 +1,19 @@
+# Changelog
+
+## 0.1.1 · experimental reliability update
+
+- Validate both raw prediction passes before combining confidence. Reject booleans, numeric strings, NaN, invalid probabilities, and malformed responses. Missing truncation evidence causes abstention.
+- Redact common quoted secret assignments, including JSON-style keys, before storing observations or exporting the Lab.
+- Require distinct input digests for verified shadow promotion. Repeating one input cannot supply thirty observations. Distinct inputs are a minimum check, not proof of statistical independence.
+- Keep abstention monitoring within the current report and deployment epoch.
+- Reject malformed stored records, incomplete evaluation outcomes, and invalid economic metadata with actionable validation errors. Empty outcome objects do not count as discovery evidence. Selected-only training records remain supported; held-out evaluation still requires complete outcomes.
+- Record complete inference identity automatically during training. Reconstruct policies in a temporary directory and verify weights, tokenizer and configuration before publishing the result.
+- Recognize supported shell-wrapped Codex command events without executing or retaining command arguments. Counts describe statically requested commands; conditional execution is not inferred. The experiment script uses the same parser.
+
+The trained v0.1.0 model, raw benchmark, plots and demo remain historical evidence. These fixes do not establish improved task success or latency, change promotion thresholds, or authorize the incomplete comparative Codex trial. The model remains withheld.
+
+## 0.1.0 · experimental prerelease
+
+Initial public source, CLI, local Lab, Codex skill, genuinely trained Laya decision head, generated validation benchmark, small public-repository mutation study, and independently checked native coding repairs.
+
+The trained policy failed the task/economic promotion checks. The guarded workflow fell back on every locked-test task. The planned comparative live Codex trial remained incomplete. See [the original study](docs/results.md) and [release](https://github.com/nazeeh111/ReflexFoundry/releases/tag/v0.1.0).

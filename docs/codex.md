@@ -78,7 +78,7 @@ reflex outcome REQUEST_ID --workspace .reflex \
 
 Use `--failure` when the independently checked candidate fails the criterion. `--candidate-verified` is a declaration about a completed check, not a request to run a grader. Never set it for an abstained or untested proposal. Evidence remains local user-supplied data; the CLI cannot prove an external check happened.
 
-Promotion requires the held-out gate, explicit opt-in, and sufficient eligible, independently checked shadow proposals for the current artifact and shadow epoch. Policies with rejected evidence may still be inspected in shadow, but cannot deploy. Do not create repeated copies of one task to meet a sample requirement.
+Promotion requires the held-out gate, explicit opt-in, and at least thirty eligible, independently checked shadow proposals with distinct input digests for the current artifact and shadow epoch. Repeated identical inputs cannot meet that count. Distinct hashes are only a minimum check: related variants may still share one underlying task and are not independent evidence. Policies with rejected evidence may still be inspected in shadow, but cannot deploy.
 
 ```bash
 reflex deploy --workspace .reflex --policy models/policy-v1 \

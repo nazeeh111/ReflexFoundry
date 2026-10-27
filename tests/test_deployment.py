@@ -58,11 +58,33 @@ def environment(tmp_path, monkeypatch):
 
 
 def audited_shadow(root, n=30):
-    for _ in range(n):
-        request = lifecycle.decide(root, "test-scope-v1", INPUTS)
+    offset = len(read_json(root / "requests.json", []))
+    for index in range(offset, offset + n):
+        request = lifecycle.decide(root, "test-scope-v1", INPUTS | {"symbol": f"calculation_{index}"})
         assert request["choice"] == "full"
         assert request["candidate"] == "focused"
         lifecycle.outcome(root, request["request_id"], True, 10.0, candidate_verified=True)
+
+
+def test_identical_requests_do_not_create_distinct_shadow_evidence(environment):
+    root, _, _, _ = environment
+    for _ in range(30):
+        request = lifecycle.decide(root, "test-scope-v1", INPUTS)
+        lifecycle.outcome(root, request["request_id"], True, 10, candidate_verified=True)
+    with pytest.raises(ValueError, match="distinct inputs"):
+        lifecycle.transition(root, "deploy", opt_in=True)
+
+
+def test_previous_epoch_abstentions_do_not_demote_a_new_shadow(environment):
+    root, _, _, _ = environment
+    state = read_json(root / "deployment.json")
+    write_json(root / "requests.json", [
+        {"policy": state["policy"], "deployment_epoch": "old-epoch", "abstained": True}
+        for _ in range(19)
+    ])
+    result = lifecycle.decide(root, "test-scope-v1", INPUTS)
+    assert result["reason"] == "shadow observation"
+    assert read_json(root / "deployment.json")["mode"] == "shadow"
 
 
 def test_opt_in_requires_eligible_evaluation_and_real_unique_shadow_outcomes(environment):

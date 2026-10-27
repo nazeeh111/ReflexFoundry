@@ -44,6 +44,15 @@ SPECS = {
 }
 
 
+def finite_number(value: Any) -> bool:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+
 def digest(value: Any) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":"),
                                      allow_nan=False).encode()).hexdigest()
@@ -72,11 +81,21 @@ def read_records(path: Path) -> list[dict[str, Any]]:
         return []
     if path.stat().st_size > 32 * 1024 * 1024:
         raise ValueError("record file exceeds 32 MiB; split the dataset")
-    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+    records = []
+    for number, line in enumerate(path.read_text().splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            record = json.loads(line)
+            validate_record(record)
+        except (ValueError, TypeError) as exc:
+            raise ValueError(f"invalid decision record on line {number}: {exc}") from None
+        records.append(record)
+    return records
 
 
 def validate_inputs(spec_id: str, inputs: Any) -> dict[str, Any]:
-    if spec_id not in SPECS:
+    if not isinstance(spec_id, str) or spec_id not in SPECS:
         raise ValueError("unsupported decision spec; permission and security decisions are forbidden")
     if not isinstance(inputs, dict) or set(inputs) - {"summary", "changed_files", "symbol"}:
         raise ValueError("inputs allow only summary, changed_files and symbol")
@@ -104,17 +123,25 @@ def privacy_filter(inputs: dict[str, Any]) -> dict[str, Any]:
             return [redact(item) for item in value]
         if not isinstance(value, str):
             return value
-        value = re.sub(r"(?i)(?:sk-[a-z0-9_-]{12,}|gh[pousr]_[a-z0-9]{12,}|bearer\s+[a-z0-9._-]+)", "[REDACTED]", value)
-        value = re.sub(r"(?i)(password|api_key|secret|token)\s*[=:]\s*[^\s\",}]+", r"\1=[REDACTED]", value)
+        value = re.sub(r"(?i)(?:sk-[a-z0-9_-]{12,}|gh[pousr]_[a-z0-9]{12,}|github_pat_[a-z0-9_]{12,}|bearer\s+[a-z0-9._-]+)", "[REDACTED]", value)
+        assignment = r'''(?i)(\b(?:password|api[_-]?key|secret|token)["']?\s*[=:]\s*)("(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[^\s"',;}]+)'''
+        def replace_secret(match: re.Match[str]) -> str:
+            original = match[2]
+            quote = original[0] if original[0] in "\"'" else ""
+            return match[1] + quote + "[REDACTED]" + quote
+        value = re.sub(assignment, replace_secret, value)
         value = re.sub(r"[\w.+-]+@[\w.-]+\.[a-zA-Z]{2,}", "[EMAIL]", value)
         return re.sub(r"/(?:Users|home)/[^/\s\"']+", "/[HOME]", value)
     return redact(inputs)
 
 
 def observe(raw: dict[str, Any], consent: bool) -> dict[str, Any]:
+    if not isinstance(raw, dict):
+        raise ValueError("observation must be an object")
     if not consent or raw.get("authorized") is not True:
         raise ValueError("explicit --consent and authorized:true are required")
-    spec = SPECS.get(raw.get("spec", ""))
+    spec_id = raw.get("spec", "")
+    spec = SPECS.get(spec_id) if isinstance(spec_id, str) else None
     if not spec:
         raise ValueError("unsupported decision specification")
     inputs = privacy_filter(validate_inputs(spec.id, raw.get("inputs")))
@@ -126,27 +153,63 @@ def observe(raw: dict[str, Any], consent: bool) -> dict[str, Any]:
         "repository": hashlib.sha256(str(raw.get("repository", "unknown")).encode()).hexdigest()[:16],
         "split": raw.get("split", "unassigned"), "source": "consented-observation",
         "task_group": hashlib.sha256(str(raw.get("task_group", raw.get("id", "unknown"))).encode()).hexdigest()[:20]}
-    if result["split"] not in {"train", "calibration", "promotion", "test", "unassigned"}:
+    if result["split"] not in ("train", "calibration", "promotion", "test", "unassigned"):
         raise ValueError("unsupported split")
     outcomes = raw.get("outcomes", {})
+    validate_outcomes(spec.id, outcomes)
     if outcomes:
         result["outcomes"] = {}
         for choice in spec.choices:
             outcome = outcomes.get(choice, {})
-            ms = outcome.get("duration_ms")
-            if not isinstance(outcome.get("success"), bool) or isinstance(ms, bool) or not isinstance(ms, (int, float)) or not math.isfinite(ms) or ms < 0:
-                raise ValueError("each outcome needs a boolean success and finite nonnegative duration_ms")
-            result["outcomes"][choice] = {"success": outcome["success"], "duration_ms": float(ms)}
+            result["outcomes"][choice] = {"success": outcome["success"], "duration_ms": float(outcome["duration_ms"])}
     return result
 
 
+def validate_outcomes(spec_id: str, outcomes: Any, required: bool = False) -> None:
+    if not isinstance(outcomes, dict):
+        raise ValueError("outcomes must be an object")
+    if not outcomes and not required:
+        return
+    if set(outcomes) != set(SPECS[spec_id].choices):
+        raise ValueError("outcomes must include every specification choice")
+    for outcome in outcomes.values():
+        if not isinstance(outcome, dict):
+            raise ValueError("each outcome must be an object")
+        duration: Any = outcome.get("duration_ms")
+        if not isinstance(outcome.get("success"), bool) or not finite_number(duration) or duration < 0:
+            raise ValueError("outcomes need boolean success and finite nonnegative duration")
+
+
+def validate_record(row: Any, require_outcomes: bool = False) -> None:
+    if not isinstance(row, dict):
+        raise ValueError("decision record must be an object")
+    spec_id = row.get("spec")
+    if not isinstance(spec_id, str):
+        raise ValueError("decision specification must be text")
+    validate_inputs(spec_id, row.get("inputs"))
+    if row.get("authorized") is not True:
+        raise ValueError("decision records require explicit collection authorization")
+    if row.get("selected") not in SPECS[row["spec"]].choices:
+        raise ValueError("selected choice is outside specification")
+    for field in ("id", "repository"):
+        if not isinstance(row.get(field), str) or not row[field].strip():
+            raise ValueError(f"{field} must be a nonempty string")
+    if "task_group" in row and (not isinstance(row["task_group"], str) or not row["task_group"].strip()):
+        raise ValueError("task_group must be a nonempty string")
+    if row.get("split") not in ("train", "calibration", "promotion", "test", "unassigned"):
+        raise ValueError("unsupported split")
+    validate_outcomes(row["spec"], row.get("outcomes", {}), required=require_outcomes)
+
+
 def discover(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    for row in records:
+        validate_record(row)
     result = []
     for spec_id, spec in SPECS.items():
         rows = [r for r in records if r.get("spec") == spec_id]
         if not rows:
             continue
-        evidence = [r for r in rows if "outcomes" in r]
+        evidence = [r for r in rows if r.get("outcomes")]
         opportunities = [max(0.0, r["outcomes"][spec.fallback]["duration_ms"] -
             min(o["duration_ms"] for o in r["outcomes"].values() if o["success"]))
             for r in evidence if any(o["success"] for o in r["outcomes"].values())]
@@ -160,26 +223,14 @@ def discover(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return result
 
 
-def validate_splits(records: list[dict[str, Any]]) -> None:
+def validate_splits(records: list[dict[str, Any]], require_evaluation_outcomes: bool = False) -> None:
     repositories: dict[str, str] = {}
     ids: set[str] = set()
     tasks: dict[str, str] = {}
     inputs: dict[str, str] = {}
     for row in records:
-        validate_inputs(row["spec"], row["inputs"])
-        if row.get("authorized") is not True:
-            raise ValueError("evaluation records require explicit collection authorization")
-        if row.get("selected") not in SPECS[row["spec"]].choices:
-            raise ValueError("selected choice is outside specification")
-        outcomes = row.get("outcomes", {})
-        if outcomes:
-            if set(outcomes) != set(SPECS[row["spec"]].choices):
-                raise ValueError("outcome choices do not match specification")
-            for outcome in outcomes.values():
-                duration = outcome.get("duration_ms")
-                if (not isinstance(outcome.get("success"), bool) or isinstance(duration, bool)
-                        or not isinstance(duration, (int, float)) or not math.isfinite(duration) or duration < 0):
-                    raise ValueError("outcomes need boolean success and finite nonnegative duration")
+        validate_record(row, require_outcomes=(require_evaluation_outcomes
+                        and isinstance(row, dict) and row.get("split") != "train"))
         split, repo = row["split"], row["repository"]
         if split not in {"train", "calibration", "promotion", "test"}:
             raise ValueError("assign records to train/calibration/promotion/test before evaluation")

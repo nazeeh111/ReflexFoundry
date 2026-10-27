@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-from .core import SPECS, digest, validate_inputs, validate_splits, write_json
+from .core import SPECS, digest, finite_number, validate_inputs, validate_splits, write_json
 
 BASE_MODEL = "convaiinnovations/laya"
 BASE_REVISION = "7b928d828b7b0e022f929d9bd2e44165aa270148"
@@ -21,6 +21,19 @@ def file_hash(path: Path) -> str:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
             h.update(block)
     return h.hexdigest()
+
+
+def artifact_digest(model: Path) -> str:
+    """Bind every inference input, including tokenizer and configuration bytes."""
+    files = [model / "model.safetensors", model / "rl_agent_config.json"]
+    for name in ("encoder", "tokenizer"):
+        directory = model / name
+        if not directory.is_dir() or directory.is_symlink():
+            raise ValueError("model needs real encoder and tokenizer directories")
+        files.extend(p for p in directory.rglob("*") if p.is_file() or p.is_symlink())
+    if any(not p.is_file() or p.is_symlink() for p in files):
+        raise ValueError("inference artifacts must be regular files")
+    return digest([(str(p.relative_to(model)), file_hash(p)) for p in sorted(files)])
 
 
 def download(destination: Path) -> Path:
@@ -67,7 +80,8 @@ def train(records: list[dict[str, Any]], base: Path, output: Path,
         "training_records": len(rows), "train_digest": digest(rows),
         "spec_catalog_digest": digest([s.__dict__ for s in SPECS.values()]),
         "head_sha256": file_hash(output / "head.safetensors"),
-        "weights_sha256": file_hash(output / "model.safetensors"), "summary": summary}
+        "weights_sha256": file_hash(output / "model.safetensors"),
+        "inference_artifact_digest": artifact_digest(output), "summary": summary}
     write_json(output / "manifest.json", manifest)
     return manifest
 
@@ -94,19 +108,37 @@ class LocalPolicy:
         spec = SPECS[spec_id]
         start = time.perf_counter()
         first = self.agent.predict(inputs, {"decision": spec.question()}, max_len=256)
-        answer = first["answers"]["decision"]
         # Candidate-order instability always abstains. Both passes are charged.
         second = self.agent.predict(inputs, {"decision": spec.question(reverse=True)}, max_len=256) if check_order else first
-        other = second["answers"]["decision"]
         elapsed = (time.perf_counter() - start) * 1000
+        answers = []
+        for response in (first, second):
+            if (not isinstance(response, dict) or not isinstance(response.get("answers"), dict)
+                    or not isinstance(response["answers"].get("decision"), dict)):
+                raise ValueError("model returned an invalid decision response")
+            answers.append(response["answers"]["decision"])
+        answer, other = answers
+        confidences = []
+        for candidate in (answer, other):
+            probabilities = candidate.get("probabilities")
+            if (candidate.get("choice") not in spec.choices or not isinstance(probabilities, dict)
+                    or set(probabilities) != set(spec.choices)):
+                raise ValueError("model returned invalid choice probabilities")
+            values = list(probabilities.values())
+            if any(not finite_number(p) or not 0 <= p <= 1 for p in values):
+                raise ValueError("model returned invalid choice probabilities")
+            if not math.isclose(sum(values), 1.0, abs_tol=0.001):
+                raise ValueError("model returned unnormalized choice probabilities")
+            confidence = candidate.get("answer_confidence", max(values))
+            if not finite_number(confidence) or not 0 <= confidence <= 1:
+                raise ValueError("model returned invalid confidence")
+            confidences.append(confidence)
         choice = answer["choice"]
-        confidence = min(float(a.get("answer_confidence", max(a["probabilities"].values())))
-                         for a in (answer, other))
-        if choice not in spec.choices or not math.isfinite(confidence) or not 0 <= confidence <= 1:
-            raise ValueError("model returned invalid choice or confidence")
+        confidence = min(confidences)
         stable = choice == other["choice"]
-        usage = first.get("usage", {})
-        truncated = bool(usage.get("truncated") or second.get("usage", {}).get("truncated"))
+        # Missing truncation evidence cannot establish that the complete input fit.
+        truncated = any(not isinstance(response.get("usage"), dict)
+                        or response["usage"].get("truncated") is not False for response in (first, second))
         return {"choice": choice, "confidence": confidence, "stable": stable,
             "truncated": truncated, "duration_ms": elapsed, "probabilities": answer["probabilities"],
             "backend": self.backend}
@@ -115,24 +147,40 @@ class LocalPolicy:
 def materialize(base: Path, head: Path, output: Path) -> None:
     """Reconstruct an adapter using only safetensors, never executable pickle weights."""
     import shutil
+    import tempfile
 
     from safetensors.torch import load_file, save_file
-    if output.exists():
+    if output.exists() or output.is_symlink():
         raise ValueError("materialization output already exists")
     manifest = json.loads((head.parent / "manifest.json").read_text())
     if manifest["base_revision"] != BASE_REVISION or file_hash(head) != manifest["head_sha256"]:
         raise ValueError("adapter provenance or head digest mismatch")
     if file_hash(base / "model.safetensors") != manifest["base_weights_sha256"]:
         raise ValueError("base checkpoint does not match adapter provenance")
+    if not isinstance(manifest.get("inference_artifact_digest"), str):
+        raise ValueError("adapter needs a complete inference artifact digest")
     state = load_file(str(base / "model.safetensors"))
     adapted = load_file(str(head))
     expected = {k for k in state if not k.startswith("encoder.")}
     if set(adapted) != expected or any(adapted[k].shape != state[k].shape for k in expected):
         raise ValueError("head keys or shapes do not match the pinned base")
     state.update(adapted)
-    output.mkdir(parents=True)
-    for name in ("encoder", "tokenizer"):
-        shutil.copytree(head.parent / name, output / name)
-    shutil.copy2(head.parent / "rl_agent_config.json", output / "rl_agent_config.json")
-    shutil.copy2(head.parent / "manifest.json", output / "manifest.json")
-    save_file(state, str(output / "model.safetensors"))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    # Verify in a disposable staging directory so failures cannot leave a policy
+    # that appears complete or replace a previous valid reconstruction.
+    with tempfile.TemporaryDirectory(prefix=".reflex-materialize-", dir=output.parent) as temp:
+        staged = Path(temp) / "policy"
+        staged.mkdir()
+        for name in ("encoder", "tokenizer"):
+            shutil.copytree(head.parent / name, staged / name, symlinks=True)
+        for name in ("rl_agent_config.json", "manifest.json"):
+            if (head.parent / name).is_symlink():
+                raise ValueError("adapter metadata must be regular files")
+            shutil.copy2(head.parent / name, staged / name)
+        save_file(state, str(staged / "model.safetensors"))
+        if (file_hash(staged / "model.safetensors") != manifest["weights_sha256"]
+                or artifact_digest(staged) != manifest["inference_artifact_digest"]):
+            raise ValueError("reconstructed inference artifacts do not match adapter provenance")
+        if output.exists() or output.is_symlink():
+            raise FileExistsError("materialization output already exists")
+        staged.rename(output)

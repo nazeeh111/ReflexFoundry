@@ -12,7 +12,7 @@ ReflexFoundry finds repeated, bounded decisions in explicitly shared workflow re
 
 A fast model can still make a workflow slower or less reliable. ReflexFoundry includes startup and fallback costs, compares against a transparent heuristic, and blocks deployment when the evidence fails. A rejected policy is a useful result.
 
-**v0.1.0 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. Context retrieval has a typed specification, but the first evaluator and trained-policy workflow cover test scope. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md).
+**v0.1.1 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. Context retrieval has a typed specification, but the first evaluator and trained-policy workflow cover test scope. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md). The [0.1.1 fixes](CHANGELOG.md) tighten validation and shadow evidence; the original model and benchmark remain withheld and unchanged.
 
 ## Try it without a model
 
@@ -33,7 +33,7 @@ reflex lab --workspace runs/first-look --output runs/first-look/lab.html
 
 Open the generated `lab.html`, or run `reflex serve --workspace runs/first-look` for the local, read-only Lab. The small demo executes real checks on fresh generated fixtures. It is intentionally too small for model promotion. Each benchmark run needs a fresh output directory.
 
-For a complete walkthrough, use the [quickstart](docs/quickstart.md). Package installation is from source; a PyPI publication is not implied.
+For a complete walkthrough, use the [quickstart](docs/quickstart.md). To inspect the already trained research head without retraining, follow the [model artifact guide](docs/model-artifacts.md). Package installation is from source; a PyPI publication is not implied.
 
 ## What the tool does
 

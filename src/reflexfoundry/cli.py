@@ -131,7 +131,7 @@ def _evaluate(args: argparse.Namespace) -> dict[str, Any]:
     records = read_records(args.workspace / "records.jsonl")
     # Fail before loading a model if the dataset cannot support an evaluation.
     from .core import validate_splits
-    validate_splits(records)
+    validate_splits(records, require_evaluation_outcomes=True)
     if any(row["spec"] != "test-scope-v1" for row in records):
         raise ValueError("executed evaluation currently supports test-scope-v1 only")
     if any(sum(row["split"] == split for row in records) < 30
