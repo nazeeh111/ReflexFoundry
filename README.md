@@ -138,9 +138,7 @@ See [architecture](docs/architecture.md), [privacy and security](SECURITY.md), [
 
 ## What is original here
 
-Laya already supplies typed decision inference and training. Existing projects such as [stuntd](https://github.com/bladedevoff/stuntd) already learn per-site heads and manage shadow deployment. Selective prediction, calibration, and cost-aware routing are established research areas.
-
-ReflexFoundry's proposed contribution is a concrete **outcome-aware decision compilation** method for bounded coding-workflow decisions: identify an opportunity, specialize a local policy, and require independent task and economic evidence before delegating. This is an experimental method and developer tool, not a scientific-priority claim. The [research review](docs/research.md) documents close precedents and limitations.
+ReflexFoundry combines opportunity discovery, local policy specialization and independent task checks into an **outcome-aware decision compilation** workflow. It uses established inference, calibration and deployment methods. The [research review](docs/research.md) documents the sources, close precedents and limitations; this experimental tool makes no scientific-priority claim.
 
 ## Development
 

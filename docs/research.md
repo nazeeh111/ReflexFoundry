@@ -127,16 +127,6 @@ demonstrations. Label them as such. They do not substitute for held-out real
 repositories or a live Codex task trial. A negative result, including an inference
 overhead larger than the saved work, is a valid result and blocks promotion.
 
-## Diagram generation feasibility
-
-[PaperVizAgent](https://github.com/google-research/papervizagent) provides
-candidate generation and image refinement through a Streamlit workflow. Its
-documented setup asks for hosted model API keys. No free, subscription-compatible
-execution path was established in this review, so it is not a dependency or a
-reason to configure credentials. Original SVG/Mermaid diagrams and plots produced
-from executed experiment records are a simpler reproducible route. Do not imply
-PaperVizAgent generated project assets unless it actually ran.
-
 ## Attribution and scope of claims
 
 See [third-party notices](../THIRD_PARTY_NOTICES.md) for license boundaries.
