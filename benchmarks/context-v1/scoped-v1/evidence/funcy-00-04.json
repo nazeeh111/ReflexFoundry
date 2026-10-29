@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.003292,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.003541,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 6.06175,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/__init__.py",
+            "start_line": 5,
+            "text": "from .tree import *\nfrom .decorators import *\nfrom .funcolls import *\nfrom .funcs import *\nfrom .seqs import *\nfrom .types import *\nfrom .strings import *\nfrom .flow import *\nfrom .objects import *\nfrom .debug import *\nfrom .primitives import *\n\n\n# Setup __all__\nmodules = ('calc', 'colls', 'tree', 'decorators', 'funcolls', 'funcs', 'seqs', 'types',\n           'strings', 'flow', 'objects', 'debug', 'primitives')\n__all__ = lcat(sys.modules['funcy.' + m].__all__ for m in modules)",
+            "sha256": "faaa7b8fddba088897611c01283956a4409e5dab2aeaa6d415d04ae4d7cdf393"
+          },
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 72,
+            "text": "two_arg_funcs = \"\"\"\n    _compare_digest add and_ concat contains countOf delitem div eq floordiv ge getitem\n    gt iadd iand iconcat idiv ifloordiv ilshift imatmul imod imul indexOf ior ipow irepeat\n    irshift is_ is_not isub itruediv ixor le lshift lt matmul mod mul ne or_ pow repeat rshift\n    sequenceIncludes sub truediv xor\n\"\"\"\nARGS['operator'].update(dict.fromkeys(two_arg_funcs.split(), '**'))\nARGS['operator'].update([\n    ('__%s__' % op.strip('_'), args) for op, args in ARGS['operator'].items()])\nARGS['_operator'] = ARGS['operator']\n\n\n# Fixate this\nSTD_MODULES = set(ARGS)\n\n\n# Describe some funcy functions, mostly for r?curry()\nARGS['funcy.seqs'] = {\n    'map': 'f*', 'lmap': 'f*', 'xmap': 'f*',\n    'mapcat': 'f*', 'lmapcat': 'f*',\n}\nARGS['funcy.colls'] = {\n    'merge_with': 'f*',\n}\n\n\nSpec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n",
+            "sha256": "3ffb53e2bbe0ae292b5519fec9aef64a72072678f61e886ac3a0490b5ff2e88f"
+          },
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 73,
+            "text": "    _compare_digest add and_ concat contains countOf delitem div eq floordiv ge getitem\n    gt iadd iand iconcat idiv ifloordiv ilshift imatmul imod imul indexOf ior ipow irepeat\n    irshift is_ is_not isub itruediv ixor le lshift lt matmul mod mul ne or_ pow repeat rshift\n    sequenceIncludes sub truediv xor\n\"\"\"\nARGS['operator'].update(dict.fromkeys(two_arg_funcs.split(), '**'))\nARGS['operator'].update([\n    ('__%s__' % op.strip('_'), args) for op, args in ARGS['operator'].items()])\nARGS['_operator'] = ARGS['operator']\n\n\n# Fixate this\nSTD_MODULES = set(ARGS)\n\n\n# Describe some funcy functions, mostly for r?curry()\nARGS['funcy.seqs'] = {\n    'map': 'f*', 'lmap': 'f*', 'xmap': 'f*',\n    'mapcat': 'f*', 'lmapcat': 'f*',\n}\nARGS['funcy.colls'] = {\n    'merge_with': 'f*',\n}\n\n\nSpec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n\ndef get_spec(func, _cache={}):",
+            "sha256": "6289dccfc896098c44b5a417086a2dfb838411420213d27e320a6439854871e5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 410.254459,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/__init__.py",
+            "start_line": 5,
+            "text": "from .tree import *\nfrom .decorators import *\nfrom .funcolls import *\nfrom .funcs import *\nfrom .seqs import *\nfrom .types import *\nfrom .strings import *\nfrom .flow import *\nfrom .objects import *\nfrom .debug import *\nfrom .primitives import *\n\n\n# Setup __all__\nmodules = ('calc', 'colls', 'tree', 'decorators', 'funcolls', 'funcs', 'seqs', 'types',\n           'strings', 'flow', 'objects', 'debug', 'primitives')\n__all__ = lcat(sys.modules['funcy.' + m].__all__ for m in modules)",
+            "sha256": "faaa7b8fddba088897611c01283956a4409e5dab2aeaa6d415d04ae4d7cdf393"
+          },
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 72,
+            "text": "two_arg_funcs = \"\"\"\n    _compare_digest add and_ concat contains countOf delitem div eq floordiv ge getitem\n    gt iadd iand iconcat idiv ifloordiv ilshift imatmul imod imul indexOf ior ipow irepeat\n    irshift is_ is_not isub itruediv ixor le lshift lt matmul mod mul ne or_ pow repeat rshift\n    sequenceIncludes sub truediv xor\n\"\"\"\nARGS['operator'].update(dict.fromkeys(two_arg_funcs.split(), '**'))\nARGS['operator'].update([\n    ('__%s__' % op.strip('_'), args) for op, args in ARGS['operator'].items()])\nARGS['_operator'] = ARGS['operator']\n\n\n# Fixate this\nSTD_MODULES = set(ARGS)\n\n\n# Describe some funcy functions, mostly for r?curry()\nARGS['funcy.seqs'] = {\n    'map': 'f*', 'lmap': 'f*', 'xmap': 'f*',\n    'mapcat': 'f*', 'lmapcat': 'f*',\n}\nARGS['funcy.colls'] = {\n    'merge_with': 'f*',\n}\n\n\nSpec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n",
+            "sha256": "3ffb53e2bbe0ae292b5519fec9aef64a72072678f61e886ac3a0490b5ff2e88f"
+          },
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 73,
+            "text": "    _compare_digest add and_ concat contains countOf delitem div eq floordiv ge getitem\n    gt iadd iand iconcat idiv ifloordiv ilshift imatmul imod imul indexOf ior ipow irepeat\n    irshift is_ is_not isub itruediv ixor le lshift lt matmul mod mul ne or_ pow repeat rshift\n    sequenceIncludes sub truediv xor\n\"\"\"\nARGS['operator'].update(dict.fromkeys(two_arg_funcs.split(), '**'))\nARGS['operator'].update([\n    ('__%s__' % op.strip('_'), args) for op, args in ARGS['operator'].items()])\nARGS['_operator'] = ARGS['operator']\n\n\n# Fixate this\nSTD_MODULES = set(ARGS)\n\n\n# Describe some funcy functions, mostly for r?curry()\nARGS['funcy.seqs'] = {\n    'map': 'f*', 'lmap': 'f*', 'xmap': 'f*',\n    'mapcat': 'f*', 'lmapcat': 'f*',\n}\nARGS['funcy.colls'] = {\n    'merge_with': 'f*',\n}\n\n\nSpec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n\ndef get_spec(func, _cache={}):",
+            "sha256": "6289dccfc896098c44b5a417086a2dfb838411420213d27e320a6439854871e5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 100.435375,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/__init__.py",
+            "start_line": 5,
+            "text": "from .tree import *\nfrom .decorators import *\nfrom .funcolls import *\nfrom .funcs import *\nfrom .seqs import *\nfrom .types import *\nfrom .strings import *\nfrom .flow import *\nfrom .objects import *\nfrom .debug import *\nfrom .primitives import *\n\n\n# Setup __all__\nmodules = ('calc', 'colls', 'tree', 'decorators', 'funcolls', 'funcs', 'seqs', 'types',\n           'strings', 'flow', 'objects', 'debug', 'primitives')\n__all__ = lcat(sys.modules['funcy.' + m].__all__ for m in modules)",
+            "sha256": "faaa7b8fddba088897611c01283956a4409e5dab2aeaa6d415d04ae4d7cdf393"
+          },
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 72,
+            "text": "two_arg_funcs = \"\"\"\n    _compare_digest add and_ concat contains countOf delitem div eq floordiv ge getitem\n    gt iadd iand iconcat idiv ifloordiv ilshift imatmul imod imul indexOf ior ipow irepeat\n    irshift is_ is_not isub itruediv ixor le lshift lt matmul mod mul ne or_ pow repeat rshift\n    sequenceIncludes sub truediv xor\n\"\"\"\nARGS['operator'].update(dict.fromkeys(two_arg_funcs.split(), '**'))\nARGS['operator'].update([\n    ('__%s__' % op.strip('_'), args) for op, args in ARGS['operator'].items()])\nARGS['_operator'] = ARGS['operator']\n\n\n# Fixate this\nSTD_MODULES = set(ARGS)\n\n\n# Describe some funcy functions, mostly for r?curry()\nARGS['funcy.seqs'] = {\n    'map': 'f*', 'lmap': 'f*', 'xmap': 'f*',\n    'mapcat': 'f*', 'lmapcat': 'f*',\n}\nARGS['funcy.colls'] = {\n    'merge_with': 'f*',\n}\n\n\nSpec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n",
+            "sha256": "3ffb53e2bbe0ae292b5519fec9aef64a72072678f61e886ac3a0490b5ff2e88f"
+          },
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 73,
+            "text": "    _compare_digest add and_ concat contains countOf delitem div eq floordiv ge getitem\n    gt iadd iand iconcat idiv ifloordiv ilshift imatmul imod imul indexOf ior ipow irepeat\n    irshift is_ is_not isub itruediv ixor le lshift lt matmul mod mul ne or_ pow repeat rshift\n    sequenceIncludes sub truediv xor\n\"\"\"\nARGS['operator'].update(dict.fromkeys(two_arg_funcs.split(), '**'))\nARGS['operator'].update([\n    ('__%s__' % op.strip('_'), args) for op, args in ARGS['operator'].items()])\nARGS['_operator'] = ARGS['operator']\n\n\n# Fixate this\nSTD_MODULES = set(ARGS)\n\n\n# Describe some funcy functions, mostly for r?curry()\nARGS['funcy.seqs'] = {\n    'map': 'f*', 'lmap': 'f*', 'xmap': 'f*',\n    'mapcat': 'f*', 'lmapcat': 'f*',\n}\nARGS['funcy.colls'] = {\n    'merge_with': 'f*',\n}\n\n\nSpec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n\ndef get_spec(func, _cache={}):",
+            "sha256": "6289dccfc896098c44b5a417086a2dfb838411420213d27e320a6439854871e5"
+          }
+        ]
+      }
+    ]
+  }
+}

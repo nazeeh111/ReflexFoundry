@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.2.1 · complete decision contract binding
+
+- Bind model-visible question text and both option orders, input schema, independent success criterion and declared limits to training, evaluation and active policy evidence.
+- Refuse registration of legacy reports until re-evaluation, and revert active policies without the complete binding. Historical reports and weights remain intact.
+- Detect contract changes during training or evaluation instead of attaching evidence to changed semantics.
+- Clarify unexecuted research-plan comparisons and the limits of the incomplete native Codex trial, including missing model usage and its stale-binding refusal.
+
+No numerical study was rerun or retuned. Earlier model, report, plot and video artifacts remain unchanged; no learned policy is newly eligible.
+
+## 0.2.0 · experimental context retrieval
+
+- Run outcome-aware training and evaluation for the context-route decision family, using its own symbol/search choices and search fallback.
+- Execute bounded read-only retrieval on pinned public Toolz, Funcy, Blinker and cachetools source, retaining three paired trials, independent source-coverage grading, licenses and failures.
+- Derive positive training labels from successful measured actions and exclude neither-success rows, with provenance. Observation-only training remains supported.
+- Mark repository-group uncertainty unavailable with fewer than two actual repositories, and fail promotion closed.
+- Expose input schemas and independent success criteria in decision specifications. Lab comparisons use accounted decision time and the appropriate retrieval baselines.
+
+The study has one repository per split and controlled public-API queries. It does not establish autonomous coding benefit, relax deployment gates, or complete the separately blocked comparative Codex trial. Earlier public model, benchmark and media artifacts remain unchanged.
+
 ## 0.1.1 · experimental reliability update
 
 - Validate both raw prediction passes before combining confidence. Reject booleans, numeric strings, NaN, invalid probabilities, and malformed responses. Missing truncation evidence causes abstention.

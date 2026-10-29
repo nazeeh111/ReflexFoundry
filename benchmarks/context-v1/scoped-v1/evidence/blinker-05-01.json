@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 7.85325,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 364,
+            "text": "    def disconnect(self, receiver: c.Callable[..., t.Any], sender: t.Any = ANY) -> None:\n        \"\"\"Disconnect ``receiver`` from being called when the signal is sent by\n        ``sender``.\n\n        :param receiver: A connected receiver callable.\n        :param sender: Disconnect from only this sender. By default, disconnect\n            from all senders.\n        \"\"\"\n        sender_id: c.Hashable\n\n        if sender is ANY:\n            sender_id = ANY_ID\n        else:\n            sender_id = make_id(sender)\n\n        receiver_id = make_id(receiver)\n        self._disconnect(receiver_id, sender_id)\n\n        if (\n            \"receiver_disconnected\" in self.__dict__\n            and self.receiver_disconnected.receivers\n        ):\n            self.receiver_disconnected.send(self, receiver=receiver, sender=sender)",
+            "sha256": "49eb3c41376c40674351aea367e079c3026858e5577eb0b128432dc313564728"
+          }
+        ]
+      },
+      {
+        "duration_ms": 67.587667,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 364,
+            "text": "    def disconnect(self, receiver: c.Callable[..., t.Any], sender: t.Any = ANY) -> None:\n        \"\"\"Disconnect ``receiver`` from being called when the signal is sent by\n        ``sender``.\n\n        :param receiver: A connected receiver callable.\n        :param sender: Disconnect from only this sender. By default, disconnect\n            from all senders.\n        \"\"\"\n        sender_id: c.Hashable\n\n        if sender is ANY:\n            sender_id = ANY_ID\n        else:\n            sender_id = make_id(sender)\n\n        receiver_id = make_id(receiver)\n        self._disconnect(receiver_id, sender_id)\n\n        if (\n            \"receiver_disconnected\" in self.__dict__\n            and self.receiver_disconnected.receivers\n        ):\n            self.receiver_disconnected.send(self, receiver=receiver, sender=sender)",
+            "sha256": "49eb3c41376c40674351aea367e079c3026858e5577eb0b128432dc313564728"
+          }
+        ]
+      },
+      {
+        "duration_ms": 140.96975,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 364,
+            "text": "    def disconnect(self, receiver: c.Callable[..., t.Any], sender: t.Any = ANY) -> None:\n        \"\"\"Disconnect ``receiver`` from being called when the signal is sent by\n        ``sender``.\n\n        :param receiver: A connected receiver callable.\n        :param sender: Disconnect from only this sender. By default, disconnect\n            from all senders.\n        \"\"\"\n        sender_id: c.Hashable\n\n        if sender is ANY:\n            sender_id = ANY_ID\n        else:\n            sender_id = make_id(sender)\n\n        receiver_id = make_id(receiver)\n        self._disconnect(receiver_id, sender_id)\n\n        if (\n            \"receiver_disconnected\" in self.__dict__\n            and self.receiver_disconnected.receivers\n        ):\n            self.receiver_disconnected.send(self, receiver=receiver, sender=sender)",
+            "sha256": "49eb3c41376c40674351aea367e079c3026858e5577eb0b128432dc313564728"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.709542,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 349,
+            "text": "\n            if receiver is None:\n                continue\n\n            if isinstance(receiver, weakref.ref):\n                strong = receiver()\n\n                if strong is None:\n                    self._disconnect(receiver_id, ANY_ID)\n                    continue\n\n                yield strong\n            else:\n                yield receiver\n\n    def disconnect(self, receiver: c.Callable[..., t.Any], sender: t.Any = ANY) -> None:\n        \"\"\"Disconnect ``receiver`` from being called when the signal is sent by\n        ``sender``.\n\n        :param receiver: A connected receiver callable.\n        :param sender: Disconnect from only this sender. By default, disconnect\n            from all senders.\n        \"\"\"\n        sender_id: c.Hashable\n\n        if sender is ANY:\n            sender_id = ANY_ID\n        else:\n            sender_id = make_id(sender)",
+            "sha256": "15446d00b0d3235078cfe1b95832e330101d5a2b54d7142de84f027be2fc7240"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 76,
+            "text": "\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,",
+            "sha256": "43907dd26133cd685eea61251b340399d9bf4bfd36abf89ea2d2280124d28611"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 43,
+            "text": "        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")",
+            "sha256": "fe0b63b45c7ed05fffc7b479f0622efbf01624b97d334d32e8f1f00d9fdb8cd6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 12.858125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 349,
+            "text": "\n            if receiver is None:\n                continue\n\n            if isinstance(receiver, weakref.ref):\n                strong = receiver()\n\n                if strong is None:\n                    self._disconnect(receiver_id, ANY_ID)\n                    continue\n\n                yield strong\n            else:\n                yield receiver\n\n    def disconnect(self, receiver: c.Callable[..., t.Any], sender: t.Any = ANY) -> None:\n        \"\"\"Disconnect ``receiver`` from being called when the signal is sent by\n        ``sender``.\n\n        :param receiver: A connected receiver callable.\n        :param sender: Disconnect from only this sender. By default, disconnect\n            from all senders.\n        \"\"\"\n        sender_id: c.Hashable\n\n        if sender is ANY:\n            sender_id = ANY_ID\n        else:\n            sender_id = make_id(sender)",
+            "sha256": "15446d00b0d3235078cfe1b95832e330101d5a2b54d7142de84f027be2fc7240"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 76,
+            "text": "\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,",
+            "sha256": "43907dd26133cd685eea61251b340399d9bf4bfd36abf89ea2d2280124d28611"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 43,
+            "text": "        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")",
+            "sha256": "fe0b63b45c7ed05fffc7b479f0622efbf01624b97d334d32e8f1f00d9fdb8cd6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 39.081666,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 349,
+            "text": "\n            if receiver is None:\n                continue\n\n            if isinstance(receiver, weakref.ref):\n                strong = receiver()\n\n                if strong is None:\n                    self._disconnect(receiver_id, ANY_ID)\n                    continue\n\n                yield strong\n            else:\n                yield receiver\n\n    def disconnect(self, receiver: c.Callable[..., t.Any], sender: t.Any = ANY) -> None:\n        \"\"\"Disconnect ``receiver`` from being called when the signal is sent by\n        ``sender``.\n\n        :param receiver: A connected receiver callable.\n        :param sender: Disconnect from only this sender. By default, disconnect\n            from all senders.\n        \"\"\"\n        sender_id: c.Hashable\n\n        if sender is ANY:\n            sender_id = ANY_ID\n        else:\n            sender_id = make_id(sender)",
+            "sha256": "15446d00b0d3235078cfe1b95832e330101d5a2b54d7142de84f027be2fc7240"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 76,
+            "text": "\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,",
+            "sha256": "43907dd26133cd685eea61251b340399d9bf4bfd36abf89ea2d2280124d28611"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 43,
+            "text": "        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")",
+            "sha256": "fe0b63b45c7ed05fffc7b479f0622efbf01624b97d334d32e8f1f00d9fdb8cd6"
+          }
+        ]
+      }
+    ]
+  }
+}

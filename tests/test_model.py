@@ -6,7 +6,14 @@ from types import ModuleType, SimpleNamespace
 
 import pytest
 
-from reflexfoundry.model import BASE_REVISION, LocalPolicy, artifact_digest, file_hash, materialize
+from reflexfoundry.model import (
+    BASE_REVISION,
+    LocalPolicy,
+    artifact_digest,
+    file_hash,
+    materialize,
+    training_examples,
+)
 
 
 def policy(first=.99, second=.98, probabilities=None):
@@ -53,6 +60,27 @@ def test_missing_truncation_evidence_abstains_and_malformed_responses_reject():
     runtime.agent = SimpleNamespace(predict=lambda *_args, **_kwargs: {"answers": {"decision": []}})
     with pytest.raises(ValueError, match="decision response"):
         runtime.predict("test-scope-v1", {"summary": "Fix display"})
+
+
+def test_training_uses_verified_outcomes_and_excludes_unusable_labels():
+    base = {"id": "safe", "spec": "context-route-v1", "inputs": {"summary": "Find source"},
+            "selected": "symbol", "outcomes": {"symbol": {"success": False, "duration_ms": 1},
+                                               "search": {"success": True, "duration_ms": 10}}}
+    neither = base | {"id": "neither", "outcomes": {
+        "symbol": {"success": False, "duration_ms": 1}, "search": {"success": False, "duration_ms": 2}}}
+    observed = {key: value for key, value in base.items() if key != "outcomes"} | {"id": "observed"}
+    examples, supervision = training_examples([base, neither, observed])
+    assert [item["expected"]["decision"] for item in examples] == ["search", "symbol"]
+    assert supervision["label_sources"] == {"independent-outcome": 1, "observed-choice": 1}
+    assert supervision["excluded_no_success"] == ["neither"]
+
+
+def test_training_prefers_original_workflow_on_near_ties():
+    examples, _ = training_examples([{"id": "tie", "spec": "context-route-v1",
+        "inputs": {"summary": "Find source"}, "selected": "symbol",
+        "outcomes": {"symbol": {"success": True, "duration_ms": 10},
+                     "search": {"success": True, "duration_ms": 10.2}}}])
+    assert examples[0]["expected"]["decision"] == "search"
 
 
 @pytest.fixture

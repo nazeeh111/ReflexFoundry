@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 786.150333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 682,
+            "text": "def partition(n, seq, pad=no_pad):\n    \"\"\" Partition sequence into tuples of length n\n\n    >>> list(partition(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    If the length of ``seq`` is not evenly divisible by ``n``, the final tuple\n    is dropped if ``pad`` is not specified, or filled to length ``n`` by pad:\n\n    >>> list(partition(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)",
+            "sha256": "0f561fdc04c8e83f72d333cdd2a0dbd485993ba8e5c347774bbdb1a1072669c6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 455.679583,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 682,
+            "text": "def partition(n, seq, pad=no_pad):\n    \"\"\" Partition sequence into tuples of length n\n\n    >>> list(partition(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    If the length of ``seq`` is not evenly divisible by ``n``, the final tuple\n    is dropped if ``pad`` is not specified, or filled to length ``n`` by pad:\n\n    >>> list(partition(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)",
+            "sha256": "0f561fdc04c8e83f72d333cdd2a0dbd485993ba8e5c347774bbdb1a1072669c6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 522.308583,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 682,
+            "text": "def partition(n, seq, pad=no_pad):\n    \"\"\" Partition sequence into tuples of length n\n\n    >>> list(partition(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    If the length of ``seq`` is not evenly divisible by ``n``, the final tuple\n    is dropped if ``pad`` is not specified, or filled to length ``n`` by pad:\n\n    >>> list(partition(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)",
+            "sha256": "0f561fdc04c8e83f72d333cdd2a0dbd485993ba8e5c347774bbdb1a1072669c6"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 143.25075,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 66,
+            "text": "excepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)\nmap = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)",
+            "sha256": "f6dbfd50a9f5f72df35b6ed5f903651c0bb25cf6730ab7fd8078d59d59de57c9"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 563,
+            "text": "    sequenceIncludes=[\n        lambda a, b: None],\n    setitem=[\n        lambda a, b, c: None],\n    setslice=[\n        lambda a, b, c, d: None],\n    sub=[\n        lambda a, b: None],\n    truediv=[\n        lambda a, b: None],\n    truth=[\n        lambda a: None],\n    xor=[\n        lambda a, b: None],\n)\n\nmodule_info['toolz'] = dict(\n    curry=[\n        (0, lambda *args, **kwargs: None)],\n    excepts=[\n        (0, lambda exc, func, handler=None: None)],\n    flip=[\n        (0, lambda func=None, a=None, b=None: None)],\n    juxt=[\n        (0, lambda *funcs: None)],\n    memoize=[\n        (0, lambda func=None, cache=None, key=None: None)],\n)\n",
+            "sha256": "f95d7e232d83328e9e0f3d0b8d3f4e9cd135a24c607fa56ee985bf8252e664b5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 67.441917,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 66,
+            "text": "excepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)\nmap = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)",
+            "sha256": "f6dbfd50a9f5f72df35b6ed5f903651c0bb25cf6730ab7fd8078d59d59de57c9"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 563,
+            "text": "    sequenceIncludes=[\n        lambda a, b: None],\n    setitem=[\n        lambda a, b, c: None],\n    setslice=[\n        lambda a, b, c, d: None],\n    sub=[\n        lambda a, b: None],\n    truediv=[\n        lambda a, b: None],\n    truth=[\n        lambda a: None],\n    xor=[\n        lambda a, b: None],\n)\n\nmodule_info['toolz'] = dict(\n    curry=[\n        (0, lambda *args, **kwargs: None)],\n    excepts=[\n        (0, lambda exc, func, handler=None: None)],\n    flip=[\n        (0, lambda func=None, a=None, b=None: None)],\n    juxt=[\n        (0, lambda *funcs: None)],\n    memoize=[\n        (0, lambda func=None, cache=None, key=None: None)],\n)\n",
+            "sha256": "f95d7e232d83328e9e0f3d0b8d3f4e9cd135a24c607fa56ee985bf8252e664b5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 201.332833,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 66,
+            "text": "excepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)\nmap = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)",
+            "sha256": "f6dbfd50a9f5f72df35b6ed5f903651c0bb25cf6730ab7fd8078d59d59de57c9"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 563,
+            "text": "    sequenceIncludes=[\n        lambda a, b: None],\n    setitem=[\n        lambda a, b, c: None],\n    setslice=[\n        lambda a, b, c, d: None],\n    sub=[\n        lambda a, b: None],\n    truediv=[\n        lambda a, b: None],\n    truth=[\n        lambda a: None],\n    xor=[\n        lambda a, b: None],\n)\n\nmodule_info['toolz'] = dict(\n    curry=[\n        (0, lambda *args, **kwargs: None)],\n    excepts=[\n        (0, lambda exc, func, handler=None: None)],\n    flip=[\n        (0, lambda func=None, a=None, b=None: None)],\n    juxt=[\n        (0, lambda *funcs: None)],\n    memoize=[\n        (0, lambda func=None, cache=None, key=None: None)],\n)\n",
+            "sha256": "f95d7e232d83328e9e0f3d0b8d3f4e9cd135a24c607fa56ee985bf8252e664b5"
+          }
+        ]
+      }
+    ]
+  }
+}

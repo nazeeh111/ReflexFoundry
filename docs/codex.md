@@ -32,7 +32,7 @@ reflex decide request.json --workspace .reflex
 
 The result contains an advisory choice and a request identifier. Without a valid active policy, the test-scope fallback is the full suite. In shadow mode the returned choice is also the fallback; the proposed candidate is evidence to inspect separately. A returned `focused` suggestion means the next bounded check, never permission to skip mandatory final validation.
 
-The equivalent context-retrieval request uses `context-route-v1`, a summary, optional relative changed-file paths, and an optional `symbol` string. Its choices are `symbol` and `search`, with `search` as fallback. The first release does not claim trained or experimentally validated delegation for context retrieval.
+The equivalent context-retrieval request uses `context-route-v1`, a summary, optional relative changed-file paths, and an optional `symbol` string. Its choices are `symbol` and `search`, with `search` as fallback. The [context study](context-benchmark.md) exercises this family with public-source coverage outcomes. It does not establish full-agent benefit or authorize use of a failed policy.
 
 Inputs allow only `summary`, `changed_files`, and `symbol`, under the spec's byte budget. File paths must be relative and stay within the repository. Permission decisions, credential operations, destructive actions, and security approvals are outside both catalogs.
 
@@ -94,3 +94,16 @@ reflex rollback --workspace .reflex
 ```
 
 Keep independent final validation in Codex and the repository's normal CI. ReflexFoundry must never become the sole authority for permissions or security-sensitive approvals.
+
+## Upgrading reports created before 0.2.1
+
+The complete contract binds both model-visible question orders, option
+descriptions, input schema, independent success criterion and declared limits.
+A historical report without this binding remains readable in the Lab, but it
+cannot register a new policy. An active legacy policy falls back and reverts.
+Run `reflex evaluate` with the current source before registering or inspecting
+new proposals; do not add a digest to an old report by hand. Existing trained
+weights without the new training-contract field can be evaluated, preserving
+their original manifest. New training manifests also bind the complete contract;
+a mismatch requires a compatible trained version. Historical numerical reports
+are not silently upgraded or overwritten by this migration.

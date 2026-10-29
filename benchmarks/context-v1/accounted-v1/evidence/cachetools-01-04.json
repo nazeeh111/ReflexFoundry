@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.003708,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002083,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000375,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 3.776167,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections",
+            "sha256": "32ec716658b2e44ea5abe65c4f3e29035d2cb04bd94f30774bc3631d3dbaea74"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 155,
+            "text": "    @property\n    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1\n\n\nclass FIFOCache(Cache):\n    \"\"\"First In First Out (FIFO) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__order:\n            self.__order.move_to_end(key)\n        else:\n            self.__order[key] = None",
+            "sha256": "3a5b388162f652a3a7fc707eb6b53647c886c38491acf0790a04604ac9c34622"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 1,
+            "text": "\"\"\"`functools.lru_cache` compatible memoizing function decorators.\"\"\"\n\n__all__ = (\"fifo_cache\", \"lfu_cache\", \"lru_cache\", \"rr_cache\", \"ttl_cache\")\n\nimport math\nimport random\nimport time\nfrom threading import Condition\n\nfrom . import FIFOCache, LFUCache, LRUCache, RRCache, TTLCache, cached, keys\n\n\nclass _UnboundTTLCache(TTLCache):\n    def __init__(self, ttl, timer):\n        TTLCache.__init__(self, math.inf, ttl, timer)\n\n    @property\n    def maxsize(self):  # type: ignore\n        return None\n\n\ndef _cache(cache, maxsize, typed):",
+            "sha256": "e60e85b2b074fb0f13519efadd74a0afb9adbc3c608e262c3a2044560f3e4ff8"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.422292,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections",
+            "sha256": "32ec716658b2e44ea5abe65c4f3e29035d2cb04bd94f30774bc3631d3dbaea74"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 155,
+            "text": "    @property\n    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1\n\n\nclass FIFOCache(Cache):\n    \"\"\"First In First Out (FIFO) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__order:\n            self.__order.move_to_end(key)\n        else:\n            self.__order[key] = None",
+            "sha256": "3a5b388162f652a3a7fc707eb6b53647c886c38491acf0790a04604ac9c34622"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 1,
+            "text": "\"\"\"`functools.lru_cache` compatible memoizing function decorators.\"\"\"\n\n__all__ = (\"fifo_cache\", \"lfu_cache\", \"lru_cache\", \"rr_cache\", \"ttl_cache\")\n\nimport math\nimport random\nimport time\nfrom threading import Condition\n\nfrom . import FIFOCache, LFUCache, LRUCache, RRCache, TTLCache, cached, keys\n\n\nclass _UnboundTTLCache(TTLCache):\n    def __init__(self, ttl, timer):\n        TTLCache.__init__(self, math.inf, ttl, timer)\n\n    @property\n    def maxsize(self):  # type: ignore\n        return None\n\n\ndef _cache(cache, maxsize, typed):",
+            "sha256": "e60e85b2b074fb0f13519efadd74a0afb9adbc3c608e262c3a2044560f3e4ff8"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.962084,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections",
+            "sha256": "32ec716658b2e44ea5abe65c4f3e29035d2cb04bd94f30774bc3631d3dbaea74"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 155,
+            "text": "    @property\n    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1\n\n\nclass FIFOCache(Cache):\n    \"\"\"First In First Out (FIFO) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__order:\n            self.__order.move_to_end(key)\n        else:\n            self.__order[key] = None",
+            "sha256": "3a5b388162f652a3a7fc707eb6b53647c886c38491acf0790a04604ac9c34622"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 1,
+            "text": "\"\"\"`functools.lru_cache` compatible memoizing function decorators.\"\"\"\n\n__all__ = (\"fifo_cache\", \"lfu_cache\", \"lru_cache\", \"rr_cache\", \"ttl_cache\")\n\nimport math\nimport random\nimport time\nfrom threading import Condition\n\nfrom . import FIFOCache, LFUCache, LRUCache, RRCache, TTLCache, cached, keys\n\n\nclass _UnboundTTLCache(TTLCache):\n    def __init__(self, ttl, timer):\n        TTLCache.__init__(self, math.inf, ttl, timer)\n\n    @property\n    def maxsize(self):  # type: ignore\n        return None\n\n\ndef _cache(cache, maxsize, typed):",
+            "sha256": "e60e85b2b074fb0f13519efadd74a0afb9adbc3c608e262c3a2044560f3e4ff8"
+          }
+        ]
+      }
+    ]
+  }
+}

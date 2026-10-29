@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 1569.498208,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 242,
+            "text": "def unique(seq, key=None):\n    \"\"\" Return only unique elements of a sequence\n\n    >>> tuple(unique((1, 2, 3)))\n    (1, 2, 3)\n    >>> tuple(unique((1, 2, 1, 3)))\n    (1, 2, 3)\n\n    Uniqueness can be defined by key keyword\n\n    >>> tuple(unique(['cat', 'mouse', 'dog', 'hen'], key=len))\n    ('cat', 'mouse')\n    \"\"\"\n    seen = set()\n    seen_add = seen.add\n    if key is None:\n        for item in seq:\n            if item not in seen:\n                seen_add(item)\n                yield item\n    else:  # calculate key\n        for item in seq:\n            val = key(item)\n            if val not in seen:\n                seen_add(val)\n                yield item",
+            "sha256": "541d27f6d26be4469a4485717841144bdd2e627825d4e1f049a6d3a84ecb0d87"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1884.978208,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 242,
+            "text": "def unique(seq, key=None):\n    \"\"\" Return only unique elements of a sequence\n\n    >>> tuple(unique((1, 2, 3)))\n    (1, 2, 3)\n    >>> tuple(unique((1, 2, 1, 3)))\n    (1, 2, 3)\n\n    Uniqueness can be defined by key keyword\n\n    >>> tuple(unique(['cat', 'mouse', 'dog', 'hen'], key=len))\n    ('cat', 'mouse')\n    \"\"\"\n    seen = set()\n    seen_add = seen.add\n    if key is None:\n        for item in seq:\n            if item not in seen:\n                seen_add(item)\n                yield item\n    else:  # calculate key\n        for item in seq:\n            val = key(item)\n            if val not in seen:\n                seen_add(val)\n                yield item",
+            "sha256": "541d27f6d26be4469a4485717841144bdd2e627825d4e1f049a6d3a84ecb0d87"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1696.7325,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 242,
+            "text": "def unique(seq, key=None):\n    \"\"\" Return only unique elements of a sequence\n\n    >>> tuple(unique((1, 2, 3)))\n    (1, 2, 3)\n    >>> tuple(unique((1, 2, 1, 3)))\n    (1, 2, 3)\n\n    Uniqueness can be defined by key keyword\n\n    >>> tuple(unique(['cat', 'mouse', 'dog', 'hen'], key=len))\n    ('cat', 'mouse')\n    \"\"\"\n    seen = set()\n    seen_add = seen.add\n    if key is None:\n        for item in seq:\n            if item not in seen:\n                seen_add(item)\n                yield item\n    else:  # calculate key\n        for item in seq:\n            val = key(item)\n            if val not in seen:\n                seen_add(val)\n                yield item",
+            "sha256": "541d27f6d26be4469a4485717841144bdd2e627825d4e1f049a6d3a84ecb0d87"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 331.5305,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 81,
+            "text": "partial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "6dd52a81d9eeabc1795da0769ade9790c1e0fa6f50c99844d57b4924844adc84"
+          },
+          {
+            "path": "toolz/sandbox/core.py",
+            "start_line": 21,
+            "text": "\n    The ``key`` argument to ``EqualityHashKey`` should be a function or\n    index that returns a hashable object that effectively distinguishes\n    unequal items.  This helps avoid the poor scaling that occurs when\n    using the default key.  For example, the above example can be improved\n    by using a key function that distinguishes items by length or type:\n\n    >>> EqualityHashLen = curry(EqualityHashKey, len)\n    >>> EqualityHashType = curry(EqualityHashKey, type)  # this works too\n    >>> set(map(EqualityHashLen, [[], (), [1], [1]]))  # doctest: +SKIP\n    {=[]=, =()=, =[1]=}\n\n    ``EqualityHashKey`` is convenient to use when a suitable key function\n    is complicated or unavailable.  For example, the following returns all\n    unique values based on equality:\n\n    >>> from toolz import unique\n    >>> vals = [[], [], (), [1], [1], [2], {}, {}, {}]\n    >>> list(unique(vals, key=EqualityHashDefault))\n    [[], (), [1], [2], {}]\n\n    **Warning:** don't change the equality value of an item already in a hash\n    container.  Unhashable types are unhashable for a reason.  For example:\n\n    >>> L1 = [1] ; L2 = [2]\n    >>> s = set(map(EqualityHashDefault, [L1, L2]))\n    >>> s  # doctest: +SKIP\n    {=[1]=, =[2]=}\n",
+            "sha256": "ee0cfa421d38413bb187e35040642b48ed2df53b95cae99de45cb7f110e6e3ed"
+          },
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 270.264959,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 81,
+            "text": "partial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "6dd52a81d9eeabc1795da0769ade9790c1e0fa6f50c99844d57b4924844adc84"
+          },
+          {
+            "path": "toolz/sandbox/core.py",
+            "start_line": 21,
+            "text": "\n    The ``key`` argument to ``EqualityHashKey`` should be a function or\n    index that returns a hashable object that effectively distinguishes\n    unequal items.  This helps avoid the poor scaling that occurs when\n    using the default key.  For example, the above example can be improved\n    by using a key function that distinguishes items by length or type:\n\n    >>> EqualityHashLen = curry(EqualityHashKey, len)\n    >>> EqualityHashType = curry(EqualityHashKey, type)  # this works too\n    >>> set(map(EqualityHashLen, [[], (), [1], [1]]))  # doctest: +SKIP\n    {=[]=, =()=, =[1]=}\n\n    ``EqualityHashKey`` is convenient to use when a suitable key function\n    is complicated or unavailable.  For example, the following returns all\n    unique values based on equality:\n\n    >>> from toolz import unique\n    >>> vals = [[], [], (), [1], [1], [2], {}, {}, {}]\n    >>> list(unique(vals, key=EqualityHashDefault))\n    [[], (), [1], [2], {}]\n\n    **Warning:** don't change the equality value of an item already in a hash\n    container.  Unhashable types are unhashable for a reason.  For example:\n\n    >>> L1 = [1] ; L2 = [2]\n    >>> s = set(map(EqualityHashDefault, [L1, L2]))\n    >>> s  # doctest: +SKIP\n    {=[1]=, =[2]=}\n",
+            "sha256": "ee0cfa421d38413bb187e35040642b48ed2df53b95cae99de45cb7f110e6e3ed"
+          },
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 504.961458,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 81,
+            "text": "partial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "6dd52a81d9eeabc1795da0769ade9790c1e0fa6f50c99844d57b4924844adc84"
+          },
+          {
+            "path": "toolz/sandbox/core.py",
+            "start_line": 21,
+            "text": "\n    The ``key`` argument to ``EqualityHashKey`` should be a function or\n    index that returns a hashable object that effectively distinguishes\n    unequal items.  This helps avoid the poor scaling that occurs when\n    using the default key.  For example, the above example can be improved\n    by using a key function that distinguishes items by length or type:\n\n    >>> EqualityHashLen = curry(EqualityHashKey, len)\n    >>> EqualityHashType = curry(EqualityHashKey, type)  # this works too\n    >>> set(map(EqualityHashLen, [[], (), [1], [1]]))  # doctest: +SKIP\n    {=[]=, =()=, =[1]=}\n\n    ``EqualityHashKey`` is convenient to use when a suitable key function\n    is complicated or unavailable.  For example, the following returns all\n    unique values based on equality:\n\n    >>> from toolz import unique\n    >>> vals = [[], [], (), [1], [1], [2], {}, {}, {}]\n    >>> list(unique(vals, key=EqualityHashDefault))\n    [[], (), [1], [2], {}]\n\n    **Warning:** don't change the equality value of an item already in a hash\n    container.  Unhashable types are unhashable for a reason.  For example:\n\n    >>> L1 = [1] ; L2 = [2]\n    >>> s = set(map(EqualityHashDefault, [L1, L2]))\n    >>> s  # doctest: +SKIP\n    {=[1]=, =[2]=}\n",
+            "sha256": "ee0cfa421d38413bb187e35040642b48ed2df53b95cae99de45cb7f110e6e3ed"
+          },
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          }
+        ]
+      }
+    ]
+  }
+}

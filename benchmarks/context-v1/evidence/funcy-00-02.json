@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.001542,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000334,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000708,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 3.61,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 36,
+            "text": "# Re-export\nfrom itertools import count, cycle, repeat\ndef repeatedly(f, n=EMPTY):\n    \"\"\"Takes a function of no args, presumably with side effects,\n       and returns an infinite (or length n) iterator of calls to it.\"\"\"\n    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n",
+            "sha256": "75d9ee6645ef26fa70f8036f2668ae19db078f7ec8aafb045a6ea56b4fe0ea46"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 41,
+            "text": "    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n",
+            "sha256": "3dccde9cd5912e201b5c6d177b4de3f5bbcde0ff325cb57c7917b2f1636e72e6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 93,
+            "text": "    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item\n\ndef shuffled(seq):\n    \"\"\"Returns a list of items of the sequence in random order.\"\"\"\n    items = list(seq)\n    random.shuffle(items)\n    return items\n\ndef ilen(seq):\n    \"\"\"Consumes an iterable not reading it into memory\n       and returns the number of items.\"\"\"\n    # NOTE: implementation borrowed from https://stackoverflow.com/a/15112059/753382\n    counter = count()\n    deque(zip(seq, counter), maxlen=0)  # (consume at C speed)\n    return next(counter)\n",
+            "sha256": "46cca613572bdb6d766e29ba015b972e3894476166c797f850edb33d6b659b81"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.26975,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 36,
+            "text": "# Re-export\nfrom itertools import count, cycle, repeat\ndef repeatedly(f, n=EMPTY):\n    \"\"\"Takes a function of no args, presumably with side effects,\n       and returns an infinite (or length n) iterator of calls to it.\"\"\"\n    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n",
+            "sha256": "75d9ee6645ef26fa70f8036f2668ae19db078f7ec8aafb045a6ea56b4fe0ea46"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 41,
+            "text": "    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n",
+            "sha256": "3dccde9cd5912e201b5c6d177b4de3f5bbcde0ff325cb57c7917b2f1636e72e6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 93,
+            "text": "    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item\n\ndef shuffled(seq):\n    \"\"\"Returns a list of items of the sequence in random order.\"\"\"\n    items = list(seq)\n    random.shuffle(items)\n    return items\n\ndef ilen(seq):\n    \"\"\"Consumes an iterable not reading it into memory\n       and returns the number of items.\"\"\"\n    # NOTE: implementation borrowed from https://stackoverflow.com/a/15112059/753382\n    counter = count()\n    deque(zip(seq, counter), maxlen=0)  # (consume at C speed)\n    return next(counter)\n",
+            "sha256": "46cca613572bdb6d766e29ba015b972e3894476166c797f850edb33d6b659b81"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.186375,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 36,
+            "text": "# Re-export\nfrom itertools import count, cycle, repeat\ndef repeatedly(f, n=EMPTY):\n    \"\"\"Takes a function of no args, presumably with side effects,\n       and returns an infinite (or length n) iterator of calls to it.\"\"\"\n    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n",
+            "sha256": "75d9ee6645ef26fa70f8036f2668ae19db078f7ec8aafb045a6ea56b4fe0ea46"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 41,
+            "text": "    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n",
+            "sha256": "3dccde9cd5912e201b5c6d177b4de3f5bbcde0ff325cb57c7917b2f1636e72e6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 93,
+            "text": "    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item\n\ndef shuffled(seq):\n    \"\"\"Returns a list of items of the sequence in random order.\"\"\"\n    items = list(seq)\n    random.shuffle(items)\n    return items\n\ndef ilen(seq):\n    \"\"\"Consumes an iterable not reading it into memory\n       and returns the number of items.\"\"\"\n    # NOTE: implementation borrowed from https://stackoverflow.com/a/15112059/753382\n    counter = count()\n    deque(zip(seq, counter), maxlen=0)  # (consume at C speed)\n    return next(counter)\n",
+            "sha256": "46cca613572bdb6d766e29ba015b972e3894476166c797f850edb33d6b659b81"
+          }
+        ]
+      }
+    ]
+  }
+}

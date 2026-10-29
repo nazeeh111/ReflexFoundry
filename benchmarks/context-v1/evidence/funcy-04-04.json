@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.0005,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.001541,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 4.357209,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 3,
+            "text": "                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))\n",
+            "sha256": "b857aaca223b609df0deb3975da4da67e583ba06f25b41c72db6378f8cf825a5"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 222,
+            "text": "    else:\n        pred = make_pred(pred)\n    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)",
+            "sha256": "9d1f5ec7c940704de86e15adba8159c69f38808f4f66ed6eb1df228c3cf0abff"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 224,
+            "text": "    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)",
+            "sha256": "6fc20748190100314b30d9d32fb9f8491e387de82ec6302d61961561d23cc8d7"
+          }
+        ]
+      },
+      {
+        "duration_ms": 4.0955,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 3,
+            "text": "                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))\n",
+            "sha256": "b857aaca223b609df0deb3975da4da67e583ba06f25b41c72db6378f8cf825a5"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 222,
+            "text": "    else:\n        pred = make_pred(pred)\n    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)",
+            "sha256": "9d1f5ec7c940704de86e15adba8159c69f38808f4f66ed6eb1df228c3cf0abff"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 224,
+            "text": "    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)",
+            "sha256": "6fc20748190100314b30d9d32fb9f8491e387de82ec6302d61961561d23cc8d7"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.203459,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 3,
+            "text": "                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))\n",
+            "sha256": "b857aaca223b609df0deb3975da4da67e583ba06f25b41c72db6378f8cf825a5"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 222,
+            "text": "    else:\n        pred = make_pred(pred)\n    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)",
+            "sha256": "9d1f5ec7c940704de86e15adba8159c69f38808f4f66ed6eb1df228c3cf0abff"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 224,
+            "text": "    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)",
+            "sha256": "6fc20748190100314b30d9d32fb9f8491e387de82ec6302d61961561d23cc8d7"
+          }
+        ]
+      }
+    ]
+  }
+}

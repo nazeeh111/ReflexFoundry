@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.004875,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002583,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000417,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.571584,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 177,
+            "text": "            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender.\n\n        .. versionadded:: 1.1\n        \"\"\"\n        self.connect(receiver, sender=sender, weak=False)\n\n        try:\n            yield None\n        finally:\n            self.disconnect(receiver)\n\n    @contextmanager\n    def muted(self) -> c.Generator[None, None, None]:\n        \"\"\"A context manager that temporarily disables the signal. No receivers\n        will be called if the signal is sent, until the ``with`` block exits.\n        Useful for tests.\n        \"\"\"\n        self.is_muted = True\n\n        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,",
+            "sha256": "f475f8d43bc23b22b13c5f1615d901d992b3cda91f15af9cbb6f039cdb13d1c9"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 65,
+            "text": "        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n\n    def __init__(self, doc: str | None = None) -> None:\n        if doc:\n            self.__doc__ = doc\n\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.",
+            "sha256": "925f9fc7b2dec6993c3972772aa2beb18a9cd191e808e57b5c545763daf99d61"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 199,
+            "text": "        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "9f30e258745213ecfd5b1072376a4f4e50ebf498e359c8555de8997f564fc9a6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.836625,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 177,
+            "text": "            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender.\n\n        .. versionadded:: 1.1\n        \"\"\"\n        self.connect(receiver, sender=sender, weak=False)\n\n        try:\n            yield None\n        finally:\n            self.disconnect(receiver)\n\n    @contextmanager\n    def muted(self) -> c.Generator[None, None, None]:\n        \"\"\"A context manager that temporarily disables the signal. No receivers\n        will be called if the signal is sent, until the ``with`` block exits.\n        Useful for tests.\n        \"\"\"\n        self.is_muted = True\n\n        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,",
+            "sha256": "f475f8d43bc23b22b13c5f1615d901d992b3cda91f15af9cbb6f039cdb13d1c9"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 65,
+            "text": "        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n\n    def __init__(self, doc: str | None = None) -> None:\n        if doc:\n            self.__doc__ = doc\n\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.",
+            "sha256": "925f9fc7b2dec6993c3972772aa2beb18a9cd191e808e57b5c545763daf99d61"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 199,
+            "text": "        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "9f30e258745213ecfd5b1072376a4f4e50ebf498e359c8555de8997f564fc9a6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.898333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 177,
+            "text": "            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender.\n\n        .. versionadded:: 1.1\n        \"\"\"\n        self.connect(receiver, sender=sender, weak=False)\n\n        try:\n            yield None\n        finally:\n            self.disconnect(receiver)\n\n    @contextmanager\n    def muted(self) -> c.Generator[None, None, None]:\n        \"\"\"A context manager that temporarily disables the signal. No receivers\n        will be called if the signal is sent, until the ``with`` block exits.\n        Useful for tests.\n        \"\"\"\n        self.is_muted = True\n\n        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,",
+            "sha256": "f475f8d43bc23b22b13c5f1615d901d992b3cda91f15af9cbb6f039cdb13d1c9"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 65,
+            "text": "        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n\n    def __init__(self, doc: str | None = None) -> None:\n        if doc:\n            self.__doc__ = doc\n\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.",
+            "sha256": "925f9fc7b2dec6993c3972772aa2beb18a9cd191e808e57b5c545763daf99d61"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 199,
+            "text": "        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "9f30e258745213ecfd5b1072376a4f4e50ebf498e359c8555de8997f564fc9a6"
+          }
+        ]
+      }
+    ]
+  }
+}

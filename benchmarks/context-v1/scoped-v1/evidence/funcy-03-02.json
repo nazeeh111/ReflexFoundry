@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.009375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.003834,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000541,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 5.831709,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 172,
+            "text": "def lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n",
+            "sha256": "134c6b8c76e3d697e30b703a063332eefc638cb2645a9413601faf742566f8d1"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 181,
+            "text": "\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):",
+            "sha256": "e2d6e014d3a415e03b5167bfadf2140bb9db5d0757d2c6c57a79964ec1cb4bc8"
+          },
+          {
+            "path": "funcy/__init__.py",
+            "start_line": 5,
+            "text": "from .tree import *\nfrom .decorators import *\nfrom .funcolls import *\nfrom .funcs import *\nfrom .seqs import *\nfrom .types import *\nfrom .strings import *\nfrom .flow import *\nfrom .objects import *\nfrom .debug import *\nfrom .primitives import *\n\n\n# Setup __all__\nmodules = ('calc', 'colls', 'tree', 'decorators', 'funcolls', 'funcs', 'seqs', 'types',\n           'strings', 'flow', 'objects', 'debug', 'primitives')\n__all__ = lcat(sys.modules['funcy.' + m].__all__ for m in modules)",
+            "sha256": "faaa7b8fddba088897611c01283956a4409e5dab2aeaa6d415d04ae4d7cdf393"
+          }
+        ]
+      },
+      {
+        "duration_ms": 32.519875,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 172,
+            "text": "def lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n",
+            "sha256": "134c6b8c76e3d697e30b703a063332eefc638cb2645a9413601faf742566f8d1"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 181,
+            "text": "\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):",
+            "sha256": "e2d6e014d3a415e03b5167bfadf2140bb9db5d0757d2c6c57a79964ec1cb4bc8"
+          },
+          {
+            "path": "funcy/__init__.py",
+            "start_line": 5,
+            "text": "from .tree import *\nfrom .decorators import *\nfrom .funcolls import *\nfrom .funcs import *\nfrom .seqs import *\nfrom .types import *\nfrom .strings import *\nfrom .flow import *\nfrom .objects import *\nfrom .debug import *\nfrom .primitives import *\n\n\n# Setup __all__\nmodules = ('calc', 'colls', 'tree', 'decorators', 'funcolls', 'funcs', 'seqs', 'types',\n           'strings', 'flow', 'objects', 'debug', 'primitives')\n__all__ = lcat(sys.modules['funcy.' + m].__all__ for m in modules)",
+            "sha256": "faaa7b8fddba088897611c01283956a4409e5dab2aeaa6d415d04ae4d7cdf393"
+          }
+        ]
+      },
+      {
+        "duration_ms": 287.450417,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 172,
+            "text": "def lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n",
+            "sha256": "134c6b8c76e3d697e30b703a063332eefc638cb2645a9413601faf742566f8d1"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 181,
+            "text": "\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):",
+            "sha256": "e2d6e014d3a415e03b5167bfadf2140bb9db5d0757d2c6c57a79964ec1cb4bc8"
+          },
+          {
+            "path": "funcy/__init__.py",
+            "start_line": 5,
+            "text": "from .tree import *\nfrom .decorators import *\nfrom .funcolls import *\nfrom .funcs import *\nfrom .seqs import *\nfrom .types import *\nfrom .strings import *\nfrom .flow import *\nfrom .objects import *\nfrom .debug import *\nfrom .primitives import *\n\n\n# Setup __all__\nmodules = ('calc', 'colls', 'tree', 'decorators', 'funcolls', 'funcs', 'seqs', 'types',\n           'strings', 'flow', 'objects', 'debug', 'primitives')\n__all__ = lcat(sys.modules['funcy.' + m].__all__ for m in modules)",
+            "sha256": "faaa7b8fddba088897611c01283956a4409e5dab2aeaa6d415d04ae4d7cdf393"
+          }
+        ]
+      }
+    ]
+  }
+}

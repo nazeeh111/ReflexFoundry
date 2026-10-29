@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 69.558667,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 60,
+            "text": "def first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)",
+            "sha256": "d8d1dbeb31c56ce5c2d026d1252110110fb3c10117b4e1f446ad553aac6f19c0"
+          }
+        ]
+      },
+      {
+        "duration_ms": 47.333041,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 60,
+            "text": "def first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)",
+            "sha256": "d8d1dbeb31c56ce5c2d026d1252110110fb3c10117b4e1f446ad553aac6f19c0"
+          }
+        ]
+      },
+      {
+        "duration_ms": 44.934875,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 60,
+            "text": "def first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)",
+            "sha256": "d8d1dbeb31c56ce5c2d026d1252110110fb3c10117b4e1f446ad553aac6f19c0"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 9.634875,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/calc.py",
+            "start_line": 102,
+            "text": "            key = self._keys.popleft()\n            entry = self.get(key)\n            if entry is not None and entry[1] <= expires_at:\n                self.pop(key, None)\n\n    def clear(self):\n        dict.clear(self)\n        self._keys = deque()\n        self._expires = deque()\n\n\ndef _make_lookuper(silent):\n    def make_lookuper(func):\n        \"\"\"\n        Creates a single argument function looking up result in a memory.\n\n        Decorated function is called once on first lookup and should return all available\n        arg-value pairs.\n\n        Resulting function will raise LookupError when using @make_lookuper\n        or simply return None when using @silent_lookuper.\n        \"\"\"\n        has_args, has_keys = has_arg_types(func)\n        assert not has_keys, \\\n            'Lookup table building function should not have keyword arguments'\n\n        if has_args:\n            @memoize\n            def wrapper(*args):",
+            "sha256": "965747c886add7c7c5ab0747a9ffd3fff90cfcc760a5fbef2238fb8b97a0b4c5"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 223,
+            "text": "    if seq is EMPTY:\n        return _any(pred)\n    return _any(xmap(pred, seq))\n\ndef none(pred, seq=EMPTY):\n    \"\"\"\"Checks if none of the items in seq pass pred (or are truthy).\"\"\"\n    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such\n# def chain_test(compare, seq):\n#     return all(compare, zip(seq, rest(seq))\n\ndef zipdict(keys, vals):",
+            "sha256": "45a9e132dfb2956126a24a4d1731216ba69e3875cdbcfdad3db76a240c070fc4"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 229,
+            "text": "    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such\n# def chain_test(compare, seq):\n#     return all(compare, zip(seq, rest(seq))\n\ndef zipdict(keys, vals):\n    \"\"\"Creates a dict with keys mapped to the corresponding vals.\"\"\"\n    return dict(zip(keys, vals))\n\ndef flip(mapping):\n    \"\"\"Flip passed dict or collection of pairs swapping its keys and values.\"\"\"\n    def flip_pair(pair):",
+            "sha256": "ae2be600c42d1ef034436ed4ab38bb12f8ec6596f00e591f6d9401728d24e64c"
+          }
+        ]
+      },
+      {
+        "duration_ms": 7.61925,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/calc.py",
+            "start_line": 102,
+            "text": "            key = self._keys.popleft()\n            entry = self.get(key)\n            if entry is not None and entry[1] <= expires_at:\n                self.pop(key, None)\n\n    def clear(self):\n        dict.clear(self)\n        self._keys = deque()\n        self._expires = deque()\n\n\ndef _make_lookuper(silent):\n    def make_lookuper(func):\n        \"\"\"\n        Creates a single argument function looking up result in a memory.\n\n        Decorated function is called once on first lookup and should return all available\n        arg-value pairs.\n\n        Resulting function will raise LookupError when using @make_lookuper\n        or simply return None when using @silent_lookuper.\n        \"\"\"\n        has_args, has_keys = has_arg_types(func)\n        assert not has_keys, \\\n            'Lookup table building function should not have keyword arguments'\n\n        if has_args:\n            @memoize\n            def wrapper(*args):",
+            "sha256": "965747c886add7c7c5ab0747a9ffd3fff90cfcc760a5fbef2238fb8b97a0b4c5"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 223,
+            "text": "    if seq is EMPTY:\n        return _any(pred)\n    return _any(xmap(pred, seq))\n\ndef none(pred, seq=EMPTY):\n    \"\"\"\"Checks if none of the items in seq pass pred (or are truthy).\"\"\"\n    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such\n# def chain_test(compare, seq):\n#     return all(compare, zip(seq, rest(seq))\n\ndef zipdict(keys, vals):",
+            "sha256": "45a9e132dfb2956126a24a4d1731216ba69e3875cdbcfdad3db76a240c070fc4"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 229,
+            "text": "    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such\n# def chain_test(compare, seq):\n#     return all(compare, zip(seq, rest(seq))\n\ndef zipdict(keys, vals):\n    \"\"\"Creates a dict with keys mapped to the corresponding vals.\"\"\"\n    return dict(zip(keys, vals))\n\ndef flip(mapping):\n    \"\"\"Flip passed dict or collection of pairs swapping its keys and values.\"\"\"\n    def flip_pair(pair):",
+            "sha256": "ae2be600c42d1ef034436ed4ab38bb12f8ec6596f00e591f6d9401728d24e64c"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.484459,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/calc.py",
+            "start_line": 102,
+            "text": "            key = self._keys.popleft()\n            entry = self.get(key)\n            if entry is not None and entry[1] <= expires_at:\n                self.pop(key, None)\n\n    def clear(self):\n        dict.clear(self)\n        self._keys = deque()\n        self._expires = deque()\n\n\ndef _make_lookuper(silent):\n    def make_lookuper(func):\n        \"\"\"\n        Creates a single argument function looking up result in a memory.\n\n        Decorated function is called once on first lookup and should return all available\n        arg-value pairs.\n\n        Resulting function will raise LookupError when using @make_lookuper\n        or simply return None when using @silent_lookuper.\n        \"\"\"\n        has_args, has_keys = has_arg_types(func)\n        assert not has_keys, \\\n            'Lookup table building function should not have keyword arguments'\n\n        if has_args:\n            @memoize\n            def wrapper(*args):",
+            "sha256": "965747c886add7c7c5ab0747a9ffd3fff90cfcc760a5fbef2238fb8b97a0b4c5"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 223,
+            "text": "    if seq is EMPTY:\n        return _any(pred)\n    return _any(xmap(pred, seq))\n\ndef none(pred, seq=EMPTY):\n    \"\"\"\"Checks if none of the items in seq pass pred (or are truthy).\"\"\"\n    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such\n# def chain_test(compare, seq):\n#     return all(compare, zip(seq, rest(seq))\n\ndef zipdict(keys, vals):",
+            "sha256": "45a9e132dfb2956126a24a4d1731216ba69e3875cdbcfdad3db76a240c070fc4"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 229,
+            "text": "    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such\n# def chain_test(compare, seq):\n#     return all(compare, zip(seq, rest(seq))\n\ndef zipdict(keys, vals):\n    \"\"\"Creates a dict with keys mapped to the corresponding vals.\"\"\"\n    return dict(zip(keys, vals))\n\ndef flip(mapping):\n    \"\"\"Flip passed dict or collection of pairs swapping its keys and values.\"\"\"\n    def flip_pair(pair):",
+            "sha256": "ae2be600c42d1ef034436ed4ab38bb12f8ec6596f00e591f6d9401728d24e64c"
+          }
+        ]
+      }
+    ]
+  }
+}

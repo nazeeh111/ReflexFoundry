@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.001125,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000333,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000542,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 2.449708,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 445,
+            "text": "\n    def setdefault(self, *args, **kwargs):\n        with self.__timer:\n            return Cache.setdefault(self, *args, **kwargs)\n\n    def clear(self):\n        # Subclasses must override to also reset their own time-tracking\n        # structures; we do not call expire() here since clear() should\n        # be O(1) regardless of cache contents.\n        Cache.clear(self)\n\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n\n        def unlink(self):",
+            "sha256": "bbb53f00a8b46bae219929dbf4408d0aa7f9cfdba1cf0a350b94cc0fa9df3bee"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 78,
+            "text": "    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Random Replacement (RR)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(RRCache(128, choice), 128, typed)(maxsize)\n    else:\n        return _cache(RRCache(maxsize, choice), maxsize, typed)\n\n\ndef ttl_cache(maxsize=128, ttl=600, timer=time.monotonic, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Recently Used (LRU)\n    algorithm with a per-item time-to-live (TTL) value.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache(_UnboundTTLCache(ttl, timer), None, typed)\n    elif callable(maxsize):\n        return _cache(TTLCache(128, ttl, timer), 128, typed)(maxsize)\n    else:\n        return _cache(TTLCache(maxsize, ttl, timer), maxsize, typed)",
+            "sha256": "4f32fb4eb3396e663b5ba4c3a16b3702a71cbb254e8551347646e4a34d981e1f"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 535,
+            "text": "                if time < curr.expires:\n                    yield curr.key\n            curr = curr.next\n\n    def __setstate__(self, state):\n        self.__dict__.update(state)\n        root = self.__root\n        root.prev = root.next = root\n        for link in sorted(self.__links.values(), key=lambda obj: obj.expires):\n            link.next = root\n            link.prev = prev = root.prev\n            prev.next = root.prev = link\n        self.expire(self.timer())\n\n    @property\n    def ttl(self):\n        \"\"\"The time-to-live value of the cache's items.\"\"\"\n        return self.__ttl\n\n    def expire(self, time=None):\n        \"\"\"Remove expired items from the cache and return an iterable of the\n        expired `(key, value)` pairs.\n\n        \"\"\"\n        if time is None:\n            time = self.timer()\n        root = self.__root\n        curr = root.next\n        links = self.__links",
+            "sha256": "a864fc0fa27ba769594af05a9b70b29a6056aa1ae257f43428f8743d197fcb22"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.463375,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 445,
+            "text": "\n    def setdefault(self, *args, **kwargs):\n        with self.__timer:\n            return Cache.setdefault(self, *args, **kwargs)\n\n    def clear(self):\n        # Subclasses must override to also reset their own time-tracking\n        # structures; we do not call expire() here since clear() should\n        # be O(1) regardless of cache contents.\n        Cache.clear(self)\n\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n\n        def unlink(self):",
+            "sha256": "bbb53f00a8b46bae219929dbf4408d0aa7f9cfdba1cf0a350b94cc0fa9df3bee"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 78,
+            "text": "    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Random Replacement (RR)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(RRCache(128, choice), 128, typed)(maxsize)\n    else:\n        return _cache(RRCache(maxsize, choice), maxsize, typed)\n\n\ndef ttl_cache(maxsize=128, ttl=600, timer=time.monotonic, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Recently Used (LRU)\n    algorithm with a per-item time-to-live (TTL) value.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache(_UnboundTTLCache(ttl, timer), None, typed)\n    elif callable(maxsize):\n        return _cache(TTLCache(128, ttl, timer), 128, typed)(maxsize)\n    else:\n        return _cache(TTLCache(maxsize, ttl, timer), maxsize, typed)",
+            "sha256": "4f32fb4eb3396e663b5ba4c3a16b3702a71cbb254e8551347646e4a34d981e1f"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 535,
+            "text": "                if time < curr.expires:\n                    yield curr.key\n            curr = curr.next\n\n    def __setstate__(self, state):\n        self.__dict__.update(state)\n        root = self.__root\n        root.prev = root.next = root\n        for link in sorted(self.__links.values(), key=lambda obj: obj.expires):\n            link.next = root\n            link.prev = prev = root.prev\n            prev.next = root.prev = link\n        self.expire(self.timer())\n\n    @property\n    def ttl(self):\n        \"\"\"The time-to-live value of the cache's items.\"\"\"\n        return self.__ttl\n\n    def expire(self, time=None):\n        \"\"\"Remove expired items from the cache and return an iterable of the\n        expired `(key, value)` pairs.\n\n        \"\"\"\n        if time is None:\n            time = self.timer()\n        root = self.__root\n        curr = root.next\n        links = self.__links",
+            "sha256": "a864fc0fa27ba769594af05a9b70b29a6056aa1ae257f43428f8743d197fcb22"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.405833,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 445,
+            "text": "\n    def setdefault(self, *args, **kwargs):\n        with self.__timer:\n            return Cache.setdefault(self, *args, **kwargs)\n\n    def clear(self):\n        # Subclasses must override to also reset their own time-tracking\n        # structures; we do not call expire() here since clear() should\n        # be O(1) regardless of cache contents.\n        Cache.clear(self)\n\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n\n        def unlink(self):",
+            "sha256": "bbb53f00a8b46bae219929dbf4408d0aa7f9cfdba1cf0a350b94cc0fa9df3bee"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 78,
+            "text": "    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Random Replacement (RR)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(RRCache(128, choice), 128, typed)(maxsize)\n    else:\n        return _cache(RRCache(maxsize, choice), maxsize, typed)\n\n\ndef ttl_cache(maxsize=128, ttl=600, timer=time.monotonic, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Recently Used (LRU)\n    algorithm with a per-item time-to-live (TTL) value.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache(_UnboundTTLCache(ttl, timer), None, typed)\n    elif callable(maxsize):\n        return _cache(TTLCache(128, ttl, timer), 128, typed)(maxsize)\n    else:\n        return _cache(TTLCache(maxsize, ttl, timer), maxsize, typed)",
+            "sha256": "4f32fb4eb3396e663b5ba4c3a16b3702a71cbb254e8551347646e4a34d981e1f"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 535,
+            "text": "                if time < curr.expires:\n                    yield curr.key\n            curr = curr.next\n\n    def __setstate__(self, state):\n        self.__dict__.update(state)\n        root = self.__root\n        root.prev = root.next = root\n        for link in sorted(self.__links.values(), key=lambda obj: obj.expires):\n            link.next = root\n            link.prev = prev = root.prev\n            prev.next = root.prev = link\n        self.expire(self.timer())\n\n    @property\n    def ttl(self):\n        \"\"\"The time-to-live value of the cache's items.\"\"\"\n        return self.__ttl\n\n    def expire(self, time=None):\n        \"\"\"Remove expired items from the cache and return an iterable of the\n        expired `(key, value)` pairs.\n\n        \"\"\"\n        if time is None:\n            time = self.timer()\n        root = self.__root\n        curr = root.next\n        links = self.__links",
+            "sha256": "a864fc0fa27ba769594af05a9b70b29a6056aa1ae257f43428f8743d197fcb22"
+          }
+        ]
+      }
+    ]
+  }
+}

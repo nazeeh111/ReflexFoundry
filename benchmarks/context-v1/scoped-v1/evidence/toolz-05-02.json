@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.00425,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.004625,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.0005,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 227.235875,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 667,
+            "text": "\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it\n               for i, it in enumerate(itertools.tee(seq, n))))\n\n\nno_pad = '__no__pad__'\n\n\ndef partition(n, seq, pad=no_pad):\n    \"\"\" Partition sequence into tuples of length n\n\n    >>> list(partition(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    If the length of ``seq`` is not evenly divisible by ``n``, the final tuple\n    is dropped if ``pad`` is not specified, or filled to length ``n`` by pad:\n\n    >>> list(partition(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]",
+            "sha256": "3611396ec80fcb32e8f330aa87f0d8e4c48f90a48116d026724e946ce882e1ee"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 692,
+            "text": "    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)\n\n\ndef partition_all(n, seq):\n    \"\"\" Partition all elements of sequence into tuples of length at most n\n\n    The final tuple may be shorter to accommodate extra elements.\n\n    >>> list(partition_all(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition_all(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4), (5,)]\n\n    See Also:\n        partition\n    \"\"\"",
+            "sha256": "d7e2fb9d451a3fdcdeebdb3d0daed86662b89b28d9510cc9ff0e3356943bdd12"
+          },
+          {
+            "path": "toolz/recipes.py",
+            "start_line": 13,
+            "text": "\n    >>> def iseven(x): return x % 2 == 0\n    >>> countby(iseven, [1, 2, 3])  # doctest:+SKIP\n    {True: 1, False: 2}\n\n    See Also:\n        groupby\n    \"\"\"\n    if not callable(key):\n        key = getter(key)\n    return frequencies(map(key, seq))\n\n\ndef partitionby(func, seq):\n    \"\"\" Partition a sequence according to a function\n\n    Partition `s` into a sequence of lists such that, when traversing\n    `s`, every time the output of `func` changes a new list is started\n    and that and subsequent items are collected into that list.\n\n    >>> is_space = lambda c: c == \" \"\n    >>> list(partitionby(is_space, \"I have space\"))\n    [('I',), (' ',), ('h', 'a', 'v', 'e'), (' ',), ('s', 'p', 'a', 'c', 'e')]\n\n    >>> is_large = lambda x: x > 10\n    >>> list(partitionby(is_large, [1, 2, 1, 99, 88, 33, 99, -1, 5]))\n    [(1, 2, 1), (99, 88, 33, 99), (-1, 5)]\n\n    See also:",
+            "sha256": "9016ea9199c50dba788e86025320c75ad31a6ef3a11772a6a8819d2afc98a395"
+          }
+        ]
+      },
+      {
+        "duration_ms": 123.481417,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 667,
+            "text": "\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it\n               for i, it in enumerate(itertools.tee(seq, n))))\n\n\nno_pad = '__no__pad__'\n\n\ndef partition(n, seq, pad=no_pad):\n    \"\"\" Partition sequence into tuples of length n\n\n    >>> list(partition(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    If the length of ``seq`` is not evenly divisible by ``n``, the final tuple\n    is dropped if ``pad`` is not specified, or filled to length ``n`` by pad:\n\n    >>> list(partition(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]",
+            "sha256": "3611396ec80fcb32e8f330aa87f0d8e4c48f90a48116d026724e946ce882e1ee"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 692,
+            "text": "    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)\n\n\ndef partition_all(n, seq):\n    \"\"\" Partition all elements of sequence into tuples of length at most n\n\n    The final tuple may be shorter to accommodate extra elements.\n\n    >>> list(partition_all(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition_all(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4), (5,)]\n\n    See Also:\n        partition\n    \"\"\"",
+            "sha256": "d7e2fb9d451a3fdcdeebdb3d0daed86662b89b28d9510cc9ff0e3356943bdd12"
+          },
+          {
+            "path": "toolz/recipes.py",
+            "start_line": 13,
+            "text": "\n    >>> def iseven(x): return x % 2 == 0\n    >>> countby(iseven, [1, 2, 3])  # doctest:+SKIP\n    {True: 1, False: 2}\n\n    See Also:\n        groupby\n    \"\"\"\n    if not callable(key):\n        key = getter(key)\n    return frequencies(map(key, seq))\n\n\ndef partitionby(func, seq):\n    \"\"\" Partition a sequence according to a function\n\n    Partition `s` into a sequence of lists such that, when traversing\n    `s`, every time the output of `func` changes a new list is started\n    and that and subsequent items are collected into that list.\n\n    >>> is_space = lambda c: c == \" \"\n    >>> list(partitionby(is_space, \"I have space\"))\n    [('I',), (' ',), ('h', 'a', 'v', 'e'), (' ',), ('s', 'p', 'a', 'c', 'e')]\n\n    >>> is_large = lambda x: x > 10\n    >>> list(partitionby(is_large, [1, 2, 1, 99, 88, 33, 99, -1, 5]))\n    [(1, 2, 1), (99, 88, 33, 99), (-1, 5)]\n\n    See also:",
+            "sha256": "9016ea9199c50dba788e86025320c75ad31a6ef3a11772a6a8819d2afc98a395"
+          }
+        ]
+      },
+      {
+        "duration_ms": 203.288333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 667,
+            "text": "\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it\n               for i, it in enumerate(itertools.tee(seq, n))))\n\n\nno_pad = '__no__pad__'\n\n\ndef partition(n, seq, pad=no_pad):\n    \"\"\" Partition sequence into tuples of length n\n\n    >>> list(partition(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    If the length of ``seq`` is not evenly divisible by ``n``, the final tuple\n    is dropped if ``pad`` is not specified, or filled to length ``n`` by pad:\n\n    >>> list(partition(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]",
+            "sha256": "3611396ec80fcb32e8f330aa87f0d8e4c48f90a48116d026724e946ce882e1ee"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 692,
+            "text": "    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)\n\n\ndef partition_all(n, seq):\n    \"\"\" Partition all elements of sequence into tuples of length at most n\n\n    The final tuple may be shorter to accommodate extra elements.\n\n    >>> list(partition_all(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition_all(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4), (5,)]\n\n    See Also:\n        partition\n    \"\"\"",
+            "sha256": "d7e2fb9d451a3fdcdeebdb3d0daed86662b89b28d9510cc9ff0e3356943bdd12"
+          },
+          {
+            "path": "toolz/recipes.py",
+            "start_line": 13,
+            "text": "\n    >>> def iseven(x): return x % 2 == 0\n    >>> countby(iseven, [1, 2, 3])  # doctest:+SKIP\n    {True: 1, False: 2}\n\n    See Also:\n        groupby\n    \"\"\"\n    if not callable(key):\n        key = getter(key)\n    return frequencies(map(key, seq))\n\n\ndef partitionby(func, seq):\n    \"\"\" Partition a sequence according to a function\n\n    Partition `s` into a sequence of lists such that, when traversing\n    `s`, every time the output of `func` changes a new list is started\n    and that and subsequent items are collected into that list.\n\n    >>> is_space = lambda c: c == \" \"\n    >>> list(partitionby(is_space, \"I have space\"))\n    [('I',), (' ',), ('h', 'a', 'v', 'e'), (' ',), ('s', 'p', 'a', 'c', 'e')]\n\n    >>> is_large = lambda x: x > 10\n    >>> list(partitionby(is_large, [1, 2, 1, 99, 88, 33, 99, -1, 5]))\n    [(1, 2, 1), (99, 88, 33, 99), (-1, 5)]\n\n    See also:",
+            "sha256": "9016ea9199c50dba788e86025320c75ad31a6ef3a11772a6a8819d2afc98a395"
+          }
+        ]
+      }
+    ]
+  }
+}

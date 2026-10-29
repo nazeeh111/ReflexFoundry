@@ -1,0 +1,2911 @@
+{
+  "format": 1,
+  "spec": "context-route-v1",
+  "decision_spec": {
+    "id": "context-route-v1",
+    "purpose": "Choose the first source retrieval action for the coding task.",
+    "choices": [
+      "symbol",
+      "search"
+    ],
+    "fallback": "search",
+    "max_input_bytes": 4096,
+    "budget_ms": 250.0,
+    "risk": "advisory",
+    "input_schema": {
+      "type": "object",
+      "required": [
+        "summary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "changed_files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Relative paths within the repository"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      }
+    },
+    "success_criterion": "The bounded retrieval result contains the declared target source context, checked independently of the policy."
+  },
+  "dataset_digest": "1467a3faac39abd94bd4957e09947f7ddf0b8a300352fe3a143a2ce4bba95093",
+  "repository_groups": {
+    "calibration": 1,
+    "promotion": 1,
+    "test": 1
+  },
+  "model_digest": "1a6dbe27b65dbe4eeb8bb5946f6685bafce75afb525f168929b0971a23dd54d5",
+  "calibration": {
+    "threshold": 1.01,
+    "max_error": 0.1,
+    "min_n": 30,
+    "candidates": [
+      {
+        "threshold": 0.5,
+        "accepted": 0,
+        "errors": 0,
+        "error_upper_95": 1.0
+      },
+      {
+        "threshold": 0.6,
+        "accepted": 0,
+        "errors": 0,
+        "error_upper_95": 1.0
+      },
+      {
+        "threshold": 0.7,
+        "accepted": 0,
+        "errors": 0,
+        "error_upper_95": 1.0
+      },
+      {
+        "threshold": 0.8,
+        "accepted": 0,
+        "errors": 0,
+        "error_upper_95": 1.0
+      },
+      {
+        "threshold": 0.9,
+        "accepted": 0,
+        "errors": 0,
+        "error_upper_95": 1.0
+      },
+      {
+        "threshold": 0.95,
+        "accepted": 0,
+        "errors": 0,
+        "error_upper_95": 1.0
+      },
+      {
+        "threshold": 0.99,
+        "accepted": 0,
+        "errors": 0,
+        "error_upper_95": 1.0
+      }
+    ],
+    "eligible": false,
+    "calibration_digest": "4f24fdcfc81f67f4484e322ae3867354eda4a7e5f7dd96110a74c6db37005eb1",
+    "note": "Threshold search uses calibration only; confidence bounds here are descriptive after search."
+  },
+  "promotion": {
+    "policies": [
+      {
+        "name": "original-search",
+        "n": 30,
+        "success_rate": 0.6666666666666667,
+        "errors": 10,
+        "error_upper_95": 0.5122027418616973,
+        "total_ms": 560.562972,
+        "mean_ms": 18.6854324,
+        "startup_ms": 0,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 0,
+          "search": 30
+        }
+      },
+      {
+        "name": "deterministic-heuristic",
+        "n": 30,
+        "success_rate": 0.8333333333333334,
+        "errors": 5,
+        "error_upper_95": 0.3356470518568018,
+        "total_ms": 2053.555053,
+        "mean_ms": 68.4518351,
+        "startup_ms": 0,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 12,
+          "search": 18
+        }
+      },
+      {
+        "name": "always-symbol",
+        "n": 30,
+        "success_rate": 0.4,
+        "errors": 18,
+        "error_upper_95": 0.754096056739166,
+        "total_ms": 1675.308422,
+        "mean_ms": 55.84361406666667,
+        "startup_ms": 0,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 30,
+          "search": 0
+        }
+      },
+      {
+        "name": "trained-always",
+        "n": 30,
+        "success_rate": 0.5333333333333333,
+        "errors": 14,
+        "error_upper_95": 0.6385798671847496,
+        "total_ms": 490738.55397597275,
+        "mean_ms": 16357.951799199092,
+        "startup_ms": 15218.12016700278,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 21,
+          "search": 9
+        }
+      },
+      {
+        "name": "selective",
+        "n": 30,
+        "success_rate": 0.6666666666666667,
+        "errors": 10,
+        "error_upper_95": 0.5122027418616973,
+        "total_ms": 489604.95610697276,
+        "mean_ms": 16320.165203565759,
+        "startup_ms": 15218.12016700278,
+        "fallback_rate": 1.0,
+        "decision_counts": {
+          "symbol": 0,
+          "search": 30
+        }
+      },
+      {
+        "name": "ordinary-laya",
+        "n": 30,
+        "success_rate": 0.5,
+        "errors": 15,
+        "error_upper_95": 0.6684614877282624,
+        "total_ms": 172050.59953899885,
+        "mean_ms": 5735.019984633295,
+        "startup_ms": 4982.3939579946455,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 22,
+          "search": 8
+        }
+      }
+    ],
+    "details": [
+      {
+        "id": "blinker-00-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9946,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 662.1434170228895,
+          "probabilities": {
+            "symbol": 0.9966,
+            "search": 0.0034
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 31.830959,
+            "median_action_ms": 30.349542,
+            "success": true,
+            "trials_ms": [
+              5.324166,
+              62.417667,
+              30.349542
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 208.94508399999998,
+            "median_action_ms": 207.463667,
+            "success": true,
+            "trials_ms": [
+              158.188,
+              328.405625,
+              207.463667
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-00-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9862,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1749.6020830003545,
+          "probabilities": {
+            "symbol": 0.9986,
+            "search": 0.0014
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.1737919999999997,
+            "median_action_ms": 1.692375,
+            "success": true,
+            "trials_ms": [
+              1.692375,
+              1.438917,
+              2.752292
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 9.030917,
+            "median_action_ms": 7.5495,
+            "success": true,
+            "trials_ms": [
+              7.5495,
+              6.207333,
+              11.298416
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-00-02",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.6386,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1800.1050419989042,
+          "probabilities": {
+            "symbol": 0.6386,
+            "search": 0.3614
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 4.175917,
+            "median_action_ms": 2.6945,
+            "success": true,
+            "trials_ms": [
+              4.217083,
+              2.245375,
+              2.6945
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.484542,
+            "median_action_ms": 0.003125,
+            "success": false,
+            "trials_ms": [
+              0.003125,
+              0.000625,
+              0.004083
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-00-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.6049,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 667.522541974904,
+          "probabilities": {
+            "symbol": 0.6049,
+            "search": 0.3951
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 110.168876,
+            "median_action_ms": 108.687459,
+            "success": true,
+            "trials_ms": [
+              3.36175,
+              108.687459,
+              290.251542
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.484667,
+            "median_action_ms": 0.00325,
+            "success": false,
+            "trials_ms": [
+              0.00325,
+              0.00375,
+              0.000625
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-00-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5432,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 1171.663916989928,
+          "probabilities": {
+            "symbol": 0.4037,
+            "search": 0.5963
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.003167,
+            "median_action_ms": 1.52175,
+            "success": true,
+            "trials_ms": [
+              1.788,
+              1.52175,
+              1.451708
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.483209,
+            "median_action_ms": 0.001792,
+            "success": false,
+            "trials_ms": [
+              0.002458,
+              0.000542,
+              0.001792
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-01-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9957,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 829.0607090166304,
+          "probabilities": {
+            "symbol": 0.9957,
+            "search": 0.0043
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.135042,
+            "median_action_ms": 1.653625,
+            "success": false,
+            "trials_ms": [
+              1.653625,
+              1.419041,
+              2.212125
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 11.122834000000001,
+            "median_action_ms": 9.641417,
+            "success": true,
+            "trials_ms": [
+              11.499958,
+              9.641417,
+              7.657625
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-01-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.989,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 651.3153749983758,
+          "probabilities": {
+            "symbol": 0.9964,
+            "search": 0.0036
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.781959,
+            "median_action_ms": 2.300542,
+            "success": true,
+            "trials_ms": [
+              1.666,
+              6.834167,
+              2.300542
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 127.64675,
+            "median_action_ms": 126.165333,
+            "success": true,
+            "trials_ms": [
+              126.165333,
+              359.65375,
+              37.601292
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-01-02",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.528,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 1295.019790995866,
+          "probabilities": {
+            "symbol": 0.472,
+            "search": 0.528
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.292042,
+            "median_action_ms": 1.810625,
+            "success": true,
+            "trials_ms": [
+              1.557166,
+              1.810625,
+              6.584917
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.484042,
+            "median_action_ms": 0.002625,
+            "success": false,
+            "trials_ms": [
+              0.005625,
+              0.002625,
+              0.000583
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-01-03",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5176,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 858.9364999788813,
+          "probabilities": {
+            "symbol": 0.4824,
+            "search": 0.5176
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 4.562876,
+            "median_action_ms": 3.081459,
+            "success": true,
+            "trials_ms": [
+              2.350542,
+              3.081459,
+              8.309292
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.485458,
+            "median_action_ms": 0.004041,
+            "success": false,
+            "trials_ms": [
+              0.009958,
+              0.000583,
+              0.004041
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-01-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5414,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 790.9951669862494,
+          "probabilities": {
+            "symbol": 0.3385,
+            "search": 0.6615
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 2.8372919999999997,
+            "median_action_ms": 1.355875,
+            "success": false,
+            "trials_ms": [
+              1.355875,
+              1.224625,
+              1.712542
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.482833,
+            "median_action_ms": 0.001416,
+            "success": false,
+            "trials_ms": [
+              0.003041,
+              0.001416,
+              0.000417
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-02-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9958,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 655.0311669998337,
+          "probabilities": {
+            "symbol": 0.9966,
+            "search": 0.0034
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.0811669999999998,
+            "median_action_ms": 1.59975,
+            "success": false,
+            "trials_ms": [
+              1.333167,
+              1.59975,
+              3.639916
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 16.233916999999998,
+            "median_action_ms": 14.7525,
+            "success": true,
+            "trials_ms": [
+              13.035084,
+              14.7525,
+              290.235209
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-02-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9198,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1418.109916994581,
+          "probabilities": {
+            "symbol": 0.9968,
+            "search": 0.0032
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.387251,
+            "median_action_ms": 1.905834,
+            "success": true,
+            "trials_ms": [
+              1.905834,
+              1.402958,
+              9.7005
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 127.06899999999999,
+            "median_action_ms": 125.587583,
+            "success": true,
+            "trials_ms": [
+              7.430583,
+              207.249833,
+              125.587583
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-02-02",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5479,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1466.1602079868317,
+          "probabilities": {
+            "symbol": 0.5483,
+            "search": 0.4517
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 23.700625,
+            "median_action_ms": 22.219208,
+            "success": true,
+            "trials_ms": [
+              3.02875,
+              22.219208,
+              60.891292
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.484292,
+            "median_action_ms": 0.002875,
+            "success": false,
+            "trials_ms": [
+              0.002875,
+              0.000708,
+              0.00425
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-02-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5807,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 849.1312080004718,
+          "probabilities": {
+            "symbol": 0.6008,
+            "search": 0.3992
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.347709,
+            "median_action_ms": 1.866292,
+            "success": true,
+            "trials_ms": [
+              3.291,
+              1.72625,
+              1.866292
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.485375,
+            "median_action_ms": 0.003958,
+            "success": false,
+            "trials_ms": [
+              0.005334,
+              0.003958,
+              0.000459
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-02-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5819,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 584.8022910067812,
+          "probabilities": {
+            "symbol": 0.3009,
+            "search": 0.6991
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.481042,
+            "median_action_ms": 1.999625,
+            "success": false,
+            "trials_ms": [
+              2.317375,
+              1.999625,
+              1.960166
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.4844169999999999,
+            "median_action_ms": 0.003,
+            "success": false,
+            "trials_ms": [
+              0.004417,
+              0.000458,
+              0.003
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-03-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9973,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1044.1444169846363,
+          "probabilities": {
+            "symbol": 0.9985,
+            "search": 0.0015
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 6.7960840000000005,
+            "median_action_ms": 5.314667,
+            "success": false,
+            "trials_ms": [
+              3.262916,
+              5.314667,
+              33.871375
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 279.307,
+            "median_action_ms": 277.825583,
+            "success": true,
+            "trials_ms": [
+              523.70125,
+              277.825583,
+              167.681709
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-03-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9848,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 849.9661249807104,
+          "probabilities": {
+            "symbol": 0.9933,
+            "search": 0.0067
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 34.406375,
+            "median_action_ms": 32.924958,
+            "success": true,
+            "trials_ms": [
+              45.73375,
+              32.924958,
+              8.141583
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 84.810958,
+            "median_action_ms": 83.329541,
+            "success": true,
+            "trials_ms": [
+              161.406333,
+              83.329541,
+              30.67075
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-03-02",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.7281,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 774.7992080112454,
+          "probabilities": {
+            "symbol": 0.7281,
+            "search": 0.2719
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 7.705709000000001,
+            "median_action_ms": 6.224292,
+            "success": true,
+            "trials_ms": [
+              1.614792,
+              6.224292,
+              66.99725
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.48525,
+            "median_action_ms": 0.003833,
+            "success": false,
+            "trials_ms": [
+              0.003834,
+              0.003833,
+              0.000583
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-03-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.7602,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 910.5667079857085,
+          "probabilities": {
+            "symbol": 0.7602,
+            "search": 0.2398
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.857417,
+            "median_action_ms": 2.376,
+            "success": true,
+            "trials_ms": [
+              4.033625,
+              1.656333,
+              2.376
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.484542,
+            "median_action_ms": 0.003125,
+            "success": false,
+            "trials_ms": [
+              0.004,
+              0.000542,
+              0.003125
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-03-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5051,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1217.459291976411,
+          "probabilities": {
+            "symbol": 0.2952,
+            "search": 0.7048
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.769208,
+            "median_action_ms": 2.287791,
+            "success": false,
+            "trials_ms": [
+              1.847042,
+              2.452291,
+              2.287791
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.484083,
+            "median_action_ms": 0.002666,
+            "success": false,
+            "trials_ms": [
+              0.003959,
+              0.002666,
+              0.000458
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-04-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9977,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 912.2881249932107,
+          "probabilities": {
+            "symbol": 0.9979,
+            "search": 0.0021
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 28.93325,
+            "median_action_ms": 27.451833,
+            "success": false,
+            "trials_ms": [
+              5.773667,
+              27.451833,
+              150.746167
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 332.630709,
+            "median_action_ms": 331.149292,
+            "success": true,
+            "trials_ms": [
+              331.149292,
+              394.843417,
+              80.96575
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-04-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9853,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1110.1121669926215,
+          "probabilities": {
+            "symbol": 0.9966,
+            "search": 0.0034
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 7.481833999999999,
+            "median_action_ms": 6.000417,
+            "success": true,
+            "trials_ms": [
+              6.000417,
+              251.902209,
+              5.262875
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 119.71229199999999,
+            "median_action_ms": 118.230875,
+            "success": true,
+            "trials_ms": [
+              118.230875,
+              209.495917,
+              10.596917
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-04-02",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5005,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 1574.036750011146,
+          "probabilities": {
+            "symbol": 0.4995,
+            "search": 0.5005
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 3.229917,
+            "median_action_ms": 1.7485,
+            "success": true,
+            "trials_ms": [
+              1.7485,
+              1.742291,
+              1.835625
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.48475,
+            "median_action_ms": 0.003333,
+            "success": false,
+            "trials_ms": [
+              0.003375,
+              0.000584,
+              0.003333
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-04-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5466,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1806.5686660120264,
+          "probabilities": {
+            "symbol": 0.5466,
+            "search": 0.4534
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 2.927876,
+            "median_action_ms": 1.446459,
+            "success": true,
+            "trials_ms": [
+              1.446459,
+              1.2185,
+              2.712541
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.483167,
+            "median_action_ms": 0.00175,
+            "success": false,
+            "trials_ms": [
+              0.002875,
+              0.00175,
+              0.000625
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-04-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5077,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1197.5553749944083,
+          "probabilities": {
+            "symbol": 0.3529,
+            "search": 0.6471
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 2.722917,
+            "median_action_ms": 1.2415,
+            "success": false,
+            "trials_ms": [
+              1.381709,
+              1.2415,
+              1.233792
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.482875,
+            "median_action_ms": 0.001458,
+            "success": false,
+            "trials_ms": [
+              0.002333,
+              0.000625,
+              0.001458
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-05-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9969,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1044.3045419815462,
+          "probabilities": {
+            "symbol": 0.9976,
+            "search": 0.0024
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 15.250292,
+            "median_action_ms": 13.768875,
+            "success": false,
+            "trials_ms": [
+              13.768875,
+              11.262833,
+              33.760167
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 263.01108300000004,
+            "median_action_ms": 261.529666,
+            "success": true,
+            "trials_ms": [
+              394.782875,
+              207.564959,
+              261.529666
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-05-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9921,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1261.7395000124816,
+          "probabilities": {
+            "symbol": 0.9994,
+            "search": 0.0006
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 14.339542,
+            "median_action_ms": 12.858125,
+            "success": true,
+            "trials_ms": [
+              1.709542,
+              12.858125,
+              39.081666
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 69.06908399999999,
+            "median_action_ms": 67.587667,
+            "success": true,
+            "trials_ms": [
+              7.85325,
+              67.587667,
+              140.96975
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-05-02",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5288,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 950.0644580111839,
+          "probabilities": {
+            "symbol": 0.5288,
+            "search": 0.4712
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 146.542876,
+            "median_action_ms": 145.061459,
+            "success": true,
+            "trials_ms": [
+              145.061459,
+              65.316709,
+              193.259917
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.4849999999999999,
+            "median_action_ms": 0.003583,
+            "success": false,
+            "trials_ms": [
+              0.003583,
+              0.075084,
+              0.001042
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-05-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5022,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 661.259374988731,
+          "probabilities": {
+            "symbol": 0.5022,
+            "search": 0.4978
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 70.32941699999999,
+            "median_action_ms": 68.848,
+            "success": true,
+            "trials_ms": [
+              40.520125,
+              68.848,
+              101.4515
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.485375,
+            "median_action_ms": 0.003958,
+            "success": false,
+            "trials_ms": [
+              0.005666,
+              0.000833,
+              0.003958
+            ]
+          }
+        }
+      },
+      {
+        "id": "blinker-05-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5164,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 1736.3240830018185,
+          "probabilities": {
+            "symbol": 0.331,
+            "search": 0.669
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 5.310542,
+            "median_action_ms": 3.829125,
+            "success": false,
+            "trials_ms": [
+              3.411916,
+              3.829125,
+              7.106625
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 1.481417,
+            "duration_ms": 1.484917,
+            "median_action_ms": 0.0035,
+            "success": false,
+            "trials_ms": [
+              0.004334,
+              0.0035,
+              0.000708
+            ]
+          }
+        }
+      }
+    ],
+    "decision_label_agreement": 0.36,
+    "decision_ece_10_bins": 0.4145,
+    "confidence_brier": 0.4389744444,
+    "decision_label_records": 25,
+    "decision_metric_note": "Agreement with fastest safe observed choice is diagnostic only; rows with no successful action are excluded from label metrics but retained in all outcome comparisons. This is not task success or a population calibration guarantee.",
+    "paired_saved_ms_95": null,
+    "paired_success_delta_95": null,
+    "paired_saved_ms_mean": -16301.47977116576,
+    "paired_success_delta_mean": 0.0,
+    "uncertainty_available": false,
+    "repository_groups": 1,
+    "accepted": 0,
+    "accepted_errors": 0,
+    "accepted_error_upper_95": 1.0,
+    "accepted_repositories": 0,
+    "accepted_repository_error_upper_95": 1.0,
+    "order_flip_rate": 0.2,
+    "unnecessary_fallback": 16,
+    "wrong_decisions": [
+      "blinker-01-00",
+      "blinker-01-04",
+      "blinker-02-00",
+      "blinker-02-04",
+      "blinker-03-00",
+      "blinker-03-04",
+      "blinker-04-00",
+      "blinker-04-04",
+      "blinker-05-00",
+      "blinker-05-04"
+    ]
+  },
+  "test": {
+    "policies": [
+      {
+        "name": "original-search",
+        "n": 30,
+        "success_rate": 1.0,
+        "errors": 0,
+        "error_upper_95": 0.11351709139047801,
+        "total_ms": 1583.991009,
+        "mean_ms": 52.799700300000005,
+        "startup_ms": 0,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 0,
+          "search": 30
+        }
+      },
+      {
+        "name": "deterministic-heuristic",
+        "n": 30,
+        "success_rate": 1.0,
+        "errors": 0,
+        "error_upper_95": 0.11351709139047801,
+        "total_ms": 4281.051301,
+        "mean_ms": 142.70171003333334,
+        "startup_ms": 0,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 12,
+          "search": 18
+        }
+      },
+      {
+        "name": "always-symbol",
+        "n": 30,
+        "success_rate": 0.4,
+        "errors": 18,
+        "error_upper_95": 0.754096056739166,
+        "total_ms": 3704.018926,
+        "mean_ms": 123.46729753333334,
+        "startup_ms": 0,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 30,
+          "search": 0
+        }
+      },
+      {
+        "name": "trained-always",
+        "n": 30,
+        "success_rate": 0.6666666666666667,
+        "errors": 10,
+        "error_upper_95": 0.5122027418616973,
+        "total_ms": 494410.706854108,
+        "mean_ms": 16480.356895136934,
+        "startup_ms": 15218.12016700278,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 22,
+          "search": 8
+        }
+      },
+      {
+        "name": "selective",
+        "n": 30,
+        "success_rate": 1.0,
+        "errors": 0,
+        "error_upper_95": 0.11351709139047801,
+        "total_ms": 491928.644686108,
+        "mean_ms": 16397.621489536934,
+        "startup_ms": 15218.12016700278,
+        "fallback_rate": 1.0,
+        "decision_counts": {
+          "symbol": 0,
+          "search": 30
+        }
+      },
+      {
+        "name": "ordinary-laya",
+        "n": 30,
+        "success_rate": 0.6666666666666667,
+        "errors": 10,
+        "error_upper_95": 0.5122027418616973,
+        "total_ms": 178095.4975848172,
+        "mean_ms": 5936.516586160574,
+        "startup_ms": 4982.3939579946455,
+        "fallback_rate": 0.0,
+        "decision_counts": {
+          "symbol": 22,
+          "search": 8
+        }
+      }
+    ],
+    "details": [
+      {
+        "id": "cachetools-00-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9837,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 721.9779589795507,
+          "probabilities": {
+            "symbol": 0.995,
+            "search": 0.005
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 53.824124999999995,
+            "median_action_ms": 42.819083,
+            "success": true,
+            "trials_ms": [
+              4.425583,
+              109.612167,
+              42.819083
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 509.288917,
+            "median_action_ms": 498.283875,
+            "success": true,
+            "trials_ms": [
+              498.283875,
+              737.574958,
+              179.300834
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-00-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9698,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 927.3622920154594,
+          "probabilities": {
+            "symbol": 0.99,
+            "search": 0.01
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 41.738667,
+            "median_action_ms": 30.733625,
+            "success": true,
+            "trials_ms": [
+              43.3615,
+              27.320166,
+              30.733625
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 179.839542,
+            "median_action_ms": 168.8345,
+            "success": true,
+            "trials_ms": [
+              168.8345,
+              163.856667,
+              237.969
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-00-02",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5735,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 857.6923329965211,
+          "probabilities": {
+            "symbol": 0.5735,
+            "search": 0.4265
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 28.620959,
+            "median_action_ms": 17.615917,
+            "success": true,
+            "trials_ms": [
+              17.615917,
+              31.31525,
+              11.980917
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.007417,
+            "median_action_ms": 0.002375,
+            "success": false,
+            "trials_ms": [
+              0.002375,
+              0.000458,
+              0.003416
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-00-03",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5096,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 1116.8576670170296,
+          "probabilities": {
+            "symbol": 0.4904,
+            "search": 0.5096
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 14.628292,
+            "median_action_ms": 3.62325,
+            "success": true,
+            "trials_ms": [
+              3.705458,
+              3.62325,
+              3.432375
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.0075,
+            "median_action_ms": 0.002458,
+            "success": false,
+            "trials_ms": [
+              0.002833,
+              0.002458,
+              0.000458
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-00-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.539,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 800.0990000145976,
+          "probabilities": {
+            "symbol": 0.4165,
+            "search": 0.5835
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 217.697001,
+            "median_action_ms": 206.691959,
+            "success": true,
+            "trials_ms": [
+              343.190208,
+              206.691959,
+              79.469208
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.008625,
+            "median_action_ms": 0.003583,
+            "success": false,
+            "trials_ms": [
+              0.004459,
+              0.000708,
+              0.003583
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-01-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9966,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 609.423332993174,
+          "probabilities": {
+            "symbol": 0.9986,
+            "search": 0.0014
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 122.000833,
+            "median_action_ms": 110.995791,
+            "success": true,
+            "trials_ms": [
+              110.995791,
+              4.507208,
+              147.350958
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 190.995083,
+            "median_action_ms": 179.990041,
+            "success": true,
+            "trials_ms": [
+              341.192125,
+              27.418292,
+              179.990041
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-01-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9976,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 523.0773329967633,
+          "probabilities": {
+            "symbol": 0.9991,
+            "search": 0.0009
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 71.320542,
+            "median_action_ms": 60.3155,
+            "success": true,
+            "trials_ms": [
+              60.3155,
+              69.507417,
+              18.13325
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 144.532417,
+            "median_action_ms": 133.527375,
+            "success": true,
+            "trials_ms": [
+              133.527375,
+              206.087416,
+              46.794875
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-01-02",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5412,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1181.0469590127468,
+          "probabilities": {
+            "symbol": 0.5412,
+            "search": 0.4588
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 159.087375,
+            "median_action_ms": 148.082333,
+            "success": true,
+            "trials_ms": [
+              148.082333,
+              265.871792,
+              41.605125
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.00825,
+            "median_action_ms": 0.003208,
+            "success": false,
+            "trials_ms": [
+              0.004458,
+              0.003208,
+              0.0005
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-01-03",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5557,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 1326.317165978253,
+          "probabilities": {
+            "symbol": 0.4443,
+            "search": 0.5557
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 15.427499999999998,
+            "median_action_ms": 4.422458,
+            "success": true,
+            "trials_ms": [
+              4.422458,
+              3.811042,
+              8.042333
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.007667,
+            "median_action_ms": 0.002625,
+            "success": false,
+            "trials_ms": [
+              0.002875,
+              0.0005,
+              0.002625
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-01-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5423,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 841.1381249898113,
+          "probabilities": {
+            "symbol": 0.3436,
+            "search": 0.6564
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 108.323792,
+            "median_action_ms": 97.31875,
+            "success": true,
+            "trials_ms": [
+              121.757458,
+              8.408292,
+              97.31875
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.007209,
+            "median_action_ms": 0.002167,
+            "success": false,
+            "trials_ms": [
+              0.003958,
+              0.002167,
+              0.000458
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-02-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9954,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 800.6158330244943,
+          "probabilities": {
+            "symbol": 0.9977,
+            "search": 0.0023
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 22.324292,
+            "median_action_ms": 11.31925,
+            "success": true,
+            "trials_ms": [
+              5.491459,
+              11.31925,
+              12.61675
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 169.455667,
+            "median_action_ms": 158.450625,
+            "success": true,
+            "trials_ms": [
+              191.812333,
+              158.450625,
+              149.782125
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-02-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9966,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 840.3281669889111,
+          "probabilities": {
+            "symbol": 0.9985,
+            "search": 0.0015
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 25.098584,
+            "median_action_ms": 14.093542,
+            "success": true,
+            "trials_ms": [
+              68.353125,
+              14.093542,
+              7.775334
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 199.416292,
+            "median_action_ms": 188.41125,
+            "success": true,
+            "trials_ms": [
+              188.41125,
+              538.708958,
+              41.386125
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-02-02",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5293,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 1256.7606660013553,
+          "probabilities": {
+            "symbol": 0.4707,
+            "search": 0.5293
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 17.569792,
+            "median_action_ms": 6.56475,
+            "success": true,
+            "trials_ms": [
+              6.56475,
+              3.442334,
+              78.323125
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.008875,
+            "median_action_ms": 0.003833,
+            "success": false,
+            "trials_ms": [
+              0.003833,
+              0.0005,
+              0.004167
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-02-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.6111,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 990.1365840050858,
+          "probabilities": {
+            "symbol": 0.6111,
+            "search": 0.3889
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 14.537875,
+            "median_action_ms": 3.532833,
+            "success": true,
+            "trials_ms": [
+              3.532833,
+              3.161583,
+              6.537042
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.007584,
+            "median_action_ms": 0.002542,
+            "success": false,
+            "trials_ms": [
+              0.005167,
+              0.002542,
+              0.000542
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-02-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5593,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1135.5656670057215,
+          "probabilities": {
+            "symbol": 0.2829,
+            "search": 0.7171
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 15.651042,
+            "median_action_ms": 4.646,
+            "success": true,
+            "trials_ms": [
+              4.646,
+              5.088417,
+              3.493958
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.007083999999999,
+            "median_action_ms": 0.002042,
+            "success": false,
+            "trials_ms": [
+              0.0025,
+              0.000625,
+              0.002042
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-03-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9965,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1570.806834002724,
+          "probabilities": {
+            "symbol": 0.9972,
+            "search": 0.0028
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 30.276125,
+            "median_action_ms": 19.271083,
+            "success": true,
+            "trials_ms": [
+              19.271083,
+              7.269875,
+              422.94775
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 368.455959,
+            "median_action_ms": 357.450917,
+            "success": true,
+            "trials_ms": [
+              357.450917,
+              150.126667,
+              452.533542
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-03-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9976,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 2365.626540995436,
+          "probabilities": {
+            "symbol": 0.9988,
+            "search": 0.0012
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 110.826042,
+            "median_action_ms": 99.821,
+            "success": true,
+            "trials_ms": [
+              4.523458,
+              347.483375,
+              99.821
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 178.576292,
+            "median_action_ms": 167.57125,
+            "success": true,
+            "trials_ms": [
+              24.996542,
+              167.57125,
+              533.668417
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-03-02",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5171,
+          "stable": false,
+          "truncated": false,
+          "duration_ms": 1318.6358749808278,
+          "probabilities": {
+            "symbol": 0.4829,
+            "search": 0.5171
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 17.915667,
+            "median_action_ms": 6.910625,
+            "success": true,
+            "trials_ms": [
+              6.778958,
+              6.910625,
+              7.1045
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.007249999999999,
+            "median_action_ms": 0.002208,
+            "success": false,
+            "trials_ms": [
+              0.004875,
+              0.002208,
+              0.000375
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-03-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5604,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1516.6714579972904,
+          "probabilities": {
+            "symbol": 0.5604,
+            "search": 0.4396
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 17.039542,
+            "median_action_ms": 6.0345,
+            "success": true,
+            "trials_ms": [
+              5.26975,
+              7.359958,
+              6.0345
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.007624999999999,
+            "median_action_ms": 0.002583,
+            "success": false,
+            "trials_ms": [
+              0.002583,
+              0.000459,
+              0.003042
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-03-04",
+        "prediction": {
+          "choice": "search",
+          "confidence": 0.5432,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1237.0152499934193,
+          "probabilities": {
+            "symbol": 0.3287,
+            "search": 0.6713
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 42.88375,
+            "median_action_ms": 31.878708,
+            "success": true,
+            "trials_ms": [
+              434.877208,
+              31.878708,
+              10.774542
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.008375,
+            "median_action_ms": 0.003333,
+            "success": false,
+            "trials_ms": [
+              0.003333,
+              0.004458,
+              0.000542
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-04-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9958,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 783.1300419929903,
+          "probabilities": {
+            "symbol": 0.9978,
+            "search": 0.0022
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 155.455875,
+            "median_action_ms": 144.450833,
+            "success": true,
+            "trials_ms": [
+              171.109584,
+              144.450833,
+              140.916208
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 534.308792,
+            "median_action_ms": 523.30375,
+            "success": true,
+            "trials_ms": [
+              494.265083,
+              810.741875,
+              523.30375
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-04-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.994,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1489.1349579847883,
+          "probabilities": {
+            "symbol": 0.9985,
+            "search": 0.0015
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 16.026375,
+            "median_action_ms": 5.021333,
+            "success": true,
+            "trials_ms": [
+              4.17,
+              5.021333,
+              8.155292
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 202.32525,
+            "median_action_ms": 191.320208,
+            "success": true,
+            "trials_ms": [
+              41.917917,
+              435.256541,
+              191.320208
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-04-02",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5874,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1995.2366669895127,
+          "probabilities": {
+            "symbol": 0.5874,
+            "search": 0.4126
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 15.872416999999999,
+            "median_action_ms": 4.867375,
+            "success": true,
+            "trials_ms": [
+              4.867375,
+              4.187416,
+              194.840708
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.008626,
+            "median_action_ms": 0.003584,
+            "success": false,
+            "trials_ms": [
+              0.003709,
+              0.0005,
+              0.003584
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-04-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.6779,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 813.6069580214098,
+          "probabilities": {
+            "symbol": 0.6779,
+            "search": 0.3221
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 15.292167,
+            "median_action_ms": 4.287125,
+            "success": true,
+            "trials_ms": [
+              4.014042,
+              4.287125,
+              139.69475
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.008167,
+            "median_action_ms": 0.003125,
+            "success": false,
+            "trials_ms": [
+              0.091,
+              0.003125,
+              0.000542
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-04-04",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5234,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 965.0987920176703,
+          "probabilities": {
+            "symbol": 0.535,
+            "search": 0.465
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 17.114167,
+            "median_action_ms": 6.109125,
+            "success": true,
+            "trials_ms": [
+              4.044041,
+              9.046875,
+              6.109125
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.008625,
+            "median_action_ms": 0.003583,
+            "success": false,
+            "trials_ms": [
+              0.005791,
+              0.000959,
+              0.003583
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-05-00",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9901,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 771.1152080155443,
+          "probabilities": {
+            "symbol": 0.9975,
+            "search": 0.0025
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 74.223834,
+            "median_action_ms": 63.218792,
+            "success": true,
+            "trials_ms": [
+              111.028166,
+              63.218792,
+              11.215292
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 229.030459,
+            "median_action_ms": 218.025417,
+            "success": true,
+            "trials_ms": [
+              690.394291,
+              192.072833,
+              218.025417
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-05-01",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.9988,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1534.891957999207,
+          "probabilities": {
+            "symbol": 0.9994,
+            "search": 0.0006
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 85.700126,
+            "median_action_ms": 74.695084,
+            "success": true,
+            "trials_ms": [
+              5.863083,
+              88.568958,
+              74.695084
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 599.651042,
+            "median_action_ms": 588.646,
+            "success": true,
+            "trials_ms": [
+              425.557375,
+              588.646,
+              677.946625
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-05-02",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5369,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1062.997875007568,
+          "probabilities": {
+            "symbol": 0.5369,
+            "search": 0.4631
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 19.875375,
+            "median_action_ms": 8.870333,
+            "success": true,
+            "trials_ms": [
+              3.451,
+              8.870333,
+              170.367875
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.007833,
+            "median_action_ms": 0.002791,
+            "success": false,
+            "trials_ms": [
+              0.002791,
+              0.003209,
+              0.000541
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-05-03",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.51,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 874.8718749848194,
+          "probabilities": {
+            "symbol": 0.51,
+            "search": 0.49
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 18.113709,
+            "median_action_ms": 7.108667,
+            "success": true,
+            "trials_ms": [
+              4.909708,
+              7.108667,
+              12.593959
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.008001,
+            "median_action_ms": 0.002959,
+            "success": false,
+            "trials_ms": [
+              0.002959,
+              0.000542,
+              0.0055
+            ]
+          }
+        }
+      },
+      {
+        "id": "cachetools-05-04",
+        "prediction": {
+          "choice": "symbol",
+          "confidence": 0.5478,
+          "stable": true,
+          "truncated": false,
+          "duration_ms": 1573.809292021906,
+          "probabilities": {
+            "symbol": 0.5478,
+            "search": 0.4522
+          },
+          "backend": "mlx"
+        },
+        "selected": "search",
+        "fallback": true,
+        "outcomes": {
+          "search": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 19.525167,
+            "median_action_ms": 8.520125,
+            "success": true,
+            "trials_ms": [
+              14.576917,
+              8.520125,
+              4.675458
+            ]
+          },
+          "symbol": {
+            "corpus_startup_ms": 11.005042,
+            "duration_ms": 11.008500999999999,
+            "median_action_ms": 0.003459,
+            "success": false,
+            "trials_ms": [
+              0.006417,
+              0.003459,
+              0.000459
+            ]
+          }
+        }
+      }
+    ],
+    "decision_label_agreement": 0.26666666666666666,
+    "decision_ece_10_bins": 0.4625866666666667,
+    "confidence_brier": 0.5593403226666667,
+    "decision_label_records": 30,
+    "decision_metric_note": "Agreement with fastest safe observed choice is diagnostic only; rows with no successful action are excluded from label metrics but retained in all outcome comparisons. This is not task success or a population calibration guarantee.",
+    "paired_saved_ms_95": null,
+    "paired_success_delta_95": null,
+    "paired_saved_ms_mean": -16344.821789236934,
+    "paired_success_delta_mean": 0.0,
+    "uncertainty_available": false,
+    "repository_groups": 1,
+    "accepted": 0,
+    "accepted_errors": 0,
+    "accepted_error_upper_95": 1.0,
+    "accepted_repositories": 0,
+    "accepted_repository_error_upper_95": 1.0,
+    "order_flip_rate": 0.16666666666666666,
+    "unnecessary_fallback": 20,
+    "wrong_decisions": []
+  },
+  "policies": [
+    {
+      "name": "original-search",
+      "n": 30,
+      "success_rate": 1.0,
+      "errors": 0,
+      "error_upper_95": 0.11351709139047801,
+      "total_ms": 1583.991009,
+      "mean_ms": 52.799700300000005,
+      "startup_ms": 0,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "symbol": 0,
+        "search": 30
+      }
+    },
+    {
+      "name": "deterministic-heuristic",
+      "n": 30,
+      "success_rate": 1.0,
+      "errors": 0,
+      "error_upper_95": 0.11351709139047801,
+      "total_ms": 4281.051301,
+      "mean_ms": 142.70171003333334,
+      "startup_ms": 0,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "symbol": 12,
+        "search": 18
+      }
+    },
+    {
+      "name": "always-symbol",
+      "n": 30,
+      "success_rate": 0.4,
+      "errors": 18,
+      "error_upper_95": 0.754096056739166,
+      "total_ms": 3704.018926,
+      "mean_ms": 123.46729753333334,
+      "startup_ms": 0,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "symbol": 30,
+        "search": 0
+      }
+    },
+    {
+      "name": "trained-always",
+      "n": 30,
+      "success_rate": 0.6666666666666667,
+      "errors": 10,
+      "error_upper_95": 0.5122027418616973,
+      "total_ms": 494410.706854108,
+      "mean_ms": 16480.356895136934,
+      "startup_ms": 15218.12016700278,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "symbol": 22,
+        "search": 8
+      }
+    },
+    {
+      "name": "selective",
+      "n": 30,
+      "success_rate": 1.0,
+      "errors": 0,
+      "error_upper_95": 0.11351709139047801,
+      "total_ms": 491928.644686108,
+      "mean_ms": 16397.621489536934,
+      "startup_ms": 15218.12016700278,
+      "fallback_rate": 1.0,
+      "decision_counts": {
+        "symbol": 0,
+        "search": 30
+      }
+    },
+    {
+      "name": "ordinary-laya",
+      "n": 30,
+      "success_rate": 0.6666666666666667,
+      "errors": 10,
+      "error_upper_95": 0.5122027418616973,
+      "total_ms": 178095.4975848172,
+      "mean_ms": 5936.516586160574,
+      "startup_ms": 4982.3939579946455,
+      "fallback_rate": 0.0,
+      "decision_counts": {
+        "symbol": 22,
+        "search": 8
+      }
+    }
+  ],
+  "deployment_allowed": false,
+  "reasons": [
+    "calibration has insufficient safe delegation evidence",
+    "independent promotion accepted-risk bound failed",
+    "promotion uncertainty unavailable with fewer than two repository groups",
+    "promotion has no reliable net time improvement including startup",
+    "simple heuristic dominates the candidate",
+    "candidate task outcomes regress against the deterministic heuristic",
+    "locked test does not confirm outcome and time benefit"
+  ],
+  "currency_cost": null,
+  "scope": "Bounded source retrieval outcomes, not autonomous agent task success.",
+  "execution_contract": "Cold CLI: measured startup charged on every decision; warm throughput is diagnostic only.",
+  "statistics": "Repository-group paired bootstrap 1000 resamples; intervals unavailable below two actual repositories. Per-task Wilson bounds are descriptive under shared task grammar, not a population reliability guarantee.",
+  "spec_catalog_digest": "5977bf8c3c393e3d7ec45427c763a86d7790fbb391b6f79c80abfb799474cfd9",
+  "backend": "mlx",
+  "artifact_digest": "23095775f1aabc10c4b1a13179306e7eb98b858782c05bf40c5bc6444d823cc2",
+  "screening_ms": 4520.2676670160145,
+  "cost_note": "Retrospective action outcomes plus measured model startup and integrity screening charged per CLI request; not direct timing of every full CLI process."
+}

@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002833,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002458,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000458,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 3.705458,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 367,
+            "text": "        \"\"\"Remove and return a random `(key, value)` pair.\"\"\"\n        keys = self.__keys\n        if not keys:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = self.__choice(keys)\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__index.clear()\n        del self.__keys[:]\n\n\nclass _TimedCache(Cache):\n    \"\"\"Base class for time-aware cache implementations.\"\"\"\n\n    class _Timer:\n        def __init__(self, timer):\n            self.__timer = timer\n            self.__nesting = 0\n\n        def __call__(self):\n            if self.__nesting == 0:\n                return self.__timer()\n            else:\n                return self.__time\n",
+            "sha256": "fed2a6132187ae7e36257d32c80a6d3731f85183d5cbc6b8b438acee34fce5e0"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 783,
+            "text": "def cachedmethod(cache, key=keys.methodkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a method with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cachedmethod import _wrapper\n\n    def decorator(method):\n        if info:\n\n            def make_info(cache, hits, misses):\n                if isinstance(cache, Cache):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n                elif isinstance(cache, collections.abc.Mapping):\n                    return _CacheInfo(hits, misses, None, len(cache))\n                else:\n                    raise TypeError(\"cache(self) must return a mutable mapping\")\n\n            return _wrapper(method, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(method, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "71419a7c8d848b323d9b3ac0d8ac5df110132287a344f9c41141bb4c92dcc337"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.62325,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 367,
+            "text": "        \"\"\"Remove and return a random `(key, value)` pair.\"\"\"\n        keys = self.__keys\n        if not keys:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = self.__choice(keys)\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__index.clear()\n        del self.__keys[:]\n\n\nclass _TimedCache(Cache):\n    \"\"\"Base class for time-aware cache implementations.\"\"\"\n\n    class _Timer:\n        def __init__(self, timer):\n            self.__timer = timer\n            self.__nesting = 0\n\n        def __call__(self):\n            if self.__nesting == 0:\n                return self.__timer()\n            else:\n                return self.__time\n",
+            "sha256": "fed2a6132187ae7e36257d32c80a6d3731f85183d5cbc6b8b438acee34fce5e0"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 783,
+            "text": "def cachedmethod(cache, key=keys.methodkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a method with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cachedmethod import _wrapper\n\n    def decorator(method):\n        if info:\n\n            def make_info(cache, hits, misses):\n                if isinstance(cache, Cache):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n                elif isinstance(cache, collections.abc.Mapping):\n                    return _CacheInfo(hits, misses, None, len(cache))\n                else:\n                    raise TypeError(\"cache(self) must return a mutable mapping\")\n\n            return _wrapper(method, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(method, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "71419a7c8d848b323d9b3ac0d8ac5df110132287a344f9c41141bb4c92dcc337"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.432375,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 367,
+            "text": "        \"\"\"Remove and return a random `(key, value)` pair.\"\"\"\n        keys = self.__keys\n        if not keys:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = self.__choice(keys)\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__index.clear()\n        del self.__keys[:]\n\n\nclass _TimedCache(Cache):\n    \"\"\"Base class for time-aware cache implementations.\"\"\"\n\n    class _Timer:\n        def __init__(self, timer):\n            self.__timer = timer\n            self.__nesting = 0\n\n        def __call__(self):\n            if self.__nesting == 0:\n                return self.__timer()\n            else:\n                return self.__time\n",
+            "sha256": "fed2a6132187ae7e36257d32c80a6d3731f85183d5cbc6b8b438acee34fce5e0"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 783,
+            "text": "def cachedmethod(cache, key=keys.methodkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a method with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cachedmethod import _wrapper\n\n    def decorator(method):\n        if info:\n\n            def make_info(cache, hits, misses):\n                if isinstance(cache, Cache):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n                elif isinstance(cache, collections.abc.Mapping):\n                    return _CacheInfo(hits, misses, None, len(cache))\n                else:\n                    raise TypeError(\"cache(self) must return a mutable mapping\")\n\n            return _wrapper(method, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(method, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "71419a7c8d848b323d9b3ac0d8ac5df110132287a344f9c41141bb4c92dcc337"
+          }
+        ]
+      }
+    ]
+  }
+}

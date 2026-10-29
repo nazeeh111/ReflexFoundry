@@ -53,6 +53,6 @@ Each CLI `decide` invocation validates the artifact bindings and starts a model.
 
 ## Boundaries of the first release
 
-Discovery recognizes predefined test-scope and context-retrieval specifications. Training and executed promotion evaluation are initially limited to test scope. Input drift checking and sustained abstention are conservative warning signals; they do not constitute a general statistical distribution-shift detector.
+Discovery recognizes predefined test-scope and context-retrieval specifications. Training and evaluation support one decision family per workspace. Test scope uses patch-validation outcomes; context retrieval uses separately checked source coverage on pinned public repositories. Input drift checking and sustained abstention are conservative warning signals; they do not constitute a general statistical distribution-shift detector.
 
 No component reads hidden reasoning, invokes a paid comparator, signs evidence, or executes a learned action on the agent's behalf. An agent integration must preserve its own safeguards and independent final verification.

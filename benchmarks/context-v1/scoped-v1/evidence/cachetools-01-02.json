@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.004458,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.003208,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.0005,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 148.082333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 156,
+            "text": "    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1\n\n\nclass FIFOCache(Cache):\n    \"\"\"First In First Out (FIFO) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__order:\n            self.__order.move_to_end(key)\n        else:\n            self.__order[key] = None\n",
+            "sha256": "eacc08464f73a7c0333f0e7ef11f5d4ef30852116baefd8989935bccc957a0c0"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 21,
+            "text": "\ndef _cache(cache, maxsize, typed):\n    def decorator(func):\n        # like functools.lru_cache, this has to be thread-safe;\n        # additionally, this also prevents cache stampede scenarios\n        # using a condition variable\n        key = keys.typedkey if typed else keys.hashkey\n        wrapper = cached(cache=cache, key=key, condition=Condition(), info=True)(func)\n        wrapper.cache_parameters = lambda: {\"maxsize\": maxsize, \"typed\": typed}  # type: ignore\n        return wrapper\n\n    return decorator\n\n\ndef fifo_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a First In First Out (FIFO)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(FIFOCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(FIFOCache(maxsize), maxsize, typed)\n\n\ndef lfu_cache(maxsize=128, typed=False):",
+            "sha256": "70a75cb2066e9c39ec8b5d57584c2408582159d051c0aa71eb84fe7adcbfa5f7"
+          },
+          {
+            "path": "src/cachetools/_cached.py",
+            "start_line": 235,
+            "text": "    wrapper.cache_clear = lambda: cache.clear()\n    return wrapper\n\n\ndef _uncached(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n\n    functools.update_wrapper(wrapper, func)\n    wrapper.cache_clear = lambda: None\n    return wrapper\n\n\ndef _wrapper(func, cache, key, lock=None, cond=None, info=None):\n    if cache is None:\n        warnings.warn(\n            \"@cachetools.cached(cache=None) is deprecated\",\n            DeprecationWarning,\n            stacklevel=3,\n        )\n\n    if info is not None:\n        if cache is None:\n            wrapper = _uncached_info(func, info)\n        elif cond is not None and lock is not None:\n            wrapper = _condition_info(func, cache, key, lock, cond, info)\n        elif cond is not None:\n            wrapper = _condition_info(func, cache, key, cond, cond, info)\n        elif lock is not None:",
+            "sha256": "9c12148a37983d7514e682ba61ed79c385444d035376a81af26e4892d1a948fc"
+          }
+        ]
+      },
+      {
+        "duration_ms": 265.871792,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 156,
+            "text": "    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1\n\n\nclass FIFOCache(Cache):\n    \"\"\"First In First Out (FIFO) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__order:\n            self.__order.move_to_end(key)\n        else:\n            self.__order[key] = None\n",
+            "sha256": "eacc08464f73a7c0333f0e7ef11f5d4ef30852116baefd8989935bccc957a0c0"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 21,
+            "text": "\ndef _cache(cache, maxsize, typed):\n    def decorator(func):\n        # like functools.lru_cache, this has to be thread-safe;\n        # additionally, this also prevents cache stampede scenarios\n        # using a condition variable\n        key = keys.typedkey if typed else keys.hashkey\n        wrapper = cached(cache=cache, key=key, condition=Condition(), info=True)(func)\n        wrapper.cache_parameters = lambda: {\"maxsize\": maxsize, \"typed\": typed}  # type: ignore\n        return wrapper\n\n    return decorator\n\n\ndef fifo_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a First In First Out (FIFO)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(FIFOCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(FIFOCache(maxsize), maxsize, typed)\n\n\ndef lfu_cache(maxsize=128, typed=False):",
+            "sha256": "70a75cb2066e9c39ec8b5d57584c2408582159d051c0aa71eb84fe7adcbfa5f7"
+          },
+          {
+            "path": "src/cachetools/_cached.py",
+            "start_line": 235,
+            "text": "    wrapper.cache_clear = lambda: cache.clear()\n    return wrapper\n\n\ndef _uncached(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n\n    functools.update_wrapper(wrapper, func)\n    wrapper.cache_clear = lambda: None\n    return wrapper\n\n\ndef _wrapper(func, cache, key, lock=None, cond=None, info=None):\n    if cache is None:\n        warnings.warn(\n            \"@cachetools.cached(cache=None) is deprecated\",\n            DeprecationWarning,\n            stacklevel=3,\n        )\n\n    if info is not None:\n        if cache is None:\n            wrapper = _uncached_info(func, info)\n        elif cond is not None and lock is not None:\n            wrapper = _condition_info(func, cache, key, lock, cond, info)\n        elif cond is not None:\n            wrapper = _condition_info(func, cache, key, cond, cond, info)\n        elif lock is not None:",
+            "sha256": "9c12148a37983d7514e682ba61ed79c385444d035376a81af26e4892d1a948fc"
+          }
+        ]
+      },
+      {
+        "duration_ms": 41.605125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 156,
+            "text": "    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1\n\n\nclass FIFOCache(Cache):\n    \"\"\"First In First Out (FIFO) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__order:\n            self.__order.move_to_end(key)\n        else:\n            self.__order[key] = None\n",
+            "sha256": "eacc08464f73a7c0333f0e7ef11f5d4ef30852116baefd8989935bccc957a0c0"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 21,
+            "text": "\ndef _cache(cache, maxsize, typed):\n    def decorator(func):\n        # like functools.lru_cache, this has to be thread-safe;\n        # additionally, this also prevents cache stampede scenarios\n        # using a condition variable\n        key = keys.typedkey if typed else keys.hashkey\n        wrapper = cached(cache=cache, key=key, condition=Condition(), info=True)(func)\n        wrapper.cache_parameters = lambda: {\"maxsize\": maxsize, \"typed\": typed}  # type: ignore\n        return wrapper\n\n    return decorator\n\n\ndef fifo_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a First In First Out (FIFO)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(FIFOCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(FIFOCache(maxsize), maxsize, typed)\n\n\ndef lfu_cache(maxsize=128, typed=False):",
+            "sha256": "70a75cb2066e9c39ec8b5d57584c2408582159d051c0aa71eb84fe7adcbfa5f7"
+          },
+          {
+            "path": "src/cachetools/_cached.py",
+            "start_line": 235,
+            "text": "    wrapper.cache_clear = lambda: cache.clear()\n    return wrapper\n\n\ndef _uncached(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n\n    functools.update_wrapper(wrapper, func)\n    wrapper.cache_clear = lambda: None\n    return wrapper\n\n\ndef _wrapper(func, cache, key, lock=None, cond=None, info=None):\n    if cache is None:\n        warnings.warn(\n            \"@cachetools.cached(cache=None) is deprecated\",\n            DeprecationWarning,\n            stacklevel=3,\n        )\n\n    if info is not None:\n        if cache is None:\n            wrapper = _uncached_info(func, info)\n        elif cond is not None and lock is not None:\n            wrapper = _condition_info(func, cache, key, lock, cond, info)\n        elif cond is not None:\n            wrapper = _condition_info(func, cache, key, cond, cond, info)\n        elif lock is not None:",
+            "sha256": "9c12148a37983d7514e682ba61ed79c385444d035376a81af26e4892d1a948fc"
+          }
+        ]
+      }
+    ]
+  }
+}

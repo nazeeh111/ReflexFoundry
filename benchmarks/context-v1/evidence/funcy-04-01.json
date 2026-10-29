@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 23.245,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 240,
+            "text": "def distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)\n            if k not in seen:\n                seen.add(k)\n                yield item",
+            "sha256": "1f1d66565619a539991bc4e3e98bee769084b502f1e1f3e68b9053b0d711010f"
+          }
+        ]
+      },
+      {
+        "duration_ms": 26.632791,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 240,
+            "text": "def distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)\n            if k not in seen:\n                seen.add(k)\n                yield item",
+            "sha256": "1f1d66565619a539991bc4e3e98bee769084b502f1e1f3e68b9053b0d711010f"
+          }
+        ]
+      },
+      {
+        "duration_ms": 24.270334,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 240,
+            "text": "def distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)\n            if k not in seen:\n                seen.add(k)\n                yield item",
+            "sha256": "1f1d66565619a539991bc4e3e98bee769084b502f1e1f3e68b9053b0d711010f"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 3.497708,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 225,
+            "text": "\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)\n            if k not in seen:",
+            "sha256": "2e1931e72226b0875684a8a22d64ea896de7f3c6a321c6f154eca16d347b2509"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 151,
+            "text": "    return filterfalse(make_pred(pred), seq)\n\ndef lkeep(f, seq=EMPTY):\n    \"\"\"Maps seq with f and keeps only truthy results.\n       Simply lists truthy values in one argument version.\"\"\"\n    return list(keep(f, seq))\n\ndef keep(f, seq=EMPTY):\n    \"\"\"Maps seq with f and iterates truthy results.\n       Simply iterates truthy values in one argument version.\"\"\"\n    if seq is EMPTY:\n        return _filter(bool, f)\n    else:\n        return _filter(bool, map(f, seq))\n\ndef without(seq, *items):\n    \"\"\"Iterates over sequence skipping items.\"\"\"\n    for value in seq:\n        if value not in items:\n            yield value\n\ndef lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))",
+            "sha256": "0e86c71c3ea3e3030a93780a1f6c1bf82811a2f98849aa3137042f63f7336f96"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 81,
+            "text": "       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item\n\ndef shuffled(seq):\n    \"\"\"Returns a list of items of the sequence in random order.\"\"\"",
+            "sha256": "56414147d9b6d402b7f86b2c655551ca32729ab1fa6aabbdfed30d30697463e2"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.43625,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 225,
+            "text": "\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)\n            if k not in seen:",
+            "sha256": "2e1931e72226b0875684a8a22d64ea896de7f3c6a321c6f154eca16d347b2509"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 151,
+            "text": "    return filterfalse(make_pred(pred), seq)\n\ndef lkeep(f, seq=EMPTY):\n    \"\"\"Maps seq with f and keeps only truthy results.\n       Simply lists truthy values in one argument version.\"\"\"\n    return list(keep(f, seq))\n\ndef keep(f, seq=EMPTY):\n    \"\"\"Maps seq with f and iterates truthy results.\n       Simply iterates truthy values in one argument version.\"\"\"\n    if seq is EMPTY:\n        return _filter(bool, f)\n    else:\n        return _filter(bool, map(f, seq))\n\ndef without(seq, *items):\n    \"\"\"Iterates over sequence skipping items.\"\"\"\n    for value in seq:\n        if value not in items:\n            yield value\n\ndef lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))",
+            "sha256": "0e86c71c3ea3e3030a93780a1f6c1bf82811a2f98849aa3137042f63f7336f96"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 81,
+            "text": "       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item\n\ndef shuffled(seq):\n    \"\"\"Returns a list of items of the sequence in random order.\"\"\"",
+            "sha256": "56414147d9b6d402b7f86b2c655551ca32729ab1fa6aabbdfed30d30697463e2"
+          }
+        ]
+      },
+      {
+        "duration_ms": 4.049459,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 225,
+            "text": "\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _dropwhile(pred, seq)\n\n\ndef ldistinct(seq, key=EMPTY):\n    \"\"\"Removes duplicates from sequences, preserves order.\"\"\"\n    return list(distinct(seq, key))\n\ndef distinct(seq, key=EMPTY):\n    \"\"\"Iterates over sequence skipping duplicates\"\"\"\n    seen = set()\n    # check if key is supplied out of loop for efficiency\n    if key is EMPTY:\n        for item in seq:\n            if item not in seen:\n                seen.add(item)\n                yield item\n    else:\n        key = make_func(key)\n        for item in seq:\n            k = key(item)\n            if k not in seen:",
+            "sha256": "2e1931e72226b0875684a8a22d64ea896de7f3c6a321c6f154eca16d347b2509"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 151,
+            "text": "    return filterfalse(make_pred(pred), seq)\n\ndef lkeep(f, seq=EMPTY):\n    \"\"\"Maps seq with f and keeps only truthy results.\n       Simply lists truthy values in one argument version.\"\"\"\n    return list(keep(f, seq))\n\ndef keep(f, seq=EMPTY):\n    \"\"\"Maps seq with f and iterates truthy results.\n       Simply iterates truthy values in one argument version.\"\"\"\n    if seq is EMPTY:\n        return _filter(bool, f)\n    else:\n        return _filter(bool, map(f, seq))\n\ndef without(seq, *items):\n    \"\"\"Iterates over sequence skipping items.\"\"\"\n    for value in seq:\n        if value not in items:\n            yield value\n\ndef lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))",
+            "sha256": "0e86c71c3ea3e3030a93780a1f6c1bf82811a2f98849aa3137042f63f7336f96"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 81,
+            "text": "       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item\n\ndef shuffled(seq):\n    \"\"\"Returns a list of items of the sequence in random order.\"\"\"",
+            "sha256": "56414147d9b6d402b7f86b2c655551ca32729ab1fa6aabbdfed30d30697463e2"
+          }
+        ]
+      }
+    ]
+  }
+}

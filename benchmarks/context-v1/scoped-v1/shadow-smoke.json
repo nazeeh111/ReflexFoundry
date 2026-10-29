@@ -1,0 +1,23 @@
+{
+  "request_id": "55b9b4f8c37f475b85aa708b373f88f6",
+  "spec": "context-route-v1",
+  "choice": "search",
+  "fallback": true,
+  "mode": "shadow",
+  "reason": "shadow observation",
+  "advisory": true,
+  "input_digest": "0d8e79b91ca8bf11e71acaf781825d863d96c32a82cc30aab542c28cac49ff5d",
+  "policy": "1a6dbe27b65d",
+  "report_digest": "5805aa2d367c2d0eb49c0a9214a77ea57635e6c79c6c345d24ca9c4c1e0f47f0",
+  "deployment_epoch": "67a4a9487c524368814bac902ce19187",
+  "prediction": {
+    "choice": "symbol",
+    "confidence": 0.9706,
+    "duration_ms": 27379.95908301673,
+    "stable": true,
+    "truncated": false
+  },
+  "candidate": "search",
+  "candidate_eligible": false,
+  "abstained": true
+}

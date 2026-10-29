@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.001875,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.00125,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.408833,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.416625,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.228625,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.005,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.0025,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.03975,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 8.825792,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 1,
+            "text": "import sys\nfrom itertools import islice, chain, tee, groupby, filterfalse, accumulate, \\\n                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n",
+            "sha256": "754394c22b26e0a014569ba0044d28e9d7c9b82f47fc6d555930b6b49d3abd06"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 40,
+            "text": "       and returns an infinite (or length n) iterator of calls to it.\"\"\"\n    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))",
+            "sha256": "7aeb0187d50b07e698eced700d13f4b2aba9c1aa97e1c472f511d1bf5a962ab6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 78,
+            "text": "\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item",
+            "sha256": "f155715670f4a94cce7b024c6fc7275f36a572570dbd933221afcc6423a034f4"
+          }
+        ]
+      },
+      {
+        "duration_ms": 7.822458,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 1,
+            "text": "import sys\nfrom itertools import islice, chain, tee, groupby, filterfalse, accumulate, \\\n                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n",
+            "sha256": "754394c22b26e0a014569ba0044d28e9d7c9b82f47fc6d555930b6b49d3abd06"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 40,
+            "text": "       and returns an infinite (or length n) iterator of calls to it.\"\"\"\n    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))",
+            "sha256": "7aeb0187d50b07e698eced700d13f4b2aba9c1aa97e1c472f511d1bf5a962ab6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 78,
+            "text": "\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item",
+            "sha256": "f155715670f4a94cce7b024c6fc7275f36a572570dbd933221afcc6423a034f4"
+          }
+        ]
+      },
+      {
+        "duration_ms": 11.806833,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 1,
+            "text": "import sys\nfrom itertools import islice, chain, tee, groupby, filterfalse, accumulate, \\\n                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n",
+            "sha256": "754394c22b26e0a014569ba0044d28e9d7c9b82f47fc6d555930b6b49d3abd06"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 40,
+            "text": "       and returns an infinite (or length n) iterator of calls to it.\"\"\"\n    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))",
+            "sha256": "7aeb0187d50b07e698eced700d13f4b2aba9c1aa97e1c472f511d1bf5a962ab6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 78,
+            "text": "\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev\n            prev = item",
+            "sha256": "f155715670f4a94cce7b024c6fc7275f36a572570dbd933221afcc6423a034f4"
+          }
+        ]
+      }
+    ]
+  }
+}

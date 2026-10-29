@@ -20,3 +20,9 @@ runs/
 benchmarks/codex-e2e-v1/runtime-snapshot/
 benchmarks/codex-e2e-v1/shadow-state/
 benchmarks/codex-e2e-v1/prepared/
+
+models/adapted*-train.jsonl
+benchmarks/context-v1/scoped-v1/policy.json
+benchmarks/context-v1/scoped-v1/deployment.json
+benchmarks/context-v1/scoped-v1/requests.json
+benchmarks/context-v1/scoped-v1/.lock

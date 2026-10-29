@@ -69,10 +69,12 @@ def parser() -> argparse.ArgumentParser:
     observe_cmd.add_argument("--consent", action="store_true", help="authorize storage of this decision")
     discover_cmd = commands.add_parser("discover", help="find repeated supported decisions and outcome evidence")
     workspace(discover_cmd)
-    benchmark = commands.add_parser("benchmark", help="execute generated coding-patch fixtures, without APIs")
+    benchmark = commands.add_parser("benchmark", help="execute bounded local decision workloads, without APIs")
     benchmark.add_argument("--output", type=Path, required=True, help="fresh benchmark directory")
     benchmark.add_argument("--repeats", type=int, default=3, help="paired timing trials per task (1–20)")
     benchmark.add_argument("--small", action="store_true", help="32-task demonstration; too small for training/promotion")
+    benchmark.add_argument("--decision", choices=tuple(SPECS), default="test-scope-v1")
+    benchmark.add_argument("--sources", type=Path, help="parent of pinned public checkouts for context retrieval")
     download = commands.add_parser("download", help="download the pinned Apache-2.0 Laya base checkpoint")
     download.add_argument("--output", type=Path, default=Path("models/base"))
     train_cmd = commands.add_parser("train", help="adapt Laya on the training split only (requires train extra)")
@@ -125,18 +127,19 @@ def parser() -> argparse.ArgumentParser:
 
 
 def _evaluate(args: argparse.Namespace) -> dict[str, Any]:
-    from .evaluation import evaluate
+    from .core import decision_contract_digest
+    from .evaluation import evaluate, evaluation_spec
     from .model import LocalPolicy, file_hash
 
     records = read_records(args.workspace / "records.jsonl")
     # Fail before loading a model if the dataset cannot support an evaluation.
     from .core import validate_splits
     validate_splits(records, require_evaluation_outcomes=True)
-    if any(row["spec"] != "test-scope-v1" for row in records):
-        raise ValueError("executed evaluation currently supports test-scope-v1 only")
     if any(sum(row["split"] == split for row in records) < 30
            for split in ("calibration", "promotion", "test")):
         raise ValueError("evaluation needs at least 30 tasks in each calibration/promotion/test split")
+    evaluation_spec(records)
+    contract = decision_contract_digest()
     import time
 
     from .lifecycle import artifact_digest, register
@@ -154,15 +157,20 @@ def _evaluate(args: argparse.Namespace) -> dict[str, Any]:
         base_startup = base.startup_ms
     if artifact_digest(args.policy) != artifact:
         raise ValueError("policy inference files changed during evaluation; rerun on an immutable version")
+    if decision_contract_digest() != contract:
+        raise ValueError("decision contract changed during evaluation; rerun on a fixed catalog")
     model_digest = file_hash(args.policy / "model.safetensors")
     result = evaluate(records, predictions, policy.startup_ms + screening_ms, model_digest,
                       base_predictions, base_startup)
+    if result["decision_contract_digest"] != contract or decision_contract_digest() != contract:
+        raise ValueError("decision contract changed during evaluation; rerun on a fixed catalog")
     result["spec_catalog_digest"] = digest([spec.__dict__ for spec in SPECS.values()])
     result["backend"] = policy.backend
     result["artifact_digest"] = artifact
     result["screening_ms"] = screening_ms
     result["cost_note"] = "Retrospective action outcomes plus measured model startup and integrity screening charged per CLI request; not direct timing of every full CLI process."
     write_json(args.workspace / "predictions.json", {
+        "decision_contract_digest": contract,
         "model_digest": model_digest, "dataset_digest": digest(records), "backend": policy.backend,
         "startup_ms": policy.startup_ms + screening_ms, "model_startup_ms": policy.startup_ms,
         "screening_ms": screening_ms, "predictions": predictions,
@@ -185,6 +193,17 @@ def run(args: argparse.Namespace) -> Any:
     if args.command == "discover":
         return discover(read_records(args.workspace / "records.jsonl"))
     if args.command == "benchmark":
+        if args.decision == "context-route-v1":
+            if args.small:
+                raise ValueError("--small is for generated test fixtures; context retrieval uses pinned public sources")
+            if not args.sources:
+                raise ValueError("context retrieval requires --sources containing toolz, funcy, blinker and cachetools")
+            from .context_benchmark import generate as generate_context
+            sources = {name: args.sources / name for name in ("toolz", "funcy", "blinker", "cachetools")}
+            rows = generate_context(args.output, sources, repeats=args.repeats)
+            return {"decision": args.decision, "records": len(rows), "output": str(args.output)}
+        if args.sources:
+            raise ValueError("--sources is used only with --decision context-route-v1")
         from .benchmark import generate, summarize
         counts = {key: 8 for key in ("train", "calibration", "promotion", "test")} if args.small else None
         return summarize(generate(args.output, tasks_per_split=counts, repeats=args.repeats))

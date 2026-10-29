@@ -1,0 +1,188 @@
+{
+  "format": 1,
+  "base_model": "convaiinnovations/laya",
+  "base_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+  "base_weights_sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+  "backend": "laya-native-frozen-encoder",
+  "training_ms": 342765.67704201443,
+  "training_records": 36,
+  "training_records_available": 42,
+  "supervision": {
+    "label_sources": {
+      "independent-outcome": 36
+    },
+    "excluded_no_success": [
+      "toolz-00-04",
+      "toolz-01-04",
+      "toolz-02-04",
+      "toolz-03-04",
+      "toolz-04-04",
+      "toolz-05-04"
+    ],
+    "examples_digest": "7863dfe26e8e130598b6d2e33ba40c39f4b3c48fde379bc7b16d32d9e5349ae7"
+  },
+  "train_digest": "f9c85c200ffbedebf01a04fda0b56381f54f93fa8d15132c3f93f10990ca52de",
+  "spec_catalog_digest": "5977bf8c3c393e3d7ec45427c763a86d7790fbb391b6f79c80abfb799474cfd9",
+  "head_sha256": "b1fa4a49a4b98796bf6273e1469f9d1e80fd08e13e365eaacd9b8b5f16b6fb7a",
+  "weights_sha256": "1a6dbe27b65dbe4eeb8bb5946f6685bafce75afb525f168929b0971a23dd54d5",
+  "inference_artifact_digest": "23095775f1aabc10c4b1a13179306e7eb98b858782c05bf40c5bc6444d823cc2",
+  "summary": {
+    "train_items": 31,
+    "calibration_items": 5,
+    "eval_items": 5,
+    "skipped": {},
+    "epoch_loss": [
+      1.1346198212122545,
+      1.0100193582475185,
+      1.0133312828838825,
+      0.9941372212488204
+    ],
+    "temperature": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "temperature_by_options": {},
+    "n_by_bucket": {
+      "choice:2": 5
+    },
+    "calibration": {
+      "choice": {
+        "items": 5,
+        "temperature": 1.0,
+        "issues": [
+          "not fitted: 5 calibration items, fewer than 10, so the temperature stays 1.0"
+        ],
+        "accuracy": 0.8,
+        "mean_confidence": 0.9670000989109336
+      },
+      "score": {
+        "items": 0,
+        "temperature": 1.0,
+        "issues": []
+      },
+      "noul": {
+        "items": 0,
+        "temperature": 1.0,
+        "issues": []
+      }
+    },
+    "abstention_thresholds": {},
+    "train_report": {
+      "eval_source": "calibration_slice",
+      "eval_mode": "in_sample_calibration",
+      "is_held_out": false,
+      "eval_items": 5,
+      "note": "Metrics reflect in-sample calibration fit, not independent held-out evaluation. Provide --eval for held-out validation.",
+      "before": {
+        "items": 5,
+        "loss": 0.5351,
+        "accuracy": 0.8,
+        "mean_confidence": 0.9203,
+        "ece": 0.2115,
+        "brier": 0.3398,
+        "brier_top1": 0.1699,
+        "by_type": {
+          "choice": {
+            "items": 5,
+            "loss": 0.5351,
+            "accuracy": 0.8,
+            "mean_confidence": 0.9203,
+            "ece": 0.2115,
+            "brier": 0.3398,
+            "brier_top1": 0.1699
+          }
+        }
+      },
+      "after": {
+        "items": 5,
+        "loss": 0.6642,
+        "accuracy": 0.8,
+        "mean_confidence": 0.967,
+        "ece": 0.1954,
+        "brier": 0.3703,
+        "brier_top1": 0.1852,
+        "by_type": {
+          "choice": {
+            "items": 5,
+            "loss": 0.6642,
+            "accuracy": 0.8,
+            "mean_confidence": 0.967,
+            "ece": 0.1954,
+            "brier": 0.3703,
+            "brier_top1": 0.1852
+          }
+        }
+      },
+      "comparison": {
+        "delta_accuracy": 0.0,
+        "delta_loss": 0.1291,
+        "delta_ece": -0.0161,
+        "delta_brier": 0.0305,
+        "delta_brier_top1": 0.0153,
+        "delta_mean_confidence": 0.0467
+      },
+      "calibration": {
+        "choice": {
+          "items": 5,
+          "temperature": 1.0,
+          "issues": [
+            "not fitted: 5 calibration items, fewer than 10, so the temperature stays 1.0"
+          ],
+          "accuracy": 0.8,
+          "mean_confidence": 0.9670000989109336
+        },
+        "score": {
+          "items": 0,
+          "temperature": 1.0,
+          "issues": []
+        },
+        "noul": {
+          "items": 0,
+          "temperature": 1.0,
+          "issues": []
+        }
+      },
+      "abstention_thresholds": {},
+      "training": {
+        "epochs": 4,
+        "micro_batch": 4,
+        "grad_accum": 1,
+        "encoder_lr": 2.5e-05,
+        "head_lr": 0.0001,
+        "min_lr": 1e-06,
+        "weight_decay": 0.01,
+        "grad_clip": 1.0,
+        "loss": "soft-ce",
+        "rl_samples": 4,
+        "sigma_start": 0.4,
+        "sigma_end": 0.1,
+        "w_sph": 0.75,
+        "w_rps": 1.0,
+        "shuffle_options": [
+          "choice"
+        ],
+        "option_layout": null,
+        "freeze_encoder": true,
+        "calib_max": 400,
+        "calib_frac": 0.15,
+        "calib_seed": 20260922,
+        "seed": 17,
+        "max_len": 256,
+        "head_max_len": null,
+        "amp": null,
+        "gradient_checkpointing": null,
+        "log_every": 20,
+        "label_smoothing": 0.0,
+        "text_column": "text",
+        "label_column": "label",
+        "question_id": "label",
+        "instructions": null,
+        "eval_data": null,
+        "target_error": 0.1,
+        "min_abstain_n": 10
+      }
+    },
+    "output_dir": "models/adapted-context-v1"
+  }
+}

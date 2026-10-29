@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002708,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002292,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000375,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 5.16075,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 98,
+            "text": "Spec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n\ndef get_spec(func, _cache={}):\n    bound_self = func.__self__ if ismethod(func) else None\n    func = getattr(func, '__original__', None) or unwrap(func)\n    if bound_self is not None and not ismethod(func):\n        func = MethodType(func, bound_self)\n    try:\n        return _cache[func]\n    except (KeyError, TypeError):\n        pass\n\n    mod = getattr(func, '__module__', None)\n    if mod in STD_MODULES or mod in ARGS and func.__name__ in ARGS[mod]:\n        _spec = ARGS[mod].get(func.__name__, '*')\n        required, _, optional = _spec.partition('-')\n        req_names = re.findall(r'\\w+|\\*', required)  # a list with dups of *\n        max_n = len(req_names) + len(optional)\n        req_n = len(req_names)\n        spec = Spec(max_n=max_n, names=set(), req_n=req_n, req_names=set(req_names), varkw=False)\n        _cache[func] = spec\n        return spec\n    elif isinstance(func, type):\n        # __init__ inherited from builtin classes\n        objclass = getattr(func.__init__, '__objclass__', None)\n        if objclass and objclass is not func:\n            return get_spec(objclass)\n        # Introspect constructor and remove self",
+            "sha256": "aa9af35c6bea8e1fa14ccfc31907272e7bc613dd4eea92951c9c9dd0d972952f"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 6,
+            "text": "import operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))\n\ndef _lfilter(f, seq):\n    return list(filter(f, seq))\n",
+            "sha256": "56f12f6ede274243a7218475dcfa2e22bbc90f5624c6be11b737b7c4dc8407e9"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 380,
+            "text": "            yield pool\n            take(gap, it)\n            pool = take(n, it)\n    if not drop_tail:\n        yield from _cut_seq(drop_tail, n, step, pool)\n\ndef _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"",
+            "sha256": "31afcdfecce405fdb6ff1c9f08f98a0f2b4e266037e47096aa2d278ccd05d59b"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.168041,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 98,
+            "text": "Spec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n\ndef get_spec(func, _cache={}):\n    bound_self = func.__self__ if ismethod(func) else None\n    func = getattr(func, '__original__', None) or unwrap(func)\n    if bound_self is not None and not ismethod(func):\n        func = MethodType(func, bound_self)\n    try:\n        return _cache[func]\n    except (KeyError, TypeError):\n        pass\n\n    mod = getattr(func, '__module__', None)\n    if mod in STD_MODULES or mod in ARGS and func.__name__ in ARGS[mod]:\n        _spec = ARGS[mod].get(func.__name__, '*')\n        required, _, optional = _spec.partition('-')\n        req_names = re.findall(r'\\w+|\\*', required)  # a list with dups of *\n        max_n = len(req_names) + len(optional)\n        req_n = len(req_names)\n        spec = Spec(max_n=max_n, names=set(), req_n=req_n, req_names=set(req_names), varkw=False)\n        _cache[func] = spec\n        return spec\n    elif isinstance(func, type):\n        # __init__ inherited from builtin classes\n        objclass = getattr(func.__init__, '__objclass__', None)\n        if objclass and objclass is not func:\n            return get_spec(objclass)\n        # Introspect constructor and remove self",
+            "sha256": "aa9af35c6bea8e1fa14ccfc31907272e7bc613dd4eea92951c9c9dd0d972952f"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 6,
+            "text": "import operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))\n\ndef _lfilter(f, seq):\n    return list(filter(f, seq))\n",
+            "sha256": "56f12f6ede274243a7218475dcfa2e22bbc90f5624c6be11b737b7c4dc8407e9"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 380,
+            "text": "            yield pool\n            take(gap, it)\n            pool = take(n, it)\n    if not drop_tail:\n        yield from _cut_seq(drop_tail, n, step, pool)\n\ndef _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"",
+            "sha256": "31afcdfecce405fdb6ff1c9f08f98a0f2b4e266037e47096aa2d278ccd05d59b"
+          }
+        ]
+      },
+      {
+        "duration_ms": 7.100375,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/_inspect.py",
+            "start_line": 98,
+            "text": "Spec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n\ndef get_spec(func, _cache={}):\n    bound_self = func.__self__ if ismethod(func) else None\n    func = getattr(func, '__original__', None) or unwrap(func)\n    if bound_self is not None and not ismethod(func):\n        func = MethodType(func, bound_self)\n    try:\n        return _cache[func]\n    except (KeyError, TypeError):\n        pass\n\n    mod = getattr(func, '__module__', None)\n    if mod in STD_MODULES or mod in ARGS and func.__name__ in ARGS[mod]:\n        _spec = ARGS[mod].get(func.__name__, '*')\n        required, _, optional = _spec.partition('-')\n        req_names = re.findall(r'\\w+|\\*', required)  # a list with dups of *\n        max_n = len(req_names) + len(optional)\n        req_n = len(req_names)\n        spec = Spec(max_n=max_n, names=set(), req_n=req_n, req_names=set(req_names), varkw=False)\n        _cache[func] = spec\n        return spec\n    elif isinstance(func, type):\n        # __init__ inherited from builtin classes\n        objclass = getattr(func.__init__, '__objclass__', None)\n        if objclass and objclass is not func:\n            return get_spec(objclass)\n        # Introspect constructor and remove self",
+            "sha256": "aa9af35c6bea8e1fa14ccfc31907272e7bc613dd4eea92951c9c9dd0d972952f"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 6,
+            "text": "import operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))\n\ndef _lfilter(f, seq):\n    return list(filter(f, seq))\n",
+            "sha256": "56f12f6ede274243a7218475dcfa2e22bbc90f5624c6be11b737b7c4dc8407e9"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 380,
+            "text": "            yield pool\n            take(gap, it)\n            pool = take(n, it)\n    if not drop_tail:\n        yield from _cut_seq(drop_tail, n, step, pool)\n\ndef _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"",
+            "sha256": "31afcdfecce405fdb6ff1c9f08f98a0f2b4e266037e47096aa2d278ccd05d59b"
+          }
+        ]
+      }
+    ]
+  }
+}

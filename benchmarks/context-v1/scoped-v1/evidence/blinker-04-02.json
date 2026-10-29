@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.003375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000584,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.003333,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.7485,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 313,
+            "text": "            to those connected to :data:`ANY`.\n        \"\"\"\n        if not self.receivers:\n            return False\n\n        if self._by_sender[ANY_ID]:\n            return True\n\n        if sender is ANY:\n            return False\n\n        return make_id(sender) in self._by_sender\n\n    def receivers_for(\n        self, sender: t.Any\n    ) -> c.Generator[c.Callable[..., t.Any], None, None]:\n        \"\"\"Yield each receiver to be called for ``sender``, in addition to those\n        to be called for :data:`ANY`. Weakly referenced receivers that are not\n        live will be disconnected and skipped.\n\n        :param sender: Yield receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        # TODO: test receivers_for(ANY)\n        if not self.receivers:\n            return\n\n        sender_id = make_id(sender)\n",
+            "sha256": "f690a6a50ed26e74aecd6d539e35e81bc37ade42ac47ca62a472a8229f12ad22"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 200,
+            "text": "            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.",
+            "sha256": "af7a2bad325bd85b494f1adf66c4e26ed8f5a22ba4be6603ac7f82ee7b70579c"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 251,
+            "text": "            results.append((receiver, result))\n\n        return results\n\n    async def send_async(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _sync_wrapper: c.Callable[\n            [c.Callable[..., t.Any]], c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Await all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.",
+            "sha256": "d0b96ba17b0c1d2437ec5b0ceb19069888ab0d88cc87f65931f6d909ba79ffb9"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.742291,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 313,
+            "text": "            to those connected to :data:`ANY`.\n        \"\"\"\n        if not self.receivers:\n            return False\n\n        if self._by_sender[ANY_ID]:\n            return True\n\n        if sender is ANY:\n            return False\n\n        return make_id(sender) in self._by_sender\n\n    def receivers_for(\n        self, sender: t.Any\n    ) -> c.Generator[c.Callable[..., t.Any], None, None]:\n        \"\"\"Yield each receiver to be called for ``sender``, in addition to those\n        to be called for :data:`ANY`. Weakly referenced receivers that are not\n        live will be disconnected and skipped.\n\n        :param sender: Yield receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        # TODO: test receivers_for(ANY)\n        if not self.receivers:\n            return\n\n        sender_id = make_id(sender)\n",
+            "sha256": "f690a6a50ed26e74aecd6d539e35e81bc37ade42ac47ca62a472a8229f12ad22"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 200,
+            "text": "            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.",
+            "sha256": "af7a2bad325bd85b494f1adf66c4e26ed8f5a22ba4be6603ac7f82ee7b70579c"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 251,
+            "text": "            results.append((receiver, result))\n\n        return results\n\n    async def send_async(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _sync_wrapper: c.Callable[\n            [c.Callable[..., t.Any]], c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Await all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.",
+            "sha256": "d0b96ba17b0c1d2437ec5b0ceb19069888ab0d88cc87f65931f6d909ba79ffb9"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.835625,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 313,
+            "text": "            to those connected to :data:`ANY`.\n        \"\"\"\n        if not self.receivers:\n            return False\n\n        if self._by_sender[ANY_ID]:\n            return True\n\n        if sender is ANY:\n            return False\n\n        return make_id(sender) in self._by_sender\n\n    def receivers_for(\n        self, sender: t.Any\n    ) -> c.Generator[c.Callable[..., t.Any], None, None]:\n        \"\"\"Yield each receiver to be called for ``sender``, in addition to those\n        to be called for :data:`ANY`. Weakly referenced receivers that are not\n        live will be disconnected and skipped.\n\n        :param sender: Yield receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        # TODO: test receivers_for(ANY)\n        if not self.receivers:\n            return\n\n        sender_id = make_id(sender)\n",
+            "sha256": "f690a6a50ed26e74aecd6d539e35e81bc37ade42ac47ca62a472a8229f12ad22"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 200,
+            "text": "            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.",
+            "sha256": "af7a2bad325bd85b494f1adf66c4e26ed8f5a22ba4be6603ac7f82ee7b70579c"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 251,
+            "text": "            results.append((receiver, result))\n\n        return results\n\n    async def send_async(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _sync_wrapper: c.Callable[\n            [c.Callable[..., t.Any]], c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Await all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.",
+            "sha256": "d0b96ba17b0c1d2437ec5b0ceb19069888ab0d88cc87f65931f6d909ba79ffb9"
+          }
+        ]
+      }
+    ]
+  }
+}

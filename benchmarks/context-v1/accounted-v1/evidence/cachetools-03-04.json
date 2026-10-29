@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002083,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.00225,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000416,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 3.779041,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools",
+            "sha256": "f8af95b6b126bbaa2f3c72524c8b40ea9a7b49abfd6bd2e2b3fc5111a767ba29"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 275,
+            "text": "        curr = link.next\n        if curr.count != link.count + 1:\n            if len(link.keys) == 1:\n                link.count += 1\n                return\n            curr = LFUCache._Link(link.count + 1)\n            curr.next = link.next\n            link.next = curr.next.prev = curr\n            curr.prev = link\n        curr.keys.add(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n        self.__links[key] = curr\n\n\nclass LRUCache(Cache):\n    \"\"\"Least Recently Used (LRU) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        try:\n            self.__order.move_to_end(key)\n        except KeyError:  # __missing__ may not store item\n            pass",
+            "sha256": "7dfb80f794658e4251852ecfc7f56633ee29db4b46009e55f2343e32279ac1de"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 1,
+            "text": "\"\"\"`functools.lru_cache` compatible memoizing function decorators.\"\"\"\n\n__all__ = (\"fifo_cache\", \"lfu_cache\", \"lru_cache\", \"rr_cache\", \"ttl_cache\")\n\nimport math\nimport random\nimport time\nfrom threading import Condition\n\nfrom . import FIFOCache, LFUCache, LRUCache, RRCache, TTLCache, cached, keys\n\n\nclass _UnboundTTLCache(TTLCache):\n    def __init__(self, ttl, timer):\n        TTLCache.__init__(self, math.inf, ttl, timer)\n\n    @property\n    def maxsize(self):  # type: ignore\n        return None\n\n\ndef _cache(cache, maxsize, typed):",
+            "sha256": "e60e85b2b074fb0f13519efadd74a0afb9adbc3c608e262c3a2044560f3e4ff8"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.569583,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools",
+            "sha256": "f8af95b6b126bbaa2f3c72524c8b40ea9a7b49abfd6bd2e2b3fc5111a767ba29"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 275,
+            "text": "        curr = link.next\n        if curr.count != link.count + 1:\n            if len(link.keys) == 1:\n                link.count += 1\n                return\n            curr = LFUCache._Link(link.count + 1)\n            curr.next = link.next\n            link.next = curr.next.prev = curr\n            curr.prev = link\n        curr.keys.add(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n        self.__links[key] = curr\n\n\nclass LRUCache(Cache):\n    \"\"\"Least Recently Used (LRU) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        try:\n            self.__order.move_to_end(key)\n        except KeyError:  # __missing__ may not store item\n            pass",
+            "sha256": "7dfb80f794658e4251852ecfc7f56633ee29db4b46009e55f2343e32279ac1de"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 1,
+            "text": "\"\"\"`functools.lru_cache` compatible memoizing function decorators.\"\"\"\n\n__all__ = (\"fifo_cache\", \"lfu_cache\", \"lru_cache\", \"rr_cache\", \"ttl_cache\")\n\nimport math\nimport random\nimport time\nfrom threading import Condition\n\nfrom . import FIFOCache, LFUCache, LRUCache, RRCache, TTLCache, cached, keys\n\n\nclass _UnboundTTLCache(TTLCache):\n    def __init__(self, ttl, timer):\n        TTLCache.__init__(self, math.inf, ttl, timer)\n\n    @property\n    def maxsize(self):  # type: ignore\n        return None\n\n\ndef _cache(cache, maxsize, typed):",
+            "sha256": "e60e85b2b074fb0f13519efadd74a0afb9adbc3c608e262c3a2044560f3e4ff8"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.453333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools",
+            "sha256": "f8af95b6b126bbaa2f3c72524c8b40ea9a7b49abfd6bd2e2b3fc5111a767ba29"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 275,
+            "text": "        curr = link.next\n        if curr.count != link.count + 1:\n            if len(link.keys) == 1:\n                link.count += 1\n                return\n            curr = LFUCache._Link(link.count + 1)\n            curr.next = link.next\n            link.next = curr.next.prev = curr\n            curr.prev = link\n        curr.keys.add(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n        self.__links[key] = curr\n\n\nclass LRUCache(Cache):\n    \"\"\"Least Recently Used (LRU) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        try:\n            self.__order.move_to_end(key)\n        except KeyError:  # __missing__ may not store item\n            pass",
+            "sha256": "7dfb80f794658e4251852ecfc7f56633ee29db4b46009e55f2343e32279ac1de"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 1,
+            "text": "\"\"\"`functools.lru_cache` compatible memoizing function decorators.\"\"\"\n\n__all__ = (\"fifo_cache\", \"lfu_cache\", \"lru_cache\", \"rr_cache\", \"ttl_cache\")\n\nimport math\nimport random\nimport time\nfrom threading import Condition\n\nfrom . import FIFOCache, LFUCache, LRUCache, RRCache, TTLCache, cached, keys\n\n\nclass _UnboundTTLCache(TTLCache):\n    def __init__(self, ttl, timer):\n        TTLCache.__init__(self, math.inf, ttl, timer)\n\n    @property\n    def maxsize(self):  # type: ignore\n        return None\n\n\ndef _cache(cache, maxsize, typed):",
+            "sha256": "e60e85b2b074fb0f13519efadd74a0afb9adbc3c608e262c3a2044560f3e4ff8"
+          }
+        ]
+      }
+    ]
+  }
+}

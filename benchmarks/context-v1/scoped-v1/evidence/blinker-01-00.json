@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 11.499958,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 192,
+            "text": "    def muted(self) -> c.Generator[None, None, None]:\n        \"\"\"A context manager that temporarily disables the signal. No receivers\n        will be called if the signal is sent, until the ``with`` block exits.\n        Useful for tests.\n        \"\"\"\n        self.is_muted = True\n\n        try:\n            yield None\n        finally:\n            self.is_muted = False",
+            "sha256": "d83fd0e177504ac6eee5a0dd7134fc2094a2c5df866e367967e6738021bc68ef"
+          }
+        ]
+      },
+      {
+        "duration_ms": 9.641417,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 192,
+            "text": "    def muted(self) -> c.Generator[None, None, None]:\n        \"\"\"A context manager that temporarily disables the signal. No receivers\n        will be called if the signal is sent, until the ``with`` block exits.\n        Useful for tests.\n        \"\"\"\n        self.is_muted = True\n\n        try:\n            yield None\n        finally:\n            self.is_muted = False",
+            "sha256": "d83fd0e177504ac6eee5a0dd7134fc2094a2c5df866e367967e6738021bc68ef"
+          }
+        ]
+      },
+      {
+        "duration_ms": 7.657625,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 192,
+            "text": "    def muted(self) -> c.Generator[None, None, None]:\n        \"\"\"A context manager that temporarily disables the signal. No receivers\n        will be called if the signal is sent, until the ``with`` block exits.\n        Useful for tests.\n        \"\"\"\n        self.is_muted = True\n\n        try:\n            yield None\n        finally:\n            self.is_muted = False",
+            "sha256": "d83fd0e177504ac6eee5a0dd7134fc2094a2c5df866e367967e6738021bc68ef"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.653625,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.419041,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.212125,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      }
+    ]
+  }
+}

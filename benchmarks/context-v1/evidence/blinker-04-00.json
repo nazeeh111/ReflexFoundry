@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 5.521125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 326,
+            "text": "    def receivers_for(\n        self, sender: t.Any\n    ) -> c.Generator[c.Callable[..., t.Any], None, None]:\n        \"\"\"Yield each receiver to be called for ``sender``, in addition to those\n        to be called for :data:`ANY`. Weakly referenced receivers that are not\n        live will be disconnected and skipped.\n\n        :param sender: Yield receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        # TODO: test receivers_for(ANY)\n        if not self.receivers:\n            return\n\n        sender_id = make_id(sender)\n\n        if sender_id in self._by_sender:\n            ids = self._by_sender[ANY_ID] | self._by_sender[sender_id]\n        else:\n            ids = self._by_sender[ANY_ID].copy()\n\n        for receiver_id in ids:\n            receiver = self.receivers.get(receiver_id)\n\n            if receiver is None:\n                continue\n\n            if isinstance(receiver, weakref.ref):\n                strong = receiver()\n\n                if strong is None:\n                    self._disconnect(receiver_id, ANY_ID)\n                    continue\n\n                yield strong\n            else:\n                yield receiver",
+            "sha256": "e5b7eb9c4ccecf3ab9ef882d46a8de3c61b0e940d00c543ec8490d645f2077aa"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.840125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 326,
+            "text": "    def receivers_for(\n        self, sender: t.Any\n    ) -> c.Generator[c.Callable[..., t.Any], None, None]:\n        \"\"\"Yield each receiver to be called for ``sender``, in addition to those\n        to be called for :data:`ANY`. Weakly referenced receivers that are not\n        live will be disconnected and skipped.\n\n        :param sender: Yield receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        # TODO: test receivers_for(ANY)\n        if not self.receivers:\n            return\n\n        sender_id = make_id(sender)\n\n        if sender_id in self._by_sender:\n            ids = self._by_sender[ANY_ID] | self._by_sender[sender_id]\n        else:\n            ids = self._by_sender[ANY_ID].copy()\n\n        for receiver_id in ids:\n            receiver = self.receivers.get(receiver_id)\n\n            if receiver is None:\n                continue\n\n            if isinstance(receiver, weakref.ref):\n                strong = receiver()\n\n                if strong is None:\n                    self._disconnect(receiver_id, ANY_ID)\n                    continue\n\n                yield strong\n            else:\n                yield receiver",
+            "sha256": "e5b7eb9c4ccecf3ab9ef882d46a8de3c61b0e940d00c543ec8490d645f2077aa"
+          }
+        ]
+      },
+      {
+        "duration_ms": 4.40575,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 326,
+            "text": "    def receivers_for(\n        self, sender: t.Any\n    ) -> c.Generator[c.Callable[..., t.Any], None, None]:\n        \"\"\"Yield each receiver to be called for ``sender``, in addition to those\n        to be called for :data:`ANY`. Weakly referenced receivers that are not\n        live will be disconnected and skipped.\n\n        :param sender: Yield receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        # TODO: test receivers_for(ANY)\n        if not self.receivers:\n            return\n\n        sender_id = make_id(sender)\n\n        if sender_id in self._by_sender:\n            ids = self._by_sender[ANY_ID] | self._by_sender[sender_id]\n        else:\n            ids = self._by_sender[ANY_ID].copy()\n\n        for receiver_id in ids:\n            receiver = self.receivers.get(receiver_id)\n\n            if receiver is None:\n                continue\n\n            if isinstance(receiver, weakref.ref):\n                strong = receiver()\n\n                if strong is None:\n                    self._disconnect(receiver_id, ANY_ID)\n                    continue\n\n                yield strong\n            else:\n                yield receiver",
+            "sha256": "e5b7eb9c4ccecf3ab9ef882d46a8de3c61b0e940d00c543ec8490d645f2077aa"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.232458,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.165333,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 0.9505,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      }
+    ]
+  }
+}

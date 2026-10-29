@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.004084,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000625,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002708,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 10.133417,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 41,
+            "text": "    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n",
+            "sha256": "3dccde9cd5912e201b5c6d177b4de3f5bbcde0ff325cb57c7917b2f1636e72e6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 77,
+            "text": "        return next(islice(seq, n, None), None)\n\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev",
+            "sha256": "cdd80e5f9208d2ab9b86bc1713006a51c07c1d39f0b3e07cd3d513a03bf4b240"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 202,
+            "text": "    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):\n    \"\"\"Yields first item of each sequence, then second one and so on.\"\"\"\n    return cat(zip(*seqs))\n\ndef interpose(sep, seq):\n    \"\"\"Yields items of the sequence alternating with sep.\"\"\"\n    return drop(1, interleave(repeat(sep), seq))\n\ndef takewhile(pred, seq=EMPTY):\n    \"\"\"Yields sequence items until first predicate fail.\n       Stops on first falsy value in one argument version.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred",
+            "sha256": "b80349085c1d8e6532b8df0b3c128ef994eef5b96c65e5789ab5805e317781ed"
+          }
+        ]
+      },
+      {
+        "duration_ms": 12.846334,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 41,
+            "text": "    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n",
+            "sha256": "3dccde9cd5912e201b5c6d177b4de3f5bbcde0ff325cb57c7917b2f1636e72e6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 77,
+            "text": "        return next(islice(seq, n, None), None)\n\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev",
+            "sha256": "cdd80e5f9208d2ab9b86bc1713006a51c07c1d39f0b3e07cd3d513a03bf4b240"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 202,
+            "text": "    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):\n    \"\"\"Yields first item of each sequence, then second one and so on.\"\"\"\n    return cat(zip(*seqs))\n\ndef interpose(sep, seq):\n    \"\"\"Yields items of the sequence alternating with sep.\"\"\"\n    return drop(1, interleave(repeat(sep), seq))\n\ndef takewhile(pred, seq=EMPTY):\n    \"\"\"Yields sequence items until first predicate fail.\n       Stops on first falsy value in one argument version.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred",
+            "sha256": "b80349085c1d8e6532b8df0b3c128ef994eef5b96c65e5789ab5805e317781ed"
+          }
+        ]
+      },
+      {
+        "duration_ms": 281.653,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 41,
+            "text": "    _repeat = repeat(None) if n is EMPTY else repeat(None, n)\n    return (f() for _ in _repeat)\n\ndef iterate(f, x):\n    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n",
+            "sha256": "3dccde9cd5912e201b5c6d177b4de3f5bbcde0ff325cb57c7917b2f1636e72e6"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 77,
+            "text": "        return next(islice(seq, n, None), None)\n\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]\n    except IndexError:\n        return None\n    except TypeError:\n        item = None\n        for item in seq:\n            pass\n        return item\n\ndef rest(seq):\n    \"\"\"Skips first item in the sequence, yields the rest.\"\"\"\n    return drop(1, seq)\n\ndef butlast(seq):\n    \"\"\"Iterates over all elements of the sequence but last.\"\"\"\n    it = iter(seq)\n    try:\n        prev = next(it)\n    except StopIteration:\n        pass\n    else:\n        for item in it:\n            yield prev",
+            "sha256": "cdd80e5f9208d2ab9b86bc1713006a51c07c1d39f0b3e07cd3d513a03bf4b240"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 202,
+            "text": "    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):\n    \"\"\"Yields first item of each sequence, then second one and so on.\"\"\"\n    return cat(zip(*seqs))\n\ndef interpose(sep, seq):\n    \"\"\"Yields items of the sequence alternating with sep.\"\"\"\n    return drop(1, interleave(repeat(sep), seq))\n\ndef takewhile(pred, seq=EMPTY):\n    \"\"\"Yields sequence items until first predicate fail.\n       Stops on first falsy value in one argument version.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred\n    else:\n        pred = make_pred(pred)\n    return _takewhile(pred, seq)\n\ndef dropwhile(pred, seq=EMPTY):\n    \"\"\"Skips the start of the sequence passing pred (or just truthy),\n       then iterates over the rest.\"\"\"\n    if seq is EMPTY:\n        pred, seq = bool, pred",
+            "sha256": "b80349085c1d8e6532b8df0b3c128ef994eef5b96c65e5789ab5805e317781ed"
+          }
+        ]
+      }
+    ]
+  }
+}

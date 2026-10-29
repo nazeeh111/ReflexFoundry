@@ -6,10 +6,19 @@ import json
 import math
 import platform
 import time
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from .core import SPECS, digest, finite_number, validate_inputs, validate_splits, write_json
+from .core import (
+    SPECS,
+    decision_contract_digest,
+    digest,
+    finite_number,
+    validate_inputs,
+    validate_splits,
+    write_json,
+)
 
 BASE_MODEL = "convaiinnovations/laya"
 BASE_REVISION = "7b928d828b7b0e022f929d9bd2e44165aa270148"
@@ -44,23 +53,49 @@ def download(destination: Path) -> Path:
     return destination
 
 
+def training_examples(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Prefer independently measured successful actions over observed agreement."""
+    examples = []
+    sources: Counter[str] = Counter()
+    excluded = []
+    for row in rows:
+        spec = SPECS[row["spec"]]
+        outcomes = row.get("outcomes", {})
+        label = row["selected"]
+        if outcomes:
+            safe = [choice for choice in spec.choices if outcomes[choice]["success"]]
+            if not safe:
+                excluded.append(row["id"])
+                continue
+            label = min(safe, key=lambda choice: outcomes[choice]["duration_ms"])
+            if (spec.fallback in safe
+                    and outcomes[spec.fallback]["duration_ms"] <= outcomes[label]["duration_ms"] * 1.03):
+                label = spec.fallback
+            sources["independent-outcome"] += 1
+        else:
+            sources["observed-choice"] += 1
+        examples.append({"state": row["inputs"], "questions": {"decision": spec.question()},
+                         "expected": {"decision": label}})
+    return examples, {"label_sources": dict(sources), "excluded_no_success": excluded,
+                      "examples_digest": digest(examples)}
+
+
 def train(records: list[dict[str, Any]], base: Path, output: Path,
           epochs: int = 4, device: str = "auto") -> dict[str, Any]:
     from laya.train import TrainConfig, finetune
     validate_splits(records)
+    contract = decision_contract_digest()
     if output.exists():
         raise ValueError("training output exists; choose a fresh version directory")
     rows = [r for r in records if r["split"] == "train"]
-    if len(rows) < 20:
-        raise ValueError("at least 20 training decisions required")
+    examples, supervision = training_examples(rows)
+    if len(examples) < 20:
+        raise ValueError("at least 20 usable training decisions required; failed outcomes cannot be positive labels")
     output.parent.mkdir(parents=True, exist_ok=True)
     dataset = output.parent / (output.name + "-train.jsonl")
     with dataset.open("w") as handle:
-        for row in rows:
-            spec = SPECS[row["spec"]]
-            handle.write(json.dumps({"state": row["inputs"],
-                "questions": {"decision": spec.question()},
-                "expected": {"decision": row["selected"]}}) + "\n")
+        for example in examples:
+            handle.write(json.dumps(example) + "\n")
     start = time.perf_counter()
     # Only train split reaches the upstream trainer. Its internal calibration is train-only;
     # external calibration below determines delegation, separate from promotion and test.
@@ -70,6 +105,8 @@ def train(records: list[dict[str, Any]], base: Path, output: Path,
         freeze_encoder=True, loss="soft-ce", head_lr=1e-4, max_len=256,
         shuffle_options=("choice",), calib_frac=0.15, seed=17, log_every=20)
     summary = finetune(str(dataset), str(base), str(output), config, device=device)
+    if decision_contract_digest() != contract:
+        raise ValueError("decision contract changed during training; use a fresh version")
     elapsed = (time.perf_counter() - start) * 1000
     from safetensors.torch import load_file, save_file
     state = load_file(str(output / "model.safetensors"))
@@ -77,8 +114,10 @@ def train(records: list[dict[str, Any]], base: Path, output: Path,
     save_file(head, str(output / "head.safetensors"))
     manifest = {"format": 1, "base_model": BASE_MODEL, "base_revision": BASE_REVISION, "base_weights_sha256": file_hash(base / "model.safetensors"),
         "backend": "laya-native-frozen-encoder", "training_ms": elapsed,
-        "training_records": len(rows), "train_digest": digest(rows),
+        "training_records": len(examples), "training_records_available": len(rows),
+        "supervision": supervision, "train_digest": digest(rows),
         "spec_catalog_digest": digest([s.__dict__ for s in SPECS.values()]),
+        "decision_contract_digest": contract,
         "head_sha256": file_hash(output / "head.safetensors"),
         "weights_sha256": file_hash(output / "model.safetensors"),
         "inference_artifact_digest": artifact_digest(output), "summary": summary}

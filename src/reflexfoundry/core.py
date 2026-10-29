@@ -27,7 +27,7 @@ class DecisionSpec:
         descriptions = {
             "focused": "Validate only the changed module's focused tests",
             "full": "Validate all modules with the complete test suite",
-            "symbol": "Read the definition and references of a named source symbol",
+            "symbol": "Read the definition of a named source symbol",
             "search": "Search the repository for relevant source text and paths",
         }
         choices = self.choices[::-1] if reverse else self.choices
@@ -248,4 +248,24 @@ def validate_splits(records: list[dict[str, Any]], require_evaluation_outcomes: 
 
 
 def spec_dicts() -> list[dict[str, Any]]:
-    return [asdict(s) for s in SPECS.values()]
+    inputs = {"type": "object", "required": ["summary"], "additionalProperties": False,
+              "properties": {"summary": {"type": "string", "minLength": 1},
+                             "changed_files": {"type": "array", "items": {"type": "string"},
+                                               "description": "Relative paths within the repository"},
+                             "symbol": {"type": "string"}}}
+    criteria = {
+        "test-scope-v1": "The validation action's accept/reject agrees with a separate complete public-contract grader.",
+        "context-route-v1": "The bounded retrieval result contains the declared target source context, checked independently of the policy.",
+    }
+    return [asdict(spec) | {"input_schema": inputs, "success_criterion": criteria[spec.id]}
+            for spec in SPECS.values()]
+
+
+def decision_contract_digest() -> str:
+    """Bind declared boundaries and the exact questions supplied to the model."""
+    # The outer hash sorts mapping keys. Preserve candidate insertion order as
+    # an array because it changes the questions and order-stability check.
+    return digest([item | {"questions": [
+        {"value": question, "choice_order": list(question["criteria"])}
+        for question in (SPECS[item["id"]].question(), SPECS[item["id"]].question(reverse=True))]}
+                   for item in spec_dicts()])

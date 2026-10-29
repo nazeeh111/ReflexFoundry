@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.001834,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.001125,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 10.277125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 297,
+            "text": "    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):",
+            "sha256": "a377f9024ae81c4379cc1e22c040e9463bae684895cc88a9619790be87bf99a6"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 326,
+            "text": "    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:\n        drop\n        take\n    \"\"\"\n    try:\n        return seq[-n:]\n    except (TypeError, KeyError):\n        return tuple(collections.deque(seq, n))\n\n\ndef drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)\n\n\ndef take_nth(n, seq):",
+            "sha256": "aed1870bb3fb7d716d8f1eb344102b9acd027593746c05bec35bd52bb994ea94"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 692,
+            "text": "    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)\n\n\ndef partition_all(n, seq):\n    \"\"\" Partition all elements of sequence into tuples of length at most n\n\n    The final tuple may be shorter to accommodate extra elements.\n\n    >>> list(partition_all(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition_all(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4), (5,)]\n\n    See Also:\n        partition\n    \"\"\"",
+            "sha256": "d7e2fb9d451a3fdcdeebdb3d0daed86662b89b28d9510cc9ff0e3356943bdd12"
+          }
+        ]
+      },
+      {
+        "duration_ms": 9.218709,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 297,
+            "text": "    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):",
+            "sha256": "a377f9024ae81c4379cc1e22c040e9463bae684895cc88a9619790be87bf99a6"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 326,
+            "text": "    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:\n        drop\n        take\n    \"\"\"\n    try:\n        return seq[-n:]\n    except (TypeError, KeyError):\n        return tuple(collections.deque(seq, n))\n\n\ndef drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)\n\n\ndef take_nth(n, seq):",
+            "sha256": "aed1870bb3fb7d716d8f1eb344102b9acd027593746c05bec35bd52bb994ea94"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 692,
+            "text": "    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)\n\n\ndef partition_all(n, seq):\n    \"\"\" Partition all elements of sequence into tuples of length at most n\n\n    The final tuple may be shorter to accommodate extra elements.\n\n    >>> list(partition_all(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition_all(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4), (5,)]\n\n    See Also:\n        partition\n    \"\"\"",
+            "sha256": "d7e2fb9d451a3fdcdeebdb3d0daed86662b89b28d9510cc9ff0e3356943bdd12"
+          }
+        ]
+      },
+      {
+        "duration_ms": 9.026708,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 297,
+            "text": "    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):",
+            "sha256": "a377f9024ae81c4379cc1e22c040e9463bae684895cc88a9619790be87bf99a6"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 326,
+            "text": "    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:\n        drop\n        take\n    \"\"\"\n    try:\n        return seq[-n:]\n    except (TypeError, KeyError):\n        return tuple(collections.deque(seq, n))\n\n\ndef drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)\n\n\ndef take_nth(n, seq):",
+            "sha256": "aed1870bb3fb7d716d8f1eb344102b9acd027593746c05bec35bd52bb994ea94"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 692,
+            "text": "    [(1, 2), (3, 4)]\n\n    >>> list(partition(2, [1, 2, 3, 4, 5], pad=None))\n    [(1, 2), (3, 4), (5, None)]\n\n    See Also:\n        partition_all\n    \"\"\"\n    args = [iter(seq)] * n\n    if pad is no_pad:\n        return zip(*args)\n    else:\n        return zip_longest(*args, fillvalue=pad)\n\n\ndef partition_all(n, seq):\n    \"\"\" Partition all elements of sequence into tuples of length at most n\n\n    The final tuple may be shorter to accommodate extra elements.\n\n    >>> list(partition_all(2, [1, 2, 3, 4]))\n    [(1, 2), (3, 4)]\n\n    >>> list(partition_all(2, [1, 2, 3, 4, 5]))\n    [(1, 2), (3, 4), (5,)]\n\n    See Also:\n        partition\n    \"\"\"",
+            "sha256": "d7e2fb9d451a3fdcdeebdb3d0daed86662b89b28d9510cc9ff0e3356943bdd12"
+          }
+        ]
+      }
+    ]
+  }
+}

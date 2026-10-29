@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 40.901125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 363,
+            "text": "def first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))",
+            "sha256": "da7c249ee48d457eceaf1855bffc28bff86cc05a6d388ce89ca5bc8cb4e09574"
+          }
+        ]
+      },
+      {
+        "duration_ms": 58.294,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 363,
+            "text": "def first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))",
+            "sha256": "da7c249ee48d457eceaf1855bffc28bff86cc05a6d388ce89ca5bc8cb4e09574"
+          }
+        ]
+      },
+      {
+        "duration_ms": 55.402042,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 363,
+            "text": "def first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))",
+            "sha256": "da7c249ee48d457eceaf1855bffc28bff86cc05a6d388ce89ca5bc8cb4e09574"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 10.4395,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 23,
+            "text": "See Also:\n    toolz.functoolz.curry\n\"\"\"\nimport toolz\nfrom . import operator\nfrom toolz import (\n    apply,\n    comp,\n    complement,\n    compose,\n    compose_left,\n    concat,\n    concatv,\n    count,\n    curry,\n    diff,\n    first,\n    flip,\n    frequencies,\n    identity,\n    interleave,\n    isdistinct,\n    isiterable,\n    juxt,\n    last,\n    memoize,\n    merge_sorted,\n    peek,\n    pipe,",
+            "sha256": "1eeeb41eb66f787328082db276aaf6e3368f189b552c879a4869988a4c46339d"
+          },
+          {
+            "path": "toolz/dicttoolz.py",
+            "start_line": 36,
+            "text": "\n    rv = factory()\n    for d in dicts:\n        rv.update(d)\n    return rv\n\n\ndef merge_with(func, *dicts, **kwargs):\n    \"\"\" Merge dictionaries and apply function to combined values\n\n    A key may occur in more than one dict, and all values mapped from the key\n    will be passed to the function as a list, such as func([val1, val2, ...]).\n\n    >>> merge_with(sum, {1: 1, 2: 2}, {1: 10, 2: 20})\n    {1: 11, 2: 22}\n\n    >>> merge_with(first, {1: 1, 2: 2}, {2: 20, 3: 30})  # doctest: +SKIP\n    {1: 1, 2: 2, 3: 30}\n\n    See Also:\n        merge\n    \"\"\"\n    if len(dicts) == 1 and not isinstance(dicts[0], Mapping):\n        dicts = dicts[0]\n    factory = _get_factory(merge_with, kwargs)\n\n    values = collections.defaultdict(lambda: [].append)\n    for d in dicts:\n        for k, v in d.items():",
+            "sha256": "fcb844406f6eb4f24bedc34d1ef111d4128175ba24b9824fe2896ea7173f4b9d"
+          },
+          {
+            "path": "toolz/functoolz.py",
+            "start_line": 40,
+            "text": "    \"\"\"\n    if not func_and_args:\n        raise TypeError('func argument is required')\n    func, args = func_and_args[0], func_and_args[1:]\n    return func(*args, **kwargs)\n\n\ndef thread_first(val, *forms):\n    \"\"\" Thread value through a sequence of functions/forms\n\n    >>> def double(x): return 2*x\n    >>> def inc(x):    return x + 1\n    >>> thread_first(1, inc, double)\n    4\n\n    If the function expects more than one input you can specify those inputs\n    in a tuple.  The value is used as the first input.\n\n    >>> def add(x, y): return x + y\n    >>> def pow(x, y): return x**y\n    >>> thread_first(1, (add, 4), (pow, 2))  # pow(add(1, 4), 2)\n    25\n\n    So in general\n        thread_first(x, f, (g, y, z))\n    expands to\n        g(f(x), y, z)\n\n    See Also:",
+            "sha256": "eba2bd2488fc63be95ee1245cba759d38ff413e33a961ef997ce8a4d790365c3"
+          }
+        ]
+      },
+      {
+        "duration_ms": 12.180916,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 23,
+            "text": "See Also:\n    toolz.functoolz.curry\n\"\"\"\nimport toolz\nfrom . import operator\nfrom toolz import (\n    apply,\n    comp,\n    complement,\n    compose,\n    compose_left,\n    concat,\n    concatv,\n    count,\n    curry,\n    diff,\n    first,\n    flip,\n    frequencies,\n    identity,\n    interleave,\n    isdistinct,\n    isiterable,\n    juxt,\n    last,\n    memoize,\n    merge_sorted,\n    peek,\n    pipe,",
+            "sha256": "1eeeb41eb66f787328082db276aaf6e3368f189b552c879a4869988a4c46339d"
+          },
+          {
+            "path": "toolz/dicttoolz.py",
+            "start_line": 36,
+            "text": "\n    rv = factory()\n    for d in dicts:\n        rv.update(d)\n    return rv\n\n\ndef merge_with(func, *dicts, **kwargs):\n    \"\"\" Merge dictionaries and apply function to combined values\n\n    A key may occur in more than one dict, and all values mapped from the key\n    will be passed to the function as a list, such as func([val1, val2, ...]).\n\n    >>> merge_with(sum, {1: 1, 2: 2}, {1: 10, 2: 20})\n    {1: 11, 2: 22}\n\n    >>> merge_with(first, {1: 1, 2: 2}, {2: 20, 3: 30})  # doctest: +SKIP\n    {1: 1, 2: 2, 3: 30}\n\n    See Also:\n        merge\n    \"\"\"\n    if len(dicts) == 1 and not isinstance(dicts[0], Mapping):\n        dicts = dicts[0]\n    factory = _get_factory(merge_with, kwargs)\n\n    values = collections.defaultdict(lambda: [].append)\n    for d in dicts:\n        for k, v in d.items():",
+            "sha256": "fcb844406f6eb4f24bedc34d1ef111d4128175ba24b9824fe2896ea7173f4b9d"
+          },
+          {
+            "path": "toolz/functoolz.py",
+            "start_line": 40,
+            "text": "    \"\"\"\n    if not func_and_args:\n        raise TypeError('func argument is required')\n    func, args = func_and_args[0], func_and_args[1:]\n    return func(*args, **kwargs)\n\n\ndef thread_first(val, *forms):\n    \"\"\" Thread value through a sequence of functions/forms\n\n    >>> def double(x): return 2*x\n    >>> def inc(x):    return x + 1\n    >>> thread_first(1, inc, double)\n    4\n\n    If the function expects more than one input you can specify those inputs\n    in a tuple.  The value is used as the first input.\n\n    >>> def add(x, y): return x + y\n    >>> def pow(x, y): return x**y\n    >>> thread_first(1, (add, 4), (pow, 2))  # pow(add(1, 4), 2)\n    25\n\n    So in general\n        thread_first(x, f, (g, y, z))\n    expands to\n        g(f(x), y, z)\n\n    See Also:",
+            "sha256": "eba2bd2488fc63be95ee1245cba759d38ff413e33a961ef997ce8a4d790365c3"
+          }
+        ]
+      },
+      {
+        "duration_ms": 17.515458,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 23,
+            "text": "See Also:\n    toolz.functoolz.curry\n\"\"\"\nimport toolz\nfrom . import operator\nfrom toolz import (\n    apply,\n    comp,\n    complement,\n    compose,\n    compose_left,\n    concat,\n    concatv,\n    count,\n    curry,\n    diff,\n    first,\n    flip,\n    frequencies,\n    identity,\n    interleave,\n    isdistinct,\n    isiterable,\n    juxt,\n    last,\n    memoize,\n    merge_sorted,\n    peek,\n    pipe,",
+            "sha256": "1eeeb41eb66f787328082db276aaf6e3368f189b552c879a4869988a4c46339d"
+          },
+          {
+            "path": "toolz/dicttoolz.py",
+            "start_line": 36,
+            "text": "\n    rv = factory()\n    for d in dicts:\n        rv.update(d)\n    return rv\n\n\ndef merge_with(func, *dicts, **kwargs):\n    \"\"\" Merge dictionaries and apply function to combined values\n\n    A key may occur in more than one dict, and all values mapped from the key\n    will be passed to the function as a list, such as func([val1, val2, ...]).\n\n    >>> merge_with(sum, {1: 1, 2: 2}, {1: 10, 2: 20})\n    {1: 11, 2: 22}\n\n    >>> merge_with(first, {1: 1, 2: 2}, {2: 20, 3: 30})  # doctest: +SKIP\n    {1: 1, 2: 2, 3: 30}\n\n    See Also:\n        merge\n    \"\"\"\n    if len(dicts) == 1 and not isinstance(dicts[0], Mapping):\n        dicts = dicts[0]\n    factory = _get_factory(merge_with, kwargs)\n\n    values = collections.defaultdict(lambda: [].append)\n    for d in dicts:\n        for k, v in d.items():",
+            "sha256": "fcb844406f6eb4f24bedc34d1ef111d4128175ba24b9824fe2896ea7173f4b9d"
+          },
+          {
+            "path": "toolz/functoolz.py",
+            "start_line": 40,
+            "text": "    \"\"\"\n    if not func_and_args:\n        raise TypeError('func argument is required')\n    func, args = func_and_args[0], func_and_args[1:]\n    return func(*args, **kwargs)\n\n\ndef thread_first(val, *forms):\n    \"\"\" Thread value through a sequence of functions/forms\n\n    >>> def double(x): return 2*x\n    >>> def inc(x):    return x + 1\n    >>> thread_first(1, inc, double)\n    4\n\n    If the function expects more than one input you can specify those inputs\n    in a tuple.  The value is used as the first input.\n\n    >>> def add(x, y): return x + y\n    >>> def pow(x, y): return x**y\n    >>> thread_first(1, (add, 4), (pow, 2))  # pow(add(1, 4), 2)\n    25\n\n    So in general\n        thread_first(x, f, (g, y, z))\n    expands to\n        g(f(x), y, z)\n\n    See Also:",
+            "sha256": "eba2bd2488fc63be95ee1245cba759d38ff413e33a961ef997ce8a4d790365c3"
+          }
+        ]
+      }
+    ]
+  }
+}
