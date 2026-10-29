@@ -39,3 +39,20 @@ included. Public source snippets retain upstream BSD/MIT licenses in the study;
 no private transcripts or projects were used. Use this failed candidate for
 reproduction and shadow research only. It cannot authorize permissions,
 credentials, destructive actions, or security-critical decisions.
+
+## Model license and provenance
+
+The base weights are published by Convai Innovations as
+[`convaiinnovations/laya`](https://huggingface.co/convaiinnovations/laya), whose
+model card declares Apache-2.0. This adapter retains the complete
+[Apache-2.0 model license](LICENSE). Its base revision is
+`7b928d828b7b0e022f929d9bd2e44165aa270148`, also recorded in the manifest.
+Training used Laya source commit `b9fe351ce81e2d974bca2bf219c1e4030c0a05ea`
+and Laya-MLX source commit `ddaf014cf3bd6733ce11219750b150df42ffc86e`.
+
+Downloaded checkpoints and installed runtimes are separate artifacts with their
+own licenses. The repository's source license does not relicense model weights
+or runtime software. Distribution of derived weights must retain the applicable
+model license, notices, base revision and training provenance for the exact
+artifacts included. Do not infer terms for other checkpoints or compatibility
+of arbitrary runtime and checkpoint combinations from this adapter's terms.
