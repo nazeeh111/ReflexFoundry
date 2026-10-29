@@ -111,6 +111,8 @@ A separate [six-task Toolz/Funcy holdout study](benchmarks/public-repos-v1/READM
 
 The [native Codex coding trial](benchmarks/codex-e2e-v1/README.md) includes two actual source repairs, independently verified with Toolz's full suite and a separate public-contract grader. Host initialization and automatic approval review prevented the planned comparison from completing. There are no complete comparable pairs or claimed agent speedups. The shadow trial's changed-artifact refusal is reported separately from genuine trained inference, which is verified in the [local shadow smoke](benchmarks/run-001/shadow-smoke.json).
 
+A [prepared five-arm native protocol](docs/native-study-v2.md) compares an undelegated agent, a deterministic heuristic, ordinary Laya, trained always-delegate and selective shadow on two public repair tasks. Its cap is 20 new calls. Preparation and local worker checks are separate from native execution; no native call in this protocol is authorized or counted as completed.
+
 ## Use it with Codex
 
 Copy the bundled [Codex skill](integrations/codex/skills/reflexfoundry/SKILL.md) into the target repository's `.agents/skills/reflexfoundry/` directory, review it, and invoke `$reflexfoundry` explicitly. See [Codex integration](docs/codex.md) for inputs, shadow verification, event export, and rollback.

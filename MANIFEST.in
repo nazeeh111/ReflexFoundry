@@ -1,6 +1,7 @@
 include CHANGELOG.md SECURITY.md THIRD_PARTY_NOTICES.md
 graft docs
 graft integrations
+recursive-include scripts *.py
 include benchmarks/context-v1/scoped-v1/records.jsonl
 include benchmarks/context-v1/scoped-v1/manifest.json
 recursive-include benchmarks/context-v1/scoped-v1/evidence *.json

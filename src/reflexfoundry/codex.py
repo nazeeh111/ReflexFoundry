@@ -154,13 +154,84 @@ def command_names(command: str) -> list[str]:
     return parse(command, 0)
 
 
+def token_usage(value: Any) -> dict[str, int]:
+    """Allowlist documented counters, never reasoning text or unknown fields."""
+    required = ("input_tokens", "cached_input_tokens", "output_tokens")
+    if not isinstance(value, dict) or any(key not in value for key in required):
+        raise ValueError("completed turn has incomplete token usage")
+    keys = (*required, "reasoning_output_tokens") if "reasoning_output_tokens" in value else required
+    if any(isinstance(value[key], bool) or not isinstance(value[key], int)
+           or not 0 <= value[key] <= 2**63 - 1 for key in keys):
+        raise ValueError("usage counters must be bounded nonnegative integers")
+    if value["cached_input_tokens"] > value["input_tokens"]:
+        raise ValueError("cached input exceeds total input")
+    if value.get("reasoning_output_tokens", 0) > value["output_tokens"]:
+        raise ValueError("reasoning output exceeds total output")
+    return {key: value[key] for key in keys}
+
+
+class EventSummary:
+    """Incremental numeric summary; no event, argument, or message is retained."""
+
+    def __init__(self) -> None:
+        self.counts: dict[str, int] = {}
+        self.total = 0
+        self.turns = 0
+        self.invalid_usage = 0
+        self.reasoning_turns = 0
+        self.usage = {key: 0 for key in ("input_tokens", "cached_input_tokens", "output_tokens", "reasoning_output_tokens")}
+
+    def observe(self, event: Any) -> None:
+        if not isinstance(event, dict):
+            raise ValueError("event must be an object")
+        if not isinstance(event.get("type"), str):
+            raise ValueError("event type must be text")
+        if event["type"] == "turn.completed":
+            self.turns += 1
+            try:
+                usage = token_usage(event.get("usage"))
+            except ValueError:
+                self.invalid_usage += 1
+                return
+            self.reasoning_turns += int("reasoning_output_tokens" in usage)
+            for key, value in usage.items():
+                self.usage[key] += value
+            return
+        if event["type"] != "item.completed":
+            return
+        item = event.get("item")
+        if not isinstance(item, dict):
+            raise ValueError("completed item must be an object")
+        if not isinstance(item.get("type"), str):
+            raise ValueError("item type must be text")
+        if item["type"] != "command_execution":
+            return
+        command = item.get("command")
+        if not isinstance(command, str):
+            raise ValueError("command must be text")
+        self.total += 1
+        for name in command_names(command):
+            self.counts[name] = self.counts.get(name, 0) + 1
+
+    def result(self) -> dict[str, Any]:
+        usage = None
+        if self.turns and not self.invalid_usage:
+            usage = {key: value for key, value in self.usage.items()
+                     if key != "reasoning_output_tokens" or self.reasoning_turns == self.turns}
+        return {"source": "codex-exec-json", "observable_commands": self.total,
+            "allowlisted_command_counts": dict(self.counts),
+            "completed_turns": self.turns, "invalid_usage_events": self.invalid_usage,
+            "token_usage": usage,
+            "training_labels": False,
+            "note": "Command counts describe statically requested commands, not verified conditional execution. Token counters are unavailable without complete valid turn usage; they do not measure money, energy, or subscription allowance. No reasoning text is retained."}
+
+
 def summarize_events(path: Path, consent: bool = False) -> dict[str, Any]:
     if not consent:
         raise ValueError("event inspection requires explicit consent")
     if path.stat().st_size > 16 * 1024 * 1024:
         raise ValueError("event export exceeds 16 MiB")
-    counts: dict[str, int] = {}
-    total = 0
+    summary = EventSummary()
     for number, line in enumerate(path.read_text().splitlines(), start=1):
         if not line.strip():
             continue
@@ -168,26 +239,9 @@ def summarize_events(path: Path, consent: bool = False) -> dict[str, Any]:
             event = json.loads(line)
         except json.JSONDecodeError:
             raise ValueError(f"invalid JSON event at line {number}") from None
-        if not isinstance(event, dict):
-            raise ValueError(f"event at line {number} must be an object")
-        if not isinstance(event.get("type"), str):
-            raise ValueError(f"event type at line {number} must be text")
-        if event["type"] != "item.completed":
-            continue
-        item = event.get("item")
-        if not isinstance(item, dict):
-            raise ValueError(f"completed item at line {number} must be an object")
-        if not isinstance(item.get("type"), str):
-            raise ValueError(f"item type at line {number} must be text")
-        if item["type"] != "command_execution":
-            continue
-        command = item.get("command")
-        if not isinstance(command, str):
-            raise ValueError(f"command at line {number} must be text")
-        total += 1
-        for name in command_names(command):
-            counts[name] = counts.get(name, 0) + 1
-    return {"source": "codex-exec-json", "observable_commands": total,
-            "allowlisted_command_counts": counts,
-            "training_labels": False,
-            "note": "Counts identify statically requested commands, not verified execution of conditional branches. Ambiguous shell syntax is uncounted. Add typed decisions and independent outcomes separately."}
+        try:
+            summary.observe(event)
+        except ValueError as error:
+            message = str(error).replace(" must ", f" at line {number} must ", 1)
+            raise ValueError(message) from None
+    return summary.result()
