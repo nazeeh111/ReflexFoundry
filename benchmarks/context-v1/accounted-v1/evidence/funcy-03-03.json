@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002708,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.0005,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002333,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 6.352458,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 172,
+            "text": "def lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n",
+            "sha256": "134c6b8c76e3d697e30b703a063332eefc638cb2645a9413601faf742566f8d1"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 181,
+            "text": "\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):",
+            "sha256": "e2d6e014d3a415e03b5167bfadf2140bb9db5d0757d2c6c57a79964ec1cb4bc8"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 272,
+            "text": "    if len(dicts) < 1:\n        raise TypeError('zip_values expects at least one argument')\n    keys = set.intersection(*map(set, dicts))\n    for key in keys:\n        yield tuple(d[key] for d in dicts)\n\ndef zip_dicts(*dicts):\n    \"\"\"Yields tuples like (key, (val1, val2, ...))\n       for each common key in all given dicts.\"\"\"\n    if len(dicts) < 1:\n        raise TypeError('zip_dicts expects at least one argument')\n    keys = set.intersection(*map(set, dicts))\n    for key in keys:\n        yield key, tuple(d[key] for d in dicts)\n\ndef get_in(coll, path, default=None):\n    \"\"\"Returns a value at path in the given nested collection.\"\"\"\n    for key in path:\n        try:\n            coll = coll[key]\n        except (KeyError, IndexError):\n            return default\n    return coll\n\ndef get_lax(coll, path, default=None):\n    \"\"\"Returns a value at path in the given nested collection.\n       Does not raise on a wrong collection type along the way, returns default instead.\n    \"\"\"\n    for key in path:",
+            "sha256": "98d8b1f07113978808a7523196162b0cf2225a23e8a537a361acd526c4f27871"
+          }
+        ]
+      },
+      {
+        "duration_ms": 7.234583,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 172,
+            "text": "def lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n",
+            "sha256": "134c6b8c76e3d697e30b703a063332eefc638cb2645a9413601faf742566f8d1"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 181,
+            "text": "\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):",
+            "sha256": "e2d6e014d3a415e03b5167bfadf2140bb9db5d0757d2c6c57a79964ec1cb4bc8"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 272,
+            "text": "    if len(dicts) < 1:\n        raise TypeError('zip_values expects at least one argument')\n    keys = set.intersection(*map(set, dicts))\n    for key in keys:\n        yield tuple(d[key] for d in dicts)\n\ndef zip_dicts(*dicts):\n    \"\"\"Yields tuples like (key, (val1, val2, ...))\n       for each common key in all given dicts.\"\"\"\n    if len(dicts) < 1:\n        raise TypeError('zip_dicts expects at least one argument')\n    keys = set.intersection(*map(set, dicts))\n    for key in keys:\n        yield key, tuple(d[key] for d in dicts)\n\ndef get_in(coll, path, default=None):\n    \"\"\"Returns a value at path in the given nested collection.\"\"\"\n    for key in path:\n        try:\n            coll = coll[key]\n        except (KeyError, IndexError):\n            return default\n    return coll\n\ndef get_lax(coll, path, default=None):\n    \"\"\"Returns a value at path in the given nested collection.\n       Does not raise on a wrong collection type along the way, returns default instead.\n    \"\"\"\n    for key in path:",
+            "sha256": "98d8b1f07113978808a7523196162b0cf2225a23e8a537a361acd526c4f27871"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.451625,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 172,
+            "text": "def lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n",
+            "sha256": "134c6b8c76e3d697e30b703a063332eefc638cb2645a9413601faf742566f8d1"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 181,
+            "text": "\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n\ndef mapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and chains the results.\"\"\"\n    return cat(map(f, *seqs))\n\ndef interleave(*seqs):",
+            "sha256": "e2d6e014d3a415e03b5167bfadf2140bb9db5d0757d2c6c57a79964ec1cb4bc8"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 272,
+            "text": "    if len(dicts) < 1:\n        raise TypeError('zip_values expects at least one argument')\n    keys = set.intersection(*map(set, dicts))\n    for key in keys:\n        yield tuple(d[key] for d in dicts)\n\ndef zip_dicts(*dicts):\n    \"\"\"Yields tuples like (key, (val1, val2, ...))\n       for each common key in all given dicts.\"\"\"\n    if len(dicts) < 1:\n        raise TypeError('zip_dicts expects at least one argument')\n    keys = set.intersection(*map(set, dicts))\n    for key in keys:\n        yield key, tuple(d[key] for d in dicts)\n\ndef get_in(coll, path, default=None):\n    \"\"\"Returns a value at path in the given nested collection.\"\"\"\n    for key in path:\n        try:\n            coll = coll[key]\n        except (KeyError, IndexError):\n            return default\n    return coll\n\ndef get_lax(coll, path, default=None):\n    \"\"\"Returns a value at path in the given nested collection.\n       Does not raise on a wrong collection type along the way, returns default instead.\n    \"\"\"\n    for key in path:",
+            "sha256": "98d8b1f07113978808a7523196162b0cf2225a23e8a537a361acd526c4f27871"
+          }
+        ]
+      }
+    ]
+  }
+}

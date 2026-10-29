@@ -6,7 +6,7 @@ import random
 import statistics
 from typing import Any
 
-from .core import SPECS, digest, validate_record, validate_splits
+from .core import SPECS, DecisionSpec, digest, spec_dicts, validate_record, validate_splits
 from .core import finite_number as _number
 
 
@@ -87,8 +87,17 @@ def calibrate(rows: list[dict[str, Any]], predictions: dict[str, dict[str, Any]]
 
 
 def heuristic(row: dict[str, Any]) -> str:
+    if row["spec"] == "context-route-v1":
+        return "symbol" if row["inputs"].get("symbol", "").strip() else "search"
     from .benchmark import heuristic as baseline
     return baseline(row["inputs"])
+
+
+def evaluation_spec(rows: list[dict[str, Any]]) -> DecisionSpec:
+    families = {row["spec"] for row in rows}
+    if len(families) != 1:
+        raise ValueError("evaluate one decision family per workspace; mixed families need separate evidence")
+    return SPECS[next(iter(families))]
 
 
 def summarize(rows: list[dict[str, Any]], predictions: dict[str, dict[str, Any]],
@@ -99,13 +108,14 @@ def summarize(rows: list[dict[str, Any]], predictions: dict[str, dict[str, Any]]
         raise ValueError("startup costs must be finite nonnegative numbers")
     for row in rows:
         validate_record(row, require_outcomes=True)
-        if row["spec"] != "test-scope-v1":
-            raise ValueError("outcome comparison currently supports test-scope-v1 only")
+    spec = evaluation_spec(rows)
+    original_name = "original-full" if spec.id == "test-scope-v1" else "original-search"
+    always_name = "always-" + spec.choices[0]
     _validate_predictions(rows, predictions)
     if base_predictions is not None:
         _validate_predictions(rows, base_predictions)
     policies: dict[str, list[dict[str, Any]]] = {name: [] for name in
-        ("original-full", "deterministic-heuristic", "always-focused", "trained-always", "selective")}
+        (original_name, "deterministic-heuristic", always_name, "trained-always", "selective")}
     if base_predictions:
         policies["ordinary-laya"] = []
     details = []
@@ -113,8 +123,8 @@ def summarize(rows: list[dict[str, Any]], predictions: dict[str, dict[str, Any]]
         prediction = predictions[row["id"]]
         cold_prediction = dict(prediction, duration_ms=prediction["duration_ms"] + startup_ms)
         selective, fallback = choose(cold_prediction, row["spec"], threshold)
-        choices = {"original-full": "full", "deterministic-heuristic": heuristic(row),
-            "always-focused": "focused", "trained-always": prediction["choice"], "selective": selective}
+        choices = {original_name: spec.fallback, "deterministic-heuristic": heuristic(row),
+            always_name: spec.choices[0], "trained-always": prediction["choice"], "selective": selective}
         if base_predictions:
             choices["ordinary-laya"] = base_predictions[row["id"]]["choice"]
         entry = {"id": row["id"], "prediction": prediction, "selected": selective,
@@ -139,8 +149,8 @@ def summarize(rows: list[dict[str, Any]], predictions: dict[str, dict[str, Any]]
             "errors": errors, "error_upper_95": wilson_upper(errors, n),
             "total_ms": total, "mean_ms": total / max(1, n), "startup_ms": startup,
             "fallback_rate": sum(o["fallback"] for o in observations) / max(1, n),
-            "decision_counts": {c: sum(o["choice"] == c for o in observations) for c in ("focused", "full")}})
-    baseline = policies["original-full"]
+            "decision_counts": {c: sum(o["choice"] == c for o in observations) for c in spec.choices}})
+    baseline = policies[original_name]
     selective_rows = policies["selective"]
     paired_saved = [a["ms"] - b["ms"]
                     for a, b in zip(baseline, selective_rows)]
@@ -158,19 +168,25 @@ def summarize(rows: list[dict[str, Any]], predictions: dict[str, dict[str, Any]]
         if not detail["fallback"]:
             accepted_by_repo.setdefault(row["repository"], []).append(not detail["outcomes"][detail["selected"]]["success"])
     cluster_errors = sum(any(values) for values in accepted_by_repo.values())
-    agreement = [predictions[row["id"]]["choice"] == row["selected"] for row in rows]
-    confidences = [predictions[row["id"]]["confidence"] for row in rows]
+    labeled = [row for row in rows if any(outcome["success"] for outcome in row["outcomes"].values())]
+    agreement = [predictions[row["id"]]["choice"] == row["selected"] for row in labeled]
+    confidences = [predictions[row["id"]]["confidence"] for row in labeled]
     ece = 0.0
     for b in range(10):
         indexes = [i for i, c in enumerate(confidences) if b/10 <= c <= (b+1)/10 and (b == 0 or c > b/10)]
         if indexes:
-            ece += len(indexes) / max(1, n) * abs(statistics.mean(confidences[i] for i in indexes) - statistics.mean(agreement[i] for i in indexes))
+            ece += len(indexes) / max(1, len(labeled)) * abs(statistics.mean(confidences[i] for i in indexes) - statistics.mean(agreement[i] for i in indexes))
     return {"policies": summaries, "details": details,
         "decision_label_agreement": statistics.mean(agreement) if agreement else None,
         "decision_ece_10_bins": ece,
         "confidence_brier": statistics.mean((float(correct) - confidence)**2 for correct, confidence in zip(agreement, confidences)) if agreement else None,
-        "decision_metric_note": "Agreement with fastest safe observed choice is diagnostic only; it is not task success or a population calibration guarantee.",
-        "paired_saved_ms_95": interval(saved_groups), "paired_success_delta_95": interval(success_groups),
+        "decision_label_records": len(labeled),
+        "decision_metric_note": "Agreement with fastest safe observed choice is diagnostic only; rows with no successful action are excluded from label metrics but retained in all outcome comparisons. This is not task success or a population calibration guarantee.",
+        "paired_saved_ms_95": interval(saved_groups) if len(groups) >= 2 else None,
+        "paired_success_delta_95": interval(success_groups) if len(groups) >= 2 else None,
+        "paired_saved_ms_mean": statistics.mean(paired_saved) if paired_saved else None,
+        "paired_success_delta_mean": statistics.mean(successes) if successes else None,
+        "uncertainty_available": len(groups) >= 2,
         "repository_groups": len(groups),
         "accepted": len(accepted), "accepted_errors": accepted_errors,
         "accepted_error_upper_95": wilson_upper(accepted_errors, len(accepted)),
@@ -186,11 +202,10 @@ def evaluate(records: list[dict[str, Any]], predictions: dict[str, dict[str, Any
              base_predictions: dict[str, dict[str, Any]] | None = None,
              base_startup_ms: float = 0.0) -> dict[str, Any]:
     validate_splits(records, require_evaluation_outcomes=True)
-    if any(r["spec"] != "test-scope-v1" for r in records):
-        raise ValueError("executed evaluator currently supports test-scope-v1 only")
     parts = {s: [r for r in records if r["split"] == s] for s in ("calibration", "promotion", "test")}
     if any(len(rows) < 30 for rows in parts.values()):
-        raise ValueError("at least 30 independent tasks in each evaluation split are required")
+        raise ValueError("at least 30 task records in each evaluation split are required")
+    spec = evaluation_spec(records)
     if any(not _number(value) or value < 0 for value in (startup_ms, base_startup_ms)):
         raise ValueError("startup costs must be finite nonnegative numbers")
     evaluated = [row for rows in parts.values() for row in rows]
@@ -208,9 +223,11 @@ def evaluate(records: list[dict[str, Any]], predictions: dict[str, dict[str, Any
         reasons.append("calibration has insufficient safe delegation evidence")
     if promotion["accepted_repositories"] < 30 or promotion["accepted"] < 30 or promotion["accepted_repository_error_upper_95"] > calibration["max_error"]:
         reasons.append("independent promotion accepted-risk bound failed")
-    if promotion["paired_success_delta_95"][0] < 0:
+    if not promotion["uncertainty_available"]:
+        reasons.append("promotion uncertainty unavailable with fewer than two repository groups")
+    if promotion["paired_success_delta_95"] is not None and promotion["paired_success_delta_95"][0] < 0:
         reasons.append("promotion task outcomes regress")
-    if promotion["paired_saved_ms_95"][0] <= 0:
+    if promotion["paired_saved_ms_95"] is None or promotion["paired_saved_ms_95"][0] <= 0:
         reasons.append("promotion has no reliable net time improvement including startup")
     metrics = {r["name"]: r for r in promotion["policies"]}
     if metrics["selective"]["total_ms"] >= metrics["deterministic-heuristic"]["total_ms"] and metrics["deterministic-heuristic"]["success_rate"] >= metrics["selective"]["success_rate"]:
@@ -218,15 +235,20 @@ def evaluate(records: list[dict[str, Any]], predictions: dict[str, dict[str, Any
     if metrics["selective"]["success_rate"] < metrics["deterministic-heuristic"]["success_rate"]:
         reasons.append("candidate task outcomes regress against the deterministic heuristic")
     # Locked test is a final safety veto, never a threshold search or model selection signal.
-    if test["paired_success_delta_95"][0] < 0 or test["paired_saved_ms_95"][0] <= 0:
+    if (test["paired_success_delta_95"] is None or test["paired_saved_ms_95"] is None
+            or test["paired_success_delta_95"][0] < 0 or test["paired_saved_ms_95"][0] <= 0):
         reasons.append("locked test does not confirm outcome and time benefit")
     test_metrics = {row["name"]: row for row in test["policies"]}
     if test_metrics["selective"]["success_rate"] < test_metrics["deterministic-heuristic"]["success_rate"]:
         reasons.append("locked test task outcomes regress against the deterministic heuristic")
-    return {"format": 1, "spec": "test-scope-v1", "dataset_digest": digest(records),
+    descriptor = next(item for item in spec_dicts() if item["id"] == spec.id)
+    return {"format": 1, "spec": spec.id, "decision_spec": descriptor, "dataset_digest": digest(records),
+        "repository_groups": {split: len({row["repository"] for row in rows}) for split, rows in parts.items()},
         "model_digest": model_digest, "calibration": calibration, "promotion": promotion,
         "test": test, "policies": test["policies"], "deployment_allowed": not reasons,
         "reasons": reasons, "currency_cost": None,
-        "scope": "Generated coding-change validation fixtures, not autonomous agent task success.",
+        "scope": ("Coding-change validation outcomes, not autonomous agent task success."
+                  if spec.id == "test-scope-v1" else
+                  "Bounded source retrieval outcomes, not autonomous agent task success."),
         "execution_contract": "Cold CLI: measured startup charged on every decision; warm throughput is diagnostic only.",
-        "statistics": "Repository-group paired bootstrap 1000 resamples; per-task Wilson bounds descriptive under shared fixture grammar."}
+        "statistics": "Repository-group paired bootstrap 1000 resamples; intervals unavailable below two actual repositories. Per-task Wilson bounds are descriptive under shared task grammar, not a population reliability guarantee."}

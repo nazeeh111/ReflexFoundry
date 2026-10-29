@@ -35,7 +35,9 @@ All policy comparisons use the same recorded action outcomes and declared task c
 
 Cold CLI decisions include artifact-integrity screening, model startup on each invocation, both option-order prediction passes, and the selected action or fallback. The retrospective comparison combines recorded candidate-action outcomes with measured model overheads charged per modeled cold request; it is not direct timing of complete live-agent runs. Warm inference is a separate diagnostic. Benchmark collection, independent grading and training are preparation costs; they must be reported separately and included in any later full-lifecycle break-even claim.
 
-Reports retain task correctness, false acceptance information where available, fallback, accepted errors, option-order flips, paired timing differences, and uncertainty. Repository-group bootstrap intervals describe measured paired differences. Wilson error bounds have sampling assumptions; repeated or correlated fixtures do not automatically satisfy those assumptions. No interval establishes validity for unseen production workloads.
+Reports retain task correctness, false acceptance information where available, fallback, accepted errors, option-order flips, paired timing differences, and uncertainty. Repository-group bootstrap intervals describe measured paired differences. With
+fewer than two actual repositories, paired intervals are unavailable and the
+promotion gate fails closed. Wilson error bounds have sampling assumptions; repeated or correlated fixtures do not automatically satisfy those assumptions. No interval establishes validity for unseen production workloads.
 
 There is no measured hosted model expenditure in the free local experiment. Wall time is not automatically a dollar, token, compute-energy, or subscription saving. Model calls made during optional integrations must be measured separately before claiming those benefits.
 
@@ -49,4 +51,6 @@ A strong heuristic may dominate the learned model. Cold startup may cost more th
 
 Use a fresh output directory and retain source version, package versions, hardware, manifest, raw records, predictions, evaluation report and training configuration. Run the [quickstart](quickstart.md) to reproduce the pipeline. Absolute timings will vary across hardware and host load.
 
-Stronger claims need additional evidence: held-out real repositories with meaningful task diversity, naturally occurring coding tasks, repeated independent trials, verifier quality assessment, and clearly accounted collection/training/fallback costs. A live Codex trial should measure task success and latency through documented observable actions, preserving native permissions. Context retrieval needs its own executable outcomes and held-out evaluation before delegation is claimed.
+Stronger claims need additional evidence: held-out real repositories with meaningful task diversity, naturally occurring coding tasks, repeated independent trials, verifier quality assessment, and clearly accounted collection/training/fallback costs. A live Codex trial should measure task success and latency through documented observable actions, preserving native permissions. The [context retrieval study](context-benchmark.md) provides a separate executable
+source-coverage criterion. It has one actual repository per split, so its results
+do not support broad delegation or autonomous task-completion claims.

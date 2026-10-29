@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.000958,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000458,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 2.218792,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools\nimport heapq\nimport random\nimport time",
+            "sha256": "63bde2a90865c5b7863510e5fe8ee6c7b6e02e02c0f64d37a9fc861b677dc18f"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 444,
+            "text": "            return Cache.pop(self, *args, **kwargs)\n\n    def setdefault(self, *args, **kwargs):\n        with self.__timer:\n            return Cache.setdefault(self, *args, **kwargs)\n\n    def clear(self):\n        # Subclasses must override to also reset their own time-tracking\n        # structures; we do not call expire() here since clear() should\n        # be O(1) regardless of cache contents.\n        Cache.clear(self)\n\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n",
+            "sha256": "ecc2e4bc6d23e4fbaf5f5e81ea57fd7a83d6c3714f113de9196bb8bd709881dc"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 455,
+            "text": "\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next\n            next.prev = prev\n\n    def __init__(self, maxsize, ttl, timer=time.monotonic, getsizeof=None):\n        _TimedCache.__init__(self, maxsize, timer, getsizeof)\n        self.__root = root = TTLCache._Link()\n        root.prev = root.next = root\n        self.__links = collections.OrderedDict()",
+            "sha256": "45cc270c823e8989b2198bec90d75f5de79692d7943a28a0b81c77977c0650b3"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.15925,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools\nimport heapq\nimport random\nimport time",
+            "sha256": "63bde2a90865c5b7863510e5fe8ee6c7b6e02e02c0f64d37a9fc861b677dc18f"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 444,
+            "text": "            return Cache.pop(self, *args, **kwargs)\n\n    def setdefault(self, *args, **kwargs):\n        with self.__timer:\n            return Cache.setdefault(self, *args, **kwargs)\n\n    def clear(self):\n        # Subclasses must override to also reset their own time-tracking\n        # structures; we do not call expire() here since clear() should\n        # be O(1) regardless of cache contents.\n        Cache.clear(self)\n\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n",
+            "sha256": "ecc2e4bc6d23e4fbaf5f5e81ea57fd7a83d6c3714f113de9196bb8bd709881dc"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 455,
+            "text": "\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next\n            next.prev = prev\n\n    def __init__(self, maxsize, ttl, timer=time.monotonic, getsizeof=None):\n        _TimedCache.__init__(self, maxsize, timer, getsizeof)\n        self.__root = root = TTLCache._Link()\n        root.prev = root.next = root\n        self.__links = collections.OrderedDict()",
+            "sha256": "45cc270c823e8989b2198bec90d75f5de79692d7943a28a0b81c77977c0650b3"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.163625,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools\nimport heapq\nimport random\nimport time",
+            "sha256": "63bde2a90865c5b7863510e5fe8ee6c7b6e02e02c0f64d37a9fc861b677dc18f"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 444,
+            "text": "            return Cache.pop(self, *args, **kwargs)\n\n    def setdefault(self, *args, **kwargs):\n        with self.__timer:\n            return Cache.setdefault(self, *args, **kwargs)\n\n    def clear(self):\n        # Subclasses must override to also reset their own time-tracking\n        # structures; we do not call expire() here since clear() should\n        # be O(1) regardless of cache contents.\n        Cache.clear(self)\n\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n",
+            "sha256": "ecc2e4bc6d23e4fbaf5f5e81ea57fd7a83d6c3714f113de9196bb8bd709881dc"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 455,
+            "text": "\n    def expire(self, time=None):  # pragma: no cover\n        raise NotImplementedError\n\n\nclass TTLCache(_TimedCache):\n    \"\"\"LRU Cache implementation with per-item time-to-live (TTL) value.\"\"\"\n\n    class _Link:\n        __slots__ = (\"expires\", \"key\", \"next\", \"prev\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n\n        def __reduce__(self):\n            return TTLCache._Link, (self.key, self.expires)\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next\n            next.prev = prev\n\n    def __init__(self, maxsize, ttl, timer=time.monotonic, getsizeof=None):\n        _TimedCache.__init__(self, maxsize, timer, getsizeof)\n        self.__root = root = TTLCache._Link()\n        root.prev = root.next = root\n        self.__links = collections.OrderedDict()",
+            "sha256": "45cc270c823e8989b2198bec90d75f5de79692d7943a28a0b81c77977c0650b3"
+          }
+        ]
+      }
+    ]
+  }
+}

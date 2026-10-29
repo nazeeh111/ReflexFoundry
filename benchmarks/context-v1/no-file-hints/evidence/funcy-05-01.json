@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 48.77775,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 396,
+            "text": "def partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)",
+            "sha256": "293ac490fe4002d71bfb7040afe89e42b36103e422c97a4b9117a3a53a6c21b0"
+          }
+        ]
+      },
+      {
+        "duration_ms": 46.294167,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 396,
+            "text": "def partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)",
+            "sha256": "293ac490fe4002d71bfb7040afe89e42b36103e422c97a4b9117a3a53a6c21b0"
+          }
+        ]
+      },
+      {
+        "duration_ms": 46.848542,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 396,
+            "text": "def partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)",
+            "sha256": "293ac490fe4002d71bfb7040afe89e42b36103e422c97a4b9117a3a53a6c21b0"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 5.6005,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 381,
+            "text": "            take(gap, it)\n            pool = take(n, it)\n    if not drop_tail:\n        yield from _cut_seq(drop_tail, n, step, pool)\n\ndef _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)",
+            "sha256": "42a68961b590195ecd510401cce82bf6118f0183e6d3dc43d176e2570454d035"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 386,
+            "text": "def _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)\n\ndef lchunks(n, step, seq=EMPTY):\n    \"\"\"Chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return list(chunks(n, step, seq))",
+            "sha256": "8c7e51563652f1d2e2f4f1d7277a5bc9cdce839114f9fcb6cab443451b1e0d38"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 391,
+            "text": "    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)\n\ndef lchunks(n, step, seq=EMPTY):\n    \"\"\"Chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return list(chunks(n, step, seq))\n\ndef partition_by(f, seq):\n    \"\"\"Lazily partition seq into continuous chunks with constant value of f.\"\"\"\n    f = make_func(f)\n    for _, items in groupby(seq, f):",
+            "sha256": "aed13f8ff6b898eba9b5128f8beb84488be380a477125afc87ecdc3f846802e5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 7.47575,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 381,
+            "text": "            take(gap, it)\n            pool = take(n, it)\n    if not drop_tail:\n        yield from _cut_seq(drop_tail, n, step, pool)\n\ndef _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)",
+            "sha256": "42a68961b590195ecd510401cce82bf6118f0183e6d3dc43d176e2570454d035"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 386,
+            "text": "def _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)\n\ndef lchunks(n, step, seq=EMPTY):\n    \"\"\"Chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return list(chunks(n, step, seq))",
+            "sha256": "8c7e51563652f1d2e2f4f1d7277a5bc9cdce839114f9fcb6cab443451b1e0d38"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 391,
+            "text": "    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)\n\ndef lchunks(n, step, seq=EMPTY):\n    \"\"\"Chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return list(chunks(n, step, seq))\n\ndef partition_by(f, seq):\n    \"\"\"Lazily partition seq into continuous chunks with constant value of f.\"\"\"\n    f = make_func(f)\n    for _, items in groupby(seq, f):",
+            "sha256": "aed13f8ff6b898eba9b5128f8beb84488be380a477125afc87ecdc3f846802e5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 8.320042,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 381,
+            "text": "            take(gap, it)\n            pool = take(n, it)\n    if not drop_tail:\n        yield from _cut_seq(drop_tail, n, step, pool)\n\ndef _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)",
+            "sha256": "42a68961b590195ecd510401cce82bf6118f0183e6d3dc43d176e2570454d035"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 386,
+            "text": "def _cut(drop_tail, n, step, seq=EMPTY):\n    if seq is EMPTY:\n        step, seq = n, step\n    if n <= 0 or step <= 0:\n        raise ValueError('n and step must be positive')\n    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)\n\ndef lchunks(n, step, seq=EMPTY):\n    \"\"\"Chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return list(chunks(n, step, seq))",
+            "sha256": "8c7e51563652f1d2e2f4f1d7277a5bc9cdce839114f9fcb6cab443451b1e0d38"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 391,
+            "text": "    if isinstance(seq, Sequence):\n        return _cut_seq(drop_tail, n, step, seq)\n    else:\n        return _cut_iter(drop_tail, n, step, seq)\n\ndef partition(n, step, seq=EMPTY):\n    \"\"\"Lazily partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return _cut(True, n, step, seq)\n\ndef lpartition(n, step, seq=EMPTY):\n    \"\"\"Partitions seq into parts of length n.\n       Skips step items between parts if passed. Non-fitting tail is ignored.\"\"\"\n    return list(partition(n, step, seq))\n\ndef chunks(n, step, seq=EMPTY):\n    \"\"\"Lazily chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return _cut(False, n, step, seq)\n\ndef lchunks(n, step, seq=EMPTY):\n    \"\"\"Chunks seq into parts of length n or less.\n       Skips step items between parts if passed.\"\"\"\n    return list(chunks(n, step, seq))\n\ndef partition_by(f, seq):\n    \"\"\"Lazily partition seq into continuous chunks with constant value of f.\"\"\"\n    f = make_func(f)\n    for _, items in groupby(seq, f):",
+            "sha256": "aed13f8ff6b898eba9b5128f8beb84488be380a477125afc87ecdc3f846802e5"
+          }
+        ]
+      }
+    ]
+  }
+}

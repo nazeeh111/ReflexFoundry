@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002042,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.001875,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000417,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 10.1455,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 348,
+            "text": "        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)\n\n\ndef take_nth(n, seq):\n    \"\"\" Every nth item in seq\n\n    >>> list(take_nth(2, [10, 20, 30, 40, 50]))\n    [10, 30, 50]\n    \"\"\"\n    return itertools.islice(seq, 0, None, n)\n\n\ndef first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))\n\n\ndef second(seq):\n    \"\"\" The second element in a sequence\n\n    >>> second('ABC')\n    'B'",
+            "sha256": "9d44645ac0962c44ffeff4b8f96c94338e0f2789c586a7194cfd05d3eae9820f"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 297,
+            "text": "    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):",
+            "sha256": "a377f9024ae81c4379cc1e22c040e9463bae684895cc88a9619790be87bf99a6"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 357,
+            "text": "    >>> list(take_nth(2, [10, 20, 30, 40, 50]))\n    [10, 30, 50]\n    \"\"\"\n    return itertools.islice(seq, 0, None, n)\n\n\ndef first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))\n\n\ndef second(seq):\n    \"\"\" The second element in a sequence\n\n    >>> second('ABC')\n    'B'\n    \"\"\"\n    seq = iter(seq)\n    next(seq)\n    return next(seq)\n\n\ndef nth(n, seq):\n    \"\"\" The nth element in a sequence\n",
+            "sha256": "a68892708d2c744ce1314efbcedb2f0fa2344ea6c104d01376bdb10349b6b2f4"
+          }
+        ]
+      },
+      {
+        "duration_ms": 9.539791,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 348,
+            "text": "        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)\n\n\ndef take_nth(n, seq):\n    \"\"\" Every nth item in seq\n\n    >>> list(take_nth(2, [10, 20, 30, 40, 50]))\n    [10, 30, 50]\n    \"\"\"\n    return itertools.islice(seq, 0, None, n)\n\n\ndef first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))\n\n\ndef second(seq):\n    \"\"\" The second element in a sequence\n\n    >>> second('ABC')\n    'B'",
+            "sha256": "9d44645ac0962c44ffeff4b8f96c94338e0f2789c586a7194cfd05d3eae9820f"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 297,
+            "text": "    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):",
+            "sha256": "a377f9024ae81c4379cc1e22c040e9463bae684895cc88a9619790be87bf99a6"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 357,
+            "text": "    >>> list(take_nth(2, [10, 20, 30, 40, 50]))\n    [10, 30, 50]\n    \"\"\"\n    return itertools.islice(seq, 0, None, n)\n\n\ndef first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))\n\n\ndef second(seq):\n    \"\"\" The second element in a sequence\n\n    >>> second('ABC')\n    'B'\n    \"\"\"\n    seq = iter(seq)\n    next(seq)\n    return next(seq)\n\n\ndef nth(n, seq):\n    \"\"\" The nth element in a sequence\n",
+            "sha256": "a68892708d2c744ce1314efbcedb2f0fa2344ea6c104d01376bdb10349b6b2f4"
+          }
+        ]
+      },
+      {
+        "duration_ms": 8.485375,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 348,
+            "text": "        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)\n\n\ndef take_nth(n, seq):\n    \"\"\" Every nth item in seq\n\n    >>> list(take_nth(2, [10, 20, 30, 40, 50]))\n    [10, 30, 50]\n    \"\"\"\n    return itertools.islice(seq, 0, None, n)\n\n\ndef first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))\n\n\ndef second(seq):\n    \"\"\" The second element in a sequence\n\n    >>> second('ABC')\n    'B'",
+            "sha256": "9d44645ac0962c44ffeff4b8f96c94338e0f2789c586a7194cfd05d3eae9820f"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 297,
+            "text": "    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):",
+            "sha256": "a377f9024ae81c4379cc1e22c040e9463bae684895cc88a9619790be87bf99a6"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 357,
+            "text": "    >>> list(take_nth(2, [10, 20, 30, 40, 50]))\n    [10, 30, 50]\n    \"\"\"\n    return itertools.islice(seq, 0, None, n)\n\n\ndef first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))\n\n\ndef second(seq):\n    \"\"\" The second element in a sequence\n\n    >>> second('ABC')\n    'B'\n    \"\"\"\n    seq = iter(seq)\n    next(seq)\n    return next(seq)\n\n\ndef nth(n, seq):\n    \"\"\" The nth element in a sequence\n",
+            "sha256": "a68892708d2c744ce1314efbcedb2f0fa2344ea6c104d01376bdb10349b6b2f4"
+          }
+        ]
+      }
+    ]
+  }
+}

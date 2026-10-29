@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 1539.8605,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 341,
+            "text": "def drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)",
+            "sha256": "37074e3224af16518cf45d804048541c595f22eff8b9e66082c95cd650a8796d"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1347.2115,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 341,
+            "text": "def drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)",
+            "sha256": "37074e3224af16518cf45d804048541c595f22eff8b9e66082c95cd650a8796d"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1554.0315,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 341,
+            "text": "def drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)",
+            "sha256": "37074e3224af16518cf45d804048541c595f22eff8b9e66082c95cd650a8796d"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 400.300916,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 49,
+            "text": "    merge_sorted,\n    peek,\n    pipe,\n    second,\n    thread_first,\n    thread_last,\n)\nfrom .exceptions import merge, merge_with\n\naccumulate = toolz.curry(toolz.accumulate)\nassoc = toolz.curry(toolz.assoc)\nassoc_in = toolz.curry(toolz.assoc_in)\ncons = toolz.curry(toolz.cons)\ncountby = toolz.curry(toolz.countby)\ndissoc = toolz.curry(toolz.dissoc)\ndo = toolz.curry(toolz.do)\ndrop = toolz.curry(toolz.drop)\nexcepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)",
+            "sha256": "e712abb5f0e98d5e800a27a919a55808450741957fd80479de32df140a53633a"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 563,
+            "text": "    sequenceIncludes=[\n        lambda a, b: None],\n    setitem=[\n        lambda a, b, c: None],\n    setslice=[\n        lambda a, b, c, d: None],\n    sub=[\n        lambda a, b: None],\n    truediv=[\n        lambda a, b: None],\n    truth=[\n        lambda a: None],\n    xor=[\n        lambda a, b: None],\n)\n\nmodule_info['toolz'] = dict(\n    curry=[\n        (0, lambda *args, **kwargs: None)],\n    excepts=[\n        (0, lambda exc, func, handler=None: None)],\n    flip=[\n        (0, lambda func=None, a=None, b=None: None)],\n    juxt=[\n        (0, lambda *funcs: None)],\n    memoize=[\n        (0, lambda func=None, cache=None, key=None: None)],\n)\n",
+            "sha256": "f95d7e232d83328e9e0f3d0b8d3f4e9cd135a24c607fa56ee985bf8252e664b5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 397.888541,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 49,
+            "text": "    merge_sorted,\n    peek,\n    pipe,\n    second,\n    thread_first,\n    thread_last,\n)\nfrom .exceptions import merge, merge_with\n\naccumulate = toolz.curry(toolz.accumulate)\nassoc = toolz.curry(toolz.assoc)\nassoc_in = toolz.curry(toolz.assoc_in)\ncons = toolz.curry(toolz.cons)\ncountby = toolz.curry(toolz.countby)\ndissoc = toolz.curry(toolz.dissoc)\ndo = toolz.curry(toolz.do)\ndrop = toolz.curry(toolz.drop)\nexcepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)",
+            "sha256": "e712abb5f0e98d5e800a27a919a55808450741957fd80479de32df140a53633a"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 563,
+            "text": "    sequenceIncludes=[\n        lambda a, b: None],\n    setitem=[\n        lambda a, b, c: None],\n    setslice=[\n        lambda a, b, c, d: None],\n    sub=[\n        lambda a, b: None],\n    truediv=[\n        lambda a, b: None],\n    truth=[\n        lambda a: None],\n    xor=[\n        lambda a, b: None],\n)\n\nmodule_info['toolz'] = dict(\n    curry=[\n        (0, lambda *args, **kwargs: None)],\n    excepts=[\n        (0, lambda exc, func, handler=None: None)],\n    flip=[\n        (0, lambda func=None, a=None, b=None: None)],\n    juxt=[\n        (0, lambda *funcs: None)],\n    memoize=[\n        (0, lambda func=None, cache=None, key=None: None)],\n)\n",
+            "sha256": "f95d7e232d83328e9e0f3d0b8d3f4e9cd135a24c607fa56ee985bf8252e664b5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 759.030833,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 49,
+            "text": "    merge_sorted,\n    peek,\n    pipe,\n    second,\n    thread_first,\n    thread_last,\n)\nfrom .exceptions import merge, merge_with\n\naccumulate = toolz.curry(toolz.accumulate)\nassoc = toolz.curry(toolz.assoc)\nassoc_in = toolz.curry(toolz.assoc_in)\ncons = toolz.curry(toolz.cons)\ncountby = toolz.curry(toolz.countby)\ndissoc = toolz.curry(toolz.dissoc)\ndo = toolz.curry(toolz.do)\ndrop = toolz.curry(toolz.drop)\nexcepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)",
+            "sha256": "e712abb5f0e98d5e800a27a919a55808450741957fd80479de32df140a53633a"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 563,
+            "text": "    sequenceIncludes=[\n        lambda a, b: None],\n    setitem=[\n        lambda a, b, c: None],\n    setslice=[\n        lambda a, b, c, d: None],\n    sub=[\n        lambda a, b: None],\n    truediv=[\n        lambda a, b: None],\n    truth=[\n        lambda a: None],\n    xor=[\n        lambda a, b: None],\n)\n\nmodule_info['toolz'] = dict(\n    curry=[\n        (0, lambda *args, **kwargs: None)],\n    excepts=[\n        (0, lambda exc, func, handler=None: None)],\n    flip=[\n        (0, lambda func=None, a=None, b=None: None)],\n    juxt=[\n        (0, lambda *funcs: None)],\n    memoize=[\n        (0, lambda func=None, cache=None, key=None: None)],\n)\n",
+            "sha256": "f95d7e232d83328e9e0f3d0b8d3f4e9cd135a24c607fa56ee985bf8252e664b5"
+          }
+        ]
+      }
+    ]
+  }
+}

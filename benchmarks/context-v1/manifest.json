@@ -1,0 +1,282 @@
+{
+  "format": 1,
+  "benchmark": "public-source-context-retrieval-v1",
+  "repeats": 3,
+  "records_sha256": "aa496b08543a554e3f3589fe79d4ec80aa949bddb982921345d12df1dac72d69",
+  "repositories": [
+    {
+      "name": "toolz",
+      "url": "https://github.com/pytoolz/toolz",
+      "commit": "451af60dec590a6010e2babdbf391ea8f815122f",
+      "package": "toolz",
+      "license_file": "LICENSE.txt",
+      "split": "train",
+      "corpus_startup_ms": 10.91675,
+      "source_sha256": {
+        "toolz/__init__.py": "f7d49e00a3888d25c2b691aae94aff3d87d55e65a38e1e9ad553fdc622129c8f",
+        "toolz/_signatures.py": "3e64c279860119baa807cade3940daa1e9bd8e121de29f626b7116f869807061",
+        "toolz/compatibility.py": "822398730bf54da3960df07e0b624fda91482796195fd68fd6ce143f30909f0e",
+        "toolz/curried/__init__.py": "53f7749c594e5983750c97399f9276ad3a1ab8753b4047b8e42304d6344b4f56",
+        "toolz/curried/exceptions.py": "df543d23e468f88300dde46e0c2e704905d0058969771a279c9af8169d21aae2",
+        "toolz/curried/operator.py": "6f700bd66102db994ec0917ef184fc7074341e8fe1822da3bca614278740ee1f",
+        "toolz/dicttoolz.py": "b04f3094634b7b385d9a446a07681073149bc1b3baf9cfb84956d8fb2163ba81",
+        "toolz/functoolz.py": "029b6879a9f4256e4c97a83619fa0953f3f6aaefcc738175150ac6c685e3cf66",
+        "toolz/itertoolz.py": "93e4d79bc7c6d68250657846454303ba95c0694c9ef165cb7a8e0bdf150711c6",
+        "toolz/recipes.py": "aff8fbd35520dbfa0ee1b1ee9e8cb5c62ce4d0dfa6f5007039bc8221326e1742",
+        "toolz/sandbox/__init__.py": "cac01821a1913a96cdcb6fa56047a255f9490aa10e5fd31620700847d05ce800",
+        "toolz/sandbox/core.py": "90a6eb5f3a1a29433980e9b63624b88b52287251cc6082bb9b8736b7e13baab4",
+        "toolz/sandbox/parallel.py": "045b5e798b9d471d654040280f1b169724823ebc891dd7257671e9c42aab6e37",
+        "toolz/sandbox/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "toolz/sandbox/tests/test_core.py": "38ce13274e8297b8911894d09611ede9296f2a02334660d0ce9ad5b80ab1b4d7",
+        "toolz/sandbox/tests/test_parallel.py": "2e7e4e4309c4618522fc713fd6ec242b98c6aa11e351989145b35e5bcff8a1e0",
+        "toolz/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "toolz/tests/test_compatibility.py": "4f09a972a8917a0060a00c2bcf9f77c3bdd4b4c871c754a9dcc63a2c9e699826",
+        "toolz/tests/test_curried.py": "2c5d8f91b686565378274739f13ede913b96365874afb791a55da85b3b9fe233",
+        "toolz/tests/test_curried_doctests.py": "f69fd1c0329e1bff045d4a2a285009fb3ca9e0a1e9db0de52c5c4e0795d7ab0c",
+        "toolz/tests/test_dicttoolz.py": "a102f4482bbaa3898d128aa8807fc25b72e13fd372fbbe69d173cc07a8b54d55",
+        "toolz/tests/test_functoolz.py": "ac5fb1111159649bea348775379011ca66604f291b8b55b77211903076f98a8b",
+        "toolz/tests/test_inspect_args.py": "0f524a2e128272cef54993c4dfef3a3d24a2af19cfa0cf9a60eab7157cb75b95",
+        "toolz/tests/test_itertoolz.py": "f415be3a159f07e27639fa74c093ccad6d193c41dba8283752cf3ff90e91c40d",
+        "toolz/tests/test_package.py": "3e628960b505cea360fcd4af37e5a7ead208680312359f352f852876507a4825",
+        "toolz/tests/test_recipes.py": "859fe7b8600e21a7c9ac9c279e3f7e2599da46af6cac85f23d0cb305d352d454",
+        "toolz/tests/test_serialization.py": "87057e30e173bef2d5c1979d5020db9b1e3bf7dacb41f0b2173993631a007471",
+        "toolz/tests/test_signatures.py": "5fc2bfad74b5397236db2b1c8f7cd4856c5659354823909fd912725df87fd870",
+        "toolz/tests/test_tlz.py": "2d2e480aa89e44b9230143fe0b94e37557a577a4bd38b5d3606807f397d8916c",
+        "toolz/tests/test_utils.py": "d8b2214bff715de004d7fa2737cebc81978037c1378d35eda67605d16f8bd8e1",
+        "toolz/utils.py": "24b957b7cc7f26a4957af98b64f9ede5b649b1d28c0498096f923095c7ce9ec7"
+      },
+      "targets": [
+        {
+          "symbol": "unique",
+          "path": "toolz/itertoolz.py",
+          "signature": "def unique(seq, key=None):",
+          "contract": "Return only unique elements of a sequence"
+        },
+        {
+          "symbol": "take",
+          "path": "toolz/itertoolz.py",
+          "signature": "def take(n, seq):",
+          "contract": "The first n elements of a sequence"
+        },
+        {
+          "symbol": "drop",
+          "path": "toolz/itertoolz.py",
+          "signature": "def drop(n, seq):",
+          "contract": "The sequence following the first n elements"
+        },
+        {
+          "symbol": "first",
+          "path": "toolz/itertoolz.py",
+          "signature": "def first(seq):",
+          "contract": "The first element in a sequence"
+        },
+        {
+          "symbol": "sliding_window",
+          "path": "toolz/itertoolz.py",
+          "signature": "def sliding_window(n, seq):",
+          "contract": "A sequence of overlapping subsequences"
+        },
+        {
+          "symbol": "partition",
+          "path": "toolz/itertoolz.py",
+          "signature": "def partition(n, seq, pad=no_pad):",
+          "contract": "Partition sequence into tuples of length n"
+        }
+      ],
+      "license_sha256": "053664057b295b2f0c1332291a77102f01a099d87926e449e08a117eea9660bf"
+    },
+    {
+      "name": "funcy",
+      "url": "https://github.com/Suor/funcy",
+      "commit": "a876c7e1cf11e7c746e91fce4632ebfa93865428",
+      "package": "funcy",
+      "license_file": "LICENSE",
+      "split": "calibration",
+      "corpus_startup_ms": 6.657625,
+      "source_sha256": {
+        "funcy/__init__.py": "2993c479a7a312a76a30565e50e30492058930081ef83dabf71ec891a6479a8f",
+        "funcy/_inspect.py": "31918ddc7a59b6041fa012c9cb35b29df2c319bcc88775e127c0c62da8e74fe2",
+        "funcy/calc.py": "7bd46cdb4f6a8800362e39c54e07cae8d96bc7acac0eb3b492957364b6b918bc",
+        "funcy/colls.py": "9d3342bad6b37358db672f10df2375bf4aa83428e2767ecb65af7d33f8eeb1a6",
+        "funcy/debug.py": "a4436fdf3ca18a7a49b9b93b3a9689da3bbfb91b738e4f66d429bf6f40fcf0bb",
+        "funcy/decorators.py": "1ea466781304109124435281b4a2a61424e68c48b44db9b515e40766ae7bc110",
+        "funcy/flow.py": "0c2704436a0b4ba44a1e945b6b4800c45eca8172de4575046f5135b1d2bd7059",
+        "funcy/funcmakers.py": "fbeb456d7e8cc22c2c3b3cf965329d2a1222fc3b3e6d47aae892aae5245cf953",
+        "funcy/funcolls.py": "7df238435d650138fc3fe06ed4f46485776623f46ef6d4e4ec077ffe5506ceef",
+        "funcy/funcs.py": "82aa2df77c9c5d862ba16e0401d1cffe52c59be53a5cbb883b27a9587d25960d",
+        "funcy/objects.py": "1c166ab4915caf6c18cf8fc29ea1e75803d2507cfa288a41aabf6ab6aefe9791",
+        "funcy/primitives.py": "67dd4be73f3063797d0dac6934427aa5030448514134a34a08c6a5c37a96c9df",
+        "funcy/seqs.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+        "funcy/strings.py": "20a6e850f4d1305452461a46a06fedf44b7a4b162995771e1938319434085745",
+        "funcy/tree.py": "48df6aec601171de7fa7291c1ccae51f88259271d974c822ffff009f62302a8a",
+        "funcy/types.py": "bf44df1be7a5390e70c1578de1066f78e14c469ad57c1d608e23c0b4d2744ae3",
+        "funcy/typing.py": "c69be38e02656492af86377bdd3413b013bf7e88d04dbc05304e2a433de40693"
+      },
+      "targets": [
+        {
+          "symbol": "take",
+          "path": "funcy/seqs.py",
+          "signature": "def take(n, seq):",
+          "contract": "Returns a list of first n items in the sequence,"
+        },
+        {
+          "symbol": "drop",
+          "path": "funcy/seqs.py",
+          "signature": "def drop(n, seq):",
+          "contract": "Skips first n items in the sequence, yields the rest."
+        },
+        {
+          "symbol": "first",
+          "path": "funcy/seqs.py",
+          "signature": "def first(seq):",
+          "contract": "Returns the first item in the sequence."
+        },
+        {
+          "symbol": "flatten",
+          "path": "funcy/seqs.py",
+          "signature": "def flatten(seq, follow=is_seqcont):",
+          "contract": "Flattens arbitrary nested sequence."
+        },
+        {
+          "symbol": "distinct",
+          "path": "funcy/seqs.py",
+          "signature": "def distinct(seq, key=EMPTY):",
+          "contract": "Iterates over sequence skipping duplicates"
+        },
+        {
+          "symbol": "partition",
+          "path": "funcy/seqs.py",
+          "signature": "def partition(n, step, seq=EMPTY):",
+          "contract": "Lazily partitions seq into parts of length n."
+        }
+      ],
+      "license_sha256": "dcf5a6e8e22fe9756fbf60446a5ca2e694af6eab3037b6e83543e27ba16d56a3"
+    },
+    {
+      "name": "blinker",
+      "url": "https://github.com/pallets-eco/blinker",
+      "commit": "c3364059663df1ddce32799d6b1922af89a345f6",
+      "package": "src/blinker",
+      "license_file": "LICENSE.txt",
+      "split": "promotion",
+      "corpus_startup_ms": 1.37525,
+      "source_sha256": {
+        "src/blinker/__init__.py": "23611d66aa72e0bca35f5ec79f5cb32465828de2da55a3f3b0c80790b7e3fdc4",
+        "src/blinker/_utilities.py": "d09ede7975d3531d08bdff1ab1fa71d32715929d04a9faa78f5d7bc769985fd1",
+        "src/blinker/base.py": "4290eebd75dcc09178f65501707e418924f8e91cfdc121bb556fe9ecdff4dbb3"
+      },
+      "targets": [
+        {
+          "symbol": "Signal.connect",
+          "path": "src/blinker/base.py",
+          "signature": "def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:",
+          "contract": "Connect ``receiver`` to be called when the signal is sent by"
+        },
+        {
+          "symbol": "Signal.muted",
+          "path": "src/blinker/base.py",
+          "signature": "def muted(self) -> c.Generator[None, None, None]:",
+          "contract": "A context manager that temporarily disables the signal. No receivers"
+        },
+        {
+          "symbol": "Signal.send",
+          "path": "src/blinker/base.py",
+          "signature": "def send(",
+          "contract": "Call all receivers that are connected to the given ``sender``"
+        },
+        {
+          "symbol": "Signal.has_receivers_for",
+          "path": "src/blinker/base.py",
+          "signature": "def has_receivers_for(self, sender: t.Any) -> bool:",
+          "contract": "Check if there is at least one receiver that will be called with the"
+        },
+        {
+          "symbol": "Signal.receivers_for",
+          "path": "src/blinker/base.py",
+          "signature": "def receivers_for(",
+          "contract": "Yield each receiver to be called for ``sender``, in addition to those"
+        },
+        {
+          "symbol": "Signal.disconnect",
+          "path": "src/blinker/base.py",
+          "signature": "def disconnect(self, receiver: c.Callable[..., t.Any], sender: t.Any = ANY) -> None:",
+          "contract": "Disconnect ``receiver`` from being called when the signal is sent by"
+        }
+      ],
+      "license_sha256": "9eb73a1f38597a4aa17025d2ae1be3839624c795e985d4f0e9769ce29faca467"
+    },
+    {
+      "name": "cachetools",
+      "url": "https://github.com/tkem/cachetools",
+      "commit": "e7104dd52bfe0e3aced6f3439fb6ed4d9c8ff52a",
+      "package": "src/cachetools",
+      "license_file": "LICENSE",
+      "split": "test",
+      "corpus_startup_ms": 2.358083,
+      "source_sha256": {
+        "src/cachetools/__init__.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+        "src/cachetools/_cached.py": "90e2df70e55683f4d6f95fe04daa0e4f36d1e4ce50ea3a79b37e77c3dba1034b",
+        "src/cachetools/_cachedmethod.py": "e9aa1608a32fa6489afdfb9fecfb572bad4d6455147cdae391c25e6b667da131",
+        "src/cachetools/_descriptor.py": "4697a97118f15fbbc025133c04bc535bfa9271f3e1ef4d8eeab604b67a5b25a7",
+        "src/cachetools/func.py": "87724e4fc82303fd5172cc9fd03c7aaf6a767c6c477f3cb74a245fc45ebf7816",
+        "src/cachetools/keys.py": "1ef81b1f2a0ccd991ccf16fc28c427fb7ff2d70e1c783628f793b16eda953933"
+      },
+      "targets": [
+        {
+          "symbol": "Cache",
+          "path": "src/cachetools/__init__.py",
+          "signature": "class Cache(collections.abc.MutableMapping):",
+          "contract": "Mutable mapping to serve as a simple cache or cache base class."
+        },
+        {
+          "symbol": "FIFOCache",
+          "path": "src/cachetools/__init__.py",
+          "signature": "class FIFOCache(Cache):",
+          "contract": "First In First Out (FIFO) cache implementation."
+        },
+        {
+          "symbol": "LFUCache",
+          "path": "src/cachetools/__init__.py",
+          "signature": "class LFUCache(Cache):",
+          "contract": "Least Frequently Used (LFU) cache implementation."
+        },
+        {
+          "symbol": "LRUCache",
+          "path": "src/cachetools/__init__.py",
+          "signature": "class LRUCache(Cache):",
+          "contract": "Least Recently Used (LRU) cache implementation."
+        },
+        {
+          "symbol": "TTLCache",
+          "path": "src/cachetools/__init__.py",
+          "signature": "class TTLCache(_TimedCache):",
+          "contract": "LRU Cache implementation with per-item time-to-live (TTL) value."
+        },
+        {
+          "symbol": "cached",
+          "path": "src/cachetools/__init__.py",
+          "signature": "def cached(cache, key=keys.hashkey, lock=None, condition=None, info=False):",
+          "contract": "Decorator to wrap a function with a memoizing callable that saves"
+        }
+      ],
+      "license_sha256": "28c000b52b0ee27138a68ef778227e4057046e86b65f62f1cacb99b0cc49e0d2"
+    }
+  ],
+  "counts": {
+    "train": 42,
+    "calibration": 30,
+    "promotion": 30,
+    "test": 30
+  },
+  "bounds": {
+    "source_files": 128,
+    "source_bytes": 4194304,
+    "file_bytes": 262144,
+    "snippet_bytes": 8192,
+    "search_snippets": 3
+  },
+  "timing": "Median retrieval-only wall time across alternating paired trials; source read/hash startup reported separately per repository. No model inference, grader time, or autonomous-agent costs included.",
+  "independence": "One actual repository per split, six target groups with correlated query variants each. Raw query counts do not create independent promotion evidence.",
+  "scope": "Read-only source retrieval stage; no repository code executes. Public declaration/docstring coverage is not coding-task completion, semantic context sufficiency, or evidence of broad reliability.",
+  "deployment_allowed": false
+}

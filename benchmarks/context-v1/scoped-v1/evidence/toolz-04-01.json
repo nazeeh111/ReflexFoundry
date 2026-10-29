@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 719.072959,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 662,
+            "text": "def sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it\n               for i, it in enumerate(itertools.tee(seq, n))))",
+            "sha256": "b89ead65406aefd47a447a05fb6d5c4947e4d7108bfd5f79a1eb5f167f7b579d"
+          }
+        ]
+      },
+      {
+        "duration_ms": 430.255916,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 662,
+            "text": "def sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it\n               for i, it in enumerate(itertools.tee(seq, n))))",
+            "sha256": "b89ead65406aefd47a447a05fb6d5c4947e4d7108bfd5f79a1eb5f167f7b579d"
+          }
+        ]
+      },
+      {
+        "duration_ms": 774.63825,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 662,
+            "text": "def sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it\n               for i, it in enumerate(itertools.tee(seq, n))))",
+            "sha256": "b89ead65406aefd47a447a05fb6d5c4947e4d7108bfd5f79a1eb5f167f7b579d"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 190.912917,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 647,
+            "text": "    >>> powers_of_two = iterate(double, 1)\n    >>> next(powers_of_two)\n    1\n    >>> next(powers_of_two)\n    2\n    >>> next(powers_of_two)\n    4\n    >>> next(powers_of_two)\n    8\n    \"\"\"\n    while True:\n        yield x\n        x = func(x)\n\n\ndef sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it",
+            "sha256": "16a0080eb55f8c95ddb020ff4284f74da6fb9cbca7e833b1f3b5665bef032b03"
+          },
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 75,
+            "text": "join = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)\nmap = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "2ee03b0345dbcbee696cd6188e8c54674946f0954fe4697113342d33acea07e3"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          }
+        ]
+      },
+      {
+        "duration_ms": 193.763042,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 647,
+            "text": "    >>> powers_of_two = iterate(double, 1)\n    >>> next(powers_of_two)\n    1\n    >>> next(powers_of_two)\n    2\n    >>> next(powers_of_two)\n    4\n    >>> next(powers_of_two)\n    8\n    \"\"\"\n    while True:\n        yield x\n        x = func(x)\n\n\ndef sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it",
+            "sha256": "16a0080eb55f8c95ddb020ff4284f74da6fb9cbca7e833b1f3b5665bef032b03"
+          },
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 75,
+            "text": "join = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)\nmap = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "2ee03b0345dbcbee696cd6188e8c54674946f0954fe4697113342d33acea07e3"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          }
+        ]
+      },
+      {
+        "duration_ms": 172.3845,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 647,
+            "text": "    >>> powers_of_two = iterate(double, 1)\n    >>> next(powers_of_two)\n    1\n    >>> next(powers_of_two)\n    2\n    >>> next(powers_of_two)\n    4\n    >>> next(powers_of_two)\n    8\n    \"\"\"\n    while True:\n        yield x\n        x = func(x)\n\n\ndef sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it",
+            "sha256": "16a0080eb55f8c95ddb020ff4284f74da6fb9cbca7e833b1f3b5665bef032b03"
+          },
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 75,
+            "text": "join = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)\nmap = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "2ee03b0345dbcbee696cd6188e8c54674946f0954fe4697113342d33acea07e3"
+          },
+          {
+            "path": "toolz/__init__.py",
+            "start_line": 13,
+            "text": "map = map\n\nfilter = filter\n\n# Aliases\ncomp = compose\n\nfrom . import curried, sandbox\n\nfunctoolz._sigs.create_signature_registry()\n\n\ndef __getattr__(name):\n    if name == \"__version__\":\n        from importlib.metadata import version\n\n        rv = version(\"toolz\")\n        globals()[name] = rv\n        return rv\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")",
+            "sha256": "1965cc1c47f797515d947cbe2a649c368956b9a229f604f158e25803f6faa104"
+          }
+        ]
+      }
+    ]
+  }
+}

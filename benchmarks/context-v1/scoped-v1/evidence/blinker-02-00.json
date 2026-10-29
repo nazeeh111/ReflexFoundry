@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 13.035084,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 204,
+            "text": "    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.\n        :param _async_wrapper: Will be called on any receivers that are async\n            coroutines to turn them into sync callables. For example, could run\n            the receiver with an event loop.\n        :param kwargs: Extra keyword arguments to pass to each receiver.\n\n        .. versionchanged:: 1.7\n            Added the ``_async_wrapper`` argument.\n        \"\"\"\n        if self.is_muted:\n            return []\n\n        results = []\n\n        for receiver in self.receivers_for(sender):\n            if iscoroutinefunction(receiver):\n                if _async_wrapper is None:\n                    raise RuntimeError(\"Cannot send to a coroutine function.\")\n\n                result = _async_wrapper(receiver)(sender, **kwargs)\n            else:\n                result = receiver(sender, **kwargs)\n\n            results.append((receiver, result))\n\n        return results",
+            "sha256": "ac83931ff93469809b338ccb0733acadbfcbd6fb57847cc3e8e4ce646c3a0c9c"
+          }
+        ]
+      },
+      {
+        "duration_ms": 14.7525,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 204,
+            "text": "    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.\n        :param _async_wrapper: Will be called on any receivers that are async\n            coroutines to turn them into sync callables. For example, could run\n            the receiver with an event loop.\n        :param kwargs: Extra keyword arguments to pass to each receiver.\n\n        .. versionchanged:: 1.7\n            Added the ``_async_wrapper`` argument.\n        \"\"\"\n        if self.is_muted:\n            return []\n\n        results = []\n\n        for receiver in self.receivers_for(sender):\n            if iscoroutinefunction(receiver):\n                if _async_wrapper is None:\n                    raise RuntimeError(\"Cannot send to a coroutine function.\")\n\n                result = _async_wrapper(receiver)(sender, **kwargs)\n            else:\n                result = receiver(sender, **kwargs)\n\n            results.append((receiver, result))\n\n        return results",
+            "sha256": "ac83931ff93469809b338ccb0733acadbfcbd6fb57847cc3e8e4ce646c3a0c9c"
+          }
+        ]
+      },
+      {
+        "duration_ms": 290.235209,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 204,
+            "text": "    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.\n        :param _async_wrapper: Will be called on any receivers that are async\n            coroutines to turn them into sync callables. For example, could run\n            the receiver with an event loop.\n        :param kwargs: Extra keyword arguments to pass to each receiver.\n\n        .. versionchanged:: 1.7\n            Added the ``_async_wrapper`` argument.\n        \"\"\"\n        if self.is_muted:\n            return []\n\n        results = []\n\n        for receiver in self.receivers_for(sender):\n            if iscoroutinefunction(receiver):\n                if _async_wrapper is None:\n                    raise RuntimeError(\"Cannot send to a coroutine function.\")\n\n                result = _async_wrapper(receiver)(sender, **kwargs)\n            else:\n                result = receiver(sender, **kwargs)\n\n            results.append((receiver, result))\n\n        return results",
+            "sha256": "ac83931ff93469809b338ccb0733acadbfcbd6fb57847cc3e8e4ce646c3a0c9c"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.333167,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.59975,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.639916,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      }
+    ]
+  }
+}

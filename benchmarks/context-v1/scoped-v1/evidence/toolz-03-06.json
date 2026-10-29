@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 1852.791166,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 363,
+            "text": "def first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))",
+            "sha256": "da7c249ee48d457eceaf1855bffc28bff86cc05a6d388ce89ca5bc8cb4e09574"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1332.1185,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 363,
+            "text": "def first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))",
+            "sha256": "da7c249ee48d457eceaf1855bffc28bff86cc05a6d388ce89ca5bc8cb4e09574"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1395.596542,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 363,
+            "text": "def first(seq):\n    \"\"\" The first element in a sequence\n\n    >>> first('ABC')\n    'A'\n    \"\"\"\n    return next(iter(seq))",
+            "sha256": "da7c249ee48d457eceaf1855bffc28bff86cc05a6d388ce89ca5bc8cb4e09574"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 77.028542,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first",
+            "sha256": "7fd3190c71a8f9b25e211c1fc4f5d080ebd137ee223aa92280cab4fe9ab877b6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first\n\n\ndef test_merge():\n    assert merge(factory=lambda: defaultdict(int))({1: 1}) == {1: 1}\n    assert merge({1: 1}) == {1: 1}\n    assert merge({1: 1}, factory=lambda: defaultdict(int)) == {1: 1}\n\n\ndef test_merge_with():\n    assert merge_with(sum)({1: 1}, {1: 2}) == {1: 3}\n\n",
+            "sha256": "c8fe426641e627cc0c7bf08f37cd1894613eae7486b14b31a261b326d2411ad5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 312.549833,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first",
+            "sha256": "7fd3190c71a8f9b25e211c1fc4f5d080ebd137ee223aa92280cab4fe9ab877b6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first\n\n\ndef test_merge():\n    assert merge(factory=lambda: defaultdict(int))({1: 1}) == {1: 1}\n    assert merge({1: 1}) == {1: 1}\n    assert merge({1: 1}, factory=lambda: defaultdict(int)) == {1: 1}\n\n\ndef test_merge_with():\n    assert merge_with(sum)({1: 1}, {1: 2}) == {1: 3}\n\n",
+            "sha256": "c8fe426641e627cc0c7bf08f37cd1894613eae7486b14b31a261b326d2411ad5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 332.332208,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first",
+            "sha256": "7fd3190c71a8f9b25e211c1fc4f5d080ebd137ee223aa92280cab4fe9ab877b6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first\n\n\ndef test_merge():\n    assert merge(factory=lambda: defaultdict(int))({1: 1}) == {1: 1}\n    assert merge({1: 1}) == {1: 1}\n    assert merge({1: 1}, factory=lambda: defaultdict(int)) == {1: 1}\n\n\ndef test_merge_with():\n    assert merge_with(sum)({1: 1}, {1: 2}) == {1: 3}\n\n",
+            "sha256": "c8fe426641e627cc0c7bf08f37cd1894613eae7486b14b31a261b326d2411ad5"
+          }
+        ]
+      }
+    ]
+  }
+}

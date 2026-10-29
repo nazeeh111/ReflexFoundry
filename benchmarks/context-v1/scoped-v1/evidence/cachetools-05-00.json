@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 690.394291,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 752,
+            "text": "def cached(cache, key=keys.hashkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cached import _wrapper\n\n    def decorator(func):\n        if info:\n            if isinstance(cache, Cache):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n\n            elif isinstance(cache, collections.abc.Mapping):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, None, len(cache))\n\n            else:\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, 0, 0)\n\n            return _wrapper(func, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(func, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "dab0ce624acc549c0c7fbd7e8fede2cf2fa16add1f7a15fc76b668712a971670"
+          }
+        ]
+      },
+      {
+        "duration_ms": 192.072833,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 752,
+            "text": "def cached(cache, key=keys.hashkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cached import _wrapper\n\n    def decorator(func):\n        if info:\n            if isinstance(cache, Cache):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n\n            elif isinstance(cache, collections.abc.Mapping):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, None, len(cache))\n\n            else:\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, 0, 0)\n\n            return _wrapper(func, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(func, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "dab0ce624acc549c0c7fbd7e8fede2cf2fa16add1f7a15fc76b668712a971670"
+          }
+        ]
+      },
+      {
+        "duration_ms": 218.025417,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 752,
+            "text": "def cached(cache, key=keys.hashkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cached import _wrapper\n\n    def decorator(func):\n        if info:\n            if isinstance(cache, Cache):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n\n            elif isinstance(cache, collections.abc.Mapping):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, None, len(cache))\n\n            else:\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, 0, 0)\n\n            return _wrapper(func, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(func, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "dab0ce624acc549c0c7fbd7e8fede2cf2fa16add1f7a15fc76b668712a971670"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 111.028166,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/_cached.py",
+            "start_line": 235,
+            "text": "    wrapper.cache_clear = lambda: cache.clear()\n    return wrapper\n\n\ndef _uncached(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n\n    functools.update_wrapper(wrapper, func)\n    wrapper.cache_clear = lambda: None\n    return wrapper\n\n\ndef _wrapper(func, cache, key, lock=None, cond=None, info=None):\n    if cache is None:\n        warnings.warn(\n            \"@cachetools.cached(cache=None) is deprecated\",\n            DeprecationWarning,\n            stacklevel=3,\n        )\n\n    if info is not None:\n        if cache is None:\n            wrapper = _uncached_info(func, info)\n        elif cond is not None and lock is not None:\n            wrapper = _condition_info(func, cache, key, lock, cond, info)\n        elif cond is not None:\n            wrapper = _condition_info(func, cache, key, cond, cond, info)\n        elif lock is not None:",
+            "sha256": "9c12148a37983d7514e682ba61ed79c385444d035376a81af26e4892d1a948fc"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools\nimport heapq\nimport random\nimport time\n",
+            "sha256": "38e04c59b86094366170d9a9feb20f2806b57b86f3bae06eaa4920d3be470671"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 736,
+            "text": "    def __delitem(self, key, cache_delitem=Cache.__delitem__):\n        try:\n            self.__items.pop(key).removed = True\n        except KeyError:\n            pass\n        else:\n            cache_delitem(self, key)\n\n\n# note that the runtime __name__ is \"CacheInfo\", as in stdlib:\n# https://github.com/python/cpython/blob/3.14/Lib/functools.py#L520\n_CacheInfo = collections.namedtuple(\n    \"CacheInfo\", [\"hits\", \"misses\", \"maxsize\", \"currsize\"]\n)\n\n\ndef cached(cache, key=keys.hashkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cached import _wrapper\n\n    def decorator(func):\n        if info:\n            if isinstance(cache, Cache):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)",
+            "sha256": "3c1e8ca53c15faf842cc9b2103967a6e0993c3fe96464e6ae1ca4ce600698157"
+          }
+        ]
+      },
+      {
+        "duration_ms": 63.218792,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/_cached.py",
+            "start_line": 235,
+            "text": "    wrapper.cache_clear = lambda: cache.clear()\n    return wrapper\n\n\ndef _uncached(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n\n    functools.update_wrapper(wrapper, func)\n    wrapper.cache_clear = lambda: None\n    return wrapper\n\n\ndef _wrapper(func, cache, key, lock=None, cond=None, info=None):\n    if cache is None:\n        warnings.warn(\n            \"@cachetools.cached(cache=None) is deprecated\",\n            DeprecationWarning,\n            stacklevel=3,\n        )\n\n    if info is not None:\n        if cache is None:\n            wrapper = _uncached_info(func, info)\n        elif cond is not None and lock is not None:\n            wrapper = _condition_info(func, cache, key, lock, cond, info)\n        elif cond is not None:\n            wrapper = _condition_info(func, cache, key, cond, cond, info)\n        elif lock is not None:",
+            "sha256": "9c12148a37983d7514e682ba61ed79c385444d035376a81af26e4892d1a948fc"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools\nimport heapq\nimport random\nimport time\n",
+            "sha256": "38e04c59b86094366170d9a9feb20f2806b57b86f3bae06eaa4920d3be470671"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 736,
+            "text": "    def __delitem(self, key, cache_delitem=Cache.__delitem__):\n        try:\n            self.__items.pop(key).removed = True\n        except KeyError:\n            pass\n        else:\n            cache_delitem(self, key)\n\n\n# note that the runtime __name__ is \"CacheInfo\", as in stdlib:\n# https://github.com/python/cpython/blob/3.14/Lib/functools.py#L520\n_CacheInfo = collections.namedtuple(\n    \"CacheInfo\", [\"hits\", \"misses\", \"maxsize\", \"currsize\"]\n)\n\n\ndef cached(cache, key=keys.hashkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cached import _wrapper\n\n    def decorator(func):\n        if info:\n            if isinstance(cache, Cache):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)",
+            "sha256": "3c1e8ca53c15faf842cc9b2103967a6e0993c3fe96464e6ae1ca4ce600698157"
+          }
+        ]
+      },
+      {
+        "duration_ms": 11.215292,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/_cached.py",
+            "start_line": 235,
+            "text": "    wrapper.cache_clear = lambda: cache.clear()\n    return wrapper\n\n\ndef _uncached(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n\n    functools.update_wrapper(wrapper, func)\n    wrapper.cache_clear = lambda: None\n    return wrapper\n\n\ndef _wrapper(func, cache, key, lock=None, cond=None, info=None):\n    if cache is None:\n        warnings.warn(\n            \"@cachetools.cached(cache=None) is deprecated\",\n            DeprecationWarning,\n            stacklevel=3,\n        )\n\n    if info is not None:\n        if cache is None:\n            wrapper = _uncached_info(func, info)\n        elif cond is not None and lock is not None:\n            wrapper = _condition_info(func, cache, key, lock, cond, info)\n        elif cond is not None:\n            wrapper = _condition_info(func, cache, key, cond, cond, info)\n        elif lock is not None:",
+            "sha256": "9c12148a37983d7514e682ba61ed79c385444d035376a81af26e4892d1a948fc"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc\nimport functools\nimport heapq\nimport random\nimport time\n",
+            "sha256": "38e04c59b86094366170d9a9feb20f2806b57b86f3bae06eaa4920d3be470671"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 736,
+            "text": "    def __delitem(self, key, cache_delitem=Cache.__delitem__):\n        try:\n            self.__items.pop(key).removed = True\n        except KeyError:\n            pass\n        else:\n            cache_delitem(self, key)\n\n\n# note that the runtime __name__ is \"CacheInfo\", as in stdlib:\n# https://github.com/python/cpython/blob/3.14/Lib/functools.py#L520\n_CacheInfo = collections.namedtuple(\n    \"CacheInfo\", [\"hits\", \"misses\", \"maxsize\", \"currsize\"]\n)\n\n\ndef cached(cache, key=keys.hashkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cached import _wrapper\n\n    def decorator(func):\n        if info:\n            if isinstance(cache, Cache):\n\n                def make_info(hits, misses):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)",
+            "sha256": "3c1e8ca53c15faf842cc9b2103967a6e0993c3fe96464e6ae1ca4ce600698157"
+          }
+        ]
+      }
+    ]
+  }
+}

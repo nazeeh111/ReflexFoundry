@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 1001.412708,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 312,
+            "text": "def take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)",
+            "sha256": "02298b950056d450481ee79ee4427de53908cd5534b2b2c3175973f81a153b0e"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1300.475,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 312,
+            "text": "def take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)",
+            "sha256": "02298b950056d450481ee79ee4427de53908cd5534b2b2c3175973f81a153b0e"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1597.961833,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 312,
+            "text": "def take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)",
+            "sha256": "02298b950056d450481ee79ee4427de53908cd5534b2b2c3175973f81a153b0e"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 108.9205,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 78,
+            "text": "map = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "f450383e6a901a56130f046a8d2d342df3fb8968685ebdf9fb60347877bece6a"
+          },
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first",
+            "sha256": "7fd3190c71a8f9b25e211c1fc4f5d080ebd137ee223aa92280cab4fe9ab877b6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 664.583792,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 78,
+            "text": "map = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "f450383e6a901a56130f046a8d2d342df3fb8968685ebdf9fb60347877bece6a"
+          },
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first",
+            "sha256": "7fd3190c71a8f9b25e211c1fc4f5d080ebd137ee223aa92280cab4fe9ab877b6"
+          }
+        ]
+      },
+      {
+        "duration_ms": 491.454333,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 78,
+            "text": "map = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "f450383e6a901a56130f046a8d2d342df3fb8968685ebdf9fb60347877bece6a"
+          },
+          {
+            "path": "toolz/sandbox/tests/test_core.py",
+            "start_line": 1,
+            "text": "from toolz import curry, unique, first, take\nfrom toolz.sandbox.core import EqualityHashKey, unzip\nfrom itertools import count, repeat\n\ndef test_EqualityHashKey_default_key():\n    EqualityHashDefault = curry(EqualityHashKey, None)\n    L1 = [1]\n    L2 = [2]\n    data1 = [L1, L1, L2, [], [], [1], [2], {}, ()]\n    set1 = set(map(EqualityHashDefault, data1))\n    set2 = set(map(EqualityHashDefault, [[], [1], [2], {}, ()]))\n    assert set1 == set2\n    assert len(set1) == 5",
+            "sha256": "d26aeae3f423f420c5dc86cbc32e7efffea99fbcfd2c1c509e25e274e63c1af6"
+          },
+          {
+            "path": "toolz/tests/test_curried.py",
+            "start_line": 1,
+            "text": "import toolz\nimport toolz.curried\nfrom toolz.curried import (take, first, second, sorted, merge_with, reduce,\n                           merge, operator as cop)\nfrom collections import defaultdict\nfrom importlib import import_module\nfrom operator import add\n\n\ndef test_take():\n    assert list(take(2)([1, 2, 3])) == [1, 2]\n\n\ndef test_first():\n    assert first is toolz.itertoolz.first",
+            "sha256": "7fd3190c71a8f9b25e211c1fc4f5d080ebd137ee223aa92280cab4fe9ab877b6"
+          }
+        ]
+      }
+    ]
+  }
+}

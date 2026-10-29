@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.001375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000333,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.001291,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 7.993125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 647,
+            "text": "    >>> powers_of_two = iterate(double, 1)\n    >>> next(powers_of_two)\n    1\n    >>> next(powers_of_two)\n    2\n    >>> next(powers_of_two)\n    4\n    >>> next(powers_of_two)\n    8\n    \"\"\"\n    while True:\n        yield x\n        x = func(x)\n\n\ndef sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it",
+            "sha256": "16a0080eb55f8c95ddb020ff4284f74da6fb9cbca7e833b1f3b5665bef032b03"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 141,
+            "text": "    issubclass=[\n        lambda cls, class_or_tuple: None],\n    iter=[\n        lambda iterable: None,\n        lambda callable, sentinel: None],\n    len=[\n        lambda obj: None],\n    list=[\n        lambda: None,\n        lambda iterable: None],\n    locals=[\n        lambda: None],\n    long=[\n        lambda x=0: None,\n        (0, lambda x, base=10: None)],\n    map=[\n        lambda func, sequence, *iterables: None],\n    memoryview=[\n        (0, lambda object: None)],\n    next=[\n        lambda iterator: None,\n        lambda iterator, default: None],\n    object=[\n        lambda: None],\n    oct=[\n        lambda number: None],\n    ord=[\n        lambda c: None],\n    pow=[",
+            "sha256": "e6af92fd5d72acab76501061cf5a04fd2565aeb2de1ba8a754452925b3e46245"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 166,
+            "text": "        lambda number: None],\n    ord=[\n        lambda c: None],\n    pow=[\n        lambda x, y: None,\n        lambda x, y, z: None],\n    property=[\n        lambda fget=None, fset=None, fdel=None, doc=None: None],\n    range=[\n        lambda stop: None,\n        lambda start, stop: None,\n        lambda start, stop, step: None],\n    raw_input=[\n        lambda: None,\n        lambda prompt: None],\n    reduce=[\n        lambda function, sequence: None,\n        lambda function, sequence, initial: None],\n    reload=[\n        lambda module: None],\n    repr=[\n        lambda obj: None],\n    reversed=[\n        lambda sequence: None],\n    round=[\n        (0, lambda number, ndigits=0: None)],\n    set=[\n        lambda: None,\n        lambda iterable: None],",
+            "sha256": "d79577775c034df5f54c843d89c4b6b2143e9b58984ed1445a8e5167d4d9ac93"
+          }
+        ]
+      },
+      {
+        "duration_ms": 8.001584,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 647,
+            "text": "    >>> powers_of_two = iterate(double, 1)\n    >>> next(powers_of_two)\n    1\n    >>> next(powers_of_two)\n    2\n    >>> next(powers_of_two)\n    4\n    >>> next(powers_of_two)\n    8\n    \"\"\"\n    while True:\n        yield x\n        x = func(x)\n\n\ndef sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it",
+            "sha256": "16a0080eb55f8c95ddb020ff4284f74da6fb9cbca7e833b1f3b5665bef032b03"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 141,
+            "text": "    issubclass=[\n        lambda cls, class_or_tuple: None],\n    iter=[\n        lambda iterable: None,\n        lambda callable, sentinel: None],\n    len=[\n        lambda obj: None],\n    list=[\n        lambda: None,\n        lambda iterable: None],\n    locals=[\n        lambda: None],\n    long=[\n        lambda x=0: None,\n        (0, lambda x, base=10: None)],\n    map=[\n        lambda func, sequence, *iterables: None],\n    memoryview=[\n        (0, lambda object: None)],\n    next=[\n        lambda iterator: None,\n        lambda iterator, default: None],\n    object=[\n        lambda: None],\n    oct=[\n        lambda number: None],\n    ord=[\n        lambda c: None],\n    pow=[",
+            "sha256": "e6af92fd5d72acab76501061cf5a04fd2565aeb2de1ba8a754452925b3e46245"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 166,
+            "text": "        lambda number: None],\n    ord=[\n        lambda c: None],\n    pow=[\n        lambda x, y: None,\n        lambda x, y, z: None],\n    property=[\n        lambda fget=None, fset=None, fdel=None, doc=None: None],\n    range=[\n        lambda stop: None,\n        lambda start, stop: None,\n        lambda start, stop, step: None],\n    raw_input=[\n        lambda: None,\n        lambda prompt: None],\n    reduce=[\n        lambda function, sequence: None,\n        lambda function, sequence, initial: None],\n    reload=[\n        lambda module: None],\n    repr=[\n        lambda obj: None],\n    reversed=[\n        lambda sequence: None],\n    round=[\n        (0, lambda number, ndigits=0: None)],\n    set=[\n        lambda: None,\n        lambda iterable: None],",
+            "sha256": "d79577775c034df5f54c843d89c4b6b2143e9b58984ed1445a8e5167d4d9ac93"
+          }
+        ]
+      },
+      {
+        "duration_ms": 7.89225,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 647,
+            "text": "    >>> powers_of_two = iterate(double, 1)\n    >>> next(powers_of_two)\n    1\n    >>> next(powers_of_two)\n    2\n    >>> next(powers_of_two)\n    4\n    >>> next(powers_of_two)\n    8\n    \"\"\"\n    while True:\n        yield x\n        x = func(x)\n\n\ndef sliding_window(n, seq):\n    \"\"\" A sequence of overlapping subsequences\n\n    >>> list(sliding_window(2, [1, 2, 3, 4]))\n    [(1, 2), (2, 3), (3, 4)]\n\n    This function creates a sliding window suitable for transformations like\n    sliding means / smoothing\n\n    >>> mean = lambda seq: float(sum(seq)) / len(seq)\n    >>> list(map(mean, sliding_window(2, [1, 2, 3, 4])))\n    [1.5, 2.5, 3.5]\n    \"\"\"\n    return zip(*(collections.deque(itertools.islice(it, i), 0) or it",
+            "sha256": "16a0080eb55f8c95ddb020ff4284f74da6fb9cbca7e833b1f3b5665bef032b03"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 141,
+            "text": "    issubclass=[\n        lambda cls, class_or_tuple: None],\n    iter=[\n        lambda iterable: None,\n        lambda callable, sentinel: None],\n    len=[\n        lambda obj: None],\n    list=[\n        lambda: None,\n        lambda iterable: None],\n    locals=[\n        lambda: None],\n    long=[\n        lambda x=0: None,\n        (0, lambda x, base=10: None)],\n    map=[\n        lambda func, sequence, *iterables: None],\n    memoryview=[\n        (0, lambda object: None)],\n    next=[\n        lambda iterator: None,\n        lambda iterator, default: None],\n    object=[\n        lambda: None],\n    oct=[\n        lambda number: None],\n    ord=[\n        lambda c: None],\n    pow=[",
+            "sha256": "e6af92fd5d72acab76501061cf5a04fd2565aeb2de1ba8a754452925b3e46245"
+          },
+          {
+            "path": "toolz/_signatures.py",
+            "start_line": 166,
+            "text": "        lambda number: None],\n    ord=[\n        lambda c: None],\n    pow=[\n        lambda x, y: None,\n        lambda x, y, z: None],\n    property=[\n        lambda fget=None, fset=None, fdel=None, doc=None: None],\n    range=[\n        lambda stop: None,\n        lambda start, stop: None,\n        lambda start, stop, step: None],\n    raw_input=[\n        lambda: None,\n        lambda prompt: None],\n    reduce=[\n        lambda function, sequence: None,\n        lambda function, sequence, initial: None],\n    reload=[\n        lambda module: None],\n    repr=[\n        lambda obj: None],\n    reversed=[\n        lambda sequence: None],\n    round=[\n        (0, lambda number, ndigits=0: None)],\n    set=[\n        lambda: None,\n        lambda iterable: None],",
+            "sha256": "d79577775c034df5f54c843d89c4b6b2143e9b58984ed1445a8e5167d4d9ac93"
+          }
+        ]
+      }
+    ]
+  }
+}

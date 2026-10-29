@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.045084,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.0025,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000458,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 6.292208,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 45,
+            "text": "    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]",
+            "sha256": "8614bff828d8db83e3c027a4cc9b246ef913c43262a822793668df45d3b19de2"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 50,
+            "text": "\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]\n    except IndexError:\n        return None\n    except TypeError:\n        return next(islice(seq, n, None), None)\n",
+            "sha256": "f4449630bd417e8c1525892a6021845d22d3a4f916d099d9dbcb4febcf12e47d"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 55,
+            "text": "\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]\n    except IndexError:\n        return None\n    except TypeError:\n        return next(islice(seq, n, None), None)\n\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]",
+            "sha256": "9cccc2a5985fa83c94e1d102a2e6a640a5a2e6bf0b7e3eacade8085c016a1f0e"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.089083,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 45,
+            "text": "    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]",
+            "sha256": "8614bff828d8db83e3c027a4cc9b246ef913c43262a822793668df45d3b19de2"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 50,
+            "text": "\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]\n    except IndexError:\n        return None\n    except TypeError:\n        return next(islice(seq, n, None), None)\n",
+            "sha256": "f4449630bd417e8c1525892a6021845d22d3a4f916d099d9dbcb4febcf12e47d"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 55,
+            "text": "\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]\n    except IndexError:\n        return None\n    except TypeError:\n        return next(islice(seq, n, None), None)\n\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]",
+            "sha256": "9cccc2a5985fa83c94e1d102a2e6a640a5a2e6bf0b7e3eacade8085c016a1f0e"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.2305,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 45,
+            "text": "    \"\"\"Returns an infinite iterator of `x, f(x), f(f(x)), ...`\"\"\"\n    while True:\n        yield x\n        x = f(x)\n\n\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]",
+            "sha256": "8614bff828d8db83e3c027a4cc9b246ef913c43262a822793668df45d3b19de2"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 50,
+            "text": "\ndef take(n, seq):\n    \"\"\"Returns a list of first n items in the sequence,\n       or all items if there are fewer than n.\"\"\"\n    return list(islice(seq, n))\n\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]\n    except IndexError:\n        return None\n    except TypeError:\n        return next(islice(seq, n, None), None)\n",
+            "sha256": "f4449630bd417e8c1525892a6021845d22d3a4f916d099d9dbcb4febcf12e47d"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 55,
+            "text": "\ndef drop(n, seq):\n    \"\"\"Skips first n items in the sequence, yields the rest.\"\"\"\n    return islice(seq, n, None)\n\ndef first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(iter(seq), None)\n\ndef second(seq):\n    \"\"\"Returns second item in the sequence.\n       Returns None if there are less than two items in it.\"\"\"\n    return first(rest(seq))\n\ndef nth(n, seq):\n    \"\"\"Returns nth item in the sequence or None if no such item exists.\"\"\"\n    try:\n        return seq[n]\n    except IndexError:\n        return None\n    except TypeError:\n        return next(islice(seq, n, None), None)\n\ndef last(seq):\n    \"\"\"Returns the last item in the sequence or iterator.\n       Returns None if the sequence is empty.\"\"\"\n    try:\n        return seq[-1]",
+            "sha256": "9cccc2a5985fa83c94e1d102a2e6a640a5a2e6bf0b7e3eacade8085c016a1f0e"
+          }
+        ]
+      }
+    ]
+  }
+}

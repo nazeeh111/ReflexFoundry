@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 523.70125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 305,
+            "text": "    def has_receivers_for(self, sender: t.Any) -> bool:\n        \"\"\"Check if there is at least one receiver that will be called with the\n        given ``sender``. A receiver connected to :data:`ANY` will always be\n        called, regardless of sender. Does not check if weakly referenced\n        receivers are still live. See :meth:`receivers_for` for a stronger\n        search.\n\n        :param sender: Check for receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        if not self.receivers:\n            return False\n\n        if self._by_sender[ANY_ID]:\n            return True\n\n        if sender is ANY:\n            return False\n\n        return make_id(sender) in self._by_sender",
+            "sha256": "99ba551df4dced1288fab0c70843e612fb45500543210ff8782ce3fcfdc09fd1"
+          }
+        ]
+      },
+      {
+        "duration_ms": 277.825583,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 305,
+            "text": "    def has_receivers_for(self, sender: t.Any) -> bool:\n        \"\"\"Check if there is at least one receiver that will be called with the\n        given ``sender``. A receiver connected to :data:`ANY` will always be\n        called, regardless of sender. Does not check if weakly referenced\n        receivers are still live. See :meth:`receivers_for` for a stronger\n        search.\n\n        :param sender: Check for receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        if not self.receivers:\n            return False\n\n        if self._by_sender[ANY_ID]:\n            return True\n\n        if sender is ANY:\n            return False\n\n        return make_id(sender) in self._by_sender",
+            "sha256": "99ba551df4dced1288fab0c70843e612fb45500543210ff8782ce3fcfdc09fd1"
+          }
+        ]
+      },
+      {
+        "duration_ms": 167.681709,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 305,
+            "text": "    def has_receivers_for(self, sender: t.Any) -> bool:\n        \"\"\"Check if there is at least one receiver that will be called with the\n        given ``sender``. A receiver connected to :data:`ANY` will always be\n        called, regardless of sender. Does not check if weakly referenced\n        receivers are still live. See :meth:`receivers_for` for a stronger\n        search.\n\n        :param sender: Check for receivers connected to this sender, in addition\n            to those connected to :data:`ANY`.\n        \"\"\"\n        if not self.receivers:\n            return False\n\n        if self._by_sender[ANY_ID]:\n            return True\n\n        if sender is ANY:\n            return False\n\n        return make_id(sender) in self._by_sender",
+            "sha256": "99ba551df4dced1288fab0c70843e612fb45500543210ff8782ce3fcfdc09fd1"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 3.262916,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.314667,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 33.871375,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          },
+          {
+            "path": "src/blinker/__init__.py",
+            "start_line": 1,
+            "text": "from __future__ import annotations\n\nfrom .base import ANY\nfrom .base import default_namespace\nfrom .base import NamedSignal\nfrom .base import Namespace\nfrom .base import Signal\nfrom .base import signal\n\n__all__ = [\n    \"ANY\",\n    \"default_namespace\",\n    \"NamedSignal\",\n    \"Namespace\",\n    \"Signal\",\n    \"signal\",\n]",
+            "sha256": "25383f9f6164f7abd8668319dbf7eaa1b02f1406c45f83b368b88703a8d1df6a"
+          }
+        ]
+      }
+    ]
+  }
+}

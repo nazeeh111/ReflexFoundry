@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 6.240584,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 204,
+            "text": "    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.\n        :param _async_wrapper: Will be called on any receivers that are async\n            coroutines to turn them into sync callables. For example, could run\n            the receiver with an event loop.\n        :param kwargs: Extra keyword arguments to pass to each receiver.\n\n        .. versionchanged:: 1.7\n            Added the ``_async_wrapper`` argument.\n        \"\"\"\n        if self.is_muted:\n            return []\n\n        results = []\n\n        for receiver in self.receivers_for(sender):\n            if iscoroutinefunction(receiver):\n                if _async_wrapper is None:\n                    raise RuntimeError(\"Cannot send to a coroutine function.\")\n\n                result = _async_wrapper(receiver)(sender, **kwargs)\n            else:\n                result = receiver(sender, **kwargs)\n\n            results.append((receiver, result))\n\n        return results",
+            "sha256": "ac83931ff93469809b338ccb0733acadbfcbd6fb57847cc3e8e4ce646c3a0c9c"
+          }
+        ]
+      },
+      {
+        "duration_ms": 6.5905,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 204,
+            "text": "    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.\n        :param _async_wrapper: Will be called on any receivers that are async\n            coroutines to turn them into sync callables. For example, could run\n            the receiver with an event loop.\n        :param kwargs: Extra keyword arguments to pass to each receiver.\n\n        .. versionchanged:: 1.7\n            Added the ``_async_wrapper`` argument.\n        \"\"\"\n        if self.is_muted:\n            return []\n\n        results = []\n\n        for receiver in self.receivers_for(sender):\n            if iscoroutinefunction(receiver):\n                if _async_wrapper is None:\n                    raise RuntimeError(\"Cannot send to a coroutine function.\")\n\n                result = _async_wrapper(receiver)(sender, **kwargs)\n            else:\n                result = receiver(sender, **kwargs)\n\n            results.append((receiver, result))\n\n        return results",
+            "sha256": "ac83931ff93469809b338ccb0733acadbfcbd6fb57847cc3e8e4ce646c3a0c9c"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.759875,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 204,
+            "text": "    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to\n            those connected to :data:`ANY`.\n        :param _async_wrapper: Will be called on any receivers that are async\n            coroutines to turn them into sync callables. For example, could run\n            the receiver with an event loop.\n        :param kwargs: Extra keyword arguments to pass to each receiver.\n\n        .. versionchanged:: 1.7\n            Added the ``_async_wrapper`` argument.\n        \"\"\"\n        if self.is_muted:\n            return []\n\n        results = []\n\n        for receiver in self.receivers_for(sender):\n            if iscoroutinefunction(receiver):\n                if _async_wrapper is None:\n                    raise RuntimeError(\"Cannot send to a coroutine function.\")\n\n                result = _async_wrapper(receiver)(sender, **kwargs)\n            else:\n                result = receiver(sender, **kwargs)\n\n            results.append((receiver, result))\n\n        return results",
+            "sha256": "ac83931ff93469809b338ccb0733acadbfcbd6fb57847cc3e8e4ce646c3a0c9c"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.559333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 199,
+            "text": "        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "9f30e258745213ecfd5b1072376a4f4e50ebf498e359c8555de8997f564fc9a6"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 250,
+            "text": "\n            results.append((receiver, result))\n\n        return results\n\n    async def send_async(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _sync_wrapper: c.Callable[\n            [c.Callable[..., t.Any]], c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Await all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "ef302a8eeeeab840d11bb0f3ca25daf140e9d9be5585531345d44d48e59a95eb"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 65,
+            "text": "        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n\n    def __init__(self, doc: str | None = None) -> None:\n        if doc:\n            self.__doc__ = doc\n\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.",
+            "sha256": "925f9fc7b2dec6993c3972772aa2beb18a9cd191e808e57b5c545763daf99d61"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.494166,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 199,
+            "text": "        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "9f30e258745213ecfd5b1072376a4f4e50ebf498e359c8555de8997f564fc9a6"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 250,
+            "text": "\n            results.append((receiver, result))\n\n        return results\n\n    async def send_async(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _sync_wrapper: c.Callable[\n            [c.Callable[..., t.Any]], c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Await all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "ef302a8eeeeab840d11bb0f3ca25daf140e9d9be5585531345d44d48e59a95eb"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 65,
+            "text": "        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n\n    def __init__(self, doc: str | None = None) -> None:\n        if doc:\n            self.__doc__ = doc\n\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.",
+            "sha256": "925f9fc7b2dec6993c3972772aa2beb18a9cd191e808e57b5c545763daf99d61"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.786875,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 199,
+            "text": "        try:\n            yield None\n        finally:\n            self.is_muted = False\n\n    def send(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _async_wrapper: c.Callable[\n            [c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]], c.Callable[..., t.Any]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Call all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "9f30e258745213ecfd5b1072376a4f4e50ebf498e359c8555de8997f564fc9a6"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 250,
+            "text": "\n            results.append((receiver, result))\n\n        return results\n\n    async def send_async(\n        self,\n        sender: t.Any | None = None,\n        /,\n        *,\n        _sync_wrapper: c.Callable[\n            [c.Callable[..., t.Any]], c.Callable[..., c.Coroutine[t.Any, t.Any, t.Any]]\n        ]\n        | None = None,\n        **kwargs: t.Any,\n    ) -> list[tuple[c.Callable[..., t.Any], t.Any]]:\n        \"\"\"Await all receivers that are connected to the given ``sender``\n        or :data:`ANY`. Each receiver is called with ``sender`` as a positional\n        argument along with any extra keyword arguments. Return a list of\n        ``(receiver, return value)`` tuples.\n\n        The order receivers are called is undefined, but can be influenced by\n        setting :attr:`set_class`.\n\n        If a receiver raises an exception, that exception will propagate up.\n        This makes debugging straightforward, with an assumption that correctly\n        implemented receivers will not raise.\n\n        :param sender: Call receivers connected to this sender, in addition to",
+            "sha256": "ef302a8eeeeab840d11bb0f3ca25daf140e9d9be5585531345d44d48e59a95eb"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 65,
+            "text": "        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n\n    def __init__(self, doc: str | None = None) -> None:\n        if doc:\n            self.__doc__ = doc\n\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.",
+            "sha256": "925f9fc7b2dec6993c3972772aa2beb18a9cd191e808e57b5c545763daf99d61"
+          }
+        ]
+      }
+    ]
+  }
+}

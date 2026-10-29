@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002708,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000417,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002167,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 3.7655,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 276,
+            "text": "        if curr.count != link.count + 1:\n            if len(link.keys) == 1:\n                link.count += 1\n                return\n            curr = LFUCache._Link(link.count + 1)\n            curr.next = link.next\n            link.next = curr.next.prev = curr\n            curr.prev = link\n        curr.keys.add(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n        self.__links[key] = curr\n\n\nclass LRUCache(Cache):\n    \"\"\"Least Recently Used (LRU) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        try:\n            self.__order.move_to_end(key)\n        except KeyError:  # __missing__ may not store item\n            pass\n        return value",
+            "sha256": "fcadcb50e62f64af96135c2ad0735f5d9bfb123c33438d9eea154685ec11ed86"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 589,
+            "text": "                del self[key]\n                return (key, value)\n\n    def clear(self):\n        _TimedCache.clear(self)\n        root = self.__root\n        root.prev = root.next = root\n        self.__links.clear()\n\n    def __getlink(self, key):\n        value = self.__links[key]\n        self.__links.move_to_end(key)\n        return value\n\n\nclass TLRUCache(_TimedCache):\n    \"\"\"Time-aware Least Recently Used (TLRU) cache implementation.\"\"\"\n\n    __HEAP_CLEANUP_FACTOR = 2  # clean up the heap if size > N * len(items)\n\n    @functools.total_ordering\n    class _Item:\n        __slots__ = (\"expires\", \"key\", \"removed\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n            self.removed = False\n",
+            "sha256": "0b57f56172eb4af0677836c991bf5611cb944c05a3801f2c920a8d121430fff4"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 49,
+            "text": "def lfu_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Frequently Used (LFU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LFUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LFUCache(maxsize), maxsize, typed)\n\n\ndef lru_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Recently Used (LRU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LRUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LRUCache(maxsize), maxsize, typed)\n\n\ndef rr_cache(maxsize=128, choice=random.choice, typed=False):",
+            "sha256": "ec84c22e7aca6667d7513809f7901522c53a309fc6b4b6f254ec826a231fa65c"
+          }
+        ]
+      },
+      {
+        "duration_ms": 4.100958,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 276,
+            "text": "        if curr.count != link.count + 1:\n            if len(link.keys) == 1:\n                link.count += 1\n                return\n            curr = LFUCache._Link(link.count + 1)\n            curr.next = link.next\n            link.next = curr.next.prev = curr\n            curr.prev = link\n        curr.keys.add(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n        self.__links[key] = curr\n\n\nclass LRUCache(Cache):\n    \"\"\"Least Recently Used (LRU) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        try:\n            self.__order.move_to_end(key)\n        except KeyError:  # __missing__ may not store item\n            pass\n        return value",
+            "sha256": "fcadcb50e62f64af96135c2ad0735f5d9bfb123c33438d9eea154685ec11ed86"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 589,
+            "text": "                del self[key]\n                return (key, value)\n\n    def clear(self):\n        _TimedCache.clear(self)\n        root = self.__root\n        root.prev = root.next = root\n        self.__links.clear()\n\n    def __getlink(self, key):\n        value = self.__links[key]\n        self.__links.move_to_end(key)\n        return value\n\n\nclass TLRUCache(_TimedCache):\n    \"\"\"Time-aware Least Recently Used (TLRU) cache implementation.\"\"\"\n\n    __HEAP_CLEANUP_FACTOR = 2  # clean up the heap if size > N * len(items)\n\n    @functools.total_ordering\n    class _Item:\n        __slots__ = (\"expires\", \"key\", \"removed\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n            self.removed = False\n",
+            "sha256": "0b57f56172eb4af0677836c991bf5611cb944c05a3801f2c920a8d121430fff4"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 49,
+            "text": "def lfu_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Frequently Used (LFU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LFUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LFUCache(maxsize), maxsize, typed)\n\n\ndef lru_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Recently Used (LRU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LRUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LRUCache(maxsize), maxsize, typed)\n\n\ndef rr_cache(maxsize=128, choice=random.choice, typed=False):",
+            "sha256": "ec84c22e7aca6667d7513809f7901522c53a309fc6b4b6f254ec826a231fa65c"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.988167,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 276,
+            "text": "        if curr.count != link.count + 1:\n            if len(link.keys) == 1:\n                link.count += 1\n                return\n            curr = LFUCache._Link(link.count + 1)\n            curr.next = link.next\n            link.next = curr.next.prev = curr\n            curr.prev = link\n        curr.keys.add(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n        self.__links[key] = curr\n\n\nclass LRUCache(Cache):\n    \"\"\"Least Recently Used (LRU) cache implementation.\"\"\"\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__order = collections.OrderedDict()\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        try:\n            self.__order.move_to_end(key)\n        except KeyError:  # __missing__ may not store item\n            pass\n        return value",
+            "sha256": "fcadcb50e62f64af96135c2ad0735f5d9bfb123c33438d9eea154685ec11ed86"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 589,
+            "text": "                del self[key]\n                return (key, value)\n\n    def clear(self):\n        _TimedCache.clear(self)\n        root = self.__root\n        root.prev = root.next = root\n        self.__links.clear()\n\n    def __getlink(self, key):\n        value = self.__links[key]\n        self.__links.move_to_end(key)\n        return value\n\n\nclass TLRUCache(_TimedCache):\n    \"\"\"Time-aware Least Recently Used (TLRU) cache implementation.\"\"\"\n\n    __HEAP_CLEANUP_FACTOR = 2  # clean up the heap if size > N * len(items)\n\n    @functools.total_ordering\n    class _Item:\n        __slots__ = (\"expires\", \"key\", \"removed\")\n\n        def __init__(self, key=None, expires=None):\n            self.key = key\n            self.expires = expires\n            self.removed = False\n",
+            "sha256": "0b57f56172eb4af0677836c991bf5611cb944c05a3801f2c920a8d121430fff4"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 49,
+            "text": "def lfu_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Frequently Used (LFU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LFUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LFUCache(maxsize), maxsize, typed)\n\n\ndef lru_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Recently Used (LRU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LRUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LRUCache(maxsize), maxsize, typed)\n\n\ndef rr_cache(maxsize=128, choice=random.choice, typed=False):",
+            "sha256": "ec84c22e7aca6667d7513809f7901522c53a309fc6b4b6f254ec826a231fa65c"
+          }
+        ]
+      }
+    ]
+  }
+}

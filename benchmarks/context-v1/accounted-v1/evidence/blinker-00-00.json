@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 7.649333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 91,
+            "text": "    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,\n            otherwise it will be disconnected when the function scope ends.\n        \"\"\"\n        receiver_id = make_id(receiver)\n        sender_id = ANY_ID if sender is ANY else make_id(sender)\n\n        if weak:\n            self.receivers[receiver_id] = make_ref(\n                receiver, self._make_cleanup_receiver(receiver_id)\n            )\n        else:\n            self.receivers[receiver_id] = receiver\n\n        self._by_sender[sender_id].add(receiver_id)\n        self._by_receiver[receiver_id].add(sender_id)\n\n        if sender is not ANY and sender_id not in self._weak_senders:\n            # store a cleanup for weakref-able senders\n            try:\n                self._weak_senders[sender_id] = make_ref(\n                    sender, self._make_cleanup_sender(sender_id)\n                )\n            except TypeError:\n                pass\n\n        if \"receiver_connected\" in self.__dict__ and self.receiver_connected.receivers:\n            try:\n                self.receiver_connected.send(\n                    self, receiver=receiver, sender=sender, weak=weak\n                )\n            except TypeError:\n                # TODO no explanation or test for this\n                self.disconnect(receiver, sender)\n                raise\n\n        return receiver",
+            "sha256": "ee99ee3f87523b5865446ec3ad3764d767a0e47c53976901f3cb1a1510fcf71a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 6.17075,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 91,
+            "text": "    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,\n            otherwise it will be disconnected when the function scope ends.\n        \"\"\"\n        receiver_id = make_id(receiver)\n        sender_id = ANY_ID if sender is ANY else make_id(sender)\n\n        if weak:\n            self.receivers[receiver_id] = make_ref(\n                receiver, self._make_cleanup_receiver(receiver_id)\n            )\n        else:\n            self.receivers[receiver_id] = receiver\n\n        self._by_sender[sender_id].add(receiver_id)\n        self._by_receiver[receiver_id].add(sender_id)\n\n        if sender is not ANY and sender_id not in self._weak_senders:\n            # store a cleanup for weakref-able senders\n            try:\n                self._weak_senders[sender_id] = make_ref(\n                    sender, self._make_cleanup_sender(sender_id)\n                )\n            except TypeError:\n                pass\n\n        if \"receiver_connected\" in self.__dict__ and self.receiver_connected.receivers:\n            try:\n                self.receiver_connected.send(\n                    self, receiver=receiver, sender=sender, weak=weak\n                )\n            except TypeError:\n                # TODO no explanation or test for this\n                self.disconnect(receiver, sender)\n                raise\n\n        return receiver",
+            "sha256": "ee99ee3f87523b5865446ec3ad3764d767a0e47c53976901f3cb1a1510fcf71a"
+          }
+        ]
+      },
+      {
+        "duration_ms": 9.16125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 91,
+            "text": "    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,\n            otherwise it will be disconnected when the function scope ends.\n        \"\"\"\n        receiver_id = make_id(receiver)\n        sender_id = ANY_ID if sender is ANY else make_id(sender)\n\n        if weak:\n            self.receivers[receiver_id] = make_ref(\n                receiver, self._make_cleanup_receiver(receiver_id)\n            )\n        else:\n            self.receivers[receiver_id] = receiver\n\n        self._by_sender[sender_id].add(receiver_id)\n        self._by_receiver[receiver_id].add(sender_id)\n\n        if sender is not ANY and sender_id not in self._weak_senders:\n            # store a cleanup for weakref-able senders\n            try:\n                self._weak_senders[sender_id] = make_ref(\n                    sender, self._make_cleanup_sender(sender_id)\n                )\n            except TypeError:\n                pass\n\n        if \"receiver_connected\" in self.__dict__ and self.receiver_connected.receivers:\n            try:\n                self.receiver_connected.send(\n                    self, receiver=receiver, sender=sender, weak=weak\n                )\n            except TypeError:\n                # TODO no explanation or test for this\n                self.disconnect(receiver, sender)\n                raise\n\n        return receiver",
+            "sha256": "ee99ee3f87523b5865446ec3ad3764d767a0e47c53976901f3cb1a1510fcf71a"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 2.035333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 29,
+            "text": "\n    ANY = ANY\n    \"\"\"An alias for the :data:`~blinker.ANY` sender symbol.\"\"\"\n\n    set_class: type[set[t.Any]] = set\n    \"\"\"The set class to use for tracking connected receivers and senders.\n    Python's ``set`` is unordered. If receivers must be dispatched in the order\n    they were connected, an ordered set implementation can be used.\n\n    .. versionadded:: 1.7\n    \"\"\"\n\n    @cached_property\n    def receiver_connected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.",
+            "sha256": "87eccdd5c827b1796c69ea9edec33715574a7bd94cd82e51c69561051ed69a9e"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 76,
+            "text": "\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,",
+            "sha256": "43907dd26133cd685eea61251b340399d9bf4bfd36abf89ea2d2280124d28611"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 126,
+            "text": "            except TypeError:\n                pass\n\n        if \"receiver_connected\" in self.__dict__ and self.receiver_connected.receivers:\n            try:\n                self.receiver_connected.send(\n                    self, receiver=receiver, sender=sender, weak=weak\n                )\n            except TypeError:\n                # TODO no explanation or test for this\n                self.disconnect(receiver, sender)\n                raise\n\n        return receiver\n\n    def connect_via(self, sender: t.Any, weak: bool = False) -> c.Callable[[F], F]:\n        \"\"\"Connect the decorated function to be called when the signal is sent\n        by ``sender``.\n\n        The decorated function will be called when :meth:`send` is called with\n        the given ``sender``, passing ``sender`` as a positional argument along\n        with any extra keyword arguments.\n\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When",
+            "sha256": "6743be3c5870ef24e1a651c80b0591775f577c37b28a6515b5ea74420aa4b841"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.645958,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 29,
+            "text": "\n    ANY = ANY\n    \"\"\"An alias for the :data:`~blinker.ANY` sender symbol.\"\"\"\n\n    set_class: type[set[t.Any]] = set\n    \"\"\"The set class to use for tracking connected receivers and senders.\n    Python's ``set`` is unordered. If receivers must be dispatched in the order\n    they were connected, an ordered set implementation can be used.\n\n    .. versionadded:: 1.7\n    \"\"\"\n\n    @cached_property\n    def receiver_connected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.",
+            "sha256": "87eccdd5c827b1796c69ea9edec33715574a7bd94cd82e51c69561051ed69a9e"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 76,
+            "text": "\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,",
+            "sha256": "43907dd26133cd685eea61251b340399d9bf4bfd36abf89ea2d2280124d28611"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 126,
+            "text": "            except TypeError:\n                pass\n\n        if \"receiver_connected\" in self.__dict__ and self.receiver_connected.receivers:\n            try:\n                self.receiver_connected.send(\n                    self, receiver=receiver, sender=sender, weak=weak\n                )\n            except TypeError:\n                # TODO no explanation or test for this\n                self.disconnect(receiver, sender)\n                raise\n\n        return receiver\n\n    def connect_via(self, sender: t.Any, weak: bool = False) -> c.Callable[[F], F]:\n        \"\"\"Connect the decorated function to be called when the signal is sent\n        by ``sender``.\n\n        The decorated function will be called when :meth:`send` is called with\n        the given ``sender``, passing ``sender`` as a positional argument along\n        with any extra keyword arguments.\n\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When",
+            "sha256": "6743be3c5870ef24e1a651c80b0591775f577c37b28a6515b5ea74420aa4b841"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.258375,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 29,
+            "text": "\n    ANY = ANY\n    \"\"\"An alias for the :data:`~blinker.ANY` sender symbol.\"\"\"\n\n    set_class: type[set[t.Any]] = set\n    \"\"\"The set class to use for tracking connected receivers and senders.\n    Python's ``set`` is unordered. If receivers must be dispatched in the order\n    they were connected, an ordered set implementation can be used.\n\n    .. versionadded:: 1.7\n    \"\"\"\n\n    @cached_property\n    def receiver_connected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.",
+            "sha256": "87eccdd5c827b1796c69ea9edec33715574a7bd94cd82e51c69561051ed69a9e"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 76,
+            "text": "\n        self.receivers: dict[\n            t.Any, weakref.ref[c.Callable[..., t.Any]] | c.Callable[..., t.Any]\n        ] = {}\n        \"\"\"The map of connected receivers. Useful to quickly check if any\n        receivers are connected to the signal: ``if s.receivers:``. The\n        structure and data is not part of the public API, but checking its\n        boolean value is.\n        \"\"\"\n\n        self.is_muted: bool = False\n        self._by_receiver: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._by_sender: dict[t.Any, set[t.Any]] = defaultdict(self.set_class)\n        self._weak_senders: dict[t.Any, weakref.ref[t.Any]] = {}\n\n    def connect(self, receiver: F, sender: t.Any = ANY, weak: bool = True) -> F:\n        \"\"\"Connect ``receiver`` to be called when the signal is sent by\n        ``sender``.\n\n        :param receiver: The callable to call when :meth:`send` is called with\n            the given ``sender``, passing ``sender`` as a positional argument\n            along with any extra keyword arguments.\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When\n            connecting a receiver defined within a function, set to ``False``,",
+            "sha256": "43907dd26133cd685eea61251b340399d9bf4bfd36abf89ea2d2280124d28611"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 126,
+            "text": "            except TypeError:\n                pass\n\n        if \"receiver_connected\" in self.__dict__ and self.receiver_connected.receivers:\n            try:\n                self.receiver_connected.send(\n                    self, receiver=receiver, sender=sender, weak=weak\n                )\n            except TypeError:\n                # TODO no explanation or test for this\n                self.disconnect(receiver, sender)\n                raise\n\n        return receiver\n\n    def connect_via(self, sender: t.Any, weak: bool = False) -> c.Callable[[F], F]:\n        \"\"\"Connect the decorated function to be called when the signal is sent\n        by ``sender``.\n\n        The decorated function will be called when :meth:`send` is called with\n        the given ``sender``, passing ``sender`` as a positional argument along\n        with any extra keyword arguments.\n\n        :param sender: Any object or :data:`ANY`. ``receiver`` will only be\n            called when :meth:`send` is called with this sender. If ``ANY``, the\n            receiver will be called for any sender. A receiver may be connected\n            to multiple senders by calling :meth:`connect` multiple times.\n        :param weak: Track the receiver with a :mod:`weakref`. The receiver will\n            be automatically disconnected when it is garbage collected. When",
+            "sha256": "6743be3c5870ef24e1a651c80b0591775f577c37b28a6515b5ea74420aa4b841"
+          }
+        ]
+      }
+    ]
+  }
+}

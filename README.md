@@ -12,7 +12,7 @@ ReflexFoundry finds repeated, bounded decisions in explicitly shared workflow re
 
 A fast model can still make a workflow slower or less reliable. ReflexFoundry includes startup and fallback costs, compares against a transparent heuristic, and blocks deployment when the evidence fails. A rejected policy is a useful result.
 
-**v0.1.1 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. Context retrieval has a typed specification, but the first evaluator and trained-policy workflow cover test scope. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md). The [0.1.1 fixes](CHANGELOG.md) tighten validation and shadow evidence; the original model and benchmark remain withheld and unchanged.
+**v0.2.0 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. The current source also executes a separate [public-source context retrieval study](docs/context-benchmark.md). Its source-coverage outcomes do not establish autonomous coding improvements. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md). The [0.1.1 fixes](CHANGELOG.md) tighten validation and shadow evidence; the original model and benchmark remain withheld and unchanged.
 
 ## Try it without a model
 
@@ -52,7 +52,7 @@ Discovery starts with two predefined decision families. It does not infer arbitr
 | Decision | Choices | Fallback | Current scope |
 | --- | --- | --- | --- |
 | `test-scope-v1` | Focused checks or full suite | Full suite | Training and executed evaluation. A suggestion for the next validation action; required final checks still apply. |
-| `context-route-v1` | Symbol lookup or repository search | Repository search | Typed observation and discovery. No equivalent trained-policy evaluation is claimed. |
+| `context-route-v1` | Symbol lookup or repository search | Repository search | Observation, discovery, outcome-aware training and evaluation with bounded public-source retrieval actions. See the separate study and its limits. |
 
 The learned model never grants permissions, accesses credentials, approves security decisions, or executes the returned action. Codex keeps its native tools and permission controls.
 

@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.003041,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000458,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.003834,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 2.958583,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n",
+            "sha256": "bd9cf1b2450461987e65926666fb00a063610cd4e415519ce3fb33c799b23842"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 29,
+            "text": "\n    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:",
+            "sha256": "db4122a6bf1c1e391b1a17ea7e725b3559538d79c4498a204f56371783f20e61"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          }
+        ]
+      },
+      {
+        "duration_ms": 4.328708,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n",
+            "sha256": "bd9cf1b2450461987e65926666fb00a063610cd4e415519ce3fb33c799b23842"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 29,
+            "text": "\n    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:",
+            "sha256": "db4122a6bf1c1e391b1a17ea7e725b3559538d79c4498a204f56371783f20e61"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          }
+        ]
+      },
+      {
+        "duration_ms": 4.027333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n",
+            "sha256": "bd9cf1b2450461987e65926666fb00a063610cd4e415519ce3fb33c799b23842"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 29,
+            "text": "\n    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:",
+            "sha256": "db4122a6bf1c1e391b1a17ea7e725b3559538d79c4498a204f56371783f20e61"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          }
+        ]
+      }
+    ]
+  }
+}

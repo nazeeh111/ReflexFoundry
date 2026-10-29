@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.001083,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.001041,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000291,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 3.161334,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 2,
+            "text": "from itertools import islice, chain, tee, groupby, filterfalse, accumulate, \\\n                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))",
+            "sha256": "071890f2ed71419f1eafc9b7cf915dff50648dc3d34ef24d6451b5028f9cd37f"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 171,
+            "text": "\ndef lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))",
+            "sha256": "2cf3adc415f9a3f175e4e1c3ad9d1f516e679e2375a5e965d3cbc9be07a7ed5a"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 176,
+            "text": "\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n",
+            "sha256": "3ea0c0a16037886ba47be9258b2f34b850bb4cc69c2b89444720b2ecc7f902fe"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.114125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 2,
+            "text": "from itertools import islice, chain, tee, groupby, filterfalse, accumulate, \\\n                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))",
+            "sha256": "071890f2ed71419f1eafc9b7cf915dff50648dc3d34ef24d6451b5028f9cd37f"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 171,
+            "text": "\ndef lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))",
+            "sha256": "2cf3adc415f9a3f175e4e1c3ad9d1f516e679e2375a5e965d3cbc9be07a7ed5a"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 176,
+            "text": "\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n",
+            "sha256": "3ea0c0a16037886ba47be9258b2f34b850bb4cc69c2b89444720b2ecc7f902fe"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.276292,
+        "success": true,
+        "snippets": [
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 2,
+            "text": "from itertools import islice, chain, tee, groupby, filterfalse, accumulate, \\\n                      takewhile as _takewhile, dropwhile as _dropwhile\nfrom collections.abc import Sequence\nfrom collections import defaultdict, deque\nimport operator\nimport random\n\nfrom .primitives import EMPTY\nfrom .types import is_seqcont\nfrom .funcmakers import make_func, make_pred\n\n\n__all__ = [\n    'count', 'cycle', 'repeat', 'repeatedly', 'iterate',\n    'take', 'drop', 'first', 'second', 'nth', 'last', 'rest', 'butlast', 'shuffled', 'ilen',\n    'map', 'filter', 'lmap', 'lfilter', 'remove', 'lremove', 'keep', 'lkeep', 'without', 'lwithout',\n    'concat', 'lconcat', 'chain', 'cat', 'lcat', 'flatten', 'lflatten', 'mapcat', 'lmapcat',\n    'interleave', 'interpose', 'distinct', 'ldistinct',\n    'dropwhile', 'takewhile', 'split', 'lsplit', 'split_at', 'lsplit_at', 'split_by', 'lsplit_by',\n    'group_by', 'group_by_keys', 'group_values', 'count_by', 'count_reps',\n    'partition', 'lpartition', 'chunks', 'lchunks', 'partition_by', 'lpartition_by',\n    'with_prev', 'with_next', 'pairwise', 'lzip',\n    'reductions', 'lreductions', 'sums', 'lsums', 'accumulate',\n]\n\n_map, _filter = map, filter\n\ndef _lmap(f, *seqs):\n    return list(map(f, *seqs))",
+            "sha256": "071890f2ed71419f1eafc9b7cf915dff50648dc3d34ef24d6451b5028f9cd37f"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 171,
+            "text": "\ndef lwithout(seq, *items):\n    \"\"\"Removes items from sequence, preserves order.\"\"\"\n    return list(without(seq, *items))\n\n\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))",
+            "sha256": "2cf3adc415f9a3f175e4e1c3ad9d1f516e679e2375a5e965d3cbc9be07a7ed5a"
+          },
+          {
+            "path": "funcy/seqs.py",
+            "start_line": 176,
+            "text": "\ndef lconcat(*seqs):\n    \"\"\"Concatenates several sequences.\"\"\"\n    return list(chain(*seqs))\nconcat = chain\n\ndef lcat(seqs):\n    \"\"\"Concatenates the sequence of sequences.\"\"\"\n    return list(cat(seqs))\ncat = chain.from_iterable\n\ndef flatten(seq, follow=is_seqcont):\n    \"\"\"Flattens arbitrary nested sequence.\n       Unpacks an item if follow(item) is truthy.\"\"\"\n    for item in seq:\n        if follow(item):\n            yield from flatten(item, follow)\n        else:\n            yield item\n\ndef lflatten(seq, follow=is_seqcont):\n    \"\"\"Iterates over arbitrary nested sequence.\n       Dives into when follow(item) is truthy.\"\"\"\n    return list(flatten(seq, follow))\n\ndef lmapcat(f, *seqs):\n    \"\"\"Maps given sequence(s) and concatenates the results.\"\"\"\n    return lcat(map(f, *seqs))\n",
+            "sha256": "3ea0c0a16037886ba47be9258b2f34b850bb4cc69c2b89444720b2ecc7f902fe"
+          }
+        ]
+      }
+    ]
+  }
+}

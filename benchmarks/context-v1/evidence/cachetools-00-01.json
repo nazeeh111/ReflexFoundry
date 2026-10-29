@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 5.346458,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 45,
+            "text": "class Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}\n        self.__data = {}\n        self.__currsize = 0\n        self.__maxsize = maxsize\n\n    def __repr__(self):\n        return \"%s(%s, maxsize=%r, currsize=%r)\" % (\n            type(self).__name__,\n            repr(self.__data),\n            self.__maxsize,\n            self.__currsize,\n        )\n\n    def __getitem__(self, key):\n        try:\n            return self.__data[key]\n        except KeyError:\n            return self.__missing__(key)\n\n    def __setitem__(self, key, value):\n        maxsize = self.__maxsize\n        size = self.getsizeof(value)\n        if size < 0:\n            raise ValueError(\"value size must be non-negative\")\n        if size > maxsize:\n            raise ValueError(\"value too large\")\n        if key not in self.__data:\n            diffsize = size\n            while self.__currsize + diffsize > maxsize:\n                self.popitem()\n        else:\n            diffsize = size - self.__size[key]\n            while self.__currsize + diffsize > maxsize:\n                self.popitem()\n                if key not in self.__data:\n                    diffsize = size\n        self.__data[key] = value\n        self.__size[key] = size\n        self.__currsize += diffsize\n\n    def __delitem__(self, key):\n        size = self.__size.pop(key)\n        del self.__data[key]\n        self.__currsize -= size\n\n    def __contains__(self, key):\n        return key in self.__data\n\n    def __missing__(self, key):\n        raise KeyError(key)\n\n    def __iter__(self):\n        return iter(self.__data)\n\n    def __len__(self):\n        return len(self.__data)\n\n    # Note that we cannot simply inherit get(), pop() and setdefault()\n    # from MutableMapping, since these rely on __getitem__ throwing a\n    # KeyError on cache miss.  This is not the case if __missing__ is\n    # implemented for a Cache subclass, so we have to roll our own,\n    # somewhat less elegant versions.\n\n    def get(self, key, default=None):\n        if key in self:\n            return self[key]\n        else:\n            return default\n\n    def pop(self, key, default=__marker):\n        if key in self:\n            value = self[key]\n            del self[key]\n        elif default is self.__marker:\n            raise KeyError(key)\n        else:\n            value = default\n        return value\n\n    def setdefault(self, key, default=None):\n        if key in self:\n            value = self[key]\n        else:\n            self[key] = value = default\n        return value\n\n    # Although the MutableMapping.clear() default implementation works\n    # perfectly well, it calls popitem() in a loop until the cache is\n    # empty, resulting in O(n) complexity.  For large caches, this\n    # becomes a significant performance bottleneck, so we provide an\n    # optimized version for each Cache subclass.\n\n    def clear(self):\n        self.__data.clear()\n        self.__size.clear()\n        self.__currsize = 0\n\n    @property\n    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1",
+            "sha256": "b18d905e569838bbcae2b6e881a76714cb6b7aed86995f69fb076c96080368ca"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.56725,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 45,
+            "text": "class Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}\n        self.__data = {}\n        self.__currsize = 0\n        self.__maxsize = maxsize\n\n    def __repr__(self):\n        return \"%s(%s, maxsize=%r, currsize=%r)\" % (\n            type(self).__name__,\n            repr(self.__data),\n            self.__maxsize,\n            self.__currsize,\n        )\n\n    def __getitem__(self, key):\n        try:\n            return self.__data[key]\n        except KeyError:\n            return self.__missing__(key)\n\n    def __setitem__(self, key, value):\n        maxsize = self.__maxsize\n        size = self.getsizeof(value)\n        if size < 0:\n            raise ValueError(\"value size must be non-negative\")\n        if size > maxsize:\n            raise ValueError(\"value too large\")\n        if key not in self.__data:\n            diffsize = size\n            while self.__currsize + diffsize > maxsize:\n                self.popitem()\n        else:\n            diffsize = size - self.__size[key]\n            while self.__currsize + diffsize > maxsize:\n                self.popitem()\n                if key not in self.__data:\n                    diffsize = size\n        self.__data[key] = value\n        self.__size[key] = size\n        self.__currsize += diffsize\n\n    def __delitem__(self, key):\n        size = self.__size.pop(key)\n        del self.__data[key]\n        self.__currsize -= size\n\n    def __contains__(self, key):\n        return key in self.__data\n\n    def __missing__(self, key):\n        raise KeyError(key)\n\n    def __iter__(self):\n        return iter(self.__data)\n\n    def __len__(self):\n        return len(self.__data)\n\n    # Note that we cannot simply inherit get(), pop() and setdefault()\n    # from MutableMapping, since these rely on __getitem__ throwing a\n    # KeyError on cache miss.  This is not the case if __missing__ is\n    # implemented for a Cache subclass, so we have to roll our own,\n    # somewhat less elegant versions.\n\n    def get(self, key, default=None):\n        if key in self:\n            return self[key]\n        else:\n            return default\n\n    def pop(self, key, default=__marker):\n        if key in self:\n            value = self[key]\n            del self[key]\n        elif default is self.__marker:\n            raise KeyError(key)\n        else:\n            value = default\n        return value\n\n    def setdefault(self, key, default=None):\n        if key in self:\n            value = self[key]\n        else:\n            self[key] = value = default\n        return value\n\n    # Although the MutableMapping.clear() default implementation works\n    # perfectly well, it calls popitem() in a loop until the cache is\n    # empty, resulting in O(n) complexity.  For large caches, this\n    # becomes a significant performance bottleneck, so we provide an\n    # optimized version for each Cache subclass.\n\n    def clear(self):\n        self.__data.clear()\n        self.__size.clear()\n        self.__currsize = 0\n\n    @property\n    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1",
+            "sha256": "b18d905e569838bbcae2b6e881a76714cb6b7aed86995f69fb076c96080368ca"
+          }
+        ]
+      },
+      {
+        "duration_ms": 4.990333,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 45,
+            "text": "class Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}\n        self.__data = {}\n        self.__currsize = 0\n        self.__maxsize = maxsize\n\n    def __repr__(self):\n        return \"%s(%s, maxsize=%r, currsize=%r)\" % (\n            type(self).__name__,\n            repr(self.__data),\n            self.__maxsize,\n            self.__currsize,\n        )\n\n    def __getitem__(self, key):\n        try:\n            return self.__data[key]\n        except KeyError:\n            return self.__missing__(key)\n\n    def __setitem__(self, key, value):\n        maxsize = self.__maxsize\n        size = self.getsizeof(value)\n        if size < 0:\n            raise ValueError(\"value size must be non-negative\")\n        if size > maxsize:\n            raise ValueError(\"value too large\")\n        if key not in self.__data:\n            diffsize = size\n            while self.__currsize + diffsize > maxsize:\n                self.popitem()\n        else:\n            diffsize = size - self.__size[key]\n            while self.__currsize + diffsize > maxsize:\n                self.popitem()\n                if key not in self.__data:\n                    diffsize = size\n        self.__data[key] = value\n        self.__size[key] = size\n        self.__currsize += diffsize\n\n    def __delitem__(self, key):\n        size = self.__size.pop(key)\n        del self.__data[key]\n        self.__currsize -= size\n\n    def __contains__(self, key):\n        return key in self.__data\n\n    def __missing__(self, key):\n        raise KeyError(key)\n\n    def __iter__(self):\n        return iter(self.__data)\n\n    def __len__(self):\n        return len(self.__data)\n\n    # Note that we cannot simply inherit get(), pop() and setdefault()\n    # from MutableMapping, since these rely on __getitem__ throwing a\n    # KeyError on cache miss.  This is not the case if __missing__ is\n    # implemented for a Cache subclass, so we have to roll our own,\n    # somewhat less elegant versions.\n\n    def get(self, key, default=None):\n        if key in self:\n            return self[key]\n        else:\n            return default\n\n    def pop(self, key, default=__marker):\n        if key in self:\n            value = self[key]\n            del self[key]\n        elif default is self.__marker:\n            raise KeyError(key)\n        else:\n            value = default\n        return value\n\n    def setdefault(self, key, default=None):\n        if key in self:\n            value = self[key]\n        else:\n            self[key] = value = default\n        return value\n\n    # Although the MutableMapping.clear() default implementation works\n    # perfectly well, it calls popitem() in a loop until the cache is\n    # empty, resulting in O(n) complexity.  For large caches, this\n    # becomes a significant performance bottleneck, so we provide an\n    # optimized version for each Cache subclass.\n\n    def clear(self):\n        self.__data.clear()\n        self.__size.clear()\n        self.__currsize = 0\n\n    @property\n    def maxsize(self):\n        \"\"\"The maximum size of the cache.\"\"\"\n        return self.__maxsize\n\n    @property\n    def currsize(self):\n        \"\"\"The current size of the cache.\"\"\"\n        return self.__currsize\n\n    @staticmethod\n    def getsizeof(value):\n        \"\"\"Return the size of a cache element's value.\"\"\"\n        return 1",
+            "sha256": "b18d905e569838bbcae2b6e881a76714cb6b7aed86995f69fb076c96080368ca"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 2.722291,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 367,
+            "text": "        \"\"\"Remove and return a random `(key, value)` pair.\"\"\"\n        keys = self.__keys\n        if not keys:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = self.__choice(keys)\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__index.clear()\n        del self.__keys[:]\n\n\nclass _TimedCache(Cache):\n    \"\"\"Base class for time-aware cache implementations.\"\"\"\n\n    class _Timer:\n        def __init__(self, timer):\n            self.__timer = timer\n            self.__nesting = 0\n\n        def __call__(self):\n            if self.__nesting == 0:\n                return self.__timer()\n            else:\n                return self.__time\n",
+            "sha256": "fed2a6132187ae7e36257d32c80a6d3731f85183d5cbc6b8b438acee34fce5e0"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 783,
+            "text": "def cachedmethod(cache, key=keys.methodkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a method with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cachedmethod import _wrapper\n\n    def decorator(method):\n        if info:\n\n            def make_info(cache, hits, misses):\n                if isinstance(cache, Cache):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n                elif isinstance(cache, collections.abc.Mapping):\n                    return _CacheInfo(hits, misses, None, len(cache))\n                else:\n                    raise TypeError(\"cache(self) must return a mutable mapping\")\n\n            return _wrapper(method, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(method, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "71419a7c8d848b323d9b3ac0d8ac5df110132287a344f9c41141bb4c92dcc337"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.976166,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 367,
+            "text": "        \"\"\"Remove and return a random `(key, value)` pair.\"\"\"\n        keys = self.__keys\n        if not keys:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = self.__choice(keys)\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__index.clear()\n        del self.__keys[:]\n\n\nclass _TimedCache(Cache):\n    \"\"\"Base class for time-aware cache implementations.\"\"\"\n\n    class _Timer:\n        def __init__(self, timer):\n            self.__timer = timer\n            self.__nesting = 0\n\n        def __call__(self):\n            if self.__nesting == 0:\n                return self.__timer()\n            else:\n                return self.__time\n",
+            "sha256": "fed2a6132187ae7e36257d32c80a6d3731f85183d5cbc6b8b438acee34fce5e0"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 783,
+            "text": "def cachedmethod(cache, key=keys.methodkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a method with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cachedmethod import _wrapper\n\n    def decorator(method):\n        if info:\n\n            def make_info(cache, hits, misses):\n                if isinstance(cache, Cache):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n                elif isinstance(cache, collections.abc.Mapping):\n                    return _CacheInfo(hits, misses, None, len(cache))\n                else:\n                    raise TypeError(\"cache(self) must return a mutable mapping\")\n\n            return _wrapper(method, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(method, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "71419a7c8d848b323d9b3ac0d8ac5df110132287a344f9c41141bb4c92dcc337"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.734583,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 30,
+            "text": "    __slots__ = ()\n\n    def __getitem__(self, _key):\n        return 1\n\n    def __setitem__(self, _key, _value):\n        pass\n\n    def pop(self, _key):\n        return 1\n\n    def clear(self):\n        pass\n\n\nclass Cache(collections.abc.MutableMapping):\n    \"\"\"Mutable mapping to serve as a simple cache or cache base class.\"\"\"\n\n    __marker = object()\n\n    __size = _DefaultSize()\n\n    def __init__(self, maxsize, getsizeof=None):\n        if maxsize < 0:\n            raise ValueError(\"maxsize must be non-negative\")\n        if getsizeof is not None:\n            self.getsizeof = getsizeof\n        if self.getsizeof is not Cache.getsizeof:\n            self.__size = {}",
+            "sha256": "1976d33c7e05e5b69ed8ee70c161dc64f1c6b395859cf24ee689c446629e3df7"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 367,
+            "text": "        \"\"\"Remove and return a random `(key, value)` pair.\"\"\"\n        keys = self.__keys\n        if not keys:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = self.__choice(keys)\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__index.clear()\n        del self.__keys[:]\n\n\nclass _TimedCache(Cache):\n    \"\"\"Base class for time-aware cache implementations.\"\"\"\n\n    class _Timer:\n        def __init__(self, timer):\n            self.__timer = timer\n            self.__nesting = 0\n\n        def __call__(self):\n            if self.__nesting == 0:\n                return self.__timer()\n            else:\n                return self.__time\n",
+            "sha256": "fed2a6132187ae7e36257d32c80a6d3731f85183d5cbc6b8b438acee34fce5e0"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 783,
+            "text": "def cachedmethod(cache, key=keys.methodkey, lock=None, condition=None, info=False):\n    \"\"\"Decorator to wrap a method with a memoizing callable that saves\n    results in a cache.\n\n    \"\"\"\n    from ._cachedmethod import _wrapper\n\n    def decorator(method):\n        if info:\n\n            def make_info(cache, hits, misses):\n                if isinstance(cache, Cache):\n                    return _CacheInfo(hits, misses, cache.maxsize, cache.currsize)\n                elif isinstance(cache, collections.abc.Mapping):\n                    return _CacheInfo(hits, misses, None, len(cache))\n                else:\n                    raise TypeError(\"cache(self) must return a mutable mapping\")\n\n            return _wrapper(method, cache, key, lock, condition, info=make_info)\n        else:\n            return _wrapper(method, cache, key, lock, condition)\n\n    return decorator",
+            "sha256": "71419a7c8d848b323d9b3ac0d8ac5df110132287a344f9c41141bb4c92dcc337"
+          }
+        ]
+      }
+    ]
+  }
+}

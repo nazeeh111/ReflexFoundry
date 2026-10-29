@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.001208,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000292,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000917,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 2.487791,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 190,
+            "text": "        \"\"\"Remove and return the `(key, value)` pair first inserted.\"\"\"\n        try:\n            key = next(iter(self.__order))\n        except StopIteration:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        else:\n            value = Cache.__getitem__(self, key)\n            del self[key]\n            return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__order.clear()\n\n\nclass LFUCache(Cache):\n    \"\"\"Least Frequently Used (LFU) cache implementation.\"\"\"\n\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next",
+            "sha256": "5a842b6c7c82d322ca5f38a497814dae578320dc6f1843befc3bf53464cecac1"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 35,
+            "text": "def fifo_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a First In First Out (FIFO)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(FIFOCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(FIFOCache(maxsize), maxsize, typed)\n\n\ndef lfu_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Frequently Used (LFU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LFUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LFUCache(maxsize), maxsize, typed)\n\n\ndef lru_cache(maxsize=128, typed=False):",
+            "sha256": "3ae80939b5520ebbf5014d782434b220f11e301d9bc1b6cf6de6ac9fc95ad906"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 240,
+            "text": "        if link.count != 1:\n            link = LFUCache._Link(1)\n            link.next = root.next\n            root.next = link.next.prev = link\n            link.prev = root\n        link.keys.add(key)\n        self.__links[key] = link\n\n    def __delitem__(self, key, cache_delitem=Cache.__delitem__):\n        cache_delitem(self, key)\n        link = self.__links.pop(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n\n    def popitem(self):\n        \"\"\"Remove and return the `(key, value)` pair least frequently used.\"\"\"\n        root = self.__root\n        curr = root.next\n        if curr is root:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = next(iter(curr.keys))  # remove an arbitrary element\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        root = self.__root",
+            "sha256": "2e22f74880b67c1d625714164307df1e028b047284275895647821ee6dd8222b"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.277667,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 190,
+            "text": "        \"\"\"Remove and return the `(key, value)` pair first inserted.\"\"\"\n        try:\n            key = next(iter(self.__order))\n        except StopIteration:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        else:\n            value = Cache.__getitem__(self, key)\n            del self[key]\n            return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__order.clear()\n\n\nclass LFUCache(Cache):\n    \"\"\"Least Frequently Used (LFU) cache implementation.\"\"\"\n\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next",
+            "sha256": "5a842b6c7c82d322ca5f38a497814dae578320dc6f1843befc3bf53464cecac1"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 35,
+            "text": "def fifo_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a First In First Out (FIFO)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(FIFOCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(FIFOCache(maxsize), maxsize, typed)\n\n\ndef lfu_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Frequently Used (LFU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LFUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LFUCache(maxsize), maxsize, typed)\n\n\ndef lru_cache(maxsize=128, typed=False):",
+            "sha256": "3ae80939b5520ebbf5014d782434b220f11e301d9bc1b6cf6de6ac9fc95ad906"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 240,
+            "text": "        if link.count != 1:\n            link = LFUCache._Link(1)\n            link.next = root.next\n            root.next = link.next.prev = link\n            link.prev = root\n        link.keys.add(key)\n        self.__links[key] = link\n\n    def __delitem__(self, key, cache_delitem=Cache.__delitem__):\n        cache_delitem(self, key)\n        link = self.__links.pop(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n\n    def popitem(self):\n        \"\"\"Remove and return the `(key, value)` pair least frequently used.\"\"\"\n        root = self.__root\n        curr = root.next\n        if curr is root:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = next(iter(curr.keys))  # remove an arbitrary element\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        root = self.__root",
+            "sha256": "2e22f74880b67c1d625714164307df1e028b047284275895647821ee6dd8222b"
+          }
+        ]
+      },
+      {
+        "duration_ms": 2.210459,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 190,
+            "text": "        \"\"\"Remove and return the `(key, value)` pair first inserted.\"\"\"\n        try:\n            key = next(iter(self.__order))\n        except StopIteration:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        else:\n            value = Cache.__getitem__(self, key)\n            del self[key]\n            return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__order.clear()\n\n\nclass LFUCache(Cache):\n    \"\"\"Least Frequently Used (LFU) cache implementation.\"\"\"\n\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next",
+            "sha256": "5a842b6c7c82d322ca5f38a497814dae578320dc6f1843befc3bf53464cecac1"
+          },
+          {
+            "path": "src/cachetools/func.py",
+            "start_line": 35,
+            "text": "def fifo_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a First In First Out (FIFO)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(FIFOCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(FIFOCache(maxsize), maxsize, typed)\n\n\ndef lfu_cache(maxsize=128, typed=False):\n    \"\"\"Decorator to wrap a function with a memoizing callable that saves\n    up to `maxsize` results based on a Least Frequently Used (LFU)\n    algorithm.\n\n    \"\"\"\n    if maxsize is None:\n        return _cache({}, None, typed)\n    elif callable(maxsize):\n        return _cache(LFUCache(128), 128, typed)(maxsize)\n    else:\n        return _cache(LFUCache(maxsize), maxsize, typed)\n\n\ndef lru_cache(maxsize=128, typed=False):",
+            "sha256": "3ae80939b5520ebbf5014d782434b220f11e301d9bc1b6cf6de6ac9fc95ad906"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 240,
+            "text": "        if link.count != 1:\n            link = LFUCache._Link(1)\n            link.next = root.next\n            root.next = link.next.prev = link\n            link.prev = root\n        link.keys.add(key)\n        self.__links[key] = link\n\n    def __delitem__(self, key, cache_delitem=Cache.__delitem__):\n        cache_delitem(self, key)\n        link = self.__links.pop(key)\n        link.keys.remove(key)\n        if not link.keys:\n            link.unlink()\n\n    def popitem(self):\n        \"\"\"Remove and return the `(key, value)` pair least frequently used.\"\"\"\n        root = self.__root\n        curr = root.next\n        if curr is root:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        key = next(iter(curr.keys))  # remove an arbitrary element\n        value = Cache.__getitem__(self, key)\n        del self[key]\n        return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        root = self.__root",
+            "sha256": "2e22f74880b67c1d625714164307df1e028b047284275895647821ee6dd8222b"
+          }
+        ]
+      }
+    ]
+  }
+}

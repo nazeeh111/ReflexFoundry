@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 38.938458,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 312,
+            "text": "def take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)",
+            "sha256": "02298b950056d450481ee79ee4427de53908cd5534b2b2c3175973f81a153b0e"
+          }
+        ]
+      },
+      {
+        "duration_ms": 48.206667,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 312,
+            "text": "def take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)",
+            "sha256": "02298b950056d450481ee79ee4427de53908cd5534b2b2c3175973f81a153b0e"
+          }
+        ]
+      },
+      {
+        "duration_ms": 39.859125,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 312,
+            "text": "def take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)",
+            "sha256": "02298b950056d450481ee79ee4427de53908cd5534b2b2c3175973f81a153b0e"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 10.50575,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 78,
+            "text": "map = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "f450383e6a901a56130f046a8d2d342df3fb8968685ebdf9fb60347877bece6a"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 296,
+            "text": "    False\n    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n",
+            "sha256": "3d04a2d1642d1627bfb7dfdd2eb964f20e2abb205b609b521fc4317b3e8703c5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 12.813833,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 78,
+            "text": "map = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "f450383e6a901a56130f046a8d2d342df3fb8968685ebdf9fb60347877bece6a"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 296,
+            "text": "    False\n    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n",
+            "sha256": "3d04a2d1642d1627bfb7dfdd2eb964f20e2abb205b609b521fc4317b3e8703c5"
+          }
+        ]
+      },
+      {
+        "duration_ms": 11.98525,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 78,
+            "text": "map = toolz.curry(toolz.map)\nmapcat = toolz.curry(toolz.mapcat)\nnth = toolz.curry(toolz.nth)\npartial = toolz.curry(toolz.partial)\npartition = toolz.curry(toolz.partition)\npartition_all = toolz.curry(toolz.partition_all)\npartitionby = toolz.curry(toolz.partitionby)\npeekn = toolz.curry(toolz.peekn)\npluck = toolz.curry(toolz.pluck)\nrandom_sample = toolz.curry(toolz.random_sample)\nreduce = toolz.curry(toolz.reduce)\nreduceby = toolz.curry(toolz.reduceby)\nremove = toolz.curry(toolz.remove)\nsliding_window = toolz.curry(toolz.sliding_window)\nsorted = toolz.curry(toolz.sorted)\ntail = toolz.curry(toolz.tail)\ntake = toolz.curry(toolz.take)\ntake_nth = toolz.curry(toolz.take_nth)\ntopk = toolz.curry(toolz.topk)\nunique = toolz.curry(toolz.unique)\nupdate_in = toolz.curry(toolz.update_in)\nvalfilter = toolz.curry(toolz.valfilter)\nvalmap = toolz.curry(toolz.valmap)\n\ndel exceptions\ndel toolz",
+            "sha256": "f450383e6a901a56130f046a8d2d342df3fb8968685ebdf9fb60347877bece6a"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 296,
+            "text": "    False\n    >>> isdistinct(\"World\")\n    True\n    \"\"\"\n    if iter(seq) is seq:\n        seen = set()\n        seen_add = seen.add\n        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n",
+            "sha256": "3d04a2d1642d1627bfb7dfdd2eb964f20e2abb205b609b521fc4317b3e8703c5"
+          }
+        ]
+      }
+    ]
+  }
+}

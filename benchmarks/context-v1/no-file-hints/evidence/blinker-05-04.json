@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002958,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002458,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000417,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 1.671375,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 40,
+            "text": "\n    @cached_property\n    def receiver_connected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n",
+            "sha256": "1caeff7cb0474367cbc4cef7423b9b09681657fdc7d08f96a6cd3a821a37fd5e"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 43,
+            "text": "        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")",
+            "sha256": "fe0b63b45c7ed05fffc7b479f0622efbf01624b97d334d32e8f1f00d9fdb8cd6"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 44,
+            "text": "\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n",
+            "sha256": "08d7711d07f963aa9baa818a65d5726f43af02dcf546e30006050dbd65f0eec3"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.693625,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 40,
+            "text": "\n    @cached_property\n    def receiver_connected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n",
+            "sha256": "1caeff7cb0474367cbc4cef7423b9b09681657fdc7d08f96a6cd3a821a37fd5e"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 43,
+            "text": "        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")",
+            "sha256": "fe0b63b45c7ed05fffc7b479f0622efbf01624b97d334d32e8f1f00d9fdb8cd6"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 44,
+            "text": "\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n",
+            "sha256": "08d7711d07f963aa9baa818a65d5726f43af02dcf546e30006050dbd65f0eec3"
+          }
+        ]
+      },
+      {
+        "duration_ms": 1.626,
+        "success": false,
+        "snippets": [
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 40,
+            "text": "\n    @cached_property\n    def receiver_connected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n",
+            "sha256": "1caeff7cb0474367cbc4cef7423b9b09681657fdc7d08f96a6cd3a821a37fd5e"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 43,
+            "text": "        \"\"\"Emitted at the end of each :meth:`connect` call.\n\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")",
+            "sha256": "fe0b63b45c7ed05fffc7b479f0622efbf01624b97d334d32e8f1f00d9fdb8cd6"
+          },
+          {
+            "path": "src/blinker/base.py",
+            "start_line": 44,
+            "text": "\n        The signal sender is the signal instance, and the :meth:`connect`\n        arguments are passed through: ``receiver``, ``sender``, and ``weak``.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver connects.\")\n\n    @cached_property\n    def receiver_disconnected(self) -> Signal:\n        \"\"\"Emitted at the end of each :meth:`disconnect` call.\n\n        The sender is the signal instance, and the :meth:`disconnect` arguments\n        are passed through: ``receiver`` and ``sender``.\n\n        This signal is emitted **only** when :meth:`disconnect` is called\n        explicitly. This signal cannot be emitted by an automatic disconnect\n        when a weakly referenced receiver or sender goes out of scope, as the\n        instance is no longer be available to be used as the sender for this\n        signal.\n\n        An alternative approach is available by subscribing to\n        :attr:`receiver_connected` and setting up a custom weakref cleanup\n        callback on weak receivers and senders.\n\n        .. versionadded:: 1.2\n        \"\"\"\n        return Signal(doc=\"Emitted after a receiver disconnects.\")\n",
+            "sha256": "08d7711d07f963aa9baa818a65d5726f43af02dcf546e30006050dbd65f0eec3"
+          }
+        ]
+      }
+    ]
+  }
+}

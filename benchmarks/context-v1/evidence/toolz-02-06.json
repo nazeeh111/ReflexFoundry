@@ -1,0 +1,130 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 4.578291,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 341,
+            "text": "def drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)",
+            "sha256": "37074e3224af16518cf45d804048541c595f22eff8b9e66082c95cd650a8796d"
+          }
+        ]
+      },
+      {
+        "duration_ms": 6.39225,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 341,
+            "text": "def drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)",
+            "sha256": "37074e3224af16518cf45d804048541c595f22eff8b9e66082c95cd650a8796d"
+          }
+        ]
+      },
+      {
+        "duration_ms": 5.642875,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 341,
+            "text": "def drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))\n    [30, 40, 50]\n\n    See Also:\n        take\n        tail\n    \"\"\"\n    return itertools.islice(seq, n, None)",
+            "sha256": "37074e3224af16518cf45d804048541c595f22eff8b9e66082c95cd650a8796d"
+          }
+        ]
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 9.979792,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 303,
+            "text": "        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:",
+            "sha256": "310331ad9cda98c39ffac7bdbce760d1d062ccbf589e3b982c488714de1c462f"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 316,
+            "text": "    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:\n        drop\n        take\n    \"\"\"\n    try:\n        return seq[-n:]\n    except (TypeError, KeyError):\n        return tuple(collections.deque(seq, n))\n\n\ndef drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))",
+            "sha256": "e97f67fab759f0939bc426d197391096c5b96385b25f43d6e8a1de1978531363"
+          }
+        ]
+      },
+      {
+        "duration_ms": 9.504208,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 303,
+            "text": "        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:",
+            "sha256": "310331ad9cda98c39ffac7bdbce760d1d062ccbf589e3b982c488714de1c462f"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 316,
+            "text": "    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:\n        drop\n        take\n    \"\"\"\n    try:\n        return seq[-n:]\n    except (TypeError, KeyError):\n        return tuple(collections.deque(seq, n))\n\n\ndef drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))",
+            "sha256": "e97f67fab759f0939bc426d197391096c5b96385b25f43d6e8a1de1978531363"
+          }
+        ]
+      },
+      {
+        "duration_ms": 10.971084,
+        "success": true,
+        "snippets": [
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 303,
+            "text": "        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:",
+            "sha256": "310331ad9cda98c39ffac7bdbce760d1d062ccbf589e3b982c488714de1c462f"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 316,
+            "text": "    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:\n        drop\n        take\n    \"\"\"\n    try:\n        return seq[-n:]\n    except (TypeError, KeyError):\n        return tuple(collections.deque(seq, n))\n\n\ndef drop(n, seq):\n    \"\"\" The sequence following the first n elements\n\n    >>> list(drop(2, [10, 20, 30, 40, 50]))",
+            "sha256": "e97f67fab759f0939bc426d197391096c5b96385b25f43d6e8a1de1978531363"
+          }
+        ]
+      }
+    ]
+  }
+}

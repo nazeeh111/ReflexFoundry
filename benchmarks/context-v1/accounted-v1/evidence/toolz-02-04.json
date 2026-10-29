@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.001792,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000375,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.00225,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 9.637083,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 49,
+            "text": "    merge_sorted,\n    peek,\n    pipe,\n    second,\n    thread_first,\n    thread_last,\n)\nfrom .exceptions import merge, merge_with\n\naccumulate = toolz.curry(toolz.accumulate)\nassoc = toolz.curry(toolz.assoc)\nassoc_in = toolz.curry(toolz.assoc_in)\ncons = toolz.curry(toolz.cons)\ncountby = toolz.curry(toolz.countby)\ndissoc = toolz.curry(toolz.dissoc)\ndo = toolz.curry(toolz.do)\ndrop = toolz.curry(toolz.drop)\nexcepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)",
+            "sha256": "e712abb5f0e98d5e800a27a919a55808450741957fd80479de32df140a53633a"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 303,
+            "text": "        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:",
+            "sha256": "310331ad9cda98c39ffac7bdbce760d1d062ccbf589e3b982c488714de1c462f"
+          }
+        ]
+      },
+      {
+        "duration_ms": 10.406,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 49,
+            "text": "    merge_sorted,\n    peek,\n    pipe,\n    second,\n    thread_first,\n    thread_last,\n)\nfrom .exceptions import merge, merge_with\n\naccumulate = toolz.curry(toolz.accumulate)\nassoc = toolz.curry(toolz.assoc)\nassoc_in = toolz.curry(toolz.assoc_in)\ncons = toolz.curry(toolz.cons)\ncountby = toolz.curry(toolz.countby)\ndissoc = toolz.curry(toolz.dissoc)\ndo = toolz.curry(toolz.do)\ndrop = toolz.curry(toolz.drop)\nexcepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)",
+            "sha256": "e712abb5f0e98d5e800a27a919a55808450741957fd80479de32df140a53633a"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 303,
+            "text": "        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:",
+            "sha256": "310331ad9cda98c39ffac7bdbce760d1d062ccbf589e3b982c488714de1c462f"
+          }
+        ]
+      },
+      {
+        "duration_ms": 10.300375,
+        "success": false,
+        "snippets": [
+          {
+            "path": "toolz/curried/__init__.py",
+            "start_line": 49,
+            "text": "    merge_sorted,\n    peek,\n    pipe,\n    second,\n    thread_first,\n    thread_last,\n)\nfrom .exceptions import merge, merge_with\n\naccumulate = toolz.curry(toolz.accumulate)\nassoc = toolz.curry(toolz.assoc)\nassoc_in = toolz.curry(toolz.assoc_in)\ncons = toolz.curry(toolz.cons)\ncountby = toolz.curry(toolz.countby)\ndissoc = toolz.curry(toolz.dissoc)\ndo = toolz.curry(toolz.do)\ndrop = toolz.curry(toolz.drop)\nexcepts = toolz.curry(toolz.excepts)\nfilter = toolz.curry(toolz.filter)\nget = toolz.curry(toolz.get)\nget_in = toolz.curry(toolz.get_in)\ngroupby = toolz.curry(toolz.groupby)\ninterpose = toolz.curry(toolz.interpose)\nitemfilter = toolz.curry(toolz.itemfilter)\nitemmap = toolz.curry(toolz.itemmap)\niterate = toolz.curry(toolz.iterate)\njoin = toolz.curry(toolz.join)\nkeyfilter = toolz.curry(toolz.keyfilter)\nkeymap = toolz.curry(toolz.keymap)",
+            "sha256": "e712abb5f0e98d5e800a27a919a55808450741957fd80479de32df140a53633a"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 1,
+            "text": "import itertools\nimport heapq\nimport collections\nimport operator\nfrom functools import partial\nfrom itertools import filterfalse, zip_longest\nfrom collections.abc import Sequence\nfrom toolz.utils import no_default\n\n\n__all__ = ('remove', 'accumulate', 'groupby', 'merge_sorted', 'interleave',\n           'unique', 'isiterable', 'isdistinct', 'take', 'drop', 'take_nth',\n           'first', 'second', 'nth', 'last', 'get', 'concat', 'concatv',\n           'mapcat', 'cons', 'interpose', 'frequencies', 'reduceby', 'iterate',\n           'sliding_window', 'partition', 'partition_all', 'count', 'pluck',\n           'join', 'tail', 'diff', 'topk', 'peek', 'peekn', 'random_sample')\n\n\ndef remove(predicate, seq):\n    \"\"\" Return those items of sequence for which predicate(item) is False\n\n    >>> def iseven(x):\n    ...     return x % 2 == 0\n    >>> list(remove(iseven, [1, 2, 3, 4]))",
+            "sha256": "a2087916b19a9584c6543e4a2f637fc7df30465c1888c0bbf5f88c67e628072d"
+          },
+          {
+            "path": "toolz/itertoolz.py",
+            "start_line": 303,
+            "text": "        for item in seq:\n            if item in seen:\n                return False\n            seen_add(item)\n        return True\n    else:\n        return len(seq) == len(set(seq))\n\n\ndef take(n, seq):\n    \"\"\" The first n elements of a sequence\n\n    >>> list(take(2, [10, 20, 30, 40, 50]))\n    [10, 20]\n\n    See Also:\n        drop\n        tail\n    \"\"\"\n    return itertools.islice(seq, n)\n\n\ndef tail(n, seq):\n    \"\"\" The last n elements of a sequence\n\n    >>> tail(2, [10, 20, 30, 40, 50])\n    [40, 50]\n\n    See Also:",
+            "sha256": "310331ad9cda98c39ffac7bdbce760d1d062ccbf589e3b982c488714de1c462f"
+          }
+        ]
+      }
+    ]
+  }
+}

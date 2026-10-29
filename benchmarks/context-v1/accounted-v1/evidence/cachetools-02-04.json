@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002125,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000459,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002542,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 2.941625,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc",
+            "sha256": "12023476834801272859dfb5eb00c29e1faddd9824c47ef9ae7b33d4137bf052"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 189,
+            "text": "    def popitem(self):\n        \"\"\"Remove and return the `(key, value)` pair first inserted.\"\"\"\n        try:\n            key = next(iter(self.__order))\n        except StopIteration:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        else:\n            value = Cache.__getitem__(self, key)\n            del self[key]\n            return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__order.clear()\n\n\nclass LFUCache(Cache):\n    \"\"\"Least Frequently Used (LFU) cache implementation.\"\"\"\n\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev",
+            "sha256": "a7dd4e4d966be875fa8b2d1a6ffbccca7e60f72e1413486ff6eff4c831b7ff1a"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 207,
+            "text": "\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next\n            next.prev = prev\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__root = root = LFUCache._Link(0)  # sentinel\n        root.prev = root.next = root\n        self.__links = {}\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        if key in self.__links:  # __missing__ may not store item\n            self.__touch(key)\n        return value\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__links:",
+            "sha256": "4b5c4dca5b4c25f918d43c3697293d2439900d83eef460330287d4138a917099"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.01475,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc",
+            "sha256": "12023476834801272859dfb5eb00c29e1faddd9824c47ef9ae7b33d4137bf052"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 189,
+            "text": "    def popitem(self):\n        \"\"\"Remove and return the `(key, value)` pair first inserted.\"\"\"\n        try:\n            key = next(iter(self.__order))\n        except StopIteration:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        else:\n            value = Cache.__getitem__(self, key)\n            del self[key]\n            return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__order.clear()\n\n\nclass LFUCache(Cache):\n    \"\"\"Least Frequently Used (LFU) cache implementation.\"\"\"\n\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev",
+            "sha256": "a7dd4e4d966be875fa8b2d1a6ffbccca7e60f72e1413486ff6eff4c831b7ff1a"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 207,
+            "text": "\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next\n            next.prev = prev\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__root = root = LFUCache._Link(0)  # sentinel\n        root.prev = root.next = root\n        self.__links = {}\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        if key in self.__links:  # __missing__ may not store item\n            self.__touch(key)\n        return value\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__links:",
+            "sha256": "4b5c4dca5b4c25f918d43c3697293d2439900d83eef460330287d4138a917099"
+          }
+        ]
+      },
+      {
+        "duration_ms": 3.447958,
+        "success": true,
+        "snippets": [
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 1,
+            "text": "\"\"\"Extensible memoizing collections and decorators.\"\"\"\n\n__all__ = (\n    \"Cache\",\n    \"FIFOCache\",\n    \"LFUCache\",\n    \"LRUCache\",\n    \"RRCache\",\n    \"TLRUCache\",\n    \"TTLCache\",\n    \"cached\",\n    \"cachedmethod\",\n)\n\n__version__ = \"7.2.6\"\n\nimport collections\nimport collections.abc",
+            "sha256": "12023476834801272859dfb5eb00c29e1faddd9824c47ef9ae7b33d4137bf052"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 189,
+            "text": "    def popitem(self):\n        \"\"\"Remove and return the `(key, value)` pair first inserted.\"\"\"\n        try:\n            key = next(iter(self.__order))\n        except StopIteration:\n            raise KeyError(\"%s is empty\" % type(self).__name__) from None\n        else:\n            value = Cache.__getitem__(self, key)\n            del self[key]\n            return (key, value)\n\n    def clear(self):\n        Cache.clear(self)\n        self.__order.clear()\n\n\nclass LFUCache(Cache):\n    \"\"\"Least Frequently Used (LFU) cache implementation.\"\"\"\n\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev",
+            "sha256": "a7dd4e4d966be875fa8b2d1a6ffbccca7e60f72e1413486ff6eff4c831b7ff1a"
+          },
+          {
+            "path": "src/cachetools/__init__.py",
+            "start_line": 207,
+            "text": "\n    class _Link:\n        __slots__ = (\"count\", \"keys\", \"next\", \"prev\")\n\n        def __init__(self, count):\n            self.count = count\n            self.keys = set()\n\n        def unlink(self):\n            next = self.next\n            prev = self.prev\n            prev.next = next\n            next.prev = prev\n\n    def __init__(self, maxsize, getsizeof=None):\n        Cache.__init__(self, maxsize, getsizeof)\n        self.__root = root = LFUCache._Link(0)  # sentinel\n        root.prev = root.next = root\n        self.__links = {}\n\n    def __getitem__(self, key, cache_getitem=Cache.__getitem__):\n        value = cache_getitem(self, key)\n        if key in self.__links:  # __missing__ may not store item\n            self.__touch(key)\n        return value\n\n    def __setitem__(self, key, value, cache_setitem=Cache.__setitem__):\n        cache_setitem(self, key, value)\n        if key in self.__links:",
+            "sha256": "4b5c4dca5b4c25f918d43c3697293d2439900d83eef460330287d4138a917099"
+          }
+        ]
+      }
+    ]
+  }
+}

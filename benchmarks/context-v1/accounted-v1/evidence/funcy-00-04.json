@@ -1,0 +1,109 @@
+{
+  "orders": [
+    [
+      "search",
+      "symbol"
+    ],
+    [
+      "symbol",
+      "search"
+    ],
+    [
+      "search",
+      "symbol"
+    ]
+  ],
+  "trials": {
+    "symbol": [
+      {
+        "duration_ms": 0.002416,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.000459,
+        "success": false,
+        "snippets": []
+      },
+      {
+        "duration_ms": 0.002167,
+        "success": false,
+        "snippets": []
+      }
+    ],
+    "search": [
+      {
+        "duration_ms": 6.156958,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/colls.py",
+            "start_line": 1,
+            "text": "from builtins import all as _all, any as _any\nfrom copy import copy\nfrom operator import itemgetter, methodcaller, attrgetter\nfrom itertools import chain, tee\nfrom collections import Counter, defaultdict\nfrom collections.abc import Mapping, Set, Iterable, Iterator\n\nfrom .primitives import EMPTY\nfrom .funcs import partial, compose\nfrom .funcmakers import make_func, make_pred\nfrom .seqs import take, map as xmap, filter as xfilter\n\n\n__all__ = ['empty', 'iteritems', 'itervalues',\n           'join', 'merge', 'join_with', 'merge_with',\n           'walk', 'walk_keys', 'walk_values', 'select', 'select_keys', 'select_values',\n           'split_keys', 'compact',\n           'is_distinct', 'all', 'any', 'none', 'one', 'some',\n           'zipdict', 'flip', 'project', 'omit', 'zip_values', 'zip_dicts',\n           'where', 'pluck', 'pluck_attr', 'invoke', 'lwhere', 'lpluck', 'lpluck_attr', 'linvoke',\n           'get_in', 'get_lax', 'set_in', 'update_in', 'del_in', 'has_path']\n\n",
+            "sha256": "0fff2358a3f2245bb9d0e7946234616661213727299694f265f701745654da1d"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 97,
+            "text": "        return result\n    elif isinstance(dest, Set):\n        return dest.union(*it)\n    elif isinstance(dest, (Iterator, range)):\n        return chain.from_iterable(colls)\n    elif isinstance(dest, Iterable):\n        # NOTE: this could be reduce(concat, ...),\n        #       more effective for low count\n        return cls(chain.from_iterable(colls))\n    else:\n        raise TypeError(\"Don't know how to join %s\" % cls.__name__)\n\ndef merge(*colls):\n    \"\"\"Merges several collections of same type into one.\n\n    Works with dicts, sets, lists, tuples, iterators and strings.\n    For dicts later values take precedence.\"\"\"\n    return join(colls)\n\n\ndef join_with(f, dicts, strict=False):\n    \"\"\"Joins several dicts, combining values with given function.\"\"\"\n    dicts = list(dicts)\n    if not dicts:\n        return {}\n    elif not strict and len(dicts) == 1:\n        return dicts[0]\n\n    lists = {}",
+            "sha256": "c5b98740dadd993b1ba8a607ed3642441802f454501193e0bff3e99e4fc74f96"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 219,
+            "text": "    return _all(xmap(pred, seq))\n\ndef any(pred, seq=EMPTY):\n    \"\"\"Checks if any item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return _any(pred)\n    return _any(xmap(pred, seq))\n\ndef none(pred, seq=EMPTY):\n    \"\"\"\"Checks if none of the items in seq pass pred (or are truthy).\"\"\"\n    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such",
+            "sha256": "e322a94b35723b92ddd89a89bab08da0c2629e88aa4c89bbff4844523ebfd480"
+          }
+        ]
+      },
+      {
+        "duration_ms": 4.732,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/colls.py",
+            "start_line": 1,
+            "text": "from builtins import all as _all, any as _any\nfrom copy import copy\nfrom operator import itemgetter, methodcaller, attrgetter\nfrom itertools import chain, tee\nfrom collections import Counter, defaultdict\nfrom collections.abc import Mapping, Set, Iterable, Iterator\n\nfrom .primitives import EMPTY\nfrom .funcs import partial, compose\nfrom .funcmakers import make_func, make_pred\nfrom .seqs import take, map as xmap, filter as xfilter\n\n\n__all__ = ['empty', 'iteritems', 'itervalues',\n           'join', 'merge', 'join_with', 'merge_with',\n           'walk', 'walk_keys', 'walk_values', 'select', 'select_keys', 'select_values',\n           'split_keys', 'compact',\n           'is_distinct', 'all', 'any', 'none', 'one', 'some',\n           'zipdict', 'flip', 'project', 'omit', 'zip_values', 'zip_dicts',\n           'where', 'pluck', 'pluck_attr', 'invoke', 'lwhere', 'lpluck', 'lpluck_attr', 'linvoke',\n           'get_in', 'get_lax', 'set_in', 'update_in', 'del_in', 'has_path']\n\n",
+            "sha256": "0fff2358a3f2245bb9d0e7946234616661213727299694f265f701745654da1d"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 97,
+            "text": "        return result\n    elif isinstance(dest, Set):\n        return dest.union(*it)\n    elif isinstance(dest, (Iterator, range)):\n        return chain.from_iterable(colls)\n    elif isinstance(dest, Iterable):\n        # NOTE: this could be reduce(concat, ...),\n        #       more effective for low count\n        return cls(chain.from_iterable(colls))\n    else:\n        raise TypeError(\"Don't know how to join %s\" % cls.__name__)\n\ndef merge(*colls):\n    \"\"\"Merges several collections of same type into one.\n\n    Works with dicts, sets, lists, tuples, iterators and strings.\n    For dicts later values take precedence.\"\"\"\n    return join(colls)\n\n\ndef join_with(f, dicts, strict=False):\n    \"\"\"Joins several dicts, combining values with given function.\"\"\"\n    dicts = list(dicts)\n    if not dicts:\n        return {}\n    elif not strict and len(dicts) == 1:\n        return dicts[0]\n\n    lists = {}",
+            "sha256": "c5b98740dadd993b1ba8a607ed3642441802f454501193e0bff3e99e4fc74f96"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 219,
+            "text": "    return _all(xmap(pred, seq))\n\ndef any(pred, seq=EMPTY):\n    \"\"\"Checks if any item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return _any(pred)\n    return _any(xmap(pred, seq))\n\ndef none(pred, seq=EMPTY):\n    \"\"\"\"Checks if none of the items in seq pass pred (or are truthy).\"\"\"\n    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such",
+            "sha256": "e322a94b35723b92ddd89a89bab08da0c2629e88aa4c89bbff4844523ebfd480"
+          }
+        ]
+      },
+      {
+        "duration_ms": 6.93275,
+        "success": false,
+        "snippets": [
+          {
+            "path": "funcy/colls.py",
+            "start_line": 1,
+            "text": "from builtins import all as _all, any as _any\nfrom copy import copy\nfrom operator import itemgetter, methodcaller, attrgetter\nfrom itertools import chain, tee\nfrom collections import Counter, defaultdict\nfrom collections.abc import Mapping, Set, Iterable, Iterator\n\nfrom .primitives import EMPTY\nfrom .funcs import partial, compose\nfrom .funcmakers import make_func, make_pred\nfrom .seqs import take, map as xmap, filter as xfilter\n\n\n__all__ = ['empty', 'iteritems', 'itervalues',\n           'join', 'merge', 'join_with', 'merge_with',\n           'walk', 'walk_keys', 'walk_values', 'select', 'select_keys', 'select_values',\n           'split_keys', 'compact',\n           'is_distinct', 'all', 'any', 'none', 'one', 'some',\n           'zipdict', 'flip', 'project', 'omit', 'zip_values', 'zip_dicts',\n           'where', 'pluck', 'pluck_attr', 'invoke', 'lwhere', 'lpluck', 'lpluck_attr', 'linvoke',\n           'get_in', 'get_lax', 'set_in', 'update_in', 'del_in', 'has_path']\n\n",
+            "sha256": "0fff2358a3f2245bb9d0e7946234616661213727299694f265f701745654da1d"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 97,
+            "text": "        return result\n    elif isinstance(dest, Set):\n        return dest.union(*it)\n    elif isinstance(dest, (Iterator, range)):\n        return chain.from_iterable(colls)\n    elif isinstance(dest, Iterable):\n        # NOTE: this could be reduce(concat, ...),\n        #       more effective for low count\n        return cls(chain.from_iterable(colls))\n    else:\n        raise TypeError(\"Don't know how to join %s\" % cls.__name__)\n\ndef merge(*colls):\n    \"\"\"Merges several collections of same type into one.\n\n    Works with dicts, sets, lists, tuples, iterators and strings.\n    For dicts later values take precedence.\"\"\"\n    return join(colls)\n\n\ndef join_with(f, dicts, strict=False):\n    \"\"\"Joins several dicts, combining values with given function.\"\"\"\n    dicts = list(dicts)\n    if not dicts:\n        return {}\n    elif not strict and len(dicts) == 1:\n        return dicts[0]\n\n    lists = {}",
+            "sha256": "c5b98740dadd993b1ba8a607ed3642441802f454501193e0bff3e99e4fc74f96"
+          },
+          {
+            "path": "funcy/colls.py",
+            "start_line": 219,
+            "text": "    return _all(xmap(pred, seq))\n\ndef any(pred, seq=EMPTY):\n    \"\"\"Checks if any item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return _any(pred)\n    return _any(xmap(pred, seq))\n\ndef none(pred, seq=EMPTY):\n    \"\"\"\"Checks if none of the items in seq pass pred (or are truthy).\"\"\"\n    return not any(pred, seq)\n\ndef one(pred, seq=EMPTY):\n    \"\"\"Checks whether exactly one item in seq passes pred (or is truthy).\"\"\"\n    if seq is EMPTY:\n        return one(bool, pred)\n    return len(take(2, xfilter(pred, seq))) == 1\n\n# Not same as in clojure! returns value found not pred(value)\ndef some(pred, seq=EMPTY):\n    \"\"\"Finds first item in seq passing pred or first that is truthy.\"\"\"\n    if seq is EMPTY:\n        return some(bool, pred)\n    return next(xfilter(pred, seq), None)\n\n# TODO: a variant of some that returns mapped value,\n#       one can use some(map(f, seq)) or first(keep(f, seq)) for now.\n\n# TODO: vector comparison tests - ascending, descending and such",
+            "sha256": "e322a94b35723b92ddd89a89bab08da0c2629e88aa4c89bbff4844523ebfd480"
+          }
+        ]
+      }
+    ]
+  }
+}

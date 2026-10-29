@@ -1,6 +1,7 @@
 """Deployment authority is bounded and depends on current, observed evidence."""
 
 from dataclasses import replace
+from types import SimpleNamespace
 
 import pytest
 
@@ -32,6 +33,11 @@ class WarmPolicy:
 
 @pytest.fixture
 def environment(tmp_path, monkeypatch):
+    # State-machine tests use a model double, so host scheduling must not decide
+    # whether its prediction passes the real 250 ms latency gate.
+    clock = lifecycle.time
+    monkeypatch.setattr(lifecycle, "time", SimpleNamespace(
+        time=clock.time, sleep=clock.sleep, perf_counter=lambda: 0.0))
     model = tmp_path / "model"
     model.mkdir()
     (model / "model.safetensors").write_bytes(b"fake weights; no model executed")
@@ -172,6 +178,15 @@ def test_uncertain_and_cold_predictions_abstain(environment, monkeypatch):
     monkeypatch.setitem(WarmPolicy.prediction, "confidence", 0.99)
     monkeypatch.setattr(WarmPolicy, "startup_ms", 1000.0)
     assert lifecycle.decide(root, "test-scope-v1", INPUTS)["abstained"]
+
+
+def test_observed_elapsed_time_overrides_fast_model_metadata(environment, monkeypatch):
+    root, _, _, _ = environment
+    elapsed = iter((0.0, 0.3))
+    monkeypatch.setattr(lifecycle.time, "perf_counter", lambda: next(elapsed))
+    result = lifecycle.decide(root, "test-scope-v1", INPUTS)
+    assert result["abstained"]
+    assert result["prediction"]["duration_ms"] == 300
 
 
 def test_outcome_failure_reverts_and_cannot_be_replayed(environment):

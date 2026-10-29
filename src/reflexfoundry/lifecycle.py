@@ -91,7 +91,7 @@ def register(root: Path, model: Path, report: dict[str, Any], records: list[dict
         "report_digest": digest(report), "dataset_digest": digest(records),
         "report": report, "spec": report["spec"], "spec_digest": digest(SPECS[report["spec"]].__dict__),
         "vocabulary": vocabulary([r for r in records if r["split"] == "train"]),
-        "training_records": sum(r["split"] == "train" for r in records), "status": "evaluated"}
+        "training_records": manifest.get("training_records", len(training)), "status": "evaluated"}
     with locked(root):
         write_json(root / "policy.json", policy)
         write_json(root / "report.json", report)
