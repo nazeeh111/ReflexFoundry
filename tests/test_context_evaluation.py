@@ -86,8 +86,9 @@ def test_single_repository_has_no_population_uncertainty_estimate():
     assert "promotion task outcomes regress" not in report["reasons"]
 
 
-def test_cli_context_evaluate_registers_and_exports_without_loading_training_rows(tmp_path, monkeypatch, capsys):
-    from reflexfoundry import model
+@pytest.mark.parametrize("mutate_at", [None, "weight-hash", "evaluation"])
+def test_cli_context_evaluate_registers_and_exports_without_loading_training_rows(tmp_path, monkeypatch, capsys, mutate_at):
+    from reflexfoundry import core, evaluation, model
     from reflexfoundry.cli import main
     rows, predictions = context_dataset()
     root = tmp_path / "workspace"
@@ -115,9 +116,44 @@ def test_cli_context_evaluate_registers_and_exports_without_loading_training_row
             row = next(row for row in rows if row["inputs"] == inputs)
             return predictions[row["id"]]
     monkeypatch.setattr(model, "LocalPolicy", TestPolicy)
+    question = core.DecisionSpec.question
+    def mutate_contract():
+        def altered(self, reverse=False):
+            value = question(self, reverse)
+            value["instructions"] += " Changed while constructing evaluation evidence."
+            return value
+        monkeypatch.setattr(core.DecisionSpec, "question", altered)
+    if mutate_at == "weight-hash":
+        file_hash = model.file_hash
+        weight_reads = 0
+        def changing_hash(path):
+            nonlocal weight_reads
+            value = file_hash(path)
+            if path.name == "model.safetensors":
+                weight_reads += 1
+                if weight_reads == 3:
+                    mutate_contract()
+            return value
+        monkeypatch.setattr(model, "file_hash", changing_hash)
+    elif mutate_at == "evaluation":
+        compute = evaluation.evaluate
+        def changing_evaluation(*args, **kwargs):
+            result = compute(*args, **kwargs)
+            mutate_contract()
+            return result
+        monkeypatch.setattr(evaluation, "evaluate", changing_evaluation)
+    if mutate_at:
+        assert main(["evaluate", "--workspace", str(root), "--policy", str(policy)]) == 2
+        assert "contract changed" in capsys.readouterr().err
+        assert len(seen) == 120
+        assert not any((root / name).exists() for name in ("predictions.json", "evaluation.json", "policy.json"))
+        return
     assert main(["evaluate", "--workspace", str(root), "--policy", str(policy)]) == 0
     report = json.loads(capsys.readouterr().out)
     assert report["spec"] == "context-route-v1"
+    assert report["decision_contract_digest"] == core.decision_contract_digest()
+    saved = json.loads((root / "predictions.json").read_text())
+    assert saved["decision_contract_digest"] == report["decision_contract_digest"]
     assert len(seen) == 120
     assert main(["shadow", "--workspace", str(root), "--policy", str(policy)]) == 0
     assert main(["lab", "--workspace", str(root), "--output", str(tmp_path / "lab.html")]) == 0

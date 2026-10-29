@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.1 · complete decision contract binding
+
+- Bind model-visible question text and both option orders, input schema, independent success criterion and declared limits to training, evaluation and active policy evidence.
+- Refuse registration of legacy reports until re-evaluation, and revert active policies without the complete binding. Historical reports and weights remain intact.
+- Detect contract changes during training or evaluation instead of attaching evidence to changed semantics.
+- Clarify unexecuted research-plan comparisons and the limits of the incomplete native Codex trial, including missing model usage and its stale-binding refusal.
+
+No numerical study was rerun or retuned. Earlier model, report, plot and video artifacts remain unchanged; no learned policy is newly eligible.
+
 ## 0.2.0 · experimental context retrieval
 
 - Run outcome-aware training and evaluation for the context-route decision family, using its own symbol/search choices and search fallback.

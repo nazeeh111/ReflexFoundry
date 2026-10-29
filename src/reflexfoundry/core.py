@@ -259,3 +259,13 @@ def spec_dicts() -> list[dict[str, Any]]:
     }
     return [asdict(spec) | {"input_schema": inputs, "success_criterion": criteria[spec.id]}
             for spec in SPECS.values()]
+
+
+def decision_contract_digest() -> str:
+    """Bind declared boundaries and the exact questions supplied to the model."""
+    # The outer hash sorts mapping keys. Preserve candidate insertion order as
+    # an array because it changes the questions and order-stability check.
+    return digest([item | {"questions": [
+        {"value": question, "choice_order": list(question["criteria"])}
+        for question in (SPECS[item["id"]].question(), SPECS[item["id"]].question(reverse=True))]}
+                   for item in spec_dicts()])

@@ -16,6 +16,7 @@ from typing import Any, Iterator
 
 from .core import (
     SPECS,
+    decision_contract_digest,
     digest,
     discover,
     privacy_filter,
@@ -80,6 +81,11 @@ def register(root: Path, model: Path, report: dict[str, Any], records: list[dict
         raise ValueError("training provenance does not match evaluation training data")
     if manifest.get("weights_sha256") != report["model_digest"]:
         raise ValueError("training model bytes do not match evaluated artifact")
+    contract = decision_contract_digest()
+    if report.get("decision_contract_digest") != contract:
+        raise ValueError("evaluation lacks the current complete decision contract; re-evaluate before registration")
+    if manifest.get("decision_contract_digest", contract) != contract:
+        raise ValueError("model was trained against a different complete decision contract")
     catalog = digest([s.__dict__ for s in SPECS.values()])
     if manifest.get("spec_catalog_digest", catalog) != catalog:
         raise ValueError("model was trained against a different decision catalog")
@@ -90,6 +96,7 @@ def register(root: Path, model: Path, report: dict[str, Any], records: list[dict
         "model_digest": report["model_digest"], "artifact_digest": artifact_digest(model),
         "report_digest": digest(report), "dataset_digest": digest(records),
         "report": report, "spec": report["spec"], "spec_digest": digest(SPECS[report["spec"]].__dict__),
+        "decision_contract_digest": contract,
         "vocabulary": vocabulary([r for r in records if r["split"] == "train"]),
         "training_records": manifest.get("training_records", len(training)), "status": "evaluated"}
     with locked(root):
@@ -113,6 +120,7 @@ def _revert(root: Path, deployment: dict[str, Any], reason: str) -> None:
 
 def _binding_valid(policy: dict[str, Any], spec_id: str) -> bool:
     return (policy.get("spec") == spec_id
+        and policy.get("decision_contract_digest") == decision_contract_digest()
         and policy.get("spec_digest") == digest(SPECS[spec_id].__dict__)
         and policy.get("report_digest") == digest(policy["report"])
         and policy.get("artifact_digest") == artifact_digest(Path(policy["model"])))
@@ -196,6 +204,8 @@ def decide(root: Path, spec_id: str, inputs: dict[str, Any], backend: str = "aut
             else:
                 runtime = LocalPolicy(Path(policy["model"]), backend)
                 prediction = _prediction(runtime.predict(spec_id, inputs), spec_id)
+                if policy["decision_contract_digest"] != decision_contract_digest():
+                    raise ValueError("decision contract changed during inference")
                 # Each CLI invocation cold-starts; both real elapsed and reported
                 # model startup are charged before advisory delegation is allowed.
                 startup = runtime.startup_ms

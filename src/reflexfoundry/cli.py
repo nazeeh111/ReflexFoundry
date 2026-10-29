@@ -127,6 +127,7 @@ def parser() -> argparse.ArgumentParser:
 
 
 def _evaluate(args: argparse.Namespace) -> dict[str, Any]:
+    from .core import decision_contract_digest
     from .evaluation import evaluate, evaluation_spec
     from .model import LocalPolicy, file_hash
 
@@ -138,6 +139,7 @@ def _evaluate(args: argparse.Namespace) -> dict[str, Any]:
            for split in ("calibration", "promotion", "test")):
         raise ValueError("evaluation needs at least 30 tasks in each calibration/promotion/test split")
     evaluation_spec(records)
+    contract = decision_contract_digest()
     import time
 
     from .lifecycle import artifact_digest, register
@@ -155,15 +157,20 @@ def _evaluate(args: argparse.Namespace) -> dict[str, Any]:
         base_startup = base.startup_ms
     if artifact_digest(args.policy) != artifact:
         raise ValueError("policy inference files changed during evaluation; rerun on an immutable version")
+    if decision_contract_digest() != contract:
+        raise ValueError("decision contract changed during evaluation; rerun on a fixed catalog")
     model_digest = file_hash(args.policy / "model.safetensors")
     result = evaluate(records, predictions, policy.startup_ms + screening_ms, model_digest,
                       base_predictions, base_startup)
+    if result["decision_contract_digest"] != contract or decision_contract_digest() != contract:
+        raise ValueError("decision contract changed during evaluation; rerun on a fixed catalog")
     result["spec_catalog_digest"] = digest([spec.__dict__ for spec in SPECS.values()])
     result["backend"] = policy.backend
     result["artifact_digest"] = artifact
     result["screening_ms"] = screening_ms
     result["cost_note"] = "Retrospective action outcomes plus measured model startup and integrity screening charged per CLI request; not direct timing of every full CLI process."
     write_json(args.workspace / "predictions.json", {
+        "decision_contract_digest": contract,
         "model_digest": model_digest, "dataset_digest": digest(records), "backend": policy.backend,
         "startup_ms": policy.startup_ms + screening_ms, "model_startup_ms": policy.startup_ms,
         "screening_ms": screening_ms, "predictions": predictions,

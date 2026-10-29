@@ -6,7 +6,15 @@ import random
 import statistics
 from typing import Any
 
-from .core import SPECS, DecisionSpec, digest, spec_dicts, validate_record, validate_splits
+from .core import (
+    SPECS,
+    DecisionSpec,
+    decision_contract_digest,
+    digest,
+    spec_dicts,
+    validate_record,
+    validate_splits,
+)
 from .core import finite_number as _number
 
 
@@ -201,6 +209,7 @@ def evaluate(records: list[dict[str, Any]], predictions: dict[str, dict[str, Any
              startup_ms: float, model_digest: str,
              base_predictions: dict[str, dict[str, Any]] | None = None,
              base_startup_ms: float = 0.0) -> dict[str, Any]:
+    contract = decision_contract_digest()
     validate_splits(records, require_evaluation_outcomes=True)
     parts = {s: [r for r in records if r["split"] == s] for s in ("calibration", "promotion", "test")}
     if any(len(rows) < 30 for rows in parts.values()):
@@ -242,7 +251,10 @@ def evaluate(records: list[dict[str, Any]], predictions: dict[str, dict[str, Any
     if test_metrics["selective"]["success_rate"] < test_metrics["deterministic-heuristic"]["success_rate"]:
         reasons.append("locked test task outcomes regress against the deterministic heuristic")
     descriptor = next(item for item in spec_dicts() if item["id"] == spec.id)
+    if decision_contract_digest() != contract:
+        raise ValueError("decision contract changed during evaluation; rerun on a fixed catalog")
     return {"format": 1, "spec": spec.id, "decision_spec": descriptor, "dataset_digest": digest(records),
+        "decision_contract_digest": contract,
         "repository_groups": {split: len({row["repository"] for row in rows}) for split, rows in parts.items()},
         "model_digest": model_digest, "calibration": calibration, "promotion": promotion,
         "test": test, "policies": test["policies"], "deployment_allowed": not reasons,

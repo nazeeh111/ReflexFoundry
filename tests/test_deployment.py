@@ -6,7 +6,7 @@ from types import SimpleNamespace
 import pytest
 
 from reflexfoundry import lifecycle
-from reflexfoundry.core import SPECS, digest, read_json, write_json
+from reflexfoundry.core import SPECS, decision_contract_digest, digest, read_json, write_json
 from reflexfoundry.model import file_hash
 
 INPUTS = {"summary": "Change calculation local validation behavior", "changed_files": ["calc.py"]}
@@ -52,6 +52,7 @@ def environment(tmp_path, monkeypatch):
         "dataset_digest": digest(rows),
         "calibration": {"threshold": 0.8},
         "deployment_allowed": True,
+        "decision_contract_digest": decision_contract_digest(),
         "reasons": [],
     }
     write_json(model / "manifest.json", {"train_digest": digest(rows), "weights_sha256": report["model_digest"]})
@@ -146,6 +147,84 @@ def test_changed_candidate_catalog_reverts(environment, monkeypatch):
     root, _, _, _ = environment
     monkeypatch.setitem(SPECS, "test-scope-v1", replace(SPECS["test-scope-v1"], purpose="changed catalog"))
     assert lifecycle.decide(root, "test-scope-v1", INPUTS)["fallback"]
+    assert read_json(root / "deployment.json")["mode"] == "off"
+
+
+@pytest.mark.parametrize("change", ["description", "reverse-order", "schema", "criterion"])
+def test_changed_complete_contract_reverts_before_model_load(environment, monkeypatch, change):
+    from reflexfoundry import core
+    root, _, _, _ = environment
+    original = decision_contract_digest()
+    if change in {"description", "reverse-order"}:
+        question = core.DecisionSpec.question
+        def altered(self, reverse=False):
+            value = question(self, False if change == "reverse-order" else reverse)
+            if change == "description":
+                value["criteria"][self.choices[0]] += " Changed scope."
+            return value
+        monkeypatch.setattr(core.DecisionSpec, "question", altered)
+    else:
+        descriptors = core.spec_dicts
+        def altered_descriptors():
+            value = descriptors()
+            if change == "schema":
+                value[0]["input_schema"]["properties"]["symbol"]["maxLength"] = 10
+            else:
+                value[0]["success_criterion"] = "A different independent outcome criterion."
+            return value
+        monkeypatch.setattr(core, "spec_dicts", altered_descriptors)
+    assert decision_contract_digest() != original
+    class UnexpectedModel:
+        def __init__(self, *_args):
+            pytest.fail("changed contract must be rejected before loading a model")
+    monkeypatch.setattr(lifecycle, "LocalPolicy", UnexpectedModel)
+    result = lifecycle.decide(root, "test-scope-v1", INPUTS)
+    assert result["choice"] == "full"
+    assert read_json(root / "deployment.json")["mode"] == "off"
+
+
+def test_legacy_report_requires_re_evaluation_without_rewriting_saved_state(environment):
+    root, model, report, rows = environment
+    saved = (root / "policy.json").read_bytes()
+    del report["decision_contract_digest"]
+    with pytest.raises(ValueError, match="re-evaluate"):
+        lifecycle.register(root, model, report, rows)
+    assert (root / "policy.json").read_bytes() == saved
+
+
+def test_legacy_active_policy_falls_back_before_model_load(environment, monkeypatch):
+    root, _, _, _ = environment
+    policy = read_json(root / "policy.json")
+    del policy["decision_contract_digest"]
+    write_json(root / "policy.json", policy)
+    assert lifecycle.decide(root, "test-scope-v1", INPUTS)["choice"] == "full"
+    assert read_json(root / "deployment.json")["mode"] == "off"
+
+
+def test_new_training_contract_must_match_registration(environment):
+    root, model, report, rows = environment
+    manifest = read_json(model / "manifest.json")
+    manifest["decision_contract_digest"] = "different-question-semantics"
+    write_json(model / "manifest.json", manifest)
+    with pytest.raises(ValueError, match="trained against a different complete"):
+        lifecycle.register(root, model, report, rows)
+
+
+def test_contract_changes_during_inference_revert(environment, monkeypatch):
+    from reflexfoundry.core import DecisionSpec
+    root, _, _, _ = environment
+    question = DecisionSpec.question
+    class ChangingPolicy(WarmPolicy):
+        def predict(self, spec, inputs):
+            def altered(contract, reverse=False):
+                value = question(contract, reverse)
+                value["instructions"] += " Changed semantics."
+                return value
+            monkeypatch.setattr(DecisionSpec, "question", altered)
+            return super().predict(spec, inputs)
+    monkeypatch.setattr(lifecycle, "LocalPolicy", ChangingPolicy)
+    result = lifecycle.decide(root, "test-scope-v1", INPUTS)
+    assert result["choice"] == "full"
     assert read_json(root / "deployment.json")["mode"] == "off"
 
 

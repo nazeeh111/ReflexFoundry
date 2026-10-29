@@ -10,7 +10,15 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from .core import SPECS, digest, finite_number, validate_inputs, validate_splits, write_json
+from .core import (
+    SPECS,
+    decision_contract_digest,
+    digest,
+    finite_number,
+    validate_inputs,
+    validate_splits,
+    write_json,
+)
 
 BASE_MODEL = "convaiinnovations/laya"
 BASE_REVISION = "7b928d828b7b0e022f929d9bd2e44165aa270148"
@@ -76,6 +84,7 @@ def train(records: list[dict[str, Any]], base: Path, output: Path,
           epochs: int = 4, device: str = "auto") -> dict[str, Any]:
     from laya.train import TrainConfig, finetune
     validate_splits(records)
+    contract = decision_contract_digest()
     if output.exists():
         raise ValueError("training output exists; choose a fresh version directory")
     rows = [r for r in records if r["split"] == "train"]
@@ -96,6 +105,8 @@ def train(records: list[dict[str, Any]], base: Path, output: Path,
         freeze_encoder=True, loss="soft-ce", head_lr=1e-4, max_len=256,
         shuffle_options=("choice",), calib_frac=0.15, seed=17, log_every=20)
     summary = finetune(str(dataset), str(base), str(output), config, device=device)
+    if decision_contract_digest() != contract:
+        raise ValueError("decision contract changed during training; use a fresh version")
     elapsed = (time.perf_counter() - start) * 1000
     from safetensors.torch import load_file, save_file
     state = load_file(str(output / "model.safetensors"))
@@ -106,6 +117,7 @@ def train(records: list[dict[str, Any]], base: Path, output: Path,
         "training_records": len(examples), "training_records_available": len(rows),
         "supervision": supervision, "train_digest": digest(rows),
         "spec_catalog_digest": digest([s.__dict__ for s in SPECS.values()]),
+        "decision_contract_digest": contract,
         "head_sha256": file_hash(output / "head.safetensors"),
         "weights_sha256": file_hash(output / "model.safetensors"),
         "inference_artifact_digest": artifact_digest(output), "summary": summary}

@@ -127,6 +127,34 @@ demonstrations. Label them as such. They do not substitute for held-out real
 repositories or a live Codex task trial. A negative result, including an inference
 overhead larger than the saved work, is a valid result and blocks promotion.
 
+## What the executed studies do and do not establish
+
+Both stage studies compare original actions, a deterministic heuristic, untuned
+Laya, adapted always-delegation and adapted selective delegation. Untuned versus
+adapted is an adaptation ablation; always versus selective isolates the gate.
+The proposed teacher-agreement-only training ablation was **not executed**:
+these controlled datasets do not contain original-agent teacher labels. The
+studies do not isolate a causal benefit of outcome-aware supervision over
+imitation, and no such improvement is established.
+
+Forward and reverse order are all permutations of the supported two-choice
+catalogs and were measured. Similar-description perturbations and larger-choice
+catalogs were not separately evaluated as model-quality studies. Catalog change,
+truncation and domain-refusal checks are engineering guards; they do not prove
+model reliability under broad distribution shift.
+
+The native Codex study has two independently verified repairs, no complete
+matched comparison, and no captured agent usage totals. Its successful shadow
+run refused inference because the frozen artifact binding was stale. Completing
+the remaining old launch could at most add a refusal-path observation; it would
+not by itself establish an operating compiled-policy comparison or model-usage
+benefit. A valid future native study needs fixed matching model/runtime
+artifacts, actual inference evidence, documented usage accounting and a bounded
+comparison protocol. The original four-process cap still applies to that study.
+Its blocked launch must not be retried without the pending scoped user authority
+accepted by the same review control. These stage results do not complete the
+full flagship end-to-end agent demonstration.
+
 ## Diagram generation feasibility
 
 [PaperVizAgent](https://github.com/google-research/papervizagent) provides

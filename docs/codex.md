@@ -94,3 +94,16 @@ reflex rollback --workspace .reflex
 ```
 
 Keep independent final validation in Codex and the repository's normal CI. ReflexFoundry must never become the sole authority for permissions or security-sensitive approvals.
+
+## Upgrading reports created before 0.2.1
+
+The complete contract binds both model-visible question orders, option
+descriptions, input schema, independent success criterion and declared limits.
+A historical report without this binding remains readable in the Lab, but it
+cannot register a new policy. An active legacy policy falls back and reverts.
+Run `reflex evaluate` with the current source before registering or inspecting
+new proposals; do not add a digest to an old report by hand. Existing trained
+weights without the new training-contract field can be evaluated, preserving
+their original manifest. New training manifests also bind the complete contract;
+a mismatch requires a compatible trained version. Historical numerical reports
+are not silently upgraded or overwritten by this migration.

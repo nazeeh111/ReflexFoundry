@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from reflexfoundry.core import SPECS, digest, write_json
+from reflexfoundry.core import SPECS, decision_contract_digest, digest, write_json
 from reflexfoundry.evaluation import evaluate, summarize
 from reflexfoundry.lifecycle import artifact_digest, register, transition
 from reflexfoundry.model import file_hash
@@ -24,6 +24,7 @@ def test_baseline_shadow_success_cannot_verify_unexecuted_candidate(tmp_path):
     model = _model(tmp_path)
     report = {"deployment_allowed": True, "calibration": {"threshold": .9}, "reasons": []}
     policy = {"id": "p", "spec": "test-scope-v1", "model": str(model),
+              "decision_contract_digest": decision_contract_digest(),
               "spec_digest": digest(SPECS["test-scope-v1"].__dict__),
               "artifact_digest": artifact_digest(model), "report": report,
               "report_digest": digest(report)}

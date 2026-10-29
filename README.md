@@ -12,7 +12,7 @@ ReflexFoundry finds repeated, bounded decisions in explicitly shared workflow re
 
 A fast model can still make a workflow slower or less reliable. ReflexFoundry includes startup and fallback costs, compares against a transparent heuristic, and blocks deployment when the evidence fails. A rejected policy is a useful result.
 
-**v0.2.0 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. The current source also executes a separate [public-source context retrieval study](docs/context-benchmark.md). Its source-coverage outcomes do not establish autonomous coding improvements. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md). The [0.1.1 fixes](CHANGELOG.md) tighten validation and shadow evidence; the original model and benchmark remain withheld and unchanged.
+**v0.2.1 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. The current source also executes a separate [public-source context retrieval study](docs/context-benchmark.md). Its source-coverage outcomes do not establish autonomous coding improvements. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md). The [0.1.1 fixes](CHANGELOG.md) tighten validation and shadow evidence; the original model and benchmark remain withheld and unchanged.
 
 ## Try it without a model
 
