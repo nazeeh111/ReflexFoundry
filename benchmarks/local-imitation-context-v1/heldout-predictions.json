@@ -1,0 +1,2166 @@
+{
+  "outcome": {
+    "funcy-00-00": {
+      "choice": "symbol",
+      "confidence": 0.9725,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 723.3318750222679,
+      "probabilities": {
+        "symbol": 0.9725,
+        "search": 0.0275
+      },
+      "backend": "mlx"
+    },
+    "funcy-00-01": {
+      "choice": "symbol",
+      "confidence": 0.8069,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 513.7655829894356,
+      "probabilities": {
+        "symbol": 0.8069,
+        "search": 0.1931
+      },
+      "backend": "mlx"
+    },
+    "funcy-00-02": {
+      "choice": "search",
+      "confidence": 0.5453,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 170.86195902084,
+      "probabilities": {
+        "symbol": 0.3791,
+        "search": 0.6209
+      },
+      "backend": "mlx"
+    },
+    "funcy-00-03": {
+      "choice": "search",
+      "confidence": 0.5542,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 148.99512499687262,
+      "probabilities": {
+        "symbol": 0.4125,
+        "search": 0.5875
+      },
+      "backend": "mlx"
+    },
+    "funcy-00-04": {
+      "choice": "search",
+      "confidence": 0.6855,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 327.2432499798015,
+      "probabilities": {
+        "symbol": 0.1999,
+        "search": 0.8001
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-00": {
+      "choice": "symbol",
+      "confidence": 0.9802,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 220.37158400053158,
+      "probabilities": {
+        "symbol": 0.9833,
+        "search": 0.0167
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-01": {
+      "choice": "symbol",
+      "confidence": 0.9356,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 242.13320799754,
+      "probabilities": {
+        "symbol": 0.9738,
+        "search": 0.0262
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-02": {
+      "choice": "search",
+      "confidence": 0.6077,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 455.7037920167204,
+      "probabilities": {
+        "symbol": 0.3923,
+        "search": 0.6077
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-03": {
+      "choice": "search",
+      "confidence": 0.5908,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 230.2062500093598,
+      "probabilities": {
+        "symbol": 0.4092,
+        "search": 0.5908
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-04": {
+      "choice": "search",
+      "confidence": 0.5825,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 558.6615840147715,
+      "probabilities": {
+        "symbol": 0.3535,
+        "search": 0.6465
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-00": {
+      "choice": "symbol",
+      "confidence": 0.9445,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 481.98245899402536,
+      "probabilities": {
+        "symbol": 0.9445,
+        "search": 0.0555
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-01": {
+      "choice": "symbol",
+      "confidence": 0.9103,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 759.8019590077456,
+      "probabilities": {
+        "symbol": 0.9103,
+        "search": 0.0897
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-02": {
+      "choice": "search",
+      "confidence": 0.5237,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 330.43991698650643,
+      "probabilities": {
+        "symbol": 0.4763,
+        "search": 0.5237
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-03": {
+      "choice": "search",
+      "confidence": 0.5151,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 79.07583299675025,
+      "probabilities": {
+        "symbol": 0.4849,
+        "search": 0.5151
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-04": {
+      "choice": "search",
+      "confidence": 0.6051,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 441.987792000873,
+      "probabilities": {
+        "symbol": 0.281,
+        "search": 0.719
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-00": {
+      "choice": "symbol",
+      "confidence": 0.9944,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 221.05958298197947,
+      "probabilities": {
+        "symbol": 0.9963,
+        "search": 0.0037
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-01": {
+      "choice": "symbol",
+      "confidence": 0.952,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 367.5476660137065,
+      "probabilities": {
+        "symbol": 0.9814,
+        "search": 0.0186
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-02": {
+      "choice": "search",
+      "confidence": 0.5369,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 184.80095799895935,
+      "probabilities": {
+        "symbol": 0.4631,
+        "search": 0.5369
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-03": {
+      "choice": "symbol",
+      "confidence": 0.519,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 344.3116669950541,
+      "probabilities": {
+        "symbol": 0.519,
+        "search": 0.481
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-04": {
+      "choice": "search",
+      "confidence": 0.5814,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 326.18366699898615,
+      "probabilities": {
+        "symbol": 0.2169,
+        "search": 0.7831
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-00": {
+      "choice": "symbol",
+      "confidence": 0.988,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 130.9119999932591,
+      "probabilities": {
+        "symbol": 0.988,
+        "search": 0.012
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-01": {
+      "choice": "symbol",
+      "confidence": 0.9615,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 221.31825002725236,
+      "probabilities": {
+        "symbol": 0.9615,
+        "search": 0.0385
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-02": {
+      "choice": "search",
+      "confidence": 0.5498,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 288.840249995701,
+      "probabilities": {
+        "symbol": 0.2569,
+        "search": 0.7431
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-03": {
+      "choice": "search",
+      "confidence": 0.5285,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 147.30604100623168,
+      "probabilities": {
+        "symbol": 0.2511,
+        "search": 0.7489
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-04": {
+      "choice": "search",
+      "confidence": 0.6225,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 71.5573749912437,
+      "probabilities": {
+        "symbol": 0.2399,
+        "search": 0.7601
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-00": {
+      "choice": "symbol",
+      "confidence": 0.9941,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 184.94433400337584,
+      "probabilities": {
+        "symbol": 0.9941,
+        "search": 0.0059
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-01": {
+      "choice": "symbol",
+      "confidence": 0.9873,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 706.2009169894736,
+      "probabilities": {
+        "symbol": 0.9909,
+        "search": 0.0091
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-02": {
+      "choice": "search",
+      "confidence": 0.5093,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 225.49129198887385,
+      "probabilities": {
+        "symbol": 0.254,
+        "search": 0.746
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-03": {
+      "choice": "search",
+      "confidence": 0.5091,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 133.6675839847885,
+      "probabilities": {
+        "symbol": 0.2528,
+        "search": 0.7472
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-04": {
+      "choice": "search",
+      "confidence": 0.6368,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 150.16795799601823,
+      "probabilities": {
+        "symbol": 0.2123,
+        "search": 0.7877
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-00": {
+      "choice": "symbol",
+      "confidence": 0.9946,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 220.0036669964902,
+      "probabilities": {
+        "symbol": 0.9966,
+        "search": 0.0034
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-01": {
+      "choice": "symbol",
+      "confidence": 0.9862,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 294.47091699694283,
+      "probabilities": {
+        "symbol": 0.9986,
+        "search": 0.0014
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-02": {
+      "choice": "symbol",
+      "confidence": 0.6386,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 168.53250001440756,
+      "probabilities": {
+        "symbol": 0.6386,
+        "search": 0.3614
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-03": {
+      "choice": "symbol",
+      "confidence": 0.6049,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 226.1414579988923,
+      "probabilities": {
+        "symbol": 0.6049,
+        "search": 0.3951
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-04": {
+      "choice": "search",
+      "confidence": 0.5432,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 74.9575000081677,
+      "probabilities": {
+        "symbol": 0.4037,
+        "search": 0.5963
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-00": {
+      "choice": "symbol",
+      "confidence": 0.9957,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 124.13962499704212,
+      "probabilities": {
+        "symbol": 0.9957,
+        "search": 0.0043
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-01": {
+      "choice": "symbol",
+      "confidence": 0.989,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 114.45558298146352,
+      "probabilities": {
+        "symbol": 0.9964,
+        "search": 0.0036
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-02": {
+      "choice": "search",
+      "confidence": 0.528,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 98.89170798123814,
+      "probabilities": {
+        "symbol": 0.472,
+        "search": 0.528
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-03": {
+      "choice": "search",
+      "confidence": 0.5176,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 248.50833401433192,
+      "probabilities": {
+        "symbol": 0.4824,
+        "search": 0.5176
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-04": {
+      "choice": "search",
+      "confidence": 0.5414,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 130.84083300782368,
+      "probabilities": {
+        "symbol": 0.3385,
+        "search": 0.6615
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-00": {
+      "choice": "symbol",
+      "confidence": 0.9958,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 89.81162498821504,
+      "probabilities": {
+        "symbol": 0.9966,
+        "search": 0.0034
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-01": {
+      "choice": "symbol",
+      "confidence": 0.9198,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 165.46983399894089,
+      "probabilities": {
+        "symbol": 0.9968,
+        "search": 0.0032
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-02": {
+      "choice": "symbol",
+      "confidence": 0.5479,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 182.819958019536,
+      "probabilities": {
+        "symbol": 0.5483,
+        "search": 0.4517
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-03": {
+      "choice": "symbol",
+      "confidence": 0.5807,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 135.1810000196565,
+      "probabilities": {
+        "symbol": 0.6008,
+        "search": 0.3992
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-04": {
+      "choice": "search",
+      "confidence": 0.5819,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 487.70879200310446,
+      "probabilities": {
+        "symbol": 0.3009,
+        "search": 0.6991
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-00": {
+      "choice": "symbol",
+      "confidence": 0.9973,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 141.41775001189671,
+      "probabilities": {
+        "symbol": 0.9985,
+        "search": 0.0015
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-01": {
+      "choice": "symbol",
+      "confidence": 0.9848,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 427.46683399309404,
+      "probabilities": {
+        "symbol": 0.9933,
+        "search": 0.0067
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-02": {
+      "choice": "symbol",
+      "confidence": 0.7281,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 428.4832080011256,
+      "probabilities": {
+        "symbol": 0.7281,
+        "search": 0.2719
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-03": {
+      "choice": "symbol",
+      "confidence": 0.7602,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 97.04129199963063,
+      "probabilities": {
+        "symbol": 0.7602,
+        "search": 0.2398
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-04": {
+      "choice": "search",
+      "confidence": 0.5051,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 135.10141600272618,
+      "probabilities": {
+        "symbol": 0.2952,
+        "search": 0.7048
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-00": {
+      "choice": "symbol",
+      "confidence": 0.9977,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 259.3161249824334,
+      "probabilities": {
+        "symbol": 0.9979,
+        "search": 0.0021
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-01": {
+      "choice": "symbol",
+      "confidence": 0.9853,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 137.73037501960061,
+      "probabilities": {
+        "symbol": 0.9966,
+        "search": 0.0034
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-02": {
+      "choice": "search",
+      "confidence": 0.5005,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 368.3838750002906,
+      "probabilities": {
+        "symbol": 0.4995,
+        "search": 0.5005
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-03": {
+      "choice": "symbol",
+      "confidence": 0.5466,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 545.8846660039853,
+      "probabilities": {
+        "symbol": 0.5466,
+        "search": 0.4534
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-04": {
+      "choice": "search",
+      "confidence": 0.5077,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 207.0752919826191,
+      "probabilities": {
+        "symbol": 0.3529,
+        "search": 0.6471
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-00": {
+      "choice": "symbol",
+      "confidence": 0.9969,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 388.764583010925,
+      "probabilities": {
+        "symbol": 0.9976,
+        "search": 0.0024
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-01": {
+      "choice": "symbol",
+      "confidence": 0.9921,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 286.7487499897834,
+      "probabilities": {
+        "symbol": 0.9994,
+        "search": 0.0006
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-02": {
+      "choice": "symbol",
+      "confidence": 0.5288,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 407.38175000296906,
+      "probabilities": {
+        "symbol": 0.5288,
+        "search": 0.4712
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-03": {
+      "choice": "symbol",
+      "confidence": 0.5022,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 155.9894579986576,
+      "probabilities": {
+        "symbol": 0.5022,
+        "search": 0.4978
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-04": {
+      "choice": "search",
+      "confidence": 0.5164,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 243.0051670235116,
+      "probabilities": {
+        "symbol": 0.331,
+        "search": 0.669
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-00": {
+      "choice": "symbol",
+      "confidence": 0.9837,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 227.16345899971202,
+      "probabilities": {
+        "symbol": 0.995,
+        "search": 0.005
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-01": {
+      "choice": "symbol",
+      "confidence": 0.9698,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 379.6147909888532,
+      "probabilities": {
+        "symbol": 0.99,
+        "search": 0.01
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-02": {
+      "choice": "symbol",
+      "confidence": 0.5735,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 326.5834169869777,
+      "probabilities": {
+        "symbol": 0.5735,
+        "search": 0.4265
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-03": {
+      "choice": "search",
+      "confidence": 0.5096,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 408.9620000158902,
+      "probabilities": {
+        "symbol": 0.4904,
+        "search": 0.5096
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-04": {
+      "choice": "search",
+      "confidence": 0.539,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 326.8665830255486,
+      "probabilities": {
+        "symbol": 0.4165,
+        "search": 0.5835
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-00": {
+      "choice": "symbol",
+      "confidence": 0.9966,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 370.47529200208373,
+      "probabilities": {
+        "symbol": 0.9986,
+        "search": 0.0014
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-01": {
+      "choice": "symbol",
+      "confidence": 0.9976,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 274.000416015042,
+      "probabilities": {
+        "symbol": 0.9991,
+        "search": 0.0009
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-02": {
+      "choice": "symbol",
+      "confidence": 0.5412,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 111.12212500302121,
+      "probabilities": {
+        "symbol": 0.5412,
+        "search": 0.4588
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-03": {
+      "choice": "search",
+      "confidence": 0.5557,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 279.49495799839497,
+      "probabilities": {
+        "symbol": 0.4443,
+        "search": 0.5557
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-04": {
+      "choice": "search",
+      "confidence": 0.5423,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 291.3894580269698,
+      "probabilities": {
+        "symbol": 0.3436,
+        "search": 0.6564
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-00": {
+      "choice": "symbol",
+      "confidence": 0.9954,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 272.6857500092592,
+      "probabilities": {
+        "symbol": 0.9977,
+        "search": 0.0023
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-01": {
+      "choice": "symbol",
+      "confidence": 0.9966,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 206.13145802053623,
+      "probabilities": {
+        "symbol": 0.9985,
+        "search": 0.0015
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-02": {
+      "choice": "search",
+      "confidence": 0.5293,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 334.02800001204014,
+      "probabilities": {
+        "symbol": 0.4707,
+        "search": 0.5293
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-03": {
+      "choice": "symbol",
+      "confidence": 0.6111,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 468.8728750043083,
+      "probabilities": {
+        "symbol": 0.6111,
+        "search": 0.3889
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-04": {
+      "choice": "search",
+      "confidence": 0.5593,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 161.23745901859365,
+      "probabilities": {
+        "symbol": 0.2829,
+        "search": 0.7171
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-00": {
+      "choice": "symbol",
+      "confidence": 0.9965,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 280.4281249991618,
+      "probabilities": {
+        "symbol": 0.9972,
+        "search": 0.0028
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-01": {
+      "choice": "symbol",
+      "confidence": 0.9976,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 343.556042003911,
+      "probabilities": {
+        "symbol": 0.9988,
+        "search": 0.0012
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-02": {
+      "choice": "search",
+      "confidence": 0.5171,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 258.61625000834465,
+      "probabilities": {
+        "symbol": 0.4829,
+        "search": 0.5171
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-03": {
+      "choice": "symbol",
+      "confidence": 0.5604,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 407.8121249913238,
+      "probabilities": {
+        "symbol": 0.5604,
+        "search": 0.4396
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-04": {
+      "choice": "search",
+      "confidence": 0.5432,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 202.39724998828024,
+      "probabilities": {
+        "symbol": 0.3287,
+        "search": 0.6713
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-00": {
+      "choice": "symbol",
+      "confidence": 0.9958,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 217.32704201713204,
+      "probabilities": {
+        "symbol": 0.9978,
+        "search": 0.0022
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-01": {
+      "choice": "symbol",
+      "confidence": 0.994,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 863.9941250148695,
+      "probabilities": {
+        "symbol": 0.9985,
+        "search": 0.0015
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-02": {
+      "choice": "symbol",
+      "confidence": 0.5874,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 678.7767079949845,
+      "probabilities": {
+        "symbol": 0.5874,
+        "search": 0.4126
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-03": {
+      "choice": "symbol",
+      "confidence": 0.6779,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 510.0800830114167,
+      "probabilities": {
+        "symbol": 0.6779,
+        "search": 0.3221
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-04": {
+      "choice": "symbol",
+      "confidence": 0.5234,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 335.8539580076467,
+      "probabilities": {
+        "symbol": 0.535,
+        "search": 0.465
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-00": {
+      "choice": "symbol",
+      "confidence": 0.9901,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 355.69612501421943,
+      "probabilities": {
+        "symbol": 0.9975,
+        "search": 0.0025
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-01": {
+      "choice": "symbol",
+      "confidence": 0.9988,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 366.87875000643544,
+      "probabilities": {
+        "symbol": 0.9994,
+        "search": 0.0006
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-02": {
+      "choice": "symbol",
+      "confidence": 0.5369,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 159.15925000444986,
+      "probabilities": {
+        "symbol": 0.5369,
+        "search": 0.4631
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-03": {
+      "choice": "symbol",
+      "confidence": 0.51,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 408.4440419974271,
+      "probabilities": {
+        "symbol": 0.51,
+        "search": 0.49
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-04": {
+      "choice": "symbol",
+      "confidence": 0.5478,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 232.83850000007078,
+      "probabilities": {
+        "symbol": 0.5478,
+        "search": 0.4522
+      },
+      "backend": "mlx"
+    }
+  },
+  "imitation": {
+    "funcy-00-00": {
+      "choice": "symbol",
+      "confidence": 0.9984,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 467.36470801988617,
+      "probabilities": {
+        "symbol": 0.9984,
+        "search": 0.0016
+      },
+      "backend": "mlx"
+    },
+    "funcy-00-01": {
+      "choice": "symbol",
+      "confidence": 0.9552,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 476.6873750195373,
+      "probabilities": {
+        "symbol": 0.9552,
+        "search": 0.0448
+      },
+      "backend": "mlx"
+    },
+    "funcy-00-02": {
+      "choice": "search",
+      "confidence": 0.6039,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 441.8527919915505,
+      "probabilities": {
+        "symbol": 0.2546,
+        "search": 0.7454
+      },
+      "backend": "mlx"
+    },
+    "funcy-00-03": {
+      "choice": "search",
+      "confidence": 0.6284,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 219.389499980025,
+      "probabilities": {
+        "symbol": 0.3255,
+        "search": 0.6745
+      },
+      "backend": "mlx"
+    },
+    "funcy-00-04": {
+      "choice": "search",
+      "confidence": 0.7717,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 87.25558398873545,
+      "probabilities": {
+        "symbol": 0.0869,
+        "search": 0.9131
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-00": {
+      "choice": "symbol",
+      "confidence": 0.999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 185.46562502160668,
+      "probabilities": {
+        "symbol": 0.9993,
+        "search": 0.0007
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-01": {
+      "choice": "symbol",
+      "confidence": 0.9949,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 314.49195902678184,
+      "probabilities": {
+        "symbol": 0.9988,
+        "search": 0.0012
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-02": {
+      "choice": "search",
+      "confidence": 0.7202,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 264.2109580046963,
+      "probabilities": {
+        "symbol": 0.2798,
+        "search": 0.7202
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-03": {
+      "choice": "search",
+      "confidence": 0.6741,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 204.63995801401325,
+      "probabilities": {
+        "symbol": 0.3259,
+        "search": 0.6741
+      },
+      "backend": "mlx"
+    },
+    "funcy-01-04": {
+      "choice": "search",
+      "confidence": 0.6306,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 164.388000004692,
+      "probabilities": {
+        "symbol": 0.2307,
+        "search": 0.7693
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-00": {
+      "choice": "symbol",
+      "confidence": 0.9955,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 149.91929099778645,
+      "probabilities": {
+        "symbol": 0.9955,
+        "search": 0.0045
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-01": {
+      "choice": "symbol",
+      "confidence": 0.9916,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 448.5464589961339,
+      "probabilities": {
+        "symbol": 0.9916,
+        "search": 0.0084
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-02": {
+      "choice": "search",
+      "confidence": 0.5564,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 449.5333750091959,
+      "probabilities": {
+        "symbol": 0.4436,
+        "search": 0.5564
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-03": {
+      "choice": "search",
+      "confidence": 0.5341,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 254.6136250020936,
+      "probabilities": {
+        "symbol": 0.4659,
+        "search": 0.5341
+      },
+      "backend": "mlx"
+    },
+    "funcy-02-04": {
+      "choice": "search",
+      "confidence": 0.6696,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 276.2067500152625,
+      "probabilities": {
+        "symbol": 0.1174,
+        "search": 0.8826
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-00": {
+      "choice": "symbol",
+      "confidence": 0.9999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 221.13241700571962,
+      "probabilities": {
+        "symbol": 0.9999,
+        "search": 0.0001
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-01": {
+      "choice": "symbol",
+      "confidence": 0.9965,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 310.3744580002967,
+      "probabilities": {
+        "symbol": 0.9993,
+        "search": 0.0007
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-02": {
+      "choice": "search",
+      "confidence": 0.5908,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 421.47004199796356,
+      "probabilities": {
+        "symbol": 0.4092,
+        "search": 0.5908
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-03": {
+      "choice": "symbol",
+      "confidence": 0.5429,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 149.8159580223728,
+      "probabilities": {
+        "symbol": 0.5429,
+        "search": 0.4571
+      },
+      "backend": "mlx"
+    },
+    "funcy-03-04": {
+      "choice": "search",
+      "confidence": 0.677,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 77.96495800721459,
+      "probabilities": {
+        "symbol": 0.0535,
+        "search": 0.9465
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-00": {
+      "choice": "symbol",
+      "confidence": 0.9997,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 297.7943330188282,
+      "probabilities": {
+        "symbol": 0.9997,
+        "search": 0.0003
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-01": {
+      "choice": "symbol",
+      "confidence": 0.9972,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 91.41350002028048,
+      "probabilities": {
+        "symbol": 0.9972,
+        "search": 0.0028
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-02": {
+      "choice": "search",
+      "confidence": 0.5956,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 380.96991600468755,
+      "probabilities": {
+        "symbol": 0.0862,
+        "search": 0.9138
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-03": {
+      "choice": "search",
+      "confidence": 0.5542,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 149.04462499544024,
+      "probabilities": {
+        "symbol": 0.0781,
+        "search": 0.9219
+      },
+      "backend": "mlx"
+    },
+    "funcy-04-04": {
+      "choice": "search",
+      "confidence": 0.6877,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 284.74833400105126,
+      "probabilities": {
+        "symbol": 0.1058,
+        "search": 0.8942
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-00": {
+      "choice": "symbol",
+      "confidence": 0.9999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 210.32154199201614,
+      "probabilities": {
+        "symbol": 0.9999,
+        "search": 0.0001
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-01": {
+      "choice": "symbol",
+      "confidence": 0.9996,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 334.3319999985397,
+      "probabilities": {
+        "symbol": 0.9997,
+        "search": 0.0003
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-02": {
+      "choice": "search",
+      "confidence": 0.5263,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 158.1405829929281,
+      "probabilities": {
+        "symbol": 0.0798,
+        "search": 0.9202
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-03": {
+      "choice": "search",
+      "confidence": 0.5134,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 122.91120798909105,
+      "probabilities": {
+        "symbol": 0.0825,
+        "search": 0.9175
+      },
+      "backend": "mlx"
+    },
+    "funcy-05-04": {
+      "choice": "search",
+      "confidence": 0.7139,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 201.79620801354758,
+      "probabilities": {
+        "symbol": 0.0665,
+        "search": 0.9335
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-00": {
+      "choice": "symbol",
+      "confidence": 0.9999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 187.21370902494527,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-01": {
+      "choice": "symbol",
+      "confidence": 0.9994,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 402.0807920023799,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-02": {
+      "choice": "symbol",
+      "confidence": 0.7668,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 231.9243749952875,
+      "probabilities": {
+        "symbol": 0.7668,
+        "search": 0.2332
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-03": {
+      "choice": "symbol",
+      "confidence": 0.7152,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 208.51987501373515,
+      "probabilities": {
+        "symbol": 0.7152,
+        "search": 0.2848
+      },
+      "backend": "mlx"
+    },
+    "blinker-00-04": {
+      "choice": "search",
+      "confidence": 0.5695,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 163.78095801337622,
+      "probabilities": {
+        "symbol": 0.3535,
+        "search": 0.6465
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-00": {
+      "choice": "symbol",
+      "confidence": 0.9999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 101.73750002286397,
+      "probabilities": {
+        "symbol": 0.9999,
+        "search": 0.0001
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-01": {
+      "choice": "symbol",
+      "confidence": 0.9996,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 185.00016600592062,
+      "probabilities": {
+        "symbol": 0.9999,
+        "search": 0.0001
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-02": {
+      "choice": "search",
+      "confidence": 0.5706,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 222.9614169918932,
+      "probabilities": {
+        "symbol": 0.4294,
+        "search": 0.5706
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-03": {
+      "choice": "search",
+      "confidence": 0.5523,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 137.63700000708923,
+      "probabilities": {
+        "symbol": 0.4477,
+        "search": 0.5523
+      },
+      "backend": "mlx"
+    },
+    "blinker-01-04": {
+      "choice": "search",
+      "confidence": 0.5659,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 316.6301670134999,
+      "probabilities": {
+        "symbol": 0.2582,
+        "search": 0.7418
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-00": {
+      "choice": "symbol",
+      "confidence": 0.9999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 97.78962499694899,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-01": {
+      "choice": "symbol",
+      "confidence": 0.9873,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 115.20533298607916,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-02": {
+      "choice": "symbol",
+      "confidence": 0.6063,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 148.0262500117533,
+      "probabilities": {
+        "symbol": 0.6063,
+        "search": 0.3937
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-03": {
+      "choice": "symbol",
+      "confidence": 0.6887,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 226.2628749886062,
+      "probabilities": {
+        "symbol": 0.7102,
+        "search": 0.2898
+      },
+      "backend": "mlx"
+    },
+    "blinker-02-04": {
+      "choice": "search",
+      "confidence": 0.6274,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 146.81400000699796,
+      "probabilities": {
+        "symbol": 0.2126,
+        "search": 0.7874
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-00": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 147.8128329908941,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-01": {
+      "choice": "symbol",
+      "confidence": 0.9994,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 145.1090830087196,
+      "probabilities": {
+        "symbol": 0.9998,
+        "search": 0.0002
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-02": {
+      "choice": "symbol",
+      "confidence": 0.8928,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 228.2274590106681,
+      "probabilities": {
+        "symbol": 0.8928,
+        "search": 0.1072
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-03": {
+      "choice": "symbol",
+      "confidence": 0.9199,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 448.8495419791434,
+      "probabilities": {
+        "symbol": 0.9199,
+        "search": 0.0801
+      },
+      "backend": "mlx"
+    },
+    "blinker-03-04": {
+      "choice": "search",
+      "confidence": 0.5058,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 189.44779102457687,
+      "probabilities": {
+        "symbol": 0.1968,
+        "search": 0.8032
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-00": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 390.7740830036346,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-01": {
+      "choice": "symbol",
+      "confidence": 0.9993,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 386.9037090044003,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-02": {
+      "choice": "symbol",
+      "confidence": 0.501,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 272.182624990819,
+      "probabilities": {
+        "symbol": 0.501,
+        "search": 0.499
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-03": {
+      "choice": "symbol",
+      "confidence": 0.603,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 111.98424999020062,
+      "probabilities": {
+        "symbol": 0.603,
+        "search": 0.397
+      },
+      "backend": "mlx"
+    },
+    "blinker-04-04": {
+      "choice": "search",
+      "confidence": 0.5118,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 407.5685409770813,
+      "probabilities": {
+        "symbol": 0.2767,
+        "search": 0.7233
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-00": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 303.0622499936726,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-01": {
+      "choice": "symbol",
+      "confidence": 0.9998,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 456.8826250033453,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-02": {
+      "choice": "symbol",
+      "confidence": 0.5564,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 408.336667023832,
+      "probabilities": {
+        "symbol": 0.5564,
+        "search": 0.4436
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-03": {
+      "choice": "search",
+      "confidence": 0.5054,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 499.7740409744438,
+      "probabilities": {
+        "symbol": 0.4946,
+        "search": 0.5054
+      },
+      "backend": "mlx"
+    },
+    "blinker-05-04": {
+      "choice": "search",
+      "confidence": 0.5277,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 381.51420798385516,
+      "probabilities": {
+        "symbol": 0.2375,
+        "search": 0.7625
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-00": {
+      "choice": "symbol",
+      "confidence": 0.999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 324.33537498582155,
+      "probabilities": {
+        "symbol": 0.9999,
+        "search": 0.0001
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-01": {
+      "choice": "symbol",
+      "confidence": 0.9979,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 1195.482000010088,
+      "probabilities": {
+        "symbol": 0.9996,
+        "search": 0.0004
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-02": {
+      "choice": "symbol",
+      "confidence": 0.6427,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 253.85891599580646,
+      "probabilities": {
+        "symbol": 0.6427,
+        "search": 0.3573
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-03": {
+      "choice": "search",
+      "confidence": 0.5203,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 393.68837501388043,
+      "probabilities": {
+        "symbol": 0.4797,
+        "search": 0.5203
+      },
+      "backend": "mlx"
+    },
+    "cachetools-00-04": {
+      "choice": "search",
+      "confidence": 0.5597,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 233.5195830091834,
+      "probabilities": {
+        "symbol": 0.365,
+        "search": 0.635
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-00": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 250.84433401934803,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-01": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 293.1187500071246,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-02": {
+      "choice": "symbol",
+      "confidence": 0.5837,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 345.24891700129956,
+      "probabilities": {
+        "symbol": 0.5837,
+        "search": 0.4163
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-03": {
+      "choice": "search",
+      "confidence": 0.6393,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 449.43133398192003,
+      "probabilities": {
+        "symbol": 0.3607,
+        "search": 0.6393
+      },
+      "backend": "mlx"
+    },
+    "cachetools-01-04": {
+      "choice": "search",
+      "confidence": 0.5649,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 184.13320899708197,
+      "probabilities": {
+        "symbol": 0.2585,
+        "search": 0.7415
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-00": {
+      "choice": "symbol",
+      "confidence": 0.9999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 385.0064590224065,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-01": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 167.29362498153932,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-02": {
+      "choice": "search",
+      "confidence": 0.5597,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 331.52800000971183,
+      "probabilities": {
+        "symbol": 0.4403,
+        "search": 0.5597
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-03": {
+      "choice": "symbol",
+      "confidence": 0.7065,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 191.2458750011865,
+      "probabilities": {
+        "symbol": 0.7065,
+        "search": 0.2935
+      },
+      "backend": "mlx"
+    },
+    "cachetools-02-04": {
+      "choice": "search",
+      "confidence": 0.5953,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 287.10975000285544,
+      "probabilities": {
+        "symbol": 0.1708,
+        "search": 0.8292
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-00": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 122.76083399774507,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-01": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 160.29883400187828,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-02": {
+      "choice": "search",
+      "confidence": 0.5346,
+      "stable": false,
+      "truncated": false,
+      "duration_ms": 110.55200002738275,
+      "probabilities": {
+        "symbol": 0.4654,
+        "search": 0.5346
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-03": {
+      "choice": "symbol",
+      "confidence": 0.6097,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 135.17708299332298,
+      "probabilities": {
+        "symbol": 0.6097,
+        "search": 0.3903
+      },
+      "backend": "mlx"
+    },
+    "cachetools-03-04": {
+      "choice": "search",
+      "confidence": 0.5706,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 62.285083025926724,
+      "probabilities": {
+        "symbol": 0.2373,
+        "search": 0.7627
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-00": {
+      "choice": "symbol",
+      "confidence": 0.9999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 521.1179170000833,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-01": {
+      "choice": "symbol",
+      "confidence": 0.9999,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 667.2200830071233,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-02": {
+      "choice": "symbol",
+      "confidence": 0.6681,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 232.8063330205623,
+      "probabilities": {
+        "symbol": 0.6681,
+        "search": 0.3319
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-03": {
+      "choice": "symbol",
+      "confidence": 0.8108,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 537.2502919926774,
+      "probabilities": {
+        "symbol": 0.8108,
+        "search": 0.1892
+      },
+      "backend": "mlx"
+    },
+    "cachetools-04-04": {
+      "choice": "symbol",
+      "confidence": 0.5384,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 327.9634589853231,
+      "probabilities": {
+        "symbol": 0.5571,
+        "search": 0.4429
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-00": {
+      "choice": "symbol",
+      "confidence": 0.9997,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 289.7945409931708,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-01": {
+      "choice": "symbol",
+      "confidence": 1.0,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 265.7589169975836,
+      "probabilities": {
+        "symbol": 1.0,
+        "search": 0.0
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-02": {
+      "choice": "symbol",
+      "confidence": 0.5758,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 320.74920801096596,
+      "probabilities": {
+        "symbol": 0.5758,
+        "search": 0.4242
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-03": {
+      "choice": "symbol",
+      "confidence": 0.5193,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 136.15145898074843,
+      "probabilities": {
+        "symbol": 0.5193,
+        "search": 0.4807
+      },
+      "backend": "mlx"
+    },
+    "cachetools-05-04": {
+      "choice": "symbol",
+      "confidence": 0.5847,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 259.1144999896642,
+      "probabilities": {
+        "symbol": 0.5847,
+        "search": 0.4153
+      },
+      "backend": "mlx"
+    }
+  }
+}

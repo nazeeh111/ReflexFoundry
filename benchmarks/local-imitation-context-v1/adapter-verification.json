@@ -1,0 +1,34 @@
+{
+  "outcome": {
+    "archive_sha256": "be09873cb773d65afdc0b91cfb639d55f65c032221d7f3e8e26bf9d2b7b16666",
+    "head_sha256": "2c83ad68a27fdbb5576a915d7dce2e1bb561b82ff02153328d729a89164d7731",
+    "members": [
+      "head.safetensors",
+      "manifest.json",
+      "rl_agent_config.json",
+      "encoder/config.json",
+      "tokenizer/tokenizer.json",
+      "tokenizer/tokenizer_config.json",
+      "train_report.json",
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.md"
+    ],
+    "verified": true
+  },
+  "imitation": {
+    "archive_sha256": "b48ffb9fb8c249ce3697b1765dd1b262d27b15b2ca4cc8c5317ece54e1f9e17d",
+    "head_sha256": "fdf659df35a3326c4430c3892ee1398a3998a0e62aeb8a47e74737a3242fd6bf",
+    "members": [
+      "head.safetensors",
+      "manifest.json",
+      "rl_agent_config.json",
+      "encoder/config.json",
+      "tokenizer/tokenizer.json",
+      "tokenizer/tokenizer_config.json",
+      "train_report.json",
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.md"
+    ],
+    "verified": true
+  }
+}

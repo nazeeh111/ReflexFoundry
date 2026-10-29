@@ -1,0 +1,13 @@
+{
+  "numerical_results_changed": false,
+  "executed_runner_sha256": "49de73734228c53ebb3ee00da8f73c48262118cfc008199f413828ffecedebef",
+  "reproduction_runner_sha256": "73f360dd01be4c660eaea1db7d319fbf7262f89f027842c9e5cca5abafa6eea4",
+  "changes": [
+    "Correct inherited report execution_contract metadata to actual retrospective stage accounting.",
+    "Type-only Path(str(distribution.locate_file(...))) conversion; native inference and training unchanged.",
+    "Independent optional native-split test uses importorskip when Laya is absent from core-only CI; actual installed-native test still passes.",
+    "Type-only annotation for the heterogeneous recipe mapping, required when integrated with the typed train function; values and execution unchanged."
+  ],
+  "reuse_limit": "The fixed test repository and outcomes were previously public in context-v1; held out from both new fits, not a newly blind external validation sample.",
+  "handoff_reproduction_runner_sha256": "333c62b3feade7261a9f6a44b3ab0b45230ab9f6eee5b5a39d0dec6becf74512"
+}

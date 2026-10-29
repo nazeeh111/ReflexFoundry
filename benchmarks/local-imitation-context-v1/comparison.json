@@ -1,0 +1,30 @@
+{
+  "correctness": {
+    "calibration": {
+      "outcome": 23,
+      "imitation": 23,
+      "n": 30,
+      "choice_disagreements": 0
+    },
+    "promotion": {
+      "outcome": 16,
+      "imitation": 16,
+      "n": 30,
+      "choice_disagreements": 2
+    },
+    "test": {
+      "outcome": 20,
+      "imitation": 20,
+      "n": 30,
+      "choice_disagreements": 0
+    }
+  },
+  "test_paired": {
+    "both_correct": 20,
+    "outcome_only": 0,
+    "imitation_only": 0,
+    "neither_correct": 10
+  },
+  "test_choice_agreement": 30,
+  "new_independent_test_sample": false
+}

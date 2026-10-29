@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.2 · portable exports and local stress evidence
+
+- Finalize newly trained tokenizer metadata before freezing its artifact identity. Preserve the native export configuration and verify/carry its provenance during reconstruction. Refuse legacy CPU loads before an upstream rewrite; existing models remain immutable.
+- Verify the first-CPU-load mutation on an isolated original export, then verify unchanged digests on actual CPU and MLX loads of a finalized copy. Both new ablation heads reconstruct exactly.
+- Compare outcome labels with untuned local Laya imitation on the same 36 inputs and training recipe. The two fresh heads made identical choices on all 30 reused test inputs; both failed promotion. This does not test original Codex-agent distillation.
+- Execute 192 local wording and redundant-choice predictions on 12 retained inputs. Parallel wording increased observed order flips from 1/12 to 4/12 for both models. Larger-list results concern aliases for two existing actions, not new tools.
+- Describe evaluation costs as retrospective sums of measured stages, excluding interpreter/import and full CLI/agent process overhead. Preserve original numerical reports and clarify historical labels.
+- Publish a bounded native-comparison preparation with numeric-only usage accounting and an undelegated baseline. Its pinned v0.2.1 runtime, files and 20-call cap remain unchanged and unexecuted pending specific human authority.
+
+No learned policy became eligible. These exploratory local studies reuse public test evidence and do not establish native-agent savings, fresh blind validation or population equivalence.
+
 ## 0.2.1 · complete decision contract binding
 
 - Bind model-visible question text and both option orders, input schema, independent success criterion and declared limits to training, evaluation and active policy evidence.

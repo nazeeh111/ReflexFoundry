@@ -1,0 +1,25 @@
+{
+  "shared_input_digest": "f1479f92809d8abfef920f4d8203889388998ee482361979985ac27ab66a9dae",
+  "teacher_generation_ms": 13435.01358301728,
+  "teacher_order_unstable": 5,
+  "label_disagreements": [
+    "toolz-00-01",
+    "toolz-01-01",
+    "toolz-02-01",
+    "toolz-02-02",
+    "toolz-02-03",
+    "toolz-03-01",
+    "toolz-04-01",
+    "toolz-05-01"
+  ],
+  "label_counts": {
+    "outcome": {
+      "symbol": 18,
+      "search": 18
+    },
+    "imitation": {
+      "symbol": 26,
+      "search": 10
+    }
+  }
+}

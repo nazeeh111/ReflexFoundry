@@ -1,0 +1,533 @@
+{
+  "format": 1,
+  "status": "frozen-before-inference",
+  "script_sha256": "9f1ac14f96fae3123f03f9ea5567f4cc6057f3705a793079671ee5e464f3b4e5",
+  "records_sha256": "8c80ebfe7b11913a5983e8f0826f4ce6f41f32e26c0518cee5f8ef2a46401dfb",
+  "runtime_versions": {
+    "python": "3.12.13",
+    "laya": "0.4.16",
+    "torch": "2.14.1",
+    "transformers": "5.21.0",
+    "tokenizers": "0.23.3"
+  },
+  "backend": "torch",
+  "max_len": 256,
+  "models": {
+    "ordinary-laya": "e7998c162d61a5658031ad61eed955b05d052ba3ad2a4ada996650f2203247d0",
+    "outcome-trained": "2a78f9457b3a410366349585b69142ee0f2f177888f904e9d8812057a6fa5923"
+  },
+  "model_order": [
+    "ordinary-laya",
+    "outcome-trained"
+  ],
+  "condition_schedule": "Plan condition order on even input_index+model_index, reversed on odd; each condition's listed orders run in sequence.",
+  "inputs": [
+    {
+      "id": "cachetools-00-00",
+      "task_group": "cachetools:Cache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Locate implementation of Cache.",
+        "symbol": "Cache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 53.824124999999995,
+          "median_action_ms": 42.819083,
+          "success": true,
+          "trials_ms": [
+            4.425583,
+            109.612167,
+            42.819083
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 509.288917,
+          "median_action_ms": 498.283875,
+          "success": true,
+          "trials_ms": [
+            498.283875,
+            737.574958,
+            179.300834
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-00-04",
+      "task_group": "cachetools:Cache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Find public definition Cache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 217.697001,
+          "median_action_ms": 206.691959,
+          "success": true,
+          "trials_ms": [
+            343.190208,
+            206.691959,
+            79.469208
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 11.008625,
+          "median_action_ms": 0.003583,
+          "success": false,
+          "trials_ms": [
+            0.004459,
+            0.000708,
+            0.003583
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-01-00",
+      "task_group": "cachetools:FIFOCache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Locate implementation of FIFOCache.",
+        "symbol": "FIFOCache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 122.000833,
+          "median_action_ms": 110.995791,
+          "success": true,
+          "trials_ms": [
+            110.995791,
+            4.507208,
+            147.350958
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 190.995083,
+          "median_action_ms": 179.990041,
+          "success": true,
+          "trials_ms": [
+            341.192125,
+            27.418292,
+            179.990041
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-01-04",
+      "task_group": "cachetools:FIFOCache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Find public definition FIFOCache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 108.323792,
+          "median_action_ms": 97.31875,
+          "success": true,
+          "trials_ms": [
+            121.757458,
+            8.408292,
+            97.31875
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 11.007209,
+          "median_action_ms": 0.002167,
+          "success": false,
+          "trials_ms": [
+            0.003958,
+            0.002167,
+            0.000458
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-02-00",
+      "task_group": "cachetools:LFUCache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Locate implementation of LFUCache.",
+        "symbol": "LFUCache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 22.324292,
+          "median_action_ms": 11.31925,
+          "success": true,
+          "trials_ms": [
+            5.491459,
+            11.31925,
+            12.61675
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 169.455667,
+          "median_action_ms": 158.450625,
+          "success": true,
+          "trials_ms": [
+            191.812333,
+            158.450625,
+            149.782125
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-02-04",
+      "task_group": "cachetools:LFUCache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Find public definition LFUCache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 15.651042,
+          "median_action_ms": 4.646,
+          "success": true,
+          "trials_ms": [
+            4.646,
+            5.088417,
+            3.493958
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 11.007083999999999,
+          "median_action_ms": 0.002042,
+          "success": false,
+          "trials_ms": [
+            0.0025,
+            0.000625,
+            0.002042
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-03-00",
+      "task_group": "cachetools:LRUCache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Locate implementation of LRUCache.",
+        "symbol": "LRUCache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 30.276125,
+          "median_action_ms": 19.271083,
+          "success": true,
+          "trials_ms": [
+            19.271083,
+            7.269875,
+            422.94775
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 368.455959,
+          "median_action_ms": 357.450917,
+          "success": true,
+          "trials_ms": [
+            357.450917,
+            150.126667,
+            452.533542
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-03-04",
+      "task_group": "cachetools:LRUCache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Find public definition LRUCache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 42.88375,
+          "median_action_ms": 31.878708,
+          "success": true,
+          "trials_ms": [
+            434.877208,
+            31.878708,
+            10.774542
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 11.008375,
+          "median_action_ms": 0.003333,
+          "success": false,
+          "trials_ms": [
+            0.003333,
+            0.004458,
+            0.000542
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-04-00",
+      "task_group": "cachetools:TTLCache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Locate implementation of TTLCache.",
+        "symbol": "TTLCache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 155.455875,
+          "median_action_ms": 144.450833,
+          "success": true,
+          "trials_ms": [
+            171.109584,
+            144.450833,
+            140.916208
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 534.308792,
+          "median_action_ms": 523.30375,
+          "success": true,
+          "trials_ms": [
+            494.265083,
+            810.741875,
+            523.30375
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-04-04",
+      "task_group": "cachetools:TTLCache",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Find public definition TTLCache"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 17.114167,
+          "median_action_ms": 6.109125,
+          "success": true,
+          "trials_ms": [
+            4.044041,
+            9.046875,
+            6.109125
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 11.008625,
+          "median_action_ms": 0.003583,
+          "success": false,
+          "trials_ms": [
+            0.005791,
+            0.000959,
+            0.003583
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-05-00",
+      "task_group": "cachetools:cached",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Locate implementation of cached.",
+        "symbol": "cached"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 74.223834,
+          "median_action_ms": 63.218792,
+          "success": true,
+          "trials_ms": [
+            111.028166,
+            63.218792,
+            11.215292
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 229.030459,
+          "median_action_ms": 218.025417,
+          "success": true,
+          "trials_ms": [
+            690.394291,
+            192.072833,
+            218.025417
+          ]
+        }
+      }
+    },
+    {
+      "id": "cachetools-05-04",
+      "task_group": "cachetools:cached",
+      "repository": "https://github.com/tkem/cachetools",
+      "inputs": {
+        "changed_files": [],
+        "summary": "In cachetools: Find public definition cached"
+      },
+      "outcomes": {
+        "search": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 19.525167,
+          "median_action_ms": 8.520125,
+          "success": true,
+          "trials_ms": [
+            14.576917,
+            8.520125,
+            4.675458
+          ]
+        },
+        "symbol": {
+          "corpus_startup_ms": 11.005042,
+          "duration_ms": 11.008500999999999,
+          "median_action_ms": 0.003459,
+          "success": false,
+          "trials_ms": [
+            0.006417,
+            0.003459,
+            0.000459
+          ]
+        }
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "name": "canonical-two",
+      "question_type": "choice",
+      "instructions": "Choose the first source retrieval action for the coding task.",
+      "criteria": {
+        "symbol": "Read the definition of a named source symbol",
+        "search": "Search the repository for relevant source text and paths"
+      },
+      "orders": [
+        [
+          "symbol",
+          "search"
+        ],
+        [
+          "search",
+          "symbol"
+        ]
+      ],
+      "all_possible_orders": 2,
+      "action_mapping": {
+        "symbol": "symbol",
+        "search": "search"
+      }
+    },
+    {
+      "name": "parallel-wording-two",
+      "question_type": "choice",
+      "instructions": "Choose the first source retrieval action for the coding task.",
+      "criteria": {
+        "symbol": "Retrieve source context by reading the named symbol's definition.",
+        "search": "Retrieve source context by searching repository text and paths."
+      },
+      "orders": [
+        [
+          "symbol",
+          "search"
+        ],
+        [
+          "search",
+          "symbol"
+        ]
+      ],
+      "all_possible_orders": 2,
+      "action_mapping": {
+        "symbol": "symbol",
+        "search": "search"
+      }
+    },
+    {
+      "name": "redundant-four",
+      "question_type": "choice",
+      "instructions": "Choose the first source retrieval action for the coding task.",
+      "criteria": {
+        "symbol": "Read the definition of a named source symbol",
+        "search": "Search the repository for relevant source text and paths",
+        "symbol_duplicate": "Read the definition of a named source symbol",
+        "search_duplicate": "Search the repository for relevant source text and paths"
+      },
+      "orders": [
+        [
+          "symbol",
+          "search",
+          "symbol_duplicate",
+          "search_duplicate"
+        ],
+        [
+          "search",
+          "symbol_duplicate",
+          "search_duplicate",
+          "symbol"
+        ],
+        [
+          "symbol_duplicate",
+          "search_duplicate",
+          "symbol",
+          "search"
+        ],
+        [
+          "search_duplicate",
+          "symbol",
+          "search",
+          "symbol_duplicate"
+        ]
+      ],
+      "all_possible_orders": 24,
+      "action_mapping": {
+        "symbol": "symbol",
+        "search": "search",
+        "symbol_duplicate": "symbol",
+        "search_duplicate": "search"
+      }
+    }
+  ],
+  "planned_predictions": 192,
+  "sampling": "First and last lexicographic ID in each test task_group; no model-output-dependent selection.",
+  "limits": [
+    "Post-hoc exploratory reuse of public retained test inputs; no fresh heldout tasks.",
+    "Twelve inputs, six correlated symbol groups, one actual cachetools repository; no population confidence interval.",
+    "Four-choice condition adds exact semantic aliases, not new tools/actions; four of24 permutations only.",
+    "Outcome lookup is previously measured context coverage, not fresh retrieval or coding-repair success.",
+    "Winner remains the model's individual option; summed action probability is a separate diagnostic.",
+    "Retain malformed responses, missing usage and truncation; no retries, tuning, training or policy promotion.",
+    "Model startup and per-query timings are diagnostic; concurrent host load is uncontrolled; no speed/cost claim."
+  ]
+}

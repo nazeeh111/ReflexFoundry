@@ -1,0 +1,7 @@
+{
+  "recorded_after_execution": true,
+  "imported_reflexfoundry_source_commit": "1ddf3e4f3f2281bb5cbb6b72655774390eecd242",
+  "executed_model_module_sha256": "224c17f903de7aa3ea5c27d0b0bbfc32f48c1e9af1649cdbd44ae84207b5232e",
+  "current_prediction_method_ast_unchanged": true,
+  "note": "The plan froze the standalone runner, artifact identities and dependency versions. Imported project modules were not separately hashed in that plan. During execution model.py was the unchanged 1ddf3e4 module; later 0.2.2 changes add tokenizer-export finalization and CPU preflight, not new raw-model predictions. Original timings are preserved as diagnostics only."
+}

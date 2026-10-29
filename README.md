@@ -12,7 +12,7 @@ ReflexFoundry finds repeated, bounded decisions in explicitly shared workflow re
 
 A fast model can still make a workflow slower or less reliable. ReflexFoundry includes startup and fallback costs, compares against a transparent heuristic, and blocks deployment when the evidence fails. A rejected policy is a useful result.
 
-**v0.2.1 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. The current source also executes a separate [public-source context retrieval study](docs/context-benchmark.md). Its source-coverage outcomes do not establish autonomous coding improvements. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md). The [0.1.1 fixes](CHANGELOG.md) tighten validation and shadow evidence; the original model and benchmark remain withheld and unchanged.
+**v0.2.2 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. The current source also executes a separate [public-source context retrieval study](docs/context-benchmark.md). Its source-coverage outcomes do not establish autonomous coding improvements. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md). The [0.1.1 fixes](CHANGELOG.md) tighten validation and shadow evidence; the original model and benchmark remain withheld and unchanged.
 
 ## Try it without a model
 
@@ -91,6 +91,8 @@ reflex lab --workspace runs/experiment-v1 \
 
 The full experiment executes subprocesses, downloads a substantial checkpoint, and trains locally. Runtime depends on hardware. The base revision is pinned in [model.py](src/reflexfoundry/model.py); weights and optional runtimes retain their own licenses. MLX supplies native Apple Silicon inference where the GPU is available; PyTorch supplies the portable CPU alternative with `--backend torch`.
 
+Fresh training exports now finalize tokenizer metadata before their integrity digest is frozen, preserving the original export configuration as provenance. Existing versioned artifacts stay immutable; legacy CPU conversions still require an explicit new version and fresh evaluation.
+
 The training extra requires Git: it installs Laya from the immutable upstream source revision used for this experiment. That source declares version 0.4.16, which was unavailable on PyPI when checked; the pinned Git dependency avoids relying on an unpublished package version. Core installation remains dependency-free.
 
 Inspect `evaluation.json` before attempting deployment. It contains the acceptance decision and reasons, including insufficient evidence, task regressions, failure to beat the heuristic, or negative net time savings. There is no command to force a failed evaluation through the gate.
@@ -101,7 +103,7 @@ The flagship experiment asks a simple question: **can a local policy choose a sm
 
 Each candidate patch is checked with both focused and full tests. A separate checker exercises public behavior and determines whether the patch is correct. A policy succeeds when its validation result agrees with that checker. An incorrect patch can be correctly rejected; a passing focused check can be a false acceptance.
 
-Evaluation compares the original full-suite workflow, a deterministic file-based heuristic, always-focused checks, ordinary untuned Laya, trained always-delegation, and selective delegation. Ordinary Laya is included when `--base` is supplied. Reversed candidate order is checked, uncertainty can cause abstention, and the original fallback is retained. Model loading is part of the cold CLI cost.
+Evaluation compares the original full-suite workflow, a deterministic file-based heuristic, always-focused checks, ordinary untuned Laya, trained always-delegation, and selective delegation. Ordinary Laya is included when `--base` is supplied. Reversed candidate order is checked, uncertainty can cause abstention, and the original fallback is retained. The retrospective stage costs include measured model loading, screening and prediction, but exclude interpreter startup, module imports and complete CLI/agent process time.
 
 The independent checker is separate code, not an independent research organization. Generated repositories share a narrow grammar. Timing repeats measure variability; they do not create new correctness samples. These limits matter when interpreting the report.
 
@@ -110,6 +112,8 @@ The independent checker is separate code, not an independent research organizati
 A separate [six-task Toolz/Funcy holdout study](benchmarks/public-repos-v1/README.md) executes pinned upstream full suites and independent contract checks. Full validation was correct on 6/6; focused checks missed two shared-helper mutations. The locked selective policy fell back on all six. This is a small mutation smoke study, not a powered estimate of production reliability.
 
 The [native Codex coding trial](benchmarks/codex-e2e-v1/README.md) includes two actual source repairs, independently verified with Toolz's full suite and a separate public-contract grader. Host initialization and automatic approval review prevented the planned comparison from completing. There are no complete comparable pairs or claimed agent speedups. The shadow trial's changed-artifact refusal is reported separately from genuine trained inference, which is verified in the [local shadow smoke](benchmarks/run-001/shadow-smoke.json).
+
+Additional local evidence includes a [matched label-source ablation](benchmarks/local-imitation-context-v1/README.md) with no observed test-choice advantage from outcome targets, and a [192-prediction wording/alias diagnostic](benchmarks/choice-stress-v1/README.md) showing additional order sensitivity. Both reuse public context inputs and retain their limitations. Neither supports deployment.
 
 A [prepared five-arm native protocol](docs/native-study-v2.md) compares an undelegated agent, a deterministic heuristic, ordinary Laya, trained always-delegate and selective shadow on two public repair tasks. Its cap is 20 new calls. Preparation and local worker checks are separate from native execution; no native call in this protocol is authorized or counted as completed.
 

@@ -33,7 +33,7 @@ All policy comparisons use the same recorded action outcomes and declared task c
 
 ## Costs and uncertainty
 
-Cold CLI decisions include artifact-integrity screening, model startup on each invocation, both option-order prediction passes, and the selected action or fallback. The retrospective comparison combines recorded candidate-action outcomes with measured model overheads charged per modeled cold request; it is not direct timing of complete live-agent runs. Warm inference is a separate diagnostic. Benchmark collection, independent grading and training are preparation costs; they must be reported separately and included in any later full-lifecycle break-even claim.
+The retrospective stage comparison combines recorded candidate-action outcomes with measured artifact-integrity screening, model loading, both option-order prediction passes, and the selected action or fallback. The measured loading and screening are charged on each modeled request. Interpreter startup, module imports, and full CLI/agent process wall time are outside these timers. The table is a sum of measured components, not direct timing of complete cold CLI or live-agent runs. Historical reports retain the original “Cold CLI” execution-contract label; interpret that label using this narrower measurement boundary. Warm inference is a separate diagnostic. Benchmark collection, independent grading and training are preparation costs; they must be reported separately and included in any later full-lifecycle break-even claim.
 
 Reports retain task correctness, false acceptance information where available, fallback, accepted errors, option-order flips, paired timing differences, and uncertainty. Repository-group bootstrap intervals describe measured paired differences. With
 fewer than two actual repositories, paired intervals are unavailable and the
@@ -54,3 +54,5 @@ Use a fresh output directory and retain source version, package versions, hardwa
 Stronger claims need additional evidence: held-out real repositories with meaningful task diversity, naturally occurring coding tasks, repeated independent trials, verifier quality assessment, and clearly accounted collection/training/fallback costs. A live Codex trial should measure task success and latency through documented observable actions, preserving native permissions. The [context retrieval study](context-benchmark.md) provides a separate executable
 source-coverage criterion. It has one actual repository per split, so its results
 do not support broad delegation or autonomous task-completion claims.
+
+Fresh training versions finalize the pinned runtime's tokenizer-class and special-token metadata before computing the training artifact digest. The manifest records that operation and preserves the upstream configuration. Loading an existing legacy model still cannot silently revise its identity; use an explicit converted version and evaluate it again.

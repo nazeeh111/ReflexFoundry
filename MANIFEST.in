@@ -6,3 +6,7 @@ include benchmarks/context-v1/scoped-v1/records.jsonl
 include benchmarks/context-v1/scoped-v1/manifest.json
 recursive-include benchmarks/context-v1/scoped-v1/evidence *.json
 recursive-include benchmarks/context-v1/scoped-v1/licenses *.txt
+
+graft benchmarks/choice-stress-v1
+graft benchmarks/local-imitation-context-v1
+graft benchmarks/codex-e2e-v2
