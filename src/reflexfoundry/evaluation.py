@@ -262,5 +262,5 @@ def evaluate(records: list[dict[str, Any]], predictions: dict[str, dict[str, Any
         "scope": ("Coding-change validation outcomes, not autonomous agent task success."
                   if spec.id == "test-scope-v1" else
                   "Bounded source retrieval outcomes, not autonomous agent task success."),
-        "execution_contract": "Retrospective stage accounting: recorded action time plus measured model screening/loading and prediction; excludes interpreter, module imports and complete CLI/agent process wall time.",
+        "execution_contract": "Retrospective stage accounting: recorded action time plus measured model screening/loading and prediction; excludes interpreter startup and imports outside the loader timer; complete CLI/agent process wall time is not measured.",
         "statistics": "Repository-group paired bootstrap 1000 resamples; intervals unavailable below two actual repositories. Per-task Wilson bounds are descriptive under shared task grammar, not a population reliability guarantee."}

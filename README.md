@@ -103,7 +103,7 @@ The flagship experiment asks a simple question: **can a local policy choose a sm
 
 Each candidate patch is checked with both focused and full tests. A separate checker exercises public behavior and determines whether the patch is correct. A policy succeeds when its validation result agrees with that checker. An incorrect patch can be correctly rejected; a passing focused check can be a false acceptance.
 
-Evaluation compares the original full-suite workflow, a deterministic file-based heuristic, always-focused checks, ordinary untuned Laya, trained always-delegation, and selective delegation. Ordinary Laya is included when `--base` is supplied. Reversed candidate order is checked, uncertainty can cause abstention, and the original fallback is retained. The retrospective stage costs include measured model loading, screening and prediction, but exclude interpreter startup, module imports and complete CLI/agent process time.
+Evaluation compares the original full-suite workflow, a deterministic file-based heuristic, always-focused checks, ordinary untuned Laya, trained always-delegation, and selective delegation. Ordinary Laya is included when `--base` is supplied. Reversed candidate order is checked, uncertainty can cause abstention, and the original fallback is retained. The retrospective stage costs include measured model loading, screening and prediction, but exclude interpreter startup and imports outside the model-loading timer; complete CLI/agent process time is not measured.
 
 The independent checker is separate code, not an independent research organization. Generated repositories share a narrow grammar. Timing repeats measure variability; they do not create new correctness samples. These limits matter when interpreting the report.
 
