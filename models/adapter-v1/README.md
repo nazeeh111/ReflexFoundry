@@ -14,4 +14,4 @@ reflex materialize --base models/base --head extracted/head.safetensors --output
 
 Materialization requires matching SHA-256 digests, base revision, tensor names and shapes. It copies the trained calibration configuration and training manifest. It never loads pickle weights. Run your own evaluation with the exact declared workflow before any opt-in use. Speculative use for permissions, credentials or destructive actions is prohibited by the product boundary.
 
-This adapter has no validation for context retrieval, multilingual tasks, production codebases, or autonomous full coding tasks. Only synthetic public-contract task inputs were used; no private transcripts or user project source was included. See the repository research, evaluation boundaries and third-party notices.
+This adapter has no validation for context retrieval, multilingual tasks, production codebases, or autonomous full coding tasks. Only synthetic public-contract task inputs were used; no private transcripts or user project source was included. See the repository research and evaluation boundaries.

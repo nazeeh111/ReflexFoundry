@@ -24,5 +24,4 @@ with tarfile.open(output, "w:gz") as archive:
     for name in ("encoder", "tokenizer"):
         archive.add(trained / name, arcname=name)
     archive.add(root / "LICENSE", arcname="LICENSE")
-    archive.add(root / "THIRD_PARTY_NOTICES.md", arcname="THIRD_PARTY_NOTICES.md")
 print(output)

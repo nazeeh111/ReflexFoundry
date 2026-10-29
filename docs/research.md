@@ -129,7 +129,7 @@ overhead larger than the saved work, is a valid result and blocks promotion.
 
 ## Attribution and scope of claims
 
-See [third-party notices](../THIRD_PARTY_NOTICES.md) for license boundaries.
+See the [base-model terms](../models/adapter-v1/README.md) for model license boundaries.
 Published upstream benchmark numbers must retain their original provenance and
 must never appear as ReflexFoundry measurements. Model cards, policy manifests
 and release notes should identify the exact checkpoint, runtime version,

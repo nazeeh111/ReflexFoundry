@@ -34,6 +34,6 @@ New public-repository benchmarks must establish the pristine baseline before att
 
 Share only explicitly authorized, reviewed examples. Do not submit private transcripts, secrets, personal identifiers, proprietary code, or sensitive logs. Synthetic fixtures are preferable for reproducing ingestion bugs. Inspect Lab exports before attaching them.
 
-Every bundled model, dataset, copied source file, font or media asset needs an origin, version, license and required notice. Update [third-party notices](THIRD_PARTY_NOTICES.md) when relevant. The source license does not automatically license upstream weights or external datasets.
+Every bundled model, dataset, copied source file, font or media asset needs an origin, version, license and required notice. Record model terms in the [artifact documentation](docs/model-artifacts.md) and other asset terms beside their files. The source license does not automatically license upstream weights or external datasets.
 
 Before a pull request, check links and command examples against the current CLI. Use the actual report for numerical figures and keep plot sources with their data provenance. See the [release checklist](docs/release-checklist.md) for publication checks.

@@ -134,7 +134,7 @@ Consented records → discovery → training split → local Laya head
                                     └──── failure → original fallback
 ```
 
-See [architecture](docs/architecture.md), [privacy and security](SECURITY.md), [contributing](CONTRIBUTING.md), and [third-party notices](THIRD_PARTY_NOTICES.md).
+See [architecture](docs/architecture.md), [privacy and security](SECURITY.md), [contributing](CONTRIBUTING.md), and [model artifacts](docs/model-artifacts.md).
 
 ## What is original here
 
@@ -150,4 +150,4 @@ pytest -q
 python -m build
 ```
 
-Source is Apache-2.0. The project is independent and is not endorsed by OpenAI, Laya's authors, Apple, or the referenced research projects. Model and dependency licenses are listed separately in [third-party notices](THIRD_PARTY_NOTICES.md).
+Source is [Apache-2.0](LICENSE). The trained head retains its separate [base-model terms](models/adapter-v1/README.md); installed dependencies retain their package licenses.
