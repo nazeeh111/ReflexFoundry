@@ -1,0 +1,111 @@
+{
+  "task": "cachetools-getitem",
+  "repository": "https://github.com/tkem/cachetools",
+  "commit": "e7104dd52bfe0e3aced6f3439fb6ed4d9c8ff52a",
+  "source_files": {
+    ".github/FUNDING.yml": "0c634b596bc874a3f27db36c308f1a86b75d79ceb202c091b1056d031ef5c516",
+    ".github/ISSUE_TEMPLATE/bug_report.md": "044c7d343af87240c231d08875e7928ece698c667e5ba80503f3bcaab409eceb",
+    ".github/ISSUE_TEMPLATE/config.yml": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb",
+    ".github/ISSUE_TEMPLATE/feature_request.md": "3fe8ef9f691cae5cbce2a2f91263dd248e1eeb8fa5831badf620d6a4f4560dff",
+    ".github/PULL_REQUEST_TEMPLATE.md": "6db61a83310f4587f429c3b209b0a3fb2b9ccb4712ea4fbc31e108eab6844503",
+    ".github/SECURITY.md": "b9146b5a0e2ce32216a6cb60b8209b41871b82eaac536392c76211f5ffd9d13c",
+    ".github/copilot-instructions.md": "1ce1c8a412fd387961d988ac6ddf7434854fbf481d014bfa5dcb4d690a6c887e",
+    ".github/copilot-review.md": "9f13bd9db20c458eec56056f258a490e132fbe94d2e2d9468040a832f776a14d",
+    ".github/dependabot.yml": "60dd8fdc9a81cbc4ea245f63a3419ca89ac037f4f157afeeafdf4cc5c9244904",
+    ".github/workflows/ci.yml": "9babb3bd55bee66bc5cbd7db585ceeea09ddc8fa5b6466f4dfa80432bcc668a6",
+    ".gitignore": "959e953eaf6757ec42f895308830912560bad4ceaf6fe052807d355527c8c6f3",
+    ".readthedocs.yaml": "08341a537ecca61a0216249673d68ef7e20478143654fd930b39b46c1b6a5e48",
+    "CHANGELOG.rst": "590e1bc63d34c8e2f2a4fb87ecead2a35f51cb6ad7f5806c80614256b88a0e43",
+    "LICENSE": "28c000b52b0ee27138a68ef778227e4057046e86b65f62f1cacb99b0cc49e0d2",
+    "MANIFEST.in": "112a66627a754e7be3084a4abec44998dfbe3c4e9515fca8fa38661e11800568",
+    "README.rst": "b44071bcf42e41215188219203da345d48358acba735ef272b2bba8b7f2a3652",
+    "docs/conf.py": "f68affa8dfcf4a20d5fe872cfb0e19f9b284f8feda563dd8e8e23eafe75cd4eb",
+    "docs/index.rst": "84bc3b7bd94cab69f0b38b92c09ccd56a6710f3e330e8ccd363de576bf8a1759",
+    "pyproject.toml": "184b810289d47b8849192a67933a4a9e8147c5ed999afe9038e485923b6466c2",
+    "src/cachetools/__init__.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "src/cachetools/__init__.pyi": "c703bef49e2945726d09dbeb19041eed9a615a4c99ea4a4b39169f16a8483f92",
+    "src/cachetools/_cached.py": "90e2df70e55683f4d6f95fe04daa0e4f36d1e4ce50ea3a79b37e77c3dba1034b",
+    "src/cachetools/_cachedmethod.py": "e9aa1608a32fa6489afdfb9fecfb572bad4d6455147cdae391c25e6b667da131",
+    "src/cachetools/_descriptor.py": "4697a97118f15fbbc025133c04bc535bfa9271f3e1ef4d8eeab604b67a5b25a7",
+    "src/cachetools/func.py": "87724e4fc82303fd5172cc9fd03c7aaf6a767c6c477f3cb74a245fc45ebf7816",
+    "src/cachetools/func.pyi": "52237fae3e6e3f4c7103087eca0a9f49ebdc1297c459e2267639a6b9f50e1258",
+    "src/cachetools/keys.py": "1ef81b1f2a0ccd991ccf16fc28c427fb7ff2d70e1c783628f793b16eda953933",
+    "src/cachetools/keys.pyi": "594a1166a9c399a375b6095ee1b38408f44b7d7c8b7b57685caab85b4598a24c",
+    "src/cachetools/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/__init__.py": "01504c124b96d9d677db220bd1346437051fdf547731191c5f8905e35b5cf5c1",
+    "tests/test_cache.py": "dbdf81b02f344a0e62a5dcf2364be7e135e2511e765e93b43864aeb7aa3b115c",
+    "tests/test_cached.py": "11f9dfb7064d9e6b800cb272bb8ed9d8af71dcc7435147e062d4fa06730c872d",
+    "tests/test_cachedmethod.py": "23d680ea27c9026c1792227b366583627d3dcf9ba28dfe7340351ce04e8f95db",
+    "tests/test_classmethod.py": "465e882cf15481277cef959eb5d4ec0072d61c342079cac05684da55fe543851",
+    "tests/test_fifo.py": "c6134627b4d9daab20e67b27fe2ff8d7e225116ae46d6a0e79b2c9b620d25941",
+    "tests/test_func.py": "f9dc6bc1aaffa713ee17ce7d307ea56e483f782d61fda795d1d3c8689e8afe51",
+    "tests/test_keys.py": "91698c984d3839d3e97c0b8167ac60def0088721390a038436254c1b8f83ae22",
+    "tests/test_lfu.py": "11981704035d965ae733140734efb7cd30615ef492cfeeb464f63992db59b404",
+    "tests/test_lru.py": "dbfd53eb372f24571f70d739faeb6c4963f79c80ef18228f44b38b1112bf1a6c",
+    "tests/test_rr.py": "995ee7555ebe96c8b4f988c23a8923de980b5f0c42ca073906988e28dd773ec2",
+    "tests/test_threading.py": "3e7a0cfcb3672a68b3076bd102545448740434b050e2638de750cbbc5710e59b",
+    "tests/test_tlru.py": "e645b7104612dfda8f76e2e806e92a12c55b2b9c112c4a16ce9c3d3d44583b30",
+    "tests/test_ttl.py": "038a49c4c5c16bd62656cb45d9b1b5cea8bff5e08b38c6c370ca5551c719992c",
+    "tox.ini": "d0aa60b16ebf88ce28d15123d4825eb1de2f4ffb19761cc62a2e40107aa62bf5"
+  },
+  "source_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+  "mutated_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6",
+  "materialized_public_links": {},
+  "grader_sha256": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+  "request": {
+    "spec": "context-route-v1",
+    "inputs": {
+      "summary": "In cachetools: Locate implementation of Cache.__getitem__.",
+      "changed_files": [],
+      "symbol": "Cache.__getitem__"
+    }
+  },
+  "license": {
+    "file": "LICENSE",
+    "sha256": "28c000b52b0ee27138a68ef778227e4057046e86b65f62f1cacb99b0cc49e0d2",
+    "text": "The MIT License (MIT)\n\nCopyright (c) 2014-2026 Thomas Kemmer\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "checks": {
+    "clean_full": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 1323.074667,
+      "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 0.48s\n"
+    },
+    "clean_focused": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 834.131709,
+      "output": ".                                                                        [100%]\n1 passed in 0.02s\n"
+    },
+    "clean_grader": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 121.734875,
+      "output": "independent cachetools getitem contract passed\n"
+    },
+    "mutant_focused": {
+      "passed": false,
+      "exit_code": 1,
+      "timed_out": false,
+      "wall_ms": 927.039375,
+      "output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n____________________________ CacheTest.test_update _____________________________\n\nself = <tests.test_cache.CacheTest testMethod=test_update>\n\n    def test_update(self):\n        cache = self.Cache(maxsize=2)\n    \n        cache.update({1: 1, 2: 2})\n        self.assertEqual(2, len(cache))\n        self.assertEqual(1, cache[1])\n        self.assertEqual(2, cache[2])\n    \n        cache.update({1: 1, 2: 2})\n        self.assertEqual(2, len(cache))\n        self.assertEqual(1, cache[1])\n        self.assertEqual(2, cache[2])\n    \n        cache.update({1: \"a\", 2: \"b\"})\n        self.assertEqual(2, len(cache))\n>       self.assertEqual(\"a\", cache[1])\nE       AssertionError: 'a' != 1\n\ntests/__init__.py:134: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_cache.py::CacheTest::test_update - AssertionError: 'a' != 1\n1 failed in 0.07s\n"
+    },
+    "mutant_grader": {
+      "passed": false,
+      "exit_code": 1,
+      "timed_out": false,
+      "wall_ms": 144.447459,
+      "output": "Traceback (most recent call last):\n  File \"/var/folders/ss/tml7487n205dg94kb7__tth80000gn/T/reflex-native-v2-preflight-qxc6biw1/independent-grader.py\", line 11, in <module>\n    assert cache[\"different\"] == 17\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    }
+  },
+  "changed_public_files": [
+    "src/cachetools/__init__.py"
+  ],
+  "preflight_passed": true,
+  "codex_invocations": 0,
+  "scope": "Local preparation only; no agent task result or model-performance claim."
+}

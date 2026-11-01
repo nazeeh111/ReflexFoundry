@@ -26,6 +26,34 @@ def test_matched_native_costs_exclude_failed_and_missing_observations(tmp_path: 
     assert pairs["deterministic-heuristic"]["means"]["pipeline_wall_ms"] is None
 
 
+def test_amended_lab_retains_failure_and_only_displays_fixed_phase_notice(tmp_path: Path) -> None:
+    source = analysis_fixture(complete=True)
+    failed = source["observations"][17]
+    failed.update(status="protocol-failed", protocol_valid=False, independently_verified_success=False,
+                  inference_observed=False, metrics=dict(zip(METRICS, (181_000, 209_000, None, None, None), strict=True)))
+    for row in source["observations"][18:]:
+        row["phase"] = "reviewed-continuation-01"
+    source.update(protocol_valid_observations=19, continuation={
+        "phase": "reviewed-continuation-01", "indices": [19, 20], "publication_time_gap": True,
+        "private_comment": "DO_NOT_EMBED_AMENDMENT_TRANSCRIPT",
+    })
+    html, data = render(tmp_path, source)
+    assert data["native"]["amended"] is True
+    assert (data["native"]["completed"], data["native"]["protocol_valid"], data["native"]["protocol_failed"]) == (20, 19, 1)
+    assert data["native"]["model_inference_observations"] == 11
+    assert data["native"]["complete"] is False
+    assert "DO_NOT_EMBED_AMENDMENT_TRANSCRIPT" not in html
+
+
+def test_declared_amendment_cannot_erase_the_original_failed_observation(tmp_path: Path) -> None:
+    source = analysis_fixture(complete=True)
+    for row in source["observations"][18:]:
+        row["phase"] = "reviewed-continuation-01"
+    source["continuation"] = {"phase": "reviewed-continuation-01", "indices": [19, 20], "publication_time_gap": True}
+    with pytest.raises(ValueError, match="original failed observation"):
+        render(tmp_path, source)
+
+
 def analysis_fixture(*, complete: bool = False) -> dict:
     observations = []
     for repeat in (1, 2):

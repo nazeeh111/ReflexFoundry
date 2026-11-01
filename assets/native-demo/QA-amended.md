@@ -1,0 +1,9 @@
+# Amended evidence presentation checks
+
+The selected [44-second master](render-v2/reflexfoundry-amended-native-replay.mp4) has SHA-256 `3a580edc18e3c9adaba5ec27f2a0fbfcfe3f34b0a9195cb1b1ca4287144ed21c`. Its manifest matches the current renderer and every retained evidence file. FFprobe reports one H.264 video stream, 1280 × 720, 24 fps and 1,056 frames, without audio. Full FFmpeg decode passed.
+
+Current-source frames and actual decoded comparison/ending frames were inspected. An independent reviewer inspected all 17 extracted encoded frames, including both sides of every scene cut and the final frame. Text is readable without clipping. All five arm means and counts match the amended analysis. The supplied defect, trained retrieval, verified repair, separate fallback trial, original timeout, unavailable usage, publication/time gap and withheld policy are explicit. Technical checks and stills do not establish a normal-speed perceptual playback review; that remains unclaimed.
+
+The [current portable Lab](lab-amended.html) was exported through the current CLI and inspected in fresh local Chrome at 390-pixel and 1,470-pixel viewport widths. Document width equaled viewport width in both. All five arms and four matched rows render. The mobile table scrolls within its container to the far-right token columns. It reports 20/20 results, 19 valid, one failed protocol, no missing result and 11 verified inference observations. The amendment notice states that this is not an uninterrupted study. The read-only view grants no eligibility or deployment approval.
+
+The [desktop](lab-amended-desktop.png) and [mobile](lab-amended-mobile.png) images are actual current-source captures. The amended SVG was separately rendered and inspected, including rounded mean token deltas. Original phase-A reports, analysis, Lab and media remain unchanged. No new native calls were made for presentation checks.

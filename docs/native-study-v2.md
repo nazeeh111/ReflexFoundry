@@ -1,15 +1,15 @@
-# Native comparison v2: protocol and stopped execution
+# Native comparison v2: original protocol and reviewed continuation
 
-**Executed, then stopped incomplete at call 18.** Direct scoped human approval
-confirmed the 20-call/180-second cap, declared file transfer and subscription-only
-CLI access. Normal automatic review remained enabled. Seventeen calls produced
-protocol-valid, independently successful repairs; call 18 timed out without a
-completed turn or validated inference receipt. Its unrepaired candidate failed
-the independent checks. The stop rule prevented calls 19 and 20. See the
-[retained results](../benchmarks/codex-e2e-v2/README.md). This is not a completed
-balanced comparison. The immutable plan and prepared metadata retain their
-historical preparation status; execution and authorization are separate records.
-The earlier four-process study remains unchanged and was not resumed.
+**20 calls executed across two declared phases; one invalid timeout retained.**
+Direct scoped approval covered 20 calls, 180 seconds each, declared file transfer
+and subscription-only access. Execution stopped at call 18 and the stopped
+snapshot was released as v0.3.0. After independent review, an append-only observer
+completed only the two unused original cases under the same total cap and normal
+permission controls. There are 19 independently successful, protocol-valid repair
+runs, 11 verified inference observations and 15 valid pairs. This is not an
+uninterrupted or fully protocol-valid study. See the [current report](../benchmarks/codex-e2e-v2/README.md).
+The original plan, runner, first 18 records and stop record remain unchanged.
+The earlier four-process study was not resumed.
 
 ## Question and workload
 
@@ -142,12 +142,42 @@ Call 18 reached the 180-second native deadline. Retained telemetry has zero
 completed turns, unavailable usage and no validated worker receipt. This proves
 no verified inference outcome; it does not establish whether an unfinished
 command began work. The timeout cause is unknown and is not attributed to model
-quality. No later calls or resampling occurred. The runner's terminal result
-and explicit stop record are retained. Seventeen valid results yield 13 matched
-comparisons, with only two repository groups and shared baselines.
+quality. No retry or resampling of that call occurred. The runner's terminal
+result and explicit stop record are retained. That original phase has 17 valid
+results and 13 matched comparisons, with two repository groups and shared baselines.
 
 Agent-side test execution and ordering are agent-reported. The frozen observer
 directly records separate post-run focused, full-suite and contract checks. Its
 four declared source files remain frozen; separately recorded observer checkout
 84e55fb includes a newer model module whose used hashing functions have unchanged
 syntax trees. Per-case runtime remains the actual pinned 0.2.1 wheel.
+
+## Reviewed continuation of the two unused cases
+
+The stop rule says failures halt launches **for review**, not permanent
+cancellation. The user's original authorization still covered two unused calls.
+Independent scope and source reviews preceded a separate observer amendment;
+the frozen runner's refusal was never weakened or monkeypatched. Original cases
+19 and 20, prompts, models, runtime, graders and resource bounds stayed identical.
+The new observer wrote separate outputs, enforced the shared 20-call reservation
+cap and once-only order, and would block 20 after a new protocol failure in 19.
+Both actual launches passed ordinary outer review and native permission controls.
+
+The [amendment](../benchmarks/codex-e2e-v2/continuation/amendment.json) froze all
+135 original phase files, 15 observer-source files, the new driver, authority
+record and remaining case bindings before execution. A matching independent
+review bound its hash. Both continuation calls produced actual inference,
+validated worker receipts and passing focused/full/contract checks. The original
+failed result and all registered phase-A bytes remain identical. The two absent
+public preflight files are supplied separately, without altering the published
+phase-A folder. The continuation's preparation README and source manifest are
+preserved as historical pre-execution artifacts; actual outputs are alongside them.
+
+The continuation observer checkout was 10f342d. Native Codex identity is pinned
+by CLI version 0.165.0 and inherited settings, without binary attestation.
+Receipt `cli_sha256` binds the local ReflexFoundry entrypoint, not the native
+Codex binary. The intervening publication/time gap and revised observer phase
+are explicit; combined estimates are post-amendment and descriptive. All 20
+authorized calls are consumed. No additional call is implied or authorized by
+the reproducible report. Agent-issued command arguments and raw events are
+discarded; observer-defined launch arguments remain as public experiment inputs.

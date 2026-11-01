@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "status": "PARTIAL: NOT A COMPLETE COMPARISON",
+  "status": "AMENDED PARTIAL COMPARISON: 20 RESULTS, 19 VALID",
   "all_twenty_complete_and_protocol_valid": false,
-  "generated_utc": "2026-11-01T08:24:31.447087+00:00",
+  "generated_utc": "2026-11-01T09:34:30.722164+00:00",
   "planned_observations": 20,
-  "completed_observations": 18,
-  "protocol_valid_observations": 17,
+  "completed_observations": 20,
+  "protocol_valid_observations": 19,
   "planned_repository_groups": 2,
   "observations": [
     {
@@ -54,7 +54,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 6426.51320900768,
       "postcondition_audit_ms": 4139.218957978301,
-      "attempt_all_in_ms": 60208.055416995194
+      "attempt_all_in_ms": 60208.055416995194,
+      "phase": "original-study",
+      "result_source": "execution/attempts/01/result.json",
+      "result_sha256": "9e1de82dce2232125d80b9011e53d5ee1d8352e933c3b924ca34c0d00c04505a"
     },
     {
       "index": 2,
@@ -102,7 +105,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 3765.8780839992687,
       "postcondition_audit_ms": 3079.7585420077667,
-      "attempt_all_in_ms": 54194.73783404101
+      "attempt_all_in_ms": 54194.73783404101,
+      "phase": "original-study",
+      "result_source": "execution/attempts/02/result.json",
+      "result_sha256": "3024a33fa4b538032e06a68c5071cb22c9e924a58dbd569a21e276f7b8293bdc"
     },
     {
       "index": 3,
@@ -150,7 +156,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 4202.472332981415,
       "postcondition_audit_ms": 11350.004374980927,
-      "attempt_all_in_ms": 96652.84133295063
+      "attempt_all_in_ms": 96652.84133295063,
+      "phase": "original-study",
+      "result_source": "execution/attempts/03/result.json",
+      "result_sha256": "fa3781fb493290383a98625c1a9ef974094861dce57cd44971e581d56db9784b"
     },
     {
       "index": 4,
@@ -198,7 +207,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 5700.125249975827,
       "postcondition_audit_ms": 2768.98654201068,
-      "attempt_all_in_ms": 85381.02450000588
+      "attempt_all_in_ms": 85381.02450000588,
+      "phase": "original-study",
+      "result_source": "execution/attempts/04/result.json",
+      "result_sha256": "eb2c59b7f1cfda00b476023d902c74544842e470c2fe5ddb5df6554852d53a62"
     },
     {
       "index": 5,
@@ -246,7 +258,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 7770.486083987635,
       "postcondition_audit_ms": 4353.235249989666,
-      "attempt_all_in_ms": 85618.00562497228
+      "attempt_all_in_ms": 85618.00562497228,
+      "phase": "original-study",
+      "result_source": "execution/attempts/05/result.json",
+      "result_sha256": "cd75b198b39f8dbe9d9d547bed12792b5e6bcf5e9d34443bd1b8c7bc17a3f474"
     },
     {
       "index": 6,
@@ -294,7 +309,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 8119.861166982446,
       "postcondition_audit_ms": 12240.262624982279,
-      "attempt_all_in_ms": 112390.80395799829
+      "attempt_all_in_ms": 112390.80395799829,
+      "phase": "original-study",
+      "result_source": "execution/attempts/06/result.json",
+      "result_sha256": "5e43e2d533d46bf281a6d164f0782263023ab89dd1fdbba417bb6cda8df4874a"
     },
     {
       "index": 7,
@@ -342,7 +360,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 6964.893499971367,
       "postcondition_audit_ms": 2941.63324998226,
-      "attempt_all_in_ms": 58264.63849999709
+      "attempt_all_in_ms": 58264.63849999709,
+      "phase": "original-study",
+      "result_source": "execution/attempts/07/result.json",
+      "result_sha256": "44821fcddd540dc8d43e95e7b5b9dcac2fcbb765ed3ab097e8d0ff702b978be3"
     },
     {
       "index": 8,
@@ -390,7 +411,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 3894.652999995742,
       "postcondition_audit_ms": 4979.735291970428,
-      "attempt_all_in_ms": 60546.023249975406
+      "attempt_all_in_ms": 60546.023249975406,
+      "phase": "original-study",
+      "result_source": "execution/attempts/08/result.json",
+      "result_sha256": "3e4dfbdbd747d091df2e8c4e7b33b53ce00fd9a83e19d6e449a67095b1059640"
     },
     {
       "index": 9,
@@ -438,7 +462,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 5103.287582984194,
       "postcondition_audit_ms": 4843.183458026033,
-      "attempt_all_in_ms": 40437.9539579968
+      "attempt_all_in_ms": 40437.9539579968,
+      "phase": "original-study",
+      "result_source": "execution/attempts/09/result.json",
+      "result_sha256": "e453672d92bfdbed1aba1eb50f853a2fc93873e825a659a68ca0708234bd3827"
     },
     {
       "index": 10,
@@ -486,7 +513,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 4828.614500002004,
       "postcondition_audit_ms": 7400.087707967032,
-      "attempt_all_in_ms": 54782.0029159775
+      "attempt_all_in_ms": 54782.0029159775,
+      "phase": "original-study",
+      "result_source": "execution/attempts/10/result.json",
+      "result_sha256": "806a0e0fed672508fcdd970427c4762d5287dd4b1a083a56dd1aaa37ebba6384"
     },
     {
       "index": 11,
@@ -534,7 +564,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 9974.889750010334,
       "postcondition_audit_ms": 11198.007417027839,
-      "attempt_all_in_ms": 178796.0802920279
+      "attempt_all_in_ms": 178796.0802920279,
+      "phase": "original-study",
+      "result_source": "execution/attempts/11/result.json",
+      "result_sha256": "3eaf1b44a7327edf9efb3db1bb8539b5221f1de806c1ee7c7ea36186da77964f"
     },
     {
       "index": 12,
@@ -582,7 +615,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 14306.747708993498,
       "postcondition_audit_ms": 13979.28770800354,
-      "attempt_all_in_ms": 149897.95925002545
+      "attempt_all_in_ms": 149897.95925002545,
+      "phase": "original-study",
+      "result_source": "execution/attempts/12/result.json",
+      "result_sha256": "b52c099626bc9eb8a6d856cc163c5e0b18b8f1e6b22b1683ba518aa4fed73ad1"
     },
     {
       "index": 13,
@@ -630,7 +666,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 12415.08225002326,
       "postcondition_audit_ms": 11451.786999998149,
-      "attempt_all_in_ms": 147566.74712500535
+      "attempt_all_in_ms": 147566.74712500535,
+      "phase": "original-study",
+      "result_source": "execution/attempts/13/result.json",
+      "result_sha256": "1c327cecf17d6b0db3123a72894c297a2fc621b1106717bfce422a489e064134"
     },
     {
       "index": 14,
@@ -678,7 +717,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 13098.370249965228,
       "postcondition_audit_ms": 10554.797124990728,
-      "attempt_all_in_ms": 93818.89929197496
+      "attempt_all_in_ms": 93818.89929197496,
+      "phase": "original-study",
+      "result_source": "execution/attempts/14/result.json",
+      "result_sha256": "d78c92bea601e8cc09bf8012e8e367e10c311c34c5e8dd32ce67b2d71a50e280"
     },
     {
       "index": 15,
@@ -726,7 +768,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 11661.57216700958,
       "postcondition_audit_ms": 13442.097958002705,
-      "attempt_all_in_ms": 80722.80024999054
+      "attempt_all_in_ms": 80722.80024999054,
+      "phase": "original-study",
+      "result_source": "execution/attempts/15/result.json",
+      "result_sha256": "1dfd45113b6b02ee1be149d850897f7f4165f59a4bed990aba5580d4070fde22"
     },
     {
       "index": 16,
@@ -774,7 +819,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 13264.16970900027,
       "postcondition_audit_ms": 11536.08712501591,
-      "attempt_all_in_ms": 84023.1813340215
+      "attempt_all_in_ms": 84023.1813340215,
+      "phase": "original-study",
+      "result_source": "execution/attempts/16/result.json",
+      "result_sha256": "742a448684fca6895f6889771cf99180f6b8c34ac953b37524c624f058964212"
     },
     {
       "index": 17,
@@ -822,7 +870,10 @@
       "immutable_files_preserved": true,
       "readiness_ms": 11107.149457966443,
       "postcondition_audit_ms": 7142.133000015747,
-      "attempt_all_in_ms": 64657.025624997914
+      "attempt_all_in_ms": 64657.025624997914,
+      "phase": "original-study",
+      "result_source": "execution/attempts/17/result.json",
+      "result_sha256": "00c50d8d2eeff0ba99a4ee5666e86b9e52598c91376229c7287806c5359aae02"
     },
     {
       "index": 18,
@@ -870,47 +921,112 @@
       "immutable_files_preserved": true,
       "readiness_ms": 31350.32908298308,
       "postcondition_audit_ms": 29862.37508401973,
-      "attempt_all_in_ms": 270538.34966698196
+      "attempt_all_in_ms": 270538.34966698196,
+      "phase": "original-study",
+      "result_source": "execution/attempts/18/result.json",
+      "result_sha256": "7a4ef5d4ce2659216244619ef1c99870e77212c9044bfb01a10fbee8cd4eb975"
     },
     {
       "index": 19,
       "task": "cachetools-getitem",
       "repeat": 2,
       "arm": "trained-always",
-      "status": "missing",
-      "native_process_started": false,
-      "result_present": false,
-      "protocol_valid": false,
-      "independently_verified_success": null,
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
       "metrics": {
-        "cli_wall_ms": null,
-        "pipeline_wall_ms": null,
-        "input_tokens": null,
-        "cached_input_tokens": null,
-        "output_tokens": null
+        "cli_wall_ms": 61186.299874971155,
+        "pipeline_wall_ms": 66053.58887498733,
+        "input_tokens": 358635,
+        "cached_input_tokens": 331520,
+        "output_tokens": 894
       },
-      "independent": null,
-      "candidate_sha256": null
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1496.538416,
+          "output": ".                                                                        [100%]\n1 passed in 0.04s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 3096.607584,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 1.23s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 271.901541,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 7042.3650839948095,
+      "postcondition_audit_ms": 6800.136708014179,
+      "attempt_all_in_ms": 79896.09066699632,
+      "phase": "reviewed-continuation-01",
+      "result_source": "continuation/attempts/19/result.json",
+      "result_sha256": "0a6cfe4a3ef497d814bcae254b38c3cc40c52562753ff9d4e13502726b1ab3d2"
     },
     {
       "index": 20,
       "task": "cachetools-getitem",
       "repeat": 2,
       "arm": "selective-shadow",
-      "status": "missing",
-      "native_process_started": false,
-      "result_present": false,
-      "protocol_valid": false,
-      "independently_verified_success": null,
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
       "metrics": {
-        "cli_wall_ms": null,
-        "pipeline_wall_ms": null,
-        "input_tokens": null,
-        "cached_input_tokens": null,
-        "output_tokens": null
+        "cli_wall_ms": 68118.22683300124,
+        "pipeline_wall_ms": 72893.23995803716,
+        "input_tokens": 300248,
+        "cached_input_tokens": 259840,
+        "output_tokens": 967
       },
-      "independent": null,
-      "candidate_sha256": null
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 2101.314041,
+          "output": ".                                                                        [100%]\n1 passed in 0.04s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 2493.363125,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 0.93s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 178.163541,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 6547.356707975268,
+      "postcondition_audit_ms": 6383.641666965559,
+      "attempt_all_in_ms": 85824.23833297798,
+      "phase": "reviewed-continuation-01",
+      "result_source": "continuation/attempts/20/result.json",
+      "result_sha256": "1df5119dd8b78f78af1a4293eb19b76fc26685463b1bd5bb0838c86fb7d6e8b7"
     }
   ],
   "arm_summaries": [
@@ -1055,44 +1171,44 @@
     {
       "arm": "trained-always",
       "planned": 4,
-      "completed": 3,
-      "protocol_valid": 3,
+      "completed": 4,
+      "protocol_valid": 4,
       "protocol_failed": 0,
-      "independently_verified_successes_all_completed": 3,
-      "successes_protocol_valid": 3,
+      "independently_verified_successes_all_completed": 4,
+      "successes_protocol_valid": 4,
       "metrics_protocol_valid": {
         "cli_wall_ms": {
-          "n": 3,
-          "mean": 74813.88748602087,
-          "median": 74219.50608299812,
+          "n": 4,
+          "mean": 71406.99058325845,
+          "median": 67702.90297898464,
           "min": 46687.24179203855,
           "max": 103534.91458302597
         },
         "pipeline_wall_ms": {
-          "n": 3,
-          "mean": 82293.98276369709,
-          "median": 76911.91270801937,
+          "n": 4,
+          "mean": 78233.88429151964,
+          "median": 71482.75079150335,
           "min": 48358.11175004346,
           "max": 121611.92383302841
         },
         "input_tokens": {
-          "n": 3,
-          "mean": 331399.6666666667,
-          "median": 338195,
+          "n": 4,
+          "mean": 338208.5,
+          "median": 348415.0,
           "min": 237333,
           "max": 418671
         },
         "cached_input_tokens": {
-          "n": 3,
-          "mean": 293333.3333333333,
-          "median": 299776,
+          "n": 4,
+          "mean": 302880,
+          "median": 315648.0,
           "min": 200832,
           "max": 379392
         },
         "output_tokens": {
-          "n": 3,
-          "mean": 956,
-          "median": 1096,
+          "n": 4,
+          "mean": 940.5,
+          "median": 995.0,
           "min": 639,
           "max": 1133
         }
@@ -1101,44 +1217,44 @@
     {
       "arm": "selective-shadow",
       "planned": 4,
-      "completed": 3,
-      "protocol_valid": 3,
+      "completed": 4,
+      "protocol_valid": 4,
       "protocol_failed": 0,
-      "independently_verified_successes_all_completed": 3,
-      "successes_protocol_valid": 3,
+      "independently_verified_successes_all_completed": 4,
+      "successes_protocol_valid": 4,
       "metrics_protocol_valid": {
         "cli_wall_ms": {
-          "n": 3,
-          "mean": 93638.23434735725,
-          "median": 80786.79362504045,
+          "n": 4,
+          "mean": 87258.23246876826,
+          "median": 74452.51022902085,
           "min": 65108.63687499659,
           "max": 135019.27254203474
         },
         "pipeline_wall_ms": {
-          "n": 3,
-          "mean": 107716.04919400609,
-          "median": 92030.68016603356,
-          "min": 73494.28429099498,
+          "n": 4,
+          "mean": 99010.34688501386,
+          "median": 82762.48222851427,
+          "min": 72893.23995803716,
           "max": 157623.18312498974
         },
         "input_tokens": {
-          "n": 3,
-          "mean": 395535,
-          "median": 345983,
-          "min": 323147,
+          "n": 4,
+          "mean": 371713.25,
+          "median": 334565.0,
+          "min": 300248,
           "max": 517475
         },
         "cached_input_tokens": {
-          "n": 3,
-          "mean": 367530.6666666667,
-          "median": 323456,
-          "min": 302336,
+          "n": 4,
+          "mean": 340608,
+          "median": 312896.0,
+          "min": 259840,
           "max": 476800
         },
         "output_tokens": {
-          "n": 3,
-          "mean": 1006.6666666666666,
-          "median": 950,
+          "n": 4,
+          "mean": 996.75,
+          "median": 958.5,
           "min": 789,
           "max": 1281
         }
@@ -1386,12 +1502,16 @@
       "arm": "trained-always",
       "original_index": 16,
       "candidate_index": 19,
-      "valid": false,
-      "unavailable_reasons": [
-        "candidate:missing"
-      ],
-      "success_delta": null,
-      "candidate_minus_original": null
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 21838.856583926827,
+        "pipeline_wall_ms": 6830.664374982007,
+        "input_tokens": 216062,
+        "cached_input_tokens": 205184,
+        "output_tokens": 292
+      }
     },
     {
       "task": "cachetools-getitem",
@@ -1399,12 +1519,16 @@
       "arm": "selective-shadow",
       "original_index": 16,
       "candidate_index": 20,
-      "valid": false,
-      "unavailable_reasons": [
-        "candidate:missing"
-      ],
-      "success_delta": null,
-      "candidate_minus_original": null
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 28770.783541956916,
+        "pipeline_wall_ms": 13670.315458031837,
+        "input_tokens": 157675,
+        "cached_input_tokens": 133504,
+        "output_tokens": 365
+      }
     }
   ],
   "paired_summaries": [
@@ -1450,6 +1574,80 @@
           "min": -69,
           "max": 227
         }
+      },
+      "matching_original_metrics": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": 39427.76084324578,
+          "median": 41234.70718701719,
+          "min": 31495.860665978398,
+          "max": 43745.76833297033
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": 51759.41964575031,
+          "median": 52630.726687493734,
+          "min": 42553.300708008464,
+          "max": 59222.92450000532
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 175897.75,
+          "median": 162021.0,
+          "min": 142573,
+          "max": 236976
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": 158496,
+          "median": 144320.0,
+          "min": 126336,
+          "max": 219008
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 577.25,
+          "median": 590.0,
+          "min": 503,
+          "max": 626
+        }
+      },
+      "matching_candidate_metrics": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": 39366.09757326369,
+          "median": 41207.935917016584,
+          "min": 25625.15258399071,
+          "max": 49423.36587503087
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": 48603.51480226382,
+          "median": 46878.42218752485,
+          "min": 30491.48291698657,
+          "max": 70165.731917019
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 184131.75,
+          "median": 189904.0,
+          "min": 112537,
+          "max": 244182
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": 153952,
+          "median": 155392.0,
+          "min": 96128,
+          "max": 208896
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 637.75,
+          "median": 594.5,
+          "min": 509,
+          "max": 853
+        }
       }
     },
     {
@@ -1494,93 +1692,315 @@
           "min": 71,
           "max": 648
         }
+      },
+      "matching_original_metrics": {
+        "cli_wall_ms": {
+          "n": 3,
+          "mean": 39454.53336064626,
+          "median": 43121.97108299006,
+          "min": 31495.860665978398,
+          "max": 43745.76833297033
+        },
+        "pipeline_wall_ms": {
+          "n": 3,
+          "mean": 49271.58469433198,
+          "median": 49642.32325000921,
+          "min": 42553.300708008464,
+          "max": 55619.130124978255
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 187006,
+          "median": 175934,
+          "min": 148108,
+          "max": 236976
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 169216,
+          "median": 158336,
+          "min": 130304,
+          "max": 219008
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 569,
+          "median": 578,
+          "min": 503,
+          "max": 626
+        }
+      },
+      "matching_candidate_metrics": {
+        "cli_wall_ms": {
+          "n": 3,
+          "mean": 75132.4094303224,
+          "median": 71491.51233298471,
+          "min": 48406.461749982554,
+          "max": 105499.25420799991
+        },
+        "pipeline_wall_ms": {
+          "n": 3,
+          "mean": 85490.62581932715,
+          "median": 81100.36462498829,
+          "min": 51671.634958009236,
+          "max": 123699.87787498394
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 334020.6666666667,
+          "median": 343389,
+          "min": 231660,
+          "max": 427013
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 313088,
+          "median": 320128,
+          "min": 213632,
+          "max": 405504
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 943.6666666666666,
+          "median": 908,
+          "min": 649,
+          "max": 1274
+        }
       }
     },
     {
       "arm": "trained-always",
       "planned_pairs": 4,
-      "valid_pairs": 3,
+      "valid_pairs": 4,
       "repository_groups": 2,
       "success_delta_sum": 0,
       "candidate_minus_original": {
         "cli_wall_ms": {
-          "n": 3,
-          "mean": 35359.354125374615,
-          "median": 31097.535000008065,
+          "n": 4,
+          "mean": 31979.22974001267,
+          "median": 26468.195791967446,
           "min": 15191.38112606015,
           "max": 59789.14625005564
         },
         "pipeline_wall_ms": {
-          "n": 3,
-          "mean": 33022.3980693651,
-          "median": 27269.58945801016,
+          "n": 4,
+          "mean": 26474.46464576933,
+          "median": 17050.126916496083,
           "min": 5804.8110420349985,
           "max": 65992.79370805016
         },
         "input_tokens": {
-          "n": 3,
-          "mean": 144393.66666666666,
-          "median": 162261,
+          "n": 4,
+          "mean": 162310.75,
+          "median": 171978.0,
           "min": 89225,
-          "max": 181695
+          "max": 216062
         },
         "cached_input_tokens": {
-          "n": 3,
-          "mean": 124117.33333333333,
-          "median": 141440,
+          "n": 4,
+          "mean": 144384,
+          "median": 150912.0,
           "min": 70528,
-          "max": 160384
+          "max": 205184
         },
         "output_tokens": {
-          "n": 3,
-          "mean": 387,
-          "median": 507,
+          "n": 4,
+          "mean": 363.25,
+          "median": 399.5,
           "min": 61,
           "max": 593
+        }
+      },
+      "matching_original_metrics": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": 39427.76084324578,
+          "median": 41234.70718701719,
+          "min": 31495.860665978398,
+          "max": 43745.76833297033
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": 51759.41964575031,
+          "median": 52630.726687493734,
+          "min": 42553.300708008464,
+          "max": 59222.92450000532
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 175897.75,
+          "median": 162021.0,
+          "min": 142573,
+          "max": 236976
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": 158496,
+          "median": 144320.0,
+          "min": 126336,
+          "max": 219008
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 577.25,
+          "median": 590.0,
+          "min": 503,
+          "max": 626
+        }
+      },
+      "matching_candidate_metrics": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": 71406.99058325845,
+          "median": 67702.90297898464,
+          "min": 46687.24179203855,
+          "max": 103534.91458302597
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": 78233.88429151964,
+          "median": 71482.75079150335,
+          "min": 48358.11175004346,
+          "max": 121611.92383302841
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 338208.5,
+          "median": 348415.0,
+          "min": 237333,
+          "max": 418671
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": 302880,
+          "median": 315648.0,
+          "min": 200832,
+          "max": 379392
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 940.5,
+          "median": 995.0,
+          "min": 639,
+          "max": 1133
         }
       }
     },
     {
       "arm": "selective-shadow",
       "planned_pairs": 4,
-      "valid_pairs": 3,
+      "valid_pairs": 4,
       "repository_groups": 2,
       "success_delta_sum": 0,
       "candidate_minus_original": {
         "cli_wall_ms": {
-          "n": 3,
-          "mean": 54183.700986710995,
-          "median": 49290.93295906205,
+          "n": 4,
+          "mean": 47830.47162552248,
+          "median": 39030.85825050948,
           "min": 21986.665792006534,
           "max": 91273.50420906441
         },
         "pipeline_wall_ms": {
-          "n": 3,
-          "mean": 58444.46449967412,
-          "median": 49477.3794580251,
-          "min": 23851.96104098577,
+          "n": 4,
+          "mean": 47250.92723926355,
+          "median": 36664.670249505434,
+          "min": 13670.315458031837,
           "max": 102004.05300001148
         },
         "input_tokens": {
-          "n": 3,
-          "mean": 208529,
-          "median": 175039,
-          "min": 170049,
+          "n": 4,
+          "mean": 195815.5,
+          "median": 172544.0,
+          "min": 157675,
           "max": 280499
         },
         "cached_input_tokens": {
-          "n": 3,
-          "mean": 198314.66666666666,
-          "median": 172032,
-          "min": 165120,
+          "n": 4,
+          "mean": 182112,
+          "median": 168576.0,
+          "min": 133504,
           "max": 257792
         },
         "output_tokens": {
-          "n": 3,
-          "mean": 437.6666666666667,
-          "median": 447,
+          "n": 4,
+          "mean": 419.5,
+          "median": 406.0,
           "min": 211,
           "max": 655
+        }
+      },
+      "matching_original_metrics": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": 39427.76084324578,
+          "median": 41234.70718701719,
+          "min": 31495.860665978398,
+          "max": 43745.76833297033
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": 51759.41964575031,
+          "median": 52630.726687493734,
+          "min": 42553.300708008464,
+          "max": 59222.92450000532
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 175897.75,
+          "median": 162021.0,
+          "min": 142573,
+          "max": 236976
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": 158496,
+          "median": 144320.0,
+          "min": 126336,
+          "max": 219008
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 577.25,
+          "median": 590.0,
+          "min": 503,
+          "max": 626
+        }
+      },
+      "matching_candidate_metrics": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": 87258.23246876826,
+          "median": 74452.51022902085,
+          "min": 65108.63687499659,
+          "max": 135019.27254203474
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": 99010.34688501386,
+          "median": 82762.48222851427,
+          "min": 72893.23995803716,
+          "max": 157623.18312498974
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 371713.25,
+          "median": 334565.0,
+          "min": 300248,
+          "max": 517475
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": 340608,
+          "median": 312896.0,
+          "min": 259840,
+          "max": 476800
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 996.75,
+          "median": 958.5,
+          "min": 789,
+          "max": 1281
         }
       }
     }
@@ -1592,7 +2012,8 @@
     "Agent-side mandatory validation was requested and may be described in the final answer. Exact internal check execution and ordering were not retained or enforced by the observer. The separate post-run focused/full/contract results are directly observed.",
     "CLI wall time includes the native process and observer collection. Pipeline wall time additionally includes the three independent checks. Readiness hashing and subsequent postcondition audit are separate, with all-in attempt time also retained. Host load and operating-system/service caches are uncontrolled.",
     "Protocol-failed and missing observations remain explicit. They provide no paired estimate. Raw measurements on a failed-protocol observation may be displayed but are excluded from arm summaries and paired deltas.",
-    "The trained policy remains withheld. Always-delegate is a controlled read-only experimental comparator, not production deployment. Selective shadow retains the failed policy's fallback."
+    "The trained policy remains withheld. Always-delegate is a controlled read-only experimental comparator, not production deployment. Selective shadow retains the failed policy's fallback.",
+    "Trials 19 and 20 are a reviewed continuation after the phase-A halt and a publication/time gap, not an uninterrupted preregistered study. Trial 18 remains an invalid timeout of unknown cause, without retry or imputed usage. All combined estimates are post-amendment and descriptive. Compare each arm with its matching original-agent cohorts, not unequal-cohort arm means."
   ],
   "execution_provenance": {
     "date": "2026-11-01",
@@ -1623,46 +2044,220 @@
   "input_sha256": {
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/plan.json": "0634b5648f675aa6cd08e47397397298f7b83e10b7eb1ab00e5afb86440752d1",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/observer-provenance.json": "57513d6bad6c1166f3b93b13a7dbd4d84612b97bd9c03fd452075ca47c6a0898",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/summary.json": "c1b80fdc2e7051df8785b6b8d01a63629450848c01160c25ee0ad82e7d46cfa4",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/started.json": "4b1faab8f3ecd1c5630308621718695fe4384bf8d79ccaf8b67f27ecd8c0722c",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/README.md": "a643e81e1254a17946929f3ae60513a5e9a352dee18835683dd9f97726690613",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/SOURCE_SHA256SUMS.json": "4d04ef3a6d7eec42766340e84044410c6d69b0c50c21057ca5713b3efa21df6a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/amendment.json": "2851023e7a647d9d32d65966c10063f60573c8d1d80477f2b07c309fd7a7dcfd",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/19/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/19/final-answer.txt": "76e37b56ccdfdab90a3e6031fc1eeae9f25b0800bebdf82540cb41162e0bc3d4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/19/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/19/invocation.json": "6f5be51d58c8743fef7752c15d1292d247d3a891563a33d268f838b23d8b50c8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/19/result.json": "0a6cfe4a3ef497d814bcae254b38c3cc40c52562753ff9d4e13502726b1ab3d2",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/19/review.json": "6663ad88ac0920ccfe49ca02bef789e7418a1349476bd36094a90021f238b59b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/19/started.json": "75926e5d90e7952342e6c4ee6d9e5d02bd2b7215a6a7031b563716ec6a1e0844",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/20/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/20/final-answer.txt": "02a0f3033ffc8542b3abcdd78ebcf1cd1bf3cc53a920f111b83afad5b519a3e9",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/20/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/20/invocation.json": "67caaf7813c10c9b588ae171d08374a395daaff3a8358c052feb2525cca6c52f",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/20/result.json": "1df5119dd8b78f78af1a4293eb19b76fc26685463b1bd5bb0838c86fb7d6e8b7",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/20/review.json": "6663ad88ac0920ccfe49ca02bef789e7418a1349476bd36094a90021f238b59b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/attempts/20/started.json": "9740117ee055dfe4c9161b38f166e9a8fc5a4c9baa30179988e99259ce88649d",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/continue_native.py": "795acd32764313fb7d4afde9114c9c9e45211bc5b6d36d75f581ad9d7c185d9f",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/phase-a-supplement/preflight/cachetools-getitem.json": "a6977cab212d912a8d005ab224e6a7cba20d13e63fda3e65938d07efae73b423",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/phase-a-supplement/preflight/funcy-first.json": "cdae1a3c2c6bb8b70bfb6cad1aa46199a640161e58cec784cdaf952e58819252",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/review.json": "6663ad88ac0920ccfe49ca02bef789e7418a1349476bd36094a90021f238b59b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/continuation/tests/test_continuation.py": "086adb5472cbaa0feabedfeda2b58538108cbff027757f8362afea910ee4173c",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/SHA256SUMS.json": "0bfd0748ec94d373c8ed77655039bb8ec6a1243963e8b1501d24c9a8446ec468",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/final-answer.txt": "8a3e5a42bf275bb7fd7cf5385be6e45857d064f62fc5024e4033a730e5c116c9",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/invocation.json": "15493b7535a13770d22c177d03c1cf785c8d0f3c55bde6e3f20a8bb0b6bfb021",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/result.json": "9e1de82dce2232125d80b9011e53d5ee1d8352e933c3b924ca34c0d00c04505a",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/started.json": "6a94aa43b80e29fc2b89562e21e004014a9009fac2cea73a30a485bba80e9ca3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/started.json": "4b1faab8f3ecd1c5630308621718695fe4384bf8d79ccaf8b67f27ecd8c0722c",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/final-answer.txt": "01fb6784c224442f6f2d517cccaee8eae20d1db67ed510d1e780c735319d2683",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/invocation.json": "93cb137399d49f479056b671a85a2940be1a93165db081593dd28dbeb606e128",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/result.json": "3024a33fa4b538032e06a68c5071cb22c9e924a58dbd569a21e276f7b8293bdc",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/started.json": "782b1551f4223a7991851891529ec08d84207dbd1b4e3ffd98e8712e674fc706",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/started.json": "6a94aa43b80e29fc2b89562e21e004014a9009fac2cea73a30a485bba80e9ca3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/final-answer.txt": "77802ad686af1bbbb57fea51b158d036c39d23257d4df52f3b8b7bb4a20719bb",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/invocation.json": "63d275ff242e35069265098a9b8010ad3c615a60b3fd7a4ff459b028c6d9f029",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/result.json": "fa3781fb493290383a98625c1a9ef974094861dce57cd44971e581d56db9784b",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/started.json": "55d131c04d90947c10290d4fa2e3916975fe2b6d618d00dfbebf0bd2b698fb07",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/started.json": "782b1551f4223a7991851891529ec08d84207dbd1b4e3ffd98e8712e674fc706",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/final-answer.txt": "582d81d0997061012ee3e21fbcd9c56651d76e308552c4ef41f808b9c1ca530a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/invocation.json": "06404dbdaca0dfa641ddeb74d787bcddbcf552857e7c14bc814e8b31b1552aac",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/result.json": "eb2c59b7f1cfda00b476023d902c74544842e470c2fe5ddb5df6554852d53a62",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/started.json": "544bcffeee37879d155162dd873cc829f415798d41dbcca0d39e1f2c80e9daaf",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/started.json": "55d131c04d90947c10290d4fa2e3916975fe2b6d618d00dfbebf0bd2b698fb07",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/final-answer.txt": "324ac3e44b4265aeaa1a3c75bc42e584624486899512d9b8afef2bbbc2694e7b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/invocation.json": "ed5c72191f40e4137ea51391df10378320ff17c2adc5fa4d63377f467b5ccac8",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/result.json": "cd75b198b39f8dbe9d9d547bed12792b5e6bcf5e9d34443bd1b8c7bc17a3f474",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/started.json": "64eade90cbb4e624d17c9da680e882ed2dcd22e593895e6b21158e4e1f4ca32f",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/started.json": "544bcffeee37879d155162dd873cc829f415798d41dbcca0d39e1f2c80e9daaf",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/final-answer.txt": "6f37d002f5fd3f6ef702cb9ba9f4e8531a99d2748c77aa88540511653f3a8206",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/invocation.json": "7a8a1798cb551916ea24f4f827864e39f8642b7410b51bb6a073d4655d42e8ff",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/result.json": "5e43e2d533d46bf281a6d164f0782263023ab89dd1fdbba417bb6cda8df4874a",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/started.json": "3cf10da315e15b3a48707824fcf216889bde51d383ab626725f800c222a36d55",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/started.json": "64eade90cbb4e624d17c9da680e882ed2dcd22e593895e6b21158e4e1f4ca32f",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/final-answer.txt": "293ef4ec9916dd6f0bd7acf2eba66fea417451e52ddd76281092fa1ead599ed4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/invocation.json": "7153c109b93531117e28fb288fae4570538a58cb6bd3c0d1385909e6228983f0",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/result.json": "44821fcddd540dc8d43e95e7b5b9dcac2fcbb765ed3ab097e8d0ff702b978be3",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/started.json": "6106eca47fdc832d91f9c81ddf4ff0fd10556db5fcfffe4d61348299ab98cf8a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/started.json": "3cf10da315e15b3a48707824fcf216889bde51d383ab626725f800c222a36d55",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/final-answer.txt": "c8d8483da3d0408c081d0313a1594a2dd682bfa5e518754f6048c8b6fa8fbc10",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/invocation.json": "ac793de24d805619d721fd377c7486628336573fea7479f41c6182aeebf5afe8",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/result.json": "3e4dfbdbd747d091df2e8c4e7b33b53ce00fd9a83e19d6e449a67095b1059640",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/started.json": "bb79c73ce4cf1267d91571e8caca5a017258e2b03c0eaf35a9cc7f6f053ea012",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/started.json": "6106eca47fdc832d91f9c81ddf4ff0fd10556db5fcfffe4d61348299ab98cf8a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/final-answer.txt": "fe19b310cee5e0faa5ee0da4c184eeaa19f60b7a00171bd969836bfec48f11ef",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/invocation.json": "b0e0b174f7812134a1ca7c0f68acf604ce6642743bb56986fd4e3ea17a935c01",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/result.json": "e453672d92bfdbed1aba1eb50f853a2fc93873e825a659a68ca0708234bd3827",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/started.json": "98e005e52ea342f13535f0c1547b1eaee7cc281d1dba19ec18646739ab9a51b8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/started.json": "bb79c73ce4cf1267d91571e8caca5a017258e2b03c0eaf35a9cc7f6f053ea012",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/final-answer.txt": "0799f77f9ddab04ccb9b0543b0fd96e751f128330dff1ad5f8877dd6f70aa5a1",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/invocation.json": "82ef99c1fb25c49305284a6c9122c2096802bb51df0976bfe90341af66bfa2ef",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/result.json": "806a0e0fed672508fcdd970427c4762d5287dd4b1a083a56dd1aaa37ebba6384",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/started.json": "a63d8e39fc50cc86535088b508fcb6a5872a54ab47e96189940d620ab88663e6",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/started.json": "98e005e52ea342f13535f0c1547b1eaee7cc281d1dba19ec18646739ab9a51b8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/final-answer.txt": "e0ab2507924d0ae9223035748cbc1de317951fcd96a3fd4a16b2971f5b5f3617",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/invocation.json": "175c8bc7bbc3a57027707a241a4d1b173de88f33e5e6627dc3151370fca8c518",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/result.json": "3eaf1b44a7327edf9efb3db1bb8539b5221f1de806c1ee7c7ea36186da77964f",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/started.json": "433eef97ae2cf497ba266a06296be40dfc9a02f00a5e8ed184bf7433d156257d",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/started.json": "a63d8e39fc50cc86535088b508fcb6a5872a54ab47e96189940d620ab88663e6",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/final-answer.txt": "9d541f49db09868882d375f65310eabac4f04e817766a9a5d4029f5bc867f55a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/invocation.json": "1934f6ee158adb895dfae356a11ae6791fa7af428c23c669e79d512c1adc62f1",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/result.json": "b52c099626bc9eb8a6d856cc163c5e0b18b8f1e6b22b1683ba518aa4fed73ad1",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/started.json": "f4be7a460b546a0bd9c0ce1b0481ea2a072615e71a8402d917917fb60c18c02b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/started.json": "433eef97ae2cf497ba266a06296be40dfc9a02f00a5e8ed184bf7433d156257d",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/final-answer.txt": "55cdcf444400c6e65498e0a3c129781fadbcd851b37247493bebde66ace664c5",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/invocation.json": "1fe92ab08adcdfadd136a977a22e75bd84a2030e4ba6835f7b573ddbe075b8e7",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/result.json": "1c327cecf17d6b0db3123a72894c297a2fc621b1106717bfce422a489e064134",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/started.json": "282676eadde7b05233ee52dd1b1891bddd9d496ad3370d4376a03535f5c0a2d0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/started.json": "f4be7a460b546a0bd9c0ce1b0481ea2a072615e71a8402d917917fb60c18c02b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/final-answer.txt": "9aa60efdbc65a230e1730ad9acf7b7a2cd9aa74dc6897f5f982e6e6e74483f64",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/invocation.json": "75a9bd3acc4a66e543359fc02abb0857683b096d628a5a02489351ed08dbdb20",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/result.json": "d78c92bea601e8cc09bf8012e8e367e10c311c34c5e8dd32ce67b2d71a50e280",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/started.json": "86056b0aee07eea9e89f875edcb2a71b4574d2bbc585b9c7280fc3b3c293649b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/started.json": "282676eadde7b05233ee52dd1b1891bddd9d496ad3370d4376a03535f5c0a2d0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/final-answer.txt": "ea0c40bca066c4695ca31bf8b45e6f4e66f0a75281c41fb7a3140f96341c43c3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/independent-grader.py": "530d64a50ad897140934d0f028ebdc087a38b90d078d4a319646dcbcdde13d60",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/invocation.json": "7159435b25ad026250f85c9abf022a30dda5ec03f3b448cdb1524af05a492810",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/result.json": "1dfd45113b6b02ee1be149d850897f7f4165f59a4bed990aba5580d4070fde22",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/started.json": "2a68e1504e7b97fbcb954fca9f60c121f6caa3e7d48fb2df000634f32229cf71",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/started.json": "86056b0aee07eea9e89f875edcb2a71b4574d2bbc585b9c7280fc3b3c293649b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/final-answer.txt": "db697bb5adfad75f6189eadaac62c86293d9eff9e230c596e947bab66adff272",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/invocation.json": "a51d58e34c8d9233da3fef232e24dc1b322b1c4bd5bb30d40de314abe3ecbaac",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/result.json": "742a448684fca6895f6889771cf99180f6b8c34ac953b37524c624f058964212",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/started.json": "a3c77426d997e5e3ab7640d1dba0a40e3e1a50f920bd3a328bf6011092fe205d",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/started.json": "2a68e1504e7b97fbcb954fca9f60c121f6caa3e7d48fb2df000634f32229cf71",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/candidate.py": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/final-answer.txt": "be7e5f59cd4060554e7dc20a5fab63e69c0d52e2045683065ce14ec577218933",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/invocation.json": "bd1aed35b47b45bf600b121173eab8cd1b8709d282c4389161c148918689b123",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/result.json": "00c50d8d2eeff0ba99a4ee5666e86b9e52598c91376229c7287806c5359aae02",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/started.json": "a3c77426d997e5e3ab7640d1dba0a40e3e1a50f920bd3a328bf6011092fe205d",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/candidate.py": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/independent-grader.py": "ea4b3700417d0acbf9274feb135463b88466317ba4aa1c65b3ac421230197fa3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/invocation.json": "ab92bc4876a3ba5f40ccc2f0e5df35a32598324b5deff43a4328b0202095a168",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/result.json": "7a4ef5d4ce2659216244619ef1c99870e77212c9044bfb01a10fbee8cd4eb975",
     "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/started.json": "3eb42ea53a2f6330db8b929a10e4447579b1d3da599ce682d3eef0995a8611dc",
-    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/result.json": "7a4ef5d4ce2659216244619ef1c99870e77212c9044bfb01a10fbee8cd4eb975"
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/authorization.json": "20a5fcc1d0a68c01a7219e9bc0f28f1cade5fae59072cc4f3981eb315adab081",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/01.txt": "df9a01468f46890ff8a4900004597409183304cc44020a28a3ad0c05b14fe8cb",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/02.txt": "97b2ba0753ac5aba3b5a09bda7bb6bb953ace58520278e7452ef3717b310b94c",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/03.txt": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/04.txt": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/05.txt": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/06.txt": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/07.txt": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/08.txt": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/09.txt": "6a3a5bb11622f0dab0c551ff8d743b86ce4785d80fe5445e90670173af853939",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/10.txt": "ee2fd121a58e672e6503bc71f06880ea6f2ae1c4e64c5c84b915ad309b993565",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/11.txt": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/12.txt": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/13.txt": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/14.txt": "97b2ba0753ac5aba3b5a09bda7bb6bb953ace58520278e7452ef3717b310b94c",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/15.txt": "df9a01468f46890ff8a4900004597409183304cc44020a28a3ad0c05b14fe8cb",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/16.txt": "ee2fd121a58e672e6503bc71f06880ea6f2ae1c4e64c5c84b915ad309b993565",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/17.txt": "6a3a5bb11622f0dab0c551ff8d743b86ce4785d80fe5445e90670173af853939",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/18.txt": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/19.txt": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/prompts/20.txt": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/review-infrastructure-18.json": "b9998e026bf9a8c15190e65200c5c21e4973af7dc23df6445aa423ee5033bb95",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/shadow-template/deployment.json": "f2633449a991a2b7688a8f995cb5006bf73f2845d6e325c017f9165264f8e77e",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/shadow-template/policy.json": "4aa078cc7aae5f2da0a0fcb448a48f7ca8bca91c87de33958c5f43e96d065778",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/shadow-template/report.json": "9e27e47f86087d0d5853ed9355dfc74abbbb70af7ce1d148b8dbcc0b86f43bc2",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/stopped.json": "a6283858296089c79f5991580d50e61edd454db946fd90a9a8467f22f147a570",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/summary.json": "c1b80fdc2e7051df8785b6b8d01a63629450848c01160c25ee0ad82e7d46cfa4"
   },
   "source_summary_completed_at_read": 18,
-  "snapshot_note": "Derived from one read of each input. Study may be accumulating; source summary can lag results. Final status is recomputed from all twenty actual result files, not summary flags.",
+  "snapshot_note": "Trials1\u201318 come only from the immutable original phase. Trials19/20 come only from the separately reviewed continuation. The original eighteen-attempt summary remains historical phase-A evidence, not an accumulating or lagging combined summary. Trial18 remains invalid with unavailable usage. No fully protocol-valid or uninterrupted study is claimed.",
   "currency_cost": null,
-  "deployment": "withheld"
+  "deployment": "withheld",
+  "all_twenty_results_present": true,
+  "independently_verified_successes": 19,
+  "model_inference_observations": 11,
+  "valid_pair_count": 15,
+  "continuation": {
+    "phase": "reviewed-continuation-01",
+    "indices": [
+      19,
+      20
+    ],
+    "scope_indices": [
+      19,
+      20
+    ],
+    "publication_time_gap": true,
+    "amendment_sha256": "2851023e7a647d9d32d65966c10063f60573c8d1d80477f2b07c309fd7a7dcfd",
+    "review_sha256": "6663ad88ac0920ccfe49ca02bef789e7418a1349476bd36094a90021f238b59b",
+    "driver_sha256": "795acd32764313fb7d4afde9114c9c9e45211bc5b6d36d75f581ad9d7c185d9f",
+    "original_plan_sha256": "0634b5648f675aa6cd08e47397397298f7b83e10b7eb1ab00e5afb86440752d1",
+    "original_failed_result_sha256": "7a4ef5d4ce2659216244619ef1c99870e77212c9044bfb01a10fbee8cd4eb975",
+    "verified_phase_a_files": 135,
+    "supplemented_preflight_files": [
+      "preflight/cachetools-getitem.json",
+      "preflight/funcy-first.json"
+    ],
+    "publication_only_extras": {
+      "SHA256SUMS.json": "0bfd0748ec94d373c8ed77655039bb8ec6a1243963e8b1501d24c9a8446ec468",
+      "authorization.json": "20a5fcc1d0a68c01a7219e9bc0f28f1cade5fae59072cc4f3981eb315adab081",
+      "observer-provenance.json": "57513d6bad6c1166f3b93b13a7dbd4d84612b97bd9c03fd452075ca47c6a0898",
+      "review-infrastructure-18.json": "b9998e026bf9a8c15190e65200c5c21e4973af7dc23df6445aa423ee5033bb95"
+    },
+    "historical_observer_checkout": "10f342d0d52b26f99a54948324c96d3efa2a8a80",
+    "historical_observer_source_hashes": {
+      "src/reflexfoundry/__init__.py": "2ed449ba4751213a12790d2849df20025a2826eac1cbd2e56756249c8a43f3aa",
+      "src/reflexfoundry/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/reflexfoundry/benchmark.py": "a3751cf6d0560fb7024ff846aba53592e44b3d7f141d4c567ad1ceb3e70e8754",
+      "src/reflexfoundry/cli.py": "7afb6c26695069b86dd74f2270208b5ed0b2ce404a50f4f27237be288ee85b7d",
+      "src/reflexfoundry/codex.py": "0009d6f60a93cb84250c62d7d7793a63e1b083bb63fabf04455953beef982603",
+      "src/reflexfoundry/context_benchmark.py": "44eff24f87b16ef71ea20dcecd70710ab254326ae782a1e9f9f5593db14d9569",
+      "src/reflexfoundry/core.py": "30f8fa78f818b8e828f15030e91fe38582a65818716c6e6500372ffa0bb76130",
+      "src/reflexfoundry/evaluation.py": "8027d3aea1d92fcd08e89ccde6278db0a16e91722e276eb7df482852effbf748",
+      "src/reflexfoundry/external_benchmark.py": "0d0f8f41efb4afae389ce9d738a3b5cfffe7304139e39a49ceff258443312ea8",
+      "src/reflexfoundry/lab.py": "5f7907c9332ed5b5d5a4786dcbbe48c6f931263006cfb9b179e402e1a4a72064",
+      "src/reflexfoundry/lifecycle.py": "e5c8561f664e81211195da06e90cb3b5d240467b8b49c177dc6a1abc08a56735",
+      "src/reflexfoundry/model.py": "605c8f1991f92025e68fe7d1ac453fbe22d28b4b42c70de48d49fd7794a5cbfa",
+      "scripts/native_study_v2.py": "f65d6a6acfd3742bb4eca1bff470a328ef7415045b10260f570bdabfb9e0dc58",
+      "scripts/native_retrieve_v2.py": "775ac6bc315e4600dada724c13cb36f5ea03099d947399074a6ee176b4f339c9",
+      "scripts/native_study_tasks.py": "e1c452785c0540c3a7223bbca5d1316ffb064dbe324c75ca1f91345cf0ad5d56"
+    },
+    "source_closure_qualification": "This is the source closure recorded and independently reviewed at amendment time, not a requirement that today's installed code equal that historical snapshot. The driver is hashed as evidence and is never executed by this analyzer.",
+    "qualification": "Trials 19 and 20 are a reviewed continuation after the phase-A halt and a publication/time gap, not an uninterrupted preregistered study. Trial 18 remains an invalid timeout of unknown cause, without retry or imputed usage. All combined estimates are post-amendment and descriptive. Compare each arm with its matching original-agent cohorts, not unequal-cohort arm means."
+  },
+  "study_design": "reviewed continuation after stop; not an uninterrupted preregistered study",
+  "source_summary_scope": "Historical phase-A eighteen-attempt summary only; not a lagging combined-study summary."
 }
