@@ -1,0 +1,289 @@
+{
+  "format": 1,
+  "status": "prepared-unexecuted-awaiting-scoped-authority",
+  "native_coding_processes_started": 0,
+  "max_new_native_calls": 20,
+  "timeout_seconds": 180,
+  "shutdown_grace_seconds": 5,
+  "plan_sha256": "0634b5648f675aa6cd08e47397397298f7b83e10b7eb1ab00e5afb86440752d1",
+  "runtime_release": "v0.2.1",
+  "runtime_wheel_sha256": "c1aaf0946ffa7fb3136f5aee705c85dbd936fa505d553dbd5cfc975773fb9f5b",
+  "arms": [
+    "original-agent",
+    "deterministic-heuristic",
+    "ordinary-laya",
+    "trained-always",
+    "selective-shadow"
+  ],
+  "repetitions_per_task_and_arm": 2,
+  "tasks": [
+    {
+      "name": "funcy-first",
+      "repository": "funcy",
+      "commit": "a876c7e1cf11e7c746e91fce4632ebfa93865428"
+    },
+    {
+      "name": "cachetools-getitem",
+      "repository": "cachetools",
+      "commit": "e7104dd52bfe0e3aced6f3439fb6ed4d9c8ff52a"
+    }
+  ],
+  "model_artifact_digest": "2a78f9457b3a410366349585b69142ee0f2f177888f904e9d8812057a6fa5923",
+  "base_artifact_digest": "e7998c162d61a5658031ad61eed955b05d052ba3ad2a4ada996650f2203247d0",
+  "decision_contract_digest": "c50d5d754be2fa838b52a767c724fc5f32c45271a95c7f7fedebcef0f0d08904",
+  "source_hashes": {
+    "scripts/native_study_v2.py": "f65d6a6acfd3742bb4eca1bff470a328ef7415045b10260f570bdabfb9e0dc58",
+    "scripts/native_retrieve_v2.py": "775ac6bc315e4600dada724c13cb36f5ea03099d947399074a6ee176b4f339c9",
+    "scripts/native_study_tasks.py": "e1c452785c0540c3a7223bbca5d1316ffb064dbe324c75ca1f91345cf0ad5d56",
+    "src/reflexfoundry/codex.py": "0009d6f60a93cb84250c62d7d7793a63e1b083bb63fabf04455953beef982603"
+  },
+  "order": [
+    {
+      "index": 1,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "original-agent",
+      "prompt_sha256": "df9a01468f46890ff8a4900004597409183304cc44020a28a3ad0c05b14fe8cb",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 2,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "deterministic-heuristic",
+      "prompt_sha256": "97b2ba0753ac5aba3b5a09bda7bb6bb953ace58520278e7452ef3717b310b94c",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 3,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "ordinary-laya",
+      "prompt_sha256": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 4,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "trained-always",
+      "prompt_sha256": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 5,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "selective-shadow",
+      "prompt_sha256": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 6,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "selective-shadow",
+      "prompt_sha256": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 7,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "trained-always",
+      "prompt_sha256": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 8,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "ordinary-laya",
+      "prompt_sha256": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 9,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "deterministic-heuristic",
+      "prompt_sha256": "6a3a5bb11622f0dab0c551ff8d743b86ce4785d80fe5445e90670173af853939",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 10,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "original-agent",
+      "prompt_sha256": "ee2fd121a58e672e6503bc71f06880ea6f2ae1c4e64c5c84b915ad309b993565",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 11,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "selective-shadow",
+      "prompt_sha256": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 12,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "trained-always",
+      "prompt_sha256": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 13,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "ordinary-laya",
+      "prompt_sha256": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 14,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "deterministic-heuristic",
+      "prompt_sha256": "97b2ba0753ac5aba3b5a09bda7bb6bb953ace58520278e7452ef3717b310b94c",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 15,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "original-agent",
+      "prompt_sha256": "df9a01468f46890ff8a4900004597409183304cc44020a28a3ad0c05b14fe8cb",
+      "mutated_source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318"
+    },
+    {
+      "index": 16,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "original-agent",
+      "prompt_sha256": "ee2fd121a58e672e6503bc71f06880ea6f2ae1c4e64c5c84b915ad309b993565",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 17,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "deterministic-heuristic",
+      "prompt_sha256": "6a3a5bb11622f0dab0c551ff8d743b86ce4785d80fe5445e90670173af853939",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 18,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "ordinary-laya",
+      "prompt_sha256": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 19,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "trained-always",
+      "prompt_sha256": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    },
+    {
+      "index": 20,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "selective-shadow",
+      "prompt_sha256": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+      "mutated_source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6"
+    }
+  ],
+  "local_checks": {
+    "full_tests_passed": 255,
+    "extracted_source_package_tests_passed": 255,
+    "ruff": "passed",
+    "mypy_source_files": 16,
+    "independent_source_review": "no consequential finding",
+    "worker_checks_on_copies": 8,
+    "actual_local_model_inferences": 6,
+    "bare_baseline_inventory_and_prompt_checks": 4,
+    "all_20_unused_cases_unchanged": true,
+    "frozen_artifacts_unchanged": true,
+    "snapshot_recovery_hashes_match": true
+  },
+  "component_observations": [
+    {
+      "task": "funcy-first",
+      "arm": "deterministic-heuristic",
+      "choice": "symbol",
+      "inference_observed": false,
+      "receipt_valid": true
+    },
+    {
+      "task": "funcy-first",
+      "arm": "ordinary-laya",
+      "choice": "symbol",
+      "inference_observed": true,
+      "receipt_valid": true
+    },
+    {
+      "task": "funcy-first",
+      "arm": "trained-always",
+      "choice": "symbol",
+      "inference_observed": true,
+      "receipt_valid": true
+    },
+    {
+      "task": "funcy-first",
+      "arm": "selective-shadow",
+      "choice": "search",
+      "inference_observed": true,
+      "receipt_valid": true
+    },
+    {
+      "task": "cachetools-getitem",
+      "arm": "selective-shadow",
+      "choice": "search",
+      "inference_observed": true,
+      "receipt_valid": true
+    },
+    {
+      "task": "cachetools-getitem",
+      "arm": "trained-always",
+      "choice": "symbol",
+      "inference_observed": true,
+      "receipt_valid": true
+    },
+    {
+      "task": "cachetools-getitem",
+      "arm": "ordinary-laya",
+      "choice": "symbol",
+      "inference_observed": true,
+      "receipt_valid": true
+    },
+    {
+      "task": "cachetools-getitem",
+      "arm": "deterministic-heuristic",
+      "choice": "symbol",
+      "inference_observed": false,
+      "receipt_valid": true
+    }
+  ],
+  "limitations": [
+    "Preparation and worker checks are not autonomous repair results or end-to-end comparisons.",
+    "The trained policy failed promotion; deployment remains withheld.",
+    "Two controlled mutations with correlated repeats cannot support population or causal-superiority claims.",
+    "No separately billed API is authorized. Current native hosting/billing route is not independently audited.",
+    "Direct human runtime/policy/report egress and call-scope approval plus ordinary outer review are still required."
+  ],
+  "policy_sha256": "4aa078cc7aae5f2da0a0fcb448a48f7ca8bca91c87de33958c5f43e96d065778",
+  "report_sha256": "9e27e47f86087d0d5853ed9355dfc74abbbb70af7ce1d148b8dbcc0b86f43bc2",
+  "runtime_versions": {
+    "python": "3.12.13",
+    "laya": "0.4.16",
+    "torch": "2.14.1",
+    "transformers": "5.21.0",
+    "tokenizers": "0.23.3"
+  }
+}

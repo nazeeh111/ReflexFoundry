@@ -1,0 +1,434 @@
+{
+  "toolz-00-00": {
+    "choice": "symbol",
+    "confidence": 0.9231,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 1578.7858330004383,
+    "probabilities": {
+      "symbol": 0.9231,
+      "search": 0.0769
+    },
+    "backend": "mlx"
+  },
+  "toolz-00-01": {
+    "choice": "symbol",
+    "confidence": 0.9573,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 226.02891601854935,
+    "probabilities": {
+      "symbol": 0.9808,
+      "search": 0.0192
+    },
+    "backend": "mlx"
+  },
+  "toolz-00-02": {
+    "choice": "search",
+    "confidence": 0.5316,
+    "stable": false,
+    "truncated": false,
+    "duration_ms": 149.45116601302288,
+    "probabilities": {
+      "symbol": 0.4684,
+      "search": 0.5316
+    },
+    "backend": "mlx"
+  },
+  "toolz-00-03": {
+    "choice": "search",
+    "confidence": 0.5019,
+    "stable": false,
+    "truncated": false,
+    "duration_ms": 261.511042015627,
+    "probabilities": {
+      "symbol": 0.4761,
+      "search": 0.5239
+    },
+    "backend": "mlx"
+  },
+  "toolz-00-05": {
+    "choice": "symbol",
+    "confidence": 0.9227,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 400.87387498351745,
+    "probabilities": {
+      "symbol": 0.9227,
+      "search": 0.0773
+    },
+    "backend": "mlx"
+  },
+  "toolz-00-06": {
+    "choice": "symbol",
+    "confidence": 0.8431,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 221.80562501307577,
+    "probabilities": {
+      "symbol": 0.8583,
+      "search": 0.1417
+    },
+    "backend": "mlx"
+  },
+  "toolz-01-00": {
+    "choice": "symbol",
+    "confidence": 0.9583,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 661.2508749822155,
+    "probabilities": {
+      "symbol": 0.9583,
+      "search": 0.0417
+    },
+    "backend": "mlx"
+  },
+  "toolz-01-01": {
+    "choice": "symbol",
+    "confidence": 0.8605,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 223.7254159990698,
+    "probabilities": {
+      "symbol": 0.9052,
+      "search": 0.0948
+    },
+    "backend": "mlx"
+  },
+  "toolz-01-02": {
+    "choice": "search",
+    "confidence": 0.5372,
+    "stable": false,
+    "truncated": false,
+    "duration_ms": 77.5274169864133,
+    "probabilities": {
+      "symbol": 0.4206,
+      "search": 0.5794
+    },
+    "backend": "mlx"
+  },
+  "toolz-01-03": {
+    "choice": "search",
+    "confidence": 0.5252,
+    "stable": false,
+    "truncated": false,
+    "duration_ms": 60.231875017052516,
+    "probabilities": {
+      "symbol": 0.4516,
+      "search": 0.5484
+    },
+    "backend": "mlx"
+  },
+  "toolz-01-05": {
+    "choice": "symbol",
+    "confidence": 0.9378,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 205.57604200439528,
+    "probabilities": {
+      "symbol": 0.9378,
+      "search": 0.0622
+    },
+    "backend": "mlx"
+  },
+  "toolz-01-06": {
+    "choice": "symbol",
+    "confidence": 0.9436,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 78.15816698712297,
+    "probabilities": {
+      "symbol": 0.9445,
+      "search": 0.0555
+    },
+    "backend": "mlx"
+  },
+  "toolz-02-00": {
+    "choice": "symbol",
+    "confidence": 0.9354,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 316.01720800972544,
+    "probabilities": {
+      "symbol": 0.9615,
+      "search": 0.0385
+    },
+    "backend": "mlx"
+  },
+  "toolz-02-01": {
+    "choice": "symbol",
+    "confidence": 0.8303,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 366.132708004443,
+    "probabilities": {
+      "symbol": 0.9276,
+      "search": 0.0724
+    },
+    "backend": "mlx"
+  },
+  "toolz-02-02": {
+    "choice": "symbol",
+    "confidence": 0.5316,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 115.01066701021045,
+    "probabilities": {
+      "symbol": 0.5316,
+      "search": 0.4684
+    },
+    "backend": "mlx"
+  },
+  "toolz-02-03": {
+    "choice": "symbol",
+    "confidence": 0.5458,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 136.7721669957973,
+    "probabilities": {
+      "symbol": 0.5458,
+      "search": 0.4542
+    },
+    "backend": "mlx"
+  },
+  "toolz-02-05": {
+    "choice": "symbol",
+    "confidence": 0.9447,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 167.10816699196585,
+    "probabilities": {
+      "symbol": 0.9447,
+      "search": 0.0553
+    },
+    "backend": "mlx"
+  },
+  "toolz-02-06": {
+    "choice": "symbol",
+    "confidence": 0.9629,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 146.4474580134265,
+    "probabilities": {
+      "symbol": 0.9641,
+      "search": 0.0359
+    },
+    "backend": "mlx"
+  },
+  "toolz-03-00": {
+    "choice": "symbol",
+    "confidence": 0.9145,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 330.7315840211231,
+    "probabilities": {
+      "symbol": 0.9145,
+      "search": 0.0855
+    },
+    "backend": "mlx"
+  },
+  "toolz-03-01": {
+    "choice": "symbol",
+    "confidence": 0.9412,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 190.0027920200955,
+    "probabilities": {
+      "symbol": 0.9719,
+      "search": 0.0281
+    },
+    "backend": "mlx"
+  },
+  "toolz-03-02": {
+    "choice": "search",
+    "confidence": 0.5612,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 119.91058301646262,
+    "probabilities": {
+      "symbol": 0.4226,
+      "search": 0.5774
+    },
+    "backend": "mlx"
+  },
+  "toolz-03-03": {
+    "choice": "search",
+    "confidence": 0.5354,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 248.51870798738673,
+    "probabilities": {
+      "symbol": 0.4646,
+      "search": 0.5354
+    },
+    "backend": "mlx"
+  },
+  "toolz-03-05": {
+    "choice": "symbol",
+    "confidence": 0.9248,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 91.17912501096725,
+    "probabilities": {
+      "symbol": 0.9248,
+      "search": 0.0752
+    },
+    "backend": "mlx"
+  },
+  "toolz-03-06": {
+    "choice": "symbol",
+    "confidence": 0.75,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 89.87712499219924,
+    "probabilities": {
+      "symbol": 0.75,
+      "search": 0.25
+    },
+    "backend": "mlx"
+  },
+  "toolz-04-00": {
+    "choice": "symbol",
+    "confidence": 0.9629,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 305.5988330161199,
+    "probabilities": {
+      "symbol": 0.9841,
+      "search": 0.0159
+    },
+    "backend": "mlx"
+  },
+  "toolz-04-01": {
+    "choice": "symbol",
+    "confidence": 0.9217,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 166.80458400514908,
+    "probabilities": {
+      "symbol": 0.9733,
+      "search": 0.0267
+    },
+    "backend": "mlx"
+  },
+  "toolz-04-02": {
+    "choice": "search",
+    "confidence": 0.5172,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 207.97354201204143,
+    "probabilities": {
+      "symbol": 0.3442,
+      "search": 0.6558
+    },
+    "backend": "mlx"
+  },
+  "toolz-04-03": {
+    "choice": "search",
+    "confidence": 0.5037,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 167.5185420026537,
+    "probabilities": {
+      "symbol": 0.4084,
+      "search": 0.5916
+    },
+    "backend": "mlx"
+  },
+  "toolz-04-05": {
+    "choice": "symbol",
+    "confidence": 0.945,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 284.4610409811139,
+    "probabilities": {
+      "symbol": 0.979,
+      "search": 0.021
+    },
+    "backend": "mlx"
+  },
+  "toolz-04-06": {
+    "choice": "symbol",
+    "confidence": 0.952,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 190.2877910179086,
+    "probabilities": {
+      "symbol": 0.9706,
+      "search": 0.0294
+    },
+    "backend": "mlx"
+  },
+  "toolz-05-00": {
+    "choice": "symbol",
+    "confidence": 0.9651,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 93.10900000855327,
+    "probabilities": {
+      "symbol": 0.9749,
+      "search": 0.0251
+    },
+    "backend": "mlx"
+  },
+  "toolz-05-01": {
+    "choice": "symbol",
+    "confidence": 0.9699,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 153.80125000956468,
+    "probabilities": {
+      "symbol": 0.9864,
+      "search": 0.0136
+    },
+    "backend": "mlx"
+  },
+  "toolz-05-02": {
+    "choice": "search",
+    "confidence": 0.5211,
+    "stable": false,
+    "truncated": false,
+    "duration_ms": 93.84720798698254,
+    "probabilities": {
+      "symbol": 0.2845,
+      "search": 0.7155
+    },
+    "backend": "mlx"
+  },
+  "toolz-05-03": {
+    "choice": "search",
+    "confidence": 0.5127,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 402.511708001839,
+    "probabilities": {
+      "symbol": 0.3379,
+      "search": 0.6621
+    },
+    "backend": "mlx"
+  },
+  "toolz-05-05": {
+    "choice": "symbol",
+    "confidence": 0.9695,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 135.46120800310746,
+    "probabilities": {
+      "symbol": 0.9704,
+      "search": 0.0296
+    },
+    "backend": "mlx"
+  },
+  "toolz-05-06": {
+    "choice": "symbol",
+    "confidence": 0.89,
+    "stable": true,
+    "truncated": false,
+    "duration_ms": 192.0652500120923,
+    "probabilities": {
+      "symbol": 0.944,
+      "search": 0.056
+    },
+    "backend": "mlx"
+  }
+}

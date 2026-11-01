@@ -1,0 +1,17 @@
+{
+  "base": {
+    "tensor_digest": "2d96a1c1db1774ad9e8a7a1098976687cf36dbf931bb6c93bbd5cb7a42fdb234",
+    "tensors": 170,
+    "bytes": 789563392
+  },
+  "outcome": {
+    "tensor_digest": "2d96a1c1db1774ad9e8a7a1098976687cf36dbf931bb6c93bbd5cb7a42fdb234",
+    "tensors": 170,
+    "bytes": 789563392
+  },
+  "imitation": {
+    "tensor_digest": "2d96a1c1db1774ad9e8a7a1098976687cf36dbf931bb6c93bbd5cb7a42fdb234",
+    "tensors": 170,
+    "bytes": 789563392
+  }
+}

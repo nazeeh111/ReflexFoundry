@@ -80,12 +80,53 @@ def training_examples(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
                       "examples_digest": digest(examples)}
 
 
+def _normalized_tokenizer_config(config: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
+    config = dict(config)
+    changed = []
+    if config.get("tokenizer_class") in (None, "TokenizersBackend"):
+        config["tokenizer_class"] = "PreTrainedTokenizerFast"
+        config.pop("backend", None)
+        config.pop("is_local", None)
+        changed.append("tokenizer-class alias and loader-only fields")
+    if isinstance(config.get("extra_special_tokens"), list):
+        config["extra_special_tokens"] = {f"extra_{index}": token
+                                           for index, token in enumerate(config["extra_special_tokens"])}
+        changed.append("extra-special-token list to named mapping")
+    return config, changed
+
+
+def _finalize_tokenizer_export(output: Path) -> dict[str, Any] | None:
+    """Normalize a new export before binding it, matching pinned Laya's loader.
+
+    Calling this only from training leaves existing versioned model artifacts
+    immutable. Keep the upstream export bytes as provenance outside the set of
+    inference inputs. Weights and tokenizer.json are never rewritten here.
+    """
+    path = output / "tokenizer/tokenizer_config.json"
+    if output.is_symlink() or path.parent.is_symlink() or not path.is_file() or path.is_symlink():
+        raise ValueError("new tokenizer export must be a regular configuration file")
+    original = path.read_bytes()
+    config = json.loads(original)
+    if not isinstance(config, dict):
+        raise ValueError("new tokenizer export must contain a configuration object")
+    config, changed = _normalized_tokenizer_config(config)
+    if not changed:
+        return None
+    backup = output / "tokenizer-export.original.json"
+    with backup.open("xb") as handle:
+        handle.write(original)
+    write_json(path, config)
+    return {"operation": "explicit pinned-Laya tokenizer compatibility before training artifact freeze",
+            "changes": changed, "file": "tokenizer/tokenizer_config.json", "original_file": backup.name,
+            "before_sha256": hashlib.sha256(original).hexdigest(), "after_sha256": file_hash(path)}
+
+
 def train(records: list[dict[str, Any]], base: Path, output: Path,
           epochs: int = 4, device: str = "auto") -> dict[str, Any]:
     from laya.train import TrainConfig, finetune
     validate_splits(records)
     contract = decision_contract_digest()
-    if output.exists():
+    if output.exists() or output.is_symlink():
         raise ValueError("training output exists; choose a fresh version directory")
     rows = [r for r in records if r["split"] == "train"]
     examples, supervision = training_examples(rows)
@@ -108,6 +149,7 @@ def train(records: list[dict[str, Any]], base: Path, output: Path,
     if decision_contract_digest() != contract:
         raise ValueError("decision contract changed during training; use a fresh version")
     elapsed = (time.perf_counter() - start) * 1000
+    export_compatibility = _finalize_tokenizer_export(output)
     from safetensors.torch import load_file, save_file
     state = load_file(str(output / "model.safetensors"))
     head = {k: v for k, v in state.items() if not k.startswith("encoder.")}
@@ -120,7 +162,8 @@ def train(records: list[dict[str, Any]], base: Path, output: Path,
         "decision_contract_digest": contract,
         "head_sha256": file_hash(output / "head.safetensors"),
         "weights_sha256": file_hash(output / "model.safetensors"),
-        "inference_artifact_digest": artifact_digest(output), "summary": summary}
+        "inference_artifact_digest": artifact_digest(output),
+        "tokenizer_export_compatibility": export_compatibility, "summary": summary}
     write_json(output / "manifest.json", manifest)
     return manifest
 
@@ -134,6 +177,13 @@ class LocalPolicy:
             import laya_mlx as runtime
             self.agent = runtime.load(str(path))
         elif backend == "torch":
+            tokenizer_config = path / "tokenizer/tokenizer_config.json"
+            if tokenizer_config.is_file():
+                config = json.loads(tokenizer_config.read_text())
+                if not isinstance(config, dict):
+                    raise ValueError("tokenizer configuration must be an object")
+                if _normalized_tokenizer_config(config)[1]:
+                    raise ValueError("CPU loading would rewrite this legacy tokenizer; create an explicit converted version and evaluate it before use")
             import laya as runtime
             self.agent = runtime.load(str(path), device="cpu")
         else:
@@ -216,6 +266,18 @@ def materialize(base: Path, head: Path, output: Path) -> None:
             if (head.parent / name).is_symlink():
                 raise ValueError("adapter metadata must be regular files")
             shutil.copy2(head.parent / name, staged / name)
+        compatibility = manifest.get("tokenizer_export_compatibility")
+        if compatibility is not None:
+            original = head.parent / "tokenizer-export.original.json"
+            normalized = head.parent / "tokenizer/tokenizer_config.json"
+            if (not isinstance(compatibility, dict)
+                    or compatibility.get("original_file") != original.name
+                    or not original.is_file() or original.is_symlink()
+                    or not normalized.is_file() or normalized.is_symlink()
+                    or file_hash(original) != compatibility.get("before_sha256")
+                    or file_hash(normalized) != compatibility.get("after_sha256")):
+                raise ValueError("tokenizer export provenance is missing or changed")
+            shutil.copy2(original, staged / original.name)
         save_file(state, str(staged / "model.safetensors"))
         if (file_hash(staged / "model.safetensors") != manifest["weights_sha256"]
                 or artifact_digest(staged) != manifest["inference_artifact_digest"]):

@@ -1,0 +1,3 @@
+
+# Preserve upstream tabular experiment output byte-for-byte.
+benchmarks/local-imitation-context-v1/execution.txt -whitespace

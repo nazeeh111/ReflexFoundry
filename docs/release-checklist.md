@@ -18,7 +18,7 @@ This is a maintainer checklist, not a claim that a release has already passed. R
 - Confirm training rows never overlap calibration, promotion or locked test groups. Keep task variants together and distinguish exact-input deduplication from semantic independence.
 - Preserve executed candidate outcomes, independent grader code, repeated timings, inference outputs, startup timings and the final evaluation report.
 - Compare against original workflow, a strong deterministic heuristic, always-focused, trained always-delegation, selective delegation and ordinary Laya when actually run.
-- Account for artifact-integrity screening and cold startup on every CLI invocation. Label warm inference diagnostics separately and distinguish retrospective cost accounting from directly timed complete workflows.
+- Account for artifact-integrity screening and model loading on each modeled request. State explicitly whether interpreter startup, imports and full CLI/agent process time were measured. Label warm inference separately and distinguish summed stage costs from directly timed complete workflows.
 - Publish rejection reasons, failures, fallback overhead and negative results. Do not claim monetary or energy savings from wall time alone.
 - Derive every numerical chart from the preserved executed report. Retain plot sources and record the report hash.
 - Label generated fixtures, controlled mutations and real-repository tasks accurately. Do not imply broad coding-task generalization from a fixture study.

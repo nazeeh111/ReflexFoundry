@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from reflexfoundry.codex import command_names, summarize_events
+from reflexfoundry.codex import EventSummary, command_names, summarize_events, token_usage
 
 
 @pytest.mark.parametrize(("command", "expected"), [
@@ -115,3 +115,42 @@ def test_malformed_json_does_not_echo_source(tmp_path: Path) -> None:
     with pytest.raises(ValueError, match="invalid JSON event at line 2") as raised:
         summarize_events(path, consent=True)
     assert "PRIVATE" not in str(raised.value)
+
+
+def test_usage_counts_never_retain_messages_or_unknown_fields() -> None:
+    summary = EventSummary()
+    summary.observe({"type": "item.completed", "item": {"type": "reasoning", "text": "PRIVATE-REASONING"}})
+    summary.observe({"type": "turn.completed", "usage": {
+        "input_tokens": 100, "cached_input_tokens": 80, "output_tokens": 20,
+        "reasoning_output_tokens": 5, "unknown": "PRIVATE-SECRET"}})
+    summary.observe({"type": "turn.completed", "usage": {
+        "input_tokens": 50, "cached_input_tokens": 0, "output_tokens": 10,
+        "reasoning_output_tokens": 0}})
+    result = summary.result()
+    assert result["completed_turns"] == 2
+    assert result["token_usage"] == {"input_tokens": 150, "cached_input_tokens": 80,
+                                    "output_tokens": 30, "reasoning_output_tokens": 5}
+    assert "PRIVATE" not in json.dumps(result)
+
+
+@pytest.mark.parametrize("field,value", [("input_tokens", True), ("input_tokens", -1),
+    ("input_tokens", 1.5), ("input_tokens", "100"), ("input_tokens", 2**63),
+    ("cached_input_tokens", 101), ("reasoning_output_tokens", 21), ("output_tokens", None)])
+def test_invalid_usage_is_unavailable_instead_of_zero(field, value) -> None:
+    summary = EventSummary()
+    usage = {"input_tokens": 100, "cached_input_tokens": 20, "output_tokens": 20}
+    summary.observe({"type": "turn.completed", "usage": usage | {field: value}})
+    assert summary.result()["token_usage"] is None
+    assert summary.result()["invalid_usage_events"] == 1
+    with pytest.raises(ValueError):
+        token_usage(usage | {field: value})
+
+
+def test_missing_usage_or_optional_counter_is_not_invented() -> None:
+    summary = EventSummary()
+    assert summary.result()["token_usage"] is None
+    summary.observe({"type": "turn.completed", "usage": {
+        "input_tokens": 10, "cached_input_tokens": 0, "output_tokens": 5}})
+    assert summary.result()["token_usage"] == {"input_tokens": 10, "cached_input_tokens": 0, "output_tokens": 5}
+    summary.observe({"type": "turn.completed"})
+    assert summary.result()["token_usage"] is None

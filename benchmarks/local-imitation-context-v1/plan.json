@@ -1,0 +1,152 @@
+{
+  "study": "local-teacher-imitation-context-v1",
+  "source_records_sha256": "8c80ebfe7b11913a5983e8f0826f4ce6f41f32e26c0518cee5f8ef2a46401dfb",
+  "source_records_digest": "1467a3faac39abd94bd4957e09947f7ddf0b8a300352fe3a143a2ce4bba95093",
+  "decision_contract_digest": "c50d5d754be2fa838b52a767c724fc5f32c45271a95c7f7fedebcef0f0d08904",
+  "base_artifact_digest": "e7998c162d61a5658031ad61eed955b05d052ba3ad2a4ada996650f2203247d0",
+  "base_weights_sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+  "source_commit": "1ddf3e4f3f2281bb5cbb6b72655774390eecd242",
+  "runner_sha256": "49de73734228c53ebb3ee00da8f73c48262118cfc008199f413828ffecedebef",
+  "recipe": {
+    "epochs": 4,
+    "seed": 17,
+    "micro_batch": 4,
+    "grad_accum": 1,
+    "head_lr": 0.0001,
+    "freeze_encoder": true,
+    "loss": "soft-ce",
+    "shuffle_options": [
+      "choice"
+    ],
+    "calib_frac": 0.15,
+    "calib_seed": 20260922,
+    "max_len": 256
+  },
+  "native_training_source_sha256": "c325941f275a90b486d00c3ca28dc4ee1ece795218fdaa7c67818d711ee79645",
+  "training_available": 42,
+  "shared_eligible_ids": [
+    "toolz-00-00",
+    "toolz-00-01",
+    "toolz-00-02",
+    "toolz-00-03",
+    "toolz-00-05",
+    "toolz-00-06",
+    "toolz-01-00",
+    "toolz-01-01",
+    "toolz-01-02",
+    "toolz-01-03",
+    "toolz-01-05",
+    "toolz-01-06",
+    "toolz-02-00",
+    "toolz-02-01",
+    "toolz-02-02",
+    "toolz-02-03",
+    "toolz-02-05",
+    "toolz-02-06",
+    "toolz-03-00",
+    "toolz-03-01",
+    "toolz-03-02",
+    "toolz-03-03",
+    "toolz-03-05",
+    "toolz-03-06",
+    "toolz-04-00",
+    "toolz-04-01",
+    "toolz-04-02",
+    "toolz-04-03",
+    "toolz-04-05",
+    "toolz-04-06",
+    "toolz-05-00",
+    "toolz-05-01",
+    "toolz-05-02",
+    "toolz-05-03",
+    "toolz-05-05",
+    "toolz-05-06"
+  ],
+  "optimization_ids": [
+    "toolz-00-00",
+    "toolz-00-01",
+    "toolz-00-02",
+    "toolz-00-03",
+    "toolz-00-05",
+    "toolz-01-00",
+    "toolz-01-02",
+    "toolz-01-03",
+    "toolz-01-05",
+    "toolz-02-00",
+    "toolz-02-01",
+    "toolz-02-02",
+    "toolz-02-03",
+    "toolz-02-05",
+    "toolz-02-06",
+    "toolz-03-00",
+    "toolz-03-01",
+    "toolz-03-02",
+    "toolz-03-03",
+    "toolz-03-06",
+    "toolz-04-00",
+    "toolz-04-01",
+    "toolz-04-02",
+    "toolz-04-03",
+    "toolz-04-05",
+    "toolz-05-00",
+    "toolz-05-01",
+    "toolz-05-02",
+    "toolz-05-03",
+    "toolz-05-05",
+    "toolz-05-06"
+  ],
+  "internal_calibration_ids": [
+    "toolz-00-06",
+    "toolz-01-01",
+    "toolz-01-06",
+    "toolz-03-05",
+    "toolz-04-06"
+  ],
+  "excluded_ids": [
+    "toolz-00-04",
+    "toolz-01-04",
+    "toolz-02-04",
+    "toolz-03-04",
+    "toolz-04-04",
+    "toolz-05-04"
+  ],
+  "training_order": [
+    "outcome",
+    "imitation"
+  ],
+  "evaluation_order": "alternate arms for each shared held-out record",
+  "startup_probe_order": [
+    [
+      "outcome",
+      "imitation"
+    ],
+    [
+      "imitation",
+      "outcome"
+    ],
+    [
+      "outcome",
+      "imitation"
+    ]
+  ],
+  "python": "3.12.13 (main, Jun  2 2026, 22:42:28) [Clang 22.1.3 ]",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "dependencies": {
+    "laya": "0.4.16",
+    "laya-mlx": "0.5.0",
+    "torch": "2.14.1",
+    "transformers": "5.21.0",
+    "mlx": "0.32.4",
+    "numpy": "2.5.4",
+    "safetensors": "0.8.0"
+  },
+  "limits": [
+    "One fixed seed and fit per arm; no model selection or retuning after test.",
+    "The shared cohort was selected using measured outcome eligibility in both arms; this controls labels, not data acquisition.",
+    "Teacher is an untuned local Laya checkpoint, not the original Codex agent.",
+    "One actual repository per split; correlated queries and tiny internal calibration prevent broad inference.",
+    "Source retrieval coverage outcomes do not establish autonomous coding success.",
+    "Stage costs are retrospective recorded action time plus measured library load/screening/inference, not full CLI wall time.",
+    "Startup probes use fresh Python processes but share operating-system caches. Concurrent host load is uncontrolled."
+  ]
+}

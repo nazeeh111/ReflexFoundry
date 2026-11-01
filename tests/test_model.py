@@ -151,3 +151,161 @@ def test_materialize_refuses_unbound_or_existing_output(adapter, tmp_path):
     (package / "manifest.json").write_text(json.dumps(manifest))
     with pytest.raises(ValueError, match="complete inference"):
         materialize(base, package / "head.safetensors", tmp_path / "fresh")
+
+
+@pytest.mark.parametrize('config', [
+    {'tokenizer_class': 'TokenizersBackend', 'backend': 'tokenizers', 'is_local': True, 'pad_token': '[PAD]'},
+    {'pad_token': '[PAD]'},
+    {'tokenizer_class': 'PreTrainedTokenizerFast', 'extra_special_tokens': ['<A>', '<B>']},
+])
+def test_new_export_is_loader_compatible_before_binding_and_keeps_original(tmp_path, config):
+    from reflexfoundry.model import _finalize_tokenizer_export
+    (tmp_path / 'tokenizer').mkdir()
+    path = tmp_path / 'tokenizer/tokenizer_config.json'
+    path.write_text(json.dumps(config))
+    original = path.read_bytes()
+    (tmp_path / 'tokenizer/tokenizer.json').write_bytes(b'unchanged actual tokenizer')
+    (tmp_path / 'model.safetensors').write_bytes(b'unchanged weights')
+    result = _finalize_tokenizer_export(tmp_path)
+    assert result is not None
+    normalized = json.loads(path.read_text())
+    assert normalized['tokenizer_class'] == 'PreTrainedTokenizerFast'
+    assert normalized.get('extra_special_tokens') is None or isinstance(normalized['extra_special_tokens'], dict)
+    assert (tmp_path / 'tokenizer-export.original.json').read_bytes() == original
+    assert result['after_sha256'] == file_hash(path)
+    assert (tmp_path / 'tokenizer/tokenizer.json').read_bytes() == b'unchanged actual tokenizer'
+    assert (tmp_path / 'model.safetensors').read_bytes() == b'unchanged weights'
+    normalized_bytes = path.read_bytes()
+    assert _finalize_tokenizer_export(tmp_path) is None  # A load needs no further rewrite.
+    assert path.read_bytes() == normalized_bytes
+
+
+def test_compatible_export_is_not_rewritten_and_conflicting_backup_is_preserved(tmp_path):
+    from reflexfoundry.model import _finalize_tokenizer_export
+    (tmp_path / 'tokenizer').mkdir()
+    path = tmp_path / 'tokenizer/tokenizer_config.json'
+    path.write_text('{"tokenizer_class": "PreTrainedTokenizerFast"}\n')
+    original = path.read_bytes()
+    assert _finalize_tokenizer_export(tmp_path) is None
+    assert path.read_bytes() == original
+    assert not (tmp_path / 'tokenizer-export.original.json').exists()
+    path.write_text('{"tokenizer_class":"TokenizersBackend"}')
+    before = path.read_bytes()
+    backup = tmp_path / 'tokenizer-export.original.json'
+    backup.write_bytes(b'preserve existing provenance')
+    with pytest.raises(FileExistsError):
+        _finalize_tokenizer_export(tmp_path)
+    assert backup.read_bytes() == b'preserve existing provenance'
+    assert path.read_bytes() == before
+
+
+def test_materialize_preserves_and_validates_new_export_provenance(adapter, tmp_path):
+    base, package, expected = adapter
+    for root in (package, expected):
+        (root / 'tokenizer/tokenizer_config.json').write_text('{"tokenizer_class":"PreTrainedTokenizerFast"}')
+    original = package / 'tokenizer-export.original.json'
+    original.write_text('{"tokenizer_class":"TokenizersBackend"}')
+    manifest_path = package / 'manifest.json'
+    manifest = json.loads(manifest_path.read_text())
+    manifest['inference_artifact_digest'] = artifact_digest(expected)
+    manifest['tokenizer_export_compatibility'] = {
+        'original_file': original.name, 'before_sha256': file_hash(original),
+        'after_sha256': file_hash(package / 'tokenizer/tokenizer_config.json')}
+    manifest_path.write_text(json.dumps(manifest))
+    result = tmp_path / 'reconstructed-with-provenance'
+    materialize(base, package / 'head.safetensors', result)
+    assert (result / original.name).read_bytes() == original.read_bytes()
+    original.write_bytes(b'changed provenance')
+    with pytest.raises(ValueError, match='provenance'):
+        materialize(base, package / 'head.safetensors', tmp_path / 'bad-provenance')
+    assert not (tmp_path / 'bad-provenance').exists()
+
+
+def test_export_normalization_refuses_a_linked_tokenizer_directory(tmp_path):
+    from reflexfoundry.model import _finalize_tokenizer_export
+    outside = tmp_path / 'original-tokenizer'
+    outside.mkdir()
+    config = outside / 'tokenizer_config.json'
+    config.write_text('{"tokenizer_class":"TokenizersBackend"}')
+    before = config.read_bytes()
+    output = tmp_path / 'new-export'
+    output.mkdir()
+    (output / 'tokenizer').symlink_to(outside, target_is_directory=True)
+    with pytest.raises(ValueError, match='regular configuration'):
+        _finalize_tokenizer_export(output)
+    assert config.read_bytes() == before
+    assert not (output / 'tokenizer-export.original.json').exists()
+
+
+def test_train_freezes_the_normalized_export_not_the_loader_mutable_bytes(tmp_path, monkeypatch):
+    from pathlib import Path
+
+    import reflexfoundry.model as model
+    # Serialization and trainer doubles exercise export ordering in core-only
+    # CI. Actual model-loader verification is a separate recorded local check.
+    trainer = ModuleType('laya.train')
+    trainer.TrainConfig = lambda **kwargs: SimpleNamespace(**kwargs)
+    def finetune(_dataset, _base, output, _config, **_kwargs):
+        root = Path(output)
+        (root / 'tokenizer').mkdir(parents=True)
+        (root / 'encoder').mkdir()
+        (root / 'tokenizer/tokenizer_config.json').write_text('{"tokenizer_class":"TokenizersBackend"}')
+        (root / 'tokenizer/tokenizer.json').write_text('{}')
+        (root / 'encoder/config.json').write_text('{}')
+        (root / 'model.safetensors').write_bytes(b'new training export')
+        (root / 'rl_agent_config.json').write_text('{}')
+        return {'test_only': True}
+    trainer.finetune = finetune
+    monkeypatch.setitem(sys.modules, 'laya', ModuleType('laya'))
+    monkeypatch.setitem(sys.modules, 'laya.train', trainer)
+    tensors = ModuleType('safetensors.torch')
+    tensors.load_file = lambda _path: {'encoder.example': None, 'head.example': None}
+    tensors.save_file = lambda _state, path: Path(path).write_bytes(b'test-only head')
+    monkeypatch.setitem(sys.modules, 'safetensors', ModuleType('safetensors'))
+    monkeypatch.setitem(sys.modules, 'safetensors.torch', tensors)
+    monkeypatch.setattr(model, 'validate_splits', lambda _records: None)
+    base = tmp_path / 'base'
+    base.mkdir()
+    (base / 'model.safetensors').write_bytes(b'base')
+    rows = [{'id': str(i), 'spec': 'context-route-v1', 'split': 'train',
+             'inputs': {'summary': f'example{i}'}, 'selected': 'search'} for i in range(20)]
+    output = tmp_path / 'trained'
+    manifest = model.train(rows, base, output)
+    assert manifest['inference_artifact_digest'] == artifact_digest(output)
+    assert manifest['tokenizer_export_compatibility']['after_sha256'] == file_hash(output / 'tokenizer/tokenizer_config.json')
+    assert json.loads((output / 'tokenizer/tokenizer_config.json').read_text())['tokenizer_class'] == 'PreTrainedTokenizerFast'
+    assert (output / 'tokenizer-export.original.json').is_file()
+
+
+@pytest.mark.parametrize('config', [
+    {'tokenizer_class': 'TokenizersBackend'}, {},
+    {'tokenizer_class': 'PreTrainedTokenizerFast', 'extra_special_tokens': ['<A>']},
+])
+def test_cpu_refuses_loader_mutation_before_import_or_access_to_model(tmp_path, monkeypatch, config):
+    directory = tmp_path / 'tokenizer'
+    directory.mkdir()
+    path = directory / 'tokenizer_config.json'
+    path.write_text(json.dumps(config))
+    original = path.read_bytes()
+    runtime = ModuleType('laya')
+    runtime.load = lambda *_args, **_kwargs: pytest.fail('unsafe loader must not run')
+    monkeypatch.setitem(sys.modules, 'laya', runtime)
+    with pytest.raises(ValueError, match='explicit converted version'):
+        LocalPolicy(tmp_path, 'torch')
+    assert path.read_bytes() == original
+    assert not (tmp_path / 'tokenizer-export.original.json').exists()
+
+
+def test_cpu_loads_a_compatible_version_without_modifying_it(tmp_path, monkeypatch):
+    directory = tmp_path / 'tokenizer'
+    directory.mkdir()
+    path = directory / 'tokenizer_config.json'
+    path.write_text('{"tokenizer_class":"PreTrainedTokenizerFast"}')
+    original = path.read_bytes()
+    runtime = ModuleType('laya')
+    loaded = []
+    runtime.load = lambda *args, **kwargs: loaded.append((args, kwargs)) or SimpleNamespace()
+    monkeypatch.setitem(sys.modules, 'laya', runtime)
+    LocalPolicy(tmp_path, 'torch')
+    assert len(loaded) == 1
+    assert path.read_bytes() == original

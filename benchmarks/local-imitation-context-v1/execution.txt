@@ -1,0 +1,42 @@
+/Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/lib/python3.12/site-packages/laya_mlx/agent.py:195: RuntimeWarning: laya: this checkpoint ships temperatures outside [0.5, 5] which would distort confidence; clamping choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected buckets as uncalibrated.
+  ) = read_temperatures(self.cfg)
+W1029 19:01:44.730000 73502 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+train items 31, calibration items 5, eval items 5 (calibration_slice), skipped {}, device mps
+optimizer budget: 31 train item(s), effective batch up to 4 (micro_batch 4 x grad_accum 1), 32 optimizer updates over 4 epoch(s)
+epoch 1/4 mean loss 1.1346
+epoch 2/4 mean loss 1.0100
+epoch 3/4 mean loss 1.0133
+epoch 4/4 mean loss 0.9941
+/private/tmp/reflexfoundry-imitation/src/reflexfoundry/model.py:107: RuntimeWarning: laya.train: choice calibration: not fitted: 5 calibration items, fewer than 10, so the temperature stays 1.0
+  summary = finetune(str(dataset), str(base), str(output), config, device=device)
+
+=== Calibration Evidence (in-sample calibration slice, 5 items; not held-out) ===
+Metric                 Before         After          Delta         
+-----------------------------------------------------------------
+Accuracy               0.8000         0.8000         +0.0000       
+Loss                   0.5351         0.6642         +0.1291       
+ECE                    0.2115         0.1954         -0.0161       
+Brier (multi-class)    0.3398         0.3703         +0.0305       
+Brier (top-1)          0.1699         0.1852         +0.0153       
+Mean Confidence        0.9203         0.9670         +0.0467       
+-----------------------------------------------------------------
+
+train items 31, calibration items 5, eval items 5 (calibration_slice), skipped {}, device mps
+optimizer budget: 31 train item(s), effective batch up to 4 (micro_batch 4 x grad_accum 1), 32 optimizer updates over 4 epoch(s)
+epoch 1/4 mean loss 0.2145
+epoch 2/4 mean loss 0.2227
+epoch 3/4 mean loss 0.1807
+epoch 4/4 mean loss 0.2279
+
+=== Calibration Evidence (in-sample calibration slice, 5 items; not held-out) ===
+Metric                 Before         After          Delta         
+-----------------------------------------------------------------
+Accuracy               1.0000         1.0000         +0.0000       
+Loss                   0.0839         0.0043         -0.0796       
+ECE                    0.0797         0.0043         -0.0754       
+Brier (multi-class)    0.0156         0.0001         -0.0155       
+Brier (top-1)          0.0078         0.0000         -0.0078       
+Mean Confidence        0.9203         0.9957         +0.0754       
+-----------------------------------------------------------------
+
+{"status": "executed", "labels": {"shared_input_digest": "f1479f92809d8abfef920f4d8203889388998ee482361979985ac27ab66a9dae", "teacher_generation_ms": 13435.01358301728, "teacher_order_unstable": 5, "label_disagreements": ["toolz-00-01", "toolz-01-01", "toolz-02-01", "toolz-02-02", "toolz-02-03", "toolz-03-01", "toolz-04-01", "toolz-05-01"], "label_counts": {"outcome": {"symbol": 18, "search": 18}, "imitation": {"symbol": 26, "search": 10}}}, "deployment_allowed": {"outcome": false, "imitation": false}}

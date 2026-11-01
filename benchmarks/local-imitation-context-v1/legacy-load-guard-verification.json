@@ -1,0 +1,37 @@
+{
+  "scope": "Legacy metadata-only preflight and actual finalized-model copy loading; no new fit or policy promotion.",
+  "legacy_cpu_refused_before_loader": true,
+  "legacy_metadata_unchanged": true,
+  "original_native_fit_unchanged": true,
+  "finalizer_matches_prior_verified_bytes": true,
+  "finalized_cpu_and_mlx_loads_preserve_digest": true,
+  "weights_and_tokenizer_json_unchanged": true,
+  "derived_copy_digest": "80719fd11a9a2b9df6231724803d1df044a4e3f7996e33b851e35e223bfc61ab",
+  "predictions": {
+    "torch": {
+      "choice": "symbol",
+      "confidence": 0.9933,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 3770.4320829943754,
+      "probabilities": {
+        "symbol": 0.9968,
+        "search": 0.0032
+      },
+      "backend": "torch"
+    },
+    "mlx": {
+      "choice": "symbol",
+      "confidence": 0.9933,
+      "stable": true,
+      "truncated": false,
+      "duration_ms": 242.89525000494905,
+      "probabilities": {
+        "symbol": 0.9969,
+        "search": 0.0031
+      },
+      "backend": "mlx"
+    }
+  },
+  "native_codex_calls": 0
+}

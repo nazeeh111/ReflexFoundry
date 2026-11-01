@@ -132,16 +132,10 @@ overhead larger than the saved work, is a valid result and blocks promotion.
 Both stage studies compare original actions, a deterministic heuristic, untuned
 Laya, adapted always-delegation and adapted selective delegation. Untuned versus
 adapted is an adaptation ablation; always versus selective isolates the gate.
-The proposed teacher-agreement-only training ablation was **not executed**:
-these controlled datasets do not contain original-agent teacher labels. The
-studies do not isolate a causal benefit of outcome-aware supervision over
-imitation, and no such improvement is established.
+A [matched local-teacher ablation](../benchmarks/local-imitation-context-v1/README.md) now compares two fresh fits on the same 36 inputs, with outcome-derived targets versus untuned local Laya targets. Both heads made identical choices on all 30 retained test queries, covering 20 targets. This single-seed, reused-test result establishes no outcome-training advantage or population equivalence. The teacher is local Laya; original Codex-agent distillation remains untested.
 
 Forward and reverse order are all permutations of the supported two-choice
-catalogs and were measured. Similar-description perturbations and larger-choice
-catalogs were not separately evaluated as model-quality studies. Catalog change,
-truncation and domain-refusal checks are engineering guards; they do not prove
-model reliability under broad distribution shift.
+catalogs and were measured. A [local wording and redundant-choice diagnostic](../benchmarks/choice-stress-v1/README.md) adds 192 raw predictions on 12 retained inputs: parallel descriptions and a four-choice list made from equivalent action aliases. Parallel wording increased observed order flips from 1/12 to 4/12 for both models. Four-choice results cover only four of 24 permutations and two underlying actions, not novel-tool reliability. Catalog change, truncation and domain-refusal checks remain engineering guards; none of these small studies proves reliability under broad distribution shift.
 
 The native Codex study has two independently verified repairs, no complete
 matched comparison, and no captured agent usage totals. Its successful shadow

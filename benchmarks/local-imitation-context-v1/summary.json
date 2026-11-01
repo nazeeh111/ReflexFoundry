@@ -1,0 +1,2735 @@
+{
+  "status": "executed",
+  "plan_digest": "f78e9b7f276313445ae337e93c32f72e8e239608ec87e67d51776facaeb4a47d",
+  "labels": {
+    "shared_input_digest": "f1479f92809d8abfef920f4d8203889388998ee482361979985ac27ab66a9dae",
+    "teacher_generation_ms": 13435.01358301728,
+    "teacher_order_unstable": 5,
+    "label_disagreements": [
+      "toolz-00-01",
+      "toolz-01-01",
+      "toolz-02-01",
+      "toolz-02-02",
+      "toolz-02-03",
+      "toolz-03-01",
+      "toolz-04-01",
+      "toolz-05-01"
+    ],
+    "label_counts": {
+      "outcome": {
+        "symbol": 18,
+        "search": 18
+      },
+      "imitation": {
+        "symbol": 26,
+        "search": 10
+      }
+    }
+  },
+  "arms": {
+    "outcome": {
+      "model_weights_sha256": "36d0673c61d3dc2f0fd21e7ce608065e298249eae87b937ede6429ac9751c97b",
+      "model_artifact_digest": "77bc49cc963817edf3b8709e73c73eef8d37801ae84bf995bf2817b75e92c366",
+      "test": {
+        "policies": [
+          {
+            "name": "original-search",
+            "n": 30,
+            "success_rate": 1.0,
+            "errors": 0,
+            "error_upper_95": 0.11351709139047801,
+            "total_ms": 1583.991009,
+            "mean_ms": 52.799700300000005,
+            "startup_ms": 0,
+            "fallback_rate": 0.0,
+            "decision_counts": {
+              "symbol": 0,
+              "search": 30
+            }
+          },
+          {
+            "name": "deterministic-heuristic",
+            "n": 30,
+            "success_rate": 1.0,
+            "errors": 0,
+            "error_upper_95": 0.11351709139047801,
+            "total_ms": 4281.051301,
+            "mean_ms": 142.70171003333334,
+            "startup_ms": 0,
+            "fallback_rate": 0.0,
+            "decision_counts": {
+              "symbol": 12,
+              "search": 18
+            }
+          },
+          {
+            "name": "always-symbol",
+            "n": 30,
+            "success_rate": 0.4,
+            "errors": 18,
+            "error_upper_95": 0.754096056739166,
+            "total_ms": 3704.018926,
+            "mean_ms": 123.46729753333334,
+            "startup_ms": 0,
+            "fallback_rate": 0.0,
+            "decision_counts": {
+              "symbol": 30,
+              "search": 0
+            }
+          },
+          {
+            "name": "trained-always",
+            "n": 30,
+            "success_rate": 0.6666666666666667,
+            "errors": 10,
+            "error_upper_95": 0.5122027418616973,
+            "total_ms": 275057.783342988,
+            "mean_ms": 9168.5927780996,
+            "startup_ms": 8697.708124993369,
+            "fallback_rate": 0.0,
+            "decision_counts": {
+              "symbol": 22,
+              "search": 8
+            }
+          },
+          {
+            "name": "selective",
+            "n": 30,
+            "success_rate": 1.0,
+            "errors": 0,
+            "error_upper_95": 0.11351709139047801,
+            "total_ms": 272575.72117498796,
+            "mean_ms": 9085.857372499599,
+            "startup_ms": 8697.708124993369,
+            "fallback_rate": 1.0,
+            "decision_counts": {
+              "symbol": 0,
+              "search": 30
+            }
+          }
+        ],
+        "details": [
+          {
+            "id": "cachetools-00-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9837,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 227.16345899971202,
+              "probabilities": {
+                "symbol": 0.995,
+                "search": 0.005
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 53.824124999999995,
+                "median_action_ms": 42.819083,
+                "success": true,
+                "trials_ms": [
+                  4.425583,
+                  109.612167,
+                  42.819083
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 509.288917,
+                "median_action_ms": 498.283875,
+                "success": true,
+                "trials_ms": [
+                  498.283875,
+                  737.574958,
+                  179.300834
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-00-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9698,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 379.6147909888532,
+              "probabilities": {
+                "symbol": 0.99,
+                "search": 0.01
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 41.738667,
+                "median_action_ms": 30.733625,
+                "success": true,
+                "trials_ms": [
+                  43.3615,
+                  27.320166,
+                  30.733625
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 179.839542,
+                "median_action_ms": 168.8345,
+                "success": true,
+                "trials_ms": [
+                  168.8345,
+                  163.856667,
+                  237.969
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-00-02",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5735,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 326.5834169869777,
+              "probabilities": {
+                "symbol": 0.5735,
+                "search": 0.4265
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 28.620959,
+                "median_action_ms": 17.615917,
+                "success": true,
+                "trials_ms": [
+                  17.615917,
+                  31.31525,
+                  11.980917
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007417,
+                "median_action_ms": 0.002375,
+                "success": false,
+                "trials_ms": [
+                  0.002375,
+                  0.000458,
+                  0.003416
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-00-03",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5096,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 408.9620000158902,
+              "probabilities": {
+                "symbol": 0.4904,
+                "search": 0.5096
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 14.628292,
+                "median_action_ms": 3.62325,
+                "success": true,
+                "trials_ms": [
+                  3.705458,
+                  3.62325,
+                  3.432375
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.0075,
+                "median_action_ms": 0.002458,
+                "success": false,
+                "trials_ms": [
+                  0.002833,
+                  0.002458,
+                  0.000458
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-00-04",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.539,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 326.8665830255486,
+              "probabilities": {
+                "symbol": 0.4165,
+                "search": 0.5835
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 217.697001,
+                "median_action_ms": 206.691959,
+                "success": true,
+                "trials_ms": [
+                  343.190208,
+                  206.691959,
+                  79.469208
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008625,
+                "median_action_ms": 0.003583,
+                "success": false,
+                "trials_ms": [
+                  0.004459,
+                  0.000708,
+                  0.003583
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9966,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 370.47529200208373,
+              "probabilities": {
+                "symbol": 0.9986,
+                "search": 0.0014
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 122.000833,
+                "median_action_ms": 110.995791,
+                "success": true,
+                "trials_ms": [
+                  110.995791,
+                  4.507208,
+                  147.350958
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 190.995083,
+                "median_action_ms": 179.990041,
+                "success": true,
+                "trials_ms": [
+                  341.192125,
+                  27.418292,
+                  179.990041
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9976,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 274.000416015042,
+              "probabilities": {
+                "symbol": 0.9991,
+                "search": 0.0009
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 71.320542,
+                "median_action_ms": 60.3155,
+                "success": true,
+                "trials_ms": [
+                  60.3155,
+                  69.507417,
+                  18.13325
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 144.532417,
+                "median_action_ms": 133.527375,
+                "success": true,
+                "trials_ms": [
+                  133.527375,
+                  206.087416,
+                  46.794875
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-02",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5412,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 111.12212500302121,
+              "probabilities": {
+                "symbol": 0.5412,
+                "search": 0.4588
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 159.087375,
+                "median_action_ms": 148.082333,
+                "success": true,
+                "trials_ms": [
+                  148.082333,
+                  265.871792,
+                  41.605125
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.00825,
+                "median_action_ms": 0.003208,
+                "success": false,
+                "trials_ms": [
+                  0.004458,
+                  0.003208,
+                  0.0005
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-03",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5557,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 279.49495799839497,
+              "probabilities": {
+                "symbol": 0.4443,
+                "search": 0.5557
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 15.427499999999998,
+                "median_action_ms": 4.422458,
+                "success": true,
+                "trials_ms": [
+                  4.422458,
+                  3.811042,
+                  8.042333
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007667,
+                "median_action_ms": 0.002625,
+                "success": false,
+                "trials_ms": [
+                  0.002875,
+                  0.0005,
+                  0.002625
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-04",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5423,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 291.3894580269698,
+              "probabilities": {
+                "symbol": 0.3436,
+                "search": 0.6564
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 108.323792,
+                "median_action_ms": 97.31875,
+                "success": true,
+                "trials_ms": [
+                  121.757458,
+                  8.408292,
+                  97.31875
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007209,
+                "median_action_ms": 0.002167,
+                "success": false,
+                "trials_ms": [
+                  0.003958,
+                  0.002167,
+                  0.000458
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9954,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 272.6857500092592,
+              "probabilities": {
+                "symbol": 0.9977,
+                "search": 0.0023
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 22.324292,
+                "median_action_ms": 11.31925,
+                "success": true,
+                "trials_ms": [
+                  5.491459,
+                  11.31925,
+                  12.61675
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 169.455667,
+                "median_action_ms": 158.450625,
+                "success": true,
+                "trials_ms": [
+                  191.812333,
+                  158.450625,
+                  149.782125
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9966,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 206.13145802053623,
+              "probabilities": {
+                "symbol": 0.9985,
+                "search": 0.0015
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 25.098584,
+                "median_action_ms": 14.093542,
+                "success": true,
+                "trials_ms": [
+                  68.353125,
+                  14.093542,
+                  7.775334
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 199.416292,
+                "median_action_ms": 188.41125,
+                "success": true,
+                "trials_ms": [
+                  188.41125,
+                  538.708958,
+                  41.386125
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-02",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5293,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 334.02800001204014,
+              "probabilities": {
+                "symbol": 0.4707,
+                "search": 0.5293
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 17.569792,
+                "median_action_ms": 6.56475,
+                "success": true,
+                "trials_ms": [
+                  6.56475,
+                  3.442334,
+                  78.323125
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008875,
+                "median_action_ms": 0.003833,
+                "success": false,
+                "trials_ms": [
+                  0.003833,
+                  0.0005,
+                  0.004167
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-03",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.6111,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 468.8728750043083,
+              "probabilities": {
+                "symbol": 0.6111,
+                "search": 0.3889
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 14.537875,
+                "median_action_ms": 3.532833,
+                "success": true,
+                "trials_ms": [
+                  3.532833,
+                  3.161583,
+                  6.537042
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007584,
+                "median_action_ms": 0.002542,
+                "success": false,
+                "trials_ms": [
+                  0.005167,
+                  0.002542,
+                  0.000542
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-04",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5593,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 161.23745901859365,
+              "probabilities": {
+                "symbol": 0.2829,
+                "search": 0.7171
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 15.651042,
+                "median_action_ms": 4.646,
+                "success": true,
+                "trials_ms": [
+                  4.646,
+                  5.088417,
+                  3.493958
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007083999999999,
+                "median_action_ms": 0.002042,
+                "success": false,
+                "trials_ms": [
+                  0.0025,
+                  0.000625,
+                  0.002042
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9965,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 280.4281249991618,
+              "probabilities": {
+                "symbol": 0.9972,
+                "search": 0.0028
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 30.276125,
+                "median_action_ms": 19.271083,
+                "success": true,
+                "trials_ms": [
+                  19.271083,
+                  7.269875,
+                  422.94775
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 368.455959,
+                "median_action_ms": 357.450917,
+                "success": true,
+                "trials_ms": [
+                  357.450917,
+                  150.126667,
+                  452.533542
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9976,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 343.556042003911,
+              "probabilities": {
+                "symbol": 0.9988,
+                "search": 0.0012
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 110.826042,
+                "median_action_ms": 99.821,
+                "success": true,
+                "trials_ms": [
+                  4.523458,
+                  347.483375,
+                  99.821
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 178.576292,
+                "median_action_ms": 167.57125,
+                "success": true,
+                "trials_ms": [
+                  24.996542,
+                  167.57125,
+                  533.668417
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-02",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5171,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 258.61625000834465,
+              "probabilities": {
+                "symbol": 0.4829,
+                "search": 0.5171
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 17.915667,
+                "median_action_ms": 6.910625,
+                "success": true,
+                "trials_ms": [
+                  6.778958,
+                  6.910625,
+                  7.1045
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007249999999999,
+                "median_action_ms": 0.002208,
+                "success": false,
+                "trials_ms": [
+                  0.004875,
+                  0.002208,
+                  0.000375
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-03",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5604,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 407.8121249913238,
+              "probabilities": {
+                "symbol": 0.5604,
+                "search": 0.4396
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 17.039542,
+                "median_action_ms": 6.0345,
+                "success": true,
+                "trials_ms": [
+                  5.26975,
+                  7.359958,
+                  6.0345
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007624999999999,
+                "median_action_ms": 0.002583,
+                "success": false,
+                "trials_ms": [
+                  0.002583,
+                  0.000459,
+                  0.003042
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-04",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5432,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 202.39724998828024,
+              "probabilities": {
+                "symbol": 0.3287,
+                "search": 0.6713
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 42.88375,
+                "median_action_ms": 31.878708,
+                "success": true,
+                "trials_ms": [
+                  434.877208,
+                  31.878708,
+                  10.774542
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008375,
+                "median_action_ms": 0.003333,
+                "success": false,
+                "trials_ms": [
+                  0.003333,
+                  0.004458,
+                  0.000542
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9958,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 217.32704201713204,
+              "probabilities": {
+                "symbol": 0.9978,
+                "search": 0.0022
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 155.455875,
+                "median_action_ms": 144.450833,
+                "success": true,
+                "trials_ms": [
+                  171.109584,
+                  144.450833,
+                  140.916208
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 534.308792,
+                "median_action_ms": 523.30375,
+                "success": true,
+                "trials_ms": [
+                  494.265083,
+                  810.741875,
+                  523.30375
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.994,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 863.9941250148695,
+              "probabilities": {
+                "symbol": 0.9985,
+                "search": 0.0015
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 16.026375,
+                "median_action_ms": 5.021333,
+                "success": true,
+                "trials_ms": [
+                  4.17,
+                  5.021333,
+                  8.155292
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 202.32525,
+                "median_action_ms": 191.320208,
+                "success": true,
+                "trials_ms": [
+                  41.917917,
+                  435.256541,
+                  191.320208
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-02",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5874,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 678.7767079949845,
+              "probabilities": {
+                "symbol": 0.5874,
+                "search": 0.4126
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 15.872416999999999,
+                "median_action_ms": 4.867375,
+                "success": true,
+                "trials_ms": [
+                  4.867375,
+                  4.187416,
+                  194.840708
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008626,
+                "median_action_ms": 0.003584,
+                "success": false,
+                "trials_ms": [
+                  0.003709,
+                  0.0005,
+                  0.003584
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-03",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.6779,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 510.0800830114167,
+              "probabilities": {
+                "symbol": 0.6779,
+                "search": 0.3221
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 15.292167,
+                "median_action_ms": 4.287125,
+                "success": true,
+                "trials_ms": [
+                  4.014042,
+                  4.287125,
+                  139.69475
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008167,
+                "median_action_ms": 0.003125,
+                "success": false,
+                "trials_ms": [
+                  0.091,
+                  0.003125,
+                  0.000542
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-04",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5234,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 335.8539580076467,
+              "probabilities": {
+                "symbol": 0.535,
+                "search": 0.465
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 17.114167,
+                "median_action_ms": 6.109125,
+                "success": true,
+                "trials_ms": [
+                  4.044041,
+                  9.046875,
+                  6.109125
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008625,
+                "median_action_ms": 0.003583,
+                "success": false,
+                "trials_ms": [
+                  0.005791,
+                  0.000959,
+                  0.003583
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9901,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 355.69612501421943,
+              "probabilities": {
+                "symbol": 0.9975,
+                "search": 0.0025
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 74.223834,
+                "median_action_ms": 63.218792,
+                "success": true,
+                "trials_ms": [
+                  111.028166,
+                  63.218792,
+                  11.215292
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 229.030459,
+                "median_action_ms": 218.025417,
+                "success": true,
+                "trials_ms": [
+                  690.394291,
+                  192.072833,
+                  218.025417
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9988,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 366.87875000643544,
+              "probabilities": {
+                "symbol": 0.9994,
+                "search": 0.0006
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 85.700126,
+                "median_action_ms": 74.695084,
+                "success": true,
+                "trials_ms": [
+                  5.863083,
+                  88.568958,
+                  74.695084
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 599.651042,
+                "median_action_ms": 588.646,
+                "success": true,
+                "trials_ms": [
+                  425.557375,
+                  588.646,
+                  677.946625
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-02",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5369,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 159.15925000444986,
+              "probabilities": {
+                "symbol": 0.5369,
+                "search": 0.4631
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 19.875375,
+                "median_action_ms": 8.870333,
+                "success": true,
+                "trials_ms": [
+                  3.451,
+                  8.870333,
+                  170.367875
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007833,
+                "median_action_ms": 0.002791,
+                "success": false,
+                "trials_ms": [
+                  0.002791,
+                  0.003209,
+                  0.000541
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-03",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.51,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 408.4440419974271,
+              "probabilities": {
+                "symbol": 0.51,
+                "search": 0.49
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 18.113709,
+                "median_action_ms": 7.108667,
+                "success": true,
+                "trials_ms": [
+                  4.909708,
+                  7.108667,
+                  12.593959
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008001,
+                "median_action_ms": 0.002959,
+                "success": false,
+                "trials_ms": [
+                  0.002959,
+                  0.000542,
+                  0.0055
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-04",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5478,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 232.83850000007078,
+              "probabilities": {
+                "symbol": 0.5478,
+                "search": 0.4522
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 19.525167,
+                "median_action_ms": 8.520125,
+                "success": true,
+                "trials_ms": [
+                  14.576917,
+                  8.520125,
+                  4.675458
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008500999999999,
+                "median_action_ms": 0.003459,
+                "success": false,
+                "trials_ms": [
+                  0.006417,
+                  0.003459,
+                  0.000459
+                ]
+              }
+            }
+          }
+        ],
+        "decision_label_agreement": 0.26666666666666666,
+        "decision_ece_10_bins": 0.4625866666666667,
+        "confidence_brier": 0.5593403226666667,
+        "decision_label_records": 30,
+        "decision_metric_note": "Agreement with fastest safe observed choice is diagnostic only; rows with no successful action are excluded from label metrics but retained in all outcome comparisons. This is not task success or a population calibration guarantee.",
+        "paired_saved_ms_95": null,
+        "paired_success_delta_95": null,
+        "paired_saved_ms_mean": -9033.057672199599,
+        "paired_success_delta_mean": 0.0,
+        "uncertainty_available": false,
+        "repository_groups": 1,
+        "accepted": 0,
+        "accepted_errors": 0,
+        "accepted_error_upper_95": 1.0,
+        "accepted_repositories": 0,
+        "accepted_repository_error_upper_95": 1.0,
+        "order_flip_rate": 0.16666666666666666,
+        "unnecessary_fallback": 20,
+        "wrong_decisions": []
+      },
+      "deployment_allowed": false,
+      "reasons": [
+        "calibration has insufficient safe delegation evidence",
+        "independent promotion accepted-risk bound failed",
+        "promotion uncertainty unavailable with fewer than two repository groups",
+        "promotion has no reliable net time improvement including startup",
+        "simple heuristic dominates the candidate",
+        "candidate task outcomes regress against the deterministic heuristic",
+        "locked test does not confirm outcome and time benefit"
+      ],
+      "training_ms": 106264.3224580097,
+      "median_screening_and_load_ms": 8697.708124993369
+    },
+    "imitation": {
+      "model_weights_sha256": "e44e6399750c038522af21dc9b14999d4814ec47264ebd2194b2405517404bcc",
+      "model_artifact_digest": "83575169fb7b6c8feb43d63cec3d4169edb376b572b919f0d6695930c03e9093",
+      "test": {
+        "policies": [
+          {
+            "name": "original-search",
+            "n": 30,
+            "success_rate": 1.0,
+            "errors": 0,
+            "error_upper_95": 0.11351709139047801,
+            "total_ms": 1583.991009,
+            "mean_ms": 52.799700300000005,
+            "startup_ms": 0,
+            "fallback_rate": 0.0,
+            "decision_counts": {
+              "symbol": 0,
+              "search": 30
+            }
+          },
+          {
+            "name": "deterministic-heuristic",
+            "n": 30,
+            "success_rate": 1.0,
+            "errors": 0,
+            "error_upper_95": 0.11351709139047801,
+            "total_ms": 4281.051301,
+            "mean_ms": 142.70171003333334,
+            "startup_ms": 0,
+            "fallback_rate": 0.0,
+            "decision_counts": {
+              "symbol": 12,
+              "search": 18
+            }
+          },
+          {
+            "name": "always-symbol",
+            "n": 30,
+            "success_rate": 0.4,
+            "errors": 18,
+            "error_upper_95": 0.754096056739166,
+            "total_ms": 3704.018926,
+            "mean_ms": 123.46729753333334,
+            "startup_ms": 0,
+            "fallback_rate": 0.0,
+            "decision_counts": {
+              "symbol": 30,
+              "search": 0
+            }
+          },
+          {
+            "name": "trained-always",
+            "n": 30,
+            "success_rate": 0.6666666666666667,
+            "errors": 10,
+            "error_upper_95": 0.5122027418616973,
+            "total_ms": 234903.4044819737,
+            "mean_ms": 7830.113482732457,
+            "startup_ms": 7380.08354199701,
+            "fallback_rate": 0.0,
+            "decision_counts": {
+              "symbol": 22,
+              "search": 8
+            }
+          },
+          {
+            "name": "selective",
+            "n": 30,
+            "success_rate": 1.0,
+            "errors": 0,
+            "error_upper_95": 0.11351709139047801,
+            "total_ms": 232421.3423139737,
+            "mean_ms": 7747.378077132456,
+            "startup_ms": 7380.08354199701,
+            "fallback_rate": 1.0,
+            "decision_counts": {
+              "symbol": 0,
+              "search": 30
+            }
+          }
+        ],
+        "details": [
+          {
+            "id": "cachetools-00-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.999,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 324.33537498582155,
+              "probabilities": {
+                "symbol": 0.9999,
+                "search": 0.0001
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 53.824124999999995,
+                "median_action_ms": 42.819083,
+                "success": true,
+                "trials_ms": [
+                  4.425583,
+                  109.612167,
+                  42.819083
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 509.288917,
+                "median_action_ms": 498.283875,
+                "success": true,
+                "trials_ms": [
+                  498.283875,
+                  737.574958,
+                  179.300834
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-00-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9979,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 1195.482000010088,
+              "probabilities": {
+                "symbol": 0.9996,
+                "search": 0.0004
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 41.738667,
+                "median_action_ms": 30.733625,
+                "success": true,
+                "trials_ms": [
+                  43.3615,
+                  27.320166,
+                  30.733625
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 179.839542,
+                "median_action_ms": 168.8345,
+                "success": true,
+                "trials_ms": [
+                  168.8345,
+                  163.856667,
+                  237.969
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-00-02",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.6427,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 253.85891599580646,
+              "probabilities": {
+                "symbol": 0.6427,
+                "search": 0.3573
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 28.620959,
+                "median_action_ms": 17.615917,
+                "success": true,
+                "trials_ms": [
+                  17.615917,
+                  31.31525,
+                  11.980917
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007417,
+                "median_action_ms": 0.002375,
+                "success": false,
+                "trials_ms": [
+                  0.002375,
+                  0.000458,
+                  0.003416
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-00-03",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5203,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 393.68837501388043,
+              "probabilities": {
+                "symbol": 0.4797,
+                "search": 0.5203
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 14.628292,
+                "median_action_ms": 3.62325,
+                "success": true,
+                "trials_ms": [
+                  3.705458,
+                  3.62325,
+                  3.432375
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.0075,
+                "median_action_ms": 0.002458,
+                "success": false,
+                "trials_ms": [
+                  0.002833,
+                  0.002458,
+                  0.000458
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-00-04",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5597,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 233.5195830091834,
+              "probabilities": {
+                "symbol": 0.365,
+                "search": 0.635
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 217.697001,
+                "median_action_ms": 206.691959,
+                "success": true,
+                "trials_ms": [
+                  343.190208,
+                  206.691959,
+                  79.469208
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008625,
+                "median_action_ms": 0.003583,
+                "success": false,
+                "trials_ms": [
+                  0.004459,
+                  0.000708,
+                  0.003583
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 1.0,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 250.84433401934803,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 122.000833,
+                "median_action_ms": 110.995791,
+                "success": true,
+                "trials_ms": [
+                  110.995791,
+                  4.507208,
+                  147.350958
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 190.995083,
+                "median_action_ms": 179.990041,
+                "success": true,
+                "trials_ms": [
+                  341.192125,
+                  27.418292,
+                  179.990041
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 1.0,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 293.1187500071246,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 71.320542,
+                "median_action_ms": 60.3155,
+                "success": true,
+                "trials_ms": [
+                  60.3155,
+                  69.507417,
+                  18.13325
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 144.532417,
+                "median_action_ms": 133.527375,
+                "success": true,
+                "trials_ms": [
+                  133.527375,
+                  206.087416,
+                  46.794875
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-02",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5837,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 345.24891700129956,
+              "probabilities": {
+                "symbol": 0.5837,
+                "search": 0.4163
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 159.087375,
+                "median_action_ms": 148.082333,
+                "success": true,
+                "trials_ms": [
+                  148.082333,
+                  265.871792,
+                  41.605125
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.00825,
+                "median_action_ms": 0.003208,
+                "success": false,
+                "trials_ms": [
+                  0.004458,
+                  0.003208,
+                  0.0005
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-03",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.6393,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 449.43133398192003,
+              "probabilities": {
+                "symbol": 0.3607,
+                "search": 0.6393
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 15.427499999999998,
+                "median_action_ms": 4.422458,
+                "success": true,
+                "trials_ms": [
+                  4.422458,
+                  3.811042,
+                  8.042333
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007667,
+                "median_action_ms": 0.002625,
+                "success": false,
+                "trials_ms": [
+                  0.002875,
+                  0.0005,
+                  0.002625
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-01-04",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5649,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 184.13320899708197,
+              "probabilities": {
+                "symbol": 0.2585,
+                "search": 0.7415
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 108.323792,
+                "median_action_ms": 97.31875,
+                "success": true,
+                "trials_ms": [
+                  121.757458,
+                  8.408292,
+                  97.31875
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007209,
+                "median_action_ms": 0.002167,
+                "success": false,
+                "trials_ms": [
+                  0.003958,
+                  0.002167,
+                  0.000458
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9999,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 385.0064590224065,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 22.324292,
+                "median_action_ms": 11.31925,
+                "success": true,
+                "trials_ms": [
+                  5.491459,
+                  11.31925,
+                  12.61675
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 169.455667,
+                "median_action_ms": 158.450625,
+                "success": true,
+                "trials_ms": [
+                  191.812333,
+                  158.450625,
+                  149.782125
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 1.0,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 167.29362498153932,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 25.098584,
+                "median_action_ms": 14.093542,
+                "success": true,
+                "trials_ms": [
+                  68.353125,
+                  14.093542,
+                  7.775334
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 199.416292,
+                "median_action_ms": 188.41125,
+                "success": true,
+                "trials_ms": [
+                  188.41125,
+                  538.708958,
+                  41.386125
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-02",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5597,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 331.52800000971183,
+              "probabilities": {
+                "symbol": 0.4403,
+                "search": 0.5597
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 17.569792,
+                "median_action_ms": 6.56475,
+                "success": true,
+                "trials_ms": [
+                  6.56475,
+                  3.442334,
+                  78.323125
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008875,
+                "median_action_ms": 0.003833,
+                "success": false,
+                "trials_ms": [
+                  0.003833,
+                  0.0005,
+                  0.004167
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-03",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.7065,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 191.2458750011865,
+              "probabilities": {
+                "symbol": 0.7065,
+                "search": 0.2935
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 14.537875,
+                "median_action_ms": 3.532833,
+                "success": true,
+                "trials_ms": [
+                  3.532833,
+                  3.161583,
+                  6.537042
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007584,
+                "median_action_ms": 0.002542,
+                "success": false,
+                "trials_ms": [
+                  0.005167,
+                  0.002542,
+                  0.000542
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-02-04",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5953,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 287.10975000285544,
+              "probabilities": {
+                "symbol": 0.1708,
+                "search": 0.8292
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 15.651042,
+                "median_action_ms": 4.646,
+                "success": true,
+                "trials_ms": [
+                  4.646,
+                  5.088417,
+                  3.493958
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007083999999999,
+                "median_action_ms": 0.002042,
+                "success": false,
+                "trials_ms": [
+                  0.0025,
+                  0.000625,
+                  0.002042
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 1.0,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 122.76083399774507,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 30.276125,
+                "median_action_ms": 19.271083,
+                "success": true,
+                "trials_ms": [
+                  19.271083,
+                  7.269875,
+                  422.94775
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 368.455959,
+                "median_action_ms": 357.450917,
+                "success": true,
+                "trials_ms": [
+                  357.450917,
+                  150.126667,
+                  452.533542
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 1.0,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 160.29883400187828,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 110.826042,
+                "median_action_ms": 99.821,
+                "success": true,
+                "trials_ms": [
+                  4.523458,
+                  347.483375,
+                  99.821
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 178.576292,
+                "median_action_ms": 167.57125,
+                "success": true,
+                "trials_ms": [
+                  24.996542,
+                  167.57125,
+                  533.668417
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-02",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5346,
+              "stable": false,
+              "truncated": false,
+              "duration_ms": 110.55200002738275,
+              "probabilities": {
+                "symbol": 0.4654,
+                "search": 0.5346
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 17.915667,
+                "median_action_ms": 6.910625,
+                "success": true,
+                "trials_ms": [
+                  6.778958,
+                  6.910625,
+                  7.1045
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007249999999999,
+                "median_action_ms": 0.002208,
+                "success": false,
+                "trials_ms": [
+                  0.004875,
+                  0.002208,
+                  0.000375
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-03",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.6097,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 135.17708299332298,
+              "probabilities": {
+                "symbol": 0.6097,
+                "search": 0.3903
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 17.039542,
+                "median_action_ms": 6.0345,
+                "success": true,
+                "trials_ms": [
+                  5.26975,
+                  7.359958,
+                  6.0345
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007624999999999,
+                "median_action_ms": 0.002583,
+                "success": false,
+                "trials_ms": [
+                  0.002583,
+                  0.000459,
+                  0.003042
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-03-04",
+            "prediction": {
+              "choice": "search",
+              "confidence": 0.5706,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 62.285083025926724,
+              "probabilities": {
+                "symbol": 0.2373,
+                "search": 0.7627
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 42.88375,
+                "median_action_ms": 31.878708,
+                "success": true,
+                "trials_ms": [
+                  434.877208,
+                  31.878708,
+                  10.774542
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008375,
+                "median_action_ms": 0.003333,
+                "success": false,
+                "trials_ms": [
+                  0.003333,
+                  0.004458,
+                  0.000542
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9999,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 521.1179170000833,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 155.455875,
+                "median_action_ms": 144.450833,
+                "success": true,
+                "trials_ms": [
+                  171.109584,
+                  144.450833,
+                  140.916208
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 534.308792,
+                "median_action_ms": 523.30375,
+                "success": true,
+                "trials_ms": [
+                  494.265083,
+                  810.741875,
+                  523.30375
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9999,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 667.2200830071233,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 16.026375,
+                "median_action_ms": 5.021333,
+                "success": true,
+                "trials_ms": [
+                  4.17,
+                  5.021333,
+                  8.155292
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 202.32525,
+                "median_action_ms": 191.320208,
+                "success": true,
+                "trials_ms": [
+                  41.917917,
+                  435.256541,
+                  191.320208
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-02",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.6681,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 232.8063330205623,
+              "probabilities": {
+                "symbol": 0.6681,
+                "search": 0.3319
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 15.872416999999999,
+                "median_action_ms": 4.867375,
+                "success": true,
+                "trials_ms": [
+                  4.867375,
+                  4.187416,
+                  194.840708
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008626,
+                "median_action_ms": 0.003584,
+                "success": false,
+                "trials_ms": [
+                  0.003709,
+                  0.0005,
+                  0.003584
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-03",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.8108,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 537.2502919926774,
+              "probabilities": {
+                "symbol": 0.8108,
+                "search": 0.1892
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 15.292167,
+                "median_action_ms": 4.287125,
+                "success": true,
+                "trials_ms": [
+                  4.014042,
+                  4.287125,
+                  139.69475
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008167,
+                "median_action_ms": 0.003125,
+                "success": false,
+                "trials_ms": [
+                  0.091,
+                  0.003125,
+                  0.000542
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-04-04",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5384,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 327.9634589853231,
+              "probabilities": {
+                "symbol": 0.5571,
+                "search": 0.4429
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 17.114167,
+                "median_action_ms": 6.109125,
+                "success": true,
+                "trials_ms": [
+                  4.044041,
+                  9.046875,
+                  6.109125
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008625,
+                "median_action_ms": 0.003583,
+                "success": false,
+                "trials_ms": [
+                  0.005791,
+                  0.000959,
+                  0.003583
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-00",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.9997,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 289.7945409931708,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 74.223834,
+                "median_action_ms": 63.218792,
+                "success": true,
+                "trials_ms": [
+                  111.028166,
+                  63.218792,
+                  11.215292
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 229.030459,
+                "median_action_ms": 218.025417,
+                "success": true,
+                "trials_ms": [
+                  690.394291,
+                  192.072833,
+                  218.025417
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-01",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 1.0,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 265.7589169975836,
+              "probabilities": {
+                "symbol": 1.0,
+                "search": 0.0
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 85.700126,
+                "median_action_ms": 74.695084,
+                "success": true,
+                "trials_ms": [
+                  5.863083,
+                  88.568958,
+                  74.695084
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 599.651042,
+                "median_action_ms": 588.646,
+                "success": true,
+                "trials_ms": [
+                  425.557375,
+                  588.646,
+                  677.946625
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-02",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5758,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 320.74920801096596,
+              "probabilities": {
+                "symbol": 0.5758,
+                "search": 0.4242
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 19.875375,
+                "median_action_ms": 8.870333,
+                "success": true,
+                "trials_ms": [
+                  3.451,
+                  8.870333,
+                  170.367875
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.007833,
+                "median_action_ms": 0.002791,
+                "success": false,
+                "trials_ms": [
+                  0.002791,
+                  0.003209,
+                  0.000541
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-03",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5193,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 136.15145898074843,
+              "probabilities": {
+                "symbol": 0.5193,
+                "search": 0.4807
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 18.113709,
+                "median_action_ms": 7.108667,
+                "success": true,
+                "trials_ms": [
+                  4.909708,
+                  7.108667,
+                  12.593959
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008001,
+                "median_action_ms": 0.002959,
+                "success": false,
+                "trials_ms": [
+                  0.002959,
+                  0.000542,
+                  0.0055
+                ]
+              }
+            }
+          },
+          {
+            "id": "cachetools-05-04",
+            "prediction": {
+              "choice": "symbol",
+              "confidence": 0.5847,
+              "stable": true,
+              "truncated": false,
+              "duration_ms": 259.1144999896642,
+              "probabilities": {
+                "symbol": 0.5847,
+                "search": 0.4153
+              },
+              "backend": "mlx"
+            },
+            "selected": "search",
+            "fallback": true,
+            "outcomes": {
+              "search": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 19.525167,
+                "median_action_ms": 8.520125,
+                "success": true,
+                "trials_ms": [
+                  14.576917,
+                  8.520125,
+                  4.675458
+                ]
+              },
+              "symbol": {
+                "corpus_startup_ms": 11.005042,
+                "duration_ms": 11.008500999999999,
+                "median_action_ms": 0.003459,
+                "success": false,
+                "trials_ms": [
+                  0.006417,
+                  0.003459,
+                  0.000459
+                ]
+              }
+            }
+          }
+        ],
+        "decision_label_agreement": 0.26666666666666666,
+        "decision_ece_10_bins": 0.5122133333333334,
+        "confidence_brier": 0.5818664086666667,
+        "decision_label_records": 30,
+        "decision_metric_note": "Agreement with fastest safe observed choice is diagnostic only; rows with no successful action are excluded from label metrics but retained in all outcome comparisons. This is not task success or a population calibration guarantee.",
+        "paired_saved_ms_95": null,
+        "paired_success_delta_95": null,
+        "paired_saved_ms_mean": -7694.578376832457,
+        "paired_success_delta_mean": 0.0,
+        "uncertainty_available": false,
+        "repository_groups": 1,
+        "accepted": 0,
+        "accepted_errors": 0,
+        "accepted_error_upper_95": 1.0,
+        "accepted_repositories": 0,
+        "accepted_repository_error_upper_95": 1.0,
+        "order_flip_rate": 0.16666666666666666,
+        "unnecessary_fallback": 20,
+        "wrong_decisions": []
+      },
+      "deployment_allowed": false,
+      "reasons": [
+        "calibration has insufficient safe delegation evidence",
+        "independent promotion accepted-risk bound failed",
+        "promotion uncertainty unavailable with fewer than two repository groups",
+        "promotion has no reliable net time improvement including startup",
+        "simple heuristic dominates the candidate",
+        "candidate task outcomes regress against the deterministic heuristic",
+        "locked test does not confirm outcome and time benefit"
+      ],
+      "training_ms": 82186.83970798156,
+      "median_screening_and_load_ms": 7380.08354199701
+    }
+  },
+  "deployment": "withheld",
+  "native_agent_calls": 0,
+  "paid_api_calls": 0,
+  "limits": [
+    "One fixed seed and fit per arm; no model selection or retuning after test.",
+    "The shared cohort was selected using measured outcome eligibility in both arms; this controls labels, not data acquisition.",
+    "Teacher is an untuned local Laya checkpoint, not the original Codex agent.",
+    "One actual repository per split; correlated queries and tiny internal calibration prevent broad inference.",
+    "Source retrieval coverage outcomes do not establish autonomous coding success.",
+    "Stage costs are retrospective recorded action time plus measured library load/screening/inference, not full CLI wall time.",
+    "Startup probes use fresh Python processes but share operating-system caches. Concurrent host load is uncontrolled."
+  ]
+}
