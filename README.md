@@ -12,7 +12,9 @@ ReflexFoundry finds repeated, bounded decisions in explicitly shared workflow re
 
 A fast model can still make a workflow slower or less reliable. ReflexFoundry includes startup and fallback costs, compares against a transparent heuristic, and blocks deployment when the evidence fails. A rejected policy is a useful result.
 
-**v0.2.2 experimental preview.** The executed benchmark concerns validation of supplied coding patches in generated Python repositories. It does not establish improvements in autonomous coding, production repositories, subscription usage, dollars, or energy. The current source also executes a separate [public-source context retrieval study](docs/context-benchmark.md). Its source-coverage outcomes do not establish autonomous coding improvements. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md). The [0.1.1 fixes](CHANGELOG.md) tighten validation and shadow evidence; the original model and benchmark remain withheld and unchanged.
+**v0.3.0 experimental preview.** The [native coding comparison](benchmarks/codex-e2e-v2/README.md) now contains real repairs with observed local inference and independently verified outcomes. The study stopped at a native timeout: 18 of 20 planned calls started, 17 repairs passed, and two calls remain unattempted. All nine valid model-versus-agent comparisons took longer and used more reported input tokens. This is a small, incomplete controlled study, with no demonstrated improvement or eligible deployment. Earlier [patch-validation](docs/results.md) and [public-source retrieval](docs/context-benchmark.md) evidence remains unchanged. See the [research basis](docs/research.md) and [evaluation boundaries](docs/evaluation.md).
+
+[Watch the 44-second native coding replay](assets/native-demo/render-v1/reflexfoundry-native-stopped-evidence-replay.mp4). It follows actual local inference, a verified repair and the measured comparison, including the timeout and withheld deployment. [Inspect its sources](assets/native-demo/README.md) or download the [portable native Lab](assets/native-demo/lab.html).
 
 ## Try it without a model
 
@@ -115,7 +117,9 @@ The [native Codex coding trial](benchmarks/codex-e2e-v1/README.md) includes two 
 
 Additional local evidence includes a [matched label-source ablation](benchmarks/local-imitation-context-v1/README.md) with no observed test-choice advantage from outcome targets, and a [192-prediction wording/alias diagnostic](benchmarks/choice-stress-v1/README.md) showing additional order sensitivity. Both reuse public context inputs and retain their limitations. Neither supports deployment.
 
-A [prepared five-arm native protocol](docs/native-study-v2.md) compares an undelegated agent, a deterministic heuristic, ordinary Laya, trained always-delegate and selective shadow on two public repair tasks. Its cap is 20 new calls. Preparation and local worker checks are separate from native execution; no native call in this protocol is authorized or counted as completed.
+The [five-arm native comparison](benchmarks/codex-e2e-v2/README.md) compares an undelegated agent, a heuristic, ordinary Laya, trained always-delegate and selective shadow on supplied Funcy and cachetools mutations. Direct scoped approval covered public-source/runtime/policy/report transfer and subscription-only CLI access. Seventeen protocol-valid repairs produced 13 matched comparisons and nine confirmed model-inference observations. Call 18 timed out without a completed turn or validated inference receipt; its unrepaired candidate failed independent checks. The frozen stop rule prevented calls 19 and 20. Missing token usage stays unavailable. The [protocol](docs/native-study-v2.md), raw results, failed attempt, planned missing rows and [descriptive analysis](benchmarks/codex-e2e-v2/analysis/analysis.md) are retained.
+
+On the valid matched observations, trained-always added a mean 33.02 seconds of pipeline time; selective shadow added 58.44 seconds. Success did not improve. These are descriptive observations from two repositories with correlated repeats and uncontrolled host/service caches. The incomplete comparison supports neither a causal speed claim nor broad reliability, monetary or energy claims. The failed learned policy remains withheld.
 
 ## Use it with Codex
 

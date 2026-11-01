@@ -1,0 +1,11 @@
+Changed only `first(seq)` in `funcy/seqs.py` to `return next(iter(seq), None)`. It preserves falsey values, consumes one iterator item, and returns `None` for empty input.
+
+Required retrieval ran once; `context-result.json` was read.
+
+Checks passed in order:
+
+- Focused official check: **1 passed**
+- Full official check: **295 passed**
+- Additional falsey-value and iterator-consumption checks passed.
+
+No tests or unrelated source files were edited.

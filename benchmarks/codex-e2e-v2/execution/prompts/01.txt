@@ -1,0 +1,8 @@
+Repair first(seq) in funcy/seqs.py. It must return the first element of a sequence or iterator, consume only that first iterator item, preserve falsey elements, and return None for empty input. Make the smallest correct source repair without editing tests or unrelated files.
+
+Use your normal native tools to inspect the source and make the smallest correct repair. Do not edit tests or unrelated source.
+
+After the smallest source repair run both unchanged official checks, in order:
+PYTHONPATH=. /Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q -W error tests/test_seqs.py::test_first
+PYTHONPATH=. /Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q -W error
+Both checks remain mandatory. Do not install dependencies, use network, inspect credentials, commit, or delegate. Keep native permissions and sandbox intact. Finish with a concise change and actual-check report.

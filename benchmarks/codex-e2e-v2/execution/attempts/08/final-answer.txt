@@ -1,0 +1,8 @@
+Repaired [Cache.__getitem__](/private/tmp/reflexfoundry-native-v2/cases/08-cachetools-getitem/src/cachetools/__init__.py:71) with one line: `return self.__data[key]`. This preserves falsey values, delegates missing keys to `__missing__`, and adds no size changes.
+
+Required retrieval ran once; `context-result.json` was read. Both unchanged checks passed in order:
+
+- Focused check: 1 passed.
+- Full suite: 381 passed, 16 subtests passed.
+
+No tests or unrelated source were edited.

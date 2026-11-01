@@ -1,0 +1,8 @@
+Changed one line in `src/cachetools/__init__.py`: `Cache.__getitem__` now returns `self.__data[key]`. This preserves falsey values, the existing `__missing__` behavior, and cache size.
+
+Both unchanged checks passed in order:
+
+1. `CacheTest::test_update`: 1 passed.
+2. Full suite: 381 passed, 16 subtests passed.
+
+No tests or unrelated source files were edited.

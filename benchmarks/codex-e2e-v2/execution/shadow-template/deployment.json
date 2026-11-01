@@ -1,0 +1,16 @@
+{
+  "mode": "shadow",
+  "policy": "1a6dbe27b65d",
+  "history": [
+    {
+      "time": 1793259153.273243,
+      "from": "off",
+      "to": "shadow",
+      "policy": "1a6dbe27b65d",
+      "reason": "explicit shadow"
+    }
+  ],
+  "max_decisions": 100,
+  "decisions": 0,
+  "epoch": "204e05db27ee4926a4b2833c31aaa2f9"
+}

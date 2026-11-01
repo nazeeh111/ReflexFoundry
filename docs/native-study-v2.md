@@ -1,11 +1,15 @@
-# Planned native comparison, version 2
+# Native comparison v2: protocol and stopped execution
 
-**Preparation only. No native Codex coding process has started in this study.**
-Execution requires direct scoped human authority and the ordinary automatic
-approval review. Execution also requires confirmation that the current CLI
-uses subscription access with no separately billed API provider. Unknown billing
-routes must not be used. A run flag does not provide that authority. The earlier
-four-process study remains unchanged and will not be resumed by this protocol.
+**Executed, then stopped incomplete at call 18.** Direct scoped human approval
+confirmed the 20-call/180-second cap, declared file transfer and subscription-only
+CLI access. Normal automatic review remained enabled. Seventeen calls produced
+protocol-valid, independently successful repairs; call 18 timed out without a
+completed turn or validated inference receipt. Its unrepaired candidate failed
+the independent checks. The stop rule prevented calls 19 and 20. See the
+[retained results](../benchmarks/codex-e2e-v2/README.md). This is not a completed
+balanced comparison. The immutable plan and prepared metadata retain their
+historical preparation status; execution and authorization are separate records.
+The earlier four-process study remains unchanged and was not resumed.
 
 ## Question and workload
 
@@ -127,8 +131,23 @@ plus 16 subtests passed on clean source. Both injected mutants failed their focu
 test and independent grader. Source pins and exact logs are retained with the
 prepared evidence. These local checks are not autonomous-agent results.
 
-The final immutable plan, local worker smoke checks, source review, and scoped
-approval record must be complete before any run. Until then all native counts
-remain zero. A native run requires both direct human authority and the same
-outer automatic review that rejected the old launch. Generic continuation or a
-CLI consent flag is not permission to send these artifacts.
+The immutable plan, local worker checks and source review preceded execution.
+Direct human approval on 1 November 2026 resolved the earlier file-transfer
+boundary, and every actual launch passed normal outer review. The first review
+request for call 18 failed with a service “Bad Request” before creating any
+process or attempt directory. The unchanged request then passed normal review;
+this was not a native retry or permission bypass.
+
+Call 18 reached the 180-second native deadline. Retained telemetry has zero
+completed turns, unavailable usage and no validated worker receipt. This proves
+no verified inference outcome; it does not establish whether an unfinished
+command began work. The timeout cause is unknown and is not attributed to model
+quality. No later calls or resampling occurred. The runner's terminal result
+and explicit stop record are retained. Seventeen valid results yield 13 matched
+comparisons, with only two repository groups and shared baselines.
+
+Agent-side test execution and ordering are agent-reported. The frozen observer
+directly records separate post-run focused, full-suite and contract checks. Its
+four declared source files remain frozen; separately recorded observer checkout
+84e55fb includes a newer model module whose used hashing functions have unchanged
+syntax trees. Per-case runtime remains the actual pinned 0.2.1 wheel.

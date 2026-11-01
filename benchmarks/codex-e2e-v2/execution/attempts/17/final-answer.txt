@@ -1,0 +1,8 @@
+Repaired `Cache.__getitem__` with a one-line change: return `self.__data[key]`. This preserves falsey values, routes missing keys through `__missing__`, and leaves size accounting untouched. No tests or unrelated source were edited.
+
+Required retrieval ran once; `context-result.json` was read.
+
+Both official checks passed in order:
+
+- `test_update`: 1 passed
+- Full suite: 381 passed, 16 subtests passed

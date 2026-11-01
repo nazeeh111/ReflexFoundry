@@ -35,3 +35,7 @@ notice. Keep original benchmark measurements distinct from third-party reports.
 The six-task public-repository mutation study uses Toolz at commit `451af60dec590a6010e2babdbf391ea8f815122f` (https://github.com/pytoolz/toolz) and Funcy at commit `a876c7e1cf11e7c746e91fce4632ebfa93865428` (https://github.com/Suor/funcy), both BSD-3-Clause. Retained small source snippets and mutation anchors are attributed to their respective authors; full upstream notices accompany the executed evidence under `benchmarks/public-repos-v1/licenses/`. Neither project endorses ReflexFoundry. Full upstream source checkouts are not redistributed here.
 
 Training used Laya source commit `b9fe351ce81e2d974bca2bf219c1e4030c0a05ea` and Laya-MLX source commit `ddaf014cf3bd6733ce11219750b150df42ffc86e`. The exact base model revision is recorded in the adapter manifest. The training extra pins Laya by Git commit because this source's declared 0.4.16 version was unavailable on PyPI when verified.
+
+## Retained native coding candidates
+
+The native v2 study retains modified Funcy source at the same pinned revision above (BSD-3-Clause, Alexander Schepanovski and contributors), and cachetools source at `e7104dd52bfe0e3aced6f3439fb6ed4d9c8ff52a` (MIT, Thomas Kemmer and contributors). Full corresponding notices accompany the candidates in `benchmarks/codex-e2e-v2/licenses/`. The source files preserve original attribution; their supplied mutations and agent-produced repairs are identified separately in the frozen plan and attempt records. Neither upstream project endorses ReflexFoundry.

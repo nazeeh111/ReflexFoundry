@@ -1,0 +1,245 @@
+{
+  "format": 1,
+  "kind": "stopped-study evidence replay, not screen recording",
+  "study_status": "stopped-incomplete",
+  "planned_trials": 20,
+  "native_starts": 18,
+  "protocol_valid_trials": 17,
+  "failed_trials": [
+    18
+  ],
+  "unattempted_trials": [
+    19,
+    20
+  ],
+  "usage_failed_trial": null,
+  "aggregate_means": "Protocol-valid observations only, n=4 for original/heuristic and n=3 for each model arm; not a balanced comparison.",
+  "status": "encoded and technically verified; perceptual review pending",
+  "duration_seconds": 44,
+  "fps": 24,
+  "frame_count": 1056,
+  "width": 1280,
+  "height": 720,
+  "audio": "none",
+  "editorial_timing": "Compressed editorial time; animation does not represent actual process speed or measured throughput.",
+  "cues": [
+    {
+      "time_seconds": 0.0,
+      "scene": "The supplied defect"
+    },
+    {
+      "time_seconds": 6.0,
+      "scene": "A proposal is not permission"
+    },
+    {
+      "time_seconds": 13.0,
+      "scene": "The trained-assisted repair"
+    },
+    {
+      "time_seconds": 19.0,
+      "scene": "Independent validation of trial04"
+    },
+    {
+      "time_seconds": 25.0,
+      "scene": "All five arms, incomplete comparison"
+    },
+    {
+      "time_seconds": 34.0,
+      "scene": "Timeout, protocol halt and withheld deployment"
+    }
+  ],
+  "source_sha256": "3c78c3e4a40893dca288f36af2f49d8e86b830766d052a2caaf0063f7f0a1e1a",
+  "evidence_sha256": {
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/plan.json": "0634b5648f675aa6cd08e47397397298f7b83e10b7eb1ab00e5afb86440752d1",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/analysis/analysis.json": "1d535738b801ffedcb7602768c3466c209d298dc4448673aa804b1510c630feb",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/stopped.json": "a6283858296089c79f5991580d50e61edd454db946fd90a9a8467f22f147a570",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/observer-provenance.json": "57513d6bad6c1166f3b93b13a7dbd4d84612b97bd9c03fd452075ca47c6a0898",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/scripts/native_study_tasks.py": "e1c452785c0540c3a7223bbca5d1316ffb064dbe324c75ca1f91345cf0ad5d56",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/result.json": "9e1de82dce2232125d80b9011e53d5ee1d8352e933c3b924ca34c0d00c04505a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/result.json": "3024a33fa4b538032e06a68c5071cb22c9e924a58dbd569a21e276f7b8293bdc",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/result.json": "fa3781fb493290383a98625c1a9ef974094861dce57cd44971e581d56db9784b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/result.json": "eb2c59b7f1cfda00b476023d902c74544842e470c2fe5ddb5df6554852d53a62",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/result.json": "cd75b198b39f8dbe9d9d547bed12792b5e6bcf5e9d34443bd1b8c7bc17a3f474",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/result.json": "5e43e2d533d46bf281a6d164f0782263023ab89dd1fdbba417bb6cda8df4874a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/result.json": "44821fcddd540dc8d43e95e7b5b9dcac2fcbb765ed3ab097e8d0ff702b978be3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/result.json": "3e4dfbdbd747d091df2e8c4e7b33b53ce00fd9a83e19d6e449a67095b1059640",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/result.json": "e453672d92bfdbed1aba1eb50f853a2fc93873e825a659a68ca0708234bd3827",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/result.json": "806a0e0fed672508fcdd970427c4762d5287dd4b1a083a56dd1aaa37ebba6384",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/result.json": "3eaf1b44a7327edf9efb3db1bb8539b5221f1de806c1ee7c7ea36186da77964f",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/result.json": "b52c099626bc9eb8a6d856cc163c5e0b18b8f1e6b22b1683ba518aa4fed73ad1",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/result.json": "1c327cecf17d6b0db3123a72894c297a2fc621b1106717bfce422a489e064134",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/result.json": "d78c92bea601e8cc09bf8012e8e367e10c311c34c5e8dd32ce67b2d71a50e280",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/result.json": "1dfd45113b6b02ee1be149d850897f7f4165f59a4bed990aba5580d4070fde22",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/result.json": "742a448684fca6895f6889771cf99180f6b8c34ac953b37524c624f058964212",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/result.json": "00c50d8d2eeff0ba99a4ee5666e86b9e52598c91376229c7287806c5359aae02",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/result.json": "7a4ef5d4ce2659216244619ef1c99870e77212c9044bfb01a10fbee8cd4eb975",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/shadow-template/report.json": "9e27e47f86087d0d5853ed9355dfc74abbbb70af7ce1d148b8dbcc0b86f43bc2",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/shadow-template/policy.json": "4aa078cc7aae5f2da0a0fcb448a48f7ca8bca91c87de33958c5f43e96d065778",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/candidate.py": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8"
+  },
+  "font_sources": {
+    "regular": {
+      "path": "/System/Library/Fonts/Supplemental/Arial.ttf",
+      "sha256": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9"
+    },
+    "bold": {
+      "path": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+      "sha256": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0"
+    },
+    "italic": {
+      "path": "/System/Library/Fonts/Supplemental/Georgia Italic.ttf",
+      "sha256": "7758840cacb7382db65aa038e9fd1194d077ba9b55fe748f9cfb196d2773ac4e"
+    },
+    "mono": {
+      "path": "/System/Library/Fonts/Menlo.ttc",
+      "sha256": "f2d400484a6aace67980730ec0a9ef24ce9e535a2604f118e6fdc2510021b85f"
+    }
+  },
+  "video_sha256": "a4688a33924299dbd63888fbe7cd2f528a34c8936dba675bd8ab51dc9e84cb82",
+  "ffmpeg_argv": [
+    "/Users/nazeeh/.local/bin/ffmpeg",
+    "-n",
+    "-hide_banner",
+    "-loglevel",
+    "error",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "rgb24",
+    "-s",
+    "1280x720",
+    "-r",
+    "24",
+    "-i",
+    "pipe:0",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "fast",
+    "-crf",
+    "19",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "assets/native-demo/render-v1/rendering.mp4"
+  ],
+  "ffprobe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "mime_codec_string": "avc1.64001f",
+        "width": 1280,
+        "height": 720,
+        "coded_width": 1280,
+        "coded_height": 720,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 540672,
+        "duration": "44.000000",
+        "bit_rate": "74159",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1056",
+        "extradata_size": 46,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "encoder": "Lavc61.19.100 libx264"
+        }
+      }
+    ],
+    "format": {
+      "filename": "assets/native-demo/render-v1/reflexfoundry-native-stopped-evidence-replay.mp4",
+      "nb_streams": 1,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "44.000000",
+      "size": "421372",
+      "bit_rate": "76613",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf61.7.100"
+      }
+    }
+  },
+  "diagnostic_sha256": {
+    "diagnostic/frame-00.00.png": "129fc76494572dd9bec070b4e9ae02618e058d4fb6fe9e212601599be9b8eb6c",
+    "diagnostic/frame-02.50.png": "3b6531eb2b6bc3adc5278f4a3d2bb2e7568623ff24181b64bffc7422b69e7b1f",
+    "diagnostic/frame-05.95.png": "3b6531eb2b6bc3adc5278f4a3d2bb2e7568623ff24181b64bffc7422b69e7b1f",
+    "diagnostic/frame-06.00.png": "0e1723ef04c5efe0a6340dba0673dfed716de3a3223712031acc572b9eccf1a5",
+    "diagnostic/frame-06.60.png": "0e1723ef04c5efe0a6340dba0673dfed716de3a3223712031acc572b9eccf1a5",
+    "diagnostic/frame-10.50.png": "ff38c227941b4dad56acd12d829accfc3623cd9f68de8c85595fd66d1a2bac20",
+    "diagnostic/frame-12.95.png": "ff38c227941b4dad56acd12d829accfc3623cd9f68de8c85595fd66d1a2bac20",
+    "diagnostic/frame-13.00.png": "2c27fc6d687c094a2438c039f80e141a83107f58baa4882c4485fb542c82c13c",
+    "diagnostic/frame-16.00.png": "188b48edeb973e4bebbc2a3306eb59b6c753d18afb53575103312afb175f085e",
+    "diagnostic/frame-18.95.png": "188b48edeb973e4bebbc2a3306eb59b6c753d18afb53575103312afb175f085e",
+    "diagnostic/frame-19.00.png": "cb115c2ce5bd2e5f857980675cdc3d462e8646f118903f39ec0b99b4142577aa",
+    "diagnostic/frame-22.00.png": "fb35ad07996694624d073c8d60204ecd7d5f5e6d983dec6de33d4d388263f176",
+    "diagnostic/frame-24.95.png": "fb35ad07996694624d073c8d60204ecd7d5f5e6d983dec6de33d4d388263f176",
+    "diagnostic/frame-25.00.png": "6013fc4f608ce6f1b31d961068217e8763956e1135795a5e6a11eb4c1a8f69f6",
+    "diagnostic/frame-29.00.png": "91f1953955a120e95de8c78fc93536a228a22f7ce6f0d94e37d402198042e1b7",
+    "diagnostic/frame-33.95.png": "91f1953955a120e95de8c78fc93536a228a22f7ce6f0d94e37d402198042e1b7",
+    "diagnostic/frame-34.00.png": "18a20f3d890ffd788d2591363df00d55f39d2a6a13806665e0ef4a0e0357ccba",
+    "diagnostic/frame-36.00.png": "e83aad27ca568eeb7ac8d907c6c52df17e3360e2c4b93d605af0b1cdd91282bc",
+    "diagnostic/frame-37.95.png": "e83aad27ca568eeb7ac8d907c6c52df17e3360e2c4b93d605af0b1cdd91282bc",
+    "diagnostic/frame-40.00.png": "e83aad27ca568eeb7ac8d907c6c52df17e3360e2c4b93d605af0b1cdd91282bc",
+    "diagnostic/frame-43.95.png": "e83aad27ca568eeb7ac8d907c6c52df17e3360e2c4b93d605af0b1cdd91282bc"
+  },
+  "poster_sha256": "926c93d25b719245f823714e320ae663654afacc1e274197b040b0ae01756305",
+  "nonsequential_frame_determinism": true,
+  "limits": [
+    "The study stopped incomplete after trial18 timed out without a validated helper receipt, verified local inference or source repair. An unfinished command may have begun work. Trials19-20 remain unattempted; missing token usage is unavailable, not zero.",
+    "Two actual repositories with correlated repeats and shared baselines; descriptive observations only. Unequal arm counts preclude a completed balanced-study claim.",
+    "Trial04 proposal, actual candidate and observer-run checks belong to the same trained-assisted trial. Trial05 fallback is a separate shadow observation. Trial01 baseline candidate has identical verified bytes.",
+    "Agent-side internal checks are agent-reported; separate observer-run checks are directly observed.",
+    "Input counters include cached subset; no monetary, energy, allowance or causal savings claim.",
+    "No full-speed perceptual review is claimed by technical verification or diagnostic stills.",
+    "No failed policy became deployable; production deployment remains withheld."
+  ]
+}

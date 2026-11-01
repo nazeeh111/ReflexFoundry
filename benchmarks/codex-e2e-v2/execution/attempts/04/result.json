@@ -1,0 +1,164 @@
+{
+  "telemetry": {
+    "source": "codex-exec-json",
+    "observable_commands": 8,
+    "allowlisted_command_counts": {
+      "python": 1,
+      "git": 1,
+      "rg": 3
+    },
+    "completed_turns": 1,
+    "invalid_usage_events": 0,
+    "token_usage": {
+      "input_tokens": 338195,
+      "cached_input_tokens": 299776,
+      "output_tokens": 1096,
+      "reasoning_output_tokens": 114
+    },
+    "training_labels": false,
+    "note": "Command counts describe statically requested commands, not verified conditional execution. Token counters are unavailable without complete valid turn usage; they do not measure money, energy, or subscription allowance. No reasoning text is retained."
+  },
+  "expected_retrieval_calls": 1,
+  "retrieval_command_attempts": 1,
+  "retrieval_receipts": [
+    {
+      "format": 1,
+      "arm": "trained-always",
+      "request_digest": "600e21c784b8865236d357823bd9df8685837d9d563fdc1aceefc63133781a51",
+      "source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318",
+      "runtime_digest": "d9a8ef8f9c47ed1200af6d970da7113eeaed705c5d6842a1234732710d0f0d4e",
+      "cli_sha256": "8cf740bd8620fbc0d22ffb07e7e68437739dab82565910dc059a5d20b2865e16",
+      "model_artifact_digest": "2a78f9457b3a410366349585b69142ee0f2f177888f904e9d8812057a6fa5923",
+      "policy_sha256": "4aa078cc7aae5f2da0a0fcb448a48f7ca8bca91c87de33958c5f43e96d065778",
+      "report_sha256": "9e27e47f86087d0d5853ed9355dfc74abbbb70af7ce1d148b8dbcc0b86f43bc2",
+      "decision_contract_digest": "c50d5d754be2fa838b52a767c724fc5f32c45271a95c7f7fedebcef0f0d08904",
+      "inference_observed": true,
+      "prediction": {
+        "choice": "symbol",
+        "confidence": 0.9283,
+        "duration_ms": 21686.43316597445,
+        "stable": true,
+        "truncated": false
+      },
+      "prediction_digest": "8a68e49c3239a34e5bd80943d0d2b2c018c06d50e5fbab49abfcc8d617c725f7",
+      "choice": "symbol",
+      "context_digest": "0e196810d8a6a5c5f31b811bce7b1d53d27e71b42cfea3040b646a618041a71b",
+      "step_wall_ms": 24957.7294170158,
+      "policy_call_ms": 23974.489957967307,
+      "identity_audit_ms": 766.7384579544887
+    }
+  ],
+  "retrieval_receipts_seen": 1,
+  "rejected_receipts": 0,
+  "invalid_events": 0,
+  "event_errors": 0,
+  "timed_out": false,
+  "stream_limit_exceeded": false,
+  "stdout_bytes": 21545,
+  "stderr_bytes": 382,
+  "stderr_sha256": "39d5771828f59efd699c325b88d282fbcc652910ecbcb392d024e9629061292d",
+  "cli_exit_code": 0,
+  "cli_wall_ms": 74219.50608299812,
+  "index": 4,
+  "task": "funcy-first",
+  "repeat": 1,
+  "arm": "trained-always",
+  "native_process_started": true,
+  "protocol_failure": false,
+  "retrieval_protocol_valid": true,
+  "inference_observed": true,
+  "observed_receipt_valid": true,
+  "immutable_files_preserved": true,
+  "independent": {
+    "focused": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 1297.079959,
+      "output": ".                                                                        [100%]\n1 passed in 0.18s\n"
+    },
+    "full": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 1186.84075,
+      "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 0.46s\n"
+    },
+    "public_contract": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 207.380334,
+      "output": "independent Funcy first contract passed\n"
+    }
+  },
+  "task_success": true,
+  "context": {
+    "arm": "trained-always",
+    "request": {
+      "spec": "context-route-v1",
+      "inputs": {
+        "summary": "In funcy: Locate implementation of first.",
+        "changed_files": [],
+        "symbol": "first"
+      }
+    },
+    "choice": "symbol",
+    "source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318",
+    "inference_observed": true,
+    "policy_cli_exit_code": 0,
+    "policy_call_ms": 23974.489957967307,
+    "corpus_ms": 12.3376669944264,
+    "retrieval_ms": 37.55133401136845,
+    "identity_audit_ms": 766.7384579544887,
+    "step_wall_ms": 24957.7294170158,
+    "snippets": [
+      {
+        "path": "funcy/seqs.py",
+        "start_line": 60,
+        "text": "def first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(islice(seq, 1, None), None)",
+        "sha256": "b614cc4cd52409b4f9988f5d982a65012aef756539b3a0155ec969820f99bf0a"
+      }
+    ],
+    "advisory": {
+      "request_id": "49cb693d432b41bda961dcf6264b2e07",
+      "spec": "context-route-v1",
+      "choice": "search",
+      "fallback": true,
+      "mode": "shadow",
+      "reason": "shadow observation",
+      "advisory": true,
+      "input_digest": "082455c14ba28b015ab9703cf7d178c7e5ae27756b2a932e945fdf27409acb46",
+      "policy": "1a6dbe27b65d",
+      "report_digest": "ffcf0e4b42914c0cda77d3a0158e50891493f9c4084ad7455be6bf21445280df",
+      "deployment_epoch": "204e05db27ee4926a4b2833c31aaa2f9",
+      "prediction": {
+        "choice": "symbol",
+        "confidence": 0.9283,
+        "duration_ms": 21686.43316597445,
+        "stable": true,
+        "truncated": false
+      },
+      "candidate": "search",
+      "candidate_eligible": false,
+      "abstained": true
+    },
+    "prediction": {
+      "choice": "symbol",
+      "confidence": 0.9283,
+      "duration_ms": 21686.43316597445,
+      "stable": true,
+      "truncated": false
+    },
+    "scope": "Initial read-only retrieval; full repair validation remains mandatory. No policy deployment."
+  },
+  "changed_public_files": [
+    "funcy/seqs.py"
+  ],
+  "extra_files": [],
+  "pipeline_wall_ms": 76911.91270801937,
+  "readiness_ms": 5700.125249975827,
+  "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+  "postcondition_audit_ms": 2768.98654201068,
+  "attempt_all_in_ms": 85381.02450000588
+}

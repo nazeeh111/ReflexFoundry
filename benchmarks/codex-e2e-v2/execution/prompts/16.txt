@@ -1,0 +1,8 @@
+Repair Cache.__getitem__ in src/cachetools/__init__.py. A present key must return its stored value, including None and other falsey values. A missing key must continue through __missing__, raising KeyError by default and respecting subclass implementations. Reads must not change cache size. Make the smallest correct source repair without editing tests or unrelated files.
+
+Use your normal native tools to inspect the source and make the smallest correct repair. Do not edit tests or unrelated source.
+
+After the smallest source repair run both unchanged official checks, in order:
+PYTHONPATH=src /Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q tests/test_cache.py::CacheTest::test_update
+PYTHONPATH=src /Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q
+Both checks remain mandatory. Do not install dependencies, use network, inspect credentials, commit, or delegate. Keep native permissions and sandbox intact. Finish with a concise change and actual-check report.

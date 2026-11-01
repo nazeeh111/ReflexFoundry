@@ -1,0 +1,21 @@
+{
+  "format": 1,
+  "status": "stopped-incomplete",
+  "date": "2026-11-01",
+  "stop_rule": "Infrastructure or protocol failures halt subsequent launches for review. No automatic loop, retry or resampling.",
+  "failed_index": 18,
+  "reason": "180second native timeout; no completed turn, validated helper receipt, verified local inference or source edit",
+  "root_cause": "unknown; not attributable to local model quality from retained evidence",
+  "native_processes_started": 18,
+  "protocol_valid_attempts": 17,
+  "independently_successful_repairs": 17,
+  "unattempted_indices": [
+    19,
+    20
+  ],
+  "usage_for_failed_attempt": null,
+  "paired_comparisons_valid": 13,
+  "new_native_launches_permitted_by_this_study": false,
+  "result_sha256": "7a4ef5d4ce2659216244619ef1c99870e77212c9044bfb01a10fbee8cd4eb975",
+  "note": "CLI exit0 does not override timeout, missing completed turn or missing inference receipt. An unfinished command may have begun work; no verified inference outcome is retained. No final balanced-study claim."
+}

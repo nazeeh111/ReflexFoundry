@@ -1,0 +1,164 @@
+{
+  "telemetry": {
+    "source": "codex-exec-json",
+    "observable_commands": 7,
+    "allowlisted_command_counts": {
+      "python": 1,
+      "git": 1,
+      "rg": 2
+    },
+    "completed_turns": 1,
+    "invalid_usage_events": 0,
+    "token_usage": {
+      "input_tokens": 237333,
+      "cached_input_tokens": 200832,
+      "output_tokens": 639,
+      "reasoning_output_tokens": 32
+    },
+    "training_labels": false,
+    "note": "Command counts describe statically requested commands, not verified conditional execution. Token counters are unavailable without complete valid turn usage; they do not measure money, energy, or subscription allowance. No reasoning text is retained."
+  },
+  "expected_retrieval_calls": 1,
+  "retrieval_command_attempts": 1,
+  "retrieval_receipts": [
+    {
+      "format": 1,
+      "arm": "trained-always",
+      "request_digest": "8e3455358b9a4d53b783f65a88fb0b5c9960cb02adb2e118bd04d50b9331427c",
+      "source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6",
+      "runtime_digest": "d9a8ef8f9c47ed1200af6d970da7113eeaed705c5d6842a1234732710d0f0d4e",
+      "cli_sha256": "8cf740bd8620fbc0d22ffb07e7e68437739dab82565910dc059a5d20b2865e16",
+      "model_artifact_digest": "2a78f9457b3a410366349585b69142ee0f2f177888f904e9d8812057a6fa5923",
+      "policy_sha256": "4aa078cc7aae5f2da0a0fcb448a48f7ca8bca91c87de33958c5f43e96d065778",
+      "report_sha256": "9e27e47f86087d0d5853ed9355dfc74abbbb70af7ce1d148b8dbcc0b86f43bc2",
+      "decision_contract_digest": "c50d5d754be2fa838b52a767c724fc5f32c45271a95c7f7fedebcef0f0d08904",
+      "inference_observed": true,
+      "prediction": {
+        "choice": "symbol",
+        "confidence": 0.9973,
+        "duration_ms": 7623.940207995474,
+        "stable": true,
+        "truncated": false
+      },
+      "prediction_digest": "d9bc560715efeb314a35fd41f1666c0ce85b24db1bb00abe8a7d6d5f68704cf1",
+      "choice": "symbol",
+      "context_digest": "f9d29eb07c84768a15d2fc40ee7e652215d2961d59d10f54fccb673e4e28568b",
+      "step_wall_ms": 9167.845375020988,
+      "policy_call_ms": 8441.713250009343,
+      "identity_audit_ms": 605.4473340045661
+    }
+  ],
+  "retrieval_receipts_seen": 1,
+  "rejected_receipts": 0,
+  "invalid_events": 0,
+  "event_errors": 0,
+  "timed_out": false,
+  "stream_limit_exceeded": false,
+  "stdout_bytes": 18397,
+  "stderr_bytes": 191,
+  "stderr_sha256": "16060afa61b87a96f85a3b58af05eafcbbe90aa8f5ece9636edfb09fbd7f53e7",
+  "cli_exit_code": 0,
+  "cli_wall_ms": 46687.24179203855,
+  "index": 7,
+  "task": "cachetools-getitem",
+  "repeat": 1,
+  "arm": "trained-always",
+  "native_process_started": true,
+  "protocol_failure": false,
+  "retrieval_protocol_valid": true,
+  "inference_observed": true,
+  "observed_receipt_valid": true,
+  "immutable_files_preserved": true,
+  "independent": {
+    "focused": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 598.132166,
+      "output": ".                                                                        [100%]\n1 passed in 0.01s\n"
+    },
+    "full": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 939.922833,
+      "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 0.35s\n"
+    },
+    "public_contract": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 131.392542,
+      "output": "independent cachetools getitem contract passed\n"
+    }
+  },
+  "task_success": true,
+  "context": {
+    "arm": "trained-always",
+    "request": {
+      "spec": "context-route-v1",
+      "inputs": {
+        "summary": "In cachetools: Locate implementation of Cache.__getitem__.",
+        "changed_files": [],
+        "symbol": "Cache.__getitem__"
+      }
+    },
+    "choice": "symbol",
+    "source_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6",
+    "inference_observed": true,
+    "policy_cli_exit_code": 0,
+    "policy_call_ms": 8441.713250009343,
+    "corpus_ms": 3.361166047398001,
+    "retrieval_ms": 4.880624997895211,
+    "identity_audit_ms": 605.4473340045661,
+    "step_wall_ms": 9167.845375020988,
+    "snippets": [
+      {
+        "path": "src/cachetools/__init__.py",
+        "start_line": 71,
+        "text": "    def __getitem__(self, key):\n        try:\n            return key if key in self.__data else self.__data[key]\n        except KeyError:\n            return self.__missing__(key)",
+        "sha256": "ea66117ec48918a8b269fa3409e9e0c6117b0adcf7352a7532216a4f66d5b02f"
+      }
+    ],
+    "advisory": {
+      "request_id": "9a69f19830204687b9910401406a32ef",
+      "spec": "context-route-v1",
+      "choice": "search",
+      "fallback": true,
+      "mode": "shadow",
+      "reason": "shadow observation",
+      "advisory": true,
+      "input_digest": "4717c5ee8553edac3704762def23f17f823ff04da279e69f34065f25ed20ddec",
+      "policy": "1a6dbe27b65d",
+      "report_digest": "ffcf0e4b42914c0cda77d3a0158e50891493f9c4084ad7455be6bf21445280df",
+      "deployment_epoch": "204e05db27ee4926a4b2833c31aaa2f9",
+      "prediction": {
+        "choice": "symbol",
+        "confidence": 0.9973,
+        "duration_ms": 7623.940207995474,
+        "stable": true,
+        "truncated": false
+      },
+      "candidate": "search",
+      "candidate_eligible": false,
+      "abstained": true
+    },
+    "prediction": {
+      "choice": "symbol",
+      "confidence": 0.9973,
+      "duration_ms": 7623.940207995474,
+      "stable": true,
+      "truncated": false
+    },
+    "scope": "Initial read-only retrieval; full repair validation remains mandatory. No policy deployment."
+  },
+  "changed_public_files": [
+    "src/cachetools/__init__.py"
+  ],
+  "extra_files": [],
+  "pipeline_wall_ms": 48358.11175004346,
+  "readiness_ms": 6964.893499971367,
+  "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+  "postcondition_audit_ms": 2941.63324998226,
+  "attempt_all_in_ms": 58264.63849999709
+}

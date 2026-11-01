@@ -1,0 +1,8 @@
+Fixed one line in [src/cachetools/__init__.py:73](/private/tmp/reflexfoundry-native-v2/cases/09-cachetools-getitem/src/cachetools/__init__.py:73) to return the stored value directly, including falsey values. Missing keys still call `__missing__`; reads do not alter cache size.
+
+Required retrieval ran once and its result was read. Both unchanged checks passed in order:
+
+- Targeted check: 1 passed.
+- Full suite: 381 passed, 16 subtests passed.
+
+No tests or unrelated source were edited.

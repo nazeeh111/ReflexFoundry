@@ -1,0 +1,9 @@
+Fixed one line in `src/cachetools/__init__.py`: `Cache.__getitem__` now returns `self.__data[key]`, preserving falsey values, `__missing__` behavior, and cache size.
+
+Required retrieval ran once; `context-result.json` was read. Tests and unrelated source were unchanged.
+
+Both mandatory checks passed, in order:
+- Targeted check: **1 passed**
+- Full suite: **381 passed, 16 subtests passed**
+
+Git status was unavailable because this copy has no Git repository.

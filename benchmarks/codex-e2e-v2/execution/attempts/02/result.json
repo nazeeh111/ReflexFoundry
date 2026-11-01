@@ -1,0 +1,130 @@
+{
+  "telemetry": {
+    "source": "codex-exec-json",
+    "observable_commands": 6,
+    "allowlisted_command_counts": {
+      "python": 1,
+      "git": 1,
+      "rg": 3
+    },
+    "completed_turns": 1,
+    "invalid_usage_events": 0,
+    "token_usage": {
+      "input_tokens": 208718,
+      "cached_input_tokens": 172416,
+      "output_tokens": 645,
+      "reasoning_output_tokens": 17
+    },
+    "training_labels": false,
+    "note": "Command counts describe statically requested commands, not verified conditional execution. Token counters are unavailable without complete valid turn usage; they do not measure money, energy, or subscription allowance. No reasoning text is retained."
+  },
+  "expected_retrieval_calls": 1,
+  "retrieval_command_attempts": 1,
+  "retrieval_receipts": [
+    {
+      "format": 1,
+      "arm": "deterministic-heuristic",
+      "request_digest": "600e21c784b8865236d357823bd9df8685837d9d563fdc1aceefc63133781a51",
+      "source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318",
+      "runtime_digest": "d9a8ef8f9c47ed1200af6d970da7113eeaed705c5d6842a1234732710d0f0d4e",
+      "cli_sha256": "8cf740bd8620fbc0d22ffb07e7e68437739dab82565910dc059a5d20b2865e16",
+      "model_artifact_digest": null,
+      "policy_sha256": null,
+      "report_sha256": null,
+      "decision_contract_digest": "c50d5d754be2fa838b52a767c724fc5f32c45271a95c7f7fedebcef0f0d08904",
+      "inference_observed": false,
+      "prediction": null,
+      "prediction_digest": null,
+      "choice": "symbol",
+      "context_digest": "85aaaa22befaa1c049b52cfcfd0fe4ca7843346dff5ca17330cc51b7b45f2be1",
+      "step_wall_ms": 103.30625000642613,
+      "policy_call_ms": 0.0,
+      "identity_audit_ms": 3.824500017799437
+    }
+  ],
+  "retrieval_receipts_seen": 1,
+  "rejected_receipts": 0,
+  "invalid_events": 0,
+  "event_errors": 0,
+  "timed_out": false,
+  "stream_limit_exceeded": false,
+  "stdout_bytes": 13861,
+  "stderr_bytes": 191,
+  "stderr_sha256": "d9f4bb9e585ef68e59dd34d58638de12b9c12929672c41ceb20359e8cc72a133",
+  "cli_exit_code": 0,
+  "cli_wall_ms": 44478.02962502465,
+  "index": 2,
+  "task": "funcy-first",
+  "repeat": 1,
+  "arm": "deterministic-heuristic",
+  "native_process_started": true,
+  "protocol_failure": false,
+  "retrieval_protocol_valid": true,
+  "inference_observed": false,
+  "observed_receipt_valid": true,
+  "immutable_files_preserved": true,
+  "independent": {
+    "focused": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 1177.009041,
+      "output": ".                                                                        [100%]\n1 passed in 0.09s\n"
+    },
+    "full": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 1477.897959,
+      "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 0.58s\n"
+    },
+    "public_contract": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 214.389792,
+      "output": "independent Funcy first contract passed\n"
+    }
+  },
+  "task_success": true,
+  "context": {
+    "arm": "deterministic-heuristic",
+    "request": {
+      "spec": "context-route-v1",
+      "inputs": {
+        "summary": "In funcy: Locate implementation of first.",
+        "changed_files": [],
+        "symbol": "first"
+      }
+    },
+    "choice": "symbol",
+    "source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318",
+    "inference_observed": false,
+    "policy_cli_exit_code": null,
+    "policy_call_ms": 0.0,
+    "corpus_ms": 4.671209026128054,
+    "retrieval_ms": 49.3670420255512,
+    "identity_audit_ms": 3.824500017799437,
+    "step_wall_ms": 103.30625000642613,
+    "snippets": [
+      {
+        "path": "funcy/seqs.py",
+        "start_line": 60,
+        "text": "def first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(islice(seq, 1, None), None)",
+        "sha256": "b614cc4cd52409b4f9988f5d982a65012aef756539b3a0155ec969820f99bf0a"
+      }
+    ],
+    "advisory": null,
+    "prediction": null,
+    "scope": "Initial read-only retrieval; full repair validation remains mandatory. No policy deployment."
+  },
+  "changed_public_files": [
+    "funcy/seqs.py"
+  ],
+  "extra_files": [],
+  "pipeline_wall_ms": 47349.10120803397,
+  "readiness_ms": 3765.8780839992687,
+  "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+  "postcondition_audit_ms": 3079.7585420077667,
+  "attempt_all_in_ms": 54194.73783404101
+}

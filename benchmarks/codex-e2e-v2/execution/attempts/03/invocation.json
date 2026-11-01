@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--sandbox",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "--json",
+    "--color",
+    "never",
+    "-C",
+    "/private/tmp/reflexfoundry-native-v2/cases/03-funcy-first",
+    "-o",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/runs/native-v2-study/attempts/03/final-answer.txt",
+    "-"
+  ],
+  "prompt_sha256": "7c195af9bfb0ecc7e5ad7e62bb01f404ca88157f7f1e032580b00c1a85b97db4",
+  "external_authority_required": true
+}
