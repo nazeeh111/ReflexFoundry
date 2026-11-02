@@ -1,0 +1,176 @@
+{
+  "telemetry": {
+    "source": "codex-exec-json",
+    "observable_commands": 9,
+    "allowlisted_command_counts": {
+      "git": 1,
+      "python": 1,
+      "rg": 2
+    },
+    "completed_turns": 1,
+    "invalid_usage_events": 0,
+    "token_usage": {
+      "input_tokens": 517475,
+      "cached_input_tokens": 476800,
+      "output_tokens": 1281,
+      "reasoning_output_tokens": 191
+    },
+    "training_labels": false,
+    "note": "Command counts describe statically requested commands, not verified conditional execution. Token counters are unavailable without complete valid turn usage; they do not measure money, energy, or subscription allowance. No reasoning text is retained."
+  },
+  "expected_retrieval_calls": 1,
+  "retrieval_command_attempts": 1,
+  "retrieval_receipts": [
+    {
+      "format": 1,
+      "arm": "selective-shadow",
+      "request_digest": "600e21c784b8865236d357823bd9df8685837d9d563fdc1aceefc63133781a51",
+      "source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318",
+      "runtime_digest": "d9a8ef8f9c47ed1200af6d970da7113eeaed705c5d6842a1234732710d0f0d4e",
+      "cli_sha256": "8cf740bd8620fbc0d22ffb07e7e68437739dab82565910dc059a5d20b2865e16",
+      "model_artifact_digest": "2a78f9457b3a410366349585b69142ee0f2f177888f904e9d8812057a6fa5923",
+      "policy_sha256": "4aa078cc7aae5f2da0a0fcb448a48f7ca8bca91c87de33958c5f43e96d065778",
+      "report_sha256": "9e27e47f86087d0d5853ed9355dfc74abbbb70af7ce1d148b8dbcc0b86f43bc2",
+      "decision_contract_digest": "c50d5d754be2fa838b52a767c724fc5f32c45271a95c7f7fedebcef0f0d08904",
+      "inference_observed": true,
+      "prediction": {
+        "choice": "symbol",
+        "confidence": 0.9283,
+        "duration_ms": 61297.75274998974,
+        "stable": true,
+        "truncated": false
+      },
+      "prediction_digest": "f5c358134103e36d832e187bc325a4ffb47f813f9a6f24fc6d524914e18a09e9",
+      "choice": "search",
+      "context_digest": "8532f04362cef77e552678652c71f5c20b0f9b940d3b46205bb44e2e018e0cb9",
+      "step_wall_ms": 71500.64679194475,
+      "policy_call_ms": 68866.00008304231,
+      "identity_audit_ms": 2547.971999971196
+    }
+  ],
+  "retrieval_receipts_seen": 1,
+  "rejected_receipts": 0,
+  "invalid_events": 0,
+  "event_errors": 0,
+  "timed_out": false,
+  "stream_limit_exceeded": false,
+  "stdout_bytes": 20210,
+  "stderr_bytes": 382,
+  "stderr_sha256": "dc54a765e933a2c4f355530dad77b770c4a99d7a876888a17de5c3fd9263572e",
+  "cli_exit_code": 0,
+  "cli_wall_ms": 135019.27254203474,
+  "index": 11,
+  "task": "funcy-first",
+  "repeat": 2,
+  "arm": "selective-shadow",
+  "native_process_started": true,
+  "protocol_failure": false,
+  "retrieval_protocol_valid": true,
+  "inference_observed": true,
+  "observed_receipt_valid": true,
+  "immutable_files_preserved": true,
+  "independent": {
+    "focused": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 5393.349083,
+      "output": ".                                                                        [100%]\n1 passed in 0.69s\n"
+    },
+    "full": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 14901.791041,
+      "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 5.79s\n"
+    },
+    "public_contract": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 2297.795417,
+      "output": "independent Funcy first contract passed\n"
+    }
+  },
+  "task_success": true,
+  "context": {
+    "arm": "selective-shadow",
+    "request": {
+      "spec": "context-route-v1",
+      "inputs": {
+        "summary": "In funcy: Locate implementation of first.",
+        "changed_files": [],
+        "symbol": "first"
+      }
+    },
+    "choice": "search",
+    "source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318",
+    "inference_observed": true,
+    "policy_cli_exit_code": 0,
+    "policy_call_ms": 68866.00008304231,
+    "corpus_ms": 18.62775004701689,
+    "retrieval_ms": 9.919000032823533,
+    "identity_audit_ms": 2547.971999971196,
+    "step_wall_ms": 71500.64679194475,
+    "snippets": [
+      {
+        "path": "funcy/__init__.py",
+        "start_line": 5,
+        "text": "from .tree import *\nfrom .decorators import *\nfrom .funcolls import *\nfrom .funcs import *\nfrom .seqs import *\nfrom .types import *\nfrom .strings import *\nfrom .flow import *\nfrom .objects import *\nfrom .debug import *\nfrom .primitives import *\n\n\n# Setup __all__\nmodules = ('calc', 'colls', 'tree', 'decorators', 'funcolls', 'funcs', 'seqs', 'types',\n           'strings', 'flow', 'objects', 'debug', 'primitives')\n__all__ = lcat(sys.modules['funcy.' + m].__all__ for m in modules)",
+        "sha256": "faaa7b8fddba088897611c01283956a4409e5dab2aeaa6d415d04ae4d7cdf393"
+      },
+      {
+        "path": "funcy/_inspect.py",
+        "start_line": 72,
+        "text": "two_arg_funcs = \"\"\"\n    _compare_digest add and_ concat contains countOf delitem div eq floordiv ge getitem\n    gt iadd iand iconcat idiv ifloordiv ilshift imatmul imod imul indexOf ior ipow irepeat\n    irshift is_ is_not isub itruediv ixor le lshift lt matmul mod mul ne or_ pow repeat rshift\n    sequenceIncludes sub truediv xor\n\"\"\"\nARGS['operator'].update(dict.fromkeys(two_arg_funcs.split(), '**'))\nARGS['operator'].update([\n    ('__%s__' % op.strip('_'), args) for op, args in ARGS['operator'].items()])\nARGS['_operator'] = ARGS['operator']\n\n\n# Fixate this\nSTD_MODULES = set(ARGS)\n\n\n# Describe some funcy functions, mostly for r?curry()\nARGS['funcy.seqs'] = {\n    'map': 'f*', 'lmap': 'f*', 'xmap': 'f*',\n    'mapcat': 'f*', 'lmapcat': 'f*',\n}\nARGS['funcy.colls'] = {\n    'merge_with': 'f*',\n}\n\n\nSpec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n",
+        "sha256": "3ffb53e2bbe0ae292b5519fec9aef64a72072678f61e886ac3a0490b5ff2e88f"
+      },
+      {
+        "path": "funcy/_inspect.py",
+        "start_line": 73,
+        "text": "    _compare_digest add and_ concat contains countOf delitem div eq floordiv ge getitem\n    gt iadd iand iconcat idiv ifloordiv ilshift imatmul imod imul indexOf ior ipow irepeat\n    irshift is_ is_not isub itruediv ixor le lshift lt matmul mod mul ne or_ pow repeat rshift\n    sequenceIncludes sub truediv xor\n\"\"\"\nARGS['operator'].update(dict.fromkeys(two_arg_funcs.split(), '**'))\nARGS['operator'].update([\n    ('__%s__' % op.strip('_'), args) for op, args in ARGS['operator'].items()])\nARGS['_operator'] = ARGS['operator']\n\n\n# Fixate this\nSTD_MODULES = set(ARGS)\n\n\n# Describe some funcy functions, mostly for r?curry()\nARGS['funcy.seqs'] = {\n    'map': 'f*', 'lmap': 'f*', 'xmap': 'f*',\n    'mapcat': 'f*', 'lmapcat': 'f*',\n}\nARGS['funcy.colls'] = {\n    'merge_with': 'f*',\n}\n\n\nSpec = namedtuple(\"Spec\", \"max_n names req_n req_names varkw\")\n\n\ndef get_spec(func, _cache={}):",
+        "sha256": "6289dccfc896098c44b5a417086a2dfb838411420213d27e320a6439854871e5"
+      }
+    ],
+    "advisory": {
+      "request_id": "5d2b3d7786bf42c3bfa604e928ec954c",
+      "spec": "context-route-v1",
+      "choice": "search",
+      "fallback": true,
+      "mode": "shadow",
+      "reason": "shadow observation",
+      "advisory": true,
+      "input_digest": "082455c14ba28b015ab9703cf7d178c7e5ae27756b2a932e945fdf27409acb46",
+      "policy": "1a6dbe27b65d",
+      "report_digest": "ffcf0e4b42914c0cda77d3a0158e50891493f9c4084ad7455be6bf21445280df",
+      "deployment_epoch": "204e05db27ee4926a4b2833c31aaa2f9",
+      "prediction": {
+        "choice": "symbol",
+        "confidence": 0.9283,
+        "duration_ms": 61297.75274998974,
+        "stable": true,
+        "truncated": false
+      },
+      "candidate": "search",
+      "candidate_eligible": false,
+      "abstained": true
+    },
+    "prediction": {
+      "choice": "symbol",
+      "confidence": 0.9283,
+      "duration_ms": 61297.75274998974,
+      "stable": true,
+      "truncated": false
+    },
+    "scope": "Initial read-only retrieval; full repair validation remains mandatory. No policy deployment."
+  },
+  "changed_public_files": [
+    "funcy/seqs.py"
+  ],
+  "extra_files": [],
+  "pipeline_wall_ms": 157623.18312498974,
+  "readiness_ms": 9974.889750010334,
+  "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+  "postcondition_audit_ms": 11198.007417027839,
+  "attempt_all_in_ms": 178796.0802920279
+}

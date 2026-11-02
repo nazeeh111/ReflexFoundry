@@ -1,0 +1,8 @@
+Changed [funcy/seqs.py:64](/private/tmp/reflexfoundry-native-v2/cases/14-funcy-first/funcy/seqs.py:64) to `return next(iter(seq), None)`. It preserves falsey values, consumes only the first iterator item, and returns `None` for empty input.
+
+Required retrieval ran once; `context-result.json` was read. Both official checks passed in order:
+
+- Targeted test: **1 passed**
+- Full suite: **295 passed**
+
+Additional falsey-value and iterator-consumption checks passed. No tests or unrelated source were edited.

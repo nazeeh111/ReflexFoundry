@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--sandbox",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "--json",
+    "--color",
+    "never",
+    "-C",
+    "/private/tmp/reflexfoundry-native-v2/cases/20-cachetools-getitem",
+    "-o",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/runs/native-v2-continuation-01/attempts/20/final-answer.txt",
+    "-"
+  ],
+  "prompt_sha256": "033e1fe44867b962ba1360f3ae785d5d55151440f9abb083413ebc11ff4c30b4",
+  "external_authority_required": true,
+  "index": 20,
+  "phase": "reviewed-continuation-01",
+  "amendment_sha256": "2851023e7a647d9d32d65966c10063f60573c8d1d80477f2b07c309fd7a7dcfd",
+  "review_sha256": "6663ad88ac0920ccfe49ca02bef789e7418a1349476bd36094a90021f238b59b",
+  "original_plan_sha256": "0634b5648f675aa6cd08e47397397298f7b83e10b7eb1ab00e5afb86440752d1"
+}

@@ -137,17 +137,29 @@ A [matched local-teacher ablation](../benchmarks/local-imitation-context-v1/READ
 Forward and reverse order are all permutations of the supported two-choice
 catalogs and were measured. A [local wording and redundant-choice diagnostic](../benchmarks/choice-stress-v1/README.md) adds 192 raw predictions on 12 retained inputs: parallel descriptions and a four-choice list made from equivalent action aliases. Parallel wording increased observed order flips from 1/12 to 4/12 for both models. Four-choice results cover only four of 24 permutations and two underlying actions, not novel-tool reliability. Catalog change, truncation and domain-refusal checks remain engineering guards; none of these small studies proves reliability under broad distribution shift.
 
-The native Codex study has two independently verified repairs, no complete
-matched comparison, and no captured agent usage totals. Its successful shadow
-run refused inference because the frozen artifact binding was stale. Completing
-the remaining old launch could at most add a refusal-path observation; it would
-not by itself establish an operating compiled-policy comparison or model-usage
-benefit. A valid future native study needs fixed matching model/runtime
-artifacts, actual inference evidence, documented usage accounting and a bounded
-comparison protocol. The original four-process cap still applies to that study.
-Its blocked launch must not be retried without the pending scoped user authority
-accepted by the same review control. These stage results do not complete the
-full flagship end-to-end agent demonstration.
+The historical first native trial has two independently verified repairs, no
+complete matched comparison and no captured usage totals. Its successful shadow
+repair refused inference because the artifact binding was stale. It was not
+resumed, and is not evidence of operating compiled inference.
+
+The separate [native v2 comparison](../benchmarks/codex-e2e-v2/README.md) now has
+20 coding calls, 19 protocol-valid successful repair runs, 11 verified inference
+observations and 15 valid paired comparisons. Execution stopped at a timeout in
+18; a separately frozen and reviewed observer completed only original cases
+19/20 within the original call cap after publication and a time gap. The failed
+result, unavailable usage, initial plan and first 18 records remain unchanged.
+This is an amended analysis, not an uninterrupted or fully protocol-valid study.
+
+All valid learned comparisons preserved success without improving it, took
+longer and used more reported input tokens. Matched mean pipeline additions were
+36.22s for ordinary Laya, 26.47s for trained always and 47.25s for selective
+shadow. Shared baselines, two repository groups, correlated repeats and
+uncontrolled caches/load preclude causal superiority or broad reliability
+claims. Funcy/cachetools repair observations were outside training but their
+repositories had earlier retrieval uses. These are not fresh independent
+retrieval holdouts. The [current replay](../assets/native-demo/README.md) follows
+actual local inference, repair and independent checks. Negative evidence keeps
+the policies withheld; no monetary, energy or hardware-FLOP saving is inferred.
 
 ## Attribution and scope of claims
 
@@ -156,3 +168,8 @@ Published upstream benchmark numbers must retain their original provenance and
 must never appear as ReflexFoundry measurements. Model cards, policy manifests
 and release notes should identify the exact checkpoint, runtime version,
 training-data provenance and measured experiment scope.
+
+
+## Retained native coding source
+
+The native v2 study retains modified Funcy source at revision `a876c7e1cf11e7c746e91fce4632ebfa93865428` (BSD-3-Clause) and cachetools source at `e7104dd52bfe0e3aced6f3439fb6ed4d9c8ff52a` (MIT). Full corresponding terms accompany the candidates in [`benchmarks/codex-e2e-v2/licenses/`](../benchmarks/codex-e2e-v2/licenses/). The source files retain their required notices; supplied mutations and agent-produced repairs are identified separately in the frozen plan and attempt records.

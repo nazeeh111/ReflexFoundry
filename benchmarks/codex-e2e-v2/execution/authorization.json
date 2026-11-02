@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-01",
+  "source": "direct scoped human authorization in the task chat",
+  "max_native_calls": 20,
+  "seconds_per_call": 180,
+  "permitted_context": "public source and generated ReflexFoundry runtime, policy and report files to the configured Codex service",
+  "subscription_only_confirmed_by_user": true,
+  "paid_api_authorized": false,
+  "normal_approval_review_required": true,
+  "private_message_text_redistributed": false
+}

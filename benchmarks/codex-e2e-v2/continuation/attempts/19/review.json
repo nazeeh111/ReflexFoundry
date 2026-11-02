@@ -1,0 +1,13 @@
+{
+  "amendment_sha256": "2851023e7a647d9d32d65966c10063f60573c8d1d80477f2b07c309fd7a7dcfd",
+  "driver_sha256": "795acd32764313fb7d4afde9114c9c9e45211bc5b6d36d75f581ad9d7c185d9f",
+  "independent_review_complete": true,
+  "scope_indices": [
+    19,
+    20
+  ],
+  "unresolved_blockers": [],
+  "ordinary_outer_review_required": true,
+  "reviewer": "/root/native_outcome_review",
+  "summary": "Source and actual prepared amendment independently reviewed.135phaseAfiles,15observer sources,originalfailed18,authorityrecord,andall67files/16runtimefilesofeachremainingcase match.19then20once,total20starts,stopagainonnewfailure.Originalrunner/plan/records immutable. Unknowncause/publicationgap disclosed. NativeCLI identity is version-based,notbinaryattestation. Existinghuman20callscope supplies authority; this technicalreview does not create it."
+}

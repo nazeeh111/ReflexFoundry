@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.1 · reviewed continuation, original failure preserved
+
+- Complete only the two unused original calls after an independent review and append-only observer amendment. The shared cap stays 20; call 18 is never retried. The original runner, plan, first 18 records and v0.3.0 release remain unchanged.
+- Retain 20 results, 19 independently successful protocol-valid repair runs, 11 verified inference observations and 15 valid pairs. Unknown timeout cause, unavailable usage and publication/time gap remain explicit. No fully protocol-valid or uninterrupted study is claimed.
+- Add amendment-aware offline analysis, matched-cohort plots, a current Lab disclosure and an updated factual replay. All 11 valid learned comparisons took longer and used more input tokens. No policy became eligible.
+
+## 0.3.0 · native evidence, including the stop
+
+- Retain an approved native five-arm coding study: 18 starts, 17 independently verified repairs, 9 observed local-model inferences and 13 valid matched comparisons. Call 18 timed out without a completed turn or validated inference receipt; the frozen stop rule left 19–20 unattempted. The balanced study is incomplete.
+- Publish raw outcomes, candidates, independent graders, planned missing observations, numeric usage and reproducible descriptive analysis. All nine valid learned comparisons took longer and used more input tokens than their matched original agent. No model earned deployment.
+- Add read-only native comparison evidence to the Lab, separating full native process/pipeline timing from earlier decision-stage cost accounting.
+- Provide an actual-source evidence replay with explicit separate trials, independent checks, stopped-study counts and withheld deployment. Preserve earlier reports, model artifacts, releases and valid media.
+
 ## 0.2.2 · portable exports and local stress evidence
 
 - Finalize newly trained tokenizer metadata before freezing its artifact identity. Preserve the native export configuration and verify/carry its provenance during reconstruction. Refuse legacy CPU loads before an upstream rewrite; existing models remain immutable.

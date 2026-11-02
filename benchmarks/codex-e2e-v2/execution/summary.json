@@ -1,0 +1,211 @@
+{
+  "reserved_attempts": 18,
+  "native_processes_started": 18,
+  "completed_attempts": 18,
+  "task_successes": 17,
+  "protocol_failures": 1,
+  "model_inference_observations": 9,
+  "all_planned_attempts_complete": false,
+  "paired_comparisons": [
+    {
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "deterministic-heuristic",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": -2293.222041975241,
+      "arm_minus_original_cli_ms": 1356.0585420345888,
+      "token_deltas": {
+        "input_tokens": 32784,
+        "cached_input_tokens": 14080,
+        "output_tokens": 142
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "ordinary-laya",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 31458.041374979075,
+      "arm_minus_original_cli_ms": 28369.541249994654,
+      "token_deltas": {
+        "input_tokens": 167455,
+        "cached_input_tokens": 161792,
+        "output_tokens": 405
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "trained-always",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 27269.58945801016,
+      "arm_minus_original_cli_ms": 31097.535000008065,
+      "token_deltas": {
+        "input_tokens": 162261,
+        "cached_input_tokens": 141440,
+        "output_tokens": 593
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "selective-shadow",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 23851.96104098577,
+      "arm_minus_original_cli_ms": 21986.665792006534,
+      "token_deltas": {
+        "input_tokens": 170049,
+        "cached_input_tokens": 165120,
+        "output_tokens": 447
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "deterministic-heuristic",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 14546.601792040747,
+      "arm_minus_original_cli_ms": 5677.597542060539,
+      "token_deltas": {
+        "input_tokens": 7206,
+        "cached_input_tokens": -10112,
+        "output_tokens": 227
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "ordinary-laya",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 68080.74775000568,
+      "arm_minus_original_cli_ms": 61753.48587502958,
+      "token_deltas": {
+        "input_tokens": 190037,
+        "cached_input_tokens": 186496,
+        "output_tokens": 648
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "trained-always",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 65992.79370805016,
+      "arm_minus_original_cli_ms": 59789.14625005564,
+      "token_deltas": {
+        "input_tokens": 181695,
+        "cached_input_tokens": 160384,
+        "output_tokens": 507
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "selective-shadow",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 102004.05300001148,
+      "arm_minus_original_cli_ms": 91273.50420906441,
+      "token_deltas": {
+        "input_tokens": 280499,
+        "cached_input_tokens": 257792,
+        "output_tokens": 655
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "deterministic-heuristic",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": -12061.817791021895,
+      "arm_minus_original_cli_ms": -5870.7080819876865,
+      "token_deltas": {
+        "input_tokens": -35571,
+        "cached_input_tokens": -34176,
+        "output_tokens": -69
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "ordinary-laya",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 9118.334250000771,
+      "arm_minus_original_cli_ms": 16910.601084004156,
+      "token_deltas": {
+        "input_tokens": 83552,
+        "cached_input_tokens": 83328,
+        "output_tokens": 71
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "trained-always",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 5804.8110420349985,
+      "arm_minus_original_cli_ms": 15191.38112606015,
+      "token_deltas": {
+        "input_tokens": 89225,
+        "cached_input_tokens": 70528,
+        "output_tokens": 61
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "selective-shadow",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": 49477.3794580251,
+      "arm_minus_original_cli_ms": 49290.93295906205,
+      "token_deltas": {
+        "input_tokens": 175039,
+        "cached_input_tokens": 172032,
+        "output_tokens": 211
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "deterministic-heuristic",
+      "original_success": true,
+      "candidate_success": true,
+      "success_delta": 0,
+      "arm_minus_original_pipeline_ms": -12815.181332989596,
+      "arm_minus_original_cli_ms": -1409.601082035806,
+      "token_deltas": {
+        "input_tokens": 28517,
+        "cached_input_tokens": 12032,
+        "output_tokens": -58
+      }
+    }
+  ],
+  "all_planned_comparisons_valid": false,
+  "independent_repository_groups": 2,
+  "currency_cost": null,
+  "deployment": "withheld; full validation mandatory",
+  "uncertainty": "Two actual repositories with correlated repeats; no population reliability or causal superiority claim. Missing/protocol-failed pairs remain visible and provide no paired estimate."
+}

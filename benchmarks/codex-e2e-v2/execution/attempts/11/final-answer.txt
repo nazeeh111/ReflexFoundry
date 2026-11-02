@@ -1,0 +1,7 @@
+Repaired [funcy/seqs.py:63](/private/tmp/reflexfoundry-native-v2/cases/11-funcy-first/funcy/seqs.py:63) with `next(iter(seq), None)`. It consumes only the first item, preserves falsey values, and returns `None` for empty input.
+
+Required retrieval ran once; `context-result.json` was read. Only the one source line was edited.
+
+Both official checks passed in order:
+- Focused test: **1 passed**
+- Full suite: **295 passed**

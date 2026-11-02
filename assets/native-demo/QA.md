@@ -1,0 +1,9 @@
+# Native evidence presentation checks
+
+The selected [44-second master](render-v1/reflexfoundry-native-stopped-evidence-replay.mp4) was encoded from the retained stopped-study evidence. Its manifest matches the current render source and actual video bytes. FFprobe reports one H.264 video stream, 1280 × 720, 24 fps and 1,056 frames, without audio. Full FFmpeg decode passed.
+
+Current-source settled frames were inspected for the supplied mutant, separate proposal/fallback trials, actual candidate after local retrieval, observer-run checks and stopped-study ending. Actual decoded candidate, comparison and ending frames were also inspected. An independent reviewer inspected all 16 extracted encoded frames, including both sides of all five cuts: the code, numbers, valid/planned counts, unavailable usage, unattempted calls and withheld decision are legible without clipping. Timings are editorial, not process-speed animation. Technical checks and stills do not establish a full-speed perceptual review; that remains explicitly unclaimed.
+
+The actual [portable Lab](lab.html), exported through the current CLI, was inspected in fresh local Chrome at 390-pixel and 1,470-pixel viewport widths. Document scroll width equaled viewport width in both. The native-only view leads with native evidence and grants no deployment approval. All five arms and four matched-comparison rows render. The wide table scrolls within its container; its far-right token columns were inspected on mobile. Partial status, 18/20 results, 17 valid observations, one failed protocol and two missing results remain visible.
+
+The [desktop](lab-desktop.png) and [mobile](lab-mobile.png) images are current-source captures, not proposed interface mockups. The comparison SVG was rendered and inspected separately. Original fixture reports and media were preserved. No new native calls were made for presentation checks.

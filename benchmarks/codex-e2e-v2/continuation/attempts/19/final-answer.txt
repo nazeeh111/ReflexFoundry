@@ -1,0 +1,6 @@
+Repaired `Cache.__getitem__` with one line: `return self.__data[key]`. This returns stored falsey values, preserves subclass `__missing__` behavior, and leaves size unchanged. No tests or unrelated source were edited.
+
+Both required checks passed in order:
+
+- Focused check: 1 passed.
+- Full suite: 381 passed, 16 subtests passed.

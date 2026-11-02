@@ -10,3 +10,4 @@ recursive-include benchmarks/context-v1/scoped-v1/licenses *.txt
 graft benchmarks/choice-stress-v1
 graft benchmarks/local-imitation-context-v1
 graft benchmarks/codex-e2e-v2
+recursive-include assets/native-demo *.py *.md

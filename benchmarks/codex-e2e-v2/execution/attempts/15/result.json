@@ -1,0 +1,78 @@
+{
+  "telemetry": {
+    "source": "codex-exec-json",
+    "observable_commands": 4,
+    "allowlisted_command_counts": {
+      "git": 1,
+      "rg": 3
+    },
+    "completed_turns": 1,
+    "invalid_usage_events": 0,
+    "token_usage": {
+      "input_tokens": 236976,
+      "cached_input_tokens": 219008,
+      "output_tokens": 626,
+      "reasoning_output_tokens": 13
+    },
+    "training_labels": false,
+    "note": "Command counts describe statically requested commands, not verified conditional execution. Token counters are unavailable without complete valid turn usage; they do not measure money, energy, or subscription allowance. No reasoning text is retained."
+  },
+  "expected_retrieval_calls": 0,
+  "retrieval_command_attempts": 0,
+  "retrieval_receipts": [],
+  "retrieval_receipts_seen": 0,
+  "rejected_receipts": 0,
+  "invalid_events": 0,
+  "event_errors": 0,
+  "timed_out": false,
+  "stream_limit_exceeded": false,
+  "stdout_bytes": 11428,
+  "stderr_bytes": 382,
+  "stderr_sha256": "fcbb1137af49c0f75c2266653d450d2ec265e59416a12c35e2c1a12450fdbe6e",
+  "cli_exit_code": 0,
+  "cli_wall_ms": 43745.76833297033,
+  "index": 15,
+  "task": "funcy-first",
+  "repeat": 2,
+  "arm": "original-agent",
+  "native_process_started": true,
+  "protocol_failure": false,
+  "retrieval_protocol_valid": true,
+  "inference_observed": false,
+  "observed_receipt_valid": false,
+  "immutable_files_preserved": true,
+  "independent": {
+    "focused": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 4147.767792,
+      "output": ".                                                                        [100%]\n1 passed in 0.38s\n"
+    },
+    "full": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 6599.648208,
+      "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 2.76s\n"
+    },
+    "public_contract": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 1123.312042,
+      "output": "independent Funcy first contract passed\n"
+    }
+  },
+  "task_success": true,
+  "context": {},
+  "changed_public_files": [
+    "funcy/seqs.py"
+  ],
+  "extra_files": [],
+  "pipeline_wall_ms": 55619.130124978255,
+  "readiness_ms": 11661.57216700958,
+  "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+  "postcondition_audit_ms": 13442.097958002705,
+  "attempt_all_in_ms": 80722.80024999054
+}

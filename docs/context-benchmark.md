@@ -82,8 +82,10 @@ no supported net time benefit. Test retrieval coverage was preserved entirely
 by fallback. With one actual repository in promotion and test, paired
 population intervals are explicitly unavailable. All failing held-out requests
 remain in the report. These are controlled public-API queries, not sampled
-real-agent coding issues. The separate native Codex comparative trial remains
-incomplete and is not replaced by this experiment.
+real-agent coding issues. The separate [native Codex comparison](../benchmarks/codex-e2e-v2/README.md)
+now has 20 calls across two disclosed phases, 19 valid repair runs and a retained
+invalid timeout. Its task outcomes and process timings are separate from this
+retrieval experiment; no model earned deployment in either study.
 
 ## Fixed actions and independent grading
 

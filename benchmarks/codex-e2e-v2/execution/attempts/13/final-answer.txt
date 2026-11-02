@@ -1,0 +1,8 @@
+Repaired [funcy/seqs.py:64](/private/tmp/reflexfoundry-native-v2/cases/13-funcy-first/funcy/seqs.py:64) with one line: `return next(iter(seq), None)`.
+
+Required checks passed in order:
+
+- Focused test: **1 passed**
+- Full suite: **295 passed**
+
+Additional checks passed for falsey values, consuming exactly one iterator item, and empty iterators. No tests or unrelated source were edited.

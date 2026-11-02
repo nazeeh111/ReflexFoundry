@@ -1,0 +1,12 @@
+Repair Cache.__getitem__ in src/cachetools/__init__.py. A present key must return its stored value, including None and other falsey values. A missing key must continue through __missing__, raising KeyError by default and respecting subclass implementations. Reads must not change cache size. Make the smallest correct source repair without editing tests or unrelated files.
+
+Before editing source, run this exact standalone command once:
+/Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B .reflex_retrieve.py
+Read context-result.json. This is the declared initial source-retrieval action. You may inspect additional source with normal native tools. Do not modify request.json, .reflex_case.json, .reflex_retrieve.py, .reflex_runtime, .reflex, the skill, tests, or unrelated source. Do not fabricate an advisory. Public task input collection is authorized; no policy deployment or outcome attestation is authorized.
+
+Some research arms measure unguarded local choices only for this declared read-only retrieval on a public copy. This never activates a failed policy or changes permission authority.
+
+After the smallest source repair run both unchanged official checks, in order:
+PYTHONPATH=src /Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q tests/test_cache.py::CacheTest::test_update
+PYTHONPATH=src /Users/nazeeh/Documents/ChatGPT/Github/ReflexFoundry/.venv/bin/python -B -m pytest -q
+Both checks remain mandatory regardless of the retrieval choice or fallback. Do not install dependencies, use network, inspect credentials, commit, or delegate. Keep native permissions and sandbox intact. Finish with a concise change and actual-check report.

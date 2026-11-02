@@ -1,0 +1,1668 @@
+{
+  "format": 1,
+  "status": "PARTIAL: NOT A COMPLETE COMPARISON",
+  "all_twenty_complete_and_protocol_valid": false,
+  "generated_utc": "2026-11-01T08:24:31.447087+00:00",
+  "planned_observations": 20,
+  "completed_observations": 18,
+  "protocol_valid_observations": 17,
+  "planned_repository_groups": 2,
+  "observations": [
+    {
+      "index": 1,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "original-agent",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 43121.97108299006,
+        "pipeline_wall_ms": 49642.32325000921,
+        "input_tokens": 175934,
+        "cached_input_tokens": 158336,
+        "output_tokens": 503
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 2067.94575,
+          "output": ".                                                                        [100%]\n1 passed in 0.32s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 4150.142625,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 1.20s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 300.407416,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": false,
+      "observed_receipt_valid": false,
+      "immutable_files_preserved": true,
+      "readiness_ms": 6426.51320900768,
+      "postcondition_audit_ms": 4139.218957978301,
+      "attempt_all_in_ms": 60208.055416995194
+    },
+    {
+      "index": 2,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "deterministic-heuristic",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 44478.02962502465,
+        "pipeline_wall_ms": 47349.10120803397,
+        "input_tokens": 208718,
+        "cached_input_tokens": 172416,
+        "output_tokens": 645
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1177.009041,
+          "output": ".                                                                        [100%]\n1 passed in 0.09s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1477.897959,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 0.58s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 214.389792,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": false,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 3765.8780839992687,
+      "postcondition_audit_ms": 3079.7585420077667,
+      "attempt_all_in_ms": 54194.73783404101
+    },
+    {
+      "index": 3,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "ordinary-laya",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 71491.51233298471,
+        "pipeline_wall_ms": 81100.36462498829,
+        "input_tokens": 343389,
+        "cached_input_tokens": 320128,
+        "output_tokens": 908
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 2781.353291,
+          "output": ".                                                                        [100%]\n1 passed in 0.26s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 6096.445375,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 3.76s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 724.461917,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 4202.472332981415,
+      "postcondition_audit_ms": 11350.004374980927,
+      "attempt_all_in_ms": 96652.84133295063
+    },
+    {
+      "index": 4,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "trained-always",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 74219.50608299812,
+        "pipeline_wall_ms": 76911.91270801937,
+        "input_tokens": 338195,
+        "cached_input_tokens": 299776,
+        "output_tokens": 1096
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1297.079959,
+          "output": ".                                                                        [100%]\n1 passed in 0.18s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1186.84075,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 0.46s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 207.380334,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 5700.125249975827,
+      "postcondition_audit_ms": 2768.98654201068,
+      "attempt_all_in_ms": 85381.02450000588
+    },
+    {
+      "index": 5,
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "selective-shadow",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 65108.63687499659,
+        "pipeline_wall_ms": 73494.28429099498,
+        "input_tokens": 345983,
+        "cached_input_tokens": 323456,
+        "output_tokens": 950
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 2667.549625,
+          "output": ".                                                                        [100%]\n1 passed in 0.22s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 5378.462,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 3.59s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 337.836166,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 7770.486083987635,
+      "postcondition_audit_ms": 4353.235249989666,
+      "attempt_all_in_ms": 85618.00562497228
+    },
+    {
+      "index": 6,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "selective-shadow",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 80786.79362504045,
+        "pipeline_wall_ms": 92030.68016603356,
+        "input_tokens": 323147,
+        "cached_input_tokens": 302336,
+        "output_tokens": 789
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 4647.023,
+          "output": ".                                                                        [100%]\n1 passed in 0.02s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 5864.148708,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 2.17s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 729.499959,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 8119.861166982446,
+      "postcondition_audit_ms": 12240.262624982279,
+      "attempt_all_in_ms": 112390.80395799829
+    },
+    {
+      "index": 7,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "trained-always",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 46687.24179203855,
+        "pipeline_wall_ms": 48358.11175004346,
+        "input_tokens": 237333,
+        "cached_input_tokens": 200832,
+        "output_tokens": 639
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 598.132166,
+          "output": ".                                                                        [100%]\n1 passed in 0.01s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 939.922833,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 0.35s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 131.392542,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 6964.893499971367,
+      "postcondition_audit_ms": 2941.63324998226,
+      "attempt_all_in_ms": 58264.63849999709
+    },
+    {
+      "index": 8,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "ordinary-laya",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 48406.461749982554,
+        "pipeline_wall_ms": 51671.634958009236,
+        "input_tokens": 231660,
+        "cached_input_tokens": 213632,
+        "output_tokens": 649
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1404.087125,
+          "output": ".                                                                        [100%]\n1 passed in 0.04s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1719.970041,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 0.69s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 139.241917,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 3894.652999995742,
+      "postcondition_audit_ms": 4979.735291970428,
+      "attempt_all_in_ms": 60546.023249975406
+    },
+    {
+      "index": 9,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "deterministic-heuristic",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 25625.15258399071,
+        "pipeline_wall_ms": 30491.48291698657,
+        "input_tokens": 112537,
+        "cached_input_tokens": 96128,
+        "output_tokens": 509
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1352.938167,
+          "output": ".                                                                        [100%]\n1 passed in 0.02s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 3328.232,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 1.69s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 182.793084,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": false,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 5103.287582984194,
+      "postcondition_audit_ms": 4843.183458026033,
+      "attempt_all_in_ms": 40437.9539579968
+    },
+    {
+      "index": 10,
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "original-agent",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 31495.860665978398,
+        "pipeline_wall_ms": 42553.300708008464,
+        "input_tokens": 148108,
+        "cached_input_tokens": 130304,
+        "output_tokens": 578
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 5727.154292,
+          "output": ".                                                                        [100%]\n1 passed in 0.05s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 5051.250834,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 2.29s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 276.083125,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": false,
+      "observed_receipt_valid": false,
+      "immutable_files_preserved": true,
+      "readiness_ms": 4828.614500002004,
+      "postcondition_audit_ms": 7400.087707967032,
+      "attempt_all_in_ms": 54782.0029159775
+    },
+    {
+      "index": 11,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "selective-shadow",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 135019.27254203474,
+        "pipeline_wall_ms": 157623.18312498974,
+        "input_tokens": 517475,
+        "cached_input_tokens": 476800,
+        "output_tokens": 1281
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 5393.349083,
+          "output": ".                                                                        [100%]\n1 passed in 0.69s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 14901.791041,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 5.79s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 2297.795417,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 9974.889750010334,
+      "postcondition_audit_ms": 11198.007417027839,
+      "attempt_all_in_ms": 178796.0802920279
+    },
+    {
+      "index": 12,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "trained-always",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 103534.91458302597,
+        "pipeline_wall_ms": 121611.92383302841,
+        "input_tokens": 418671,
+        "cached_input_tokens": 379392,
+        "output_tokens": 1133
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 7172.052375,
+          "output": ".                                                                        [100%]\n1 passed in 0.98s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 9495.117166,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 2.96s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1407.657292,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 14306.747708993498,
+      "postcondition_audit_ms": 13979.28770800354,
+      "attempt_all_in_ms": 149897.95925002545
+    },
+    {
+      "index": 13,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "ordinary-laya",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 105499.25420799991,
+        "pipeline_wall_ms": 123699.87787498394,
+        "input_tokens": 427013,
+        "cached_input_tokens": 405504,
+        "output_tokens": 1274
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 6779.96225,
+          "output": ".                                                                        [100%]\n1 passed in 0.83s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 10004.216917,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 4.10s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1413.458041,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": true,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 12415.08225002326,
+      "postcondition_audit_ms": 11451.786999998149,
+      "attempt_all_in_ms": 147566.74712500535
+    },
+    {
+      "index": 14,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "deterministic-heuristic",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 49423.36587503087,
+        "pipeline_wall_ms": 70165.731917019,
+        "input_tokens": 244182,
+        "cached_input_tokens": 208896,
+        "output_tokens": 853
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 6192.65625,
+          "output": ".                                                                        [100%]\n1 passed in 1.79s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 13678.913709,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 5.70s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 868.629417,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": false,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 13098.370249965228,
+      "postcondition_audit_ms": 10554.797124990728,
+      "attempt_all_in_ms": 93818.89929197496
+    },
+    {
+      "index": 15,
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "original-agent",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 43745.76833297033,
+        "pipeline_wall_ms": 55619.130124978255,
+        "input_tokens": 236976,
+        "cached_input_tokens": 219008,
+        "output_tokens": 626
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 4147.767792,
+          "output": ".                                                                        [100%]\n1 passed in 0.38s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 6599.648208,
+          "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 2.76s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 1123.312042,
+          "output": "independent Funcy first contract passed\n"
+        }
+      },
+      "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+      "inference_observed": false,
+      "observed_receipt_valid": false,
+      "immutable_files_preserved": true,
+      "readiness_ms": 11661.57216700958,
+      "postcondition_audit_ms": 13442.097958002705,
+      "attempt_all_in_ms": 80722.80024999054
+    },
+    {
+      "index": 16,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "original-agent",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 39347.44329104433,
+        "pipeline_wall_ms": 59222.92450000532,
+        "input_tokens": 142573,
+        "cached_input_tokens": 126336,
+        "output_tokens": 602
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 4922.428666,
+          "output": ".                                                                        [100%]\n1 passed in 0.28s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 14364.871542,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 3.90s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 585.817541,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": false,
+      "observed_receipt_valid": false,
+      "immutable_files_preserved": true,
+      "readiness_ms": 13264.16970900027,
+      "postcondition_audit_ms": 11536.08712501591,
+      "attempt_all_in_ms": 84023.1813340215
+    },
+    {
+      "index": 17,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "deterministic-heuristic",
+      "status": "protocol-valid",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": true,
+      "independently_verified_success": true,
+      "metrics": {
+        "cli_wall_ms": 37937.84220900852,
+        "pipeline_wall_ms": 46407.743167015724,
+        "input_tokens": 171090,
+        "cached_input_tokens": 138368,
+        "output_tokens": 544
+      },
+      "independent": {
+        "focused": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 3099.166958,
+          "output": ".                                                                        [100%]\n1 passed in 0.12s\n"
+        },
+        "full": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 5011.966875,
+          "output": "...................................................................... [ 18%]\n.................................................................. [ 35%]\n........................................................................ [ 54%]\n........................................................................ [ 73%]\n................................................................ [ 90%]\n.....................................                                    [100%]\n381 passed, 16 subtests passed in 2.06s\n"
+        },
+        "public_contract": {
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 356.451666,
+          "output": "independent cachetools getitem contract passed\n"
+        }
+      },
+      "candidate_sha256": "991469257c4b6dac266aa4bf3572341b0b12c578a1edbf29f862b8728ec1dfc0",
+      "inference_observed": false,
+      "observed_receipt_valid": true,
+      "immutable_files_preserved": true,
+      "readiness_ms": 11107.149457966443,
+      "postcondition_audit_ms": 7142.133000015747,
+      "attempt_all_in_ms": 64657.025624997914
+    },
+    {
+      "index": 18,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "ordinary-laya",
+      "status": "protocol-failed",
+      "native_process_started": true,
+      "result_present": true,
+      "protocol_valid": false,
+      "independently_verified_success": false,
+      "metrics": {
+        "cli_wall_ms": 181324.03499999782,
+        "pipeline_wall_ms": 209325.64549997915,
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "output_tokens": null
+      },
+      "independent": {
+        "focused": {
+          "passed": false,
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_ms": 8721.187292,
+          "output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n____________________________ CacheTest.test_update _____________________________\n\nself = <tests.test_cache.CacheTest testMethod=test_update>\n\n    def test_update(self):\n        cache = self.Cache(maxsize=2)\n    \n        cache.update({1: 1, 2: 2})\n        self.assertEqual(2, len(cache))\n        self.assertEqual(1, cache[1])\n        self.assertEqual(2, cache[2])\n    \n        cache.update({1: 1, 2: 2})\n        self.assertEqual(2, len(cache))\n        self.assertEqual(1, cache[1])\n        self.assertEqual(2, cache[2])\n    \n        cache.update({1: \"a\", 2: \"b\"})\n        self.assertEqual(2, len(cache))\n>       self.assertEqual(\"a\", cache[1])\nE       AssertionError: 'a' != 1\n\ntests/__init__.py:134: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_cache.py::CacheTest::test_update - AssertionError: 'a' != 1\n1 failed in 0.24s\n"
+        },
+        "full": {
+          "passed": false,
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_ms": 15201.007042,
+          "output": "1, 2, 3)])\nE       AssertionError: 42 != (1, 2, 3)\n\ntests/test_ttl.py:210: AssertionError\n___________________________ TTLCacheTest.test_update ___________________________\n\nself = <tests.test_ttl.TTLCacheTest testMethod=test_update>\n\n    def test_update(self):\n        cache = self.Cache(maxsize=2)\n    \n        cache.update({1: 1, 2: 2})\n        self.assertEqual(2, len(cache))\n        self.assertEqual(1, cache[1])\n        self.assertEqual(2, cache[2])\n    \n        cache.update({1: 1, 2: 2})\n        self.assertEqual(2, len(cache))\n        self.assertEqual(1, cache[1])\n        self.assertEqual(2, cache[2])\n    \n        cache.update({1: \"a\", 2: \"b\"})\n        self.assertEqual(2, len(cache))\n>       self.assertEqual(\"a\", cache[1])\nE       AssertionError: 'a' != 1\n\ntests/__init__.py:134: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_cache.py::CacheTest::test_getsizeof_param - AssertionError:...\nFAILED tests/test_cache.py::CacheTest::test_getsizeof_replace_grow - Assertio...\nFAILED tests/test_cache.py::CacheTest::test_getsizeof_replace_shrink - Assert...\nFAILED tests/test_cache.py::CacheTest::test_getsizeof_subclass - AssertionErr...\nFAILED tests/test_cache.py::CacheTest::test_missing - AssertionError: 2 != 1\nFAILED tests/test_cache.py::CacheTest::test_update - AssertionError: 'a' != 1\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator - AssertionErro...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_cond - Assertio...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_cond_info - Ass...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_info - Assertio...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_lock - Assertio...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_lock_cond - Ass...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_lock_cond_info\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_lock_info - Ass...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_method - Assert...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_typed - Asserti...\nFAILED tests/test_cached.py::CacheWrapperTest::test_decorator_wrapped - Asser...\nFAILED tests/test_cached.py::CacheWrapperTest::test_stacked_decorators - Asse...\nSUBFAILED(info=False) tests/test_cachedmethod.py::CacheMethodTest::test_cond_pending_keyword\nSUBFAILED(info=True) tests/test_cachedmethod.py::CacheMethodTest::test_cond_pending_keyword\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorated_override\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator - Assertio...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_cond - Ass...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_cond_info\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_deepcopy_super\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_immutable_dict\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_info - Ass...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_lock - Ass...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_lock_cond_info\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_lock_info\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_pickle - A...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_pickle_aliased\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_pickle_info\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_pickle_super\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_same_name\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_slots - As...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_typed - As...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_unhashable\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_decorator_wrapped - ...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_multilevel_override\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_shared_cache - Asser...\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_undecorated_override\nFAILED tests/test_cachedmethod.py::CacheMethodTest::test_value_too_large - As...\nFAILED tests/test_cachedmethod.py::UnboundMethodTest::test_base_class_call - ...\nFAILED tests/test_cachedmethod.py::UnboundMethodTest::test_class_access_alias\nFAILED tests/test_cachedmethod.py::UnboundMethodTest::test_class_call - Asser...\nFAILED tests/test_cachedmethod.py::UnboundMethodTest::test_class_call_info - ...\nFAILED tests/test_cachedmethod.py::UnboundMethodTest::test_class_call_keyword_receiver\nFAILED tests/test_classmethod.py::CachedClassMethodTest::test - AssertionErro...\nFAILED tests/test_classmethod.py::CachedClassMethodTest::test_condition - Ass...\nFAILED tests/test_classmethod.py::CachedClassMethodTest::test_locked - Assert...\nFAILED tests/test_classmethod.py::CachedClassMethodTest::test_typed - Asserti...\nFAILED tests/test_fifo.py::FIFOCacheTest::test_fifo_update_existing - Asserti...\nFAILED tests/test_fifo.py::FIFOCacheTest::test_getsizeof_param - AssertionErr...\nFAILED tests/test_fifo.py::FIFOCacheTest::test_getsizeof_replace_grow - Asser...\nFAILED tests/test_fifo.py::FIFOCacheTest::test_getsizeof_replace_shrink - Ass...\nFAILED tests/test_fifo.py::FIFOCacheTest::test_getsizeof_subclass - Assertion...\nFAILED tests/test_fifo.py::FIFOCacheTest::test_missing - AssertionError: 2 != 1\nFAILED tests/test_fifo.py::FIFOCacheTest::test_update - AssertionError: 'a' != 1\nFAILED tests/test_func.py::FIFODecoratorTest::test_decorator - AssertionError...\nFAILED tests/test_func.py::FIFODecoratorTest::test_decorator_method - Asserti...\nFAILED tests/test_func.py::FIFODecoratorTest::test_decorator_needs_rlock - At...\nFAILED tests/test_func.py::FIFODecoratorTest::test_decorator_typed - Assertio...\nFAILED tests/test_func.py::FIFODecoratorTest::test_decorator_user_function - ...\nFAILED tests/test_func.py::FIFODecoratorTest::test_method_typed - AssertionEr...\nFAILED tests/test_func.py::FIFODecoratorTest::test_stacked_decorators - Asser...\nFAILED tests/test_func.py::LFUDecoratorTest::test_decorator - AssertionError:...\nFAILED tests/test_func.py::LFUDecoratorTest::test_decorator_method - Assertio...\nFAILED tests/test_func.py::LFUDecoratorTest::test_decorator_needs_rlock - Att...\nFAILED tests/test_func.py::LFUDecoratorTest::test_decorator_typed - Assertion...\nFAILED tests/test_func.py::LFUDecoratorTest::test_decorator_user_function - A...\nFAILED tests/test_func.py::LFUDecoratorTest::test_stacked_decorators - Assert...\nFAILED tests/test_func.py::LRUDecoratorTest::test_decorator - AssertionError:...\nFAILED tests/test_func.py::LRUDecoratorTest::test_decorator_method - Assertio...\nFAILED tests/test_func.py::LRUDecoratorTest::test_decorator_needs_rlock - Att...\nFAILED tests/test_func.py::LRUDecoratorTest::test_decorator_typed - Assertion...\nFAILED tests/test_func.py::LRUDecoratorTest::test_decorator_user_function - A...\nFAILED tests/test_func.py::LRUDecoratorTest::test_stacked_decorators - Assert...\nFAILED tests/test_func.py::RRDecoratorTest::test_decorator - AssertionError: ...\nFAILED tests/test_func.py::RRDecoratorTest::test_decorator_method - Assertion...\nFAILED tests/test_func.py::RRDecoratorTest::test_decorator_needs_rlock - Attr...\nFAILED tests/test_func.py::RRDecoratorTest::test_decorator_typed - AssertionE...\nFAILED tests/test_func.py::RRDecoratorTest::test_decorator_user_function - As...\nFAILED tests/test_func.py::RRDecoratorTest::test_stacked_decorators - Asserti...\nFAILED tests/test_func.py::TTLDecoratorTest::test_decorator - AssertionError:...\nFAILED tests/test_func.py::TTLDecoratorTest::test_decorator_method - Assertio...\nFAILED tests/test_func.py::TTLDecoratorTest::test_decorator_needs_rlock - Att...\nFAILED tests/test_func.py::TTLDecoratorTest::test_decorator_typed - Assertion...\nFAILED tests/test_func.py::TTLDecoratorTest::test_decorator_unbound - Asserti...\nFAILED tests/test_func.py::TTLDecoratorTest::test_decorator_user_function - A...\nFAILED tests/test_func.py::TTLDecoratorTest::test_stacked_decorators - Assert...\nFAILED tests/test_func.py::TTLDecoratorTest::test_ttl_datetime - AssertionErr...\nFAILED tests/test_lfu.py::LFUCacheTest::test_getsizeof_param - AssertionError...\nFAILED tests/test_lfu.py::LFUCacheTest::test_getsizeof_replace_grow - Asserti...\nFAILED tests/test_lfu.py::LFUCacheTest::test_getsizeof_replace_shrink - Asser...\nFAILED tests/test_lfu.py::LFUCacheTest::test_getsizeof_subclass - AssertionEr...\nFAILED tests/test_lfu.py::LFUCacheTest::test_lfu_update_existing - AssertionE...\nFAILED tests/test_lfu.py::LFUCacheTest::test_missing - AssertionError: 2 != 1\nFAILED tests/test_lfu.py::LFUCacheTest::test_update - AssertionError: 'a' != 1\nFAILED tests/test_lru.py::LRUCacheTest::test_getsizeof_param - AssertionError...\nFAILED tests/test_lru.py::LRUCacheTest::test_getsizeof_replace_grow - Asserti...\nFAILED tests/test_lru.py::LRUCacheTest::test_getsizeof_replace_shrink - Asser...\nFAILED tests/test_lru.py::LRUCacheTest::test_getsizeof_subclass - AssertionEr...\nFAILED tests/test_lru.py::LRUCacheTest::test_lru_update_existing - AssertionE...\nFAILED tests/test_lru.py::LRUCacheTest::test_missing - AssertionError: 2 != 1\nFAILED tests/test_lru.py::LRUCacheTest::test_update - AssertionError: 'a' != 1\nFAILED tests/test_rr.py::RRCacheTest::test_getsizeof_param - AssertionError: ...\nFAILED tests/test_rr.py::RRCacheTest::test_getsizeof_replace_grow - Assertion...\nFAILED tests/test_rr.py::RRCacheTest::test_getsizeof_replace_shrink - Asserti...\nFAILED tests/test_rr.py::RRCacheTest::test_getsizeof_subclass - AssertionErro...\nFAILED tests/test_rr.py::RRCacheTest::test_missing - AssertionError: 2 != 1\nFAILED tests/test_rr.py::RRCacheTest::test_update - AssertionError: 'a' != 1\nSUBFAILED(info=False) tests/test_threading.py::ThreadingTest::test_cached_cond\nSUBFAILED(info=True) tests/test_threading.py::ThreadingTest::test_cached_cond\nSUBFAILED(info=False) tests/test_threading.py::ThreadingTest::test_cached_lock\nSUBFAILED(info=True) tests/test_threading.py::ThreadingTest::test_cached_lock\nSUBFAILED(info=False) tests/test_threading.py::ThreadingTest::test_cachedmethod_cond\nSUBFAILED(info=True) tests/test_threading.py::ThreadingTest::test_cachedmethod_cond\nSUBFAILED(info=False) tests/test_threading.py::ThreadingTest::test_cachedmethod_lock\nSUBFAILED(info=True) tests/test_threading.py::ThreadingTest::test_cachedmethod_lock\nFAILED tests/test_tlru.py::TLRUCacheTest::test_getsizeof_param - AssertionErr...\nFAILED tests/test_tlru.py::TLRUCacheTest::test_getsizeof_replace_grow - Asser...\nFAILED tests/test_tlru.py::TLRUCacheTest::test_getsizeof_replace_shrink - Ass...\nFAILED tests/test_tlru.py::TLRUCacheTest::test_getsizeof_subclass - Assertion...\nFAILED tests/test_tlru.py::TLRUCacheTest::test_missing - AssertionError: 2 != 1\nFAILED tests/test_tlru.py::TLRUCacheTest::test_overwrite_existing_with_expired\nFAILED tests/test_tlru.py::TLRUCacheTest::test_ttu_expired - AssertionError: ...\nFAILED tests/test_tlru.py::TLRUCacheTest::test_ttu_heap_cleanup - AssertionEr...\nFAILED tests/test_tlru.py::TLRUCacheTest::test_ttu_tuple_key - AssertionError...\nFAILED tests/test_tlru.py::TLRUCacheTest::test_update - AssertionError: 'a' != 1\nFAILED tests/test_ttl.py::TTLCacheTest::test_getsizeof_param - AssertionError...\nFAILED tests/test_ttl.py::TTLCacheTest::test_getsizeof_replace_grow - Asserti...\nFAILED tests/test_ttl.py::TTLCacheTest::test_getsizeof_replace_shrink - Asser...\nFAILED tests/test_ttl.py::TTLCacheTest::test_getsizeof_subclass - AssertionEr...\nFAILED tests/test_ttl.py::TTLCacheTest::test_missing - AssertionError: 2 != 1\nFAILED tests/test_ttl.py::TTLCacheTest::test_ttl_tuple_key - AssertionError: ...\nFAILED tests/test_ttl.py::TTLCacheTest::test_update - AssertionError: 'a' != 1\n137 failed, 254 passed, 6 subtests passed in 3.13s\n"
+        },
+        "public_contract": {
+          "passed": false,
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_ms": 3575.1435,
+          "output": "Traceback (most recent call last):\n  File \"/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/runs/native-v2-study/attempts/18/independent-grader.py\", line 11, in <module>\n    assert cache[\"different\"] == 17\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+        }
+      },
+      "candidate_sha256": "076e18dc5d91d9732dffa134aaef67aa01463b3da0cf6efe68f65f07f12952b6",
+      "inference_observed": false,
+      "observed_receipt_valid": false,
+      "immutable_files_preserved": true,
+      "readiness_ms": 31350.32908298308,
+      "postcondition_audit_ms": 29862.37508401973,
+      "attempt_all_in_ms": 270538.34966698196
+    },
+    {
+      "index": 19,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "trained-always",
+      "status": "missing",
+      "native_process_started": false,
+      "result_present": false,
+      "protocol_valid": false,
+      "independently_verified_success": null,
+      "metrics": {
+        "cli_wall_ms": null,
+        "pipeline_wall_ms": null,
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "output_tokens": null
+      },
+      "independent": null,
+      "candidate_sha256": null
+    },
+    {
+      "index": 20,
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "selective-shadow",
+      "status": "missing",
+      "native_process_started": false,
+      "result_present": false,
+      "protocol_valid": false,
+      "independently_verified_success": null,
+      "metrics": {
+        "cli_wall_ms": null,
+        "pipeline_wall_ms": null,
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "output_tokens": null
+      },
+      "independent": null,
+      "candidate_sha256": null
+    }
+  ],
+  "arm_summaries": [
+    {
+      "arm": "original-agent",
+      "planned": 4,
+      "completed": 4,
+      "protocol_valid": 4,
+      "protocol_failed": 0,
+      "independently_verified_successes_all_completed": 4,
+      "successes_protocol_valid": 4,
+      "metrics_protocol_valid": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": 39427.76084324578,
+          "median": 41234.70718701719,
+          "min": 31495.860665978398,
+          "max": 43745.76833297033
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": 51759.41964575031,
+          "median": 52630.726687493734,
+          "min": 42553.300708008464,
+          "max": 59222.92450000532
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 175897.75,
+          "median": 162021.0,
+          "min": 142573,
+          "max": 236976
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": 158496,
+          "median": 144320.0,
+          "min": 126336,
+          "max": 219008
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 577.25,
+          "median": 590.0,
+          "min": 503,
+          "max": 626
+        }
+      }
+    },
+    {
+      "arm": "deterministic-heuristic",
+      "planned": 4,
+      "completed": 4,
+      "protocol_valid": 4,
+      "protocol_failed": 0,
+      "independently_verified_successes_all_completed": 4,
+      "successes_protocol_valid": 4,
+      "metrics_protocol_valid": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": 39366.09757326369,
+          "median": 41207.935917016584,
+          "min": 25625.15258399071,
+          "max": 49423.36587503087
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": 48603.51480226382,
+          "median": 46878.42218752485,
+          "min": 30491.48291698657,
+          "max": 70165.731917019
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 184131.75,
+          "median": 189904.0,
+          "min": 112537,
+          "max": 244182
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": 153952,
+          "median": 155392.0,
+          "min": 96128,
+          "max": 208896
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 637.75,
+          "median": 594.5,
+          "min": 509,
+          "max": 853
+        }
+      }
+    },
+    {
+      "arm": "ordinary-laya",
+      "planned": 4,
+      "completed": 4,
+      "protocol_valid": 3,
+      "protocol_failed": 1,
+      "independently_verified_successes_all_completed": 3,
+      "successes_protocol_valid": 3,
+      "metrics_protocol_valid": {
+        "cli_wall_ms": {
+          "n": 3,
+          "mean": 75132.4094303224,
+          "median": 71491.51233298471,
+          "min": 48406.461749982554,
+          "max": 105499.25420799991
+        },
+        "pipeline_wall_ms": {
+          "n": 3,
+          "mean": 85490.62581932715,
+          "median": 81100.36462498829,
+          "min": 51671.634958009236,
+          "max": 123699.87787498394
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 334020.6666666667,
+          "median": 343389,
+          "min": 231660,
+          "max": 427013
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 313088,
+          "median": 320128,
+          "min": 213632,
+          "max": 405504
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 943.6666666666666,
+          "median": 908,
+          "min": 649,
+          "max": 1274
+        }
+      }
+    },
+    {
+      "arm": "trained-always",
+      "planned": 4,
+      "completed": 3,
+      "protocol_valid": 3,
+      "protocol_failed": 0,
+      "independently_verified_successes_all_completed": 3,
+      "successes_protocol_valid": 3,
+      "metrics_protocol_valid": {
+        "cli_wall_ms": {
+          "n": 3,
+          "mean": 74813.88748602087,
+          "median": 74219.50608299812,
+          "min": 46687.24179203855,
+          "max": 103534.91458302597
+        },
+        "pipeline_wall_ms": {
+          "n": 3,
+          "mean": 82293.98276369709,
+          "median": 76911.91270801937,
+          "min": 48358.11175004346,
+          "max": 121611.92383302841
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 331399.6666666667,
+          "median": 338195,
+          "min": 237333,
+          "max": 418671
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 293333.3333333333,
+          "median": 299776,
+          "min": 200832,
+          "max": 379392
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 956,
+          "median": 1096,
+          "min": 639,
+          "max": 1133
+        }
+      }
+    },
+    {
+      "arm": "selective-shadow",
+      "planned": 4,
+      "completed": 3,
+      "protocol_valid": 3,
+      "protocol_failed": 0,
+      "independently_verified_successes_all_completed": 3,
+      "successes_protocol_valid": 3,
+      "metrics_protocol_valid": {
+        "cli_wall_ms": {
+          "n": 3,
+          "mean": 93638.23434735725,
+          "median": 80786.79362504045,
+          "min": 65108.63687499659,
+          "max": 135019.27254203474
+        },
+        "pipeline_wall_ms": {
+          "n": 3,
+          "mean": 107716.04919400609,
+          "median": 92030.68016603356,
+          "min": 73494.28429099498,
+          "max": 157623.18312498974
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 395535,
+          "median": 345983,
+          "min": 323147,
+          "max": 517475
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 367530.6666666667,
+          "median": 323456,
+          "min": 302336,
+          "max": 476800
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 1006.6666666666666,
+          "median": 950,
+          "min": 789,
+          "max": 1281
+        }
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "deterministic-heuristic",
+      "original_index": 1,
+      "candidate_index": 2,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 1356.0585420345888,
+        "pipeline_wall_ms": -2293.222041975241,
+        "input_tokens": 32784,
+        "cached_input_tokens": 14080,
+        "output_tokens": 142
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "ordinary-laya",
+      "original_index": 1,
+      "candidate_index": 3,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 28369.541249994654,
+        "pipeline_wall_ms": 31458.041374979075,
+        "input_tokens": 167455,
+        "cached_input_tokens": 161792,
+        "output_tokens": 405
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "trained-always",
+      "original_index": 1,
+      "candidate_index": 4,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 31097.535000008065,
+        "pipeline_wall_ms": 27269.58945801016,
+        "input_tokens": 162261,
+        "cached_input_tokens": 141440,
+        "output_tokens": 593
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 1,
+      "arm": "selective-shadow",
+      "original_index": 1,
+      "candidate_index": 5,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 21986.665792006534,
+        "pipeline_wall_ms": 23851.96104098577,
+        "input_tokens": 170049,
+        "cached_input_tokens": 165120,
+        "output_tokens": 447
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "deterministic-heuristic",
+      "original_index": 15,
+      "candidate_index": 14,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 5677.597542060539,
+        "pipeline_wall_ms": 14546.601792040747,
+        "input_tokens": 7206,
+        "cached_input_tokens": -10112,
+        "output_tokens": 227
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "ordinary-laya",
+      "original_index": 15,
+      "candidate_index": 13,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 61753.48587502958,
+        "pipeline_wall_ms": 68080.74775000568,
+        "input_tokens": 190037,
+        "cached_input_tokens": 186496,
+        "output_tokens": 648
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "trained-always",
+      "original_index": 15,
+      "candidate_index": 12,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 59789.14625005564,
+        "pipeline_wall_ms": 65992.79370805016,
+        "input_tokens": 181695,
+        "cached_input_tokens": 160384,
+        "output_tokens": 507
+      }
+    },
+    {
+      "task": "funcy-first",
+      "repeat": 2,
+      "arm": "selective-shadow",
+      "original_index": 15,
+      "candidate_index": 11,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 91273.50420906441,
+        "pipeline_wall_ms": 102004.05300001148,
+        "input_tokens": 280499,
+        "cached_input_tokens": 257792,
+        "output_tokens": 655
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "deterministic-heuristic",
+      "original_index": 10,
+      "candidate_index": 9,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": -5870.7080819876865,
+        "pipeline_wall_ms": -12061.817791021895,
+        "input_tokens": -35571,
+        "cached_input_tokens": -34176,
+        "output_tokens": -69
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "ordinary-laya",
+      "original_index": 10,
+      "candidate_index": 8,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 16910.601084004156,
+        "pipeline_wall_ms": 9118.334250000771,
+        "input_tokens": 83552,
+        "cached_input_tokens": 83328,
+        "output_tokens": 71
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "trained-always",
+      "original_index": 10,
+      "candidate_index": 7,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 15191.38112606015,
+        "pipeline_wall_ms": 5804.8110420349985,
+        "input_tokens": 89225,
+        "cached_input_tokens": 70528,
+        "output_tokens": 61
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 1,
+      "arm": "selective-shadow",
+      "original_index": 10,
+      "candidate_index": 6,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": 49290.93295906205,
+        "pipeline_wall_ms": 49477.3794580251,
+        "input_tokens": 175039,
+        "cached_input_tokens": 172032,
+        "output_tokens": 211
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "deterministic-heuristic",
+      "original_index": 16,
+      "candidate_index": 17,
+      "valid": true,
+      "unavailable_reasons": [],
+      "success_delta": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": -1409.601082035806,
+        "pipeline_wall_ms": -12815.181332989596,
+        "input_tokens": 28517,
+        "cached_input_tokens": 12032,
+        "output_tokens": -58
+      }
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "ordinary-laya",
+      "original_index": 16,
+      "candidate_index": 18,
+      "valid": false,
+      "unavailable_reasons": [
+        "candidate:protocol-failed"
+      ],
+      "success_delta": null,
+      "candidate_minus_original": null
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "trained-always",
+      "original_index": 16,
+      "candidate_index": 19,
+      "valid": false,
+      "unavailable_reasons": [
+        "candidate:missing"
+      ],
+      "success_delta": null,
+      "candidate_minus_original": null
+    },
+    {
+      "task": "cachetools-getitem",
+      "repeat": 2,
+      "arm": "selective-shadow",
+      "original_index": 16,
+      "candidate_index": 20,
+      "valid": false,
+      "unavailable_reasons": [
+        "candidate:missing"
+      ],
+      "success_delta": null,
+      "candidate_minus_original": null
+    }
+  ],
+  "paired_summaries": [
+    {
+      "arm": "deterministic-heuristic",
+      "planned_pairs": 4,
+      "valid_pairs": 4,
+      "repository_groups": 2,
+      "success_delta_sum": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": {
+          "n": 4,
+          "mean": -61.66326998209115,
+          "median": -26.771270000608638,
+          "min": -5870.7080819876865,
+          "max": 5677.597542060539
+        },
+        "pipeline_wall_ms": {
+          "n": 4,
+          "mean": -3155.9048434864962,
+          "median": -7177.519916498568,
+          "min": -12815.181332989596,
+          "max": 14546.601792040747
+        },
+        "input_tokens": {
+          "n": 4,
+          "mean": 8234,
+          "median": 17861.5,
+          "min": -35571,
+          "max": 32784
+        },
+        "cached_input_tokens": {
+          "n": 4,
+          "mean": -4544,
+          "median": 960.0,
+          "min": -34176,
+          "max": 14080
+        },
+        "output_tokens": {
+          "n": 4,
+          "mean": 60.5,
+          "median": 42.0,
+          "min": -69,
+          "max": 227
+        }
+      }
+    },
+    {
+      "arm": "ordinary-laya",
+      "planned_pairs": 4,
+      "valid_pairs": 3,
+      "repository_groups": 2,
+      "success_delta_sum": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": {
+          "n": 3,
+          "mean": 35677.87606967613,
+          "median": 28369.541249994654,
+          "min": 16910.601084004156,
+          "max": 61753.48587502958
+        },
+        "pipeline_wall_ms": {
+          "n": 3,
+          "mean": 36219.04112499518,
+          "median": 31458.041374979075,
+          "min": 9118.334250000771,
+          "max": 68080.74775000568
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 147014.66666666666,
+          "median": 167455,
+          "min": 83552,
+          "max": 190037
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 143872,
+          "median": 161792,
+          "min": 83328,
+          "max": 186496
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 374.6666666666667,
+          "median": 405,
+          "min": 71,
+          "max": 648
+        }
+      }
+    },
+    {
+      "arm": "trained-always",
+      "planned_pairs": 4,
+      "valid_pairs": 3,
+      "repository_groups": 2,
+      "success_delta_sum": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": {
+          "n": 3,
+          "mean": 35359.354125374615,
+          "median": 31097.535000008065,
+          "min": 15191.38112606015,
+          "max": 59789.14625005564
+        },
+        "pipeline_wall_ms": {
+          "n": 3,
+          "mean": 33022.3980693651,
+          "median": 27269.58945801016,
+          "min": 5804.8110420349985,
+          "max": 65992.79370805016
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 144393.66666666666,
+          "median": 162261,
+          "min": 89225,
+          "max": 181695
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 124117.33333333333,
+          "median": 141440,
+          "min": 70528,
+          "max": 160384
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 387,
+          "median": 507,
+          "min": 61,
+          "max": 593
+        }
+      }
+    },
+    {
+      "arm": "selective-shadow",
+      "planned_pairs": 4,
+      "valid_pairs": 3,
+      "repository_groups": 2,
+      "success_delta_sum": 0,
+      "candidate_minus_original": {
+        "cli_wall_ms": {
+          "n": 3,
+          "mean": 54183.700986710995,
+          "median": 49290.93295906205,
+          "min": 21986.665792006534,
+          "max": 91273.50420906441
+        },
+        "pipeline_wall_ms": {
+          "n": 3,
+          "mean": 58444.46449967412,
+          "median": 49477.3794580251,
+          "min": 23851.96104098577,
+          "max": 102004.05300001148
+        },
+        "input_tokens": {
+          "n": 3,
+          "mean": 208529,
+          "median": 175039,
+          "min": 170049,
+          "max": 280499
+        },
+        "cached_input_tokens": {
+          "n": 3,
+          "mean": 198314.66666666666,
+          "median": 172032,
+          "min": 165120,
+          "max": 257792
+        },
+        "output_tokens": {
+          "n": 3,
+          "mean": 437.6666666666667,
+          "median": 447,
+          "min": 211,
+          "max": 655
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Two actual repositories, one supplied repair mutation per repository and two correlated repetitions. Repeated arm comparisons share original-agent baselines; they are not independent task samples.",
+    "Descriptive observations only. No significance test, causal superiority, population reliability, monetary saving, energy saving or subscription-allowance estimate is established.",
+    "Input tokens already include cached input tokens. Cached tokens are shown as a subset and are never added to input tokens. Reported counters are not monetary cost.",
+    "Agent-side mandatory validation was requested and may be described in the final answer. Exact internal check execution and ordering were not retained or enforced by the observer. The separate post-run focused/full/contract results are directly observed.",
+    "CLI wall time includes the native process and observer collection. Pipeline wall time additionally includes the three independent checks. Readiness hashing and subsequent postcondition audit are separate, with all-in attempt time also retained. Host load and operating-system/service caches are uncontrolled.",
+    "Protocol-failed and missing observations remain explicit. They provide no paired estimate. Raw measurements on a failed-protocol observation may be displayed but are excluded from arm summaries and paired deltas.",
+    "The trained policy remains withheld. Always-delegate is a controlled read-only experimental comparator, not production deployment. Selective shadow retains the failed policy's fallback."
+  ],
+  "execution_provenance": {
+    "date": "2026-11-01",
+    "observer_checkout": "84e55fbd75ab98dde07a9c94ca02ffa1d98245c2",
+    "original_preparation_checkout": "1ddf3e4f3f2281bb5cbb6b72655774390eecd242",
+    "plan_sha256": "0634b5648f675aa6cd08e47397397298f7b83e10b7eb1ab00e5afb86440752d1",
+    "explicit_plan_source_hashes": {
+      "scripts/native_study_v2.py": "f65d6a6acfd3742bb4eca1bff470a328ef7415045b10260f570bdabfb9e0dc58",
+      "scripts/native_retrieve_v2.py": "775ac6bc315e4600dada724c13cb36f5ea03099d947399074a6ee176b4f339c9",
+      "scripts/native_study_tasks.py": "e1c452785c0540c3a7223bbca5d1316ffb064dbe324c75ca1f91345cf0ad5d56",
+      "src/reflexfoundry/codex.py": "0009d6f60a93cb84250c62d7d7793a63e1b083bb63fabf04455953beef982603"
+    },
+    "model_py_current_sha256": "605c8f1991f92025e68fe7d1ac453fbe22d28b4b42c70de48d49fd7794a5cbfa",
+    "model_py_preparation_sha256": "224c17f903de7aa3ea5c27d0b0bbfc32f48c1e9af1649cdbd44ae84207b5232e",
+    "used_model_functions_ast_sha256": {
+      "file_hash": "4a5bed0a068e4737989a7d707d45412be2324e3f92798e27347a75bf22476688",
+      "artifact_digest": "2c6727824bb65735477098ea45fcec610ae0e795abe326ea89e76fb14878f3bf"
+    },
+    "used_model_functions_unchanged": true,
+    "reporting_limits": [
+      "Observer does not retain or enforce actual agent-side focused/full command execution or ordering. Visible final reports are agent-reported; subsequent independent focused/full/contract checks are directly observed.",
+      "Cached input tokens are included within input tokens, not added to them.",
+      "Repeated pairs share baselines and have only two repository groups; no causal or population superiority inference.",
+      "Four observer files are explicitly frozen in the plan. Imported current model.py is separately recorded here after trials1-3, not retroactively preregistered.",
+      "Current artifact_digest/file_hash functions have unchanged ASTs versus preparation; frozen per-case runtime remains actual public0.2.1."
+    ]
+  },
+  "input_sha256": {
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/plan.json": "0634b5648f675aa6cd08e47397397298f7b83e10b7eb1ab00e5afb86440752d1",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/observer-provenance.json": "57513d6bad6c1166f3b93b13a7dbd4d84612b97bd9c03fd452075ca47c6a0898",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/summary.json": "c1b80fdc2e7051df8785b6b8d01a63629450848c01160c25ee0ad82e7d46cfa4",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/started.json": "4b1faab8f3ecd1c5630308621718695fe4384bf8d79ccaf8b67f27ecd8c0722c",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/01/result.json": "9e1de82dce2232125d80b9011e53d5ee1d8352e933c3b924ca34c0d00c04505a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/started.json": "6a94aa43b80e29fc2b89562e21e004014a9009fac2cea73a30a485bba80e9ca3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/02/result.json": "3024a33fa4b538032e06a68c5071cb22c9e924a58dbd569a21e276f7b8293bdc",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/started.json": "782b1551f4223a7991851891529ec08d84207dbd1b4e3ffd98e8712e674fc706",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/03/result.json": "fa3781fb493290383a98625c1a9ef974094861dce57cd44971e581d56db9784b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/started.json": "55d131c04d90947c10290d4fa2e3916975fe2b6d618d00dfbebf0bd2b698fb07",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/04/result.json": "eb2c59b7f1cfda00b476023d902c74544842e470c2fe5ddb5df6554852d53a62",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/started.json": "544bcffeee37879d155162dd873cc829f415798d41dbcca0d39e1f2c80e9daaf",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/05/result.json": "cd75b198b39f8dbe9d9d547bed12792b5e6bcf5e9d34443bd1b8c7bc17a3f474",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/started.json": "64eade90cbb4e624d17c9da680e882ed2dcd22e593895e6b21158e4e1f4ca32f",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/06/result.json": "5e43e2d533d46bf281a6d164f0782263023ab89dd1fdbba417bb6cda8df4874a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/started.json": "3cf10da315e15b3a48707824fcf216889bde51d383ab626725f800c222a36d55",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/07/result.json": "44821fcddd540dc8d43e95e7b5b9dcac2fcbb765ed3ab097e8d0ff702b978be3",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/started.json": "6106eca47fdc832d91f9c81ddf4ff0fd10556db5fcfffe4d61348299ab98cf8a",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/08/result.json": "3e4dfbdbd747d091df2e8c4e7b33b53ce00fd9a83e19d6e449a67095b1059640",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/started.json": "bb79c73ce4cf1267d91571e8caca5a017258e2b03c0eaf35a9cc7f6f053ea012",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/09/result.json": "e453672d92bfdbed1aba1eb50f853a2fc93873e825a659a68ca0708234bd3827",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/started.json": "98e005e52ea342f13535f0c1547b1eaee7cc281d1dba19ec18646739ab9a51b8",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/10/result.json": "806a0e0fed672508fcdd970427c4762d5287dd4b1a083a56dd1aaa37ebba6384",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/started.json": "a63d8e39fc50cc86535088b508fcb6a5872a54ab47e96189940d620ab88663e6",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/11/result.json": "3eaf1b44a7327edf9efb3db1bb8539b5221f1de806c1ee7c7ea36186da77964f",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/started.json": "433eef97ae2cf497ba266a06296be40dfc9a02f00a5e8ed184bf7433d156257d",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/12/result.json": "b52c099626bc9eb8a6d856cc163c5e0b18b8f1e6b22b1683ba518aa4fed73ad1",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/started.json": "f4be7a460b546a0bd9c0ce1b0481ea2a072615e71a8402d917917fb60c18c02b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/13/result.json": "1c327cecf17d6b0db3123a72894c297a2fc621b1106717bfce422a489e064134",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/started.json": "282676eadde7b05233ee52dd1b1891bddd9d496ad3370d4376a03535f5c0a2d0",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/14/result.json": "d78c92bea601e8cc09bf8012e8e367e10c311c34c5e8dd32ce67b2d71a50e280",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/started.json": "86056b0aee07eea9e89f875edcb2a71b4574d2bbc585b9c7280fc3b3c293649b",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/15/result.json": "1dfd45113b6b02ee1be149d850897f7f4165f59a4bed990aba5580d4070fde22",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/started.json": "2a68e1504e7b97fbcb954fca9f60c121f6caa3e7d48fb2df000634f32229cf71",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/16/result.json": "742a448684fca6895f6889771cf99180f6b8c34ac953b37524c624f058964212",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/started.json": "a3c77426d997e5e3ab7640d1dba0a40e3e1a50f920bd3a328bf6011092fe205d",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/17/result.json": "00c50d8d2eeff0ba99a4ee5666e86b9e52598c91376229c7287806c5359aae02",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/started.json": "3eb42ea53a2f6330db8b929a10e4447579b1d3da599ce682d3eef0995a8611dc",
+    "/Users/nazeeh/Documents/ChatGPT/Continue/work/reflexfoundry-build/benchmarks/codex-e2e-v2/execution/attempts/18/result.json": "7a4ef5d4ce2659216244619ef1c99870e77212c9044bfb01a10fbee8cd4eb975"
+  },
+  "source_summary_completed_at_read": 18,
+  "snapshot_note": "Derived from one read of each input. Study may be accumulating; source summary can lag results. Final status is recomputed from all twenty actual result files, not summary flags.",
+  "currency_cost": null,
+  "deployment": "withheld"
+}

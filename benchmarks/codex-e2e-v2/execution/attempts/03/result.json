@@ -1,0 +1,142 @@
+{
+  "telemetry": {
+    "source": "codex-exec-json",
+    "observable_commands": 8,
+    "allowlisted_command_counts": {
+      "python": 1,
+      "git": 2,
+      "rg": 2
+    },
+    "completed_turns": 1,
+    "invalid_usage_events": 0,
+    "token_usage": {
+      "input_tokens": 343389,
+      "cached_input_tokens": 320128,
+      "output_tokens": 908,
+      "reasoning_output_tokens": 39
+    },
+    "training_labels": false,
+    "note": "Command counts describe statically requested commands, not verified conditional execution. Token counters are unavailable without complete valid turn usage; they do not measure money, energy, or subscription allowance. No reasoning text is retained."
+  },
+  "expected_retrieval_calls": 1,
+  "retrieval_command_attempts": 1,
+  "retrieval_receipts": [
+    {
+      "format": 1,
+      "arm": "ordinary-laya",
+      "request_digest": "600e21c784b8865236d357823bd9df8685837d9d563fdc1aceefc63133781a51",
+      "source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318",
+      "runtime_digest": "d9a8ef8f9c47ed1200af6d970da7113eeaed705c5d6842a1234732710d0f0d4e",
+      "cli_sha256": "8cf740bd8620fbc0d22ffb07e7e68437739dab82565910dc059a5d20b2865e16",
+      "model_artifact_digest": "e7998c162d61a5658031ad61eed955b05d052ba3ad2a4ada996650f2203247d0",
+      "policy_sha256": null,
+      "report_sha256": null,
+      "decision_contract_digest": "c50d5d754be2fa838b52a767c724fc5f32c45271a95c7f7fedebcef0f0d08904",
+      "inference_observed": true,
+      "prediction": {
+        "choice": "symbol",
+        "confidence": 0.8577,
+        "duration_ms": 9358.733291970566,
+        "stable": true,
+        "truncated": false
+      },
+      "prediction_digest": "c49b13280bd6b4e220f15ca56265fa5297c371a1fd96037969dffe95b20de40e",
+      "choice": "symbol",
+      "context_digest": "c30f4659742b3015a08b88142d1f782e9bd301d31169a322f607142bd7910477",
+      "step_wall_ms": 23618.331458012108,
+      "policy_call_ms": 22261.863749998156,
+      "identity_audit_ms": 1091.2026669830084
+    }
+  ],
+  "retrieval_receipts_seen": 1,
+  "rejected_receipts": 0,
+  "invalid_events": 0,
+  "event_errors": 0,
+  "timed_out": false,
+  "stream_limit_exceeded": false,
+  "stdout_bytes": 27082,
+  "stderr_bytes": 382,
+  "stderr_sha256": "047f373f60066d0b8d76444714011880db16d6694ee0b5e657d1e7f103b0410c",
+  "cli_exit_code": 0,
+  "cli_wall_ms": 71491.51233298471,
+  "index": 3,
+  "task": "funcy-first",
+  "repeat": 1,
+  "arm": "ordinary-laya",
+  "native_process_started": true,
+  "protocol_failure": false,
+  "retrieval_protocol_valid": true,
+  "inference_observed": true,
+  "observed_receipt_valid": true,
+  "immutable_files_preserved": true,
+  "independent": {
+    "focused": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 2781.353291,
+      "output": ".                                                                        [100%]\n1 passed in 0.26s\n"
+    },
+    "full": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 6096.445375,
+      "output": "........................................................................ [ 24%]\n........................................................................ [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n295 passed in 3.76s\n"
+    },
+    "public_contract": {
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 724.461917,
+      "output": "independent Funcy first contract passed\n"
+    }
+  },
+  "task_success": true,
+  "context": {
+    "arm": "ordinary-laya",
+    "request": {
+      "spec": "context-route-v1",
+      "inputs": {
+        "summary": "In funcy: Locate implementation of first.",
+        "changed_files": [],
+        "symbol": "first"
+      }
+    },
+    "choice": "symbol",
+    "source_sha256": "6eead389e552d7fde1265a34b5d298c76c3cdf084a28a2ce0b29f0936441c318",
+    "inference_observed": true,
+    "policy_cli_exit_code": null,
+    "policy_call_ms": 22261.863749998156,
+    "corpus_ms": 13.260625011753291,
+    "retrieval_ms": 219.40025000367314,
+    "identity_audit_ms": 1091.2026669830084,
+    "step_wall_ms": 23618.331458012108,
+    "snippets": [
+      {
+        "path": "funcy/seqs.py",
+        "start_line": 60,
+        "text": "def first(seq):\n    \"\"\"Returns the first item in the sequence.\n       Returns None if the sequence is empty.\"\"\"\n    return next(islice(seq, 1, None), None)",
+        "sha256": "b614cc4cd52409b4f9988f5d982a65012aef756539b3a0155ec969820f99bf0a"
+      }
+    ],
+    "advisory": null,
+    "prediction": {
+      "choice": "symbol",
+      "confidence": 0.8577,
+      "duration_ms": 9358.733291970566,
+      "stable": true,
+      "truncated": false
+    },
+    "scope": "Initial read-only retrieval; full repair validation remains mandatory. No policy deployment."
+  },
+  "changed_public_files": [
+    "funcy/seqs.py"
+  ],
+  "extra_files": [],
+  "pipeline_wall_ms": 81100.36462498829,
+  "readiness_ms": 4202.472332981415,
+  "candidate_sha256": "39f6d871394af126b16fd419e039fd294c3c702735ccc03949d26283a1163fe8",
+  "postcondition_audit_ms": 11350.004374980927,
+  "attempt_all_in_ms": 96652.84133295063
+}

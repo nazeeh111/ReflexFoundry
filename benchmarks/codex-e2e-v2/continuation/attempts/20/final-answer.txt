@@ -1,0 +1,8 @@
+Repaired [Cache.__getitem__](src/cachetools/__init__.py:75) with a one-line change. Present keys return stored values, including falsey values; missing keys still call `__missing__`. Reads leave cache size unchanged.
+
+Required checks passed in order:
+
+- `test_update`: 1 passed
+- Full suite: 381 passed, 16 subtests passed
+
+No tests or unrelated source files were edited.

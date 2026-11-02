@@ -1,0 +1,9 @@
+{
+  "trial": 18,
+  "native_process_started": false,
+  "attempt_reserved": false,
+  "control": "automatic approval review",
+  "error": "Bad Request; review could not be completed; not a determination the action is unsafe",
+  "remedy": "Request the same scoped review again without changing command, authority, sandbox mode or frozen inputs. No native retry/resampling occurred.",
+  "resolution": "The same unchanged command passed normal automatic review on resubmission and started trial18 in owned exec session32126. No approval bypass or extra native attempt."
+}

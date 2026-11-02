@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-01",
+  "observer_checkout": "84e55fbd75ab98dde07a9c94ca02ffa1d98245c2",
+  "original_preparation_checkout": "1ddf3e4f3f2281bb5cbb6b72655774390eecd242",
+  "plan_sha256": "0634b5648f675aa6cd08e47397397298f7b83e10b7eb1ab00e5afb86440752d1",
+  "explicit_plan_source_hashes": {
+    "scripts/native_study_v2.py": "f65d6a6acfd3742bb4eca1bff470a328ef7415045b10260f570bdabfb9e0dc58",
+    "scripts/native_retrieve_v2.py": "775ac6bc315e4600dada724c13cb36f5ea03099d947399074a6ee176b4f339c9",
+    "scripts/native_study_tasks.py": "e1c452785c0540c3a7223bbca5d1316ffb064dbe324c75ca1f91345cf0ad5d56",
+    "src/reflexfoundry/codex.py": "0009d6f60a93cb84250c62d7d7793a63e1b083bb63fabf04455953beef982603"
+  },
+  "model_py_current_sha256": "605c8f1991f92025e68fe7d1ac453fbe22d28b4b42c70de48d49fd7794a5cbfa",
+  "model_py_preparation_sha256": "224c17f903de7aa3ea5c27d0b0bbfc32f48c1e9af1649cdbd44ae84207b5232e",
+  "used_model_functions_ast_sha256": {
+    "file_hash": "4a5bed0a068e4737989a7d707d45412be2324e3f92798e27347a75bf22476688",
+    "artifact_digest": "2c6727824bb65735477098ea45fcec610ae0e795abe326ea89e76fb14878f3bf"
+  },
+  "used_model_functions_unchanged": true,
+  "reporting_limits": [
+    "Observer does not retain or enforce actual agent-side focused/full command execution or ordering. Visible final reports are agent-reported; subsequent independent focused/full/contract checks are directly observed.",
+    "Cached input tokens are included within input tokens, not added to them.",
+    "Repeated pairs share baselines and have only two repository groups; no causal or population superiority inference.",
+    "Four observer files are explicitly frozen in the plan. Imported current model.py is separately recorded here after trials1-3, not retroactively preregistered.",
+    "Current artifact_digest/file_hash functions have unchanged ASTs versus preparation; frozen per-case runtime remains actual public0.2.1."
+  ]
+}

@@ -2,6 +2,8 @@
 
 The first ReflexFoundry policy was genuinely trained, but it **must not deploy**. In this controlled validation workload, cold model startup and prediction cost exceeded the possible test savings. A simple file-based heuristic was both faster and more reliable than always delegating to the trained model.
 
+These original decision-stage results remain unchanged. The separate [amended native coding comparison](../benchmarks/codex-e2e-v2/README.md) measures actual agent-process and independent-verification time, with reported token use. Its 20 calls, 19 valid repair runs and retained timeout do not turn these stage costs into full-agent measurements.
+
 ## Evidence and scope
 
 Source: [`benchmarks/run-001/report.json`](../benchmarks/run-001/report.json), read on 26 October 2026, SHA-256 `d6215d2e2a4999d8204923f507e1d85e8c22065774286ac771f0a6f6149022fa`. The report's model digest is `ae0ff4ce5c6844d33a0b7f54b6ee5bf908bb6b11207e8de6b6fe155c6b8d0c74`; its dataset digest is `2328703487e2cd108e690a15f269c58ba5b302b539dede2c199750cfe42b47df`.
